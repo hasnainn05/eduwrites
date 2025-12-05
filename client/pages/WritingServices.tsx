@@ -316,27 +316,6 @@ export default function WritingServices() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-br from-primary to-secondary text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Ready to Get Your Perfect Paper?
-          </h2>
-          <p className="text-lg text-white/90 mb-8">
-            Join thousands of students who've achieved their academic goals with
-            our writing services
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">
-              Order Now <ArrowRight size={20} />
-            </button>
-            <button className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
-              Chat with Us
-            </button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
