@@ -24,11 +24,8 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 font-bold text-2xl">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold">D</span>
-            </div>
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Digital Services
+              Ardelis Digital
             </span>
           </Link>
 
