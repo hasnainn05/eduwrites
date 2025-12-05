@@ -39,10 +39,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">D</span>
-              </div>
-              <span className="font-bold">Digital Services</span>
+              <span className="font-bold">Ardelis Digital</span>
             </Link>
             <p className="text-gray-400 text-sm">
               Your trusted partner for comprehensive digital solutions.
