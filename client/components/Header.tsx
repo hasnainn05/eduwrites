@@ -85,6 +85,10 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
+              <button className="w-full text-left block px-3 py-2 text-foreground hover:bg-muted rounded-md transition-colors flex items-center gap-2">
+                <MessageCircle size={20} />
+                Chat
+              </button>
               <Link
                 to="/login"
                 className="block px-3 py-2 text-foreground hover:bg-muted rounded-md transition-colors"
