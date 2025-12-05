@@ -253,7 +253,6 @@ export default function Home() {
                     <h4 className="font-semibold text-white">
                       {testimonial.name}
                     </h4>
-                    <p className="text-sm text-gray-300">{testimonial.role}</p>
                   </div>
                 </div>
                 <div className="flex gap-1 mb-4">
