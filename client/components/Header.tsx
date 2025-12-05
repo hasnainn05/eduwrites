@@ -44,6 +44,10 @@ export default function Header() {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
+            <button className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium">
+              <MessageCircle size={20} />
+              Chat
+            </button>
             <Link
               to="/login"
               className="text-foreground hover:text-primary transition-colors font-medium"
