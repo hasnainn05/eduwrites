@@ -116,19 +116,20 @@ export default function DesignServices() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.id}
-                className="rounded-xl border border-border bg-white p-8 hover:border-primary hover:shadow-lg transition-all"
+                to={`/services/design/${service.id}`}
+                className="group rounded-xl border border-border bg-white p-8 hover:border-primary hover:shadow-lg transition-all"
               >
                 <div className="text-4xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-bold text-foreground mb-3">
                   {service.title}
                 </h3>
                 <p className="text-foreground/70 mb-4">{service.description}</p>
-                <div className="flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+                <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
                   Learn More <ArrowRight size={20} />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
