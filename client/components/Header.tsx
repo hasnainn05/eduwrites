@@ -1,19 +1,10 @@
 import { Link } from "react-router-dom";
 import { Menu, X, MessageCircle, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const regularLinks = [
     { label: "Home", path: "/" },
@@ -51,26 +42,25 @@ export default function Header() {
             ))}
 
             {/* Services Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium">
-                  Services
-                  <ChevronDown size={18} />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start">
+            <div className="relative group">
+              <button className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium">
+                Services
+                <ChevronDown size={18} />
+              </button>
+
+              {/* Dropdown Menu */}
+              <div className="absolute left-0 mt-0 w-48 bg-white border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 {serviceLinks.map((link) => (
-                  <DropdownMenuItem key={link.path} asChild>
-                    <Link
-                      to={link.path}
-                      className="flex items-center justify-between w-full"
-                    >
-                      {link.label}
-                    </Link>
-                  </DropdownMenuItem>
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className="block px-4 py-2 text-foreground hover:bg-muted hover:text-primary transition-colors first:rounded-t-lg last:rounded-b-lg"
+                  >
+                    {link.label}
+                  </Link>
                 ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+              </div>
+            </div>
           </div>
 
           {/* CTA Button */}
@@ -95,15 +85,15 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={toggleMenu}
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
             className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-foreground hover:bg-muted"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
+        {isMobileOpen && (
           <div className="md:hidden pb-4">
             <div className="space-y-2">
               {regularLinks.map((link) => (
@@ -111,7 +101,7 @@ export default function Header() {
                   key={link.path}
                   to={link.path}
                   className="block px-3 py-2 text-foreground hover:bg-muted rounded-md transition-colors"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => setIsMobileOpen(false)}
                 >
                   {link.label}
                 </Link>
@@ -119,19 +109,33 @@ export default function Header() {
 
               {/* Mobile Services Submenu */}
               <div className="px-3 py-2">
-                <div className="font-medium text-foreground mb-2">Services</div>
-                <div className="space-y-1 pl-2">
-                  {serviceLinks.map((link) => (
-                    <Link
-                      key={link.path}
-                      to={link.path}
-                      className="block px-2 py-1 text-sm text-foreground hover:bg-muted rounded-md transition-colors"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
+                <button
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  className="w-full text-left font-medium text-foreground flex items-center justify-between hover:text-primary transition-colors"
+                >
+                  Services
+                  <ChevronDown
+                    size={18}
+                    className={`transition-transform ${isServicesOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {isServicesOpen && (
+                  <div className="space-y-1 pl-2 mt-2">
+                    {serviceLinks.map((link) => (
+                      <Link
+                        key={link.path}
+                        to={link.path}
+                        className="block px-2 py-1 text-sm text-foreground hover:bg-muted hover:text-primary rounded-md transition-colors"
+                        onClick={() => {
+                          setIsMobileOpen(false);
+                          setIsServicesOpen(false);
+                        }}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <button className="w-full text-left block px-3 py-2 text-foreground hover:bg-muted rounded-md transition-colors flex items-center gap-2">
@@ -141,14 +145,14 @@ export default function Header() {
               <Link
                 to="/login"
                 className="block px-3 py-2 text-foreground hover:bg-muted rounded-md transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={() => setIsMobileOpen(false)}
               >
                 Login
               </Link>
               <Link
                 to="/"
                 className="block px-3 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-md font-medium"
-                onClick={() => setIsOpen(false)}
+                onClick={() => setIsMobileOpen(false)}
               >
                 Get Started
               </Link>
