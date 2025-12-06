@@ -15,13 +15,16 @@ export default function Header() {
     setIsOpen(!isOpen);
   };
 
-  const navLinks = [
+  const regularLinks = [
     { label: "Home", path: "/" },
+    { label: "Contact", path: "/contact" },
+  ];
+
+  const serviceLinks = [
     { label: "Writing Services", path: "/services/writing" },
     { label: "Design Services", path: "/services/design" },
     { label: "Marketing Services", path: "/services/marketing" },
     { label: "IT & Development", path: "/services/development" },
-    { label: "Contact", path: "/contact" },
   ];
 
   return (
