@@ -13,6 +13,7 @@ import WritingServices from "./pages/WritingServices";
 import DesignServices from "./pages/DesignServices";
 import MarketingServices from "./pages/MarketingServices";
 import DevelopmentServices from "./pages/DevelopmentServices";
+import ServiceDetail from "./pages/ServiceDetail";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
