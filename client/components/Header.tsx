@@ -40,7 +40,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {regularLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -49,6 +49,28 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Services Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium">
+                  Services
+                  <ChevronDown size={18} />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start">
+                {serviceLinks.map((link) => (
+                  <DropdownMenuItem key={link.path} asChild>
+                    <Link
+                      to={link.path}
+                      className="flex items-center justify-between w-full"
+                    >
+                      {link.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* CTA Button */}
