@@ -106,7 +106,7 @@ export default function Header() {
         {isOpen && (
           <div className="md:hidden pb-4">
             <div className="space-y-2">
-              {navLinks.map((link) => (
+              {regularLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
@@ -116,6 +116,24 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
+
+              {/* Mobile Services Submenu */}
+              <div className="px-3 py-2">
+                <div className="font-medium text-foreground mb-2">Services</div>
+                <div className="space-y-1 pl-2">
+                  {serviceLinks.map((link) => (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className="block px-2 py-1 text-sm text-foreground hover:bg-muted rounded-md transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
               <button className="w-full text-left block px-3 py-2 text-foreground hover:bg-muted rounded-md transition-colors flex items-center gap-2">
                 <MessageCircle size={20} />
                 Chat
