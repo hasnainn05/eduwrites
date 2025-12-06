@@ -1,7 +1,4 @@
-import "./global.css";
-
 import { Toaster } from "@/components/ui/toaster";
-import { createRoot } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -28,114 +25,114 @@ const Layout = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Layout>
-                <Index />
-              </Layout>
-            }
-          />
-          <Route
-            path="/services/writing"
-            element={
-              <Layout>
-                <WritingServices />
-              </Layout>
-            }
-          />
-          <Route
-            path="/services/writing/:slug"
-            element={
-              <Layout>
-                <ServiceDetail />
-              </Layout>
-            }
-          />
-          <Route
-            path="/services/design"
-            element={
-              <Layout>
-                <DesignServices />
-              </Layout>
-            }
-          />
-          <Route
-            path="/services/design/:slug"
-            element={
-              <Layout>
-                <ServiceDetail />
-              </Layout>
-            }
-          />
-          <Route
-            path="/services/marketing"
-            element={
-              <Layout>
-                <MarketingServices />
-              </Layout>
-            }
-          />
-          <Route
-            path="/services/marketing/:slug"
-            element={
-              <Layout>
-                <ServiceDetail />
-              </Layout>
-            }
-          />
-          <Route
-            path="/services/development"
-            element={
-              <Layout>
-                <DevelopmentServices />
-              </Layout>
-            }
-          />
-          <Route
-            path="/services/development/:slug"
-            element={
-              <Layout>
-                <ServiceDetail />
-              </Layout>
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <Layout>
-                <Contact />
-              </Layout>
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <Layout>
-                <Login />
-              </Layout>
-            }
-          />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route
-            path="*"
-            element={
-              <Layout>
-                <NotFound />
-              </Layout>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
-
-createRoot(document.getElementById("root")!).render(<App />);
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Layout>
+                  <Index />
+                </Layout>
+              }
+            />
+            <Route
+              path="/services/writing"
+              element={
+                <Layout>
+                  <WritingServices />
+                </Layout>
+              }
+            />
+            <Route
+              path="/services/writing/:slug"
+              element={
+                <Layout>
+                  <ServiceDetail />
+                </Layout>
+              }
+            />
+            <Route
+              path="/services/design"
+              element={
+                <Layout>
+                  <DesignServices />
+                </Layout>
+              }
+            />
+            <Route
+              path="/services/design/:slug"
+              element={
+                <Layout>
+                  <ServiceDetail />
+                </Layout>
+              }
+            />
+            <Route
+              path="/services/marketing"
+              element={
+                <Layout>
+                  <MarketingServices />
+                </Layout>
+              }
+            />
+            <Route
+              path="/services/marketing/:slug"
+              element={
+                <Layout>
+                  <ServiceDetail />
+                </Layout>
+              }
+            />
+            <Route
+              path="/services/development"
+              element={
+                <Layout>
+                  <DevelopmentServices />
+                </Layout>
+              }
+            />
+            <Route
+              path="/services/development/:slug"
+              element={
+                <Layout>
+                  <ServiceDetail />
+                </Layout>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <Layout>
+                  <Contact />
+                </Layout>
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <Layout>
+                  <Login />
+                </Layout>
+              }
+            />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route
+              path="*"
+              element={
+                <Layout>
+                  <NotFound />
+                </Layout>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+}
