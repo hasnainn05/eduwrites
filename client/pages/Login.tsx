@@ -3,11 +3,11 @@ import { ArrowLeft } from "lucide-react";
 
 export default function Login() {
   return (
-    <div className="w-full min-h-screen bg-white">
+    <div className="w-full min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-sidebar-primary hover:text-sidebar-primary/80 transition-colors mb-8"
         >
           <ArrowLeft size={20} /> Back to Home
         </Link>
@@ -20,7 +20,7 @@ export default function Login() {
             Sign in to your account to manage your projects and orders.
           </p>
 
-          <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-xl border-2 border-border p-12 max-w-md mx-auto">
+          <div className="bg-card rounded-xl border-2 border-sidebar-border p-12 max-w-md mx-auto">
             <div className="text-6xl mb-4">🔐</div>
             <h2 className="text-2xl font-bold text-foreground mb-4">
               Login Page Coming Soon
@@ -31,7 +31,7 @@ export default function Login() {
             </p>
             <Link
               to="/"
-              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
+              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-sidebar-primary to-sidebar-accent text-sidebar-primary-foreground px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
             >
               Return Home
             </Link>
