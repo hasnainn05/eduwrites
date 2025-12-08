@@ -12,7 +12,7 @@ export default function Sidebar() {
   const navItems = [
     { label: "Home", path: "/", icon: Home },
     { label: "Contact Us", path: "/contact", icon: Mail },
-    { label: "About Us", path: "/", icon: Info },
+    { label: "About Us", path: "/#about", icon: Info },
   ];
 
   const serviceLinks = [
