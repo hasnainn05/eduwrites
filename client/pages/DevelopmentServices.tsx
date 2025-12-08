@@ -85,10 +85,10 @@ export default function DevelopmentServices() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-green-50 to-emerald-50 py-16 sm:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-sidebar-background to-sidebar-background/80 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-4 flex justify-center">
-            <span className="inline-flex items-center px-4 py-1 rounded-full bg-green-100 text-green-700 font-semibold text-sm">
+            <span className="inline-flex items-center px-4 py-1 rounded-full bg-sidebar-primary/20 text-sidebar-primary font-semibold text-sm">
               💻 IT & Development Services
             </span>
           </div>
@@ -103,7 +103,7 @@ export default function DevelopmentServices() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-16 sm:py-24 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -119,7 +119,7 @@ export default function DevelopmentServices() {
               <Link
                 key={service.id}
                 to={`/services/development/${service.id}`}
-                className="group rounded-xl border border-border bg-white p-8 hover:border-primary hover:shadow-lg transition-all"
+                className="group rounded-xl border border-sidebar-border bg-card p-8 hover:border-sidebar-primary hover:shadow-lg transition-all"
               >
                 <div className="text-4xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-bold text-foreground mb-3">
@@ -136,7 +136,7 @@ export default function DevelopmentServices() {
       </section>
 
       {/* Why Choose Us for Development */}
-      <section className="py-16 sm:py-24 bg-slate-50">
+      <section className="py-16 sm:py-24 bg-sidebar-background/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -145,7 +145,7 @@ export default function DevelopmentServices() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl border border-border">
+            <div className="bg-card p-8 rounded-xl border border-sidebar-border">
               <div className="flex gap-4 items-start">
                 <CheckCircle className="text-primary flex-shrink-0 mt-1" />
                 <div>
@@ -160,7 +160,7 @@ export default function DevelopmentServices() {
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-border">
+            <div className="bg-card p-8 rounded-xl border border-sidebar-border">
               <div className="flex gap-4 items-start">
                 <CheckCircle className="text-primary flex-shrink-0 mt-1" />
                 <div>
@@ -174,7 +174,7 @@ export default function DevelopmentServices() {
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-border">
+            <div className="bg-card p-8 rounded-xl border border-sidebar-border">
               <div className="flex gap-4 items-start">
                 <CheckCircle className="text-primary flex-shrink-0 mt-1" />
                 <div>
@@ -189,7 +189,7 @@ export default function DevelopmentServices() {
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-border">
+            <div className="bg-card p-8 rounded-xl border border-sidebar-border">
               <div className="flex gap-4 items-start">
                 <CheckCircle className="text-primary flex-shrink-0 mt-1" />
                 <div>
@@ -207,7 +207,7 @@ export default function DevelopmentServices() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-16 sm:py-24 bg-white">
+      <section id="pricing" className="py-16 sm:py-24 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -274,7 +274,7 @@ export default function DevelopmentServices() {
       </section>
 
       {/* Development Stack Section */}
-      <section className="py-16 sm:py-24 bg-slate-50">
+      <section className="py-16 sm:py-24 bg-sidebar-background/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -286,7 +286,7 @@ export default function DevelopmentServices() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="rounded-xl border border-border bg-white p-8">
+            <div className="rounded-xl border border-sidebar-border bg-card p-8">
               <h3 className="font-semibold text-lg text-foreground mb-4">
                 Web Technologies
               </h3>
@@ -298,7 +298,7 @@ export default function DevelopmentServices() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-border bg-white p-8">
+            <div className="rounded-xl border border-sidebar-border bg-card p-8">
               <h3 className="font-semibold text-lg text-foreground mb-4">
                 Mobile Technologies
               </h3>
@@ -314,7 +314,7 @@ export default function DevelopmentServices() {
       </section>
 
       {/* Development Process Section */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-16 sm:py-24 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -360,7 +360,7 @@ export default function DevelopmentServices() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-br from-slate-50 to-white">
+      <section className="py-16 sm:py-24 bg-gradient-to-br from-sidebar-background/50 to-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
             Ready to Build Your Next Project?
