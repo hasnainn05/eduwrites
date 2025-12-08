@@ -1158,13 +1158,13 @@ export default function ServiceDetail() {
                 key={plan.name}
                 className={`relative rounded-xl border p-8 transition-all ${
                   plan.highlighted
-                    ? "border-primary bg-gradient-to-br from-primary/5 to-secondary/5 md:scale-105 shadow-lg"
-                    : "border-border bg-white hover:border-primary hover:shadow-md"
-                } ${plan.isCustom ? "border-secondary bg-gradient-to-br from-secondary/5 to-secondary/10" : ""}`}
+                    ? "border-sidebar-primary bg-gradient-to-br from-sidebar-primary/5 to-sidebar-accent/5 md:scale-105 shadow-lg"
+                    : "border-sidebar-border bg-card hover:border-sidebar-primary hover:shadow-md"
+                } ${plan.isCustom ? "border-sidebar-accent bg-gradient-to-br from-sidebar-accent/5 to-sidebar-accent/10" : ""}`}
               >
                 {plan.highlighted && (
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <span className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    <span className="bg-gradient-to-r from-sidebar-primary to-sidebar-accent text-sidebar-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
                       Most Popular
                     </span>
                   </div>
@@ -1174,7 +1174,7 @@ export default function ServiceDetail() {
                   {plan.name}
                 </h3>
                 <div className="mb-6">
-                  <span className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  <span className="text-4xl font-bold bg-gradient-to-r from-sidebar-primary to-sidebar-accent bg-clip-text text-transparent">
                     {plan.price}
                   </span>
                 </div>
