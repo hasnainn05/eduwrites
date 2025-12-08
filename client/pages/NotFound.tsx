@@ -13,9 +13,9 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-sidebar-background to-sidebar-background/80">
       <div className="text-center px-4">
-        <div className="text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
+        <div className="text-6xl font-bold bg-gradient-to-r from-sidebar-primary to-sidebar-accent bg-clip-text text-transparent mb-4">
           404
         </div>
         <h1 className="text-4xl font-bold text-foreground mb-4">
@@ -27,7 +27,7 @@ const NotFound = () => {
         </p>
         <Link
           to="/"
-          className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
+          className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-sidebar-primary to-sidebar-accent text-sidebar-primary-foreground px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
         >
           Return to Home
         </Link>
