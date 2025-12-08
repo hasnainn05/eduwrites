@@ -33,39 +33,41 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-slate-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-sidebar-background border-t border-sidebar-border text-sidebar-foreground">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:ml-0">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
           {/* Brand Section */}
           <div className="col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <span className="font-bold">Ardelis Digital</span>
+              <span className="font-bold bg-gradient-to-r from-sidebar-primary to-sidebar-accent bg-clip-text text-transparent">
+                Ardelis Digital
+              </span>
             </Link>
-            <p className="text-gray-400 text-sm">
+            <p className="text-sidebar-foreground/60 text-sm">
               Your trusted partner for comprehensive digital solutions.
             </p>
             <div className="flex gap-4 mt-4">
               <a
                 href="#"
-                className="text-gray-400 hover:text-primary transition-colors"
+                className="text-sidebar-foreground/60 hover:text-sidebar-primary transition-colors"
               >
                 <Facebook size={20} />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-primary transition-colors"
+                className="text-sidebar-foreground/60 hover:text-sidebar-primary transition-colors"
               >
                 <Twitter size={20} />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-primary transition-colors"
+                className="text-sidebar-foreground/60 hover:text-sidebar-primary transition-colors"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-primary transition-colors"
+                className="text-sidebar-foreground/60 hover:text-sidebar-primary transition-colors"
               >
                 <Instagram size={20} />
               </a>
@@ -74,13 +76,13 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
+            <h4 className="font-semibold mb-4 text-sidebar-foreground">Services</h4>
             <ul className="space-y-2">
               {services.map((item) => (
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-sidebar-foreground/60 hover:text-sidebar-foreground transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -91,13 +93,13 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold mb-4 text-sidebar-foreground">Company</h4>
             <ul className="space-y-2">
               {company.map((item) => (
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-sidebar-foreground/60 hover:text-sidebar-foreground transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -108,13 +110,13 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold mb-4">Legal</h4>
+            <h4 className="font-semibold mb-4 text-sidebar-foreground">Legal</h4>
             <ul className="space-y-2">
               {legal.map((item) => (
                 <li key={item.path}>
                   <Link
                     to={item.path}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-sidebar-foreground/60 hover:text-sidebar-foreground transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -125,15 +127,15 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Contact</h4>
-            <div className="space-y-3 text-gray-400 text-sm">
+            <h4 className="font-semibold mb-4 text-sidebar-foreground">Contact</h4>
+            <div className="space-y-3 text-sidebar-foreground/60 text-sm">
               <div className="flex items-start gap-2">
                 <Mail size={16} className="mt-1 flex-shrink-0" />
-                <span>hello@digitalservices.com</span>
+                <span>info@ardelis.com</span>
               </div>
               <div className="flex items-start gap-2">
                 <Phone size={16} className="mt-1 flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>+1 (234) 567-890</span>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
@@ -144,27 +146,27 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-700 pt-8 mt-8">
+        <div className="border-t border-sidebar-border pt-8 mt-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="text-gray-400 text-sm">
-              &copy; {currentYear} Digital Services Agency. All rights reserved.
+            <p className="text-sidebar-foreground/60 text-sm">
+              &copy; {currentYear} Ardelis Digital. All rights reserved.
             </p>
             <div className="flex gap-4 mt-4 md:mt-0">
               <a
                 href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                className="text-sidebar-foreground/60 hover:text-sidebar-foreground text-sm transition-colors"
               >
                 Status
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                className="text-sidebar-foreground/60 hover:text-sidebar-foreground text-sm transition-colors"
               >
                 Support
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                className="text-sidebar-foreground/60 hover:text-sidebar-foreground text-sm transition-colors"
               >
                 Feedback
               </a>
