@@ -141,7 +141,7 @@ export default function WritingServices() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl border border-border">
+            <div className="bg-card p-8 rounded-xl border border-sidebar-border">
               <div className="flex gap-4 items-start">
                 <CheckCircle className="text-primary flex-shrink-0 mt-1" />
                 <div>
@@ -156,7 +156,7 @@ export default function WritingServices() {
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-border">
+            <div className="bg-card p-8 rounded-xl border border-sidebar-border">
               <div className="flex gap-4 items-start">
                 <CheckCircle className="text-primary flex-shrink-0 mt-1" />
                 <div>
@@ -171,7 +171,7 @@ export default function WritingServices() {
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-border">
+            <div className="bg-card p-8 rounded-xl border border-sidebar-border">
               <div className="flex gap-4 items-start">
                 <CheckCircle className="text-primary flex-shrink-0 mt-1" />
                 <div>
@@ -185,7 +185,7 @@ export default function WritingServices() {
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-border">
+            <div className="bg-card p-8 rounded-xl border border-sidebar-border">
               <div className="flex gap-4 items-start">
                 <CheckCircle className="text-primary flex-shrink-0 mt-1" />
                 <div>
