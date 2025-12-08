@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Home, Briefcase, Info, Mail, ChevronDown } from "lucide-react";
+import { Menu, X, Home, Briefcase, Info, MessageSquare, User, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 export default function Sidebar() {
@@ -119,26 +119,19 @@ export default function Sidebar() {
             </div>
           </nav>
 
-          {/* Footer Info */}
-          <div className="p-4 border-t border-sidebar-border space-y-3 text-sm text-sidebar-foreground/70">
-            <div>
-              <p className="text-xs text-sidebar-foreground/50 mb-1">Email</p>
-              <a
-                href="mailto:info@ardelis.com"
-                className="hover:text-sidebar-primary transition-colors break-all"
-              >
-                info@ardelis.com
-              </a>
-            </div>
-            <div>
-              <p className="text-xs text-sidebar-foreground/50 mb-1">WhatsApp</p>
-              <a
-                href="https://wa.me/1234567890"
-                className="hover:text-sidebar-primary transition-colors"
-              >
-                +1 (234) 567-890
-              </a>
-            </div>
+          {/* Footer Section - Live Chat and Profile */}
+          <div className="p-4 border-t border-sidebar-border space-y-3">
+            {/* Live Chat Option */}
+            <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg bg-gradient-to-r from-sidebar-primary/40 to-sidebar-accent/40 text-sidebar-foreground hover:from-sidebar-primary/60 hover:to-sidebar-accent/60 transition-all font-medium">
+              <MessageSquare size={20} />
+              <span>Live Chat</span>
+            </button>
+
+            {/* Profile Section */}
+            <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg bg-muted text-sidebar-foreground hover:bg-muted/80 transition-all font-medium">
+              <User size={20} />
+              <span>My Profile</span>
+            </button>
           </div>
         </div>
       </aside>
