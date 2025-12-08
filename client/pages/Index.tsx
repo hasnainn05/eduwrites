@@ -149,7 +149,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 sm:py-24 bg-white">
+      <section id="services" className="py-16 sm:py-24 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -166,7 +166,7 @@ export default function Home() {
               <Link
                 key={service.id}
                 to={service.link}
-                className="group relative overflow-hidden rounded-xl border border-border bg-white p-8 hover:border-primary hover:shadow-lg transition-all"
+                className="group relative overflow-hidden rounded-xl border border-sidebar-border bg-card p-8 hover:border-sidebar-primary hover:shadow-lg transition-all"
               >
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity`}
@@ -190,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-16 sm:py-24 bg-gradient-to-b from-sidebar-background to-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -206,7 +206,7 @@ export default function Home() {
             {whyChooseUs.map((item, index) => (
               <div
                 key={index}
-                className="flex gap-4 p-6 rounded-lg border border-border bg-white hover:border-primary hover:shadow-md transition-all"
+                className="flex gap-4 p-6 rounded-lg border border-sidebar-border bg-card hover:border-sidebar-primary hover:shadow-md transition-all"
               >
                 <div className="flex-shrink-0 text-3xl">{item.icon}</div>
                 <div className="flex-grow">
@@ -226,14 +226,14 @@ export default function Home() {
       {/* Testimonials Section */}
       <section
         id="testimonials"
-        className="py-16 sm:py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white"
+        className="py-16 sm:py-24 bg-sidebar-background border-y border-sidebar-border"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               What Our Clients Say
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-sidebar-foreground/70 max-w-2xl mx-auto">
               Real feedback from satisfied clients who've transformed their
               business with us
             </p>
@@ -243,14 +243,14 @@ export default function Home() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur border border-white/20 rounded-xl p-8 hover:bg-white/15 transition-colors"
+                className="bg-card border border-sidebar-border rounded-xl p-8 hover:border-sidebar-primary transition-colors"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center font-bold text-white flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-sidebar-primary to-sidebar-accent rounded-full flex items-center justify-center font-bold text-sidebar-primary-foreground flex-shrink-0">
                     {testimonial.avatar}
                   </div>
                   <div className="flex-grow">
-                    <h4 className="font-semibold text-white">
+                    <h4 className="font-semibold text-sidebar-foreground">
                       {testimonial.name}
                     </h4>
                   </div>
@@ -264,7 +264,7 @@ export default function Home() {
                     />
                   ))}
                 </div>
-                <p className="text-gray-200">{testimonial.content}</p>
+                <p className="text-sidebar-foreground/70">{testimonial.content}</p>
               </div>
             ))}
           </div>
@@ -272,7 +272,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-16 sm:py-24 bg-sidebar-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
             Ready to Get Started?
@@ -290,7 +290,7 @@ export default function Home() {
             </Link>
             <a
               href="#"
-              className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors"
+              className="inline-flex items-center justify-center gap-2 border-2 border-sidebar-primary text-sidebar-primary px-8 py-3 rounded-lg font-semibold hover:bg-sidebar-primary hover:text-sidebar-primary-foreground transition-colors"
             >
               Live Chat Support
             </a>
