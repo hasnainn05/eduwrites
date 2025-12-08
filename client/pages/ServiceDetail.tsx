@@ -1094,9 +1094,7 @@ export default function ServiceDetail() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section
-        className={`relative overflow-hidden bg-gradient-to-br ${service.heroGradient} py-16 sm:py-24`}
-      >
+      <section className="relative overflow-hidden bg-gradient-to-br from-sidebar-background to-sidebar-background/80 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-4 flex justify-center text-5xl">{service.icon}</div>
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
@@ -1109,7 +1107,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* About Section */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-16 sm:py-24 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
@@ -1123,7 +1121,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* Features/What's Included Section */}
-      <section className="py-16 sm:py-24 bg-slate-50">
+      <section className="py-16 sm:py-24 bg-sidebar-background/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-16 text-center">
             {service.featuresTitle}
@@ -1143,7 +1141,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-16 sm:py-24 bg-white">
+      <section id="pricing" className="py-16 sm:py-24 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
@@ -1213,7 +1211,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-br from-primary to-secondary text-white">
+      <section className="py-16 sm:py-24 bg-gradient-to-br from-sidebar-primary to-sidebar-accent text-sidebar-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
             {service.ctaText}
