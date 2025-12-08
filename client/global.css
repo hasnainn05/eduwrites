@@ -12,44 +12,44 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    --background: 0 0% 97%;
-    --foreground: 0 0% 15%;
+    --background: 220 13% 91%;
+    --foreground: 0 0% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card-foreground: 0 0% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
+    --popover-foreground: 0 0% 20%;
 
-    --primary: 0 0% 45%;
+    --primary: 220 7% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 55%;
+    --secondary: 220 7% 55%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 85%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 220 13% 80%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 0 0% 50%;
+    --accent: 220 7% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 97%;
+    --destructive-foreground: 220 13% 91%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 95%;
-    --ring: 0 0% 45%;
+    --border: 220 13% 85%;
+    --input: 220 13% 88%;
+    --ring: 220 7% 45%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 92%;
-    --sidebar-foreground: 0 0% 20%;
-    --sidebar-primary: 0 0% 45%;
+    --sidebar-background: 220 13% 88%;
+    --sidebar-foreground: 0 0% 25%;
+    --sidebar-primary: 220 7% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 50%;
+    --sidebar-accent: 220 7% 50%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 85%;
-    --sidebar-ring: 0 0% 45%;
+    --sidebar-border: 220 13% 80%;
+    --sidebar-ring: 220 7% 45%;
   }
 
   .light {
