@@ -1183,7 +1183,7 @@ export default function ServiceDetail() {
                   {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <CheckCircle
-                        className="text-primary flex-shrink-0 mt-0.5"
+                        className="text-sidebar-primary flex-shrink-0 mt-0.5"
                         size={18}
                       />
                       <span className="text-foreground/70 text-sm">
@@ -1196,10 +1196,10 @@ export default function ServiceDetail() {
                 <button
                   className={`w-full py-2 rounded-lg font-semibold transition-all ${
                     plan.highlighted
-                      ? "bg-gradient-to-r from-primary to-secondary text-white hover:shadow-lg"
+                      ? "bg-gradient-to-r from-sidebar-primary to-sidebar-accent text-sidebar-primary-foreground hover:shadow-lg"
                       : plan.isCustom
-                        ? "border-2 border-secondary text-secondary hover:bg-secondary hover:text-white"
-                        : "border-2 border-primary text-primary hover:bg-primary hover:text-white"
+                        ? "border-2 border-sidebar-accent text-sidebar-accent hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                        : "border-2 border-sidebar-primary text-sidebar-primary hover:bg-sidebar-primary hover:text-sidebar-primary-foreground"
                   }`}
                 >
                   {plan.cta}
@@ -1218,10 +1218,10 @@ export default function ServiceDetail() {
           </h2>
           <p className="text-lg text-white/90 mb-8">{service.ctaSubtext}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">
+            <button className="inline-flex items-center justify-center gap-2 bg-sidebar-background text-sidebar-primary px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow border border-sidebar-border">
               Order Now <ArrowRight size={20} />
             </button>
-            <button className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
+            <button className="inline-flex items-center justify-center gap-2 border-2 border-sidebar-primary text-sidebar-primary px-8 py-3 rounded-lg font-semibold hover:bg-sidebar-primary hover:text-sidebar-primary-foreground transition-colors">
               Chat with Us
             </button>
           </div>
