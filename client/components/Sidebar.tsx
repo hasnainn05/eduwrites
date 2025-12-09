@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Home, Briefcase, Info, MessageSquare, User, ChevronDown } from "lucide-react";
+import { Menu, X, Home, Briefcase, Info, MessageSquare, User, ChevronDown, Mail } from "lucide-react";
 import { useState } from "react";
 
 export default function Sidebar() {
