@@ -569,134 +569,80 @@ export default function ServiceDetail() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent via-white/5 to-transparent">
+      <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
-              Trusted by 1,000+ Students
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
+              Student Success Stories
             </h2>
-            <div className="flex justify-center gap-4 mb-4">
-              <div className="flex items-center gap-2">
-                <span className="text-yellow-400 text-lg">★★★★★</span>
-                <span className="text-foreground/70 font-semibold">4.9/5 Average</span>
-              </div>
-            </div>
-            <p className="text-foreground/70 text-lg">Real reviews from real students</p>
+            <p className="text-foreground/70">Join thousands of satisfied students</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
                 author: "Sarah Mitchell",
-                avatar: "SM",
                 rating: 5,
                 text: "Exceptional service! The essay was well-researched, original, and delivered on time. Highly recommend.",
                 course: "English Literature",
-                verified: true,
               },
               {
                 author: "Ahmed Hassan",
-                avatar: "AH",
                 rating: 5,
                 text: "Outstanding research paper! The writer understood my topic perfectly. This exceeded my expectations.",
                 course: "Business Management",
-                verified: true,
               },
               {
                 author: "Emma Rodriguez",
-                avatar: "ER",
                 rating: 5,
-                text: "Professional, reliable, and excellent quality. Customer service was incredibly responsive!",
+                text: "Professional, reliable, and excellent quality. The customer service was incredibly responsive to my questions. Will definitely use again!",
                 course: "Psychology",
-                verified: true,
               },
               {
                 author: "James Chen",
-                avatar: "JC",
                 rating: 4,
-                text: "Great work on my thesis proposal. The structure was clear and well-organized.",
+                text: "Great work on my thesis proposal. The structure was clear and well-organized. Minor revisions were made quickly without extra cost.",
                 course: "Computer Science",
-                verified: true,
               },
               {
                 author: "Lisa Anderson",
-                avatar: "LA",
                 rating: 5,
-                text: "My assignment was complex, but the writer broke it down perfectly. Quality analysis was impressive!",
+                text: "My assignment was complex, but the writer broke it down perfectly. The quality of analysis was truly impressive and helped me learn.",
                 course: "History",
-                verified: true,
               },
               {
                 author: "David Kumar",
-                avatar: "DK",
                 rating: 5,
-                text: "Fast turnaround without compromising quality. Delivered exactly what I needed. Great value!",
+                text: "Fast turnaround without compromising quality. The writer delivered exactly what I needed. Great value for the price!",
                 course: "Economics",
-                verified: true,
               },
             ].map((review, index) => (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-white/20 to-white/5 border border-white/20 rounded-2xl p-6 hover:border-cyan-400/50 hover:bg-gradient-to-br hover:from-cyan-500/10 hover:to-white/5 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2"
+                className="glass p-8 rounded-2xl border border-white/10 hover:border-white/30 transition-all"
               >
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-purple-600/0 to-cyan-600/0 group-hover:from-purple-600/20 group-hover:via-transparent group-hover:to-cyan-600/20 rounded-2xl transition-all pointer-events-none blur opacity-0 group-hover:opacity-100"></div>
+                {/* Stars */}
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                  {[...Array(5 - review.rating)].map((_, i) => (
+                    <span key={i} className="text-foreground/20 text-lg">★</span>
+                  ))}
+                </div>
 
-                <div className="relative z-10">
-                  {/* Header */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm">
-                        {review.avatar}
-                      </div>
-                      <div>
-                        <p className="font-bold text-foreground text-sm">{review.author}</p>
-                        <p className="text-foreground/60 text-xs">{review.course}</p>
-                      </div>
-                    </div>
-                    {review.verified && (
-                      <div className="bg-green-500/20 border border-green-500/30 px-2 py-1 rounded-full">
-                        <span className="text-green-400 text-xs font-bold flex items-center gap-1">
-                          ✓ Verified
-                        </span>
-                      </div>
-                    )}
-                  </div>
+                {/* Review Text */}
+                <p className="text-foreground/90 mb-6 leading-relaxed text-base">
+                  "{review.text}"
+                </p>
 
-                  {/* Stars */}
-                  <div className="flex items-center gap-1 mb-4">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <span key={i} className="text-yellow-400 text-lg">★</span>
-                    ))}
-                    {[...Array(5 - review.rating)].map((_, i) => (
-                      <span key={i} className="text-foreground/30 text-lg">★</span>
-                    ))}
-                  </div>
-
-                  {/* Review Text */}
-                  <p className="text-foreground/90 leading-relaxed text-sm mb-4">
-                    "{review.text}"
-                  </p>
-
-                  {/* Footer */}
-                  <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span className="text-cyan-400 text-xs font-semibold">Verified Purchase</span>
-                    <span className="text-foreground/40 text-xs">5 days ago</span>
-                  </div>
+                {/* Author Info */}
+                <div className="border-t border-white/10 pt-4">
+                  <p className="font-semibold text-foreground text-sm">{review.author}</p>
+                  <p className="text-foreground/60 text-xs">{review.course}</p>
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* CTA for reviews */}
-          <div className="text-center mt-16">
-            <p className="text-foreground/70 mb-6">Join thousands of satisfied students worldwide</p>
-            <Link
-              href="/order"
-              className="inline-flex items-center justify-center gap-2 gradient-primary text-white px-8 py-3 rounded-xl font-bold hover:shadow-glow transition-all transform hover:scale-105"
-            >
-              Start Your Order <ArrowRight size={18} />
-            </Link>
           </div>
         </div>
       </section>
