@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Edit, LogOut, FileText, Clock, DollarSign, Settings, User, Download, Eye, CheckCircle, ArrowRight, Star, TrendingUp, Award } from "lucide-react";
+import { Mail, Phone, MapPin, Edit, LogOut, FileText, Clock, DollarSign, Settings, User, Download, Eye, CheckCircle, ArrowRight, Star, TrendingUp, Award, Lock } from "lucide-react";
 
 export default function Profile() {
   const [activeTab, setActiveTab] = useState<"overview" | "orders" | "settings">("overview");
