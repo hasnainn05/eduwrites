@@ -417,6 +417,168 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Education Levels & Fields of Study Section */}
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/5 to-transparent">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
+              Coverage Across All Levels & Disciplines
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+              From high school essays to PhD dissertations, we support every academic level and discipline
+            </p>
+          </div>
+
+          {/* Education Levels */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Education Levels</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+              {[
+                {
+                  level: "High School",
+                  description: "Essays, reports, projects",
+                  icon: "🎒",
+                  color: "from-blue-500 to-cyan-500",
+                },
+                {
+                  level: "Undergraduate",
+                  description: "Essays, assignments, projects",
+                  icon: "🎓",
+                  color: "from-purple-500 to-pink-500",
+                },
+                {
+                  level: "Master's Degree",
+                  description: "Thesis, research papers, projects",
+                  icon: "📚",
+                  color: "from-green-500 to-emerald-500",
+                },
+                {
+                  level: "PhD & Doctorate",
+                  description: "Dissertations, research papers",
+                  icon: "🏆",
+                  color: "from-orange-500 to-red-500",
+                },
+                {
+                  level: "Professional",
+                  description: "Certifications, reports, publications",
+                  icon: "💼",
+                  color: "from-indigo-500 to-purple-500",
+                },
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className={`group glass p-6 rounded-xl border border-white/10 hover:border-white/30 transition-all transform hover:scale-105 hover:-translate-y-2 cursor-pointer`}
+                >
+                  <div className="text-4xl mb-3">{item.icon}</div>
+                  <h4 className="font-bold text-foreground mb-2">{item.level}</h4>
+                  <p className="text-sm text-foreground/70">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Fields of Study */}
+          <div>
+            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Fields of Study</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  category: "STEM",
+                  subjects: ["Physics", "Chemistry", "Biology", "Mathematics", "Computer Science", "Engineering"],
+                  icon: "🔬",
+                  color: "from-blue-500 to-cyan-500",
+                },
+                {
+                  category: "Business & Economics",
+                  subjects: ["Business Administration", "Economics", "Finance", "Marketing", "Management", "Accounting"],
+                  icon: "💼",
+                  color: "from-green-500 to-emerald-500",
+                },
+                {
+                  category: "Engineering",
+                  subjects: ["Civil", "Mechanical", "Electrical", "Chemical", "Software", "Structural"],
+                  icon: "⚙️",
+                  color: "from-orange-500 to-yellow-500",
+                },
+                {
+                  category: "Humanities & Social Sciences",
+                  subjects: ["Literature", "History", "Philosophy", "Psychology", "Sociology", "Anthropology"],
+                  icon: "📖",
+                  color: "from-purple-500 to-pink-500",
+                },
+                {
+                  category: "Health & Medical Sciences",
+                  subjects: ["Medicine", "Nursing", "Public Health", "Pharmacy", "Dentistry", "Clinical Research"],
+                  icon: "🏥",
+                  color: "from-red-500 to-pink-500",
+                },
+                {
+                  category: "Law & Legal Studies",
+                  subjects: ["Constitutional Law", "Business Law", "Criminal Law", "International Law", "Corporate Law", "Intellectual Property"],
+                  icon: "⚖️",
+                  color: "from-indigo-500 to-purple-500",
+                },
+                {
+                  category: "Arts & Design",
+                  subjects: ["Fine Arts", "Graphic Design", "Architecture", "Fashion", "Film Studies", "Music"],
+                  icon: "🎨",
+                  color: "from-pink-500 to-rose-500",
+                },
+                {
+                  category: "Education & Language",
+                  subjects: ["Education", "English Literature", "Foreign Languages", "Linguistics", "Communication", "Composition"],
+                  icon: "📚",
+                  color: "from-cyan-500 to-blue-500",
+                },
+                {
+                  category: "Environmental Studies",
+                  subjects: ["Environmental Science", "Sustainability", "Ecology", "Climate Science", "Geology", "Geography"],
+                  icon: "🌍",
+                  color: "from-green-600 to-teal-500",
+                },
+              ].map((field, idx) => (
+                <div
+                  key={idx}
+                  className="glass p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-all transform hover:scale-105 hover:-translate-y-2 group"
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <span className="text-4xl">{field.icon}</span>
+                    <h4 className="font-bold text-foreground text-lg group-hover:text-cyan-300 transition-colors">
+                      {field.category}
+                    </h4>
+                  </div>
+                  <div className="space-y-2">
+                    {field.subjects.map((subject, subIdx) => (
+                      <div key={subIdx} className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full"></span>
+                        <span className="text-sm text-foreground/80">{subject}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Additional Info */}
+            <div className="mt-12 p-8 glass rounded-2xl border border-white/10 text-center">
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                Can't Find Your Field?
+              </h3>
+              <p className="text-foreground/80 mb-6 max-w-2xl mx-auto">
+                Our expert writers cover virtually every academic discipline and subject matter.
+                If your field or subject isn't listed, we still support it. Contact us to discuss your specific needs.
+              </p>
+              <a
+                href="#"
+                className="inline-flex items-center justify-center gap-2 glass border border-cyan-400/50 text-cyan-400 px-8 py-3 rounded-xl font-semibold hover:bg-cyan-400/10 transition-all"
+              >
+                Contact Support
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us Section */}
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
