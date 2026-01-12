@@ -654,17 +654,16 @@ export default function Home() {
             </div>
 
             {/* Additional Info */}
-            <div className="mt-16 p-10 glass rounded-2xl border border-white/15 text-center bg-gradient-to-br from-white/8 to-white/4">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+            <div className="mt-12 p-8 glass rounded-xl border border-white/15 text-center bg-gradient-to-br from-white/8 to-white/4">
+              <h3 className="text-lg font-bold text-foreground mb-3">
                 Can't Find Your Field?
               </h3>
-              <p className="text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Our expert writers cover virtually every academic discipline and subject matter.
-                If your field or subject isn't listed, we still support it. Contact us to discuss your specific needs.
+              <p className="text-foreground/80 mb-6 max-w-2xl mx-auto text-sm leading-relaxed">
+                Our expert writers cover virtually every academic discipline. If your field isn't listed, we still support it.
               </p>
               <a
                 href="#"
-                className="inline-flex items-center justify-center gap-2 glass border border-cyan-400/60 text-cyan-400 px-8 py-3 rounded-xl font-semibold hover:bg-cyan-400/15 transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 glass border border-cyan-400/60 text-cyan-400 px-6 py-2 rounded-lg text-sm font-semibold hover:bg-cyan-400/15 transition-all duration-300 transform hover:scale-105"
               >
                 Contact Support
               </a>
