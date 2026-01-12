@@ -627,8 +627,13 @@ export default function Home() {
               ].map((field, idx) => (
                 <div
                   key={idx}
-                  className="glass p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-all transform hover:scale-105 hover:-translate-y-2 group"
+                  className="glass p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-all transform hover:scale-105 hover:-translate-y-2 group relative"
                 >
+                  {field.popular && (
+                    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                      Top in EU/US
+                    </div>
+                  )}
                   <div className="flex items-center gap-4 mb-4">
                     <span className="text-4xl">{field.icon}</span>
                     <h4 className="font-bold text-foreground text-lg group-hover:text-cyan-300 transition-colors">
