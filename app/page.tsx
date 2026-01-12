@@ -418,21 +418,22 @@ export default function Home() {
       </section>
 
       {/* Education Levels & Fields of Study Section */}
-      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/5 to-transparent">
+      <section className="relative py-24 sm:py-40 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/3 via-white/5 to-transparent">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-24">
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
               Coverage Across All Levels & Disciplines
             </h2>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+            <div className="h-1 w-24 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto mb-8"></div>
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed">
               From high school essays to PhD dissertations, we support every academic level and discipline
             </p>
           </div>
 
           {/* Education Levels */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Education Levels</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="mb-32">
+            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">Education Levels</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
                 {
                   level: "High School",
@@ -467,20 +468,20 @@ export default function Home() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className={`group glass p-6 rounded-xl border border-white/10 hover:border-white/30 transition-all transform hover:scale-105 hover:-translate-y-2 cursor-pointer`}
+                  className="group glass p-8 rounded-2xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-3 bg-gradient-to-br from-white/8 to-white/4"
                 >
-                  <div className="text-4xl mb-3">{item.icon}</div>
-                  <h4 className="font-bold text-foreground mb-2">{item.level}</h4>
-                  <p className="text-sm text-foreground/70">{item.description}</p>
+                  <div className="text-5xl mb-4 transform group-hover:scale-125 transition-transform duration-300">{item.icon}</div>
+                  <h4 className="font-bold text-foreground text-lg mb-3">{item.level}</h4>
+                  <p className="text-sm text-foreground/70 leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Top Universities Section - Redesigned */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Trusted by Top University Students</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Top Universities Section */}
+          <div className="mb-32">
+            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">Trusted by Top University Students</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
                   region: "United States",
@@ -509,19 +510,19 @@ export default function Home() {
               ].map((region, idx) => (
                 <div
                   key={idx}
-                  className="group relative glass p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-all transform hover:scale-105 hover:-translate-y-2"
+                  className="group glass p-8 rounded-2xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-3 bg-gradient-to-br from-white/8 to-white/4"
                 >
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-4xl">{region.icon}</span>
-                    <h4 className="font-bold text-foreground text-lg group-hover:text-cyan-300 transition-colors">
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-5xl">{region.icon}</span>
+                    <h4 className="font-bold text-foreground text-xl group-hover:text-cyan-300 transition-colors duration-300">
                       {region.region}
                     </h4>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {region.universities.map((uni, uIdx) => (
-                      <div key={uIdx} className="flex items-center gap-2">
-                        <span className="w-1 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full"></span>
-                        <span className="text-sm text-foreground/80">{uni}</span>
+                      <div key={uIdx} className="flex items-center gap-3">
+                        <span className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"></span>
+                        <span className="text-sm text-foreground/85">{uni}</span>
                       </div>
                     ))}
                   </div>
@@ -531,9 +532,9 @@ export default function Home() {
           </div>
 
           {/* Language Support */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Multi-Language Support</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div>
+            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">Multi-Language Support</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
               {[
                 { lang: "English (US)", flag: "🇺🇸" },
                 { lang: "English (UK)", flag: "🇬🇧" },
@@ -544,10 +545,10 @@ export default function Home() {
               ].map((lang, idx) => (
                 <div
                   key={idx}
-                  className="glass p-5 rounded-xl border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all text-center group transform hover:scale-110"
+                  className="group glass p-6 rounded-2xl border border-white/15 hover:border-cyan-400/60 transition-all duration-300 text-center transform hover:scale-110 hover:-translate-y-2 bg-gradient-to-br from-white/8 to-white/4 hover:from-cyan-500/10 hover:to-cyan-500/5"
                 >
-                  <p className="text-4xl mb-2 group-hover:scale-125 transition-transform">{lang.flag}</p>
-                  <p className="font-semibold text-foreground text-sm group-hover:text-cyan-300 transition-colors">
+                  <p className="text-5xl mb-3 transform group-hover:scale-130 transition-transform duration-300">{lang.flag}</p>
+                  <p className="font-semibold text-foreground text-sm group-hover:text-cyan-300 transition-colors duration-300">
                     {lang.lang}
                   </p>
                 </div>
@@ -556,12 +557,12 @@ export default function Home() {
           </div>
 
           {/* Fields of Study - Top fields in Europe & Americas highlighted */}
-          <div>
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">All Fields of Study</h3>
-            <p className="text-center text-foreground/70 mb-8 max-w-2xl mx-auto">
+          <div className="mt-32">
+            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">All Fields of Study</h3>
+            <p className="text-center text-foreground/70 mb-12 max-w-3xl mx-auto text-lg leading-relaxed">
               Specializing in fields most taught across Europe and America, plus comprehensive coverage of all academic disciplines
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
                   category: "Computer Science & IT",
