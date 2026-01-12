@@ -47,63 +47,7 @@ export default function App() {
               }
             />
             <Route
-              path="/services/writing"
-              element={
-                <Layout>
-                  <WritingServices />
-                </Layout>
-              }
-            />
-            <Route
               path="/services/writing/:slug"
-              element={
-                <Layout>
-                  <ServiceDetail />
-                </Layout>
-              }
-            />
-            <Route
-              path="/services/design"
-              element={
-                <Layout>
-                  <DesignServices />
-                </Layout>
-              }
-            />
-            <Route
-              path="/services/design/:slug"
-              element={
-                <Layout>
-                  <ServiceDetail />
-                </Layout>
-              }
-            />
-            <Route
-              path="/services/marketing"
-              element={
-                <Layout>
-                  <MarketingServices />
-                </Layout>
-              }
-            />
-            <Route
-              path="/services/marketing/:slug"
-              element={
-                <Layout>
-                  <ServiceDetail />
-                </Layout>
-              }
-            />
-            <Route
-              path="/services/development"
-              element={
-                <Layout>
-                  <DevelopmentServices />
-                </Layout>
-              }
-            />
-            <Route
-              path="/services/development/:slug"
               element={
                 <Layout>
                   <ServiceDetail />
