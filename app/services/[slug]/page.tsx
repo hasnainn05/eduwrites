@@ -8,7 +8,7 @@ import { useState } from "react";
 interface ServiceData {
   title: string;
   subtitle: string;
-  icon: string;
+  Icon: React.ComponentType<{ size: number; className: string }>;
   heroGradient: string;
   aboutTitle: string;
   aboutContent: string;
