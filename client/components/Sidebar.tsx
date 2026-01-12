@@ -33,19 +33,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
   return (
     <>
-      {/* Mobile Toggle Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed md:hidden bottom-8 right-8 z-40 bg-primary hover:bg-primary/90 text-white p-3 rounded-full shadow-lg transition-all"
-        aria-label="Toggle sidebar"
-      >
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
-
       {/* Sidebar */}
       <aside
         className={`fixed left-0 top-0 h-screen bg-sidebar-background border-r border-sidebar-border transition-all duration-300 z-30 ${
-          isOpen ? "w-64" : "w-64 max-md:translate-x-[-100%]"
+          isOpen ? "w-64 translate-x-0" : "w-64 max-md:translate-x-[-100%]"
         } md:translate-x-0 md:w-64 lg:w-72`}
       >
         {/* Sidebar Content */}
