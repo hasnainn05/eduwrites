@@ -1,110 +1,113 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Star, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle, Star } from "lucide-react";
 
 export default function Home() {
   const services = [
     {
-      id: "writing",
-      title: "Writing Services",
-      description: "Professional writing solutions for essays, research papers, and theses",
+      id: "essay",
+      title: "Essay Writing",
+      description:
+        "Professional essay writing for all academic levels and subjects",
       icon: "📝",
-      color: "from-blue-500 to-blue-600",
-      link: "/services/writing",
+      slug: "essay",
     },
     {
-      id: "design",
-      title: "Graphics & Design",
-      description:
-        "Creative design services including logos, posters, and UI/UX design",
-      icon: "🎨",
-      color: "from-purple-500 to-purple-600",
-      link: "/services/design",
+      id: "assignment",
+      title: "Assignment Writing",
+      description: "Complete assignment solutions tailored to your requirements",
+      slug: "essay",
     },
     {
-      id: "marketing",
-      title: "Marketing Services",
-      description:
-        "Drive growth with SEO, email marketing, and ecommerce solutions",
-      icon: "📈",
-      color: "from-pink-500 to-pink-600",
-      link: "/services/marketing",
+      id: "thesis",
+      title: "Thesis & Dissertation",
+      description: "Expert guidance and writing support for your thesis project",
+      slug: "thesis",
     },
     {
-      id: "development",
-      title: "IT & Development",
-      description:
-        "Web, mobile, and WordPress development services for your business",
-      icon: "💻",
-      color: "from-green-500 to-green-600",
-      link: "/services/development",
+      id: "research",
+      title: "Research Paper",
+      description: "In-depth research papers with comprehensive analysis",
+      slug: "research",
+    },
+    {
+      id: "proofreading",
+      title: "Proofreading & Editing",
+      description: "Polish your academic work with expert proofreading services",
+      slug: "essay",
+    },
+    {
+      id: "dissertation",
+      title: "Dissertation Writing",
+      description: "Complete dissertation support from planning to final submission",
+      slug: "thesis",
     },
   ];
 
   const whyChooseUs = [
     {
-      title: "Expert Team",
-      description: "Experienced professionals with proven track records",
-      icon: "👥",
+      title: "Expert Academic Writers",
+      description: "Professionals with advanced degrees and proven expertise",
+      icon: "👨‍🎓",
+    },
+    {
+      title: "100% Original Content",
+      description: "Plagiarism-free work guaranteed with quality checks",
+      icon: "✓",
     },
     {
       title: "Affordable Pricing",
-      description: "Competitive rates without compromising quality",
+      description: "Competitive rates without compromising on quality",
       icon: "💰",
     },
     {
-      title: "Quick Turnaround",
-      description: "Fast delivery without sacrificing excellence",
-      icon: "⚡",
+      title: "On-Time Delivery",
+      description: "We respect your deadlines with guaranteed timely completion",
+      icon: "⏰",
+    },
+    {
+      title: "Unlimited Revisions",
+      description: "Get it perfect with as many revisions as you need",
+      icon: "🔄",
     },
     {
       title: "24/7 Support",
-      description: "Always available to assist your needs",
-      icon: "🛟",
-    },
-    {
-      title: "Customized Solutions",
-      description: "Tailored services to fit your unique requirements",
-      icon: "🎯",
-    },
-    {
-      title: "Quality Guaranteed",
-      description: "100% satisfaction with rigorous quality control",
-      icon: "✓",
+      description: "Always available to answer your questions and concerns",
+      icon: "💬",
     },
   ];
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Business Owner",
+      name: "Alex Chen",
+      role: "University Student",
       content:
-        "The team delivered exceptional results. My website looks professional and performs beautifully. Highly recommended!",
+        "Amazing essay writing service! My paper was well-researched, properly formatted, and delivered on time. Highly recommended!",
       rating: 5,
-      avatar: "SJ",
+      avatar: "AC",
     },
     {
-      name: "Michael Chen",
-      role: "Marketing Director",
+      name: "Jamie Rodriguez",
+      role: "Graduate Student",
       content:
-        "Outstanding SEO services. Our organic traffic increased by 150% within 3 months. Great ROI!",
+        "Outstanding thesis assistance. The team understood my research perfectly and delivered exceptional results. Game-changer!",
       rating: 5,
-      avatar: "MC",
+      avatar: "JR",
     },
     {
-      name: "Emma Davis",
-      role: "Student",
+      name: "Morgan Taylor",
+      role: "College Student",
       content:
-        "Fantastic writing service. My essay was well-researched, properly formatted, and delivered on time.",
+        "Fantastic proofreading service. My assignment was polished to perfection. The attention to detail was incredible!",
       rating: 5,
-      avatar: "ED",
+      avatar: "MT",
     },
     {
-      name: "David Williams",
-      role: "Startup Founder",
+      name: "Casey Williams",
+      role: "PhD Candidate",
       content:
-        "The app development team understood our vision perfectly. They delivered a product that exceeded expectations.",
+        "Excellent research paper support. They helped organize my thoughts and deliver a paper that impressed my professor.",
       rating: 5,
-      avatar: "DW",
+      avatar: "CW",
     },
   ];
 
@@ -121,27 +124,27 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Transform Your Business with{" "}
+              Expert Academic Writing{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Digital Excellence
+                Services
               </span>
             </h1>
             <p className="text-lg sm:text-xl text-foreground/70 mb-8 max-w-2xl mx-auto">
-              Comprehensive digital services tailored to accelerate your growth.
-              From design to development, marketing to content creation.
+              Professional academic writing support for essays, research papers,
+              theses, and more. Get expert help from experienced academic writers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/services/writing"
+              <a
+                href="#services"
                 className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
               >
                 Get Started <ArrowRight size={20} />
-              </Link>
+              </a>
               <a
-                href="#services"
+                href="#"
                 className="inline-flex items-center justify-center gap-2 border-2 border-sidebar-primary text-sidebar-primary px-8 py-3 rounded-lg font-semibold hover:bg-sidebar-primary hover:text-sidebar-primary-foreground transition-colors"
               >
-                Explore Services
+                Chat with Us
               </a>
             </div>
           </div>
@@ -153,34 +156,32 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Our Services
+              Our Academic Services
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              We offer comprehensive solutions across multiple categories to meet
-              all your digital needs
+              Comprehensive academic writing solutions for all your educational
+              needs
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
               <Link
                 key={service.id}
-                to={service.link}
-                className="group relative overflow-hidden rounded-xl border border-sidebar-border bg-card p-8 hover:border-sidebar-primary hover:shadow-lg transition-all"
+                to={`/services/writing/${service.slug}`}
+                className="group relative overflow-hidden rounded-xl border border-sidebar-border bg-card p-6 hover:border-sidebar-primary hover:shadow-lg transition-all"
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity`}
-                ></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-sidebar-primary/5 to-sidebar-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10">
                   <div className="text-4xl mb-4">{service.icon}</div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-foreground/70 mb-4">
+                  <p className="text-foreground/70 mb-4 text-sm">
                     {service.description}
                   </p>
-                  <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
-                    Learn More <ArrowRight size={20} />
+                  <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all text-sm">
+                    Learn More <ArrowRight size={16} />
                   </div>
                 </div>
               </Link>
@@ -194,11 +195,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Why Choose Us?
+              Why Choose Our Academic Services?
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              We're committed to delivering exceptional value and results for every
-              client
+              We're dedicated to helping students succeed with quality, ethical
+              academic support
             </p>
           </div>
 
@@ -231,11 +232,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              What Our Clients Say
+              What Our Students Say
             </h2>
             <p className="text-lg text-sidebar-foreground/70 max-w-2xl mx-auto">
-              Real feedback from satisfied clients who've transformed their
-              business with us
+              Real feedback from students who've improved their grades with our
+              support
             </p>
           </div>
 
@@ -253,6 +254,9 @@ export default function Home() {
                     <h4 className="font-semibold text-sidebar-foreground">
                       {testimonial.name}
                     </h4>
+                    <p className="text-xs text-sidebar-foreground/60">
+                      {testimonial.role}
+                    </p>
                   </div>
                 </div>
                 <div className="flex gap-1 mb-4">
@@ -275,19 +279,19 @@ export default function Home() {
       <section className="py-16 sm:py-24 bg-sidebar-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Ready to Get Started?
+            Ready to Boost Your Academic Success?
           </h2>
           <p className="text-lg text-foreground/70 mb-8">
-            Join hundreds of satisfied clients who've already transformed their
-            business with our digital services.
+            Join thousands of students who've improved their grades with our
+            expert academic writing services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/services/writing"
+            <a
+              href="#services"
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
             >
-              Hire Us Now <ArrowRight size={20} />
-            </Link>
+              Order Now <ArrowRight size={20} />
+            </a>
             <a
               href="#"
               className="inline-flex items-center justify-center gap-2 border-2 border-sidebar-primary text-sidebar-primary px-8 py-3 rounded-lg font-semibold hover:bg-sidebar-primary hover:text-sidebar-primary-foreground transition-colors"
