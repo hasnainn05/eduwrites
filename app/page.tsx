@@ -359,8 +359,8 @@ export default function Home() {
                   <div className="text-4xl group-hover:scale-110 transition-transform">
                     {project.icon}
                   </div>
-                  <span className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 px-3 py-1 rounded-full text-xs font-bold">
-                    {project.grade}
+                  <span className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-bold">
+                    {project.result}
                   </span>
                 </div>
 
@@ -368,12 +368,9 @@ export default function Home() {
                   {project.title}
                 </h3>
 
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full">
-                    {project.category}
-                  </span>
-                  <span className="text-xs text-foreground/60">{project.subject}</span>
-                </div>
+                <span className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full inline-block mb-3">
+                  {project.category}
+                </span>
 
                 <p className="text-foreground/80 text-sm mb-4 leading-relaxed">
                   {project.description}
@@ -381,7 +378,7 @@ export default function Home() {
 
                 <div className="border-t border-white/10 pt-4">
                   <p className="text-xs text-foreground/60">
-                    By: <span className="text-foreground font-semibold">{project.student}</span>
+                    <span className="text-foreground font-semibold">{project.student}</span>
                   </p>
                 </div>
               </div>
