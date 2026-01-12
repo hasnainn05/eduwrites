@@ -2,7 +2,8 @@
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, X } from "lucide-react";
+import { useState } from "react";
 
 interface ServiceData {
   title: string;
@@ -256,6 +257,47 @@ export default function ServiceDetail() {
   const slug = params.slug as string;
   const service = slug ? servicesData[slug] : null;
 
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const [orderForm, setOrderForm] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    wordCount: "",
+    deadline: "",
+    budget: "",
+    academicLevel: "undergraduate",
+    assignmentDetails: "",
+    attachments: "" as File | null,
+  });
+
+  const handleOrderChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    if (name === "attachments") {
+      const file = (e.target as HTMLInputElement).files?.[0] || null;
+      setOrderForm((prev) => ({ ...prev, attachments: file }));
+    } else {
+      setOrderForm((prev) => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleSubmitOrder = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Order submitted:", orderForm, "Plan:", selectedPlan);
+    alert("Order submitted successfully! We'll contact you shortly.");
+    setSelectedPlan(null);
+    setOrderForm({
+      fullName: "",
+      email: "",
+      phone: "",
+      wordCount: "",
+      deadline: "",
+      budget: "",
+      academicLevel: "undergraduate",
+      assignmentDetails: "",
+      attachments: null,
+    });
+  };
+
   if (!service) {
     return (
       <div className="w-full min-h-screen flex items-center justify-center">
@@ -443,16 +485,16 @@ export default function ServiceDetail() {
                     ))}
                   </ul>
 
-                  <Link
-                    href="/order"
-                    className={`w-full py-3 rounded-lg font-bold transition-all transform hover:scale-105 text-center ${
+                  <button
+                    onClick={() => setSelectedPlan(plan.name)}
+                    className={`w-full py-3 rounded-lg font-bold transition-all transform hover:scale-105 ${
                       plan.highlighted
                         ? "gradient-primary text-white shadow-glow hover:shadow-glow"
                         : "border-2 border-white/20 text-foreground hover:border-white/40 hover:bg-white/10"
                     }`}
                   >
                     {plan.cta}
-                  </Link>
+                  </button>
                 </div>
 
                 {/* Border Gradient */}
