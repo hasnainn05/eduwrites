@@ -304,14 +304,63 @@ export default function ServiceDetail() {
 
       {/* About Section */}
       <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto space-y-8">
           <div className="glass p-12 rounded-2xl">
             <h2 className="text-4xl font-bold text-foreground mb-8 font-poppins">
               {service.aboutTitle}
             </h2>
-            <p className="text-lg text-foreground/80 leading-relaxed">
+            <p className="text-lg text-foreground/80 leading-relaxed mb-6">
               {service.aboutContent}
             </p>
+            <p className="text-lg text-foreground/80 leading-relaxed">
+              At Ardelis, we pride ourselves on delivering exceptional quality and maintaining the highest standards of academic integrity. Every piece of work goes through rigorous quality assurance checks to ensure it meets your expectations and exceeds academic requirements. Our team is dedicated to your success and committed to providing you with work that truly makes a difference in your academic journey.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="glass p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold text-foreground mb-4 font-poppins">Why Choose This Service?</h3>
+              <ul className="space-y-3">
+                <li className="flex gap-3">
+                  <span className="text-cyan-400 font-bold">✓</span>
+                  <span className="text-foreground/80">Expert writers with advanced degrees in relevant fields</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-cyan-400 font-bold">✓</span>
+                  <span className="text-foreground/80">100% plagiarism-free original work guaranteed</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-cyan-400 font-bold">✓</span>
+                  <span className="text-foreground/80">On-time delivery with revision guarantees</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-cyan-400 font-bold">✓</span>
+                  <span className="text-foreground/80">Flexible turnaround times to fit your schedule</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="glass p-8 rounded-2xl">
+              <h3 className="text-2xl font-bold text-foreground mb-4 font-poppins">Our Process</h3>
+              <ol className="space-y-3">
+                <li className="flex gap-3">
+                  <span className="text-purple-400 font-bold">1.</span>
+                  <span className="text-foreground/80"><strong>Submit Details:</strong> Share your requirements and specifications</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-purple-400 font-bold">2.</span>
+                  <span className="text-foreground/80"><strong>Expert Assignment:</strong> We match you with the best writer</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-purple-400 font-bold">3.</span>
+                  <span className="text-foreground/80"><strong>Quality Check:</strong> Multiple rounds of review for excellence</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-purple-400 font-bold">4.</span>
+                  <span className="text-foreground/80"><strong>Delivery:</strong> Receive your work on time, every time</span>
+                </li>
+              </ol>
+            </div>
           </div>
         </div>
       </section>
