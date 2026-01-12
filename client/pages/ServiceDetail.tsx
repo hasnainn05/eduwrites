@@ -1072,19 +1072,19 @@ export default function ServiceDetail() {
 
   if (!service) {
     return (
-      <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
+      <div className="w-full min-h-screen flex items-center justify-center">
+        <div className="text-center glass p-12 rounded-2xl max-w-md mx-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4 font-poppins">
             Service Not Found
           </h1>
           <p className="text-foreground/70 mb-8">
             The service you're looking for doesn't exist.
           </p>
           <a
-            href="/services/writing"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
+            href="/"
+            className="inline-flex items-center gap-2 gradient-primary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-glow transition-all"
           >
-            Back to Services
+            Back to Home
           </a>
         </div>
       </div>
@@ -1093,47 +1093,58 @@ export default function ServiceDetail() {
 
   return (
     <div className="w-full">
+      {/* Animated Background */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="blur-gradient absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-600 to-transparent"></div>
+        <div className="blur-gradient absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-500 to-transparent animation-delay-2000"></div>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-sidebar-background to-sidebar-background/80 py-16 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-4 flex justify-center text-5xl">{service.icon}</div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+      <section className="relative py-24 sm:py-40 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="mb-8 flex justify-center text-7xl animate-float">
+            {service.icon}
+          </div>
+
+          <h1 className="text-5xl sm:text-7xl font-bold text-foreground mb-6 font-poppins">
             {service.title}
           </h1>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+
+          <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
             {service.subtitle}
           </p>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-16 sm:py-24 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+      <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="glass p-12 rounded-2xl">
+            <h2 className="text-4xl font-bold text-foreground mb-8 font-poppins">
               {service.aboutTitle}
             </h2>
-            <p className="text-lg text-foreground/70 leading-relaxed mb-8">
+            <p className="text-lg text-foreground/80 leading-relaxed">
               {service.aboutContent}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Features/What's Included Section */}
-      <section className="py-16 sm:py-24 bg-sidebar-background/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-16 text-center">
+      {/* Features Section */}
+      <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-16 text-center font-poppins">
             {service.featuresTitle}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {service.features.map((feature, index) => (
-              <div key={index} className="flex gap-4 items-start">
-                <CheckCircle className="text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <p className="text-foreground/70">{feature}</p>
-                </div>
+              <div
+                key={index}
+                className="glass p-6 rounded-xl flex gap-4 items-start hover:bg-white/20 transition-all transform hover:scale-105 hover:-translate-y-1"
+              >
+                <CheckCircle className="text-cyan-400 flex-shrink-0 mt-1 w-5 h-5" />
+                <p className="text-foreground/90 font-medium">{feature}</p>
               </div>
             ))}
           </div>
@@ -1141,14 +1152,14 @@ export default function ServiceDetail() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-16 sm:py-24 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="pricing" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
               Simple, Transparent Pricing
             </h2>
             <p className="text-lg text-foreground/70">
-              Choose the package that best fits your needs
+              Choose the perfect plan for your academic needs
             </p>
           </div>
 
@@ -1156,54 +1167,66 @@ export default function ServiceDetail() {
             {service.pricing.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative rounded-xl border p-8 transition-all ${
-                  plan.highlighted
-                    ? "border-sidebar-primary bg-gradient-to-br from-sidebar-primary/5 to-sidebar-accent/5 md:scale-105 shadow-lg"
-                    : "border-sidebar-border bg-card hover:border-sidebar-primary hover:shadow-md"
-                } ${plan.isCustom ? "border-sidebar-accent bg-gradient-to-br from-sidebar-accent/5 to-sidebar-accent/10" : ""}`}
+                className={`relative rounded-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-4 overflow-hidden group ${
+                  plan.highlighted ? "lg:col-span-1 lg:row-span-2" : ""
+                }`}
               >
-                {plan.highlighted && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <span className="bg-gradient-to-r from-sidebar-primary to-sidebar-accent text-sidebar-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                      Most Popular
+                {/* Glass Background */}
+                <div className={`absolute inset-0 ${plan.highlighted ? "glass-dark" : "glass"}`}></div>
+
+                {/* Content */}
+                <div className="relative z-10 p-8 h-full flex flex-col">
+                  {plan.highlighted && (
+                    <div className="absolute top-4 right-4">
+                      <span className="gradient-primary text-white px-4 py-2 rounded-full text-sm font-bold shadow-glow">
+                        ⭐ Most Popular
+                      </span>
+                    </div>
+                  )}
+
+                  <h3 className="text-2xl font-bold text-foreground mb-4 pt-4">
+                    {plan.name}
+                  </h3>
+
+                  <div className="mb-8">
+                    <span className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                      {plan.price}
                     </span>
                   </div>
-                )}
 
-                <h3 className="text-xl font-bold text-foreground mb-2">
-                  {plan.name}
-                </h3>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold bg-gradient-to-r from-sidebar-primary to-sidebar-accent bg-clip-text text-transparent">
-                    {plan.price}
-                  </span>
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {plan.features.map((feature, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle
+                          className="text-cyan-400 flex-shrink-0 mt-0.5 w-4 h-4"
+                          size={16}
+                        />
+                        <span className="text-foreground/80 text-sm">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <button
+                    className={`w-full py-3 rounded-lg font-bold transition-all transform hover:scale-105 ${
+                      plan.highlighted
+                        ? "gradient-primary text-white shadow-glow hover:shadow-glow"
+                        : "border-2 border-white/20 text-foreground hover:border-white/40 hover:bg-white/10"
+                    }`}
+                  >
+                    {plan.cta}
+                  </button>
                 </div>
 
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle
-                        className="text-sidebar-primary flex-shrink-0 mt-0.5"
-                        size={18}
-                      />
-                      <span className="text-foreground/70 text-sm">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <button
-                  className={`w-full py-2 rounded-lg font-semibold transition-all ${
+                {/* Border Gradient */}
+                <div
+                  className={`absolute inset-0 rounded-2xl pointer-events-none ${
                     plan.highlighted
-                      ? "bg-gradient-to-r from-sidebar-primary to-sidebar-accent text-sidebar-primary-foreground hover:shadow-lg"
-                      : plan.isCustom
-                        ? "border-2 border-sidebar-accent text-sidebar-accent hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
-                        : "border-2 border-sidebar-primary text-sidebar-primary hover:bg-sidebar-primary hover:text-sidebar-primary-foreground"
-                  }`}
-                >
-                  {plan.cta}
-                </button>
+                      ? "border border-white/30 group-hover:border-white/50"
+                      : "border border-white/10 group-hover:border-white/30"
+                  } transition-colors`}
+                ></div>
               </div>
             ))}
           </div>
@@ -1211,17 +1234,26 @@ export default function ServiceDetail() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-br from-sidebar-primary to-sidebar-accent text-sidebar-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+      <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 blur-gradient bg-gradient-to-r from-purple-600 to-transparent opacity-40 top-0 left-0 -z-10"></div>
+        <div className="absolute inset-0 blur-gradient bg-gradient-to-l from-cyan-600 to-transparent opacity-40 bottom-0 right-0 -z-10"></div>
+
+        <div className="max-w-4xl mx-auto relative z-10 text-center">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-8 font-poppins">
             {service.ctaText}
           </h2>
-          <p className="text-lg text-white/90 mb-8">{service.ctaSubtext}</p>
+
+          <p className="text-lg text-foreground/80 mb-12">
+            {service.ctaSubtext}
+          </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="inline-flex items-center justify-center gap-2 bg-sidebar-background text-sidebar-primary px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow border border-sidebar-border">
+            <button className="inline-flex items-center justify-center gap-2 gradient-primary text-white px-10 py-4 rounded-xl font-bold hover:shadow-glow transition-all transform hover:scale-105">
               Order Now <ArrowRight size={20} />
             </button>
-            <button className="inline-flex items-center justify-center gap-2 border-2 border-sidebar-primary text-sidebar-primary px-8 py-3 rounded-lg font-semibold hover:bg-sidebar-primary hover:text-sidebar-primary-foreground transition-colors">
+
+            <button className="inline-flex items-center justify-center gap-2 glass text-foreground px-10 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all">
               Chat with Us
             </button>
           </div>
