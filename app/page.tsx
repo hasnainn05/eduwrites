@@ -556,17 +556,17 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Fields of Study - Top fields in Europe & Americas highlighted */}
+          {/* Fields of Study - All Disciplines */}
           <div className="mt-32">
-            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">All Fields of Study</h3>
-            <p className="text-center text-foreground/70 mb-12 max-w-3xl mx-auto text-lg leading-relaxed">
-              Specializing in fields most taught across Europe and America, plus comprehensive coverage of all academic disciplines
+            <h3 className="text-3xl font-bold text-foreground mb-8 text-center">All Fields of Study</h3>
+            <p className="text-center text-foreground/70 mb-12 max-w-2xl mx-auto text-base leading-relaxed">
+              Comprehensive coverage of all academic disciplines, with specialization in Europe and America's most popular fields
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
                   category: "Computer Science & IT",
-                  subjects: ["Software Engineering", "Data Science", "Artificial Intelligence", "Cybersecurity", "Web Development", "Cloud Computing"],
+                  subjects: ["Software Engineering", "Data Science", "AI & Machine Learning", "Cybersecurity", "Web Development", "Cloud Computing"],
                   icon: "💻",
                   color: "from-blue-500 to-cyan-500",
                   popular: true,
@@ -594,14 +594,14 @@ export default function Home() {
                 },
                 {
                   category: "Law & Legal Studies",
-                  subjects: ["Constitutional Law", "Business Law", "Criminal Law", "International Law", "Corporate Law", "Intellectual Property"],
+                  subjects: ["Constitutional Law", "Business Law", "Criminal Law", "International Law", "Corporate Law", "IP Law"],
                   icon: "⚖️",
                   color: "from-indigo-500 to-purple-500",
                   popular: true,
                 },
                 {
                   category: "Psychology & Social Sciences",
-                  subjects: ["Psychology", "Sociology", "Anthropology", "Political Science", "Social Work", "Behavioral Sciences"],
+                  subjects: ["Psychology", "Sociology", "Anthropology", "Political Science", "Social Work", "Behavioral Studies"],
                   icon: "🧠",
                   color: "from-purple-500 to-pink-500",
                   popular: true,
@@ -628,24 +628,24 @@ export default function Home() {
               ].map((field, idx) => (
                 <div
                   key={idx}
-                  className="glass p-8 rounded-2xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-3 group relative bg-gradient-to-br from-white/8 to-white/4"
+                  className="glass p-6 rounded-xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group relative bg-gradient-to-br from-white/8 to-white/4"
                 >
                   {field.popular && (
-                    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg shadow-cyan-500/50">
+                    <div className="absolute -top-2 -right-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-3 py-0.5 rounded-full text-xs font-bold shadow-lg shadow-cyan-500/50">
                       Top in EU/US
                     </div>
                   )}
-                  <div className="flex items-center gap-4 mb-6">
-                    <span className="text-5xl group-hover:scale-125 transition-transform duration-300">{field.icon}</span>
-                    <h4 className="font-bold text-foreground text-lg group-hover:text-cyan-300 transition-colors duration-300">
+                  <div className="flex items-start gap-3 mb-4">
+                    <span className="text-4xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">{field.icon}</span>
+                    <h4 className="font-bold text-foreground text-base group-hover:text-cyan-300 transition-colors duration-300 leading-tight">
                       {field.category}
                     </h4>
                   </div>
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     {field.subjects.map((subject, subIdx) => (
-                      <div key={subIdx} className="flex items-center gap-3">
-                        <span className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"></span>
-                        <span className="text-sm text-foreground/85">{subject}</span>
+                      <div key={subIdx} className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex-shrink-0"></span>
+                        <span className="text-xs text-foreground/85 leading-tight">{subject}</span>
                       </div>
                     ))}
                   </div>
