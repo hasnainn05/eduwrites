@@ -477,72 +477,54 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Top Fields in Europe & Americas */}
+          {/* Top Universities Section - Redesigned */}
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Most Popular Fields in Europe & Americas</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Trusted by Top University Students</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { name: "Computer Science & IT", usage: "99%", icon: "💻" },
-                { name: "Business & Finance", usage: "98%", icon: "💼" },
-                { name: "Engineering", usage: "97%", icon: "⚙️" },
-                { name: "Medicine & Healthcare", usage: "96%", icon: "🏥" },
-                { name: "Psychology & Sociology", usage: "94%", icon: "🧠" },
-                { name: "Law & Legal Studies", usage: "93%", icon: "⚖️" },
-                { name: "Environmental Science", usage: "91%", icon: "🌍" },
-                { name: "Data Science & Analytics", usage: "95%", icon: "📊" },
-              ].map((field, idx) => (
+                {
+                  region: "United States",
+                  icon: "🇺🇸",
+                  universities: ["Harvard", "Stanford", "MIT", "Yale", "Princeton", "UC Berkeley"],
+                  color: "from-blue-500 to-cyan-500"
+                },
+                {
+                  region: "United Kingdom",
+                  icon: "🇬🇧",
+                  universities: ["Oxford", "Cambridge", "LSE", "Imperial", "UCL", "Edinburgh"],
+                  color: "from-purple-500 to-pink-500"
+                },
+                {
+                  region: "Europe",
+                  icon: "🇪🇺",
+                  universities: ["ETH Zurich", "Sorbonne", "TU Munich", "Amsterdam", "Copenhagen", "Uppsala"],
+                  color: "from-green-500 to-emerald-500"
+                },
+                {
+                  region: "International",
+                  icon: "🌍",
+                  universities: ["University of Toronto", "University of Melbourne", "NUS Singapore", "University of Tokyo", "ANU", "Seoul National"],
+                  color: "from-orange-500 to-yellow-500"
+                },
+              ].map((region, idx) => (
                 <div
                   key={idx}
-                  className="glass p-4 rounded-xl border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all transform hover:scale-105"
+                  className="group relative glass p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-all transform hover:scale-105 hover:-translate-y-2"
                 >
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-2xl">{field.icon}</span>
-                    <h4 className="font-semibold text-foreground text-sm">{field.name}</h4>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">{region.icon}</span>
+                    <h4 className="font-bold text-foreground text-lg group-hover:text-cyan-300 transition-colors">
+                      {region.region}
+                    </h4>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-cyan-500 to-purple-500"
-                        style={{ width: field.usage }}
-                      ></div>
-                    </div>
-                    <span className="text-xs font-bold text-cyan-400">{field.usage}</span>
+                  <div className="space-y-2">
+                    {region.universities.map((uni, uIdx) => (
+                      <div key={uIdx} className="flex items-center gap-2">
+                        <span className="w-1 h-1 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full"></span>
+                        <span className="text-sm text-foreground/80">{uni}</span>
+                      </div>
+                    ))}
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Top Universities Section */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Trusted by Students from Top Universities</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {[
-                { name: "Harvard University", region: "USA" },
-                { name: "Stanford University", region: "USA" },
-                { name: "MIT", region: "USA" },
-                { name: "Oxford University", region: "UK" },
-                { name: "Cambridge University", region: "UK" },
-                { name: "ETH Zurich", region: "Switzerland" },
-                { name: "UC Berkeley", region: "USA" },
-                { name: "Yale University", region: "USA" },
-                { name: "Princeton University", region: "USA" },
-                { name: "University of Toronto", region: "Canada" },
-                { name: "LSE", region: "UK" },
-                { name: "Sorbonne University", region: "France" },
-                { name: "Technical University of Munich", region: "Germany" },
-                { name: "University of Melbourne", region: "Australia" },
-                { name: "NUS Singapore", region: "Singapore" },
-                { name: "University of Tokyo", region: "Japan" },
-              ].map((uni, idx) => (
-                <div
-                  key={idx}
-                  className="glass p-4 rounded-lg border border-white/10 hover:border-purple-400/50 hover:bg-purple-400/10 transition-all text-center group"
-                >
-                  <p className="font-semibold text-foreground text-sm group-hover:text-purple-300 transition-colors">
-                    {uni.name}
-                  </p>
-                  <p className="text-xs text-foreground/60 mt-1">{uni.region}</p>
                 </div>
               ))}
             </div>
@@ -551,40 +533,26 @@ export default function Home() {
           {/* Language Support */}
           <div className="mb-16">
             <h3 className="text-2xl font-bold text-foreground mb-8 text-center">Multi-Language Support</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {[
-                { lang: "English", flag: "🇬🇧", support: "Full Support" },
-                { lang: "Spanish", flag: "🇪🇸", support: "Full Support" },
-                { lang: "French", flag: "🇫🇷", support: "Full Support" },
-                { lang: "German", flag: "🇩🇪", support: "Full Support" },
-                { lang: "Italian", flag: "🇮🇹", support: "Full Support" },
-                { lang: "Portuguese", flag: "🇵🇹", support: "Full Support" },
-                { lang: "Dutch", flag: "🇳🇱", support: "Full Support" },
-                { lang: "Swedish", flag: "🇸🇪", support: "Full Support" },
-                { lang: "Norwegian", flag: "🇳🇴", support: "Full Support" },
-                { lang: "Danish", flag: "🇩🇰", support: "Full Support" },
-                { lang: "Polish", flag: "🇵🇱", support: "Full Support" },
-                { lang: "Russian", flag: "🇷🇺", support: "Full Support" },
-                { lang: "Chinese", flag: "🇨🇳", support: "Full Support" },
-                { lang: "Japanese", flag: "🇯🇵", support: "Full Support" },
-                { lang: "Korean", flag: "🇰🇷", support: "Full Support" },
-                { lang: "Arabic", flag: "🇸🇦", support: "Full Support" },
+                { lang: "English (US)", flag: "🇺🇸" },
+                { lang: "English (UK)", flag: "🇬🇧" },
+                { lang: "French", flag: "🇫🇷" },
+                { lang: "German", flag: "🇩🇪" },
+                { lang: "Italian", flag: "🇮🇹" },
+                { lang: "Dutch", flag: "🇳🇱" },
               ].map((lang, idx) => (
                 <div
                   key={idx}
-                  className="glass p-5 rounded-xl border border-white/10 hover:border-green-400/50 hover:bg-green-400/10 transition-all text-center group"
+                  className="glass p-5 rounded-xl border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all text-center group transform hover:scale-110"
                 >
-                  <p className="text-3xl mb-2">{lang.flag}</p>
-                  <p className="font-semibold text-foreground group-hover:text-green-300 transition-colors">
+                  <p className="text-4xl mb-2 group-hover:scale-125 transition-transform">{lang.flag}</p>
+                  <p className="font-semibold text-foreground text-sm group-hover:text-cyan-300 transition-colors">
                     {lang.lang}
                   </p>
-                  <p className="text-xs text-green-400 mt-2 font-semibold">{lang.support}</p>
                 </div>
               ))}
             </div>
-            <p className="text-center text-foreground/70 mt-6 text-sm">
-              Works with assignments and papers in any language. Expert writers fluent in major world languages.
-            </p>
           </div>
 
           {/* Fields of Study */}
