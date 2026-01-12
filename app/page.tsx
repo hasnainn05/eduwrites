@@ -117,6 +117,38 @@ export default function Home() {
       rating: 5,
       avatar: "CW",
     },
+    {
+      name: "Sarah Johnson",
+      role: "Master's Student",
+      content:
+        "The dissertation writing support was exceptional. Professional writers who truly understand academic standards. Worth every penny!",
+      rating: 5,
+      avatar: "SJ",
+    },
+    {
+      name: "Michael Park",
+      role: "Undergraduate Student",
+      content:
+        "Great help with my research paper. The writers provided excellent insights and the final work exceeded my expectations. Highly satisfied!",
+      rating: 5,
+      avatar: "MP",
+    },
+    {
+      name: "Emily Watson",
+      role: "College Student",
+      content:
+        "Quick turnaround, professional quality, and responsive support team. This service helped me maintain my GPA. Definitely recommending to friends!",
+      rating: 5,
+      avatar: "EW",
+    },
+    {
+      name: "David Kumar",
+      role: "PhD Researcher",
+      content:
+        "Exceptional quality in research paper writing. The team's expertise in my field was evident. Perfect collaboration from start to finish.",
+      rating: 5,
+      avatar: "DK",
+    },
   ];
 
   return (
