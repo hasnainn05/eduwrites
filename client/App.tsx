@@ -60,6 +60,22 @@ export default function App() {
               }
             />
             <Route
+              path="/about"
+              element={
+                <Layout>
+                  <About />
+                </Layout>
+              }
+            />
+            <Route
+              path="/order"
+              element={
+                <Layout>
+                  <Order />
+                </Layout>
+              }
+            />
+            <Route
               path="/login"
               element={
                 <Layout>
