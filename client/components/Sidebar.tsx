@@ -107,7 +107,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                     <Link
                       key={link.path}
                       to={link.path}
-                      onClick={() => setIsOpen(false)}
+                      onClick={onClose}
                       className={`flex items-center gap-3 px-4 py-2 rounded-lg transition-all text-sm ${
                         isActive(link.path)
                           ? "bg-sidebar-accent text-sidebar-accent-foreground"
