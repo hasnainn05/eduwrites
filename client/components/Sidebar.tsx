@@ -143,7 +143,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/50 md:hidden z-20"
-          onClick={() => setIsOpen(false)}
+          onClick={onClose}
         />
       )}
     </>
