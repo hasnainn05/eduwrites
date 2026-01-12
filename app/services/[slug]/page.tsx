@@ -104,7 +104,7 @@ const servicesData: Record<string, ServiceData> = {
   research: {
     title: "Research Paper Writing",
     subtitle: "In-Depth Research and Academic Excellence",
-    icon: "🔬",
+    Icon: BarChart3,
     heroGradient: "from-purple-50 to-pink-50",
     aboutTitle: "About Research Paper Writing",
     aboutContent:
