@@ -288,7 +288,7 @@ export default function Home() {
               <Link
                 key={service.id}
                 href={`/services/${service.slug}`}
-                className="group relative overflow-hidden rounded-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2"
+                className="group relative overflow-hidden rounded-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 h-full flex flex-col"
               >
                 {/* Glass Background */}
                 <div className="absolute inset-0 glass"></div>
@@ -299,20 +299,20 @@ export default function Home() {
                 ></div>
 
                 {/* Content */}
-                <div className="relative z-10 p-8">
+                <div className="relative z-10 p-8 flex flex-col h-full">
                   <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform">
                     {service.icon}
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {service.title}
                   </h3>
-                  
-                  <p className="text-foreground/70 mb-6 text-sm leading-relaxed">
+
+                  <p className="text-foreground/70 mb-6 text-sm leading-relaxed flex-grow">
                     {service.description}
                   </p>
-                  
-                  <div className="flex items-center gap-2 text-cyan-400 font-semibold group-hover:gap-3 transition-all">
+
+                  <div className="flex items-center gap-2 text-cyan-400 font-semibold group-hover:gap-3 transition-all mt-auto">
                     Learn More <ArrowRight size={18} />
                   </div>
                 </div>
