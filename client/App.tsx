@@ -38,6 +38,10 @@ export default function App() {
               }
             />
             <Route
+              path="/services/writing"
+              element={<Navigate to="/#services" replace />}
+            />
+            <Route
               path="/services/writing/:slug"
               element={
                 <Layout>
