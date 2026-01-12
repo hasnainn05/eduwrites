@@ -555,64 +555,74 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Fields of Study */}
+          {/* Fields of Study - Top fields in Europe & Americas highlighted */}
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-8 text-center">All Fields of Study</h3>
+            <p className="text-center text-foreground/70 mb-8 max-w-2xl mx-auto">
+              Specializing in fields most taught across Europe and America, plus comprehensive coverage of all academic disciplines
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  category: "STEM",
-                  subjects: ["Physics", "Chemistry", "Biology", "Mathematics", "Computer Science", "Engineering"],
-                  icon: "🔬",
+                  category: "Computer Science & IT",
+                  subjects: ["Software Engineering", "Data Science", "Artificial Intelligence", "Cybersecurity", "Web Development", "Cloud Computing"],
+                  icon: "💻",
                   color: "from-blue-500 to-cyan-500",
+                  popular: true,
                 },
                 {
-                  category: "Business & Economics",
-                  subjects: ["Business Administration", "Economics", "Finance", "Marketing", "Management", "Accounting"],
+                  category: "Business & Finance",
+                  subjects: ["Business Administration", "Finance", "Economics", "Marketing", "Management", "Accounting"],
                   icon: "💼",
                   color: "from-green-500 to-emerald-500",
+                  popular: true,
                 },
                 {
                   category: "Engineering",
-                  subjects: ["Civil", "Mechanical", "Electrical", "Chemical", "Software", "Structural"],
+                  subjects: ["Civil Engineering", "Mechanical Engineering", "Electrical Engineering", "Chemical Engineering", "Software Engineering", "Structural"],
                   icon: "⚙️",
                   color: "from-orange-500 to-yellow-500",
+                  popular: true,
                 },
                 {
-                  category: "Humanities & Social Sciences",
-                  subjects: ["Literature", "History", "Philosophy", "Psychology", "Sociology", "Anthropology"],
-                  icon: "📖",
-                  color: "from-purple-500 to-pink-500",
-                },
-                {
-                  category: "Health & Medical Sciences",
+                  category: "Medicine & Healthcare",
                   subjects: ["Medicine", "Nursing", "Public Health", "Pharmacy", "Dentistry", "Clinical Research"],
                   icon: "🏥",
                   color: "from-red-500 to-pink-500",
+                  popular: true,
                 },
                 {
                   category: "Law & Legal Studies",
                   subjects: ["Constitutional Law", "Business Law", "Criminal Law", "International Law", "Corporate Law", "Intellectual Property"],
                   icon: "⚖️",
                   color: "from-indigo-500 to-purple-500",
+                  popular: true,
+                },
+                {
+                  category: "Psychology & Social Sciences",
+                  subjects: ["Psychology", "Sociology", "Anthropology", "Political Science", "Social Work", "Behavioral Sciences"],
+                  icon: "🧠",
+                  color: "from-purple-500 to-pink-500",
+                  popular: true,
+                },
+                {
+                  category: "Environmental Science",
+                  subjects: ["Environmental Science", "Sustainability", "Ecology", "Climate Science", "Geology", "Geography"],
+                  icon: "🌍",
+                  color: "from-green-600 to-teal-500",
+                  popular: true,
+                },
+                {
+                  category: "Humanities & Literature",
+                  subjects: ["English Literature", "History", "Philosophy", "Foreign Languages", "Linguistics", "Composition"],
+                  icon: "📚",
+                  color: "from-cyan-500 to-blue-500",
                 },
                 {
                   category: "Arts & Design",
                   subjects: ["Fine Arts", "Graphic Design", "Architecture", "Fashion", "Film Studies", "Music"],
                   icon: "🎨",
                   color: "from-pink-500 to-rose-500",
-                },
-                {
-                  category: "Education & Language",
-                  subjects: ["Education", "English Literature", "Foreign Languages", "Linguistics", "Communication", "Composition"],
-                  icon: "📚",
-                  color: "from-cyan-500 to-blue-500",
-                },
-                {
-                  category: "Environmental Studies",
-                  subjects: ["Environmental Science", "Sustainability", "Ecology", "Climate Science", "Geology", "Geography"],
-                  icon: "🌍",
-                  color: "from-green-600 to-teal-500",
                 },
               ].map((field, idx) => (
                 <div
