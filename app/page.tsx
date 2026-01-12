@@ -628,24 +628,24 @@ export default function Home() {
               ].map((field, idx) => (
                 <div
                   key={idx}
-                  className="glass p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-all transform hover:scale-105 hover:-translate-y-2 group relative"
+                  className="glass p-8 rounded-2xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-3 group relative bg-gradient-to-br from-white/8 to-white/4"
                 >
                   {field.popular && (
-                    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg shadow-cyan-500/50">
                       Top in EU/US
                     </div>
                   )}
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="text-4xl">{field.icon}</span>
-                    <h4 className="font-bold text-foreground text-lg group-hover:text-cyan-300 transition-colors">
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-5xl group-hover:scale-125 transition-transform duration-300">{field.icon}</span>
+                    <h4 className="font-bold text-foreground text-lg group-hover:text-cyan-300 transition-colors duration-300">
                       {field.category}
                     </h4>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {field.subjects.map((subject, subIdx) => (
-                      <div key={subIdx} className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full"></span>
-                        <span className="text-sm text-foreground/80">{subject}</span>
+                      <div key={subIdx} className="flex items-center gap-3">
+                        <span className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"></span>
+                        <span className="text-sm text-foreground/85">{subject}</span>
                       </div>
                     ))}
                   </div>
