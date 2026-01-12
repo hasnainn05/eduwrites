@@ -300,7 +300,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-6">
             {[
               {
                 title: "Corporate Executive MBA Completion",
@@ -353,33 +353,44 @@ export default function Home() {
             ].map((project, index) => (
               <div
                 key={index}
-                className="glass p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-all transform hover:scale-105 hover:-translate-y-2 group"
+                className="group relative border-l-4 border-gradient-to-b from-cyan-500 to-purple-500 pl-6 py-6 hover:pl-8 transition-all duration-300"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="text-4xl group-hover:scale-110 transition-transform">
-                    {project.icon}
+                {/* Timeline dot */}
+                <div className="absolute -left-4 top-6 w-6 h-6 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-full shadow-lg shadow-cyan-500/50 group-hover:scale-125 transition-transform"></div>
+
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
+                  {/* Left side - Icon and Result */}
+                  <div className="md:col-span-1 flex flex-col items-start gap-4">
+                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">
+                      {project.icon}
+                    </div>
+                    <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 text-green-300 px-4 py-2 rounded-xl text-sm font-bold text-center w-full">
+                      {project.result}
+                    </div>
                   </div>
-                  <span className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-bold">
-                    {project.result}
-                  </span>
-                </div>
 
-                <h3 className="text-lg font-bold text-foreground mb-2">
-                  {project.title}
-                </h3>
+                  {/* Middle - Content */}
+                  <div className="md:col-span-2">
+                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-cyan-300 transition-colors">
+                      {project.title}
+                    </h3>
+                    <span className="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full inline-block mb-3 border border-purple-500/30">
+                      {project.category}
+                    </span>
+                    <p className="text-foreground/80 text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
 
-                <span className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full inline-block mb-3">
-                  {project.category}
-                </span>
-
-                <p className="text-foreground/80 text-sm mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="border-t border-white/10 pt-4">
-                  <p className="text-xs text-foreground/60">
-                    <span className="text-foreground font-semibold">{project.student}</span>
-                  </p>
+                  {/* Right - Professional Info */}
+                  <div className="md:col-span-1">
+                    <div className="glass p-4 rounded-xl border border-white/10 text-center h-full flex flex-col justify-center">
+                      <p className="text-foreground/60 text-xs mb-2 uppercase tracking-wide">Professional</p>
+                      <p className="text-foreground font-bold text-sm">
+                        {project.student}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
