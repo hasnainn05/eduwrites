@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Star, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle, Star, Sparkles, Briefcase, TrendingUp, Award, BookOpen, Zap, Users } from "lucide-react";
 
 export default function Home() {
   const services = [
