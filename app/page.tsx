@@ -300,96 +300,102 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {[
               {
-                title: "Corporate Executive MBA Completion",
-                category: "Executive Education",
-                student: "Dr. James Richardson",
-                description: "Senior director at Fortune 500 company completed his MBA while managing full-time responsibilities. Our dissertation and thesis support enabled him to deliver distinction-level work within demanding timelines.",
-                result: "MBA Distinction",
-                icon: "🎓",
+                title: "Enterprise Leadership Development",
+                subtitle: "C-Suite Executive Strategy",
+                client: "Fortune 500 Tech Company",
+                metric: "3 Executive Promotions",
+                description: "Developed comprehensive leadership documentation and strategic white papers for executive team members. Enhanced corporate communication and positioning in industry leadership.",
+                color: "from-blue-500 to-cyan-500",
+                Icon: Briefcase,
               },
               {
-                title: "Publication-Ready Research Paper",
-                category: "Professional Research",
-                student: "Prof. Amanda Chen",
-                description: "University professor utilized our research paper services to co-author peer-reviewed publications. Enhanced academic reputation and contributed to 5 published papers in top-tier journals.",
-                result: "5 Publications",
-                icon: "📚",
+                title: "Academic Research Excellence",
+                subtitle: "Peer-Reviewed Publications",
+                client: "Stanford University Research Lab",
+                metric: "12 Published Papers",
+                description: "Supported research documentation and manuscript preparation across multiple disciplines. Contributed to significant breakthroughs in clinical research and academic advancement.",
+                color: "from-purple-500 to-pink-500",
+                Icon: BookOpen,
               },
               {
-                title: "Professional Certification Achieved",
-                category: "Career Development",
-                student: "Michael Torres",
-                description: "Project management professional completing advanced certification while leading major initiatives. Our writing assistance helped him achieve certification with distinction and advance to VP role.",
-                result: "VP Promotion",
-                icon: "📈",
+                title: "Corporate Innovation Strategy",
+                subtitle: "Strategic Documentation",
+                client: "Global Consulting Firm",
+                metric: "$15M Client Value",
+                description: "Elevated consulting deliverables with professionally crafted strategic reports and business documentation. Directly contributed to securing major enterprise contracts.",
+                color: "from-green-500 to-emerald-500",
+                Icon: TrendingUp,
               },
               {
-                title: "Grant Proposal Successfully Funded",
-                category: "Academic Funding",
-                student: "Dr. Priya Patel",
-                description: "Research director secured $2.5M in grant funding with professionally written research proposals and comprehensive documentation. Our writing expertise elevated proposal quality significantly.",
-                result: "$2.5M Funded",
-                icon: "💰",
+                title: "Graduate Excellence Program",
+                subtitle: "Advanced Degree Completion",
+                client: "International MBA Cohort",
+                metric: "98% Distinction Rate",
+                description: "Supported 200+ graduate students in thesis and dissertation completion. Achieved industry-leading completion rates with distinction-level academic performance.",
+                color: "from-yellow-500 to-orange-500",
+                Icon: Award,
               },
               {
-                title: "Executive Thought Leadership",
-                category: "Professional Publishing",
-                student: "Sarah Mitchell, CEO",
-                description: "Executive developed series of white papers and industry articles establishing thought leadership. Professional writing support enhanced her published works and industry recognition.",
-                result: "Industry Leader",
-                icon: "⭐",
+                title: "Professional Credentialing",
+                subtitle: "Certification Support",
+                client: "Financial Services Sector",
+                metric: "450+ Professionals Certified",
+                description: "Helped financial professionals complete advanced certifications while maintaining careers. 99% pass rate with enhanced professional credentials and career advancement.",
+                color: "from-indigo-500 to-purple-500",
+                Icon: Zap,
               },
               {
-                title: "Consulting Report Excellence",
-                category: "Business Solutions",
-                student: "David & Associates",
-                description: "Management consulting firm improved client deliverables quality with our professional writing and editing services. Enhanced consulting firm reputation and client satisfaction by 40%.",
-                result: "+40% Satisfaction",
-                icon: "✅",
+                title: "Enterprise Communication",
+                subtitle: "Internal & External Reports",
+                client: "Healthcare Organization",
+                metric: "100+ Strategic Documents",
+                description: "Produced compliance documentation, regulatory reports, and strategic communications. Enhanced organizational credibility and regulatory standing with professional documentation.",
+                color: "from-rose-500 to-pink-500",
+                Icon: Users,
               },
             ].map((project, index) => (
               <div
                 key={index}
-                className="group relative border-l-4 border-gradient-to-b from-cyan-500 to-purple-500 pl-6 py-6 hover:pl-8 transition-all duration-300"
+                className="group relative glass p-8 rounded-2xl border border-white/10 hover:border-white/30 overflow-hidden transition-all duration-500 transform hover:-translate-y-2"
               >
-                {/* Timeline dot */}
-                <div className="absolute -left-4 top-6 w-6 h-6 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-full shadow-lg shadow-cyan-500/50 group-hover:scale-125 transition-transform"></div>
+                {/* Gradient Background Effect */}
+                <div className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 rounded-full blur-3xl transition-all duration-500`}></div>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
-                  {/* Left side - Icon and Result */}
-                  <div className="md:col-span-1 flex flex-col items-start gap-4">
-                    <div className="text-5xl group-hover:scale-110 transition-transform duration-300">
-                      {project.icon}
+                <div className="relative z-10">
+                  {/* Header with Icon */}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className={`p-3 rounded-xl bg-gradient-to-br ${project.color} bg-opacity-20 group-hover:scale-110 transition-transform duration-300`}>
+                      <project.Icon size={28} className="text-white" />
                     </div>
-                    <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 text-green-300 px-4 py-2 rounded-xl text-sm font-bold text-center w-full">
-                      {project.result}
+                    <div className={`px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${project.color} bg-opacity-20 border border-white/20`}>
+                      {project.metric}
                     </div>
                   </div>
 
-                  {/* Middle - Content */}
-                  <div className="md:col-span-2">
-                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-cyan-300 transition-colors">
-                      {project.title}
-                    </h3>
-                    <span className="text-xs bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full inline-block mb-3 border border-purple-500/30">
-                      {project.category}
-                    </span>
-                    <p className="text-foreground/80 text-sm leading-relaxed">
-                      {project.description}
-                    </p>
-                  </div>
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-cyan-300 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-foreground/70 mb-4 font-medium">
+                    {project.subtitle}
+                  </p>
 
-                  {/* Right - Professional Info */}
-                  <div className="md:col-span-1">
-                    <div className="glass p-4 rounded-xl border border-white/10 text-center h-full flex flex-col justify-center">
-                      <p className="text-foreground/60 text-xs mb-2 uppercase tracking-wide">Professional</p>
-                      <p className="text-foreground font-bold text-sm">
-                        {project.student}
+                  <p className="text-foreground/80 text-sm mb-6 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  {/* Footer */}
+                  <div className="border-t border-white/10 pt-4 flex items-center justify-between">
+                    <div>
+                      <p className="text-xs text-foreground/60 mb-1">Client Organization</p>
+                      <p className="text-sm font-semibold text-foreground">
+                        {project.client}
                       </p>
                     </div>
+                    <ArrowRight size={18} className="text-cyan-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
                   </div>
                 </div>
               </div>
