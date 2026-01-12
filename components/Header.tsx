@@ -64,10 +64,11 @@ export default function Header() {
                 const chatButton = document.querySelector('[title="Open Live Chat"]') as HTMLButtonElement;
                 chatButton?.click();
               }}
-              className="p-2.5 rounded-full glass border border-white/20 hover:border-purple-400 hover:bg-white/20 transition-all transform hover:scale-110 flex items-center justify-center hidden sm:flex"
+              className="px-4 py-2 rounded-lg glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 transition-all text-sm font-medium text-foreground/80 hidden sm:flex items-center gap-2 group"
               title="Start Chat"
             >
-              <MessageCircle size={20} className="text-foreground/80" />
+              <MessageCircle size={16} className="group-hover:text-cyan-400 transition-colors" />
+              <span className="group-hover:text-cyan-400 transition-colors">Live Chat</span>
             </button>
 
             {/* Auth Buttons */}
