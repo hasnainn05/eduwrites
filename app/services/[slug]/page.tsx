@@ -669,6 +669,109 @@ export default function ServiceDetail() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-foreground/70">
+              Get answers to common questions about our academic writing services
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                question: "Is the work completely original and plagiarism-free?",
+                answer: "Absolutely. Every piece of work we deliver is 100% original and written specifically for you. We use advanced plagiarism detection tools to ensure originality, and all sources are properly cited according to your required format (APA, MLA, Chicago, etc.).",
+              },
+              {
+                question: "How long does it take to complete an order?",
+                answer: "Turnaround times vary depending on the service and complexity. We offer rush options starting from 2-3 days, standard delivery in 5-7 days, and extended timelines for comprehensive projects. You can specify your deadline when placing an order.",
+              },
+              {
+                question: "What qualifications do your writers have?",
+                answer: "Our team consists of experienced academic writers with Master's and PhD degrees in their respective fields. Each writer is carefully selected and vetted to ensure they meet our high standards for expertise, writing quality, and academic integrity.",
+              },
+              {
+                question: "Can I request revisions if I'm not satisfied?",
+                answer: "Yes, revisions are included in all our services. We're committed to your satisfaction and will work with you until the final product meets your expectations and academic requirements.",
+              },
+              {
+                question: "How is my privacy protected?",
+                answer: "Your privacy is our top priority. All client information is kept confidential and encrypted. We never share personal details or disclose the nature of orders to third parties. Your work is completely anonymous in our system.",
+              },
+              {
+                question: "What if I need to communicate with my writer?",
+                answer: "You can communicate directly with your assigned writer through our secure platform. Our 24/7 support team is also available to answer questions, provide updates, or address any concerns about your order.",
+              },
+              {
+                question: "Do you offer guarantees on quality and delivery?",
+                answer: "Yes, we guarantee on-time delivery and top-quality work. If we miss a deadline, you'll receive a full refund. If the quality doesn't meet our standards, we'll continue revising until you're satisfied.",
+              },
+              {
+                question: "What payment methods do you accept?",
+                answer: "We accept all major credit cards, debit cards, and PayPal. Payments are processed securely through our encrypted payment gateway. You can also choose to pay in installments for larger projects.",
+              },
+              {
+                question: "Can I use this work for multiple submissions?",
+                answer: "Our work is written specifically for your unique assignment and requirements. We don't recommend using the same paper for multiple submissions. However, you can use the work as a study guide or reference for your own writing.",
+              },
+              {
+                question: "What if my institution has specific requirements?",
+                answer: "We accommodate any specific requirements your institution has, including formatting guidelines, citation styles, required sources, and specific content requirements. Just let us know during the ordering process.",
+              },
+            ].map((faq, index) => (
+              <div
+                key={index}
+                className="glass border border-white/10 rounded-xl overflow-hidden hover:border-white/20 transition-all"
+              >
+                <button
+                  onClick={() => {
+                    const element = document.getElementById(`faq-${index}`);
+                    if (element) {
+                      element.classList.toggle("hidden");
+                    }
+                  }}
+                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-all"
+                >
+                  <h3 className="font-semibold text-foreground text-base">
+                    {faq.question}
+                  </h3>
+                  <span className="text-cyan-400 text-lg flex-shrink-0">+</span>
+                </button>
+                <div
+                  id={`faq-${index}`}
+                  className="hidden px-6 pb-4 border-t border-white/10"
+                >
+                  <p className="text-foreground/80 text-sm leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* FAQ CTA */}
+          <div className="mt-12 p-8 glass rounded-2xl border border-white/10 text-center">
+            <h3 className="text-xl font-bold text-foreground mb-3">
+              Still Have Questions?
+            </h3>
+            <p className="text-foreground/70 mb-6">
+              Our support team is available 24/7 to help answer any questions you may have about our services.
+            </p>
+            <a
+              href="#"
+              className="inline-flex items-center justify-center gap-2 glass border border-cyan-400/50 text-cyan-400 px-8 py-3 rounded-xl font-semibold hover:bg-cyan-400/10 transition-all"
+            >
+              Chat with Support
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Order Modal */}
       {selectedPlan && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
