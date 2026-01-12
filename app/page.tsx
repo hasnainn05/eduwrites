@@ -23,7 +23,7 @@ export default function Home() {
     },
     {
       id: "thesis",
-      title: "Thesis & Dissertation",
+      title: "Thesis Writing",
       description: "Expert guidance and writing support for your thesis project",
       slug: "thesis",
       color: "from-orange-500 to-red-500",
@@ -216,6 +216,21 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Services Intro Section */}
+      <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 font-poppins">
+            Transform Your Academic Performance
+          </h2>
+          <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
+            We understand that every student faces unique challenges. Our comprehensive suite of academic writing services is designed to address all your needs—whether it's crafting the perfect essay, conducting in-depth research, or completing your dissertation. With our expert writers and commitment to excellence, you're not just getting a paper; you're getting a partner in your academic success.
+          </p>
+          <p className="text-base text-foreground/70">
+            Choose the service that fits your needs and watch your academic performance soar.
+          </p>
         </div>
       </section>
 

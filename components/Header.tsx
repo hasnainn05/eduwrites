@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Phone, User } from "lucide-react";
+import { Mail, Phone, User, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 export default function Header() {
@@ -56,6 +56,18 @@ export default function Header() {
                 </a>
               </div>
             </div>
+
+            {/* Live Chat Button */}
+            <button
+              onClick={() => {
+                // This will open a live chat widget (you can integrate with services like Intercom, Drift, etc.)
+                window.alert('Live chat will be integrated soon! For now, email us at info@ardelis.com');
+              }}
+              className="p-2.5 rounded-full glass border border-white/20 hover:border-purple-400 hover:bg-white/20 transition-all transform hover:scale-110 flex items-center justify-center hidden sm:flex"
+              title="Live Chat"
+            >
+              <MessageCircle size={20} className="text-foreground/80" />
+            </button>
 
             {/* Profile Icon */}
             <Link
