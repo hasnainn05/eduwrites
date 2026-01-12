@@ -79,9 +79,9 @@ export default function Header() {
                 Sign Up
               </Link>
               <Link
-                href="/login"
+                href="/profile"
                 className="p-2.5 rounded-full glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 transition-all transform hover:scale-110 flex items-center justify-center"
-                title="Login"
+                title="Profile"
               >
                 <User size={20} className="text-foreground/80" />
               </Link>

@@ -59,6 +59,9 @@ export default function Signup() {
 
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Store login state
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userEmail", formData.email);
       setStep("success");
     } catch (err) {
       setError("Verification failed. Please try again.");
@@ -75,302 +78,376 @@ export default function Signup() {
         <div className="blur-gradient absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-500 to-transparent"></div>
       </div>
 
-      <div className="w-full max-w-md">
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <Link href="/" className="inline-block">
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
-              Ardelis
-            </h1>
-            <p className="text-foreground/60 text-sm mt-1">Join Our Community</p>
-          </Link>
-        </div>
-
-        {step === "form" && (
-          <div className="glass p-8 rounded-2xl mb-6">
-            <h2 className="text-2xl font-bold text-foreground mb-2 font-poppins">
-              Create Your Account
+      <div className="w-full max-w-5xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          {/* Left Side - Benefits */}
+          <div className="hidden lg:block">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-8 font-poppins leading-tight">
+              Join the Academic Success Community
             </h2>
-            <p className="text-foreground/70 text-sm mb-6">
-              Join thousands of students achieving academic success
+            <p className="text-foreground/80 mb-8 leading-relaxed">
+              Get access to professional academic writing services that help you achieve your educational goals.
             </p>
 
-            {error && (
-              <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-3 mb-6">
-                <p className="text-red-300 text-sm">{error}</p>
+            <div className="space-y-4 mb-8">
+              <div className="glass p-5 rounded-xl hover:bg-white/20 transition-all">
+                <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
+                  <CheckCircle size={20} className="text-cyan-400" /> Quality Guaranteed
+                </h3>
+                <p className="text-sm text-foreground/70">100% plagiarism-free, original content written by expert writers</p>
+              </div>
+
+              <div className="glass p-5 rounded-xl hover:bg-white/20 transition-all">
+                <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
+                  <CheckCircle size={20} className="text-cyan-400" /> Fast Turnaround
+                </h3>
+                <p className="text-sm text-foreground/70">On-time delivery with flexible deadline options to suit your needs</p>
+              </div>
+
+              <div className="glass p-5 rounded-xl hover:bg-white/20 transition-all">
+                <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
+                  <CheckCircle size={20} className="text-cyan-400" /> Expert Support
+                </h3>
+                <p className="text-sm text-foreground/70">24/7 customer support and unlimited revisions until you're satisfied</p>
+              </div>
+
+              <div className="glass p-5 rounded-xl hover:bg-white/20 transition-all">
+                <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
+                  <CheckCircle size={20} className="text-cyan-400" /> Affordable Pricing
+                </h3>
+                <p className="text-sm text-foreground/70">Competitive rates with flexible payment options for students</p>
+              </div>
+            </div>
+
+            <div className="glass p-6 rounded-2xl border border-white/20">
+              <p className="text-sm text-foreground/80 mb-4">
+                <strong className="text-cyan-400 block mb-2">📊 By the Numbers</strong>
+              </p>
+              <div className="grid grid-cols-2 gap-4 text-xs text-foreground/70">
+                <div>
+                  <div className="text-2xl font-bold text-cyan-400">10K+</div>
+                  <p>Happy Students</p>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-cyan-400">98%</div>
+                  <p>Satisfaction Rate</p>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-cyan-400">50+</div>
+                  <p>Expert Writers</p>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-cyan-400">24/7</div>
+                  <p>Support Team</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Registration Form */}
+          <div className="w-full max-w-md mx-auto lg:mx-0">
+            {/* Logo */}
+            <div className="text-center mb-8">
+              <Link href="/" className="inline-block">
+                <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
+                  Ardelis
+                </h1>
+                <p className="text-foreground/60 text-sm mt-1">Join Our Community</p>
+              </Link>
+            </div>
+
+            {step === "form" && (
+              <div className="glass p-8 rounded-2xl mb-6">
+                <h2 className="text-2xl font-bold text-foreground mb-2 font-poppins">
+                  Create Your Account
+                </h2>
+                <p className="text-foreground/70 text-sm mb-6">
+                  Start your academic success journey today
+                </p>
+
+                {error && (
+                  <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-3 mb-6">
+                    <p className="text-red-300 text-sm">{error}</p>
+                  </div>
+                )}
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Full Name */}
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/90 mb-2">
+                      Full Name
+                    </label>
+                    <div className="relative">
+                      <User
+                        size={18}
+                        className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground/50"
+                      />
+                      <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleFormChange}
+                        placeholder="John Doe"
+                        required
+                        className="w-full bg-white/10 border border-white/20 rounded-lg pl-10 pr-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/90 mb-2">
+                      Email Address
+                    </label>
+                    <div className="relative">
+                      <Mail
+                        size={18}
+                        className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground/50"
+                      />
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleFormChange}
+                        placeholder="you@example.com"
+                        required
+                        className="w-full bg-white/10 border border-white/20 rounded-lg pl-10 pr-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Password */}
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/90 mb-2">
+                      Password
+                    </label>
+                    <div className="relative">
+                      <Lock
+                        size={18}
+                        className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground/50"
+                      />
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        name="password"
+                        value={formData.password}
+                        onChange={handleFormChange}
+                        placeholder="••••••••"
+                        required
+                        className="w-full bg-white/10 border border-white/20 rounded-lg pl-10 pr-10 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-foreground/50 hover:text-foreground transition-colors"
+                      >
+                        {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Confirm Password */}
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/90 mb-2">
+                      Confirm Password
+                    </label>
+                    <div className="relative">
+                      <Lock
+                        size={18}
+                        className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground/50"
+                      />
+                      <input
+                        type={showConfirmPassword ? "text" : "password"}
+                        name="confirmPassword"
+                        value={formData.confirmPassword}
+                        onChange={handleFormChange}
+                        placeholder="••••••••"
+                        required
+                        className="w-full bg-white/10 border border-white/20 rounded-lg pl-10 pr-10 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-foreground/50 hover:text-foreground transition-colors"
+                      >
+                        {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Terms */}
+                  <label className="flex items-start gap-3 cursor-pointer mt-4">
+                    <input
+                      type="checkbox"
+                      name="agreeToTerms"
+                      checked={formData.agreeToTerms}
+                      onChange={handleFormChange}
+                      className="w-4 h-4 rounded border-white/20 bg-white/10 accent-cyan-400 mt-0.5"
+                    />
+                    <span className="text-foreground/70 text-sm">
+                      I agree to the{" "}
+                      <Link href="#" className="text-cyan-400 hover:text-cyan-300">
+                        Terms & Conditions
+                      </Link>{" "}
+                      and{" "}
+                      <Link href="#" className="text-cyan-400 hover:text-cyan-300">
+                        Privacy Policy
+                      </Link>
+                    </span>
+                  </label>
+
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="w-full gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-glow transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-6"
+                  >
+                    {isLoading ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                        Creating account...
+                      </>
+                    ) : (
+                      <>
+                        Create Account <ArrowRight size={18} />
+                      </>
+                    )}
+                  </button>
+                </form>
+
+                {/* Divider */}
+                <div className="relative my-6">
+                  <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-white/10"></div>
+                  </div>
+                  <div className="relative flex justify-center text-sm">
+                    <span className="px-2 bg-gradient-to-b from-background to-background/80 text-foreground/50">
+                      Or sign up with
+                    </span>
+                  </div>
+                </div>
+
+                {/* Social Signup */}
+                <div className="grid grid-cols-2 gap-4">
+                  <button
+                    type="button"
+                    className="border border-white/20 bg-white/5 hover:bg-white/10 rounded-lg py-2.5 font-medium text-foreground transition-all flex items-center justify-center gap-2"
+                  >
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    <span className="hidden sm:inline text-sm">Google</span>
+                  </button>
+                  <button
+                    type="button"
+                    className="border border-white/20 bg-white/5 hover:bg-white/10 rounded-lg py-2.5 font-medium text-foreground transition-all flex items-center justify-center gap-2"
+                  >
+                    <Github size={18} />
+                    <span className="hidden sm:inline text-sm">GitHub</span>
+                  </button>
+                </div>
+
+                {/* Login Link */}
+                <div className="text-center mt-6">
+                  <p className="text-foreground/70 text-sm">
+                    Already have an account?{" "}
+                    <Link href="/login" className="text-cyan-400 hover:text-cyan-300 font-semibold">
+                      Sign in
+                    </Link>
+                  </p>
+                </div>
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Full Name */}
-              <div>
-                <label className="block text-sm font-medium text-foreground/90 mb-2">
-                  Full Name
-                </label>
-                <div className="relative">
-                  <User
-                    size={18}
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground/50"
-                  />
-                  <input
-                    type="text"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleFormChange}
-                    placeholder="John Doe"
-                    required
-                    className="w-full bg-white/10 border border-white/20 rounded-lg pl-10 pr-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
-                  />
-                </div>
-              </div>
+            {step === "verify" && (
+              <div className="glass p-8 rounded-2xl mb-6">
+                <h2 className="text-2xl font-bold text-foreground mb-2 font-poppins">
+                  Verify Your Email
+                </h2>
+                <p className="text-foreground/70 text-sm mb-6">
+                  We've sent a verification code to {formData.email}
+                </p>
 
-              {/* Email */}
-              <div>
-                <label className="block text-sm font-medium text-foreground/90 mb-2">
-                  Email Address
-                </label>
-                <div className="relative">
-                  <Mail
-                    size={18}
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground/50"
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleFormChange}
-                    placeholder="you@example.com"
-                    required
-                    className="w-full bg-white/10 border border-white/20 rounded-lg pl-10 pr-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
-                  />
-                </div>
-              </div>
+                <form onSubmit={handleVerify} className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/90 mb-2">
+                      Verification Code
+                    </label>
+                    <input
+                      type="text"
+                      value={verificationCode}
+                      onChange={(e) => setVerificationCode(e.target.value)}
+                      placeholder="000000"
+                      maxLength={6}
+                      required
+                      className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-center text-2xl tracking-widest text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all font-mono"
+                    />
+                  </div>
 
-              {/* Password */}
-              <div>
-                <label className="block text-sm font-medium text-foreground/90 mb-2">
-                  Password
-                </label>
-                <div className="relative">
-                  <Lock
-                    size={18}
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground/50"
-                  />
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    name="password"
-                    value={formData.password}
-                    onChange={handleFormChange}
-                    placeholder="••••••••"
-                    required
-                    className="w-full bg-white/10 border border-white/20 rounded-lg pl-10 pr-10 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
-                  />
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="w-full gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-glow transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  >
+                    {isLoading ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                        Verifying...
+                      </>
+                    ) : (
+                      <>
+                        Verify Email <ArrowRight size={18} />
+                      </>
+                    )}
+                  </button>
+
                   <button
                     type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-foreground/50 hover:text-foreground transition-colors"
+                    onClick={() => setStep("form")}
+                    className="w-full border-2 border-white/20 text-foreground py-3 rounded-lg font-semibold hover:bg-white/10 transition-all"
                   >
-                    {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                    Back
                   </button>
+                </form>
+              </div>
+            )}
+
+            {step === "success" && (
+              <div className="glass p-8 rounded-2xl mb-6 text-center">
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                    <CheckCircle size={32} className="text-white" />
+                  </div>
                 </div>
-              </div>
 
-              {/* Confirm Password */}
-              <div>
-                <label className="block text-sm font-medium text-foreground/90 mb-2">
-                  Confirm Password
-                </label>
-                <div className="relative">
-                  <Lock
-                    size={18}
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground/50"
-                  />
-                  <input
-                    type={showConfirmPassword ? "text" : "password"}
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleFormChange}
-                    placeholder="••••••••"
-                    required
-                    className="w-full bg-white/10 border border-white/20 rounded-lg pl-10 pr-10 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-foreground/50 hover:text-foreground transition-colors"
-                  >
-                    {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                  </button>
-                </div>
-              </div>
+                <h2 className="text-2xl font-bold text-foreground mb-2 font-poppins">
+                  Welcome to Ardelis!
+                </h2>
+                <p className="text-foreground/70 text-sm mb-8">
+                  Your account has been successfully created. You can now place orders and access all our services.
+                </p>
 
-              {/* Terms */}
-              <label className="flex items-start gap-3 cursor-pointer mt-4">
-                <input
-                  type="checkbox"
-                  name="agreeToTerms"
-                  checked={formData.agreeToTerms}
-                  onChange={handleFormChange}
-                  className="w-4 h-4 rounded border-white/20 bg-white/10 accent-cyan-400 mt-0.5"
-                />
-                <span className="text-foreground/70 text-sm">
-                  I agree to the{" "}
-                  <Link href="#" className="text-cyan-400 hover:text-cyan-300">
-                    Terms & Conditions
-                  </Link>{" "}
-                  and{" "}
-                  <Link href="#" className="text-cyan-400 hover:text-cyan-300">
-                    Privacy Policy
-                  </Link>
-                </span>
-              </label>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="w-full gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-glow transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-6"
-              >
-                {isLoading ? (
-                  <>
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    Creating account...
-                  </>
-                ) : (
-                  <>
-                    Create Account <ArrowRight size={18} />
-                  </>
-                )}
-              </button>
-            </form>
-
-            {/* Divider */}
-            <div className="relative my-6">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-white/10"></div>
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-gradient-to-b from-background to-background/80 text-foreground/50">
-                  Or sign up with
-                </span>
-              </div>
-            </div>
-
-            {/* Social Signup */}
-            <div className="grid grid-cols-2 gap-4">
-              <button
-                type="button"
-                className="border border-white/20 bg-white/5 hover:bg-white/10 rounded-lg py-2.5 font-medium text-foreground transition-all flex items-center justify-center gap-2"
-              >
-                <Mail size={18} />
-                <span className="hidden sm:inline">Google</span>
-              </button>
-              <button
-                type="button"
-                className="border border-white/20 bg-white/5 hover:bg-white/10 rounded-lg py-2.5 font-medium text-foreground transition-all flex items-center justify-center gap-2"
-              >
-                <Github size={18} />
-                <span className="hidden sm:inline">GitHub</span>
-              </button>
-            </div>
-
-            {/* Login Link */}
-            <div className="text-center mt-6">
-              <p className="text-foreground/70 text-sm">
-                Already have an account?{" "}
-                <Link href="/login" className="text-cyan-400 hover:text-cyan-300 font-semibold">
-                  Sign in
+                <Link
+                  href="/login"
+                  className="w-full gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-glow transition-all transform hover:scale-105 inline-flex items-center justify-center gap-2"
+                >
+                  Go to Login <ArrowRight size={18} />
                 </Link>
-              </p>
+              </div>
+            )}
+
+            {/* Back to Home */}
+            <div className="text-center">
+              <Link
+                href="/"
+                className="text-foreground/60 hover:text-foreground text-sm transition-colors inline-flex items-center gap-2"
+              >
+                ← Back to Home
+              </Link>
             </div>
           </div>
-        )}
-
-        {step === "verify" && (
-          <div className="glass p-8 rounded-2xl mb-6">
-            <h2 className="text-2xl font-bold text-foreground mb-2 font-poppins">
-              Verify Your Email
-            </h2>
-            <p className="text-foreground/70 text-sm mb-6">
-              We've sent a verification code to {formData.email}
-            </p>
-
-            <form onSubmit={handleVerify} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-foreground/90 mb-2">
-                  Verification Code
-                </label>
-                <input
-                  type="text"
-                  value={verificationCode}
-                  onChange={(e) => setVerificationCode(e.target.value)}
-                  placeholder="000000"
-                  maxLength={6}
-                  required
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-center text-2xl tracking-widest text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all font-mono"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="w-full gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-glow transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              >
-                {isLoading ? (
-                  <>
-                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    Verifying...
-                  </>
-                ) : (
-                  <>
-                    Verify Email <ArrowRight size={18} />
-                  </>
-                )}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setStep("form")}
-                className="w-full border-2 border-white/20 text-foreground py-3 rounded-lg font-semibold hover:bg-white/10 transition-all"
-              >
-                Back
-              </button>
-            </form>
-          </div>
-        )}
-
-        {step === "success" && (
-          <div className="glass p-8 rounded-2xl mb-6 text-center">
-            <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
-                <CheckCircle size={32} className="text-white" />
-              </div>
-            </div>
-
-            <h2 className="text-2xl font-bold text-foreground mb-2 font-poppins">
-              Welcome to Ardelis!
-            </h2>
-            <p className="text-foreground/70 text-sm mb-8">
-              Your account has been successfully created. You can now place orders and access all our services.
-            </p>
-
-            <Link
-              href="/login"
-              className="w-full gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-glow transition-all transform hover:scale-105 inline-flex items-center justify-center gap-2"
-            >
-              Go to Login <ArrowRight size={18} />
-            </Link>
-          </div>
-        )}
-
-        {/* Back to Home */}
-        <div className="text-center">
-          <Link
-            href="/"
-            className="text-foreground/60 hover:text-foreground text-sm transition-colors inline-flex items-center gap-2"
-          >
-            ← Back to Home
-          </Link>
         </div>
       </div>
     </div>

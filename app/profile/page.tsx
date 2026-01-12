@@ -7,9 +7,11 @@ import { Mail, Phone, MapPin, Edit, LogOut, FileText, Clock, DollarSign, Setting
 export default function Profile() {
   const [activeTab, setActiveTab] = useState<"overview" | "orders" | "settings">("overview");
   const [isEditing, setIsEditing] = useState(false);
+
+  // Get user info from localStorage or use defaults
   const [user, setUser] = useState({
-    fullName: "John Doe",
-    email: "john@example.com",
+    fullName: typeof window !== "undefined" ? localStorage.getItem("userName") || "John Doe" : "John Doe",
+    email: typeof window !== "undefined" ? localStorage.getItem("userEmail") || "john@example.com" : "john@example.com",
     phone: "+1 (555) 123-4567",
     country: "United States",
     city: "New York",
@@ -57,6 +59,13 @@ export default function Profile() {
     setIsEditing(false);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userEmail");
+    localStorage.removeItem("userName");
+    window.location.href = "/";
+  };
+
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-background to-background/80 py-12">
       {/* Animated Background */}
@@ -74,13 +83,13 @@ export default function Profile() {
             </h1>
             <p className="text-foreground/70">Welcome back, {user.fullName}</p>
           </div>
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors"
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 text-foreground/70 hover:text-red-400 transition-colors px-4 py-2 border border-white/20 rounded-lg hover:border-red-400"
           >
             <LogOut size={20} />
             <span className="hidden sm:inline">Logout</span>
-          </Link>
+          </button>
         </div>
 
         {/* Profile Header Card */}
