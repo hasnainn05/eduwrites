@@ -57,14 +57,15 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Live Chat Button */}
+            {/* Live Chat Button - click to open floating chat */}
             <button
               onClick={() => {
-                // This will open a live chat widget (you can integrate with services like Intercom, Drift, etc.)
-                window.alert('Live chat will be integrated soon! For now, email us at info@ardelis.com');
+                // This will trigger the floating chat component
+                const chatButton = document.querySelector('[title="Open Live Chat"]') as HTMLButtonElement;
+                chatButton?.click();
               }}
               className="p-2.5 rounded-full glass border border-white/20 hover:border-purple-400 hover:bg-white/20 transition-all transform hover:scale-110 flex items-center justify-center hidden sm:flex"
-              title="Live Chat"
+              title="Start Chat"
             >
               <MessageCircle size={20} className="text-foreground/80" />
             </button>
