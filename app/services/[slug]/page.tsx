@@ -633,9 +633,20 @@ export default function ServiceDetail() {
             ].map((review, index) => (
               <div
                 key={index}
-                className="glass p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300"
+                className="glass p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col"
               >
-                {/* Top Section: Stars and Verified Badge */}
+                {/* Top Section: Author Profile with Moving Animation */}
+                <div className="flex items-center gap-3 mb-5 pb-5 border-b border-white/10">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center text-white text-sm font-bold flex-shrink-0 animate-float">
+                    {review.avatar}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-foreground text-sm animate-pulse">{review.author}</p>
+                    <p className="text-foreground/60 text-xs">{review.course}</p>
+                  </div>
+                </div>
+
+                {/* Stars and Verified Badge */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-1">
                     {[...Array(review.rating)].map((_, i) => (
@@ -648,20 +659,9 @@ export default function ServiceDetail() {
                 </div>
 
                 {/* Review Text */}
-                <p className="text-foreground/90 text-sm mb-4 leading-relaxed">
+                <p className="text-foreground/90 text-sm leading-relaxed flex-grow">
                   "{review.text}"
                 </p>
-
-                {/* Bottom Section: Author and Course */}
-                <div className="border-t border-white/10 pt-4 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-                    {review.avatar}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-foreground text-sm">{review.author}</p>
-                    <p className="text-foreground/60 text-xs truncate">{review.course}</p>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
