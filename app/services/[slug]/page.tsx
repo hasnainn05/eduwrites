@@ -452,6 +452,75 @@ export default function ServiceDetail() {
         </div>
       </section>
 
+      {/* Reviews Section */}
+      <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-center font-poppins">
+            What Our Clients Say
+          </h2>
+          <p className="text-lg text-foreground/70 text-center mb-16 max-w-2xl mx-auto">
+            Join thousands of satisfied students who have benefited from our professional writing services
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                author: "Sarah Mitchell",
+                rating: 5,
+                text: "Exceptional service! The essay was well-researched, original, and delivered on time. Highly recommend to any student needing quality academic work.",
+                course: "English Literature",
+              },
+              {
+                author: "Ahmed Hassan",
+                rating: 5,
+                text: "Outstanding research paper! The writer understood my topic perfectly and provided thorough citations. This exceeded my expectations.",
+                course: "Business Management",
+              },
+              {
+                author: "Emma Rodriguez",
+                rating: 5,
+                text: "Professional, reliable, and excellent quality. The customer service was incredibly responsive to my questions. Will definitely use again!",
+                course: "Psychology",
+              },
+              {
+                author: "James Chen",
+                rating: 4,
+                text: "Great work on my thesis proposal. The structure was clear and well-organized. Minor revisions were made quickly without extra cost.",
+                course: "Computer Science",
+              },
+              {
+                author: "Lisa Anderson",
+                rating: 5,
+                text: "My assignment was complex, but the writer broke it down perfectly. The quality of analysis was truly impressive and helped me learn.",
+                course: "History",
+              },
+              {
+                author: "David Kumar",
+                rating: 5,
+                text: "Fast turnaround without compromising quality. The writer delivered exactly what I needed. Great value for the price!",
+                course: "Economics",
+              },
+            ].map((review, index) => (
+              <div
+                key={index}
+                className="glass p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p className="text-foreground/90 mb-4 leading-relaxed">"{review.text}"</p>
+                <div className="border-t border-white/10 pt-4">
+                  <p className="font-semibold text-foreground">{review.author}</p>
+                  <p className="text-sm text-foreground/60">{review.course}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section id="pricing" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
