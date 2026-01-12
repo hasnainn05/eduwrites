@@ -633,7 +633,8 @@ export default function ServiceDetail() {
             ].map((review, index) => (
               <div
                 key={index}
-                className="glass p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col"
+                className="glass p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col animate-float"
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {/* Top Section: Author Profile with Moving Animation */}
                 <div className="flex items-center gap-3 mb-5 pb-5 border-b border-white/10">
