@@ -568,73 +568,52 @@ export default function Home() {
                   category: "Computer Science & IT",
                   subjects: ["Software Engineering", "Data Science", "AI & Machine Learning", "Cybersecurity", "Web Development", "Cloud Computing"],
                   icon: "💻",
-                  color: "from-blue-500 to-cyan-500",
-                  popular: true,
                 },
                 {
                   category: "Business & Finance",
                   subjects: ["Business Administration", "Finance", "Economics", "Marketing", "Management", "Accounting"],
                   icon: "💼",
-                  color: "from-green-500 to-emerald-500",
-                  popular: true,
                 },
                 {
                   category: "Engineering",
                   subjects: ["Civil Engineering", "Mechanical Engineering", "Electrical Engineering", "Chemical Engineering", "Software Engineering", "Structural"],
                   icon: "⚙️",
-                  color: "from-orange-500 to-yellow-500",
-                  popular: true,
                 },
                 {
                   category: "Medicine & Healthcare",
                   subjects: ["Medicine", "Nursing", "Public Health", "Pharmacy", "Dentistry", "Clinical Research"],
                   icon: "🏥",
-                  color: "from-red-500 to-pink-500",
-                  popular: true,
                 },
                 {
                   category: "Law & Legal Studies",
                   subjects: ["Constitutional Law", "Business Law", "Criminal Law", "International Law", "Corporate Law", "IP Law"],
                   icon: "⚖️",
-                  color: "from-indigo-500 to-purple-500",
-                  popular: true,
                 },
                 {
                   category: "Psychology & Social Sciences",
                   subjects: ["Psychology", "Sociology", "Anthropology", "Political Science", "Social Work", "Behavioral Studies"],
                   icon: "🧠",
-                  color: "from-purple-500 to-pink-500",
-                  popular: true,
                 },
                 {
                   category: "Environmental Science",
                   subjects: ["Environmental Science", "Sustainability", "Ecology", "Climate Science", "Geology", "Geography"],
                   icon: "🌍",
-                  color: "from-green-600 to-teal-500",
-                  popular: true,
                 },
                 {
                   category: "Humanities & Literature",
                   subjects: ["English Literature", "History", "Philosophy", "Foreign Languages", "Linguistics", "Composition"],
                   icon: "📚",
-                  color: "from-cyan-500 to-blue-500",
                 },
                 {
                   category: "Arts & Design",
                   subjects: ["Fine Arts", "Graphic Design", "Architecture", "Fashion", "Film Studies", "Music"],
                   icon: "🎨",
-                  color: "from-pink-500 to-rose-500",
                 },
               ].map((field, idx) => (
                 <div
                   key={idx}
-                  className="glass p-6 rounded-xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group relative bg-gradient-to-br from-white/8 to-white/4"
+                  className="glass p-6 rounded-xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group bg-gradient-to-br from-white/8 to-white/4"
                 >
-                  {field.popular && (
-                    <div className="absolute -top-2 -right-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-3 py-0.5 rounded-full text-xs font-bold shadow-lg shadow-cyan-500/50">
-                      Top in EU/US
-                    </div>
-                  )}
                   <div className="flex items-start gap-3 mb-4">
                     <span className="text-4xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">{field.icon}</span>
                     <h4 className="font-bold text-foreground text-base group-hover:text-cyan-300 transition-colors duration-300 leading-tight">
