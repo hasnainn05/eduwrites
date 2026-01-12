@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, CheckCircle, X } from "lucide-react";
+import { ArrowRight, CheckCircle, X, FileText, BarChart3, BookOpen, Pencil, BookMarked } from "lucide-react";
 import { useState } from "react";
 
 interface ServiceData {
