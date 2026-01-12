@@ -41,17 +41,24 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       >
         {/* Sidebar Content */}
         <div className="flex flex-col h-full overflow-y-auto">
-          {/* Logo Section */}
-          <div className="p-6 border-b border-sidebar-border">
+          {/* Logo Section with Close Button */}
+          <div className="p-6 border-b border-sidebar-border flex items-center justify-between">
             <Link
               to="/"
               className="flex items-center gap-2 font-bold text-lg text-sidebar-foreground hover:text-sidebar-primary transition-colors"
-              onClick={() => setIsOpen(false)}
+              onClick={onClose}
             >
               <span className="bg-gradient-to-r from-sidebar-primary to-sidebar-accent bg-clip-text text-transparent">
                 Ardelis
               </span>
             </Link>
+            <button
+              onClick={onClose}
+              className="md:hidden text-sidebar-foreground hover:text-sidebar-primary transition-colors"
+              aria-label="Close sidebar"
+            >
+              <X size={24} />
+            </button>
           </div>
 
           {/* Navigation Items */}
