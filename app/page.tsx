@@ -288,183 +288,123 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Detailed Services Showcase */}
-      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/5 to-transparent">
+      {/* Portfolio Section */}
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
-              Comprehensive Service Details
+              Our Success Stories
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Explore what each of our services offers and find the perfect fit for your needs
+              See how we've helped students achieve academic excellence
             </p>
           </div>
 
-          <div className="space-y-8">
-            {/* Essay Writing */}
-            <div className="glass p-8 sm:p-10 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <div className="text-5xl mb-4">📝</div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">Essay Writing</h3>
-                  <p className="text-foreground/80 mb-4 leading-relaxed">
-                    From persuasive essays to analytical papers, our expert writers craft compelling essays that showcase your understanding and meet academic standards.
-                  </p>
-                  <div className="space-y-2 mb-6">
-                    <p className="text-sm text-foreground/70"><strong>Ideal for:</strong> High school, undergraduate, and graduate-level essays</p>
-                    <p className="text-sm text-foreground/70"><strong>Turnaround:</strong> 2-7 days depending on urgency</p>
-                    <p className="text-sm text-foreground/70"><strong>Starting at:</strong> $49</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Comprehensive Research Paper",
+                category: "Research Paper",
+                subject: "Environmental Science",
+                grade: "A+",
+                description: "15,000-word research paper on climate change mitigation strategies with 40+ peer-reviewed sources",
+                student: "Emily Chen",
+                icon: "🔬",
+              },
+              {
+                title: "Master's Thesis Completion",
+                category: "Thesis Writing",
+                subject: "Business Administration",
+                grade: "Distinction",
+                description: "50,000-word MBA thesis on digital transformation in retail with expert guidance and defense preparation",
+                student: "Marcus Johnson",
+                icon: "🎓",
+              },
+              {
+                title: "Critical Essay Analysis",
+                category: "Essay Writing",
+                subject: "Literature",
+                grade: "A",
+                description: "5,000-word analytical essay exploring themes in contemporary literature with original insights",
+                student: "Sophie Martin",
+                icon: "📝",
+              },
+              {
+                title: "Dissertation Research Support",
+                category: "Dissertation Writing",
+                subject: "Psychology",
+                grade: "A+",
+                description: "PhD dissertation with complete methodology, data analysis, and comprehensive literature review",
+                student: "Dr. James Wilson",
+                icon: "🏆",
+              },
+              {
+                title: "Case Study Assignment",
+                category: "Assignment Writing",
+                subject: "Economics",
+                grade: "A",
+                description: "Detailed case study analysis with financial modeling and strategic recommendations",
+                student: "Olivia Rodriguez",
+                icon: "📊",
+              },
+              {
+                title: "Document Editing & Refinement",
+                category: "Proofreading & Editing",
+                subject: "Engineering",
+                grade: "A+",
+                description: "Complete editing of 10,000-word technical paper with improved clarity and professional formatting",
+                student: "Alex Kumar",
+                icon: "✨",
+              },
+            ].map((project, index) => (
+              <div
+                key={index}
+                className="glass p-6 rounded-2xl border border-white/10 hover:border-white/30 transition-all transform hover:scale-105 hover:-translate-y-2 group"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="text-4xl group-hover:scale-110 transition-transform">
+                    {project.icon}
                   </div>
+                  <span className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 px-3 py-1 rounded-full text-xs font-bold">
+                    {project.grade}
+                  </span>
                 </div>
-                <div className="space-y-3">
-                  <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-lg p-4">
-                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <CheckCircle size={18} className="text-cyan-400" />
-                      What's Included
-                    </h4>
-                    <ul className="text-sm text-foreground/80 space-y-1">
-                      <li>• Original, plagiarism-free content</li>
-                      <li>• Proper citation (APA, MLA, Chicago)</li>
-                      <li>• Multiple revisions included</li>
-                      <li>• Expert proofreading & editing</li>
-                      <li>• On-time delivery guarantee</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            {/* Research Paper */}
-            <div className="glass p-8 sm:p-10 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <div className="text-5xl mb-4">🔬</div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">Research Papers</h3>
-                  <p className="text-foreground/80 mb-4 leading-relaxed">
-                    Comprehensive research papers backed by peer-reviewed sources, original analysis, and thorough documentation. Perfect for academic excellence.
-                  </p>
-                  <div className="space-y-2 mb-6">
-                    <p className="text-sm text-foreground/70"><strong>Ideal for:</strong> All academic levels with complex research needs</p>
-                    <p className="text-sm text-foreground/70"><strong>Turnaround:</strong> 3-10 days</p>
-                    <p className="text-sm text-foreground/70"><strong>Starting at:</strong> $99</p>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-lg p-4">
-                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <CheckCircle size={18} className="text-purple-400" />
-                      What's Included
-                    </h4>
-                    <ul className="text-sm text-foreground/80 space-y-1">
-                      <li>• Literature review and analysis</li>
-                      <li>• 20+ peer-reviewed sources</li>
-                      <li>• Original research insights</li>
-                      <li>• Detailed methodology section</li>
-                      <li>• Professional formatting</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+                <h3 className="text-lg font-bold text-foreground mb-2">
+                  {project.title}
+                </h3>
 
-            {/* Thesis & Dissertation */}
-            <div className="glass p-8 sm:p-10 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <div className="text-5xl mb-4">🎓</div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">Thesis & Dissertation</h3>
-                  <p className="text-foreground/80 mb-4 leading-relaxed">
-                    Complete graduate-level support for your thesis or dissertation project. From proposal to final defense, we guide you through every step.
-                  </p>
-                  <div className="space-y-2 mb-6">
-                    <p className="text-sm text-foreground/70"><strong>Ideal for:</strong> Master's and PhD candidates</p>
-                    <p className="text-sm text-foreground/70"><strong>Turnaround:</strong> Custom timeline available</p>
-                    <p className="text-sm text-foreground/70"><strong>Starting at:</strong> $2,999</p>
-                  </div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full">
+                    {project.category}
+                  </span>
+                  <span className="text-xs text-foreground/60">{project.subject}</span>
                 </div>
-                <div className="space-y-3">
-                  <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-lg p-4">
-                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <CheckCircle size={18} className="text-green-400" />
-                      What's Included
-                    </h4>
-                    <ul className="text-sm text-foreground/80 space-y-1">
-                      <li>• Complete writing & research support</li>
-                      <li>• Chapter-by-chapter guidance</li>
-                      <li>• Unlimited revisions</li>
-                      <li>• Defense preparation materials</li>
-                      <li>• Expert consultation included</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            {/* Proofreading & Editing */}
-            <div className="glass p-8 sm:p-10 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <div className="text-5xl mb-4">✏️</div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">Proofreading & Editing</h3>
-                  <p className="text-foreground/80 mb-4 leading-relaxed">
-                    Polish your academic work with expert proofreading. We catch grammar errors, improve clarity, and ensure professional presentation.
-                  </p>
-                  <div className="space-y-2 mb-6">
-                    <p className="text-sm text-foreground/70"><strong>Ideal for:</strong> Students with completed drafts needing refinement</p>
-                    <p className="text-sm text-foreground/70"><strong>Turnaround:</strong> 1-3 days</p>
-                    <p className="text-sm text-foreground/70"><strong>Starting at:</strong> $39</p>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-lg p-4">
-                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <CheckCircle size={18} className="text-yellow-400" />
-                      What's Included
-                    </h4>
-                    <ul className="text-sm text-foreground/80 space-y-1">
-                      <li>• Grammar and spelling corrections</li>
-                      <li>• Sentence structure improvement</li>
-                      <li>• Clarity and readability enhancement</li>
-                      <li>• Formatting verification</li>
-                      <li>• Detailed feedback report</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+                <p className="text-foreground/80 text-sm mb-4 leading-relaxed">
+                  {project.description}
+                </p>
 
-            {/* Assignment Writing */}
-            <div className="glass p-8 sm:p-10 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <div className="text-5xl mb-4">📚</div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">Assignment Writing</h3>
-                  <p className="text-foreground/80 mb-4 leading-relaxed">
-                    Complete assignment solutions for any subject. From case studies to problem-solving exercises, we deliver accurate, well-researched solutions.
+                <div className="border-t border-white/10 pt-4">
+                  <p className="text-xs text-foreground/60">
+                    By: <span className="text-foreground font-semibold">{project.student}</span>
                   </p>
-                  <div className="space-y-2 mb-6">
-                    <p className="text-sm text-foreground/70"><strong>Ideal for:</strong> All academic disciplines and levels</p>
-                    <p className="text-sm text-foreground/70"><strong>Turnaround:</strong> 1-5 days</p>
-                    <p className="text-sm text-foreground/70"><strong>Starting at:</strong> $49</p>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-500/20 rounded-lg p-4">
-                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                      <CheckCircle size={18} className="text-indigo-400" />
-                      What's Included
-                    </h4>
-                    <ul className="text-sm text-foreground/80 space-y-1">
-                      <li>• Customized solutions for your assignment</li>
-                      <li>• Step-by-step explanations</li>
-                      <li>• Subject-matter expertise</li>
-                      <li>• Multiple revision rounds</li>
-                      <li>• Clear, well-organized format</li>
-                    </ul>
-                  </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="mt-12 text-center">
+            <p className="text-foreground/70 mb-6">
+              Your next success story could be here. Let us help you achieve your academic goals.
+            </p>
+            <Link
+              href="/order"
+              className="inline-flex items-center justify-center gap-2 gradient-primary text-white px-8 py-3 rounded-xl font-semibold hover:shadow-glow transition-all transform hover:scale-105"
+            >
+              Start Your Project <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </section>
