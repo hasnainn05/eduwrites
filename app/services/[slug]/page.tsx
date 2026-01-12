@@ -569,77 +569,98 @@ export default function ServiceDetail() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/5 to-transparent">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
-              Student Success Stories
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
+              What Our Clients Say
             </h2>
-            <p className="text-foreground/70">Join thousands of satisfied students</p>
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+              Join thousands of satisfied students who have benefited from our professional writing services
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 author: "Sarah Mitchell",
+                avatar: "SM",
                 rating: 5,
-                text: "Exceptional service! The essay was well-researched, original, and delivered on time. Highly recommend.",
+                text: "Exceptional service! The essay was well-researched, original, and delivered on time. Highly recommend to any student needing quality academic work.",
                 course: "English Literature",
+                verified: true,
               },
               {
                 author: "Ahmed Hassan",
+                avatar: "AH",
                 rating: 5,
-                text: "Outstanding research paper! The writer understood my topic perfectly. This exceeded my expectations.",
+                text: "Outstanding research paper! The writer understood my topic perfectly and provided thorough citations. This exceeded my expectations.",
                 course: "Business Management",
+                verified: true,
               },
               {
                 author: "Emma Rodriguez",
+                avatar: "ER",
                 rating: 5,
                 text: "Professional, reliable, and excellent quality. The customer service was incredibly responsive to my questions. Will definitely use again!",
                 course: "Psychology",
+                verified: true,
               },
               {
                 author: "James Chen",
+                avatar: "JC",
                 rating: 4,
                 text: "Great work on my thesis proposal. The structure was clear and well-organized. Minor revisions were made quickly without extra cost.",
                 course: "Computer Science",
+                verified: true,
               },
               {
                 author: "Lisa Anderson",
+                avatar: "LA",
                 rating: 5,
                 text: "My assignment was complex, but the writer broke it down perfectly. The quality of analysis was truly impressive and helped me learn.",
                 course: "History",
+                verified: true,
               },
               {
                 author: "David Kumar",
+                avatar: "DK",
                 rating: 5,
                 text: "Fast turnaround without compromising quality. The writer delivered exactly what I needed. Great value for the price!",
                 course: "Economics",
+                verified: true,
               },
             ].map((review, index) => (
               <div
                 key={index}
-                className="glass p-8 rounded-2xl border border-white/10 hover:border-white/30 transition-all"
+                className="glass p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300"
               >
-                {/* Stars */}
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-lg">★</span>
-                  ))}
-                  {[...Array(5 - review.rating)].map((_, i) => (
-                    <span key={i} className="text-foreground/20 text-lg">★</span>
-                  ))}
+                {/* Top Section: Stars and Verified Badge */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-1">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <span key={i} className="text-yellow-400">★</span>
+                    ))}
+                  </div>
+                  {review.verified && (
+                    <span className="text-cyan-400 text-xs font-bold">✓ Verified</span>
+                  )}
                 </div>
 
                 {/* Review Text */}
-                <p className="text-foreground/90 mb-6 leading-relaxed text-base">
+                <p className="text-foreground/90 text-sm mb-4 leading-relaxed">
                   "{review.text}"
                 </p>
 
-                {/* Author Info */}
-                <div className="border-t border-white/10 pt-4">
-                  <p className="font-semibold text-foreground text-sm">{review.author}</p>
-                  <p className="text-foreground/60 text-xs">{review.course}</p>
+                {/* Bottom Section: Author and Course */}
+                <div className="border-t border-white/10 pt-4 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                    {review.avatar}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-foreground text-sm">{review.author}</p>
+                    <p className="text-foreground/60 text-xs truncate">{review.course}</p>
+                  </div>
                 </div>
               </div>
             ))}
