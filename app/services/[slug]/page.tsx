@@ -30,7 +30,7 @@ const servicesData: Record<string, ServiceData> = {
   essay: {
     title: "Essay & Assignment Writing",
     subtitle: "Professional Academic Writing Services",
-    icon: "📝",
+    Icon: FileText,
     heroGradient: "from-blue-50 to-indigo-50",
     aboutTitle: "About Essay & Assignment Writing",
     aboutContent:
