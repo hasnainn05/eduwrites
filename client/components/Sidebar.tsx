@@ -1,9 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Home, Briefcase, Info, MessageSquare, User, ChevronDown, Mail } from "lucide-react";
+import { X, Home, Briefcase, Info, MessageSquare, User, ChevronDown, Mail } from "lucide-react";
 import { useState } from "react";
 
-export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
+interface SidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
 
@@ -16,14 +20,15 @@ export default function Sidebar() {
   ];
 
   const serviceLinks = [
-    { label: "Writing Services", path: "/services/writing" },
-    { label: "Design Services", path: "/services/design" },
-    { label: "Marketing Services", path: "/services/marketing" },
-    { label: "IT & Development", path: "/services/development" },
+    { label: "Essay Writing", path: "/services/writing/essay" },
+    { label: "Assignment Writing", path: "/services/writing/essay" },
+    { label: "Research Paper", path: "/services/writing/research" },
+    { label: "Thesis & Dissertation", path: "/services/writing/thesis" },
+    { label: "Proofreading & Editing", path: "/services/writing/essay" },
   ];
 
   const isServiceActive = serviceLinks.some(
-    (link) => location.pathname === link.path || location.pathname.startsWith(link.path)
+    (link) => location.pathname === link.path || location.pathname.startsWith("/services/writing")
   );
 
   return (
