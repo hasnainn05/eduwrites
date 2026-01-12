@@ -330,8 +330,8 @@ export default function ServiceDetail() {
       {/* Hero Section */}
       <section className="relative py-24 sm:py-40 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="mb-8 flex justify-center text-7xl animate-float">
-            {service.icon}
+          <div className="mb-8 flex justify-center animate-float">
+            <service.Icon size={96} className="text-cyan-400" />
           </div>
 
           <h1 className="text-5xl sm:text-7xl font-bold text-foreground mb-6 font-poppins">
