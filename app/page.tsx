@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Star, Sparkles, Briefcase, TrendingUp, Award, BookOpen, Zap, Users } from "lucide-react";
+import { ArrowRight, CheckCircle, Star, Sparkles, Briefcase, TrendingUp, Award, BookOpen, Zap, Users, FileText, Pencil, BarChart3, BookMarked } from "lucide-react";
 
 export default function Home() {
   const services = [
@@ -10,7 +10,7 @@ export default function Home() {
       title: "Essay Writing",
       description:
         "Professional essay writing for all academic levels and subjects",
-      icon: "📝",
+      Icon: FileText,
       slug: "essay",
       color: "from-cyan-500 to-blue-500",
     },
@@ -18,7 +18,7 @@ export default function Home() {
       id: "assignment",
       title: "Assignment Writing",
       description: "Complete assignment solutions tailored to your requirements",
-      icon: "✓",
+      Icon: CheckCircle,
       slug: "essay",
       color: "from-purple-500 to-pink-500",
     },
@@ -26,7 +26,7 @@ export default function Home() {
       id: "thesis",
       title: "Thesis Writing",
       description: "Expert guidance and writing support for your thesis project",
-      icon: "🎓",
+      Icon: BookOpen,
       slug: "thesis",
       color: "from-orange-500 to-red-500",
     },
@@ -34,7 +34,7 @@ export default function Home() {
       id: "research",
       title: "Research Paper",
       description: "In-depth research papers with comprehensive analysis",
-      icon: "📊",
+      Icon: BarChart3,
       slug: "research",
       color: "from-green-500 to-emerald-500",
     },
@@ -42,7 +42,7 @@ export default function Home() {
       id: "proofreading",
       title: "Proofreading & Editing",
       description: "Polish your academic work with expert proofreading services",
-      icon: "✏️",
+      Icon: Pencil,
       slug: "essay",
       color: "from-yellow-500 to-orange-500",
     },
@@ -50,7 +50,7 @@ export default function Home() {
       id: "dissertation",
       title: "Dissertation Writing",
       description: "Complete dissertation support from planning to final submission",
-      icon: "📚",
+      Icon: BookMarked,
       slug: "thesis",
       color: "from-indigo-500 to-purple-500",
     },
@@ -300,8 +300,8 @@ export default function Home() {
 
                 {/* Content */}
                 <div className="relative z-10 p-8 flex flex-col h-full">
-                  <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform">
-                    {service.icon}
+                  <div className="mb-4 transform group-hover:scale-110 transition-transform">
+                    <service.Icon size={48} className="text-cyan-400 group-hover:text-white transition-colors" />
                   </div>
 
                   <h3 className="text-xl font-bold text-foreground mb-3">
