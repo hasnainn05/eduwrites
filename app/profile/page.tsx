@@ -2,16 +2,15 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Edit, LogOut, FileText, Clock, DollarSign, Settings, User, Download, Eye } from "lucide-react";
+import { Mail, Phone, MapPin, Edit, LogOut, FileText, Clock, DollarSign, Settings, User, Download, Eye, CheckCircle } from "lucide-react";
 
 export default function Profile() {
   const [activeTab, setActiveTab] = useState<"overview" | "orders" | "settings">("overview");
   const [isEditing, setIsEditing] = useState(false);
 
-  // Get user info from localStorage or use defaults
   const [user, setUser] = useState({
-    fullName: typeof window !== "undefined" ? localStorage.getItem("userName") || "John Doe" : "John Doe",
-    email: typeof window !== "undefined" ? localStorage.getItem("userEmail") || "john@example.com" : "john@example.com",
+    fullName: "John Doe",
+    email: "john@example.com",
     phone: "+1 (555) 123-4567",
     country: "United States",
     city: "New York",
@@ -62,7 +61,6 @@ export default function Profile() {
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userEmail");
-    localStorage.removeItem("userName");
     window.location.href = "/";
   };
 
@@ -265,63 +263,129 @@ export default function Profile() {
 
         {/* Tab Content */}
         {activeTab === "overview" && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Account Info */}
-            <div className="lg:col-span-2">
-              <div className="glass p-8 rounded-2xl">
-                <h3 className="text-xl font-bold text-foreground mb-6 font-poppins">
-                  Account Information
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center pb-4 border-b border-white/10">
-                    <div className="flex items-center gap-2 text-foreground/70">
-                      <Mail size={18} />
-                      Email
-                    </div>
-                    <span className="text-foreground">{user.email}</span>
+          <div className="space-y-8">
+            {/* Profile Completion */}
+            <div className="glass p-8 rounded-2xl">
+              <h3 className="text-xl font-bold text-foreground mb-4 font-poppins">
+                Profile Completion
+              </h3>
+              <div className="flex items-center gap-4">
+                <div className="flex-1">
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm text-foreground/70">Overall Progress</span>
+                    <span className="text-sm font-bold text-cyan-400">85%</span>
                   </div>
-                  <div className="flex justify-between items-center pb-4 border-b border-white/10">
-                    <div className="flex items-center gap-2 text-foreground/70">
-                      <Phone size={18} />
-                      Phone
-                    </div>
-                    <span className="text-foreground">{user.phone}</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-4 border-b border-white/10">
-                    <div className="flex items-center gap-2 text-foreground/70">
-                      <MapPin size={18} />
-                      Location
-                    </div>
-                    <span className="text-foreground">
-                      {user.city}, {user.country}
-                    </span>
+                  <div className="w-full bg-white/10 rounded-full h-2 overflow-hidden">
+                    <div className="bg-gradient-to-r from-purple-500 to-cyan-500 h-full w-[85%]"></div>
                   </div>
                 </div>
               </div>
+              <p className="text-xs text-foreground/60 mt-3">
+                Complete your profile to unlock more features and better recommendations
+              </p>
             </div>
 
-            {/* Quick Actions */}
-            <div className="space-y-4">
-              <div className="glass p-6 rounded-2xl hover:bg-white/20 transition-all cursor-pointer">
-                <h4 className="font-bold text-foreground mb-2">Place New Order</h4>
-                <Link
-                  href="/order"
-                  className="text-cyan-400 text-sm hover:text-cyan-300"
-                >
-                  Order Now →
-                </Link>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Account Info */}
+              <div className="lg:col-span-2 space-y-6">
+                <div className="glass p-8 rounded-2xl">
+                  <h3 className="text-xl font-bold text-foreground mb-6 font-poppins">
+                    Account Information
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center pb-4 border-b border-white/10">
+                      <div className="flex items-center gap-2 text-foreground/70">
+                        <Mail size={18} />
+                        Email
+                      </div>
+                      <span className="text-foreground">{user.email}</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-4 border-b border-white/10">
+                      <div className="flex items-center gap-2 text-foreground/70">
+                        <Phone size={18} />
+                        Phone
+                      </div>
+                      <span className="text-foreground">{user.phone}</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-4 border-b border-white/10">
+                      <div className="flex items-center gap-2 text-foreground/70">
+                        <MapPin size={18} />
+                        Location
+                      </div>
+                      <span className="text-foreground">
+                        {user.city}, {user.country}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center py-4">
+                      <div className="flex items-center gap-2 text-foreground/70">
+                        <Clock size={18} />
+                        Member Since
+                      </div>
+                      <span className="text-foreground">{user.joinDate}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Recent Activity */}
+                <div className="glass p-8 rounded-2xl">
+                  <h3 className="text-xl font-bold text-foreground mb-6 font-poppins">
+                    Recent Activity
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4 pb-4 border-b border-white/10">
+                      <div className="w-10 h-10 bg-cyan-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <FileText size={16} className="text-cyan-400" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-medium text-foreground">Order #ORD-001 Completed</p>
+                        <p className="text-sm text-foreground/60">Dec 20, 2024 at 2:30 PM</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4 pb-4 border-b border-white/10">
+                      <div className="w-10 h-10 bg-purple-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <User size={16} className="text-purple-400" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-medium text-foreground">Profile Updated</p>
+                        <p className="text-sm text-foreground/60">Dec 15, 2024 at 10:15 AM</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 bg-green-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <CheckCircle size={16} className="text-green-400" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-medium text-foreground">Account Created</p>
+                        <p className="text-sm text-foreground/60">Jan 5, 2024 at 3:45 PM</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="glass p-6 rounded-2xl hover:bg-white/20 transition-all cursor-pointer">
-                <h4 className="font-bold text-foreground mb-2">Browse Services</h4>
-                <Link href="/#services" className="text-cyan-400 text-sm hover:text-cyan-300">
-                  View Services →
-                </Link>
-              </div>
-              <div className="glass p-6 rounded-2xl hover:bg-white/20 transition-all cursor-pointer">
-                <h4 className="font-bold text-foreground mb-2">Contact Support</h4>
-                <Link href="/contact" className="text-cyan-400 text-sm hover:text-cyan-300">
-                  Get Help →
-                </Link>
+
+              {/* Quick Actions */}
+              <div className="space-y-4">
+                <div className="glass p-6 rounded-2xl hover:bg-white/20 transition-all cursor-pointer">
+                  <h4 className="font-bold text-foreground mb-2">📝 Place New Order</h4>
+                  <Link
+                    href="/order"
+                    className="text-cyan-400 text-sm hover:text-cyan-300 font-semibold"
+                  >
+                    Order Now →
+                  </Link>
+                </div>
+                <div className="glass p-6 rounded-2xl hover:bg-white/20 transition-all cursor-pointer">
+                  <h4 className="font-bold text-foreground mb-2">🎓 Browse Services</h4>
+                  <Link href="/#services" className="text-cyan-400 text-sm hover:text-cyan-300 font-semibold">
+                    View Services →
+                  </Link>
+                </div>
+                <div className="glass p-6 rounded-2xl hover:bg-white/20 transition-all cursor-pointer">
+                  <h4 className="font-bold text-foreground mb-2">💬 Contact Support</h4>
+                  <Link href="/contact" className="text-cyan-400 text-sm hover:text-cyan-300 font-semibold">
+                    Get Help →
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
