@@ -38,20 +38,31 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right: Contact Info */}
-          <div className="hidden sm:flex flex-col items-end gap-2 text-sm flex-shrink-0">
-            <div className="flex items-center gap-2 text-foreground/80 hover:text-cyan-400 transition-colors">
-              <Mail size={16} />
-              <a href="mailto:info@ardelis.com" className="whitespace-nowrap font-medium">
-                info@ardelis.com
-              </a>
+          {/* Right: Contact Info and Profile */}
+          <div className="flex items-center gap-6 flex-shrink-0">
+            <div className="hidden sm:flex flex-col items-end gap-2 text-sm">
+              <div className="flex items-center gap-2 text-foreground/80 hover:text-cyan-400 transition-colors">
+                <Mail size={16} />
+                <a href="mailto:info@ardelis.com" className="whitespace-nowrap font-medium">
+                  info@ardelis.com
+                </a>
+              </div>
+              <div className="flex items-center gap-2 text-foreground/80 hover:text-purple-400 transition-colors">
+                <Phone size={16} />
+                <a href="tel:+1234567890" className="whitespace-nowrap font-medium">
+                  +1 (234) 567-890
+                </a>
+              </div>
             </div>
-            <div className="flex items-center gap-2 text-foreground/80 hover:text-purple-400 transition-colors">
-              <Phone size={16} />
-              <a href="tel:+1234567890" className="whitespace-nowrap font-medium">
-                +1 (234) 567-890
-              </a>
-            </div>
+
+            {/* Profile Icon */}
+            <Link
+              to="/login"
+              className="p-2.5 rounded-full glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 transition-all transform hover:scale-110 flex items-center justify-center"
+              title="Profile"
+            >
+              <User size={20} className="text-foreground/80" />
+            </Link>
           </div>
 
           {/* Mobile: Menu Button (visible on small screens) */}
