@@ -178,7 +178,7 @@ const servicesData: Record<string, ServiceData> = {
   thesis: {
     title: "Thesis & Dissertation Assistance",
     subtitle: "Complete Support for Your Academic Journey",
-    icon: "🎓",
+    Icon: BookOpen,
     heroGradient: "from-green-50 to-emerald-50",
     aboutTitle: "About Thesis & Dissertation Assistance",
     aboutContent:
