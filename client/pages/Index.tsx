@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Star } from "lucide-react";
+import { ArrowRight, CheckCircle, Star, Sparkles } from "lucide-react";
 
 export default function Home() {
   const services = [
@@ -10,36 +10,42 @@ export default function Home() {
         "Professional essay writing for all academic levels and subjects",
       icon: "📝",
       slug: "essay",
+      color: "from-cyan-500 to-blue-500",
     },
     {
       id: "assignment",
       title: "Assignment Writing",
       description: "Complete assignment solutions tailored to your requirements",
       slug: "essay",
+      color: "from-purple-500 to-pink-500",
     },
     {
       id: "thesis",
       title: "Thesis & Dissertation",
       description: "Expert guidance and writing support for your thesis project",
       slug: "thesis",
+      color: "from-orange-500 to-red-500",
     },
     {
       id: "research",
       title: "Research Paper",
       description: "In-depth research papers with comprehensive analysis",
       slug: "research",
+      color: "from-green-500 to-emerald-500",
     },
     {
       id: "proofreading",
       title: "Proofreading & Editing",
       description: "Polish your academic work with expert proofreading services",
       slug: "essay",
+      color: "from-yellow-500 to-orange-500",
     },
     {
       id: "dissertation",
       title: "Dissertation Writing",
       description: "Complete dissertation support from planning to final submission",
       slug: "thesis",
+      color: "from-indigo-500 to-purple-500",
     },
   ];
 
@@ -113,36 +119,46 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-sidebar-background to-sidebar-background/80 py-20 sm:py-32">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-sidebar-primary/20 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-sidebar-accent/20 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-sidebar-primary/20 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-        </div>
+      {/* Animated Gradient Background */}
+      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="blur-gradient absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-600 to-transparent"></div>
+        <div className="blur-gradient absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-500 to-transparent animation-delay-2000"></div>
+        <div className="blur-gradient absolute bottom-0 left-1/2 w-96 h-96 bg-gradient-to-br from-violet-600 to-transparent animation-delay-4000"></div>
+      </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Expert Academic Writing{" "}
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Services
+      {/* Hero Section */}
+      <section className="relative py-24 sm:py-40 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 backdrop-blur-md border border-white/10 rounded-full px-6 py-2 mb-8">
+              <Sparkles size={16} className="text-cyan-400" />
+              <span className="text-sm font-medium bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                Excellence in Academic Writing
+              </span>
+            </div>
+            
+            <h1 className="text-5xl sm:text-7xl font-bold mb-6 leading-tight font-poppins">
+              Expert Academic{" "}
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+                Writing
               </span>
             </h1>
-            <p className="text-lg sm:text-xl text-foreground/70 mb-8 max-w-2xl mx-auto">
-              Professional academic writing support for essays, research papers,
-              theses, and more. Get expert help from experienced academic writers.
+            
+            <p className="text-lg sm:text-xl text-foreground/70 mb-12 max-w-2xl mx-auto">
+              Elevate your academic success with professional writing support. 
+              Essays, research papers, theses, and more—all crafted to perfection.
             </p>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#services"
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
+                className="inline-flex items-center justify-center gap-2 gradient-primary text-white px-8 py-4 rounded-xl font-semibold hover:shadow-glow transition-all duration-300 transform hover:scale-105"
               >
                 Get Started <ArrowRight size={20} />
               </a>
               <a
                 href="#"
-                className="inline-flex items-center justify-center gap-2 border-2 border-sidebar-primary text-sidebar-primary px-8 py-3 rounded-lg font-semibold hover:bg-sidebar-primary hover:text-sidebar-primary-foreground transition-colors"
+                className="inline-flex items-center justify-center gap-2 glass text-foreground px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all"
               >
                 Chat with Us
               </a>
@@ -152,38 +168,53 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 sm:py-24 bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="services" className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
               Our Academic Services
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Comprehensive academic writing solutions for all your educational
-              needs
+              Comprehensive academic writing solutions tailored to your unique needs
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
+            {services.map((service, idx) => (
               <Link
                 key={service.id}
                 to={`/services/writing/${service.slug}`}
-                className="group relative overflow-hidden rounded-xl border border-sidebar-border bg-card p-6 hover:border-sidebar-primary hover:shadow-lg transition-all"
+                className="group relative overflow-hidden rounded-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-sidebar-primary/5 to-sidebar-accent/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative z-10">
-                  <div className="text-4xl mb-4">{service.icon}</div>
-                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
+                {/* Glass Background */}
+                <div className="absolute inset-0 glass"></div>
+
+                {/* Gradient Overlay */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
+                ></div>
+
+                {/* Content */}
+                <div className="relative z-10 p-8">
+                  <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform">
+                    {service.icon}
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-foreground mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-foreground/70 mb-4 text-sm">
+                  
+                  <p className="text-foreground/70 mb-6 text-sm leading-relaxed">
                     {service.description}
                   </p>
-                  <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all text-sm">
-                    Learn More <ArrowRight size={16} />
+                  
+                  <div className="flex items-center gap-2 text-cyan-400 font-semibold group-hover:gap-3 transition-all">
+                    Learn More <ArrowRight size={18} />
                   </div>
                 </div>
+
+                {/* Border Gradient */}
+                <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-white/30 transition-colors"></div>
               </Link>
             ))}
           </div>
@@ -191,33 +222,34 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-sidebar-background to-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Why Choose Our Academic Services?
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
+              Why Choose Ardelis?
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              We're dedicated to helping students succeed with quality, ethical
-              academic support
+              We combine expertise, reliability, and dedication to your success
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whyChooseUs.map((item, index) => (
               <div
                 key={index}
-                className="flex gap-4 p-6 rounded-lg border border-sidebar-border bg-card hover:border-sidebar-primary hover:shadow-md transition-all"
+                className="glass p-8 rounded-2xl hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group"
               >
-                <div className="flex-shrink-0 text-3xl">{item.icon}</div>
-                <div className="flex-grow">
-                  <h3 className="font-semibold text-foreground mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-foreground/70">
-                    {item.description}
-                  </p>
+                <div className="flex-shrink-0 text-4xl mb-4 transform group-hover:scale-110 transition-transform">
+                  {item.icon}
                 </div>
+                
+                <h3 className="font-bold text-foreground mb-3 text-lg">
+                  {item.title}
+                </h3>
+                
+                <p className="text-sm text-foreground/70 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
@@ -225,18 +257,14 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section
-        id="testimonials"
-        className="py-16 sm:py-24 bg-sidebar-background border-y border-sidebar-border"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <h2 className="text-4xl sm:text-5xl font-bold font-poppins mb-6">
               What Our Students Say
             </h2>
-            <p className="text-lg text-sidebar-foreground/70 max-w-2xl mx-auto">
-              Real feedback from students who've improved their grades with our
-              support
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+              Real feedback from students who've transformed their academic journey
             </p>
           </div>
 
@@ -244,21 +272,22 @@ export default function Home() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-card border border-sidebar-border rounded-xl p-8 hover:border-sidebar-primary transition-colors"
+                className="glass rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2"
               >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-sidebar-primary to-sidebar-accent rounded-full flex items-center justify-center font-bold text-sidebar-primary-foreground flex-shrink-0">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full flex items-center justify-center font-bold text-white flex-shrink-0 shadow-glow">
                     {testimonial.avatar}
                   </div>
                   <div className="flex-grow">
-                    <h4 className="font-semibold text-sidebar-foreground">
+                    <h4 className="font-bold text-foreground">
                       {testimonial.name}
                     </h4>
-                    <p className="text-xs text-sidebar-foreground/60">
+                    <p className="text-xs text-foreground/60 mt-1">
                       {testimonial.role}
                     </p>
                   </div>
                 </div>
+
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
@@ -268,7 +297,10 @@ export default function Home() {
                     />
                   ))}
                 </div>
-                <p className="text-sidebar-foreground/70">{testimonial.content}</p>
+
+                <p className="text-foreground/80 leading-relaxed">
+                  {testimonial.content}
+                </p>
               </div>
             ))}
           </div>
@@ -276,25 +308,31 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-24 bg-sidebar-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 blur-gradient bg-gradient-to-r from-purple-600 to-transparent opacity-40 top-0 left-0"></div>
+        <div className="absolute inset-0 blur-gradient bg-gradient-to-l from-cyan-600 to-transparent opacity-40 bottom-0 right-0"></div>
+
+        <div className="max-w-4xl mx-auto relative z-10 text-center">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-8 font-poppins">
             Ready to Boost Your Academic Success?
           </h2>
-          <p className="text-lg text-foreground/70 mb-8">
-            Join thousands of students who've improved their grades with our
-            expert academic writing services.
+          
+          <p className="text-lg text-foreground/80 mb-12">
+            Join thousands of students who've improved their grades and academic standing 
+            with our expert writing services. Let's make your success a reality.
           </p>
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#services"
-              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow"
+              className="inline-flex items-center justify-center gap-2 gradient-primary text-white px-10 py-4 rounded-xl font-bold hover:shadow-glow transition-all duration-300 transform hover:scale-105"
             >
               Order Now <ArrowRight size={20} />
             </a>
             <a
               href="#"
-              className="inline-flex items-center justify-center gap-2 border-2 border-sidebar-primary text-sidebar-primary px-8 py-3 rounded-lg font-semibold hover:bg-sidebar-primary hover:text-sidebar-primary-foreground transition-colors"
+              className="inline-flex items-center justify-center gap-2 glass text-foreground px-10 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all"
             >
               Live Chat Support
             </a>
