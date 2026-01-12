@@ -543,6 +543,143 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      {/* Order Modal */}
+      {selectedPlan && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="glass rounded-2xl p-8 sm:p-12 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-3xl font-bold text-foreground font-poppins">
+                Complete Your Order: {selectedPlan}
+              </h2>
+              <button
+                onClick={() => setSelectedPlan(null)}
+                className="p-2 hover:bg-white/20 rounded-full transition-all"
+              >
+                <X size={24} className="text-foreground" />
+              </button>
+            </div>
+
+            <form onSubmit={handleSubmitOrder} className="space-y-6">
+              {/* Personal Information */}
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-4">Personal Information</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="fullName"
+                    placeholder="Full Name *"
+                    value={orderForm.fullName}
+                    onChange={handleOrderChange}
+                    required
+                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address *"
+                    value={orderForm.email}
+                    onChange={handleOrderChange}
+                    required
+                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400"
+                  />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number *"
+                    value={orderForm.phone}
+                    onChange={handleOrderChange}
+                    required
+                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400"
+                  />
+                  <select
+                    name="academicLevel"
+                    value={orderForm.academicLevel}
+                    onChange={handleOrderChange}
+                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-foreground focus:outline-none focus:border-cyan-400"
+                  >
+                    <option value="high-school">High School</option>
+                    <option value="undergraduate">Undergraduate</option>
+                    <option value="masters">Master's Level</option>
+                    <option value="phd">PhD Level</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Order Details */}
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-4">Order Details</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input
+                    type="number"
+                    name="wordCount"
+                    placeholder="Word Count *"
+                    value={orderForm.wordCount}
+                    onChange={handleOrderChange}
+                    required
+                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400"
+                  />
+                  <input
+                    type="date"
+                    name="deadline"
+                    value={orderForm.deadline}
+                    onChange={handleOrderChange}
+                    required
+                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-foreground focus:outline-none focus:border-cyan-400"
+                  />
+                  <input
+                    type="number"
+                    name="budget"
+                    placeholder="Budget ($) *"
+                    value={orderForm.budget}
+                    onChange={handleOrderChange}
+                    required
+                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400"
+                  />
+                  <input
+                    type="file"
+                    name="attachments"
+                    onChange={handleOrderChange}
+                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-foreground focus:outline-none focus:border-cyan-400"
+                    accept=".pdf,.doc,.docx,.txt"
+                  />
+                </div>
+              </div>
+
+              {/* Assignment Details */}
+              <div>
+                <h3 className="text-xl font-bold text-foreground mb-4">Assignment Details</h3>
+                <textarea
+                  name="assignmentDetails"
+                  placeholder="Describe your assignment, requirements, and specifications..."
+                  value={orderForm.assignmentDetails}
+                  onChange={handleOrderChange}
+                  required
+                  rows={4}
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 resize-none"
+                />
+              </div>
+
+              {/* Submit Button */}
+              <div className="flex gap-4">
+                <button
+                  type="submit"
+                  className="flex-1 gradient-primary text-white py-3 rounded-lg font-bold hover:shadow-glow transition-all"
+                >
+                  Submit Order <ArrowRight size={18} className="ml-2" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedPlan(null)}
+                  className="px-6 py-3 border-2 border-white/20 text-foreground rounded-lg font-semibold hover:bg-white/10 transition-all"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
