@@ -8,6 +8,8 @@ import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import ServiceDetail from "./pages/ServiceDetail";
 import Contact from "./pages/Contact";
+import About from "./pages/About";
+import Order from "./pages/Order";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
