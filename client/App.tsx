@@ -3,10 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Sidebar from "./components/Sidebar";
 import Index from "./pages/Index";
 import ServiceDetail from "./pages/ServiceDetail";
 import Contact from "./pages/Contact";
@@ -15,20 +13,13 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  return (
-    <div className="flex min-h-screen">
-      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-      <div className="flex flex-col flex-1">
-        <Header onMenuToggle={() => setSidebarOpen(!sidebarOpen)} />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-      </div>
-    </div>
-  );
-};
+const Layout = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex flex-col min-h-screen">
+    <Header />
+    <main className="flex-grow">{children}</main>
+    <Footer />
+  </div>
+);
 
 export default function App() {
   return (
