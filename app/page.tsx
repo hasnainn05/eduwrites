@@ -169,6 +169,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SEO Content Section */}
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-background/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 font-poppins">
+                Professional Academic Writing Support for Every Challenge
+              </h2>
+              <p className="text-foreground/80 leading-relaxed mb-4">
+                Student success starts with quality academic work. At Ardelis, we understand the pressures of academic life—tight deadlines, complex assignments, and the need for excellence. Whether you're struggling with essay writing, research papers, or comprehensive dissertations, our expert team is here to help you succeed.
+              </p>
+              <p className="text-foreground/80 leading-relaxed mb-4">
+                With over a decade of experience in academic writing, we've helped thousands of students worldwide achieve their educational goals. Our writers hold advanced degrees in their respective fields and are committed to delivering original, high-quality work that meets the highest academic standards.
+              </p>
+              <p className="text-foreground/80 leading-relaxed">
+                From undergraduate essays to PhD dissertations, we provide customized academic writing solutions that are plagiarism-free, properly cited, and delivered on time—every time. Your academic success is our mission.
+              </p>
+            </div>
+
+            {/* Right Stats */}
+            <div className="space-y-6">
+              <div className="glass p-6 rounded-xl">
+                <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                  10,000+
+                </div>
+                <p className="text-foreground/80 font-medium">Satisfied Students Worldwide</p>
+                <p className="text-foreground/60 text-sm mt-2">Students trust Ardelis for their most important academic assignments</p>
+              </div>
+
+              <div className="glass p-6 rounded-xl">
+                <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                  98%
+                </div>
+                <p className="text-foreground/80 font-medium">Customer Satisfaction Rate</p>
+                <p className="text-foreground/60 text-sm mt-2">Our commitment to quality and service excellence is reflected in our ratings</p>
+              </div>
+
+              <div className="glass p-6 rounded-xl">
+                <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                  50+
+                </div>
+                <p className="text-foreground/80 font-medium">Expert Academic Writers</p>
+                <p className="text-foreground/60 text-sm mt-2">PhDs and Masters degree holders specializing in various academic fields</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
