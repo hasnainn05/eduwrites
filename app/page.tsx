@@ -352,7 +352,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, idx) => (
-              <TiltCard key={service.id} className="h-full scroll-animate scroll-delay-100">
+              <TiltCard key={service.id} className="h-full scroll-animate scroll-delay-100 service-card-3d">
                 <Link
                   href={`/services/${service.slug}`}
                   className="group relative overflow-hidden rounded-2xl transition-all duration-300 h-full flex flex-col"
