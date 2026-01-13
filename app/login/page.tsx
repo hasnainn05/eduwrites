@@ -47,7 +47,7 @@ export default function Login() {
           {/* Left Side - Service Details */}
           <div className="hidden lg:block">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-8 font-poppins leading-tight">
-              Master Your Academics with Ardelis
+              Master Your Academics with Ardelis EduWrites
             </h2>
             <p className="text-foreground/80 mb-8 leading-relaxed">
               Sign in to access your academic writing orders, track progress, and connect with expert writers ready to help you succeed.
