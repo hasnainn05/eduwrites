@@ -378,7 +378,7 @@
   }
 
   .service-card-3d:hover {
-    transform: translateY(-8px) rotateX(8deg) rotateY(-12deg) rotateZ(2deg);
+    transform: translateY(-12px) rotateX(10deg) rotateY(-15deg) rotateZ(3deg) scale(1.02);
   }
 
   .service-card-3d::before {
