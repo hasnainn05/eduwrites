@@ -284,7 +284,7 @@ export default function Contact() {
           </h2>
 
           <p className="text-lg text-foreground/80 mb-12">
-            Don't let academic stress hold you back. Let Ardelis help you achieve your academic goals.
+            Don't let academic stress hold you back. Let Ardelis EduWrites help you achieve your academic goals.
           </p>
 
           <Link
