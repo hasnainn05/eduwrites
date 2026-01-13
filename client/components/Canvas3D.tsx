@@ -204,7 +204,7 @@ export function Canvas3D() {
       className="absolute inset-0 w-full h-full"
       style={{
         background:
-          "radial-gradient(ellipse at center, rgba(0,217,255,0.05) 0%, rgba(99,102,241,0.03) 30%, transparent 70%)",
+          "radial-gradient(ellipse at center, rgba(0,100,120,0.02) 0%, rgba(50,50,150,0.01) 30%, transparent 70%)",
       }}
     />
   );
