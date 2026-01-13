@@ -423,7 +423,7 @@ export default function Signup() {
                 </div>
 
                 <h2 className="text-2xl font-bold text-foreground mb-2 font-poppins">
-                  Welcome to Ardelis!
+                  Welcome to Ardelis EduWrites!
                 </h2>
                 <p className="text-foreground/70 text-sm mb-8">
                   Your account has been successfully created. You can now place orders and access all our services.
