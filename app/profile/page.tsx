@@ -291,8 +291,8 @@ export default function Profile() {
                 </div>
                 <div className="flex justify-between items-center pb-3 border-b border-white/10">
                   <div className="flex items-center gap-2 text-foreground/70 text-sm">
-                    <Phone size={16} />
-                    Phone
+                    <MessageCircle size={16} />
+                    WhatsApp
                   </div>
                   <span className="text-foreground text-sm font-medium">
                     {user.phone}
