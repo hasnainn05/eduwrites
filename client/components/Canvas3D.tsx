@@ -115,6 +115,7 @@ export function Canvas3D() {
     const nebula = new THREE.Points(particleGeometry, nebulaMaterial);
     nebula.position.z = 5;
     scene.add(nebula);
+    meshesRef.current?.push(nebula);
 
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
