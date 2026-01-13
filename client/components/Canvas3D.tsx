@@ -92,9 +92,9 @@ export function Canvas3D() {
     particleGeometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
     const particleMaterial = new THREE.PointsMaterial({
-      size: 0.3,
+      size: 0.15,
       transparent: true,
-      opacity: 0.3,
+      opacity: 0.12,
       vertexColors: true,
       sizeAttenuation: true,
     });
