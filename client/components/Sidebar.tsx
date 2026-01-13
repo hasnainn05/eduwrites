@@ -49,7 +49,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               onClick={onClose}
             >
               <span className="bg-gradient-to-r from-sidebar-primary to-sidebar-accent bg-clip-text text-transparent">
-                Ardelis
+                Ardelis EduWrites
               </span>
             </Link>
             <button
