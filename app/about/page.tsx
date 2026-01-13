@@ -84,26 +84,30 @@ export default function About() {
       <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Mission */}
-          <div className="glass p-12 rounded-2xl">
-            <h2 className="text-3xl font-bold text-foreground mb-6 font-poppins">Our Mission</h2>
-            <p className="text-foreground/80 leading-relaxed text-lg">
-              To provide accessible, ethical, and high-quality academic writing support that helps
-              students achieve their educational goals. We empower learners by offering professional
-              assistance with essays, research papers, theses, and other academic work while
-              maintaining the highest standards of integrity and originality.
-            </p>
-          </div>
+          <TiltCard className="h-full">
+            <div className="glass p-12 rounded-2xl h-full flex flex-col justify-center">
+              <h2 className="text-3xl font-bold text-foreground mb-6 font-poppins">Our Mission</h2>
+              <p className="text-foreground/80 leading-relaxed text-lg">
+                To provide accessible, ethical, and high-quality academic writing support that helps
+                students achieve their educational goals. We empower learners by offering professional
+                assistance with essays, research papers, theses, and other academic work while
+                maintaining the highest standards of integrity and originality.
+              </p>
+            </div>
+          </TiltCard>
 
           {/* Vision */}
-          <div className="glass p-12 rounded-2xl">
-            <h2 className="text-3xl font-bold text-foreground mb-6 font-poppins">Our Vision</h2>
-            <p className="text-foreground/80 leading-relaxed text-lg">
-              To be the most trusted and reliable academic writing service globally, recognized for
-              delivering exceptional quality, maintaining ethical standards, and genuinely supporting
-              student success. We aim to create a world where every student has access to the
-              academic support they need to excel.
-            </p>
-          </div>
+          <TiltCard className="h-full">
+            <div className="glass p-12 rounded-2xl h-full flex flex-col justify-center">
+              <h2 className="text-3xl font-bold text-foreground mb-6 font-poppins">Our Vision</h2>
+              <p className="text-foreground/80 leading-relaxed text-lg">
+                To be the most trusted and reliable academic writing service globally, recognized for
+                delivering exceptional quality, maintaining ethical standards, and genuinely supporting
+                student success. We aim to create a world where every student has access to the
+                academic support they need to excel.
+              </p>
+            </div>
+          </TiltCard>
         </div>
       </section>
 
