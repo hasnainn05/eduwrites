@@ -613,13 +613,13 @@ export default function Profile() {
                 <div className="flex gap-3 pt-4">
                   <button
                     onClick={handleSaveProfile}
-                    className="flex-1 gradient-primary text-white py-2 rounded-lg font-semibold text-sm hover:shadow-glow transition-all"
+                    className="flex-1 gradient-primary text-white py-2 rounded-lg font-semibold text-sm hover:shadow-glow transition-all animate-pulse-bounce"
                   >
                     Save
                   </button>
                   <button
                     onClick={() => setIsEditing(false)}
-                    className="flex-1 border border-white/20 text-foreground py-2 rounded-lg font-semibold text-sm hover:bg-white/10 transition-all"
+                    className="flex-1 border border-white/20 text-foreground py-2 rounded-lg font-semibold text-sm hover:bg-white/10 transition-all animate-pulse-bounce"
                   >
                     Cancel
                   </button>
