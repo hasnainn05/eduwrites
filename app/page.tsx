@@ -730,142 +730,30 @@ export default function Home() {
               All Fields of Study
             </h3>
             <p className="text-center text-foreground/70 mb-12 max-w-2xl mx-auto text-base leading-relaxed">
-              Comprehensive coverage of all academic disciplines, with
-              specialization in Europe and America's most popular fields
+              Comprehensive coverage of all academic disciplines
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
               {[
-                {
-                  category: "Computer Science & IT",
-                  subjects: [
-                    "Software Engineering",
-                    "Data Science",
-                    "AI & Machine Learning",
-                    "Cybersecurity",
-                    "Web Development",
-                    "Cloud Computing",
-                  ],
-                  icon: "💻",
-                },
-                {
-                  category: "Business & Finance",
-                  subjects: [
-                    "Business Administration",
-                    "Finance",
-                    "Economics",
-                    "Marketing",
-                    "Management",
-                    "Accounting",
-                  ],
-                  icon: "💼",
-                },
-                {
-                  category: "Engineering",
-                  subjects: [
-                    "Civil Engineering",
-                    "Mechanical Engineering",
-                    "Electrical Engineering",
-                    "Chemical Engineering",
-                    "Software Engineering",
-                    "Structural",
-                  ],
-                  icon: "⚙️",
-                },
-                {
-                  category: "Medicine & Healthcare",
-                  subjects: [
-                    "Medicine",
-                    "Nursing",
-                    "Public Health",
-                    "Pharmacy",
-                    "Dentistry",
-                    "Clinical Research",
-                  ],
-                  icon: "🏥",
-                },
-                {
-                  category: "Law & Legal Studies",
-                  subjects: [
-                    "Constitutional Law",
-                    "Business Law",
-                    "Criminal Law",
-                    "International Law",
-                    "Corporate Law",
-                    "IP Law",
-                  ],
-                  icon: "⚖️",
-                },
-                {
-                  category: "Psychology & Social Sciences",
-                  subjects: [
-                    "Psychology",
-                    "Sociology",
-                    "Anthropology",
-                    "Political Science",
-                    "Social Work",
-                    "Behavioral Studies",
-                  ],
-                  icon: "🧠",
-                },
-                {
-                  category: "Environmental Science",
-                  subjects: [
-                    "Environmental Science",
-                    "Sustainability",
-                    "Ecology",
-                    "Climate Science",
-                    "Geology",
-                    "Geography",
-                  ],
-                  icon: "🌍",
-                },
-                {
-                  category: "Humanities & Literature",
-                  subjects: [
-                    "English Literature",
-                    "History",
-                    "Philosophy",
-                    "Foreign Languages",
-                    "Linguistics",
-                    "Composition",
-                  ],
-                  icon: "📚",
-                },
-                {
-                  category: "Arts & Design",
-                  subjects: [
-                    "Fine Arts",
-                    "Graphic Design",
-                    "Architecture",
-                    "Fashion",
-                    "Film Studies",
-                    "Music",
-                  ],
-                  icon: "🎨",
-                },
+                { category: "Computer Science & IT", icon: "💻" },
+                { category: "Business & Finance", icon: "💼" },
+                { category: "Engineering", icon: "⚙️" },
+                { category: "Medicine & Healthcare", icon: "🏥" },
+                { category: "Law & Legal Studies", icon: "⚖️" },
+                { category: "Psychology & Social Sciences", icon: "🧠" },
+                { category: "Environmental Science", icon: "🌍" },
+                { category: "Humanities & Literature", icon: "📚" },
+                { category: "Arts & Design", icon: "🎨" },
               ].map((field, idx) => (
                 <div
                   key={idx}
-                  className="glass p-6 rounded-xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group bg-gradient-to-br from-white/8 to-white/4"
+                  className="glass p-4 rounded-lg border border-white/15 hover:border-cyan-400/60 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group bg-gradient-to-br from-white/8 to-white/4 text-center"
                 >
-                  <div className="flex items-start gap-3 mb-4">
-                    <span className="text-4xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      {field.icon}
-                    </span>
-                    <h4 className="font-bold text-foreground text-base group-hover:text-cyan-300 transition-colors duration-300 leading-tight">
-                      {field.category}
-                    </h4>
-                  </div>
-                  <div className="space-y-2">
-                    {field.subjects.map((subject, subIdx) => (
-                      <div key={subIdx} className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex-shrink-0"></span>
-                        <span className="text-xs text-foreground/85 leading-tight">
-                          {subject}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+                  <span className="text-2xl block mb-2 group-hover:scale-125 transition-transform duration-300">
+                    {field.icon}
+                  </span>
+                  <h4 className="text-xs font-semibold text-foreground group-hover:text-cyan-300 transition-colors duration-300 leading-tight">
+                    {field.category}
+                  </h4>
                 </div>
               ))}
             </div>
