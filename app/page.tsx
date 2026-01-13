@@ -179,8 +179,10 @@ export default function Home() {
     },
   ];
 
+  const scrollRef = useScrollAnimation(0.15);
+
   return (
-    <div className="w-full">
+    <div ref={scrollRef} className="w-full">
       {/* Animated Gradient Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="blur-gradient absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-600 to-transparent"></div>
