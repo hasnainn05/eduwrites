@@ -92,7 +92,7 @@ export default function LiveChat() {
                 <MessageCircle size={20} className="text-white" />
               </div>
               <div className="text-white">
-                <h3 className="font-bold text-sm">Ardelis Support</h3>
+                <h3 className="font-bold text-sm">Ardelis EduWrites Support</h3>
                 <p className="text-xs opacity-90">Always here to help</p>
               </div>
             </div>
