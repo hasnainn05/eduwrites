@@ -677,7 +677,8 @@ export default function Home() {
               ].map((region, idx) => (
                 <div
                   key={idx}
-                  className="group glass p-8 rounded-2xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-3 bg-gradient-to-br from-white/8 to-white/4"
+                  className="group glass p-8 rounded-2xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-3 bg-gradient-to-br from-white/8 to-white/4 scroll-animate"
+                  style={{ animationDelay: `${idx * 0.1}s` }}
                 >
                   <div className="flex items-center gap-4 mb-6">
                     <span className="text-5xl">{region.icon}</span>
