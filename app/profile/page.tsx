@@ -30,7 +30,7 @@ export default function Profile() {
   const [user, setUser] = useState({
     fullName: "John Doe",
     email: "john@example.com",
-    phone: "+1 (555) 123-4567",
+    phone: "+1 (202) 555-0123",
     country: "United States",
     city: "New York",
     joinDate: "January 2024",
