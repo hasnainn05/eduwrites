@@ -130,6 +130,8 @@ export default function Contact() {
               <TiltCard key={index} className="h-full">
                 <a
                   href={method.link}
+                  target={method.link.startsWith("http") ? "_blank" : undefined}
+                  rel={method.link.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="glass p-8 rounded-2xl hover:bg-white/20 transition-all text-center group h-full flex flex-col justify-center"
                 >
                   <div className="flex justify-center mb-4">
