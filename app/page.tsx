@@ -228,7 +228,7 @@ export default function Home() {
               </a>
               <a
                 href="#"
-                className="inline-flex items-center justify-center gap-2 glass text-foreground px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all animate-pulse-bounce"
+                className="inline-flex items-center justify-center gap-2 glass text-foreground px-8 py-4 rounded-xl font-semibold hover:bg-white/20 hover:shadow-glow transition-all transform hover:scale-105 animate-pulse-bounce"
               >
                 Chat with Us
               </a>
@@ -909,7 +909,7 @@ export default function Home() {
             </Link>
             <a
               href="#"
-              className="inline-flex items-center justify-center gap-2 glass text-foreground px-10 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all animate-pulse-bounce"
+              className="inline-flex items-center justify-center gap-2 glass text-foreground px-10 py-4 rounded-xl font-semibold hover:bg-white/20 hover:shadow-glow transition-all transform hover:scale-105 animate-pulse-bounce"
             >
               Live Chat Support
             </a>
