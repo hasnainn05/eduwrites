@@ -350,18 +350,74 @@ export default function ServiceDetail() {
 
       {/* Hero Section */}
       <section className="relative py-24 sm:py-40 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="mb-8 flex justify-center animate-float">
-            <service.Icon size={96} className="text-cyan-400" />
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Title and Description */}
+            <div>
+              <div className="mb-8 animate-float">
+                <service.Icon size={96} className="text-cyan-400" />
+              </div>
+
+              <h1 className="heading-3d text-5xl sm:text-7xl font-bold text-foreground mb-6 font-poppins">
+                {service.title}
+              </h1>
+
+              <p className="text-xl text-foreground/70 mb-6 leading-relaxed">
+                {service.subtitle}
+              </p>
+
+              <p className="text-lg text-foreground/60 leading-relaxed mb-8">
+                Transform your academic journey with our comprehensive {service.title.toLowerCase()} solutions. Our team of expert writers and editors are dedicated to helping you achieve academic excellence through professionally crafted content that meets the highest standards of quality and originality.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <div className="glass-dark px-6 py-4 rounded-xl">
+                  <div className="text-sm text-cyan-400 font-semibold mb-1">Guarantee</div>
+                  <p className="text-foreground/80">100% Original Content</p>
+                </div>
+                <div className="glass-dark px-6 py-4 rounded-xl">
+                  <div className="text-sm text-cyan-400 font-semibold mb-1">Delivery</div>
+                  <p className="text-foreground/80">On-Time Guarantee</p>
+                </div>
+                <div className="glass-dark px-6 py-4 rounded-xl">
+                  <div className="text-sm text-cyan-400 font-semibold mb-1">Support</div>
+                  <p className="text-foreground/80">24/7 Available</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Visual Element */}
+            <div className="hidden lg:flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-3xl blur-3xl"></div>
+                <div className="relative glass-dark p-12 rounded-3xl border border-white/20">
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <CheckCircle className="text-cyan-400 flex-shrink-0 mt-1" size={24} />
+                      <div>
+                        <h3 className="font-semibold text-foreground mb-2">Expert Writers</h3>
+                        <p className="text-foreground/60 text-sm">Qualified professionals with subject matter expertise</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <CheckCircle className="text-cyan-400 flex-shrink-0 mt-1" size={24} />
+                      <div>
+                        <h3 className="font-semibold text-foreground mb-2">Quality Assurance</h3>
+                        <p className="text-foreground/60 text-sm">Rigorous checks and multiple revision rounds</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <CheckCircle className="text-cyan-400 flex-shrink-0 mt-1" size={24} />
+                      <div>
+                        <h3 className="font-semibold text-foreground mb-2">Confidential Service</h3>
+                        <p className="text-foreground/60 text-sm">Your privacy and security are our top priority</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <h1 className="heading-3d text-5xl sm:text-7xl font-bold text-foreground mb-6 font-poppins">
-            {service.title}
-          </h1>
-
-          <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-            {service.subtitle}
-          </p>
         </div>
       </section>
 
