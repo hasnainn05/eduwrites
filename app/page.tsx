@@ -243,7 +243,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 font-poppins scroll-animate">
+              <h2 className="heading-3d-light text-3xl sm:text-4xl font-bold text-foreground mb-6 font-poppins scroll-animate">
                 Professional Academic Writing Support for Every Challenge
               </h2>
               <p className="text-foreground/80 leading-relaxed mb-4 scroll-animate scroll-delay-100">
