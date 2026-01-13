@@ -8,13 +8,15 @@ export function Canvas3D() {
   const sceneRef = useRef<THREE.Scene | null>(null);
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const particlesRef = useRef<THREE.Points | null>(null);
+  const meshesRef = useRef<THREE.Mesh[]>([]);
+  const timeRef = useRef<number>(0);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
     // Scene setup
     const scene = new THREE.Scene();
+    scene.background = null;
     sceneRef.current = scene;
 
     // Camera setup
@@ -22,9 +24,10 @@ export function Canvas3D() {
       75,
       containerRef.current.clientWidth / containerRef.current.clientHeight,
       0.1,
-      1000,
+      2000,
     );
-    camera.position.z = 50;
+    camera.position.set(0, 0, 50);
+    camera.lookAt(0, 0, 0);
     cameraRef.current = camera;
 
     // Renderer setup
@@ -42,45 +45,101 @@ export function Canvas3D() {
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
-    // Create particle geometry
-    const particleCount = 150;
-    const geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(particleCount * 3);
-    const velocities = new Float32Array(particleCount * 3);
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
 
-    for (let i = 0; i < particleCount * 3; i += 3) {
-      positions[i] = (Math.random() - 0.5) * 200;
-      positions[i + 1] = (Math.random() - 0.5) * 200;
-      positions[i + 2] = (Math.random() - 0.5) * 100;
+    const pointLight1 = new THREE.PointLight(0x00d9ff, 1, 100);
+    pointLight1.position.set(30, 30, 30);
+    scene.add(pointLight1);
 
-      velocities[i] = (Math.random() - 0.5) * 0.5;
-      velocities[i + 1] = (Math.random() - 0.5) * 0.5;
-      velocities[i + 2] = (Math.random() - 0.5) * 0.5;
-    }
+    const pointLight2 = new THREE.PointLight(0x6366f1, 0.8, 100);
+    pointLight2.position.set(-30, -30, 30);
+    scene.add(pointLight2);
 
-    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-    (geometry as any).userData.velocities = velocities;
+    // Create geometric meshes
+    const meshes: THREE.Mesh[] = [];
 
-    // Material
-    const material = new THREE.PointsMaterial({
+    // Torus geometry - modern, flowing
+    const torusGeometry = new THREE.TorusGeometry(15, 4, 32, 100);
+    const toriusMaterial = new THREE.MeshPhongMaterial({
       color: 0x00d9ff,
-      size: 0.7,
-      sizeAttenuation: true,
-      transparent: true,
-      opacity: 0.6,
+      emissive: 0x00d9ff,
+      emissiveIntensity: 0.3,
+      wireframe: false,
+      shininess: 100,
     });
+    const torus = new THREE.Mesh(torusGeometry, toriusMaterial);
+    torus.position.set(-20, 0, 0);
+    torus.rotation.x = Math.random() * Math.PI;
+    torus.rotation.y = Math.random() * Math.PI;
+    scene.add(torus);
+    meshes.push(torus);
 
-    const particles = new THREE.Points(geometry, material);
-    scene.add(particles);
-    particlesRef.current = particles;
-
-    // Create lines between close particles
-    const lineGeometry = new THREE.BufferGeometry();
-    const lineMaterial = new THREE.LineBasicMaterial({
+    // Octahedron - geometric, modern
+    const octaGeometry = new THREE.OctahedronGeometry(12, 3);
+    const octaMaterial = new THREE.MeshPhongMaterial({
       color: 0x6366f1,
-      transparent: true,
-      opacity: 0.2,
+      emissive: 0x6366f1,
+      emissiveIntensity: 0.2,
+      wireframe: false,
+      shininess: 80,
     });
+    const octahedron = new THREE.Mesh(octaGeometry, octaMaterial);
+    octahedron.position.set(20, 0, -10);
+    octahedron.rotation.x = Math.random() * Math.PI;
+    octahedron.rotation.y = Math.random() * Math.PI;
+    scene.add(octahedron);
+    meshes.push(octahedron);
+
+    // Icosahedron - smooth, geometric
+    const icoGeometry = new THREE.IcosahedronGeometry(10, 4);
+    const icoMaterial = new THREE.MeshPhongMaterial({
+      color: 0xa855f7,
+      emissive: 0xa855f7,
+      emissiveIntensity: 0.25,
+      wireframe: false,
+      shininess: 90,
+    });
+    const icosahedron = new THREE.Mesh(icoGeometry, icoMaterial);
+    icosahedron.position.set(0, 20, -5);
+    icosahedron.rotation.x = Math.random() * Math.PI;
+    icosahedron.rotation.y = Math.random() * Math.PI;
+    scene.add(icosahedron);
+    meshes.push(icosahedron);
+
+    // Wireframe torus for layering effect
+    const wireframeGeometry = new THREE.TorusGeometry(8, 2, 32, 100);
+    const wireframeMaterial = new THREE.MeshBasicMaterial({
+      color: 0x00d9ff,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.4,
+    });
+    const wireframeTorus = new THREE.Mesh(wireframeGeometry, wireframeMaterial);
+    wireframeTorus.position.set(-20, 0, 5);
+    wireframeTorus.rotation.x = 0.5;
+    wireframeTorus.rotation.y = 0.5;
+    scene.add(wireframeTorus);
+    meshes.push(wireframeTorus);
+
+    // Tetrahedron for additional geometry
+    const tetGeometry = new THREE.TetrahedronGeometry(8, 2);
+    const tetMaterial = new THREE.MeshPhongMaterial({
+      color: 0xec4899,
+      emissive: 0xec4899,
+      emissiveIntensity: 0.2,
+      wireframe: false,
+      shininess: 85,
+    });
+    const tetrahedron = new THREE.Mesh(tetGeometry, tetMaterial);
+    tetrahedron.position.set(0, -20, -15);
+    tetrahedron.rotation.x = Math.random() * Math.PI;
+    tetrahedron.rotation.y = Math.random() * Math.PI;
+    scene.add(tetrahedron);
+    meshes.push(tetrahedron);
+
+    meshesRef.current = meshes;
 
     let mouseX = 0;
     let mouseY = 0;
@@ -95,33 +154,25 @@ export function Canvas3D() {
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
+      timeRef.current += 0.002;
 
-      if (particles && geometry.attributes.position) {
-        const positions = geometry.attributes.position.array as Float32Array;
-        const velocities = (geometry as any).userData
-          .velocities as Float32Array;
+      // Rotate and animate meshes
+      meshes.forEach((mesh, index) => {
+        mesh.rotation.x += 0.001 + (index * 0.0005);
+        mesh.rotation.y += 0.0015 + (index * 0.0008);
+        mesh.rotation.z += 0.0005 + (index * 0.0003);
 
-        for (let i = 0; i < particleCount * 3; i += 3) {
-          positions[i] += velocities[i];
-          positions[i + 1] += velocities[i + 1];
-          positions[i + 2] += velocities[i + 2];
+        // Subtle position animation
+        mesh.position.x +=
+          Math.sin(timeRef.current + index) * 0.02 * (1 + index * 0.3);
+        mesh.position.y +=
+          Math.cos(timeRef.current + index * 0.5) * 0.02 * (1 + index * 0.2);
+      });
 
-          // Bounce particles
-          if (positions[i] > 100) velocities[i] *= -1;
-          if (positions[i] < -100) velocities[i] *= -1;
-          if (positions[i + 1] > 100) velocities[i + 1] *= -1;
-          if (positions[i + 1] < -100) velocities[i + 1] *= -1;
-          if (positions[i + 2] > 50) velocities[i + 2] *= -1;
-          if (positions[i + 2] < -50) velocities[i + 2] *= -1;
-        }
-
-        (geometry.attributes.position as any).needsUpdate = true;
-
-        // Mouse interaction
-        camera.position.x = mouseX * 10;
-        camera.position.y = mouseY * 10;
-        camera.lookAt(scene.position);
-      }
+      // Camera position influenced by mouse
+      camera.position.x = mouseX * 15;
+      camera.position.y = mouseY * 15;
+      camera.lookAt(scene.position);
 
       renderer.render(scene, camera);
     };
@@ -144,10 +195,20 @@ export function Canvas3D() {
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", handleResize);
       if (containerRef.current && renderer.domElement) {
-        containerRef.current.removeChild(renderer.domElement);
+        try {
+          containerRef.current.removeChild(renderer.domElement);
+        } catch (e) {
+          // Element might already be removed
+        }
       }
-      geometry.dispose();
-      material.dispose();
+      meshes.forEach((mesh) => {
+        mesh.geometry.dispose();
+        if (Array.isArray(mesh.material)) {
+          mesh.material.forEach((mat) => mat.dispose());
+        } else {
+          mesh.material.dispose();
+        }
+      });
       renderer.dispose();
     };
   }, []);
@@ -158,7 +219,7 @@ export function Canvas3D() {
       className="absolute inset-0 w-full h-full"
       style={{
         background:
-          "radial-gradient(ellipse at center, rgba(88,86,214,0.15) 0%, transparent 70%)",
+          "radial-gradient(circle at 30% 30%, rgba(0,217,255,0.08) 0%, rgba(99,102,241,0.05) 40%, transparent 80%)",
       }}
     />
   );
