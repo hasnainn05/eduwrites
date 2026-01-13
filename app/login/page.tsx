@@ -265,7 +265,7 @@ export default function Login() {
                 </button>
                 <button
                   type="button"
-                  className="border border-white/20 bg-white/5 hover:bg-white/10 rounded-lg py-2.5 font-medium text-foreground transition-all flex items-center justify-center gap-2"
+                  className="border border-white/20 bg-white/5 hover:bg-white/10 rounded-lg py-2.5 font-medium text-foreground transition-all flex items-center justify-center gap-2 animate-pulse-bounce"
                 >
                   <Github size={18} />
                   <span className="hidden sm:inline text-sm">GitHub</span>
