@@ -380,7 +380,7 @@ export default function ServiceDetail() {
               {service.aboutContent}
             </p>
             <p className="text-lg text-foreground/80 leading-relaxed">
-              At Ardelis, we pride ourselves on delivering exceptional quality and maintaining the highest standards of academic integrity. Every piece of work goes through rigorous quality assurance checks to ensure it meets your expectations and exceeds academic requirements. Our team is dedicated to your success and committed to providing you with work that truly makes a difference in your academic journey.
+              At Ardelis EduWrites, we pride ourselves on delivering exceptional quality and maintaining the highest standards of academic integrity. Every piece of work goes through rigorous quality assurance checks to ensure it meets your expectations and exceeds academic requirements. Our team is dedicated to your success and committed to providing you with work that truly makes a difference in your academic journey.
             </p>
           </div>
 
