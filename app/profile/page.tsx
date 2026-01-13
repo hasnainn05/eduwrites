@@ -563,7 +563,7 @@ export default function Profile() {
 
                 <div>
                   <label className="block text-xs font-semibold text-foreground/90 mb-2">
-                    Phone
+                    WhatsApp Number
                   </label>
                   <input
                     type="tel"
