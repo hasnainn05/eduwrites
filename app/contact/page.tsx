@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Mail, MessageCircle, MapPin, Clock, Send, MessageSquare } from "lucide-react";
 import { useState } from "react";
 import { TiltCard } from "@/client/components/TiltCard";
+import { Canvas3DWrapper } from "@/client/components/Canvas3DWrapper";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
