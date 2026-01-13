@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LiveChat from "@/components/LiveChat";
+import { Canvas3DWrapper } from "@/client/components/Canvas3DWrapper";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
