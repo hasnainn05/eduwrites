@@ -1,0 +1,227 @@
+"use client";
+
+import { Order } from "@/app/admin/orders/page";
+import {
+  ArrowLeft,
+  User,
+  Mail,
+  FileText,
+  Calendar,
+  Book,
+  Zap,
+  BookOpen,
+  Download,
+  CheckCircle,
+} from "lucide-react";
+
+interface OrderDetailProps {
+  order: Order;
+  onBack: () => void;
+}
+
+export function OrderDetail({ order, onBack }: OrderDetailProps) {
+  const getStatusBadge = (status: string) => {
+    const styles: { [key: string]: { bg: string; text: string; icon: string } } = {
+      new: {
+        bg: "bg-orange-500/20",
+        text: "text-orange-400",
+        icon: "Package",
+      },
+      pending: {
+        bg: "bg-yellow-500/20",
+        text: "text-yellow-400",
+        icon: "Clock",
+      },
+      completed: {
+        bg: "bg-green-500/20",
+        text: "text-green-400",
+        icon: "CheckCircle",
+      },
+    };
+    const style = styles[status];
+    return style;
+  };
+
+  const statusStyle = getStatusBadge(order.status);
+
+  return (
+    <div className="p-6 space-y-6">
+      {/* Back Button */}
+      <button
+        onClick={onBack}
+        className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-sm transition-colors"
+      >
+        <ArrowLeft size={18} />
+        Back to Orders
+      </button>
+
+      {/* Header */}
+      <div className="flex items-start justify-between">
+        <div>
+          <div className="flex items-center gap-3 mb-2">
+            <h2 className="text-2xl font-bold text-foreground">{order.fullName}</h2>
+            <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${statusStyle.bg} ${statusStyle.text}`}>
+              {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
+            </span>
+          </div>
+          <p className="text-foreground/60 text-sm">{order.id}</p>
+        </div>
+        <div className="text-right">
+          <p className="text-3xl font-bold text-cyan-400">${order.price}</p>
+          <p className="text-foreground/60 text-sm mt-1">Order Value</p>
+        </div>
+      </div>
+
+      {/* Two Column Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Left Column - Customer Information */}
+        <div className="space-y-4">
+          <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+            <h3 className="text-foreground font-semibold mb-4">Customer Information</h3>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <User size={18} className="text-cyan-400 flex-shrink-0" />
+                <div>
+                  <p className="text-foreground/70 text-xs">Full Name</p>
+                  <p className="text-foreground font-medium">{order.fullName}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail size={18} className="text-cyan-400 flex-shrink-0" />
+                <div>
+                  <p className="text-foreground/70 text-xs">Email</p>
+                  <p className="text-foreground font-medium">{order.email}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Important Dates */}
+          <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+            <h3 className="text-foreground font-semibold mb-4">Timeline</h3>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <Calendar size={18} className="text-yellow-400 flex-shrink-0" />
+                <div>
+                  <p className="text-foreground/70 text-xs">Submitted Date</p>
+                  <p className="text-foreground font-medium">
+                    {new Date(order.submittedDate).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <Calendar size={18} className="text-orange-400 flex-shrink-0" />
+                <div>
+                  <p className="text-foreground/70 text-xs">Deadline</p>
+                  <p className="text-foreground font-medium">
+                    {new Date(order.deadline).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column - Project Details */}
+        <div className="space-y-4">
+          {/* Service & Type */}
+          <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+            <h3 className="text-foreground font-semibold mb-4">Project Details</h3>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <FileText size={18} className="text-purple-400 flex-shrink-0" />
+                <div>
+                  <p className="text-foreground/70 text-xs">Service</p>
+                  <p className="text-foreground font-medium">{order.service}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <Book size={18} className="text-indigo-400 flex-shrink-0" />
+                <div>
+                  <p className="text-foreground/70 text-xs">Paper Type</p>
+                  <p className="text-foreground font-medium">{order.paperType}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <BookOpen size={18} className="text-blue-400 flex-shrink-0" />
+                <div>
+                  <p className="text-foreground/70 text-xs">Subject</p>
+                  <p className="text-foreground font-medium">{order.subject}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Academic Level & Word Count */}
+          <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+            <h3 className="text-foreground font-semibold mb-4">Requirements</h3>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <Zap size={18} className="text-pink-400 flex-shrink-0" />
+                <div>
+                  <p className="text-foreground/70 text-xs">Academic Level</p>
+                  <p className="text-foreground font-medium">{order.academicLevel}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <FileText size={18} className="text-green-400 flex-shrink-0" />
+                <div>
+                  <p className="text-foreground/70 text-xs">Word Count</p>
+                  <p className="text-foreground font-medium">{order.wordCount.toLocaleString()} words</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Description */}
+      <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+        <h3 className="text-foreground font-semibold mb-3">Order Description</h3>
+        <p className="text-foreground/80 leading-relaxed">{order.description}</p>
+      </div>
+
+      {/* Attachments */}
+      {order.attachments && order.attachments.length > 0 && (
+        <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+          <h3 className="text-foreground font-semibold mb-4">Attachments</h3>
+          <div className="space-y-2">
+            {order.attachments.map((attachment, idx) => (
+              <div
+                key={idx}
+                className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-colors"
+              >
+                <div className="flex items-center gap-2">
+                  <Download size={16} className="text-cyan-400" />
+                  <span className="text-foreground font-medium text-sm">{attachment}</span>
+                </div>
+                <button className="text-cyan-400 hover:text-cyan-300 transition-colors p-2 hover:bg-white/10 rounded-lg">
+                  <Download size={16} />
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Action Buttons */}
+      <div className="flex gap-3 pt-4 border-t border-white/10">
+        <button className="flex items-center gap-2 flex-1 px-4 py-3 rounded-lg bg-gradient-to-r from-green-600/20 to-emerald-500/20 border border-green-500/30 text-green-400 hover:border-green-500/50 transition-all font-medium">
+          <CheckCircle size={18} />
+          Mark as Complete
+        </button>
+        <button className="px-4 py-3 rounded-lg border border-white/10 text-foreground/70 hover:text-foreground hover:bg-white/5 transition-all font-medium">
+          Send Message
+        </button>
+      </div>
+    </div>
+  );
+}
