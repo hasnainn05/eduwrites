@@ -142,14 +142,14 @@ export default function Footer() {
                 <span>info@eduwrites.com</span>
               </div>
               <div className="flex items-start gap-2">
-                <MessageCircle size={16} className="mt-1 flex-shrink-0" />
                 <a
-                  href="https://wa.me/12345678890"
+                  href="https://wa.me/12025550123"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-sidebar-foreground transition-colors"
+                  className="flex items-center gap-2 hover:text-sidebar-foreground transition-colors"
                 >
-                  WhatsApp +1 (234) 567-890
+                  <MessageCircle size={16} className="flex-shrink-0" />
+                  <span>+1 (202) 555-0123</span>
                 </a>
               </div>
               <div className="flex items-start gap-2">
