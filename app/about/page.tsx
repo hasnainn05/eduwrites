@@ -2,6 +2,7 @@
 
 import { CheckCircle, Users, Award, Zap } from "lucide-react";
 import Link from "next/link";
+import { TiltCard } from "@/client/components/TiltCard";
 
 export default function About() {
   const values = [
