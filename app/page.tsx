@@ -842,7 +842,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
-              <TiltCard key={index} className="h-full">
+              <TiltCard key={index} className="h-full scroll-animate">
                 <div
                   className="glass rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 animate-float h-full"
                   style={{
