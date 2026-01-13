@@ -286,4 +286,29 @@
   .scroll-delay-500 {
     animation-delay: 0.5s;
   }
+
+  /* 3D Text Hover Effects */
+  .heading-3d {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+
+  .heading-3d:hover {
+    transform: rotateX(5deg) rotateY(-8deg) rotateZ(2deg) translateZ(20px);
+    text-shadow:
+      -5px -5px 15px rgba(0, 100, 120, 0.5),
+      5px 5px 15px rgba(168, 85, 247, 0.3);
+  }
+
+  .heading-3d-light {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+
+  .heading-3d-light:hover {
+    transform: rotateX(3deg) rotateY(-5deg) rotateZ(1deg) translateZ(15px);
+    filter: drop-shadow(-3px -3px 8px rgba(0, 100, 120, 0.4)) drop-shadow(3px 3px 8px rgba(168, 85, 247, 0.2));
+  }
 }
