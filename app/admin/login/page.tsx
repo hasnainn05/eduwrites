@@ -17,7 +17,7 @@ export default function AdminLogin() {
     setError("");
 
     // Temporary: Demo login (replace with actual auth later)
-    if (email === "admin@ardelis.com" && password === "admin123") {
+    if (email === "admin@eduwrites.com" && password === "admin123") {
       // Redirect to admin dashboard
       window.location.href = "/admin/dashboard";
     } else {
@@ -58,7 +58,7 @@ export default function AdminLogin() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@ardelis.com"
+                placeholder="admin@eduwrites.com"
                 className="w-full pl-12 pr-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-400 focus:bg-white/10 transition-all"
                 required
               />
@@ -89,7 +89,7 @@ export default function AdminLogin() {
               </button>
             </div>
             <p className="text-xs text-foreground/50 mt-2">
-              Demo: admin@ardelis.com / admin123
+              Demo: admin@eduwrites.com / admin123
             </p>
           </div>
 

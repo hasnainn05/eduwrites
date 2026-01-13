@@ -244,7 +244,7 @@ export default function Home() {
                 Professional Academic Writing Support for Every Challenge
               </h2>
               <p className="text-foreground/80 leading-relaxed mb-4">
-                Student success starts with quality academic work. At Ardelis,
+                Student success starts with quality academic work. At EduWrites,
                 we understand the pressures of academic life—tight deadlines,
                 complex assignments, and the need for excellence. Whether you're
                 struggling with essay writing, research papers, or comprehensive
@@ -275,7 +275,7 @@ export default function Home() {
                   Satisfied Students Worldwide
                 </p>
                 <p className="text-foreground/60 text-sm mt-2">
-                  Students trust Ardelis for their most important academic
+                  Students trust EduWrites for their most important academic
                   assignments
                 </p>
               </div>

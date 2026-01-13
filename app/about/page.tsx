@@ -244,7 +244,7 @@ export default function About() {
           </h2>
 
           <p className="text-lg text-foreground/80 mb-12">
-            Let Ardelis EduWrites help you achieve your academic goals. Place an
+            Let EduWrites help you achieve your academic goals. Place an
             order today and experience the difference quality academic writing
             can make.
           </p>

@@ -49,10 +49,10 @@ export default function Header() {
               <div className="flex items-center gap-2 text-foreground/80 hover:text-cyan-400 transition-colors">
                 <Mail size={16} />
                 <a
-                  href="mailto:info@ardelis.com"
+                  href="mailto:info@eduwrites.com"
                   className="whitespace-nowrap font-medium"
                 >
-                  info@ardelis.com
+                  info@eduwrites.com
                 </a>
               </div>
               <div className="flex items-center gap-2 text-foreground/80 hover:text-purple-400 transition-colors">

@@ -139,7 +139,7 @@ export default function Footer() {
             <div className="space-y-3 text-sidebar-foreground/60 text-sm">
               <div className="flex items-start gap-2">
                 <Mail size={16} className="mt-1 flex-shrink-0" />
-                <span>info@ardelis.com</span>
+                <span>info@eduwrites.com</span>
               </div>
               <div className="flex items-start gap-2">
                 <Phone size={16} className="mt-1 flex-shrink-0" />
