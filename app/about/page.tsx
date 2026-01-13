@@ -3,6 +3,7 @@
 import { CheckCircle, Users, Award, Zap } from "lucide-react";
 import Link from "next/link";
 import { TiltCard } from "@/client/components/TiltCard";
+import { Canvas3DWrapper } from "@/client/components/Canvas3DWrapper";
 
 export default function About() {
   const values = [
