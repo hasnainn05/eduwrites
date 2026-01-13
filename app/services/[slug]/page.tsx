@@ -519,7 +519,7 @@ export default function ServiceDetail() {
             {service.pricing.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative rounded-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-4 overflow-hidden group ${
+                className={`relative rounded-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-4 overflow-hidden group service-card-3d ${
                   plan.highlighted ? "lg:col-span-1 lg:row-span-2" : ""
                 }`}
               >
