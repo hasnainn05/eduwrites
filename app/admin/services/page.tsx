@@ -2,10 +2,33 @@
 
 import { useState } from 'react';
 import { AdminSidebar } from '@/client/components/AdminSidebar';
-import { Plus, Edit2, Trash2, Search, ChevronRight } from 'lucide-react';
+import { Plus, Edit2, Trash2, Search, X, Save, Star, ChevronDown } from 'lucide-react';
+
+interface Package {
+  name: string;
+  price: string;
+  description: string;
+  popular: boolean;
+  features: string[];
+}
+
+interface Service {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  projectsCompleted: number;
+  rating: number;
+  reviews: number;
+  packages: {
+    basic: Package;
+    medium: Package;
+    premium: Package;
+  };
+}
 
 export default function AdminServices() {
-  const [services, setServices] = useState([
+  const [services, setServices] = useState<Service[]>([
     {
       id: 1,
       title: 'Essay Writing',
@@ -14,6 +37,29 @@ export default function AdminServices() {
       projectsCompleted: 392,
       rating: 4.9,
       reviews: 142,
+      packages: {
+        basic: {
+          name: 'Basic',
+          price: '$49',
+          description: 'Perfect for starting students',
+          popular: false,
+          features: ['500-1000 words', 'Basic research', 'Standard formatting', '1 revision', '5-7 days delivery'],
+        },
+        medium: {
+          name: 'Medium',
+          price: '$99',
+          description: 'Most popular choice',
+          popular: true,
+          features: ['Up to 3,000 words', 'In-depth research', 'Premium formatting', '2 revisions', '3-5 days delivery'],
+        },
+        premium: {
+          name: 'Premium',
+          price: '$199',
+          description: 'For comprehensive work',
+          popular: false,
+          features: ['Up to 5,000 words', 'Expert research', 'Complete editing', 'Unlimited revisions', '2-3 days delivery'],
+        },
+      },
     },
     {
       id: 2,
@@ -23,6 +69,29 @@ export default function AdminServices() {
       projectsCompleted: 287,
       rating: 4.8,
       reviews: 98,
+      packages: {
+        basic: {
+          name: 'Basic',
+          price: '$299',
+          description: 'Perfect for starting thesis writers',
+          popular: false,
+          features: ['Up to 50 pages', 'Basic research', 'Standard formatting', '1 revision', '14-21 days delivery'],
+        },
+        medium: {
+          name: 'Medium',
+          price: '$599',
+          description: 'Most popular choice',
+          popular: true,
+          features: ['Up to 100 pages', 'In-depth research', 'Premium formatting', '3 revisions', '10-14 days delivery'],
+        },
+        premium: {
+          name: 'Premium',
+          price: '$999',
+          description: 'Complete thesis support',
+          popular: false,
+          features: ['Unlimited pages', 'Expert research', 'Complete editing', 'Unlimited revisions', '7-10 days delivery'],
+        },
+      },
     },
     {
       id: 3,
@@ -32,18 +101,65 @@ export default function AdminServices() {
       projectsCompleted: 245,
       rating: 4.9,
       reviews: 76,
+      packages: {
+        basic: {
+          name: 'Basic',
+          price: '$79',
+          description: 'Perfect for introductory research',
+          popular: false,
+          features: ['2,000-3,000 words', 'Basic citations', 'Standard formatting', '1 revision', '7-10 days delivery'],
+        },
+        medium: {
+          name: 'Medium',
+          price: '$149',
+          description: 'Most popular choice',
+          popular: true,
+          features: ['Up to 5,000 words', 'Advanced citations', 'APA/MLA/Chicago', '2 revisions', '5-7 days delivery'],
+        },
+        premium: {
+          name: 'Premium',
+          price: '$249',
+          description: 'In-depth comprehensive research',
+          popular: false,
+          features: ['Up to 8,000 words', 'Expert research', 'Complete editing', 'Unlimited revisions', '3-5 days delivery'],
+        },
+      },
     },
   ]);
 
   const [searchTerm, setSearchTerm] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);
-  const [formData, setFormData] = useState({
+  const [expandedPackages, setExpandedPackages] = useState<number | null>(null);
+  const [formData, setFormData] = useState<Omit<Service, 'id' | 'reviews'>>({
     title: '',
     slug: '',
     description: '',
     projectsCompleted: 0,
     rating: 4.9,
+    packages: {
+      basic: {
+        name: 'Basic',
+        price: '',
+        description: '',
+        popular: false,
+        features: [],
+      },
+      medium: {
+        name: 'Medium',
+        price: '',
+        description: '',
+        popular: false,
+        features: [],
+      },
+      premium: {
+        name: 'Premium',
+        price: '',
+        description: '',
+        popular: false,
+        features: [],
+      },
+    },
   });
 
   const filteredServices = services.filter(
@@ -60,11 +176,34 @@ export default function AdminServices() {
       description: '',
       projectsCompleted: 0,
       rating: 4.9,
+      packages: {
+        basic: {
+          name: 'Basic',
+          price: '',
+          description: '',
+          popular: false,
+          features: [],
+        },
+        medium: {
+          name: 'Medium',
+          price: '',
+          description: '',
+          popular: true,
+          features: [],
+        },
+        premium: {
+          name: 'Premium',
+          price: '',
+          description: '',
+          popular: false,
+          features: [],
+        },
+      },
     });
     setShowModal(true);
   };
 
-  const handleEditService = (service: typeof services[0]) => {
+  const handleEditService = (service: Service) => {
     setEditingId(service.id);
     setFormData({
       title: service.title,
@@ -72,6 +211,7 @@ export default function AdminServices() {
       description: service.description,
       projectsCompleted: service.projectsCompleted,
       rating: service.rating,
+      packages: service.packages,
     });
     setShowModal(true);
   };
@@ -100,6 +240,35 @@ export default function AdminServices() {
     setServices(services.filter((s) => s.id !== id));
   };
 
+  const updatePackageField = (tier: 'basic' | 'medium' | 'premium', field: string, value: any) => {
+    setFormData({
+      ...formData,
+      packages: {
+        ...formData.packages,
+        [tier]: {
+          ...formData.packages[tier],
+          [field]: value,
+        },
+      },
+    });
+  };
+
+  const updatePackageFeature = (tier: 'basic' | 'medium' | 'premium', index: number, value: string) => {
+    const features = [...formData.packages[tier].features];
+    features[index] = value;
+    updatePackageField(tier, 'features', features);
+  };
+
+  const addPackageFeature = (tier: 'basic' | 'medium' | 'premium') => {
+    const features = [...formData.packages[tier].features, ''];
+    updatePackageField(tier, 'features', features);
+  };
+
+  const removePackageFeature = (tier: 'basic' | 'medium' | 'premium', index: number) => {
+    const features = formData.packages[tier].features.filter((_, i) => i !== index);
+    updatePackageField(tier, 'features', features);
+  };
+
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Sidebar */}
@@ -112,7 +281,7 @@ export default function AdminServices() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-foreground">Services</h1>
-              <p className="text-foreground/60 text-sm mt-1">Manage your academic writing services</p>
+              <p className="text-foreground/60 text-sm mt-1">Manage your academic writing services with pricing tiers</p>
             </div>
             <button
               onClick={handleAddService}
@@ -150,6 +319,7 @@ export default function AdminServices() {
                     <th className="px-6 py-4 text-left text-sm font-semibold text-foreground/80">Projects</th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-foreground/80">Rating</th>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-foreground/80">Reviews</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-foreground/80">Packages</th>
                     <th className="px-6 py-4 text-right text-sm font-semibold text-foreground/80">Actions</th>
                   </tr>
                 </thead>
@@ -174,6 +344,15 @@ export default function AdminServices() {
                       <td className="px-6 py-4">
                         <p className="text-foreground/70">{service.reviews}</p>
                       </td>
+                      <td className="px-6 py-4">
+                        <button
+                          onClick={() => setExpandedPackages(expandedPackages === service.id ? null : service.id)}
+                          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-cyan-400 text-sm font-medium transition-colors"
+                        >
+                          <span>View Pricing</span>
+                          <ChevronDown size={14} className={`transition-transform ${expandedPackages === service.id ? 'rotate-180' : ''}`} />
+                        </button>
+                      </td>
                       <td className="px-6 py-4 text-right">
                         <div className="flex items-center justify-end gap-2">
                           <button
@@ -197,6 +376,32 @@ export default function AdminServices() {
                 </tbody>
               </table>
             </div>
+
+            {/* Expandable Package Details */}
+            {expandedPackages && (
+              <div className="border-t border-white/10 bg-white/5 p-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {services.find(s => s.id === expandedPackages)?.packages && Object.entries(services.find(s => s.id === expandedPackages)!.packages).map(([key, pkg]) => (
+                    <div key={key} className={`rounded-xl border p-4 ${pkg.popular ? 'border-cyan-400 bg-cyan-400/10' : 'border-white/10 bg-white/5'}`}>
+                      <div className="flex items-center justify-between mb-3">
+                        <h4 className="text-lg font-bold text-foreground">{pkg.name}</h4>
+                        {pkg.popular && <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />}
+                      </div>
+                      <p className="text-2xl font-bold text-cyan-400 mb-2">{pkg.price}</p>
+                      <p className="text-sm text-foreground/70 mb-3">{pkg.description}</p>
+                      <ul className="space-y-1 text-xs text-foreground/60">
+                        {pkg.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-center gap-2">
+                            <span className="text-cyan-400">✓</span>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {filteredServices.length === 0 && (
@@ -209,72 +414,174 @@ export default function AdminServices() {
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-          <div className="w-full max-w-2xl glass rounded-2xl border border-white/10 p-8">
-            <h2 className="text-2xl font-bold text-foreground mb-6">
-              {editingId ? 'Edit Service' : 'Add New Service'}
-            </h2>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 overflow-y-auto">
+          <div className="w-full max-w-4xl glass rounded-2xl border border-white/10 p-8 my-8">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-foreground">
+                {editingId ? 'Edit Service' : 'Add New Service'}
+              </h2>
+              <button
+                onClick={() => setShowModal(false)}
+                className="p-2 rounded-lg hover:bg-white/10 text-foreground/50 hover:text-foreground transition-colors"
+              >
+                <X size={24} />
+              </button>
+            </div>
 
-            <div className="space-y-5">
-              <div>
-                <label className="block text-sm font-medium text-foreground/80 mb-2">Service Name</label>
-                <input
-                  type="text"
-                  value={formData.title}
-                  onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-400 transition-all"
-                  placeholder="e.g., Essay Writing"
-                />
-              </div>
+            <div className="space-y-8">
+              {/* Service Details */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-foreground">Service Details</h3>
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/80 mb-2">Service Name</label>
+                    <input
+                      type="text"
+                      value={formData.title}
+                      onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-400 transition-all"
+                      placeholder="e.g., Essay Writing"
+                    />
+                  </div>
 
-              <div>
-                <label className="block text-sm font-medium text-foreground/80 mb-2">Slug (URL)</label>
-                <input
-                  type="text"
-                  value={formData.slug}
-                  onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-400 transition-all"
-                  placeholder="e.g., essay"
-                />
-              </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/80 mb-2">Slug (URL)</label>
+                    <input
+                      type="text"
+                      value={formData.slug}
+                      onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-400 transition-all"
+                      placeholder="e.g., essay"
+                    />
+                  </div>
 
-              <div>
-                <label className="block text-sm font-medium text-foreground/80 mb-2">Description</label>
-                <textarea
-                  value={formData.description}
-                  onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-400 transition-all"
-                  placeholder="Enter service description"
-                  rows={3}
-                />
-              </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground/80 mb-2">Description</label>
+                    <textarea
+                      value={formData.description}
+                      onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-cyan-400 transition-all"
+                      placeholder="Enter service description"
+                      rows={3}
+                    />
+                  </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-foreground/80 mb-2">Projects Completed</label>
-                  <input
-                    type="number"
-                    value={formData.projectsCompleted}
-                    onChange={(e) => setFormData({ ...formData, projectsCompleted: parseInt(e.target.value) })}
-                    className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all"
-                  />
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-foreground/80 mb-2">Projects Completed</label>
+                      <input
+                        type="number"
+                        value={formData.projectsCompleted}
+                        onChange={(e) => setFormData({ ...formData, projectsCompleted: parseInt(e.target.value) })}
+                        className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-foreground/80 mb-2">Rating (0-5)</label>
+                      <input
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        max="5"
+                        value={formData.rating}
+                        onChange={(e) => setFormData({ ...formData, rating: parseFloat(e.target.value) })}
+                        className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all"
+                      />
+                    </div>
+                  </div>
                 </div>
+              </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-foreground/80 mb-2">Rating (0-5)</label>
-                  <input
-                    type="number"
-                    step="0.1"
-                    min="0"
-                    max="5"
-                    value={formData.rating}
-                    onChange={(e) => setFormData({ ...formData, rating: parseFloat(e.target.value) })}
-                    className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all"
-                  />
+              {/* Package Pricing */}
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-4">Pricing Tiers</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {(['basic', 'medium', 'premium'] as const).map((tier) => (
+                    <div key={tier} className="glass rounded-xl border border-white/10 p-5">
+                      <div className="space-y-4">
+                        <div>
+                          <label className="block text-sm font-medium text-foreground/80 mb-2">Package Name</label>
+                          <input
+                            type="text"
+                            value={formData.packages[tier].name}
+                            onChange={(e) => updatePackageField(tier, 'name', e.target.value)}
+                            className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all text-sm"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-foreground/80 mb-2">Price</label>
+                          <input
+                            type="text"
+                            value={formData.packages[tier].price}
+                            onChange={(e) => updatePackageField(tier, 'price', e.target.value)}
+                            className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all text-sm"
+                            placeholder="e.g., $99"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-foreground/80 mb-2">Description</label>
+                          <input
+                            type="text"
+                            value={formData.packages[tier].description}
+                            onChange={(e) => updatePackageField(tier, 'description', e.target.value)}
+                            className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all text-sm"
+                            placeholder="e.g., Most popular choice"
+                          />
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <input
+                            type="checkbox"
+                            checked={formData.packages[tier].popular}
+                            onChange={(e) => updatePackageField(tier, 'popular', e.target.checked)}
+                            className="w-4 h-4 rounded accent-cyan-400"
+                            id={`popular-${tier}`}
+                          />
+                          <label htmlFor={`popular-${tier}`} className="text-sm font-medium text-foreground/80">
+                            Most Popular
+                          </label>
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-foreground/80 mb-2">Features</label>
+                          <div className="space-y-2 max-h-32 overflow-y-auto">
+                            {formData.packages[tier].features.map((feature, idx) => (
+                              <div key={idx} className="flex gap-2">
+                                <input
+                                  type="text"
+                                  value={feature}
+                                  onChange={(e) => updatePackageFeature(tier, idx, e.target.value)}
+                                  className="flex-1 px-3 py-2 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all text-xs"
+                                  placeholder="Feature"
+                                />
+                                <button
+                                  onClick={() => removePackageFeature(tier, idx)}
+                                  className="p-2 rounded-lg hover:bg-red-500/20 text-red-400 transition-colors"
+                                >
+                                  <X size={14} />
+                                </button>
+                              </div>
+                            ))}
+                          </div>
+                          <button
+                            onClick={() => addPackageFeature(tier)}
+                            className="mt-2 w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-cyan-400 text-xs font-medium transition-colors"
+                          >
+                            <Plus size={14} />
+                            Add Feature
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
 
+            {/* Actions */}
             <div className="flex gap-4 mt-8">
               <button
                 onClick={() => setShowModal(false)}
@@ -284,8 +591,9 @@ export default function AdminServices() {
               </button>
               <button
                 onClick={handleSaveService}
-                className="flex-1 px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold hover:shadow-lg transition-all"
+                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold hover:shadow-lg transition-all"
               >
+                <Save size={18} />
                 {editingId ? 'Update Service' : 'Create Service'}
               </button>
             </div>
