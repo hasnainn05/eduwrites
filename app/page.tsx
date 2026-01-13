@@ -701,7 +701,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
-              Why Choose Ardelis?
+              Why Choose Ardelis EduWrites?
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
               We combine expertise, reliability, and dedication to your success
