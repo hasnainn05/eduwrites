@@ -703,7 +703,7 @@ export default function Home() {
 
           {/* Language Support */}
           <div>
-            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">
+            <h3 className="heading-3d-light text-3xl font-bold text-foreground mb-12 text-center">
               Multi-Language Support
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
