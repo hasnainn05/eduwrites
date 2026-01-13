@@ -233,4 +233,57 @@
   .animation-delay-4000 {
     animation-delay: 4s;
   }
+
+  /* Scroll Animation Utilities */
+  .scroll-animate {
+    opacity: 0;
+  }
+
+  .scroll-animate.animate-in {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .scroll-animate-left {
+    opacity: 0;
+  }
+
+  .scroll-animate-left.animate-in {
+    animation: slideInFromLeft 0.6s ease-out forwards;
+  }
+
+  .scroll-animate-right {
+    opacity: 0;
+  }
+
+  .scroll-animate-right.animate-in {
+    animation: slideInFromRight 0.6s ease-out forwards;
+  }
+
+  .scroll-animate-fade {
+    opacity: 0;
+  }
+
+  .scroll-animate-fade.animate-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .scroll-delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .scroll-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .scroll-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .scroll-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .scroll-delay-500 {
+    animation-delay: 0.5s;
+  }
 }
