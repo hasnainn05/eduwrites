@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import * as THREE from 'three';
+import { useRef, useEffect } from "react";
+import * as THREE from "three";
 
 export function Canvas3D() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -22,7 +22,7 @@ export function Canvas3D() {
       75,
       containerRef.current.clientWidth / containerRef.current.clientHeight,
       0.1,
-      1000
+      1000,
     );
     camera.position.z = 50;
     cameraRef.current = camera;
@@ -31,11 +31,14 @@ export function Canvas3D() {
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: true,
-      precision: 'highp'
+      precision: "highp",
     });
-    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+    renderer.setSize(
+      containerRef.current.clientWidth,
+      containerRef.current.clientHeight,
+    );
     renderer.setClearColor(0x000000, 0);
-    renderer.domElement.style.pointerEvents = 'none';
+    renderer.domElement.style.pointerEvents = "none";
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
@@ -55,7 +58,7 @@ export function Canvas3D() {
       velocities[i + 2] = (Math.random() - 0.5) * 0.5;
     }
 
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     (geometry as any).userData.velocities = velocities;
 
     // Material
@@ -87,7 +90,7 @@ export function Canvas3D() {
       mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
     };
 
-    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
 
     // Animation loop
     const animate = () => {
@@ -95,7 +98,8 @@ export function Canvas3D() {
 
       if (particles && geometry.attributes.position) {
         const positions = geometry.attributes.position.array as Float32Array;
-        const velocities = (geometry as any).userData.velocities as Float32Array;
+        const velocities = (geometry as any).userData
+          .velocities as Float32Array;
 
         for (let i = 0; i < particleCount * 3; i += 3) {
           positions[i] += velocities[i];
@@ -134,11 +138,11 @@ export function Canvas3D() {
       renderer.setSize(width, height);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("resize", handleResize);
       if (containerRef.current && renderer.domElement) {
         containerRef.current.removeChild(renderer.domElement);
       }
@@ -152,7 +156,10 @@ export function Canvas3D() {
     <div
       ref={containerRef}
       className="absolute inset-0 w-full h-full"
-      style={{ background: 'radial-gradient(ellipse at center, rgba(88,86,214,0.15) 0%, transparent 70%)' }}
+      style={{
+        background:
+          "radial-gradient(ellipse at center, rgba(88,86,214,0.15) 0%, transparent 70%)",
+      }}
     />
   );
 }

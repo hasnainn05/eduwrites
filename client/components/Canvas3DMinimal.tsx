@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import * as THREE from 'three';
+import { useRef, useEffect } from "react";
+import * as THREE from "three";
 
 export function Canvas3DMinimal() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,21 +21,24 @@ export function Canvas3DMinimal() {
       75,
       containerRef.current.clientWidth / containerRef.current.clientHeight,
       0.1,
-      1000
+      1000,
     );
     camera.position.z = 30;
     cameraRef.current = camera;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: true, 
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
       alpha: true,
-      precision: 'highp'
+      precision: "highp",
     });
-    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+    renderer.setSize(
+      containerRef.current.clientWidth,
+      containerRef.current.clientHeight,
+    );
     renderer.setClearColor(0x000000, 0);
-    renderer.domElement.style.pointerEvents = 'none';
-    renderer.domElement.style.filter = 'blur(0.5px)';
+    renderer.domElement.style.pointerEvents = "none";
+    renderer.domElement.style.filter = "blur(0.5px)";
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
@@ -93,16 +96,16 @@ export function Canvas3DMinimal() {
 
     // Create subtle animated plane with gradient
     const planeGeometry = new THREE.PlaneGeometry(200, 200);
-    const canvas = document.createElement('canvas');
+    const canvas = document.createElement("canvas");
     canvas.width = 512;
     canvas.height = 512;
-    const ctx = canvas.getContext('2d')!;
+    const ctx = canvas.getContext("2d")!;
 
     // Create gradient texture
     const gradient = ctx.createLinearGradient(0, 0, 512, 512);
-    gradient.addColorStop(0, 'rgba(99, 102, 241, 0.05)');
-    gradient.addColorStop(0.5, 'rgba(6, 182, 212, 0.03)');
-    gradient.addColorStop(1, 'rgba(167, 139, 250, 0.05)');
+    gradient.addColorStop(0, "rgba(99, 102, 241, 0.05)");
+    gradient.addColorStop(0.5, "rgba(6, 182, 212, 0.03)");
+    gradient.addColorStop(1, "rgba(167, 139, 250, 0.05)");
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 512, 512);
 
@@ -128,7 +131,7 @@ export function Canvas3DMinimal() {
       mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
     };
 
-    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
 
     // Animation loop - very subtle
     const startTime = performance.now();
@@ -179,11 +182,11 @@ export function Canvas3DMinimal() {
       renderer.setSize(width, height);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("resize", handleResize);
       if (containerRef.current && renderer.domElement) {
         containerRef.current.removeChild(renderer.domElement);
       }
@@ -206,9 +209,10 @@ export function Canvas3DMinimal() {
     <div
       ref={containerRef}
       className="absolute inset-0 w-full h-full"
-      style={{ 
-        background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 27, 75, 0.95) 50%, rgba(15, 23, 42, 0.95) 100%)',
-        filter: 'blur(1px)'
+      style={{
+        background:
+          "linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 27, 75, 0.95) 50%, rgba(15, 23, 42, 0.95) 100%)",
+        filter: "blur(1px)",
       }}
     />
   );

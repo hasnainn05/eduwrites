@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { AdminSidebar } from '@/client/components/AdminSidebar';
+import { AdminSidebar } from "@/client/components/AdminSidebar";
 import {
   BarChart3,
   Users,
@@ -10,60 +10,76 @@ import {
   MessageSquare,
   Activity,
   ArrowRight,
-} from 'lucide-react';
-import Link from 'next/link';
+} from "lucide-react";
+import Link from "next/link";
 
 export default function AdminDashboard() {
   const stats = [
     {
-      label: 'Total Services',
-      value: '6',
-      change: '+2 this month',
+      label: "Total Services",
+      value: "6",
+      change: "+2 this month",
       icon: FileText,
-      color: 'from-blue-500 to-cyan-500',
+      color: "from-blue-500 to-cyan-500",
     },
     {
-      label: 'Projects Completed',
-      value: '1,234',
-      change: '+156 this month',
+      label: "Projects Completed",
+      value: "1,234",
+      change: "+156 this month",
       icon: TrendingUp,
-      color: 'from-purple-500 to-pink-500',
+      color: "from-purple-500 to-pink-500",
     },
     {
-      label: 'Average Rating',
-      value: '4.9',
-      change: 'Out of 5 stars',
+      label: "Average Rating",
+      value: "4.9",
+      change: "Out of 5 stars",
       icon: Star,
-      color: 'from-yellow-500 to-orange-500',
+      color: "from-yellow-500 to-orange-500",
     },
     {
-      label: 'Total Reviews',
-      value: '892',
-      change: '+89 this month',
+      label: "Total Reviews",
+      value: "892",
+      change: "+89 this month",
       icon: Users,
-      color: 'from-green-500 to-emerald-500',
+      color: "from-green-500 to-emerald-500",
     },
     {
-      label: 'New Messages',
-      value: '23',
-      change: 'Pending responses',
+      label: "New Messages",
+      value: "23",
+      change: "Pending responses",
       icon: MessageSquare,
-      color: 'from-indigo-500 to-purple-500',
+      color: "from-indigo-500 to-purple-500",
     },
     {
-      label: 'Customer Satisfaction',
-      value: '98%',
-      change: 'Based on reviews',
+      label: "Customer Satisfaction",
+      value: "98%",
+      change: "Based on reviews",
       icon: Activity,
-      color: 'from-rose-500 to-pink-500',
+      color: "from-rose-500 to-pink-500",
     },
   ];
 
   const recentActivities = [
-    { date: 'Today, 2:30 PM', action: 'New message from John Doe', type: 'message' },
-    { date: 'Today, 1:15 PM', action: 'Service review: 5 stars from Sarah', type: 'review' },
-    { date: 'Yesterday, 4:45 PM', action: 'Project completed for Design Service', type: 'project' },
-    { date: 'Yesterday, 10:20 AM', action: 'New package inquiry received', type: 'inquiry' },
+    {
+      date: "Today, 2:30 PM",
+      action: "New message from John Doe",
+      type: "message",
+    },
+    {
+      date: "Today, 1:15 PM",
+      action: "Service review: 5 stars from Sarah",
+      type: "review",
+    },
+    {
+      date: "Yesterday, 4:45 PM",
+      action: "Project completed for Design Service",
+      type: "project",
+    },
+    {
+      date: "Yesterday, 10:20 AM",
+      action: "New package inquiry received",
+      type: "inquiry",
+    },
   ];
 
   return (
@@ -78,10 +94,14 @@ export default function AdminDashboard() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
-              <p className="text-foreground/60 text-sm mt-1">Welcome back, Admin</p>
+              <p className="text-foreground/60 text-sm mt-1">
+                Welcome back, Admin
+              </p>
             </div>
             <div className="text-right">
-              <p className="text-sm text-foreground/60">{new Date().toLocaleDateString()}</p>
+              <p className="text-sm text-foreground/60">
+                {new Date().toLocaleDateString()}
+              </p>
             </div>
           </div>
         </div>
@@ -90,7 +110,9 @@ export default function AdminDashboard() {
         <div className="p-6 space-y-8">
           {/* Stats Grid */}
           <div>
-            <h2 className="text-xl font-bold text-foreground mb-6">Key Metrics</h2>
+            <h2 className="text-xl font-bold text-foreground mb-6">
+              Key Metrics
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {stats.map((stat, idx) => {
                 const Icon = stat.icon;
@@ -100,13 +122,21 @@ export default function AdminDashboard() {
                     className="group glass p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all hover:bg-white/10 cursor-pointer"
                   >
                     <div className="flex items-start justify-between mb-4">
-                      <div className={`p-3 rounded-xl bg-gradient-to-br ${stat.color} bg-opacity-20 group-hover:scale-110 transition-transform`}>
+                      <div
+                        className={`p-3 rounded-xl bg-gradient-to-br ${stat.color} bg-opacity-20 group-hover:scale-110 transition-transform`}
+                      >
                         <Icon className="w-6 h-6 text-white" />
                       </div>
                     </div>
-                    <p className="text-foreground/70 text-sm font-medium">{stat.label}</p>
-                    <h3 className="text-3xl font-bold text-foreground mt-2">{stat.value}</h3>
-                    <p className="text-xs text-foreground/50 mt-3">{stat.change}</p>
+                    <p className="text-foreground/70 text-sm font-medium">
+                      {stat.label}
+                    </p>
+                    <h3 className="text-3xl font-bold text-foreground mt-2">
+                      {stat.value}
+                    </h3>
+                    <p className="text-xs text-foreground/50 mt-3">
+                      {stat.change}
+                    </p>
                   </div>
                 );
               })}
@@ -118,7 +148,9 @@ export default function AdminDashboard() {
             {/* Recent Activity */}
             <div className="glass p-6 rounded-2xl border border-white/10">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-foreground">Recent Activity</h2>
+                <h2 className="text-xl font-bold text-foreground">
+                  Recent Activity
+                </h2>
                 <Link
                   href="/admin/messages"
                   className="text-cyan-400 hover:text-cyan-300 text-sm font-medium flex items-center gap-1"
@@ -134,8 +166,12 @@ export default function AdminDashboard() {
                   >
                     <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400"></div>
                     <div className="flex-1">
-                      <p className="text-foreground text-sm font-medium">{activity.action}</p>
-                      <p className="text-foreground/50 text-xs mt-1">{activity.date}</p>
+                      <p className="text-foreground text-sm font-medium">
+                        {activity.action}
+                      </p>
+                      <p className="text-foreground/50 text-xs mt-1">
+                        {activity.date}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -144,15 +180,21 @@ export default function AdminDashboard() {
 
             {/* Quick Links */}
             <div className="glass p-6 rounded-2xl border border-white/10">
-              <h2 className="text-xl font-bold text-foreground mb-6">Quick Actions</h2>
+              <h2 className="text-xl font-bold text-foreground mb-6">
+                Quick Actions
+              </h2>
               <div className="space-y-3">
                 <Link
                   href="/admin/services"
                   className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-indigo-600/20 to-cyan-500/20 border border-indigo-500/20 hover:border-indigo-500/50 transition-all group"
                 >
                   <div>
-                    <p className="font-semibold text-foreground">Manage Services</p>
-                    <p className="text-xs text-foreground/60">Add, edit, or delete services</p>
+                    <p className="font-semibold text-foreground">
+                      Manage Services
+                    </p>
+                    <p className="text-xs text-foreground/60">
+                      Add, edit, or delete services
+                    </p>
                   </div>
                   <ArrowRight className="text-indigo-400 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -162,8 +204,12 @@ export default function AdminDashboard() {
                   className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-purple-600/20 to-pink-500/20 border border-purple-500/20 hover:border-purple-500/50 transition-all group"
                 >
                   <div>
-                    <p className="font-semibold text-foreground">Package Pricing</p>
-                    <p className="text-xs text-foreground/60">Update package details & pricing</p>
+                    <p className="font-semibold text-foreground">
+                      Package Pricing
+                    </p>
+                    <p className="text-xs text-foreground/60">
+                      Update package details & pricing
+                    </p>
                   </div>
                   <ArrowRight className="text-purple-400 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -173,8 +219,12 @@ export default function AdminDashboard() {
                   className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-yellow-600/20 to-orange-500/20 border border-yellow-500/20 hover:border-yellow-500/50 transition-all group"
                 >
                   <div>
-                    <p className="font-semibold text-foreground">Reviews & Ratings</p>
-                    <p className="text-xs text-foreground/60">Manage customer reviews</p>
+                    <p className="font-semibold text-foreground">
+                      Reviews & Ratings
+                    </p>
+                    <p className="text-xs text-foreground/60">
+                      Manage customer reviews
+                    </p>
                   </div>
                   <ArrowRight className="text-yellow-400 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -184,8 +234,12 @@ export default function AdminDashboard() {
                   className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-green-600/20 to-emerald-500/20 border border-green-500/20 hover:border-green-500/50 transition-all group"
                 >
                   <div>
-                    <p className="font-semibold text-foreground">Messages & Chat</p>
-                    <p className="text-xs text-foreground/60">23 unread messages</p>
+                    <p className="font-semibold text-foreground">
+                      Messages & Chat
+                    </p>
+                    <p className="text-xs text-foreground/60">
+                      23 unread messages
+                    </p>
                   </div>
                   <ArrowRight className="text-green-400 group-hover:translate-x-1 transition-transform" />
                 </Link>

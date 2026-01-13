@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Minus } from 'lucide-react';
+import { useState, useRef, useEffect } from "react";
+import { MessageCircle, X, Send, Minus } from "lucide-react";
 
 interface Message {
   id: string;
   text: string;
-  sender: 'user' | 'bot';
+  sender: "user" | "bot";
   timestamp: Date;
 }
 
@@ -15,18 +15,18 @@ export default function LiveChat() {
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
-      id: '1',
-      text: 'Hi! 👋 Welcome to Ardelis EduWrites. How can we help you today?',
-      sender: 'bot',
+      id: "1",
+      text: "Hi! 👋 Welcome to Ardelis EduWrites. How can we help you today?",
+      sender: "bot",
       timestamp: new Date(),
     },
   ]);
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -48,12 +48,12 @@ export default function LiveChat() {
     const userMessage: Message = {
       id: Date.now().toString(),
       text: inputValue,
-      sender: 'user',
+      sender: "user",
       timestamp: new Date(),
     };
 
     setMessages((prev) => [...prev, userMessage]);
-    setInputValue('');
+    setInputValue("");
     setIsLoading(true);
 
     // Simulate bot response delay
@@ -61,7 +61,7 @@ export default function LiveChat() {
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: botResponses[Math.floor(Math.random() * botResponses.length)],
-        sender: 'bot',
+        sender: "bot",
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, botMessage]);
@@ -122,21 +122,23 @@ export default function LiveChat() {
                   <div
                     key={message.id}
                     className={`flex ${
-                      message.sender === 'user' ? 'justify-end' : 'justify-start'
+                      message.sender === "user"
+                        ? "justify-end"
+                        : "justify-start"
                     } animate-in fade-in slide-in-from-bottom-3`}
                   >
                     <div
                       className={`max-w-[70%] rounded-2xl px-4 py-2 ${
-                        message.sender === 'user'
-                          ? 'gradient-primary text-white rounded-br-none'
-                          : 'glass text-foreground rounded-bl-none'
+                        message.sender === "user"
+                          ? "gradient-primary text-white rounded-br-none"
+                          : "glass text-foreground rounded-bl-none"
                       }`}
                     >
                       <p className="text-sm">{message.text}</p>
                       <span className="text-xs opacity-70 mt-1 block">
                         {message.timestamp.toLocaleTimeString([], {
-                          hour: '2-digit',
-                          minute: '2-digit',
+                          hour: "2-digit",
+                          minute: "2-digit",
                         })}
                       </span>
                     </div>
@@ -150,11 +152,11 @@ export default function LiveChat() {
                         <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"></div>
                         <div
                           className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"
-                          style={{ animationDelay: '0.2s' }}
+                          style={{ animationDelay: "0.2s" }}
                         ></div>
                         <div
                           className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"
-                          style={{ animationDelay: '0.4s' }}
+                          style={{ animationDelay: "0.4s" }}
                         ></div>
                       </div>
                     </div>
@@ -165,7 +167,10 @@ export default function LiveChat() {
               </div>
 
               {/* Input */}
-              <form onSubmit={handleSendMessage} className="p-4 border-t border-white/10">
+              <form
+                onSubmit={handleSendMessage}
+                className="p-4 border-t border-white/10"
+              >
                 <div className="flex gap-2">
                   <input
                     type="text"

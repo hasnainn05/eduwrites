@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import * as THREE from 'three';
+import { useRef, useEffect } from "react";
+import * as THREE from "three";
 
 export function Canvas3DEducation() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,31 +21,34 @@ export function Canvas3DEducation() {
       75,
       containerRef.current.clientWidth / containerRef.current.clientHeight,
       0.1,
-      1000
+      1000,
     );
     camera.position.z = 45;
     cameraRef.current = camera;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: true, 
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
       alpha: true,
-      precision: 'highp'
+      precision: "highp",
     });
-    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+    renderer.setSize(
+      containerRef.current.clientWidth,
+      containerRef.current.clientHeight,
+    );
     renderer.setClearColor(0x000000, 0);
-    renderer.domElement.style.pointerEvents = 'none';
+    renderer.domElement.style.pointerEvents = "none";
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
     // Create knowledge spheres (representing different fields of study)
     const spheres: any[] = [];
     const spherePositions = [
-      new THREE.Vector3(0, 0, 0),       // Center
-      new THREE.Vector3(15, 8, 5),      // Top right
-      new THREE.Vector3(-15, 8, 5),     // Top left
-      new THREE.Vector3(12, -10, -8),   // Bottom right
-      new THREE.Vector3(-12, -10, -8),  // Bottom left
+      new THREE.Vector3(0, 0, 0), // Center
+      new THREE.Vector3(15, 8, 5), // Top right
+      new THREE.Vector3(-15, 8, 5), // Top left
+      new THREE.Vector3(12, -10, -8), // Bottom right
+      new THREE.Vector3(-12, -10, -8), // Bottom left
     ];
 
     const sphereColors = [
@@ -56,7 +59,13 @@ export function Canvas3DEducation() {
       0x10b981, // Green
     ];
 
-    const sphereLabels = ['Knowledge', 'Science', 'Arts', 'Technology', 'Growth'];
+    const sphereLabels = [
+      "Knowledge",
+      "Science",
+      "Arts",
+      "Technology",
+      "Growth",
+    ];
 
     spherePositions.forEach((pos, idx) => {
       const size = idx === 0 ? 3.5 : 2.8;
@@ -88,10 +97,25 @@ export function Canvas3DEducation() {
     const lineGroup = new THREE.Group();
     scene.add(lineGroup);
 
-    const createGradientLine = (start: THREE.Vector3, end: THREE.Vector3, color1: number, color2: number) => {
+    const createGradientLine = (
+      start: THREE.Vector3,
+      end: THREE.Vector3,
+      color1: number,
+      color2: number,
+    ) => {
       const geometry = new THREE.BufferGeometry();
-      const positions = new Float32Array([start.x, start.y, start.z, end.x, end.y, end.z]);
-      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      const positions = new Float32Array([
+        start.x,
+        start.y,
+        start.z,
+        end.x,
+        end.y,
+        end.z,
+      ]);
+      geometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(positions, 3),
+      );
 
       // Create a line with gradient effect using two materials
       const material = new THREE.LineBasicMaterial({
@@ -111,7 +135,7 @@ export function Canvas3DEducation() {
         spherePositions[0],
         spherePositions[i],
         sphereColors[0],
-        sphereColors[i]
+        sphereColors[i],
       );
       lineGroup.add(conn.line);
       connections.push(conn);
@@ -131,7 +155,10 @@ export function Canvas3DEducation() {
       positions[i + 2] = (Math.random() - 0.5) * 40;
     }
 
-    particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    particleGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(positions, 3),
+    );
 
     const particleMaterial = new THREE.PointsMaterial({
       color: 0x06b6d4,
@@ -147,14 +174,14 @@ export function Canvas3DEducation() {
 
     // Helper function to create particle texture
     function createParticleTexture() {
-      const canvas = document.createElement('canvas');
+      const canvas = document.createElement("canvas");
       canvas.width = 64;
       canvas.height = 64;
-      const context = canvas.getContext('2d')!;
+      const context = canvas.getContext("2d")!;
       const gradient = context.createRadialGradient(32, 32, 0, 32, 32, 32);
-      gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-      gradient.addColorStop(0.5, 'rgba(255, 255, 255, 0.5)');
-      gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+      gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
+      gradient.addColorStop(0.5, "rgba(255, 255, 255, 0.5)");
+      gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
       context.fillStyle = gradient;
       context.fillRect(0, 0, 64, 64);
       return canvas;
@@ -184,7 +211,7 @@ export function Canvas3DEducation() {
       mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
     };
 
-    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
 
     // Animation loop
     const startTime = performance.now();
@@ -195,7 +222,8 @@ export function Canvas3DEducation() {
 
       // Animate knowledge spheres
       spheres.forEach((sphere, idx) => {
-        const { mesh, basePosition, speed, rotationSpeed, floatAmount } = sphere;
+        const { mesh, basePosition, speed, rotationSpeed, floatAmount } =
+          sphere;
 
         // Rotation
         mesh.rotation.x += rotationSpeed;
@@ -205,7 +233,8 @@ export function Canvas3DEducation() {
         // Floating motion
         mesh.position.copy(basePosition);
         mesh.position.y += Math.sin(elapsed * speed + idx) * floatAmount;
-        mesh.position.x += Math.cos(elapsed * speed * 0.7 + idx) * (floatAmount * 0.5);
+        mesh.position.x +=
+          Math.cos(elapsed * speed * 0.7 + idx) * (floatAmount * 0.5);
 
         // Respond to mouse
         mesh.position.x += mouseX * 2;
@@ -223,7 +252,7 @@ export function Canvas3DEducation() {
       });
 
       // Animate particles
-      const positionAttribute = particleGeometry.getAttribute('position');
+      const positionAttribute = particleGeometry.getAttribute("position");
       const pos = positionAttribute.array as Float32Array;
 
       for (let i = 0; i < particleCount * 3; i += 3) {
@@ -268,11 +297,11 @@ export function Canvas3DEducation() {
       renderer.setSize(width, height);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("resize", handleResize);
       if (containerRef.current && renderer.domElement) {
         containerRef.current.removeChild(renderer.domElement);
       }
@@ -294,7 +323,10 @@ export function Canvas3DEducation() {
     <div
       ref={containerRef}
       className="absolute inset-0 w-full h-full"
-      style={{ background: 'radial-gradient(ellipse at center, rgba(99,102,241,0.1) 0%, transparent 70%)' }}
+      style={{
+        background:
+          "radial-gradient(ellipse at center, rgba(99,102,241,0.1) 0%, transparent 70%)",
+      }}
     />
   );
 }

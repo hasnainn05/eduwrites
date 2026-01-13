@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import { useState } from "react";
+import { Mail, Lock, Eye, EyeOff, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function AdminLogin() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError('');
+    setError("");
 
     // Temporary: Demo login (replace with actual auth later)
-    if (email === 'admin@ardelis.com' && password === 'admin123') {
+    if (email === "admin@ardelis.com" && password === "admin123") {
       // Redirect to admin dashboard
-      window.location.href = '/admin/dashboard';
+      window.location.href = "/admin/dashboard";
     } else {
-      setError('Invalid email or password');
+      setError("Invalid email or password");
     }
 
     setLoading(false);
@@ -73,7 +73,7 @@ export default function AdminLogin() {
             <div className="relative">
               <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-foreground/50 group-focus-within:text-cyan-400 transition-colors" />
               <input
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
@@ -106,7 +106,9 @@ export default function AdminLogin() {
             disabled={loading}
             className="w-full py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold hover:shadow-lg hover:shadow-indigo-500/50 transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-6"
           >
-            {loading ? 'Logging in...' : (
+            {loading ? (
+              "Logging in..."
+            ) : (
               <>
                 Sign In <ArrowRight size={18} />
               </>

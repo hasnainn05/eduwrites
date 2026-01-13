@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import * as THREE from 'three';
+import { useRef, useEffect } from "react";
+import * as THREE from "three";
 
 export function Canvas3DHolographic() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,20 +21,23 @@ export function Canvas3DHolographic() {
       75,
       containerRef.current.clientWidth / containerRef.current.clientHeight,
       0.1,
-      1000
+      1000,
     );
     camera.position.z = 50;
     cameraRef.current = camera;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: true, 
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
       alpha: true,
-      precision: 'highp'
+      precision: "highp",
     });
-    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+    renderer.setSize(
+      containerRef.current.clientWidth,
+      containerRef.current.clientHeight,
+    );
     renderer.setClearColor(0x000000, 0);
-    renderer.domElement.style.pointerEvents = 'none';
+    renderer.domElement.style.pointerEvents = "none";
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
@@ -43,12 +46,20 @@ export function Canvas3DHolographic() {
     scene.add(lineGroup);
 
     // Helper function to create glowing line
-    const createGlowingLine = (start: THREE.Vector3, end: THREE.Vector3, color: THREE.Color, intensity = 1.5) => {
+    const createGlowingLine = (
+      start: THREE.Vector3,
+      end: THREE.Vector3,
+      color: THREE.Color,
+      intensity = 1.5,
+    ) => {
       const geometry = new THREE.BufferGeometry();
-      geometry.setAttribute('position', new THREE.BufferAttribute(
-        new Float32Array([start.x, start.y, start.z, end.x, end.y, end.z]),
-        3
-      ));
+      geometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(
+          new Float32Array([start.x, start.y, start.z, end.x, end.y, end.z]),
+          3,
+        ),
+      );
 
       const material = new THREE.LineBasicMaterial({
         color: color,
@@ -87,13 +98,13 @@ export function Canvas3DHolographic() {
           const start = new THREE.Vector3(
             Math.cos(angle) * radius,
             Math.sin(angle) * radius * 0.5,
-            Math.sin(angle * 2) * 10
+            Math.sin(angle * 2) * 10,
           );
 
           const end = new THREE.Vector3(
             Math.cos(nextAngle) * radius,
             Math.sin(nextAngle) * radius * 0.5,
-            Math.sin(nextAngle * 2) * 10
+            Math.sin(nextAngle * 2) * 10,
           );
 
           const lineObj = createGlowingLine(start, end, color);
@@ -154,7 +165,10 @@ export function Canvas3DHolographic() {
       }
     }
 
-    pointGeometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(pointPositions), 3));
+    pointGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(new Float32Array(pointPositions), 3),
+    );
     const pointMaterial = new THREE.PointsMaterial({
       color: 0x06b6d4,
       size: 0.6,
@@ -194,7 +208,7 @@ export function Canvas3DHolographic() {
       targetRotationX = mouseY * 0.3;
     };
 
-    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
 
     // Animation loop
     const animate = () => {
@@ -212,17 +226,20 @@ export function Canvas3DHolographic() {
       // Animate wave patterns
       waves.forEach((wave, idx) => {
         wave.lines.forEach((lineObj: any, lineIdx: number) => {
-          const pulse = Math.sin(elapsed + idx * 0.5 + lineIdx * 0.1) * 0.3 + 0.6;
+          const pulse =
+            Math.sin(elapsed + idx * 0.5 + lineIdx * 0.1) * 0.3 + 0.6;
           lineObj.material.opacity = pulse;
         });
 
         // Rotate and scale waves
         const waveRotation = elapsed * wave.rotationSpeed;
         wave.lines.forEach((lineObj: any, lineIdx: number) => {
-          const angle = (lineIdx / wave.lines.length) * Math.PI * 2 + waveRotation;
+          const angle =
+            (lineIdx / wave.lines.length) * Math.PI * 2 + waveRotation;
           const nextAngle = angle + (1 / wave.lines.length) * Math.PI * 2;
 
-          const posArray = lineObj.geometry.attributes.position.array as Float32Array;
+          const posArray = lineObj.geometry.attributes.position
+            .array as Float32Array;
           const radius = wave.radius;
 
           posArray[0] = Math.cos(angle) * radius;
@@ -268,11 +285,11 @@ export function Canvas3DHolographic() {
       renderer.setSize(width, height);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("resize", handleResize);
       if (containerRef.current && renderer.domElement) {
         containerRef.current.removeChild(renderer.domElement);
       }
@@ -296,7 +313,10 @@ export function Canvas3DHolographic() {
     <div
       ref={containerRef}
       className="absolute inset-0 w-full h-full"
-      style={{ background: 'radial-gradient(ellipse at center, rgba(6,182,212,0.08) 0%, transparent 70%)' }}
+      style={{
+        background:
+          "radial-gradient(ellipse at center, rgba(6,182,212,0.08) 0%, transparent 70%)",
+      }}
     />
   );
 }

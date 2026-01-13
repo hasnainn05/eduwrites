@@ -1,5 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
-import { X, Home, Briefcase, Info, MessageSquare, User, ChevronDown, Mail } from "lucide-react";
+import {
+  X,
+  Home,
+  Briefcase,
+  Info,
+  MessageSquare,
+  User,
+  ChevronDown,
+  Mail,
+} from "lucide-react";
 import { useState } from "react";
 
 interface SidebarProps {
@@ -28,7 +37,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   ];
 
   const isServiceActive = serviceLinks.some(
-    (link) => location.pathname === link.path || location.pathname.startsWith("/services/writing")
+    (link) =>
+      location.pathname === link.path ||
+      location.pathname.startsWith("/services/writing"),
   );
 
   return (

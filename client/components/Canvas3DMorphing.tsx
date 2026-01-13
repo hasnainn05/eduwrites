@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import * as THREE from 'three';
+import { useRef, useEffect } from "react";
+import * as THREE from "three";
 
 export function Canvas3DMorphing() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,29 +21,32 @@ export function Canvas3DMorphing() {
       75,
       containerRef.current.clientWidth / containerRef.current.clientHeight,
       0.1,
-      1000
+      1000,
     );
     camera.position.z = 35;
     cameraRef.current = camera;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: true, 
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
       alpha: true,
-      precision: 'highp'
+      precision: "highp",
     });
-    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+    renderer.setSize(
+      containerRef.current.clientWidth,
+      containerRef.current.clientHeight,
+    );
     renderer.setClearColor(0x000000, 0);
-    renderer.domElement.style.pointerEvents = 'none';
+    renderer.domElement.style.pointerEvents = "none";
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
     // Colors for gradient transitions
     const colors = [
-      { r: 0.4, g: 0.4, b: 0.9 },   // Indigo
-      { r: 0.4, g: 0.7, b: 0.9 },   // Cyan
-      { r: 0.6, g: 0.5, b: 0.9 },   // Purple
-      { r: 0.4, g: 0.9, b: 0.8 },   // Turquoise
+      { r: 0.4, g: 0.4, b: 0.9 }, // Indigo
+      { r: 0.4, g: 0.7, b: 0.9 }, // Cyan
+      { r: 0.6, g: 0.5, b: 0.9 }, // Purple
+      { r: 0.4, g: 0.9, b: 0.8 }, // Turquoise
     ];
 
     // Create morphing shapes
@@ -103,7 +106,12 @@ export function Canvas3DMorphing() {
     const mesh4 = new THREE.Mesh(geo4, mat4);
     mesh4.position.set(-10, -8, 10);
     scene.add(mesh4);
-    shapes.push({ mesh: mesh4, material: mat4, speedX: 0.0025, speedY: 0.0035 });
+    shapes.push({
+      mesh: mesh4,
+      material: mat4,
+      speedX: 0.0025,
+      speedY: 0.0035,
+    });
 
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -130,13 +138,13 @@ export function Canvas3DMorphing() {
       mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
     };
 
-    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
 
     // Animation loop
     const startTime = performance.now();
     const animate = () => {
       requestAnimationFrame(animate);
-      
+
       const elapsed = (performance.now() - startTime) * 0.001;
 
       // Animate each shape
@@ -207,11 +215,11 @@ export function Canvas3DMorphing() {
       renderer.setSize(width, height);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("resize", handleResize);
       if (containerRef.current && renderer.domElement) {
         containerRef.current.removeChild(renderer.domElement);
       }
@@ -231,7 +239,10 @@ export function Canvas3DMorphing() {
     <div
       ref={containerRef}
       className="absolute inset-0 w-full h-full"
-      style={{ background: 'radial-gradient(ellipse at center, rgba(99,102,241,0.12) 0%, transparent 70%)' }}
+      style={{
+        background:
+          "radial-gradient(ellipse at center, rgba(99,102,241,0.12) 0%, transparent 70%)",
+      }}
     />
   );
 }

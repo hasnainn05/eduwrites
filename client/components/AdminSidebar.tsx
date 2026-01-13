@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
   Package,
@@ -12,40 +12,40 @@ import {
   Star,
   FileText,
   Home,
-} from 'lucide-react';
+} from "lucide-react";
 
 export function AdminSidebar() {
   const pathname = usePathname();
 
   const menuItems = [
     {
-      label: 'Dashboard',
-      href: '/admin/dashboard',
+      label: "Dashboard",
+      href: "/admin/dashboard",
       icon: LayoutDashboard,
     },
     {
-      label: 'Services',
-      href: '/admin/services',
+      label: "Services",
+      href: "/admin/services",
       icon: FileText,
     },
     {
-      label: 'Reviews',
-      href: '/admin/reviews',
+      label: "Reviews",
+      href: "/admin/reviews",
       icon: Star,
     },
     {
-      label: 'Live Chat',
-      href: '/admin/live-chat',
+      label: "Live Chat",
+      href: "/admin/live-chat",
       icon: MessageSquare,
     },
     {
-      label: 'Quote Requests',
-      href: '/admin/quote-requests',
+      label: "Quote Requests",
+      href: "/admin/quote-requests",
       icon: MessageSquare,
     },
     {
-      label: 'Settings',
-      href: '/admin/settings',
+      label: "Settings",
+      href: "/admin/settings",
       icon: Settings,
     },
   ];
@@ -76,8 +76,8 @@ export function AdminSidebar() {
               href={item.href}
               className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
                 active
-                  ? 'bg-gradient-to-r from-indigo-600/30 to-cyan-500/30 border border-cyan-400/30 text-cyan-400'
-                  : 'text-foreground/70 hover:text-foreground hover:bg-white/5'
+                  ? "bg-gradient-to-r from-indigo-600/30 to-cyan-500/30 border border-cyan-400/30 text-cyan-400"
+                  : "text-foreground/70 hover:text-foreground hover:bg-white/5"
               }`}
             >
               <Icon size={20} />
@@ -99,7 +99,7 @@ export function AdminSidebar() {
         <button
           onClick={() => {
             // Logout logic will be added with auth
-            window.location.href = '/admin/login';
+            window.location.href = "/admin/login";
           }}
           className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-red-400 hover:bg-red-500/10 transition-all"
         >

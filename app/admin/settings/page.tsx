@@ -1,17 +1,27 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { AdminSidebar } from '@/client/components/AdminSidebar';
-import { Save, Mail, Phone, MapPin, Globe, Users, TrendingUp, Settings as SettingsIcon } from 'lucide-react';
+import { useState } from "react";
+import { AdminSidebar } from "@/client/components/AdminSidebar";
+import {
+  Save,
+  Mail,
+  Phone,
+  MapPin,
+  Globe,
+  Users,
+  TrendingUp,
+  Settings as SettingsIcon,
+} from "lucide-react";
 
 export default function AdminSettings() {
   const [settings, setSettings] = useState({
-    companyName: 'Ardelis EduWrites',
-    email: 'info@ardelis.com',
-    phone: '+1 (234) 567-890',
-    address: '123 Academic Street, Education City, EC 12345',
-    website: 'www.ardelis.com',
-    description: 'Professional academic writing services for students worldwide',
+    companyName: "Ardelis EduWrites",
+    email: "info@ardelis.com",
+    phone: "+1 (234) 567-890",
+    address: "123 Academic Street, Education City, EC 12345",
+    website: "www.ardelis.com",
+    description:
+      "Professional academic writing services for students worldwide",
     totalStudents: 10000,
     projectsCompleted: 1234,
     satisfactionRate: 98,
@@ -41,7 +51,9 @@ export default function AdminSettings() {
         <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur border-b border-white/10 p-6">
           <div>
             <h1 className="text-3xl font-bold text-foreground">Settings</h1>
-            <p className="text-foreground/60 text-sm mt-1">Manage company information and details</p>
+            <p className="text-foreground/60 text-sm mt-1">
+              Manage company information and details
+            </p>
           </div>
         </div>
 
@@ -58,17 +70,21 @@ export default function AdminSettings() {
           <div className="glass rounded-2xl border border-white/10 p-8 mb-8">
             <div className="flex items-center gap-3 mb-8">
               <SettingsIcon className="w-6 h-6 text-cyan-400" />
-              <h2 className="text-2xl font-bold text-foreground">Company Information</h2>
+              <h2 className="text-2xl font-bold text-foreground">
+                Company Information
+              </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Company Name */}
               <div>
-                <label className="block text-sm font-medium text-foreground/80 mb-2">Company Name</label>
+                <label className="block text-sm font-medium text-foreground/80 mb-2">
+                  Company Name
+                </label>
                 <input
                   type="text"
                   value={settings.companyName}
-                  onChange={(e) => handleChange('companyName', e.target.value)}
+                  onChange={(e) => handleChange("companyName", e.target.value)}
                   className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all"
                 />
               </div>
@@ -82,7 +98,7 @@ export default function AdminSettings() {
                 <input
                   type="email"
                   value={settings.email}
-                  onChange={(e) => handleChange('email', e.target.value)}
+                  onChange={(e) => handleChange("email", e.target.value)}
                   className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all"
                 />
               </div>
@@ -96,7 +112,7 @@ export default function AdminSettings() {
                 <input
                   type="tel"
                   value={settings.phone}
-                  onChange={(e) => handleChange('phone', e.target.value)}
+                  onChange={(e) => handleChange("phone", e.target.value)}
                   className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all"
                 />
               </div>
@@ -110,7 +126,7 @@ export default function AdminSettings() {
                 <input
                   type="text"
                   value={settings.website}
-                  onChange={(e) => handleChange('website', e.target.value)}
+                  onChange={(e) => handleChange("website", e.target.value)}
                   className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all"
                 />
               </div>
@@ -124,17 +140,19 @@ export default function AdminSettings() {
                 <input
                   type="text"
                   value={settings.address}
-                  onChange={(e) => handleChange('address', e.target.value)}
+                  onChange={(e) => handleChange("address", e.target.value)}
                   className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all"
                 />
               </div>
 
               {/* Description */}
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-foreground/80 mb-2">Company Description</label>
+                <label className="block text-sm font-medium text-foreground/80 mb-2">
+                  Company Description
+                </label>
                 <textarea
                   value={settings.description}
-                  onChange={(e) => handleChange('description', e.target.value)}
+                  onChange={(e) => handleChange("description", e.target.value)}
                   className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all resize-none"
                   rows={4}
                 />
@@ -146,7 +164,9 @@ export default function AdminSettings() {
           <div className="glass rounded-2xl border border-white/10 p-8 mb-8">
             <div className="flex items-center gap-3 mb-8">
               <TrendingUp className="w-6 h-6 text-cyan-400" />
-              <h2 className="text-2xl font-bold text-foreground">Statistics & Metrics</h2>
+              <h2 className="text-2xl font-bold text-foreground">
+                Statistics & Metrics
+              </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -159,42 +179,56 @@ export default function AdminSettings() {
                 <input
                   type="number"
                   value={settings.totalStudents}
-                  onChange={(e) => handleChange('totalStudents', parseInt(e.target.value))}
+                  onChange={(e) =>
+                    handleChange("totalStudents", parseInt(e.target.value))
+                  }
                   className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all"
                 />
               </div>
 
               {/* Projects Completed */}
               <div>
-                <label className="block text-sm font-medium text-foreground/80 mb-2">Projects Completed</label>
+                <label className="block text-sm font-medium text-foreground/80 mb-2">
+                  Projects Completed
+                </label>
                 <input
                   type="number"
                   value={settings.projectsCompleted}
-                  onChange={(e) => handleChange('projectsCompleted', parseInt(e.target.value))}
+                  onChange={(e) =>
+                    handleChange("projectsCompleted", parseInt(e.target.value))
+                  }
                   className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all"
                 />
               </div>
 
               {/* Expert Writers */}
               <div>
-                <label className="block text-sm font-medium text-foreground/80 mb-2">Expert Writers</label>
+                <label className="block text-sm font-medium text-foreground/80 mb-2">
+                  Expert Writers
+                </label>
                 <input
                   type="number"
                   value={settings.expertWriters}
-                  onChange={(e) => handleChange('expertWriters', parseInt(e.target.value))}
+                  onChange={(e) =>
+                    handleChange("expertWriters", parseInt(e.target.value))
+                  }
                   className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all"
                 />
               </div>
 
               {/* Satisfaction Rate */}
               <div>
-                <label className="block text-sm font-medium text-foreground/80 mb-2">Satisfaction Rate (%)</label>
+                <label className="block text-sm font-medium text-foreground/80 mb-2">
+                  Satisfaction Rate (%)
+                </label>
                 <input
                   type="number"
                   min="0"
                   max="100"
                   value={settings.satisfactionRate}
-                  onChange={(e) => handleChange('satisfactionRate', parseInt(e.target.value))}
+                  onChange={(e) =>
+                    handleChange("satisfactionRate", parseInt(e.target.value))
+                  }
                   className="w-full px-4 py-3 rounded-lg glass border border-white/10 bg-white/5 text-foreground focus:outline-none focus:border-cyan-400 transition-all"
                 />
               </div>

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import * as THREE from 'three';
+import { useRef, useEffect } from "react";
+import * as THREE from "three";
 
 export function Canvas3DWaves() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,26 +21,29 @@ export function Canvas3DWaves() {
       75,
       containerRef.current.clientWidth / containerRef.current.clientHeight,
       0.1,
-      1000
+      1000,
     );
     camera.position.z = 30;
     cameraRef.current = camera;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: true, 
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
       alpha: true,
-      precision: 'highp'
+      precision: "highp",
     });
-    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+    renderer.setSize(
+      containerRef.current.clientWidth,
+      containerRef.current.clientHeight,
+    );
     renderer.setClearColor(0x000000, 0);
-    renderer.domElement.style.pointerEvents = 'none';
+    renderer.domElement.style.pointerEvents = "none";
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
     // Create wave geometry
     const geometry = new THREE.IcosahedronGeometry(8, 50);
-    
+
     // Create material with custom shader
     const material = new THREE.ShaderMaterial({
       uniforms: {
@@ -91,13 +94,16 @@ export function Canvas3DWaves() {
       positions[i] = (Math.random() - 0.5) * 80;
       positions[i + 1] = (Math.random() - 0.5) * 80;
       positions[i + 2] = (Math.random() - 0.5) * 80;
-      
+
       velocities[i] = (Math.random() - 0.5) * 0.2;
       velocities[i + 1] = (Math.random() - 0.5) * 0.2;
       velocities[i + 2] = (Math.random() - 0.5) * 0.2;
     }
 
-    particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    particleGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(positions, 3),
+    );
 
     const particleMaterial = new THREE.PointsMaterial({
       color: 0x06b6d4,
@@ -127,7 +133,7 @@ export function Canvas3DWaves() {
       mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
     };
 
-    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
 
     // Animation loop
     const animate = () => {
@@ -141,7 +147,7 @@ export function Canvas3DWaves() {
       mesh.rotation.z += 0.0002;
 
       // Update particles
-      const positionAttribute = particleGeometry.getAttribute('position');
+      const positionAttribute = particleGeometry.getAttribute("position");
       const positions = positionAttribute.array as Float32Array;
 
       for (let i = 0; i < particleCount * 3; i += 3) {
@@ -179,11 +185,11 @@ export function Canvas3DWaves() {
       renderer.setSize(width, height);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("resize", handleResize);
       if (containerRef.current && renderer.domElement) {
         containerRef.current.removeChild(renderer.domElement);
       }
@@ -199,7 +205,10 @@ export function Canvas3DWaves() {
     <div
       ref={containerRef}
       className="absolute inset-0 w-full h-full"
-      style={{ background: 'radial-gradient(ellipse at center, rgba(99,102,241,0.1) 0%, transparent 70%)' }}
+      style={{
+        background:
+          "radial-gradient(ellipse at center, rgba(99,102,241,0.1) 0%, transparent 70%)",
+      }}
     />
   );
 }

@@ -1,7 +1,22 @@
-'use client';
+"use client";
 
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Star, Sparkles, Briefcase, TrendingUp, Award, BookOpen, Zap, Users, FileText, Pencil, BarChart3, BookMarked } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  Star,
+  Sparkles,
+  Briefcase,
+  TrendingUp,
+  Award,
+  BookOpen,
+  Zap,
+  Users,
+  FileText,
+  Pencil,
+  BarChart3,
+  BookMarked,
+} from "lucide-react";
 import { Canvas3D } from "../client/components/Canvas3D";
 import { TiltCard } from "../client/components/TiltCard";
 
@@ -19,7 +34,8 @@ export default function Home() {
     {
       id: "assignment",
       title: "Assignment Writing",
-      description: "Complete assignment solutions tailored to your requirements",
+      description:
+        "Complete assignment solutions tailored to your requirements",
       Icon: CheckCircle,
       slug: "essay",
       color: "from-purple-500 to-pink-500",
@@ -27,7 +43,8 @@ export default function Home() {
     {
       id: "thesis",
       title: "Thesis Writing",
-      description: "Expert guidance and writing support for your thesis project",
+      description:
+        "Expert guidance and writing support for your thesis project",
       Icon: BookOpen,
       slug: "thesis",
       color: "from-orange-500 to-red-500",
@@ -43,7 +60,8 @@ export default function Home() {
     {
       id: "proofreading",
       title: "Proofreading & Editing",
-      description: "Polish your academic work with expert proofreading services",
+      description:
+        "Polish your academic work with expert proofreading services",
       Icon: Pencil,
       slug: "essay",
       color: "from-yellow-500 to-orange-500",
@@ -51,7 +69,8 @@ export default function Home() {
     {
       id: "dissertation",
       title: "Dissertation Writing",
-      description: "Complete dissertation support from planning to final submission",
+      description:
+        "Complete dissertation support from planning to final submission",
       Icon: BookMarked,
       slug: "thesis",
       color: "from-indigo-500 to-purple-500",
@@ -76,7 +95,8 @@ export default function Home() {
     },
     {
       title: "On-Time Delivery",
-      description: "We respect your deadlines with guaranteed timely completion",
+      description:
+        "We respect your deadlines with guaranteed timely completion",
       icon: "⏰",
     },
     {
@@ -182,19 +202,20 @@ export default function Home() {
                 Excellence in Academic Writing
               </span>
             </div>
-            
+
             <h1 className="text-5xl sm:text-7xl font-bold mb-6 leading-tight font-poppins">
               Expert Academic{" "}
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
                 Writing
               </span>
             </h1>
-            
+
             <p className="text-lg sm:text-xl text-foreground/70 mb-12 max-w-2xl mx-auto">
-              Elevate your academic success with professional writing support. 
-              Essays, research papers, theses, and more—all crafted to perfection.
+              Elevate your academic success with professional writing support.
+              Essays, research papers, theses, and more—all crafted to
+              perfection.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#services"
@@ -223,13 +244,24 @@ export default function Home() {
                 Professional Academic Writing Support for Every Challenge
               </h2>
               <p className="text-foreground/80 leading-relaxed mb-4">
-                Student success starts with quality academic work. At Ardelis, we understand the pressures of academic life—tight deadlines, complex assignments, and the need for excellence. Whether you're struggling with essay writing, research papers, or comprehensive dissertations, our expert team is here to help you succeed.
+                Student success starts with quality academic work. At Ardelis,
+                we understand the pressures of academic life—tight deadlines,
+                complex assignments, and the need for excellence. Whether you're
+                struggling with essay writing, research papers, or comprehensive
+                dissertations, our expert team is here to help you succeed.
               </p>
               <p className="text-foreground/80 leading-relaxed mb-4">
-                With over a decade of experience in academic writing, we've helped thousands of students worldwide achieve their educational goals. Our writers hold advanced degrees in their respective fields and are committed to delivering original, high-quality work that meets the highest academic standards.
+                With over a decade of experience in academic writing, we've
+                helped thousands of students worldwide achieve their educational
+                goals. Our writers hold advanced degrees in their respective
+                fields and are committed to delivering original, high-quality
+                work that meets the highest academic standards.
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                From undergraduate essays to PhD dissertations, we provide customized academic writing solutions that are plagiarism-free, properly cited, and delivered on time—every time. Your academic success is our mission.
+                From undergraduate essays to PhD dissertations, we provide
+                customized academic writing solutions that are plagiarism-free,
+                properly cited, and delivered on time—every time. Your academic
+                success is our mission.
               </p>
             </div>
 
@@ -239,24 +271,39 @@ export default function Home() {
                 <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2">
                   10,000+
                 </div>
-                <p className="text-foreground/80 font-medium">Satisfied Students Worldwide</p>
-                <p className="text-foreground/60 text-sm mt-2">Students trust Ardelis for their most important academic assignments</p>
+                <p className="text-foreground/80 font-medium">
+                  Satisfied Students Worldwide
+                </p>
+                <p className="text-foreground/60 text-sm mt-2">
+                  Students trust Ardelis for their most important academic
+                  assignments
+                </p>
               </div>
 
               <div className="glass p-6 rounded-xl">
                 <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2">
                   98%
                 </div>
-                <p className="text-foreground/80 font-medium">Customer Satisfaction Rate</p>
-                <p className="text-foreground/60 text-sm mt-2">Our commitment to quality and service excellence is reflected in our ratings</p>
+                <p className="text-foreground/80 font-medium">
+                  Customer Satisfaction Rate
+                </p>
+                <p className="text-foreground/60 text-sm mt-2">
+                  Our commitment to quality and service excellence is reflected
+                  in our ratings
+                </p>
               </div>
 
               <div className="glass p-6 rounded-xl">
                 <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2">
                   50+
                 </div>
-                <p className="text-foreground/80 font-medium">Expert Academic Writers</p>
-                <p className="text-foreground/60 text-sm mt-2">PhDs and Masters degree holders specializing in various academic fields</p>
+                <p className="text-foreground/80 font-medium">
+                  Expert Academic Writers
+                </p>
+                <p className="text-foreground/60 text-sm mt-2">
+                  PhDs and Masters degree holders specializing in various
+                  academic fields
+                </p>
               </div>
             </div>
           </div>
@@ -270,23 +317,33 @@ export default function Home() {
             Transform Your Academic Performance
           </h2>
           <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-            We understand that every student faces unique challenges. Our comprehensive suite of academic writing services is designed to address all your needs—whether it's crafting the perfect essay, conducting in-depth research, or completing your dissertation. With our expert writers and commitment to excellence, you're not just getting a paper; you're getting a partner in your academic success.
+            We understand that every student faces unique challenges. Our
+            comprehensive suite of academic writing services is designed to
+            address all your needs—whether it's crafting the perfect essay,
+            conducting in-depth research, or completing your dissertation. With
+            our expert writers and commitment to excellence, you're not just
+            getting a paper; you're getting a partner in your academic success.
           </p>
           <p className="text-base text-foreground/70">
-            Choose the service that fits your needs and watch your academic performance soar.
+            Choose the service that fits your needs and watch your academic
+            performance soar.
           </p>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+      <section
+        id="services"
+        className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
               Our Academic Services
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Comprehensive academic writing solutions tailored to your unique needs
+              Comprehensive academic writing solutions tailored to your unique
+              needs
             </p>
           </div>
 
@@ -308,7 +365,10 @@ export default function Home() {
                   {/* Content */}
                   <div className="relative z-10 p-8 flex flex-col h-full">
                     <div className="mb-4 transform group-hover:scale-110 transition-transform">
-                      <service.Icon size={48} className="text-cyan-400 group-hover:text-white transition-colors" />
+                      <service.Icon
+                        size={48}
+                        className="text-cyan-400 group-hover:text-white transition-colors"
+                      />
                     </div>
 
                     <h3 className="text-xl font-bold text-foreground mb-3">
@@ -352,7 +412,8 @@ export default function Home() {
                 subtitle: "C-Suite Executive Strategy",
                 client: "Fortune 500 Tech Company",
                 metric: "3 Executive Promotions",
-                description: "Developed comprehensive leadership documentation and strategic white papers for executive team members. Enhanced corporate communication and positioning in industry leadership.",
+                description:
+                  "Developed comprehensive leadership documentation and strategic white papers for executive team members. Enhanced corporate communication and positioning in industry leadership.",
                 color: "from-blue-500 to-cyan-500",
                 Icon: Briefcase,
               },
@@ -361,7 +422,8 @@ export default function Home() {
                 subtitle: "Peer-Reviewed Publications",
                 client: "Stanford University Research Lab",
                 metric: "12 Published Papers",
-                description: "Supported research documentation and manuscript preparation across multiple disciplines. Contributed to significant breakthroughs in clinical research and academic advancement.",
+                description:
+                  "Supported research documentation and manuscript preparation across multiple disciplines. Contributed to significant breakthroughs in clinical research and academic advancement.",
                 color: "from-purple-500 to-pink-500",
                 Icon: BookOpen,
               },
@@ -370,7 +432,8 @@ export default function Home() {
                 subtitle: "Strategic Documentation",
                 client: "Global Consulting Firm",
                 metric: "$15M Client Value",
-                description: "Elevated consulting deliverables with professionally crafted strategic reports and business documentation. Directly contributed to securing major enterprise contracts.",
+                description:
+                  "Elevated consulting deliverables with professionally crafted strategic reports and business documentation. Directly contributed to securing major enterprise contracts.",
                 color: "from-green-500 to-emerald-500",
                 Icon: TrendingUp,
               },
@@ -379,7 +442,8 @@ export default function Home() {
                 subtitle: "Advanced Degree Completion",
                 client: "International MBA Cohort",
                 metric: "98% Distinction Rate",
-                description: "Supported 200+ graduate students in thesis and dissertation completion. Achieved industry-leading completion rates with distinction-level academic performance.",
+                description:
+                  "Supported 200+ graduate students in thesis and dissertation completion. Achieved industry-leading completion rates with distinction-level academic performance.",
                 color: "from-yellow-500 to-orange-500",
                 Icon: Award,
               },
@@ -388,7 +452,8 @@ export default function Home() {
                 subtitle: "Certification Support",
                 client: "Financial Services Sector",
                 metric: "450+ Professionals Certified",
-                description: "Helped financial professionals complete advanced certifications while maintaining careers. 99% pass rate with enhanced professional credentials and career advancement.",
+                description:
+                  "Helped financial professionals complete advanced certifications while maintaining careers. 99% pass rate with enhanced professional credentials and career advancement.",
                 color: "from-indigo-500 to-purple-500",
                 Icon: Zap,
               },
@@ -397,7 +462,8 @@ export default function Home() {
                 subtitle: "Internal & External Reports",
                 client: "Healthcare Organization",
                 metric: "100+ Strategic Documents",
-                description: "Produced compliance documentation, regulatory reports, and strategic communications. Enhanced organizational credibility and regulatory standing with professional documentation.",
+                description:
+                  "Produced compliance documentation, regulatory reports, and strategic communications. Enhanced organizational credibility and regulatory standing with professional documentation.",
                 color: "from-rose-500 to-pink-500",
                 Icon: Users,
               },
@@ -407,15 +473,21 @@ export default function Home() {
                 className="group relative glass p-8 rounded-2xl border border-white/10 hover:border-white/30 overflow-hidden transition-all duration-500 transform hover:-translate-y-2"
               >
                 {/* Gradient Background Effect */}
-                <div className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 rounded-full blur-3xl transition-all duration-500`}></div>
+                <div
+                  className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 rounded-full blur-3xl transition-all duration-500`}
+                ></div>
 
                 <div className="relative z-10">
                   {/* Header with Icon */}
                   <div className="flex items-start justify-between mb-6">
-                    <div className={`p-3 rounded-xl bg-gradient-to-br ${project.color} bg-opacity-20 group-hover:scale-110 transition-transform duration-300`}>
+                    <div
+                      className={`p-3 rounded-xl bg-gradient-to-br ${project.color} bg-opacity-20 group-hover:scale-110 transition-transform duration-300`}
+                    >
                       <project.Icon size={28} className="text-white" />
                     </div>
-                    <div className={`px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${project.color} bg-opacity-20 border border-white/20`}>
+                    <div
+                      className={`px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${project.color} bg-opacity-20 border border-white/20`}
+                    >
                       {project.metric}
                     </div>
                   </div>
@@ -435,12 +507,17 @@ export default function Home() {
                   {/* Footer */}
                   <div className="border-t border-white/10 pt-4 flex items-center justify-between">
                     <div>
-                      <p className="text-xs text-foreground/60 mb-1">Client Organization</p>
+                      <p className="text-xs text-foreground/60 mb-1">
+                        Client Organization
+                      </p>
                       <p className="text-sm font-semibold text-foreground">
                         {project.client}
                       </p>
                     </div>
-                    <ArrowRight size={18} className="text-cyan-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
+                    <ArrowRight
+                      size={18}
+                      className="text-cyan-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300"
+                    />
                   </div>
                 </div>
               </div>
@@ -450,7 +527,8 @@ export default function Home() {
           {/* CTA */}
           <div className="mt-12 text-center">
             <p className="text-foreground/70 mb-6">
-              Your next success story could be here. Let us help you achieve your academic goals.
+              Your next success story could be here. Let us help you achieve
+              your academic goals.
             </p>
             <Link
               href="/order"
@@ -471,13 +549,16 @@ export default function Home() {
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto mb-8"></div>
             <p className="text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-              From high school essays to PhD dissertations, we support every academic level and discipline
+              From high school essays to PhD dissertations, we support every
+              academic level and discipline
             </p>
           </div>
 
           {/* Education Levels */}
           <div className="mb-32">
-            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">Education Levels</h3>
+            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">
+              Education Levels
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
                 {
@@ -515,9 +596,15 @@ export default function Home() {
                   key={idx}
                   className="group glass p-8 rounded-2xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-3 bg-gradient-to-br from-white/8 to-white/4"
                 >
-                  <div className="text-5xl mb-4 transform group-hover:scale-125 transition-transform duration-300">{item.icon}</div>
-                  <h4 className="font-bold text-foreground text-lg mb-3">{item.level}</h4>
-                  <p className="text-sm text-foreground/70 leading-relaxed">{item.description}</p>
+                  <div className="text-5xl mb-4 transform group-hover:scale-125 transition-transform duration-300">
+                    {item.icon}
+                  </div>
+                  <h4 className="font-bold text-foreground text-lg mb-3">
+                    {item.level}
+                  </h4>
+                  <p className="text-sm text-foreground/70 leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -525,32 +612,62 @@ export default function Home() {
 
           {/* Top Universities Section */}
           <div className="mb-32">
-            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">Trusted by Top University Students</h3>
+            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">
+              Trusted by Top University Students
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
                 {
                   region: "United States",
                   icon: "🇺🇸",
-                  universities: ["Harvard", "Stanford", "MIT", "Yale", "Princeton", "UC Berkeley"],
-                  color: "from-blue-500 to-cyan-500"
+                  universities: [
+                    "Harvard",
+                    "Stanford",
+                    "MIT",
+                    "Yale",
+                    "Princeton",
+                    "UC Berkeley",
+                  ],
+                  color: "from-blue-500 to-cyan-500",
                 },
                 {
                   region: "United Kingdom",
                   icon: "🇬🇧",
-                  universities: ["Oxford", "Cambridge", "LSE", "Imperial", "UCL", "Edinburgh"],
-                  color: "from-purple-500 to-pink-500"
+                  universities: [
+                    "Oxford",
+                    "Cambridge",
+                    "LSE",
+                    "Imperial",
+                    "UCL",
+                    "Edinburgh",
+                  ],
+                  color: "from-purple-500 to-pink-500",
                 },
                 {
                   region: "Europe",
                   icon: "🇪🇺",
-                  universities: ["ETH Zurich", "Sorbonne", "TU Munich", "Amsterdam", "Copenhagen", "Uppsala"],
-                  color: "from-green-500 to-emerald-500"
+                  universities: [
+                    "ETH Zurich",
+                    "Sorbonne",
+                    "TU Munich",
+                    "Amsterdam",
+                    "Copenhagen",
+                    "Uppsala",
+                  ],
+                  color: "from-green-500 to-emerald-500",
                 },
                 {
                   region: "International",
                   icon: "🌍",
-                  universities: ["University of Toronto", "University of Melbourne", "NUS Singapore", "University of Tokyo", "ANU", "Seoul National"],
-                  color: "from-orange-500 to-yellow-500"
+                  universities: [
+                    "University of Toronto",
+                    "University of Melbourne",
+                    "NUS Singapore",
+                    "University of Tokyo",
+                    "ANU",
+                    "Seoul National",
+                  ],
+                  color: "from-orange-500 to-yellow-500",
                 },
               ].map((region, idx) => (
                 <div
@@ -567,7 +684,9 @@ export default function Home() {
                     {region.universities.map((uni, uIdx) => (
                       <div key={uIdx} className="flex items-center gap-3">
                         <span className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"></span>
-                        <span className="text-sm text-foreground/85">{uni}</span>
+                        <span className="text-sm text-foreground/85">
+                          {uni}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -578,7 +697,9 @@ export default function Home() {
 
           {/* Language Support */}
           <div>
-            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">Multi-Language Support</h3>
+            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">
+              Multi-Language Support
+            </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
               {[
                 { lang: "English (US)", flag: "🇺🇸" },
@@ -592,7 +713,9 @@ export default function Home() {
                   key={idx}
                   className="group glass p-6 rounded-2xl border border-white/15 hover:border-cyan-400/60 transition-all duration-300 text-center transform hover:scale-110 hover:-translate-y-2 bg-gradient-to-br from-white/8 to-white/4 hover:from-cyan-500/10 hover:to-cyan-500/5"
                 >
-                  <p className="text-5xl mb-3 transform group-hover:scale-130 transition-transform duration-300">{lang.flag}</p>
+                  <p className="text-5xl mb-3 transform group-hover:scale-130 transition-transform duration-300">
+                    {lang.flag}
+                  </p>
                   <p className="font-semibold text-foreground text-sm group-hover:text-cyan-300 transition-colors duration-300">
                     {lang.lang}
                   </p>
@@ -603,55 +726,121 @@ export default function Home() {
 
           {/* Fields of Study - All Disciplines */}
           <div className="mt-32">
-            <h3 className="text-3xl font-bold text-foreground mb-8 text-center">All Fields of Study</h3>
+            <h3 className="text-3xl font-bold text-foreground mb-8 text-center">
+              All Fields of Study
+            </h3>
             <p className="text-center text-foreground/70 mb-12 max-w-2xl mx-auto text-base leading-relaxed">
-              Comprehensive coverage of all academic disciplines, with specialization in Europe and America's most popular fields
+              Comprehensive coverage of all academic disciplines, with
+              specialization in Europe and America's most popular fields
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
                   category: "Computer Science & IT",
-                  subjects: ["Software Engineering", "Data Science", "AI & Machine Learning", "Cybersecurity", "Web Development", "Cloud Computing"],
+                  subjects: [
+                    "Software Engineering",
+                    "Data Science",
+                    "AI & Machine Learning",
+                    "Cybersecurity",
+                    "Web Development",
+                    "Cloud Computing",
+                  ],
                   icon: "💻",
                 },
                 {
                   category: "Business & Finance",
-                  subjects: ["Business Administration", "Finance", "Economics", "Marketing", "Management", "Accounting"],
+                  subjects: [
+                    "Business Administration",
+                    "Finance",
+                    "Economics",
+                    "Marketing",
+                    "Management",
+                    "Accounting",
+                  ],
                   icon: "💼",
                 },
                 {
                   category: "Engineering",
-                  subjects: ["Civil Engineering", "Mechanical Engineering", "Electrical Engineering", "Chemical Engineering", "Software Engineering", "Structural"],
+                  subjects: [
+                    "Civil Engineering",
+                    "Mechanical Engineering",
+                    "Electrical Engineering",
+                    "Chemical Engineering",
+                    "Software Engineering",
+                    "Structural",
+                  ],
                   icon: "⚙️",
                 },
                 {
                   category: "Medicine & Healthcare",
-                  subjects: ["Medicine", "Nursing", "Public Health", "Pharmacy", "Dentistry", "Clinical Research"],
+                  subjects: [
+                    "Medicine",
+                    "Nursing",
+                    "Public Health",
+                    "Pharmacy",
+                    "Dentistry",
+                    "Clinical Research",
+                  ],
                   icon: "🏥",
                 },
                 {
                   category: "Law & Legal Studies",
-                  subjects: ["Constitutional Law", "Business Law", "Criminal Law", "International Law", "Corporate Law", "IP Law"],
+                  subjects: [
+                    "Constitutional Law",
+                    "Business Law",
+                    "Criminal Law",
+                    "International Law",
+                    "Corporate Law",
+                    "IP Law",
+                  ],
                   icon: "⚖️",
                 },
                 {
                   category: "Psychology & Social Sciences",
-                  subjects: ["Psychology", "Sociology", "Anthropology", "Political Science", "Social Work", "Behavioral Studies"],
+                  subjects: [
+                    "Psychology",
+                    "Sociology",
+                    "Anthropology",
+                    "Political Science",
+                    "Social Work",
+                    "Behavioral Studies",
+                  ],
                   icon: "🧠",
                 },
                 {
                   category: "Environmental Science",
-                  subjects: ["Environmental Science", "Sustainability", "Ecology", "Climate Science", "Geology", "Geography"],
+                  subjects: [
+                    "Environmental Science",
+                    "Sustainability",
+                    "Ecology",
+                    "Climate Science",
+                    "Geology",
+                    "Geography",
+                  ],
                   icon: "🌍",
                 },
                 {
                   category: "Humanities & Literature",
-                  subjects: ["English Literature", "History", "Philosophy", "Foreign Languages", "Linguistics", "Composition"],
+                  subjects: [
+                    "English Literature",
+                    "History",
+                    "Philosophy",
+                    "Foreign Languages",
+                    "Linguistics",
+                    "Composition",
+                  ],
                   icon: "📚",
                 },
                 {
                   category: "Arts & Design",
-                  subjects: ["Fine Arts", "Graphic Design", "Architecture", "Fashion", "Film Studies", "Music"],
+                  subjects: [
+                    "Fine Arts",
+                    "Graphic Design",
+                    "Architecture",
+                    "Fashion",
+                    "Film Studies",
+                    "Music",
+                  ],
                   icon: "🎨",
                 },
               ].map((field, idx) => (
@@ -660,7 +849,9 @@ export default function Home() {
                   className="glass p-6 rounded-xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group bg-gradient-to-br from-white/8 to-white/4"
                 >
                   <div className="flex items-start gap-3 mb-4">
-                    <span className="text-4xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">{field.icon}</span>
+                    <span className="text-4xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      {field.icon}
+                    </span>
                     <h4 className="font-bold text-foreground text-base group-hover:text-cyan-300 transition-colors duration-300 leading-tight">
                       {field.category}
                     </h4>
@@ -669,7 +860,9 @@ export default function Home() {
                     {field.subjects.map((subject, subIdx) => (
                       <div key={subIdx} className="flex items-center gap-2">
                         <span className="w-1.5 h-1.5 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex-shrink-0"></span>
-                        <span className="text-xs text-foreground/85 leading-tight">{subject}</span>
+                        <span className="text-xs text-foreground/85 leading-tight">
+                          {subject}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -683,7 +876,8 @@ export default function Home() {
                 Can't Find Your Field?
               </h3>
               <p className="text-foreground/80 mb-6 max-w-2xl mx-auto text-sm leading-relaxed">
-                Our expert writers cover virtually every academic discipline. If your field isn't listed, we still support it.
+                Our expert writers cover virtually every academic discipline. If
+                your field isn't listed, we still support it.
               </p>
               <a
                 href="#"
@@ -717,11 +911,11 @@ export default function Home() {
                 <div className="flex-shrink-0 text-4xl mb-4 transform group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
-                
+
                 <h3 className="font-bold text-foreground mb-3 text-lg">
                   {item.title}
                 </h3>
-                
+
                 <p className="text-sm text-foreground/70 leading-relaxed">
                   {item.description}
                 </p>
@@ -744,7 +938,8 @@ export default function Home() {
               What Our Students Say
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Real feedback from students who've transformed their academic journey
+              Real feedback from students who've transformed their academic
+              journey
             </p>
           </div>
 
@@ -757,34 +952,34 @@ export default function Home() {
                     animationDelay: `${index * 0.2}s`,
                   }}
                 >
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full flex items-center justify-center font-bold text-white flex-shrink-0 shadow-glow">
-                    {testimonial.avatar}
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full flex items-center justify-center font-bold text-white flex-shrink-0 shadow-glow">
+                      {testimonial.avatar}
+                    </div>
+                    <div className="flex-grow">
+                      <h4 className="font-bold text-foreground">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-xs text-foreground/60 mt-1">
+                        {testimonial.role}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-grow">
-                    <h4 className="font-bold text-foreground">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-xs text-foreground/60 mt-1">
-                      {testimonial.role}
-                    </p>
+
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        size={18}
+                        className="fill-yellow-400 text-yellow-400"
+                      />
+                    ))}
                   </div>
-                </div>
 
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={18}
-                      className="fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
+                  <p className="text-foreground/80 leading-relaxed">
+                    {testimonial.content}
+                  </p>
                 </div>
-
-                <p className="text-foreground/80 leading-relaxed">
-                  {testimonial.content}
-                </p>
-              </div>
               </TiltCard>
             ))}
           </div>
@@ -801,12 +996,13 @@ export default function Home() {
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-8 font-poppins">
             Ready to Boost Your Academic Success?
           </h2>
-          
+
           <p className="text-lg text-foreground/80 mb-12">
-            Join thousands of students who've improved their grades and academic standing 
-            with our expert writing services. Let's make your success a reality.
+            Join thousands of students who've improved their grades and academic
+            standing with our expert writing services. Let's make your success a
+            reality.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/order"

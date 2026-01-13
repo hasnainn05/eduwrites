@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare } from "lucide-react";
@@ -15,7 +15,9 @@ export default function Contact() {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -64,27 +66,33 @@ export default function Contact() {
   const faqItems = [
     {
       question: "How quickly can you complete my order?",
-      answer: "We offer various turnaround times from rush (24 hours) to standard (7-10 days). The timeline depends on the complexity and length of your assignment. You can specify your deadline when placing an order.",
+      answer:
+        "We offer various turnaround times from rush (24 hours) to standard (7-10 days). The timeline depends on the complexity and length of your assignment. You can specify your deadline when placing an order.",
     },
     {
       question: "Is my work guaranteed to be plagiarism-free?",
-      answer: "Yes, 100%. All our work is original and written from scratch. We use plagiarism detection software to verify every submission before delivery.",
+      answer:
+        "Yes, 100%. All our work is original and written from scratch. We use plagiarism detection software to verify every submission before delivery.",
     },
     {
       question: "Can I communicate with my assigned writer?",
-      answer: "Absolutely. You can send messages to your assigned writer through our platform to provide feedback, ask questions, or make adjustments to your order.",
+      answer:
+        "Absolutely. You can send messages to your assigned writer through our platform to provide feedback, ask questions, or make adjustments to your order.",
     },
     {
       question: "What if I'm not satisfied with the work?",
-      answer: "We offer unlimited revisions within 14 days of delivery. If you're still not satisfied, we offer a full refund or a complete rewrite with a different writer.",
+      answer:
+        "We offer unlimited revisions within 14 days of delivery. If you're still not satisfied, we offer a full refund or a complete rewrite with a different writer.",
     },
     {
       question: "How do you ensure confidentiality?",
-      answer: "Your privacy is our top priority. We use industry-standard encryption and never share your personal information. All transactions are secure and confidential.",
+      answer:
+        "Your privacy is our top priority. We use industry-standard encryption and never share your personal information. All transactions are secure and confidential.",
     },
     {
       question: "What payment methods do you accept?",
-      answer: "We accept all major credit cards, PayPal, and bank transfers. All payments are processed securely through our encrypted payment gateway.",
+      answer:
+        "We accept all major credit cards, PayPal, and bank transfers. All payments are processed securely through our encrypted payment gateway.",
     },
   ];
 
@@ -107,7 +115,8 @@ export default function Contact() {
               </span>
             </h1>
             <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-8">
-              Have questions about our services? Want to discuss your academic needs? We're here to help. Get in touch with our team today.
+              Have questions about our services? Want to discuss your academic
+              needs? We're here to help. Get in touch with our team today.
             </p>
           </div>
         </div>
@@ -154,7 +163,8 @@ export default function Contact() {
                 Message Sent Successfully!
               </h2>
               <p className="text-foreground/80 mb-6">
-                Thank you for reaching out. We'll get back to you as soon as possible.
+                Thank you for reaching out. We'll get back to you as soon as
+                possible.
               </p>
               <Link
                 href="/"
@@ -169,7 +179,8 @@ export default function Contact() {
                 Send us a Message
               </h2>
               <p className="text-foreground/70 mb-8">
-                Fill out the form below and we'll respond to you within 24 hours.
+                Fill out the form below and we'll respond to you within 24
+                hours.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -260,7 +271,10 @@ export default function Contact() {
                 className="glass rounded-xl p-6 hover:bg-white/20 transition-all group cursor-pointer"
               >
                 <summary className="flex gap-4 items-start text-lg font-semibold text-foreground hover:text-cyan-400 transition-colors">
-                  <MessageSquare size={20} className="flex-shrink-0 mt-1 text-cyan-400" />
+                  <MessageSquare
+                    size={20}
+                    className="flex-shrink-0 mt-1 text-cyan-400"
+                  />
                   <span>{item.question}</span>
                 </summary>
                 <p className="text-foreground/80 mt-4 ml-6 leading-relaxed">
@@ -284,7 +298,8 @@ export default function Contact() {
           </h2>
 
           <p className="text-lg text-foreground/80 mb-12">
-            Don't let academic stress hold you back. Let Ardelis EduWrites help you achieve your academic goals.
+            Don't let academic stress hold you back. Let Ardelis EduWrites help
+            you achieve your academic goals.
           </p>
 
           <Link

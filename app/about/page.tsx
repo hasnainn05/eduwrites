@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { CheckCircle, Users, Award, Zap } from "lucide-react";
 import Link from "next/link";
@@ -9,17 +9,20 @@ export default function About() {
     {
       icon: <Award className="w-8 h-8" />,
       title: "Excellence",
-      description: "We deliver high-quality academic writing that meets the highest standards.",
+      description:
+        "We deliver high-quality academic writing that meets the highest standards.",
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Integrity",
-      description: "Our work is original, plagiarism-free, and written with complete transparency.",
+      description:
+        "Our work is original, plagiarism-free, and written with complete transparency.",
     },
     {
       icon: <Zap className="w-8 h-8" />,
       title: "Reliability",
-      description: "We meet deadlines, respect your requirements, and provide 24/7 support.",
+      description:
+        "We meet deadlines, respect your requirements, and provide 24/7 support.",
     },
   ];
 
@@ -73,8 +76,9 @@ export default function About() {
             </h1>
 
             <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-8">
-              Empowering students worldwide with expert academic writing services since 2015.
-              We believe every student deserves access to high-quality academic support.
+              Empowering students worldwide with expert academic writing
+              services since 2015. We believe every student deserves access to
+              high-quality academic support.
             </p>
           </div>
         </div>
@@ -86,12 +90,16 @@ export default function About() {
           {/* Mission */}
           <TiltCard className="h-full">
             <div className="glass p-12 rounded-2xl h-full flex flex-col justify-center">
-              <h2 className="text-3xl font-bold text-foreground mb-6 font-poppins">Our Mission</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-6 font-poppins">
+                Our Mission
+              </h2>
               <p className="text-foreground/80 leading-relaxed text-lg">
-                To provide accessible, ethical, and high-quality academic writing support that helps
-                students achieve their educational goals. We empower learners by offering professional
-                assistance with essays, research papers, theses, and other academic work while
-                maintaining the highest standards of integrity and originality.
+                To provide accessible, ethical, and high-quality academic
+                writing support that helps students achieve their educational
+                goals. We empower learners by offering professional assistance
+                with essays, research papers, theses, and other academic work
+                while maintaining the highest standards of integrity and
+                originality.
               </p>
             </div>
           </TiltCard>
@@ -99,12 +107,15 @@ export default function About() {
           {/* Vision */}
           <TiltCard className="h-full">
             <div className="glass p-12 rounded-2xl h-full flex flex-col justify-center">
-              <h2 className="text-3xl font-bold text-foreground mb-6 font-poppins">Our Vision</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-6 font-poppins">
+                Our Vision
+              </h2>
               <p className="text-foreground/80 leading-relaxed text-lg">
-                To be the most trusted and reliable academic writing service globally, recognized for
-                delivering exceptional quality, maintaining ethical standards, and genuinely supporting
-                student success. We aim to create a world where every student has access to the
-                academic support they need to excel.
+                To be the most trusted and reliable academic writing service
+                globally, recognized for delivering exceptional quality,
+                maintaining ethical standards, and genuinely supporting student
+                success. We aim to create a world where every student has access
+                to the academic support they need to excel.
               </p>
             </div>
           </TiltCard>
@@ -130,7 +141,9 @@ export default function About() {
                 className="glass p-8 rounded-2xl hover:bg-white/20 transition-all transform hover:scale-105 hover:-translate-y-2"
               >
                 <div className="text-cyan-400 mb-6">{value.icon}</div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">{value.title}</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4">
+                  {value.title}
+                </h3>
                 <p className="text-foreground/80">{value.description}</p>
               </div>
             ))}
@@ -201,14 +214,16 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, index) => (
               <TiltCard key={index} className="h-full">
-                <div
-                  className="glass p-6 rounded-2xl text-center hover:bg-white/20 transition-all h-full flex flex-col justify-center"
-                >
+                <div className="glass p-6 rounded-2xl text-center hover:bg-white/20 transition-all h-full flex flex-col justify-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
                     {member.name.charAt(0)}
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">{member.name}</h3>
-                  <p className="text-sm text-cyan-400 font-semibold mb-3">{member.role}</p>
+                  <h3 className="text-lg font-bold text-foreground mb-2">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm text-cyan-400 font-semibold mb-3">
+                    {member.role}
+                  </p>
                   <p className="text-sm text-foreground/80">{member.bio}</p>
                 </div>
               </TiltCard>
@@ -229,8 +244,9 @@ export default function About() {
           </h2>
 
           <p className="text-lg text-foreground/80 mb-12">
-            Let Ardelis EduWrites help you achieve your academic goals. Place an order today and experience
-            the difference quality academic writing can make.
+            Let Ardelis EduWrites help you achieve your academic goals. Place an
+            order today and experience the difference quality academic writing
+            can make.
           </p>
 
           <Link

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import * as THREE from 'three';
+import { useRef, useEffect } from "react";
+import * as THREE from "three";
 
 export function Canvas3DGradientBackdrop() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,26 +21,29 @@ export function Canvas3DGradientBackdrop() {
       75,
       containerRef.current.clientWidth / containerRef.current.clientHeight,
       0.1,
-      1000
+      1000,
     );
     camera.position.z = 0;
     cameraRef.current = camera;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: true, 
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
       alpha: false,
-      precision: 'highp'
+      precision: "highp",
     });
-    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+    renderer.setSize(
+      containerRef.current.clientWidth,
+      containerRef.current.clientHeight,
+    );
     renderer.setClearColor(0x0f172a, 1); // Dark slate base
-    renderer.domElement.style.pointerEvents = 'none';
+    renderer.domElement.style.pointerEvents = "none";
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
     // Create dynamic gradient plane
     const planeGeometry = new THREE.PlaneGeometry(2, 2);
-    
+
     // Create animated gradient shader material
     const material = new THREE.ShaderMaterial({
       uniforms: {
@@ -121,7 +124,7 @@ export function Canvas3DGradientBackdrop() {
       (material.uniforms.mouse as any).value.set(mouseX, mouseY);
     };
 
-    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
 
     // Animation loop
     const animate = () => {
@@ -145,11 +148,11 @@ export function Canvas3DGradientBackdrop() {
       renderer.setSize(width, height);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("resize", handleResize);
       if (containerRef.current && renderer.domElement) {
         containerRef.current.removeChild(renderer.domElement);
       }
@@ -159,10 +162,5 @@ export function Canvas3DGradientBackdrop() {
     };
   }, []);
 
-  return (
-    <div
-      ref={containerRef}
-      className="absolute inset-0 w-full h-full"
-    />
-  );
+  return <div ref={containerRef} className="absolute inset-0 w-full h-full" />;
 }

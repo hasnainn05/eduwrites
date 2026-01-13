@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import * as THREE from 'three';
+import { useRef, useEffect } from "react";
+import * as THREE from "three";
 
 export function Canvas3DGrid() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -22,20 +22,23 @@ export function Canvas3DGrid() {
       75,
       containerRef.current.clientWidth / containerRef.current.clientHeight,
       0.1,
-      1000
+      1000,
     );
     camera.position.z = 40;
     cameraRef.current = camera;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: true, 
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
       alpha: true,
-      precision: 'highp'
+      precision: "highp",
     });
-    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+    renderer.setSize(
+      containerRef.current.clientWidth,
+      containerRef.current.clientHeight,
+    );
     renderer.setClearColor(0x000000, 0);
-    renderer.domElement.style.pointerEvents = 'none';
+    renderer.domElement.style.pointerEvents = "none";
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
@@ -82,16 +85,25 @@ export function Canvas3DGrid() {
         if (dist < spacing * 2.1 && dist > 0.1) {
           const startIdx = linePositions.length / 3;
           linePositions.push(
-            nodePositions[i].x, nodePositions[i].y, nodePositions[i].z,
-            nodePositions[j].x, nodePositions[j].y, nodePositions[j].z
+            nodePositions[i].x,
+            nodePositions[i].y,
+            nodePositions[i].z,
+            nodePositions[j].x,
+            nodePositions[j].y,
+            nodePositions[j].z,
           );
           lineIndices.push(startIdx, startIdx + 1);
         }
       }
     }
 
-    lineGeometry.setAttribute('position', new THREE.BufferAttribute(new Float32Array(linePositions), 3));
-    lineGeometry.setIndex(new THREE.BufferAttribute(new Uint32Array(lineIndices), 1));
+    lineGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(new Float32Array(linePositions), 3),
+    );
+    lineGeometry.setIndex(
+      new THREE.BufferAttribute(new Uint32Array(lineIndices), 1),
+    );
 
     const lineMaterial = new THREE.LineBasicMaterial({
       color: 0x6366f1,
@@ -118,7 +130,10 @@ export function Canvas3DGrid() {
 
     highlightIndices.forEach((idx) => {
       if (idx < nodes.length) {
-        const highlightMesh = new THREE.Mesh(highlightGeometry, highlightMaterial);
+        const highlightMesh = new THREE.Mesh(
+          highlightGeometry,
+          highlightMaterial,
+        );
         highlightMesh.position.copy(nodes[idx].position);
         gridGroup.add(highlightMesh);
         highlightMeshes.push(highlightMesh);
@@ -149,7 +164,7 @@ export function Canvas3DGrid() {
       targetRotationX = mouseY * 0.5;
     };
 
-    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
 
     // Animation loop
     const animate = () => {
@@ -188,11 +203,11 @@ export function Canvas3DGrid() {
       renderer.setSize(width, height);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("resize", handleResize);
       if (containerRef.current && renderer.domElement) {
         containerRef.current.removeChild(renderer.domElement);
       }
@@ -210,7 +225,10 @@ export function Canvas3DGrid() {
     <div
       ref={containerRef}
       className="absolute inset-0 w-full h-full"
-      style={{ background: 'radial-gradient(ellipse at center, rgba(99,102,241,0.08) 0%, transparent 70%)' }}
+      style={{
+        background:
+          "radial-gradient(ellipse at center, rgba(99,102,241,0.08) 0%, transparent 70%)",
+      }}
     />
   );
 }

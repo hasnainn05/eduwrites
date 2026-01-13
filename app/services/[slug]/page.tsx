@@ -1,8 +1,17 @@
-'use client';
+"use client";
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, CheckCircle, X, FileText, BarChart3, BookOpen, Pencil, BookMarked } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  X,
+  FileText,
+  BarChart3,
+  BookOpen,
+  Pencil,
+  BookMarked,
+} from "lucide-react";
 import { TiltCard } from "@/client/components/TiltCard";
 import { useState } from "react";
 
@@ -100,7 +109,8 @@ const servicesData: Record<string, ServiceData> = {
       },
     ],
     ctaText: "Ready to Order Your Essay?",
-    ctaSubtext: "Get started today and receive your professionally written essay",
+    ctaSubtext:
+      "Get started today and receive your professionally written essay",
   },
   research: {
     title: "Research Paper",
@@ -174,7 +184,8 @@ const servicesData: Record<string, ServiceData> = {
       },
     ],
     ctaText: "Commission Your Research Paper",
-    ctaSubtext: "Get a comprehensive research paper written by academic experts",
+    ctaSubtext:
+      "Get a comprehensive research paper written by academic experts",
   },
   thesis: {
     title: "Thesis Writing",
@@ -271,7 +282,11 @@ export default function ServiceDetail() {
     attachments: "" as File | null,
   });
 
-  const handleOrderChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleOrderChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     const { name, value } = e.target;
     if (name === "attachments") {
       const file = (e.target as HTMLInputElement).files?.[0] || null;
@@ -380,51 +395,81 @@ export default function ServiceDetail() {
               {service.aboutContent}
             </p>
             <p className="text-lg text-foreground/80 leading-relaxed">
-              At Ardelis EduWrites, we pride ourselves on delivering exceptional quality and maintaining the highest standards of academic integrity. Every piece of work goes through rigorous quality assurance checks to ensure it meets your expectations and exceeds academic requirements. Our team is dedicated to your success and committed to providing you with work that truly makes a difference in your academic journey.
+              At Ardelis EduWrites, we pride ourselves on delivering exceptional
+              quality and maintaining the highest standards of academic
+              integrity. Every piece of work goes through rigorous quality
+              assurance checks to ensure it meets your expectations and exceeds
+              academic requirements. Our team is dedicated to your success and
+              committed to providing you with work that truly makes a difference
+              in your academic journey.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="glass p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold text-foreground mb-4 font-poppins">Why Choose This Service?</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4 font-poppins">
+                Why Choose This Service?
+              </h3>
               <ul className="space-y-3">
                 <li className="flex gap-3">
                   <span className="text-cyan-400 font-bold">✓</span>
-                  <span className="text-foreground/80">Expert writers with advanced degrees in relevant fields</span>
+                  <span className="text-foreground/80">
+                    Expert writers with advanced degrees in relevant fields
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-cyan-400 font-bold">✓</span>
-                  <span className="text-foreground/80">100% plagiarism-free original work guaranteed</span>
+                  <span className="text-foreground/80">
+                    100% plagiarism-free original work guaranteed
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-cyan-400 font-bold">✓</span>
-                  <span className="text-foreground/80">On-time delivery with revision guarantees</span>
+                  <span className="text-foreground/80">
+                    On-time delivery with revision guarantees
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-cyan-400 font-bold">✓</span>
-                  <span className="text-foreground/80">Flexible turnaround times to fit your schedule</span>
+                  <span className="text-foreground/80">
+                    Flexible turnaround times to fit your schedule
+                  </span>
                 </li>
               </ul>
             </div>
 
             <div className="glass p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold text-foreground mb-4 font-poppins">Our Process</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4 font-poppins">
+                Our Process
+              </h3>
               <ol className="space-y-3">
                 <li className="flex gap-3">
                   <span className="text-purple-400 font-bold">1.</span>
-                  <span className="text-foreground/80"><strong>Submit Details:</strong> Share your requirements and specifications</span>
+                  <span className="text-foreground/80">
+                    <strong>Submit Details:</strong> Share your requirements and
+                    specifications
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-purple-400 font-bold">2.</span>
-                  <span className="text-foreground/80"><strong>Expert Assignment:</strong> We match you with the best writer</span>
+                  <span className="text-foreground/80">
+                    <strong>Expert Assignment:</strong> We match you with the
+                    best writer
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-purple-400 font-bold">3.</span>
-                  <span className="text-foreground/80"><strong>Quality Check:</strong> Multiple rounds of review for excellence</span>
+                  <span className="text-foreground/80">
+                    <strong>Quality Check:</strong> Multiple rounds of review
+                    for excellence
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-purple-400 font-bold">4.</span>
-                  <span className="text-foreground/80"><strong>Delivery:</strong> Receive your work on time, every time</span>
+                  <span className="text-foreground/80">
+                    <strong>Delivery:</strong> Receive your work on time, every
+                    time
+                  </span>
                 </li>
               </ol>
             </div>
@@ -474,7 +519,9 @@ export default function ServiceDetail() {
                 }`}
               >
                 {/* Glass Background */}
-                <div className={`absolute inset-0 ${plan.highlighted ? "glass-dark" : "glass"}`}></div>
+                <div
+                  className={`absolute inset-0 ${plan.highlighted ? "glass-dark" : "glass"}`}
+                ></div>
 
                 {/* Content */}
                 <div className="relative z-10 p-8 h-full flex flex-col">
@@ -577,7 +624,8 @@ export default function ServiceDetail() {
               What Our Clients Say
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Join thousands of satisfied students who have benefited from our professional writing services
+              Join thousands of satisfied students who have benefited from our
+              professional writing services
             </p>
           </div>
 
@@ -643,8 +691,12 @@ export default function ServiceDetail() {
                     {review.avatar}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-semibold text-foreground text-sm animate-pulse">{review.author}</p>
-                    <p className="text-foreground/60 text-xs">{review.course}</p>
+                    <p className="font-semibold text-foreground text-sm animate-pulse">
+                      {review.author}
+                    </p>
+                    <p className="text-foreground/60 text-xs">
+                      {review.course}
+                    </p>
                   </div>
                 </div>
 
@@ -652,11 +704,15 @@ export default function ServiceDetail() {
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-1">
                     {[...Array(review.rating)].map((_, i) => (
-                      <span key={i} className="text-yellow-400">★</span>
+                      <span key={i} className="text-yellow-400">
+                        ★
+                      </span>
                     ))}
                   </div>
                   {review.verified && (
-                    <span className="text-cyan-400 text-xs font-bold">✓ Verified</span>
+                    <span className="text-cyan-400 text-xs font-bold">
+                      ✓ Verified
+                    </span>
                   )}
                 </div>
 
@@ -678,51 +734,63 @@ export default function ServiceDetail() {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-foreground/70">
-              Get answers to common questions about our academic writing services
+              Get answers to common questions about our academic writing
+              services
             </p>
           </div>
 
           <div className="space-y-4">
             {[
               {
-                question: "Is the work completely original and plagiarism-free?",
-                answer: "Absolutely. Every piece of work we deliver is 100% original and written specifically for you. We use advanced plagiarism detection tools to ensure originality, and all sources are properly cited according to your required format (APA, MLA, Chicago, etc.).",
+                question:
+                  "Is the work completely original and plagiarism-free?",
+                answer:
+                  "Absolutely. Every piece of work we deliver is 100% original and written specifically for you. We use advanced plagiarism detection tools to ensure originality, and all sources are properly cited according to your required format (APA, MLA, Chicago, etc.).",
               },
               {
                 question: "How long does it take to complete an order?",
-                answer: "Turnaround times vary depending on the service and complexity. We offer rush options starting from 2-3 days, standard delivery in 5-7 days, and extended timelines for comprehensive projects. You can specify your deadline when placing an order.",
+                answer:
+                  "Turnaround times vary depending on the service and complexity. We offer rush options starting from 2-3 days, standard delivery in 5-7 days, and extended timelines for comprehensive projects. You can specify your deadline when placing an order.",
               },
               {
                 question: "What qualifications do your writers have?",
-                answer: "Our team consists of experienced academic writers with Master's and PhD degrees in their respective fields. Each writer is carefully selected and vetted to ensure they meet our high standards for expertise, writing quality, and academic integrity.",
+                answer:
+                  "Our team consists of experienced academic writers with Master's and PhD degrees in their respective fields. Each writer is carefully selected and vetted to ensure they meet our high standards for expertise, writing quality, and academic integrity.",
               },
               {
                 question: "Can I request revisions if I'm not satisfied?",
-                answer: "Yes, revisions are included in all our services. We're committed to your satisfaction and will work with you until the final product meets your expectations and academic requirements.",
+                answer:
+                  "Yes, revisions are included in all our services. We're committed to your satisfaction and will work with you until the final product meets your expectations and academic requirements.",
               },
               {
                 question: "How is my privacy protected?",
-                answer: "Your privacy is our top priority. All client information is kept confidential and encrypted. We never share personal details or disclose the nature of orders to third parties. Your work is completely anonymous in our system.",
+                answer:
+                  "Your privacy is our top priority. All client information is kept confidential and encrypted. We never share personal details or disclose the nature of orders to third parties. Your work is completely anonymous in our system.",
               },
               {
                 question: "What if I need to communicate with my writer?",
-                answer: "You can communicate directly with your assigned writer through our secure platform. Our 24/7 support team is also available to answer questions, provide updates, or address any concerns about your order.",
+                answer:
+                  "You can communicate directly with your assigned writer through our secure platform. Our 24/7 support team is also available to answer questions, provide updates, or address any concerns about your order.",
               },
               {
                 question: "Do you offer guarantees on quality and delivery?",
-                answer: "Yes, we guarantee on-time delivery and top-quality work. If we miss a deadline, you'll receive a full refund. If the quality doesn't meet our standards, we'll continue revising until you're satisfied.",
+                answer:
+                  "Yes, we guarantee on-time delivery and top-quality work. If we miss a deadline, you'll receive a full refund. If the quality doesn't meet our standards, we'll continue revising until you're satisfied.",
               },
               {
                 question: "What payment methods do you accept?",
-                answer: "We accept all major credit cards, debit cards, and PayPal. Payments are processed securely through our encrypted payment gateway. You can also choose to pay in installments for larger projects.",
+                answer:
+                  "We accept all major credit cards, debit cards, and PayPal. Payments are processed securely through our encrypted payment gateway. You can also choose to pay in installments for larger projects.",
               },
               {
                 question: "Can I use this work for multiple submissions?",
-                answer: "Our work is written specifically for your unique assignment and requirements. We don't recommend using the same paper for multiple submissions. However, you can use the work as a study guide or reference for your own writing.",
+                answer:
+                  "Our work is written specifically for your unique assignment and requirements. We don't recommend using the same paper for multiple submissions. However, you can use the work as a study guide or reference for your own writing.",
               },
               {
                 question: "What if my institution has specific requirements?",
-                answer: "We accommodate any specific requirements your institution has, including formatting guidelines, citation styles, required sources, and specific content requirements. Just let us know during the ordering process.",
+                answer:
+                  "We accommodate any specific requirements your institution has, including formatting guidelines, citation styles, required sources, and specific content requirements. Just let us know during the ordering process.",
               },
             ].map((faq, index) => (
               <div
@@ -761,7 +829,8 @@ export default function ServiceDetail() {
               Still Have Questions?
             </h3>
             <p className="text-foreground/70 mb-6">
-              Our support team is available 24/7 to help answer any questions you may have about our services.
+              Our support team is available 24/7 to help answer any questions
+              you may have about our services.
             </p>
             <a
               href="#"
@@ -792,7 +861,9 @@ export default function ServiceDetail() {
             <form onSubmit={handleSubmitOrder} className="space-y-6">
               {/* Personal Information */}
               <div>
-                <h3 className="text-xl font-bold text-foreground mb-4">Personal Information</h3>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Personal Information
+                </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
@@ -837,7 +908,9 @@ export default function ServiceDetail() {
 
               {/* Order Details */}
               <div>
-                <h3 className="text-xl font-bold text-foreground mb-4">Order Details</h3>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Order Details
+                </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="number"
@@ -877,7 +950,9 @@ export default function ServiceDetail() {
 
               {/* Assignment Details */}
               <div>
-                <h3 className="text-xl font-bold text-foreground mb-4">Assignment Details</h3>
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Assignment Details
+                </h3>
                 <textarea
                   name="assignmentDetails"
                   placeholder="Describe your assignment, requirements, and specifications..."

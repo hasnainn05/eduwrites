@@ -1,12 +1,30 @@
-'use client';
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Edit, LogOut, FileText, Clock, DollarSign, Settings, User, Eye, CheckCircle, ArrowRight, Star, ShieldAlert } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Edit,
+  LogOut,
+  FileText,
+  Clock,
+  DollarSign,
+  Settings,
+  User,
+  Eye,
+  CheckCircle,
+  ArrowRight,
+  Star,
+  ShieldAlert,
+} from "lucide-react";
 
 export default function Profile() {
   const [userMode, setUserMode] = useState<"user" | "admin">("user");
-  const [activeTab, setActiveTab] = useState<"overview" | "orders" | "settings">("overview");
+  const [activeTab, setActiveTab] = useState<
+    "overview" | "orders" | "settings"
+  >("overview");
   const [isEditing, setIsEditing] = useState(false);
 
   const [user, setUser] = useState({
@@ -46,10 +64,30 @@ export default function Profile() {
   ];
 
   const stats = [
-    { label: "Total Orders", value: "12", icon: FileText, color: "from-blue-500 to-cyan-500" },
-    { label: "Completed", value: "10", icon: CheckCircle, color: "from-green-500 to-emerald-500" },
-    { label: "Total Spent", value: "$3,847", icon: DollarSign, color: "from-purple-500 to-pink-500" },
-    { label: "Rating", value: "4.9", icon: Star, color: "from-yellow-500 to-orange-500" },
+    {
+      label: "Total Orders",
+      value: "12",
+      icon: FileText,
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      label: "Completed",
+      value: "10",
+      icon: CheckCircle,
+      color: "from-green-500 to-emerald-500",
+    },
+    {
+      label: "Total Spent",
+      value: "$3,847",
+      icon: DollarSign,
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      label: "Rating",
+      value: "4.9",
+      icon: Star,
+      color: "from-yellow-500 to-orange-500",
+    },
   ];
 
   const handleSaveProfile = () => {
@@ -81,8 +119,12 @@ export default function Profile() {
 
           <div className="text-center py-20">
             <ShieldAlert className="w-16 h-16 text-cyan-400 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-foreground mb-2">Admin Access Required</h2>
-            <p className="text-foreground/60 mb-6">Redirecting to admin panel...</p>
+            <h2 className="text-3xl font-bold text-foreground mb-2">
+              Admin Access Required
+            </h2>
+            <p className="text-foreground/60 mb-6">
+              Redirecting to admin panel...
+            </p>
             <Link
               href="/admin/dashboard"
               className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all"
@@ -135,15 +177,21 @@ export default function Profile() {
         {/* Header */}
         <div className="flex justify-between items-start mb-8">
           <div>
-            <h1 className="text-4xl font-bold text-foreground font-poppins">My Account</h1>
-            <p className="text-foreground/70 mt-2">Welcome back, {user.fullName}</p>
+            <h1 className="text-4xl font-bold text-foreground font-poppins">
+              My Account
+            </h1>
+            <p className="text-foreground/70 mt-2">
+              Welcome back, {user.fullName}
+            </p>
           </div>
           <button
             onClick={handleLogout}
             className="flex items-center gap-2 text-foreground/70 hover:text-red-400 transition-all px-4 py-2 border border-white/20 rounded-xl hover:border-red-400/50 hover:bg-red-400/10"
           >
             <LogOut size={18} />
-            <span className="hidden sm:inline text-sm font-semibold">Logout</span>
+            <span className="hidden sm:inline text-sm font-semibold">
+              Logout
+            </span>
           </button>
         </div>
 
@@ -155,9 +203,13 @@ export default function Profile() {
                 {user.avatar}
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-foreground mb-1">{user.fullName}</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-1">
+                  {user.fullName}
+                </h2>
                 <p className="text-foreground/70 text-sm mb-3">{user.email}</p>
-                <p className="text-foreground/60 text-xs">Member since {user.joinDate}</p>
+                <p className="text-foreground/60 text-xs">
+                  Member since {user.joinDate}
+                </p>
               </div>
             </div>
             <button
@@ -179,11 +231,15 @@ export default function Profile() {
                 key={index}
                 className="glass p-5 rounded-xl border border-white/10 text-center hover:border-white/20 transition-all"
               >
-                <div className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${stat.color} mb-3`}>
+                <div
+                  className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${stat.color} mb-3`}
+                >
                   <Icon size={18} className="text-white" />
                 </div>
                 <p className="text-foreground/70 text-xs mb-1">{stat.label}</p>
-                <p className="text-2xl font-bold text-foreground">{stat.value}</p>
+                <p className="text-2xl font-bold text-foreground">
+                  {stat.value}
+                </p>
               </div>
             );
           })}
@@ -220,35 +276,45 @@ export default function Profile() {
           <div className="space-y-6">
             {/* Account Info */}
             <div className="glass p-6 rounded-2xl border border-white/10">
-              <h3 className="text-lg font-bold text-foreground mb-4">Account Information</h3>
+              <h3 className="text-lg font-bold text-foreground mb-4">
+                Account Information
+              </h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center pb-3 border-b border-white/10">
                   <div className="flex items-center gap-2 text-foreground/70 text-sm">
                     <Mail size={16} />
                     Email
                   </div>
-                  <span className="text-foreground text-sm font-medium">{user.email}</span>
+                  <span className="text-foreground text-sm font-medium">
+                    {user.email}
+                  </span>
                 </div>
                 <div className="flex justify-between items-center pb-3 border-b border-white/10">
                   <div className="flex items-center gap-2 text-foreground/70 text-sm">
                     <Phone size={16} />
                     Phone
                   </div>
-                  <span className="text-foreground text-sm font-medium">{user.phone}</span>
+                  <span className="text-foreground text-sm font-medium">
+                    {user.phone}
+                  </span>
                 </div>
                 <div className="flex justify-between items-center pb-3 border-b border-white/10">
                   <div className="flex items-center gap-2 text-foreground/70 text-sm">
                     <MapPin size={16} />
                     Location
                   </div>
-                  <span className="text-foreground text-sm font-medium">{user.city}, {user.country}</span>
+                  <span className="text-foreground text-sm font-medium">
+                    {user.city}, {user.country}
+                  </span>
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2 text-foreground/70 text-sm">
                     <Clock size={16} />
                     Member Since
                   </div>
-                  <span className="text-foreground text-sm font-medium">{user.joinDate}</span>
+                  <span className="text-foreground text-sm font-medium">
+                    {user.joinDate}
+                  </span>
                 </div>
               </div>
             </div>
@@ -260,7 +326,9 @@ export default function Profile() {
                 className="glass p-4 rounded-xl border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all group"
               >
                 <div className="text-2xl mb-2">📝</div>
-                <h4 className="font-semibold text-foreground text-sm mb-1">New Order</h4>
+                <h4 className="font-semibold text-foreground text-sm mb-1">
+                  New Order
+                </h4>
                 <span className="text-cyan-400 text-xs flex items-center gap-1">
                   Order Now <ArrowRight size={12} />
                 </span>
@@ -271,7 +339,9 @@ export default function Profile() {
                 className="glass p-4 rounded-xl border border-white/10 hover:border-purple-400/50 hover:bg-purple-400/10 transition-all group"
               >
                 <div className="text-2xl mb-2">🎓</div>
-                <h4 className="font-semibold text-foreground text-sm mb-1">Services</h4>
+                <h4 className="font-semibold text-foreground text-sm mb-1">
+                  Services
+                </h4>
                 <span className="text-purple-400 text-xs flex items-center gap-1">
                   View All <ArrowRight size={12} />
                 </span>
@@ -282,7 +352,9 @@ export default function Profile() {
                 className="glass p-4 rounded-xl border border-white/10 hover:border-pink-400/50 hover:bg-pink-400/10 transition-all group"
               >
                 <div className="text-2xl mb-2">💬</div>
-                <h4 className="font-semibold text-foreground text-sm mb-1">Support</h4>
+                <h4 className="font-semibold text-foreground text-sm mb-1">
+                  Support
+                </h4>
                 <span className="text-pink-400 text-xs flex items-center gap-1">
                   Contact <ArrowRight size={12} />
                 </span>
@@ -298,12 +370,24 @@ export default function Profile() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-white/10 bg-white/5">
-                      <th className="p-4 text-left text-foreground/70 font-semibold">Order ID</th>
-                      <th className="p-4 text-left text-foreground/70 font-semibold hidden sm:table-cell">Service</th>
-                      <th className="p-4 text-left text-foreground/70 font-semibold hidden sm:table-cell">Date</th>
-                      <th className="p-4 text-left text-foreground/70 font-semibold">Status</th>
-                      <th className="p-4 text-left text-foreground/70 font-semibold">Amount</th>
-                      <th className="p-4 text-left text-foreground/70 font-semibold">Action</th>
+                      <th className="p-4 text-left text-foreground/70 font-semibold">
+                        Order ID
+                      </th>
+                      <th className="p-4 text-left text-foreground/70 font-semibold hidden sm:table-cell">
+                        Service
+                      </th>
+                      <th className="p-4 text-left text-foreground/70 font-semibold hidden sm:table-cell">
+                        Date
+                      </th>
+                      <th className="p-4 text-left text-foreground/70 font-semibold">
+                        Status
+                      </th>
+                      <th className="p-4 text-left text-foreground/70 font-semibold">
+                        Amount
+                      </th>
+                      <th className="p-4 text-left text-foreground/70 font-semibold">
+                        Action
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -312,9 +396,15 @@ export default function Profile() {
                         key={index}
                         className="border-b border-white/10 hover:bg-white/5 transition-colors"
                       >
-                        <td className="p-4 text-foreground font-semibold">{order.id}</td>
-                        <td className="p-4 text-foreground hidden sm:table-cell">{order.service}</td>
-                        <td className="p-4 text-foreground/70 hidden sm:table-cell text-xs">{order.date}</td>
+                        <td className="p-4 text-foreground font-semibold">
+                          {order.id}
+                        </td>
+                        <td className="p-4 text-foreground hidden sm:table-cell">
+                          {order.service}
+                        </td>
+                        <td className="p-4 text-foreground/70 hidden sm:table-cell text-xs">
+                          {order.date}
+                        </td>
                         <td className="p-4">
                           <span
                             className={`px-2 py-1 rounded-full text-xs font-semibold inline-block ${
@@ -328,7 +418,9 @@ export default function Profile() {
                             {order.status}
                           </span>
                         </td>
-                        <td className="p-4 text-foreground font-semibold text-sm">{order.amount}</td>
+                        <td className="p-4 text-foreground font-semibold text-sm">
+                          {order.amount}
+                        </td>
                         <td className="p-4">
                           <button className="text-cyan-400 hover:text-cyan-300 transition-colors text-xs flex items-center gap-1">
                             <Eye size={14} />
@@ -347,34 +439,56 @@ export default function Profile() {
         {activeTab === "settings" && (
           <div className="space-y-4">
             <div className="glass p-6 rounded-2xl border border-white/10">
-              <h3 className="text-lg font-bold text-foreground mb-4">Privacy & Security</h3>
+              <h3 className="text-lg font-bold text-foreground mb-4">
+                Privacy & Security
+              </h3>
               <div className="space-y-0">
                 <div className="flex justify-between items-center py-4 border-b border-white/10 hover:bg-white/5 px-2 rounded transition-all">
                   <div>
-                    <p className="font-medium text-foreground text-sm">Change Password</p>
-                    <p className="text-xs text-foreground/70">Update your password</p>
+                    <p className="font-medium text-foreground text-sm">
+                      Change Password
+                    </p>
+                    <p className="text-xs text-foreground/70">
+                      Update your password
+                    </p>
                   </div>
-                  <button className="text-cyan-400 text-xs font-semibold">Change</button>
+                  <button className="text-cyan-400 text-xs font-semibold">
+                    Change
+                  </button>
                 </div>
                 <div className="flex justify-between items-center py-4 border-b border-white/10 hover:bg-white/5 px-2 rounded transition-all">
                   <div>
-                    <p className="font-medium text-foreground text-sm">Two-Factor Auth</p>
-                    <p className="text-xs text-foreground/70">Add extra security</p>
+                    <p className="font-medium text-foreground text-sm">
+                      Two-Factor Auth
+                    </p>
+                    <p className="text-xs text-foreground/70">
+                      Add extra security
+                    </p>
                   </div>
-                  <button className="text-cyan-400 text-xs font-semibold">Enable</button>
+                  <button className="text-cyan-400 text-xs font-semibold">
+                    Enable
+                  </button>
                 </div>
                 <div className="flex justify-between items-center py-4 hover:bg-white/5 px-2 rounded transition-all">
                   <div>
-                    <p className="font-medium text-foreground text-sm">Login History</p>
-                    <p className="text-xs text-foreground/70">View recent activity</p>
+                    <p className="font-medium text-foreground text-sm">
+                      Login History
+                    </p>
+                    <p className="text-xs text-foreground/70">
+                      View recent activity
+                    </p>
                   </div>
-                  <button className="text-cyan-400 text-xs font-semibold">View</button>
+                  <button className="text-cyan-400 text-xs font-semibold">
+                    View
+                  </button>
                 </div>
               </div>
             </div>
 
             <div className="glass p-6 rounded-2xl border border-white/10">
-              <h3 className="text-lg font-bold text-foreground mb-4">Notifications</h3>
+              <h3 className="text-lg font-bold text-foreground mb-4">
+                Notifications
+              </h3>
               <div className="space-y-3">
                 <label className="flex items-center gap-3 py-3 cursor-pointer hover:bg-white/5 px-2 rounded transition-all">
                   <input
@@ -383,8 +497,12 @@ export default function Profile() {
                     className="w-4 h-4 rounded border-white/20 bg-white/10 accent-cyan-400"
                   />
                   <div>
-                    <p className="font-medium text-foreground text-sm">Order Updates</p>
-                    <p className="text-xs text-foreground/70">Get notified about order progress</p>
+                    <p className="font-medium text-foreground text-sm">
+                      Order Updates
+                    </p>
+                    <p className="text-xs text-foreground/70">
+                      Get notified about order progress
+                    </p>
                   </div>
                 </label>
                 <label className="flex items-center gap-3 py-3 cursor-pointer hover:bg-white/5 px-2 rounded transition-all">
@@ -393,8 +511,12 @@ export default function Profile() {
                     className="w-4 h-4 rounded border-white/20 bg-white/10 accent-cyan-400"
                   />
                   <div>
-                    <p className="font-medium text-foreground text-sm">Marketing</p>
-                    <p className="text-xs text-foreground/70">Receive promotions and offers</p>
+                    <p className="font-medium text-foreground text-sm">
+                      Marketing
+                    </p>
+                    <p className="text-xs text-foreground/70">
+                      Receive promotions and offers
+                    </p>
                   </div>
                 </label>
               </div>

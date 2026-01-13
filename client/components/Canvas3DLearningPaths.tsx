@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import * as THREE from 'three';
+import { useRef, useEffect } from "react";
+import * as THREE from "three";
 
 export function Canvas3DLearningPaths() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,20 +21,23 @@ export function Canvas3DLearningPaths() {
       75,
       containerRef.current.clientWidth / containerRef.current.clientHeight,
       0.1,
-      1000
+      1000,
     );
     camera.position.z = 50;
     cameraRef.current = camera;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: true, 
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
       alpha: true,
-      precision: 'highp'
+      precision: "highp",
     });
-    renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+    renderer.setSize(
+      containerRef.current.clientWidth,
+      containerRef.current.clientHeight,
+    );
     renderer.setClearColor(0x000000, 0);
-    renderer.domElement.style.pointerEvents = 'none';
+    renderer.domElement.style.pointerEvents = "none";
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
@@ -45,7 +48,7 @@ export function Canvas3DLearningPaths() {
     const createFlowingPath = (
       controlPoints: THREE.Vector3[],
       color: THREE.Color,
-      intensity = 1
+      intensity = 1,
     ) => {
       const curve = new THREE.CatmullRomCurve3(controlPoints);
       const points = curve.getPoints(200);
@@ -56,7 +59,7 @@ export function Canvas3DLearningPaths() {
         32,
         0.4,
         8,
-        false
+        false,
       );
 
       // Create custom path using buffer geometry
@@ -68,7 +71,10 @@ export function Canvas3DLearningPaths() {
       });
 
       const geometry = new THREE.BufferGeometry();
-      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(positions, 3),
+      );
 
       const material = new THREE.LineBasicMaterial({
         color: color,
@@ -99,7 +105,15 @@ export function Canvas3DLearningPaths() {
         nodes.push(node);
       }
 
-      return { line, nodes, points, color, material, nodeGeometry, nodeMaterial };
+      return {
+        line,
+        nodes,
+        points,
+        color,
+        material,
+        nodeGeometry,
+        nodeMaterial,
+      };
     };
 
     // Define learning path control points
@@ -147,14 +161,17 @@ export function Canvas3DLearningPaths() {
     ];
 
     const paths = learningPaths.map((pathData) =>
-      createFlowingPath(pathData.points, pathData.color)
+      createFlowingPath(pathData.points, pathData.color),
     );
 
     // Create flowing particles along paths
     const particleGroup = new THREE.Group();
     scene.add(particleGroup);
 
-    const createPathParticles = (pathPoints: THREE.Vector3[], color: THREE.Color) => {
+    const createPathParticles = (
+      pathPoints: THREE.Vector3[],
+      color: THREE.Color,
+    ) => {
       const particles: any[] = [];
       const particleCount = 8;
 
@@ -181,7 +198,10 @@ export function Canvas3DLearningPaths() {
 
     const pathParticles: any[] = [];
     paths.forEach((path, idx) => {
-      const particles = createPathParticles(path.points, learningPaths[idx].color);
+      const particles = createPathParticles(
+        path.points,
+        learningPaths[idx].color,
+      );
       pathParticles.push(...particles);
     });
 
@@ -209,7 +229,7 @@ export function Canvas3DLearningPaths() {
       mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
     };
 
-    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener("mousemove", onMouseMove);
 
     // Animation loop
     const startTime = performance.now();
@@ -226,7 +246,8 @@ export function Canvas3DLearningPaths() {
       // Animate path nodes - pulsing effect
       paths.forEach((path, pathIdx) => {
         path.nodes.forEach((node, nodeIdx) => {
-          const pulse = Math.sin(elapsed + pathIdx * 0.5 + nodeIdx * 0.3) * 0.4 + 0.8;
+          const pulse =
+            Math.sin(elapsed + pathIdx * 0.5 + nodeIdx * 0.3) * 0.4 + 0.8;
           node.scale.set(pulse, pulse, pulse);
 
           // Glow intensity change
@@ -290,11 +311,11 @@ export function Canvas3DLearningPaths() {
       renderer.setSize(width, height);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("resize", handleResize);
       if (containerRef.current && renderer.domElement) {
         containerRef.current.removeChild(renderer.domElement);
       }
@@ -318,7 +339,10 @@ export function Canvas3DLearningPaths() {
     <div
       ref={containerRef}
       className="absolute inset-0 w-full h-full"
-      style={{ background: 'radial-gradient(ellipse at center, rgba(6,182,212,0.08) 0%, transparent 70%)' }}
+      style={{
+        background:
+          "radial-gradient(ellipse at center, rgba(6,182,212,0.08) 0%, transparent 70%)",
+      }}
     />
   );
 }

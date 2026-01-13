@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import Tilt from 'react-parallax-tilt';
-import React from 'react';
+import Tilt from "react-parallax-tilt";
+import React from "react";
 
 interface TiltCardProps {
   children: React.ReactNode;
   className?: string;
 }
 
-export function TiltCard({ children, className = '' }: TiltCardProps) {
+export function TiltCard({ children, className = "" }: TiltCardProps) {
   return (
     <Tilt
       tiltMaxAngleX={25}
@@ -18,11 +18,9 @@ export function TiltCard({ children, className = '' }: TiltCardProps) {
       speed={400}
       transitionSpeed={400}
       className={`${className} pointer-events-auto`}
-      style={{ pointerEvents: 'auto' }}
+      style={{ pointerEvents: "auto" }}
     >
-      <div style={{ pointerEvents: 'auto' }}>
-        {children}
-      </div>
+      <div style={{ pointerEvents: "auto" }}>{children}</div>
     </Tilt>
   );
 }
