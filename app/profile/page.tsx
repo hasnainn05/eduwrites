@@ -63,6 +63,38 @@ export default function Profile() {
     window.location.href = "/";
   };
 
+  // If user selected admin mode, redirect to admin dashboard
+  if (userMode === "admin") {
+    return (
+      <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Mode Toggle */}
+          <div className="flex justify-between items-center mb-8">
+            <button
+              onClick={() => setUserMode("user")}
+              className="flex items-center gap-2 px-6 py-3 rounded-lg glass border border-white/20 text-foreground hover:bg-white/10 transition-all font-medium"
+            >
+              <User size={18} />
+              Back to User Profile
+            </button>
+          </div>
+
+          <div className="text-center py-20">
+            <ShieldAlert className="w-16 h-16 text-cyan-400 mx-auto mb-4" />
+            <h2 className="text-3xl font-bold text-foreground mb-2">Admin Access Required</h2>
+            <p className="text-foreground/60 mb-6">Redirecting to admin panel...</p>
+            <Link
+              href="/admin/dashboard"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all"
+            >
+              Go to Admin Panel <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-background via-background/95 to-background/80 py-8">
       {/* Animated Background */}
@@ -72,6 +104,34 @@ export default function Profile() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Mode Toggle */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex gap-2 p-1 glass rounded-lg border border-white/20">
+            <button
+              onClick={() => setUserMode("user")}
+              className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
+                userMode === "user"
+                  ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
+                  : "text-foreground/70 hover:text-foreground"
+              }`}
+            >
+              <User size={16} className="inline mr-2" />
+              User
+            </button>
+            <button
+              onClick={() => setUserMode("admin")}
+              className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
+                userMode === "admin"
+                  ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
+                  : "text-foreground/70 hover:text-foreground"
+              }`}
+            >
+              <ShieldAlert size={16} className="inline mr-2" />
+              Admin
+            </button>
+          </div>
+        </div>
+
         {/* Header */}
         <div className="flex justify-between items-start mb-8">
           <div>
