@@ -46,7 +46,7 @@ const servicesData: Record<string, ServiceData> = {
     heroGradient: "from-blue-50 to-indigo-50",
     aboutTitle: "About Essay Writing",
     aboutContent:
-      "Our essay writing service provides professionally written essays for all academic levels. Whether you need help with high school essays, college assignments, or university-level papers, our expert writers deliver original, well-researched content that meets your specific requirements.",
+      "Our essay writing service provides professionally written essays for all academic levels, from high school to graduate programs. We understand the pressure students face when juggling multiple assignments, and our expert team is here to help. Our writers have advanced degrees across various disciplines and specialize in crafting compelling, original essays that showcase your academic potential. Whether you're working on argumentative essays, analytical papers, narrative compositions, or research-based essays, we have the expertise to deliver work that exceeds expectations and demonstrates deep understanding of your subject matter.",
     featuresTitle: "What's Included in Our Service",
     features: [
       "Original, plagiarism-free content",
@@ -121,7 +121,7 @@ const servicesData: Record<string, ServiceData> = {
     heroGradient: "from-purple-50 to-pink-50",
     aboutTitle: "About Research Paper",
     aboutContent:
-      "Our research paper writing service specializes in comprehensive academic research papers. We conduct thorough literature reviews, original analysis, and provide properly cited sources. Perfect for students who need high-quality research papers for their academic programs.",
+      "Our research paper writing service specializes in comprehensive academic research projects that require rigorous investigation and scholarly analysis. We have experienced researchers with expertise across all major academic disciplines including sciences, humanities, social sciences, business, and technology. Our process involves conducting extensive literature reviews using peer-reviewed sources, developing original arguments, and presenting well-structured analyses. Each research paper is meticulously documented with proper citations and references, whether you require APA, MLA, Chicago, or any other format. We excel at identifying credible sources, synthesizing complex information, and producing papers that demonstrate advanced critical thinking and original contribution to your field of study.",
     featuresTitle: "What's Included in Our Service",
     features: [
       "Comprehensive literature review",
@@ -196,7 +196,7 @@ const servicesData: Record<string, ServiceData> = {
     heroGradient: "from-green-50 to-emerald-50",
     aboutTitle: "About Thesis Writing",
     aboutContent:
-      "Our thesis and dissertation assistance service provides comprehensive support for graduate-level research projects. From research design and proposal writing to final editing and formatting, we help ensure your thesis meets the highest academic standards.",
+      "Our thesis and dissertation assistance service provides comprehensive, end-to-end support for graduate-level research projects at Master's and PhD levels. We understand that thesis writing represents a culmination of your academic journey and requires exceptional quality, originality, and depth. Our team of experienced academic writers and researchers work closely with you throughout every stage of the process, from initial research design and literature review through data analysis, writing, comprehensive editing, and defense preparation. We provide detailed feedback, chapter-by-chapter guidance, and ensure your thesis meets all institutional requirements while maintaining the highest standards of academic integrity. Whether you need help developing your research methodology, analyzing complex data, writing specific chapters, or preparing your defense presentation, we're committed to your success.",
     featuresTitle: "What's Included in Our Service",
     features: [
       "Research proposal development",
