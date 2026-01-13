@@ -8,30 +8,29 @@ export function Canvas3D() {
   const sceneRef = useRef<THREE.Scene | null>(null);
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const meshesRef = useRef<THREE.Mesh[]>([]);
+  const particlesRef = useRef<THREE.Points | null>(null);
   const timeRef = useRef<number>(0);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Scene setup with fog for depth
+    // Scene setup
     const scene = new THREE.Scene();
     scene.background = null;
-    scene.fog = new THREE.Fog(0x000000, 150, 200);
     sceneRef.current = scene;
 
-    // Camera setup
+    // Camera setup - positioned further back for "far away" effect
     const camera = new THREE.PerspectiveCamera(
-      75,
+      60,
       containerRef.current.clientWidth / containerRef.current.clientHeight,
       0.1,
-      2000,
+      3000,
     );
-    camera.position.set(0, 0, 50);
+    camera.position.set(0, 0, 120);
     camera.lookAt(0, 0, 0);
     cameraRef.current = camera;
 
-    // Renderer setup with improved settings
+    // Renderer setup
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: true,
@@ -44,164 +43,82 @@ export function Canvas3D() {
     );
     renderer.setClearColor(0x000000, 0);
     renderer.domElement.style.pointerEvents = "none";
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFShadowShadowMap;
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
-    // Enhanced lighting setup
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
-    scene.add(ambientLight);
+    // Create a large particle system for galaxy effect
+    const particleCount = 2000;
+    const positions = new Float32Array(particleCount * 3);
+    const velocities: Array<[number, number, number]> = [];
+    const colors = new Float32Array(particleCount * 3);
 
-    // Key light (cyan) - primary illumination
-    const keyLight = new THREE.PointLight(0x00d9ff, 1.2, 150);
-    keyLight.position.set(40, 40, 40);
-    keyLight.castShadow = true;
-    scene.add(keyLight);
+    // Color palette - cyan, purple, indigo
+    const colorPalette = [
+      { r: 0, g: 217 / 255, b: 255 / 255 }, // Cyan
+      { r: 99 / 255, g: 102 / 255, b: 241 / 255 }, // Indigo
+      { r: 168 / 255, g: 85 / 255, b: 247 / 255 }, // Purple
+      { r: 6 / 255, g: 182 / 255, b: 212 / 255 }, // Cyan-dark
+      { r: 139 / 255, g: 92 / 255, b: 246 / 255 }, // Purple-dark
+    ];
 
-    // Fill light (indigo) - secondary illumination
-    const fillLight = new THREE.PointLight(0x4f46e5, 0.8, 120);
-    fillLight.position.set(-40, -40, 40);
-    fillLight.castShadow = true;
-    scene.add(fillLight);
+    for (let i = 0; i < particleCount; i++) {
+      const i3 = i * 3;
 
-    // Back light (purple) - rim lighting
-    const backLight = new THREE.PointLight(0xc084fc, 0.6, 100);
-    backLight.position.set(0, 0, -50);
-    scene.add(backLight);
+      // Create particles in a spiral galaxy pattern
+      const angle = Math.random() * Math.PI * 2;
+      const distance = Math.random() * 80 + 10;
+      const z = (Math.random() - 0.5) * 60;
 
-    // Create geometric meshes with enhanced materials
-    const meshes: THREE.Mesh[] = [];
+      positions[i3] = Math.cos(angle) * distance;
+      positions[i3 + 1] = Math.sin(angle) * distance;
+      positions[i3 + 2] = z;
 
-    // Torus - primary focal point
-    const torusGeometry = new THREE.TorusGeometry(15, 4, 64, 128);
-    const torusMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x00d9ff,
-      emissive: 0x00d9ff,
-      emissiveIntensity: 0.2,
-      metalness: 0.5,
-      roughness: 0.3,
-      envMapIntensity: 1,
-      clearcoat: 0.3,
-      clearcoatRoughness: 0.4,
+      // Velocity for subtle movement
+      velocities.push([
+        (Math.random() - 0.5) * 0.01,
+        (Math.random() - 0.5) * 0.01,
+        (Math.random() - 0.5) * 0.005,
+      ]);
+
+      // Random colors from palette
+      const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+      colors[i3] = color.r;
+      colors[i3 + 1] = color.g;
+      colors[i3 + 2] = color.b;
+    }
+
+    const particleGeometry = new THREE.BufferGeometry();
+    particleGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    particleGeometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+
+    const particleMaterial = new THREE.PointsMaterial({
+      size: 0.5,
+      transparent: true,
+      opacity: 0.8,
+      vertexColors: true,
+      sizeAttenuation: true,
     });
-    const torus = new THREE.Mesh(torusGeometry, torusMaterial);
-    torus.position.set(-20, 0, 0);
-    torus.rotation.x = Math.PI * 0.3;
-    torus.rotation.y = Math.PI * 0.5;
-    torus.castShadow = true;
-    torus.receiveShadow = true;
-    scene.add(torus);
-    meshes.push(torus);
 
-    // Octahedron - geometric accent
-    const octaGeometry = new THREE.OctahedronGeometry(12, 4);
-    const octaMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x4f46e5,
-      emissive: 0x4f46e5,
-      emissiveIntensity: 0.15,
-      metalness: 0.4,
-      roughness: 0.4,
-      envMapIntensity: 0.8,
-      clearcoat: 0.2,
-    });
-    const octahedron = new THREE.Mesh(octaGeometry, octaMaterial);
-    octahedron.position.set(25, 15, -20);
-    octahedron.rotation.x = Math.PI * 0.2;
-    octahedron.rotation.y = Math.PI * 0.6;
-    octahedron.castShadow = true;
-    octahedron.receiveShadow = true;
-    scene.add(octahedron);
-    meshes.push(octahedron);
+    const particles = new THREE.Points(particleGeometry, particleMaterial);
+    particles.rotation.x = Math.PI * 0.15;
+    scene.add(particles);
+    particlesRef.current = particles;
 
-    // Icosahedron - smooth accent
-    const icoGeometry = new THREE.IcosahedronGeometry(10, 5);
-    const icoMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0xc084fc,
-      emissive: 0xc084fc,
-      emissiveIntensity: 0.18,
-      metalness: 0.3,
-      roughness: 0.5,
-      envMapIntensity: 0.7,
-    });
-    const icosahedron = new THREE.Mesh(icoGeometry, icoMaterial);
-    icosahedron.position.set(-25, 18, -15);
-    icosahedron.rotation.x = Math.PI * 0.4;
-    icosahedron.rotation.y = Math.PI * 0.3;
-    icosahedron.castShadow = true;
-    icosahedron.receiveShadow = true;
-    scene.add(icosahedron);
-    meshes.push(icosahedron);
-
-    // Tetrahedron - dynamic accent
-    const tetGeometry = new THREE.TetrahedronGeometry(9, 3);
-    const tetMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x06b6d4,
-      emissive: 0x06b6d4,
-      emissiveIntensity: 0.2,
-      metalness: 0.6,
-      roughness: 0.25,
-      envMapIntensity: 1,
-      clearcoat: 0.25,
-    });
-    const tetrahedron = new THREE.Mesh(tetGeometry, tetMaterial);
-    tetrahedron.position.set(18, -15, -10);
-    tetrahedron.rotation.x = Math.PI * 0.25;
-    tetrahedron.rotation.y = Math.PI * 0.7;
-    tetrahedron.castShadow = true;
-    tetrahedron.receiveShadow = true;
-    scene.add(tetrahedron);
-    meshes.push(tetrahedron);
-
-    // Dodecahedron - additional geometric interest
-    const dodGeometry = new THREE.DodecahedronGeometry(8, 1);
-    const dodMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x8b5cf6,
-      emissive: 0x8b5cf6,
-      emissiveIntensity: 0.15,
-      metalness: 0.35,
-      roughness: 0.45,
-      envMapIntensity: 0.6,
-    });
-    const dodecahedron = new THREE.Mesh(dodGeometry, dodMaterial);
-    dodecahedron.position.set(-15, -18, -5);
-    dodecahedron.rotation.x = Math.PI * 0.15;
-    dodecahedron.rotation.y = Math.PI * 0.4;
-    dodecahedron.castShadow = true;
-    dodecahedron.receiveShadow = true;
-    scene.add(dodecahedron);
-    meshes.push(dodecahedron);
-
-    // Wireframe sphere for layering
-    const sphereGeometry = new THREE.SphereGeometry(20, 32, 32);
-    const wireframeMaterial = new THREE.MeshBasicMaterial({
-      color: 0x00d9ff,
-      wireframe: true,
+    // Add subtle nebula-like glow with additional layer
+    const nebulaMaterial = new THREE.PointsMaterial({
+      size: 1.5,
       transparent: true,
       opacity: 0.15,
-      fog: false,
+      vertexColors: true,
+      sizeAttenuation: true,
     });
-    const wireframeSphere = new THREE.Mesh(sphereGeometry, wireframeMaterial);
-    wireframeSphere.position.set(0, 0, 0);
-    scene.add(wireframeSphere);
-    meshes.push(wireframeSphere);
+    const nebula = new THREE.Points(particleGeometry, nebulaMaterial);
+    nebula.position.z = 5;
+    scene.add(nebula);
 
-    // Additional small accent meshes
-    const smallGeoGeometry = new THREE.BoxGeometry(3, 3, 3);
-    const smallMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x00d9ff,
-      emissive: 0x00d9ff,
-      emissiveIntensity: 0.3,
-      metalness: 0.8,
-      roughness: 0.2,
-    });
-    const smallBox = new THREE.Mesh(smallGeoGeometry, smallMaterial);
-    smallBox.position.set(35, 25, -25);
-    smallBox.castShadow = true;
-    scene.add(smallBox);
-    meshes.push(smallBox);
-
-    meshesRef.current = meshes;
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+    scene.add(ambientLight);
 
     let mouseX = 0;
     let mouseY = 0;
@@ -215,38 +132,48 @@ export function Canvas3D() {
 
     window.addEventListener("mousemove", onMouseMove);
 
-    // Animation loop with smooth easing
+    // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-      timeRef.current += 0.002;
+      timeRef.current += 0.001;
 
       // Smooth mouse tracking
       mouseX += (targetMouseX - mouseX) * 0.05;
       mouseY += (targetMouseY - mouseY) * 0.05;
 
-      // Rotate and animate meshes
-      meshes.forEach((mesh, index) => {
-        // Smoother rotation with varying speeds
-        mesh.rotation.x += 0.0008 + index * 0.0004;
-        mesh.rotation.y += 0.0012 + index * 0.0006;
-        mesh.rotation.z += 0.0004 + index * 0.0002;
+      // Rotate galaxy slowly
+      if (particles) {
+        particles.rotation.z += 0.0001;
+        particles.rotation.y += 0.00015;
 
-        // Smooth floating motion with varied amplitudes
-        const floatAmplitude = 0.03 + index * 0.01;
-        const floatSpeed = 0.8 + index * 0.2;
-        mesh.position.x +=
-          Math.sin(timeRef.current * floatSpeed + index) *
-          floatAmplitude *
-          (1 + index * 0.2);
-        mesh.position.y +=
-          Math.cos(timeRef.current * (floatSpeed * 0.7) + index * 0.5) *
-          floatAmplitude *
-          (1 + index * 0.15);
-      });
+        // Gentle bob motion
+        particles.position.y = Math.sin(timeRef.current * 0.3) * 5;
+      }
 
-      // Smooth parallax camera movement
-      camera.position.x += (mouseX * 20 - camera.position.x) * 0.08;
-      camera.position.y += (mouseY * 20 - camera.position.y) * 0.08;
+      // Update particle positions for subtle drift
+      const positionAttribute = particleGeometry.getAttribute(
+        "position",
+      ) as THREE.BufferAttribute;
+      const posArray = positionAttribute.array as Float32Array;
+
+      for (let i = 0; i < particleCount; i++) {
+        const i3 = i * 3;
+        const vel = velocities[i];
+
+        posArray[i3] += vel[0];
+        posArray[i3 + 1] += vel[1];
+        posArray[i3 + 2] += vel[2];
+
+        // Wrap around if particle goes too far
+        if (Math.abs(posArray[i3]) > 100) posArray[i3] *= -1;
+        if (Math.abs(posArray[i3 + 1]) > 100) posArray[i3 + 1] *= -1;
+        if (Math.abs(posArray[i3 + 2]) > 100) posArray[i3 + 2] *= -1;
+      }
+      positionAttribute.needsUpdate = true;
+
+      // Subtle parallax camera movement
+      camera.position.x += (mouseX * 20 - camera.position.x) * 0.02;
+      camera.position.y += (mouseY * 20 - camera.position.y) * 0.02;
       camera.lookAt(scene.position);
 
       renderer.render(scene, camera);
@@ -276,14 +203,9 @@ export function Canvas3D() {
           // Element might already be removed
         }
       }
-      meshes.forEach((mesh) => {
-        mesh.geometry.dispose();
-        if (Array.isArray(mesh.material)) {
-          mesh.material.forEach((mat) => mat.dispose());
-        } else {
-          mesh.material.dispose();
-        }
-      });
+      particleGeometry.dispose();
+      particleMaterial.dispose();
+      nebulaMaterial.dispose();
       renderer.dispose();
     };
   }, []);
@@ -294,7 +216,7 @@ export function Canvas3D() {
       className="absolute inset-0 w-full h-full"
       style={{
         background:
-          "radial-gradient(circle at 35% 35%, rgba(0,217,255,0.1) 0%, rgba(79,70,229,0.06) 35%, rgba(192,132,252,0.04) 70%, transparent 100%)",
+          "radial-gradient(ellipse at center, rgba(0,217,255,0.05) 0%, rgba(99,102,241,0.03) 30%, transparent 70%)",
       }}
     />
   );
