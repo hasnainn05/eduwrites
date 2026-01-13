@@ -146,9 +146,9 @@ export default function AdminDashboard() {
           {/* Quick Actions */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             {/* Recent Activity */}
-            <div className="glass p-6 rounded-2xl border border-white/10">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-foreground">
+            <div className="glass p-4 sm:p-6 rounded-2xl border border-white/10">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <h2 className="text-lg sm:text-xl font-bold text-foreground">
                   Recent Activity
                 </h2>
                 <Link
@@ -158,15 +158,15 @@ export default function AdminDashboard() {
                   View All <ArrowRight size={16} />
                 </Link>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-2 sm:space-y-4">
                 {recentActivities.map((activity, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-4 p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+                    className="flex items-start sm:items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
                   >
-                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400"></div>
-                    <div className="flex-1">
-                      <p className="text-foreground text-sm font-medium">
+                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 flex-shrink-0 mt-1 sm:mt-0"></div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-foreground text-sm font-medium truncate sm:truncate">
                         {activity.action}
                       </p>
                       <p className="text-foreground/50 text-xs mt-1">
@@ -179,11 +179,11 @@ export default function AdminDashboard() {
             </div>
 
             {/* Quick Links */}
-            <div className="glass p-6 rounded-2xl border border-white/10">
-              <h2 className="text-xl font-bold text-foreground mb-6">
+            <div className="glass p-4 sm:p-6 rounded-2xl border border-white/10">
+              <h2 className="text-lg sm:text-xl font-bold text-foreground mb-4 sm:mb-6">
                 Quick Actions
               </h2>
-              <div className="space-y-3">
+              <div className="space-y-2 sm:space-y-3">
                 <Link
                   href="/admin/orders"
                   className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-orange-600/20 to-amber-500/20 border border-orange-500/20 hover:border-orange-500/50 transition-all group"
