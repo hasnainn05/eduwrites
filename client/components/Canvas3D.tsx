@@ -52,13 +52,13 @@ export function Canvas3D() {
     const velocities: Array<[number, number, number]> = [];
     const colors = new Float32Array(particleCount * 3);
 
-    // Color palette - much darker, more subtle
+    // Color palette - extremely dark, almost invisible but present
     const colorPalette = [
-      { r: 0, g: 100 / 255, b: 120 / 255 }, // Dark Cyan
-      { r: 50 / 255, g: 50 / 255, b: 150 / 255 }, // Dark Indigo
-      { r: 80 / 255, g: 40 / 255, b: 120 / 255 }, // Dark Purple
-      { r: 0, g: 80 / 255, b: 100 / 255 }, // Very Dark Cyan
-      { r: 70 / 255, g: 40 / 255, b: 120 / 255 }, // Very Dark Purple
+      { r: 10 / 255, g: 40 / 255, b: 50 / 255 }, // Almost Black Cyan
+      { r: 20 / 255, g: 20 / 255, b: 60 / 255 }, // Almost Black Indigo
+      { r: 30 / 255, g: 15 / 255, b: 50 / 255 }, // Almost Black Purple
+      { r: 8 / 255, g: 30 / 255, b: 40 / 255 }, // Nearly Invisible Cyan
+      { r: 25 / 255, g: 15 / 255, b: 50 / 255 }, // Nearly Invisible Purple
     ];
 
     for (let i = 0; i < particleCount; i++) {
