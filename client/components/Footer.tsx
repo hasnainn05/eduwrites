@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <span className="font-bold bg-gradient-to-r from-sidebar-primary to-sidebar-accent bg-clip-text text-transparent">
-                Ardelis Digital
+                Ardelis EduWrites
               </span>
             </Link>
             <p className="text-sidebar-foreground/60 text-sm">
