@@ -335,11 +335,7 @@
   }
 
   .service-card-3d:hover {
-    transform: translateY(-12px) rotateX(5deg) rotateY(-8deg);
-    box-shadow:
-      0 30px 60px rgba(0, 217, 255, 0.3),
-      0 20px 40px rgba(168, 85, 247, 0.25),
-      -20px -20px 40px rgba(0, 217, 255, 0.15);
+    transform: translateY(-8px) rotateX(8deg) rotateY(-12deg) rotateZ(2deg);
   }
 
   .service-card-3d::before {
