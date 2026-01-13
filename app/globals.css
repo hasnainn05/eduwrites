@@ -171,6 +171,21 @@
   }
 }
 
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+  }
+  50% {
+    transform: translateY(-12px) rotateX(-1deg) rotateY(3deg);
+  }
+  75% {
+    transform: translateY(-6px) rotateX(-2deg) rotateY(-1deg);
+  }
+}
+
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -320,7 +335,7 @@
   }
 
   .service-card-3d:hover {
-    transform: rotateY(8deg) rotateX(-5deg) translateZ(30px);
+    animation: cardFloat 4s ease-in-out infinite;
     box-shadow:
       0 30px 60px rgba(0, 217, 255, 0.3),
       0 20px 40px rgba(168, 85, 247, 0.25),
