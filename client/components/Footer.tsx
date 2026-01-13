@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <span className="font-bold bg-gradient-to-r from-sidebar-primary to-sidebar-accent bg-clip-text text-transparent">
-                Ardelis EduWrites
+                EduWrites
               </span>
             </Link>
             <p className="text-sidebar-foreground/60 text-sm">
@@ -139,7 +139,7 @@ export default function Footer() {
             <div className="space-y-3 text-sidebar-foreground/60 text-sm">
               <div className="flex items-start gap-2">
                 <Mail size={16} className="mt-1 flex-shrink-0" />
-                <span>info@ardelis.com</span>
+                <span>info@eduwrites.com</span>
               </div>
               <div className="flex items-start gap-2">
                 <Phone size={16} className="mt-1 flex-shrink-0" />
@@ -157,7 +157,7 @@ export default function Footer() {
         <div className="border-t border-sidebar-border pt-8 mt-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <p className="text-sidebar-foreground/60 text-sm">
-              &copy; {currentYear} Ardelis EduWrites. All rights reserved.
+              &copy; {currentYear} EduWrites. All rights reserved.
             </p>
             <div className="flex gap-4 mt-4 md:mt-0">
               <a

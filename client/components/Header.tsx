@@ -20,7 +20,7 @@ export default function Header() {
             className="flex-shrink-0 hover:opacity-80 transition-opacity"
           >
             <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
-              Ardelis EduWrites
+              EduWrites
             </h1>
             <p className="text-foreground/60 text-xs mt-1 font-medium">
               Academic Excellence
@@ -47,10 +47,10 @@ export default function Header() {
               <div className="flex items-center gap-2 text-foreground/80 hover:text-cyan-400 transition-colors">
                 <Mail size={16} />
                 <a
-                  href="mailto:info@ardelis.com"
+                  href="mailto:info@eduwrites.com"
                   className="whitespace-nowrap font-medium"
                 >
-                  info@ardelis.com
+                  info@eduwrites.com
                 </a>
               </div>
               <div className="flex items-center gap-2 text-foreground/80 hover:text-purple-400 transition-colors">
