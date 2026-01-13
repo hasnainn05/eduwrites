@@ -259,12 +259,37 @@
     animation: blob 7s infinite;
   }
 
+  .animate-pulse-bounce {
+    animation: pulse-bounce 2s ease-in-out infinite;
+  }
+
+  .animate-bounce-animation {
+    animation: bounce-animation 2.5s ease-in-out infinite;
+  }
+
   .animation-delay-2000 {
     animation-delay: 2s;
   }
 
   .animation-delay-4000 {
     animation-delay: 4s;
+  }
+
+  /* Button Animation */
+  button,
+  [role="button"],
+  a[href*="/order"],
+  a[href*="/contact"],
+  .btn,
+  .button-cta {
+    animation: pulse-bounce 2s ease-in-out infinite;
+  }
+
+  button:hover,
+  [role="button"]:hover,
+  a[href*="/order"]:hover,
+  a[href*="/contact"]:hover {
+    animation: bounce-animation 2.5s ease-in-out infinite;
   }
 
   /* Scroll Animation Utilities */
