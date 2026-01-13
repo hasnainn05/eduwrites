@@ -370,7 +370,7 @@
     filter: drop-shadow(-3px -3px 8px rgba(0, 100, 120, 0.4)) drop-shadow(3px 3px 8px rgba(168, 85, 247, 0.2));
   }
 
-  /* Service Card 3D Hover Effects */
+  /* Service Card 3D Hover Effects - TiltCard handles the tilt */
   .service-card-3d {
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
@@ -378,7 +378,10 @@
   }
 
   .service-card-3d:hover {
-    transform: translateY(-12px) rotateX(10deg) rotateY(-15deg) rotateZ(3deg) scale(1.02);
+    box-shadow:
+      0 25px 50px rgba(0, 217, 255, 0.25),
+      0 15px 30px rgba(168, 85, 247, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .service-card-3d::before {
