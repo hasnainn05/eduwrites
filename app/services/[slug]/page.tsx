@@ -485,7 +485,7 @@ export default function ServiceDetail() {
       {/* Features Section */}
       <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-16 text-center font-poppins">
+          <h2 className="heading-3d-light text-4xl sm:text-5xl font-bold text-foreground mb-16 text-center font-poppins">
             {service.featuresTitle}
           </h2>
 
