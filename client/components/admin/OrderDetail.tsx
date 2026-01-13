@@ -45,35 +45,35 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
   const statusStyle = getStatusBadge(order.status);
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
       {/* Back Button */}
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-sm transition-colors"
+        className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 font-medium text-xs sm:text-sm transition-colors"
       >
         <ArrowLeft size={18} />
         Back to Orders
       </button>
 
       {/* Header */}
-      <div className="flex items-start justify-between">
-        <div>
-          <div className="flex items-center gap-3 mb-2">
-            <h2 className="text-2xl font-bold text-foreground">{order.fullName}</h2>
-            <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${statusStyle.bg} ${statusStyle.text}`}>
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
+            <h2 className="text-xl sm:text-2xl font-bold text-foreground truncate">{order.fullName}</h2>
+            <span className={`inline-block px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-semibold whitespace-nowrap ${statusStyle.bg} ${statusStyle.text}`}>
               {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
             </span>
           </div>
-          <p className="text-foreground/60 text-sm">{order.id}</p>
+          <p className="text-foreground/60 text-xs sm:text-sm truncate">{order.id}</p>
         </div>
-        <div className="text-right">
-          <p className="text-3xl font-bold text-cyan-400">${order.price}</p>
-          <p className="text-foreground/60 text-sm mt-1">Order Value</p>
+        <div className="text-left sm:text-right flex-shrink-0">
+          <p className="text-2xl sm:text-3xl font-bold text-cyan-400">${order.price}</p>
+          <p className="text-foreground/60 text-xs sm:text-sm mt-1">Order Value</p>
         </div>
       </div>
 
       {/* Two Column Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         {/* Left Column - Customer Information */}
         <div className="space-y-4">
           <div className="rounded-xl border border-white/10 bg-white/5 p-4">
