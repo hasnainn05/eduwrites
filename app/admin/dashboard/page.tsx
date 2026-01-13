@@ -185,6 +185,21 @@ export default function AdminDashboard() {
               </h2>
               <div className="space-y-3">
                 <Link
+                  href="/admin/orders"
+                  className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-orange-600/20 to-amber-500/20 border border-orange-500/20 hover:border-orange-500/50 transition-all group"
+                >
+                  <div>
+                    <p className="font-semibold text-foreground">
+                      Manage Orders
+                    </p>
+                    <p className="text-xs text-foreground/60">
+                      View and manage customer orders
+                    </p>
+                  </div>
+                  <ArrowRight className="text-orange-400 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                <Link
                   href="/admin/services"
                   className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-indigo-600/20 to-cyan-500/20 border border-indigo-500/20 hover:border-indigo-500/50 transition-all group"
                 >
