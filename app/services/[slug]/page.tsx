@@ -396,7 +396,7 @@ export default function ServiceDetail() {
               {service.aboutContent}
             </p>
             <p className="text-lg text-foreground/80 leading-relaxed">
-              At Ardelis EduWrites, we pride ourselves on delivering exceptional
+              At EduWrites, we pride ourselves on delivering exceptional
               quality and maintaining the highest standards of academic
               integrity. Every piece of work goes through rigorous quality
               assurance checks to ensure it meets your expectations and exceeds

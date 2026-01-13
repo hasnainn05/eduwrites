@@ -37,8 +37,8 @@ export default function Contact() {
       icon: <Mail size={24} />,
       title: "Email",
       description: "Send us a message anytime",
-      contact: "info@ardelis.com",
-      link: "mailto:info@ardelis.com",
+      contact: "info@eduwrites.com",
+      link: "mailto:info@eduwrites.com",
     },
     {
       icon: <Phone size={24} />,
@@ -111,7 +111,7 @@ export default function Contact() {
             <h1 className="text-5xl sm:text-7xl font-bold text-foreground mb-6 font-poppins leading-tight">
               Get in Touch with{" "}
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                Ardelis EduWrites
+                EduWrites
               </span>
             </h1>
             <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-8">
