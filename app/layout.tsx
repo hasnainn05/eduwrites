@@ -14,12 +14,12 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Ardelis EduWrites - Academic Excellence",
+  title: "EduWrites - Academic Excellence",
   description:
     "Professional academic writing services for essays, research papers, theses, and more.",
-  metadataBase: new URL("https://ardelis.com"),
+  metadataBase: new URL("https://eduwrites.com"),
   openGraph: {
-    title: "Ardelis EduWrites - Academic Excellence",
+    title: "EduWrites - Academic Excellence",
     description:
       "Professional academic writing services for essays, research papers, theses, and more.",
     type: "website",

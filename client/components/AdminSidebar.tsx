@@ -60,7 +60,7 @@ export function AdminSidebar() {
           <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
             Admin
           </h2>
-          <p className="text-xs text-foreground/50 mt-1">Ardelis EduWrites</p>
+          <p className="text-xs text-foreground/50 mt-1">EduWrites</p>
         </Link>
       </div>
 
