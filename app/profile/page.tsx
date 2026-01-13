@@ -294,9 +294,15 @@ export default function Profile() {
                     <MessageCircle size={16} />
                     WhatsApp
                   </div>
-                  <span className="text-foreground text-sm font-medium">
+                  <a
+                    href={`https://wa.me/${user.phone.replace(/\D/g, '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground text-sm font-medium hover:text-green-400 transition-colors flex items-center gap-1"
+                  >
+                    <MessageCircle size={14} />
                     {user.phone}
-                  </span>
+                  </a>
                 </div>
                 <div className="flex justify-between items-center pb-3 border-b border-white/10">
                   <div className="flex items-center gap-2 text-foreground/70 text-sm">
