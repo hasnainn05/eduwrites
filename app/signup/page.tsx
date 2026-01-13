@@ -344,7 +344,7 @@ export default function Signup() {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-glow transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-6 animate-pulse-bounce"
+                    className="w-full gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-glow transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-6 animate-pulse-bounce"
                   >
                     {isLoading ? (
                       <>
@@ -403,7 +403,7 @@ export default function Signup() {
                   </button>
                   <button
                     type="button"
-                    className="border border-white/20 bg-white/5 hover:bg-white/10 rounded-lg py-2.5 font-medium text-foreground transition-all flex items-center justify-center gap-2 animate-pulse-bounce"
+                    className="border border-white/20 bg-white/5 hover:bg-white/10 hover:shadow-glow rounded-lg py-2.5 font-medium text-foreground transition-all flex items-center justify-center gap-2 animate-pulse-bounce transform hover:scale-105"
                   >
                     <Github size={18} />
                     <span className="hidden sm:inline text-sm">GitHub</span>

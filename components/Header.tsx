@@ -77,7 +77,7 @@ export default function Header() {
                 ) as HTMLButtonElement;
                 chatButton?.click();
               }}
-              className="px-4 py-2 rounded-lg glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 transition-all text-sm font-medium text-foreground/80 hidden sm:flex items-center gap-2 group animate-pulse-bounce"
+              className="px-4 py-2 rounded-lg glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all text-sm font-medium text-foreground/80 hidden sm:flex items-center gap-2 group animate-pulse-bounce transform hover:scale-105"
               title="Start Chat"
             >
               <MessageCircle
@@ -93,13 +93,13 @@ export default function Header() {
             <div className="hidden sm:flex gap-3">
               <Link
                 href="/signup"
-                className="px-4 py-2 border border-white/20 text-foreground/80 rounded-lg hover:border-cyan-400 hover:text-cyan-400 transition-all text-sm font-medium animate-pulse-bounce"
+                className="px-4 py-2 border border-white/20 text-foreground/80 rounded-lg hover:border-cyan-400 hover:text-cyan-400 hover:shadow-glow transition-all text-sm font-medium animate-pulse-bounce transform hover:scale-105"
               >
                 Sign Up
               </Link>
               <Link
                 href="/profile"
-                className="p-2.5 rounded-full glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 transition-all transform hover:scale-110 flex items-center justify-center animate-pulse-bounce"
+                className="p-2.5 rounded-full glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all transform hover:scale-110 flex items-center justify-center animate-pulse-bounce"
                 title="Profile"
               >
                 <User size={20} className="text-foreground/80" />
