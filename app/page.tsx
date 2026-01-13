@@ -617,7 +617,7 @@ export default function Home() {
 
           {/* Top Universities Section */}
           <div className="mb-32">
-            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">
+            <h3 className="heading-3d-light text-3xl font-bold text-foreground mb-12 text-center">
               Trusted by Top University Students
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
