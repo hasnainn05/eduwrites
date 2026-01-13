@@ -165,40 +165,40 @@ export default function AdminOrders() {
         <div className="p-4 sm:p-6 space-y-6 sm:space-y-8">
           {/* Stats Overview */}
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
-            <div className="glass p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-foreground/70 text-sm font-medium">Total Orders</p>
-                  <h3 className="text-3xl font-bold text-foreground mt-2">{stats.total}</h3>
+            <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
+              <div className="flex items-start sm:items-center justify-between gap-2">
+                <div className="flex-1 min-w-0">
+                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">Total Orders</p>
+                  <h3 className="text-xl sm:text-3xl font-bold text-foreground mt-1 sm:mt-2">{stats.total}</h3>
                 </div>
-                <Package className="w-8 h-8 text-blue-400 opacity-50" />
+                <Package className="w-6 sm:w-8 h-6 sm:h-8 text-blue-400 opacity-50 flex-shrink-0" />
               </div>
             </div>
-            <div className="glass p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-foreground/70 text-sm font-medium">New Orders</p>
-                  <h3 className="text-3xl font-bold text-orange-400 mt-2">{stats.new}</h3>
+            <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
+              <div className="flex items-start sm:items-center justify-between gap-2">
+                <div className="flex-1 min-w-0">
+                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">New Orders</p>
+                  <h3 className="text-xl sm:text-3xl font-bold text-orange-400 mt-1 sm:mt-2">{stats.new}</h3>
                 </div>
-                <Package className="w-8 h-8 text-orange-400 opacity-50" />
+                <Package className="w-6 sm:w-8 h-6 sm:h-8 text-orange-400 opacity-50 flex-shrink-0" />
               </div>
             </div>
-            <div className="glass p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-foreground/70 text-sm font-medium">Pending Orders</p>
-                  <h3 className="text-3xl font-bold text-yellow-400 mt-2">{stats.pending}</h3>
+            <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
+              <div className="flex items-start sm:items-center justify-between gap-2">
+                <div className="flex-1 min-w-0">
+                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">Pending Orders</p>
+                  <h3 className="text-xl sm:text-3xl font-bold text-yellow-400 mt-1 sm:mt-2">{stats.pending}</h3>
                 </div>
-                <Package className="w-8 h-8 text-yellow-400 opacity-50" />
+                <Package className="w-6 sm:w-8 h-6 sm:h-8 text-yellow-400 opacity-50 flex-shrink-0" />
               </div>
             </div>
-            <div className="glass p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-foreground/70 text-sm font-medium">Completed</p>
-                  <h3 className="text-3xl font-bold text-green-400 mt-2">{stats.completed}</h3>
+            <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
+              <div className="flex items-start sm:items-center justify-between gap-2">
+                <div className="flex-1 min-w-0">
+                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">Completed</p>
+                  <h3 className="text-xl sm:text-3xl font-bold text-green-400 mt-1 sm:mt-2">{stats.completed}</h3>
                 </div>
-                <Package className="w-8 h-8 text-green-400 opacity-50" />
+                <Package className="w-6 sm:w-8 h-6 sm:h-8 text-green-400 opacity-50 flex-shrink-0" />
               </div>
             </div>
           </div>
