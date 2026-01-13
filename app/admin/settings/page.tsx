@@ -5,7 +5,7 @@ import { AdminSidebar } from "@/client/components/AdminSidebar";
 import {
   Save,
   Mail,
-  Phone,
+  MessageCircle,
   MapPin,
   Globe,
   Users,
