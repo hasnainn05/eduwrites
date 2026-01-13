@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone, MapPin, Clock, Send, MessageSquare } from "lucide-react";
+import { Mail, MessageCircle, MapPin, Clock, Send, MessageSquare } from "lucide-react";
 import { useState } from "react";
 import { TiltCard } from "@/client/components/TiltCard";
 
@@ -41,11 +41,11 @@ export default function Contact() {
       link: "mailto:info@eduwrites.com",
     },
     {
-      icon: <Phone size={24} />,
-      title: "Phone",
-      description: "Call us during business hours",
+      icon: <MessageCircle size={24} />,
+      title: "WhatsApp",
+      description: "Chat with us on WhatsApp",
       contact: "+1 (234) 567-890",
-      link: "tel:+1234567890",
+      link: "https://wa.me/12345678890",
     },
     {
       icon: <MapPin size={24} />,
