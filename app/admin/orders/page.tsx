@@ -143,18 +143,18 @@ export default function AdminOrders() {
       <AdminSidebar />
 
       {/* Main Content */}
-      <div className="flex-1 ml-64 overflow-y-auto">
+      <div className="flex-1 md:ml-64 overflow-y-auto">
         {/* Header */}
-        <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur border-b border-white/10 p-6">
-          <div className="flex items-center justify-between">
+        <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur border-b border-white/10 p-4 sm:p-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
             <div>
-              <h1 className="text-3xl font-bold text-foreground">Order Management</h1>
-              <p className="text-foreground/60 text-sm mt-1">
+              <h1 className="text-2xl sm:text-3xl font-bold text-foreground">Order Management</h1>
+              <p className="text-foreground/60 text-xs sm:text-sm mt-1">
                 Manage all customer orders and view details
               </p>
             </div>
-            <div className="text-right">
-              <p className="text-sm text-foreground/60">
+            <div className="text-right text-xs sm:text-sm">
+              <p className="text-foreground/60">
                 {new Date().toLocaleDateString()}
               </p>
             </div>
@@ -162,9 +162,9 @@ export default function AdminOrders() {
         </div>
 
         {/* Content */}
-        <div className="p-6 space-y-8">
+        <div className="p-4 sm:p-6 space-y-6 sm:space-y-8">
           {/* Stats Overview */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
             <div className="glass p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
               <div className="flex items-center justify-between">
                 <div>
