@@ -200,17 +200,18 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, index) => (
-              <div
-                key={index}
-                className="glass p-6 rounded-2xl text-center hover:bg-white/20 transition-all transform hover:scale-105"
-              >
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
-                  {member.name.charAt(0)}
+              <TiltCard key={index} className="h-full">
+                <div
+                  className="glass p-6 rounded-2xl text-center hover:bg-white/20 transition-all h-full flex flex-col justify-center"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
+                    {member.name.charAt(0)}
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">{member.name}</h3>
+                  <p className="text-sm text-cyan-400 font-semibold mb-3">{member.role}</p>
+                  <p className="text-sm text-foreground/80">{member.bio}</p>
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{member.name}</h3>
-                <p className="text-sm text-cyan-400 font-semibold mb-3">{member.role}</p>
-                <p className="text-sm text-foreground/80">{member.bio}</p>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </div>
