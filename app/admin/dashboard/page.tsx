@@ -93,7 +93,9 @@ export default function AdminDashboard() {
         <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur border-b border-white/10 p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <h1 className="text-2xl sm:text-3xl font-bold text-foreground">Dashboard</h1>
+              <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
+                Dashboard
+              </h1>
               <p className="text-foreground/60 text-sm mt-1">
                 Welcome back, Admin
               </p>

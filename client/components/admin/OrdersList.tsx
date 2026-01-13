@@ -39,7 +39,9 @@ export function OrdersList({ orders, onSelectOrder, status }: OrdersListProps) {
     return (
       <div className="p-8 sm:p-12 text-center">
         <FileText className="w-10 sm:w-12 h-10 sm:h-12 text-foreground/30 mx-auto mb-4" />
-        <p className="text-foreground/60 text-sm sm:text-base">No {status} orders at the moment.</p>
+        <p className="text-foreground/60 text-sm sm:text-base">
+          No {status} orders at the moment.
+        </p>
       </div>
     );
   }
@@ -56,9 +58,15 @@ export function OrdersList({ orders, onSelectOrder, status }: OrdersListProps) {
             <div className="space-y-3">
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1 min-w-0">
-                  <p className="text-foreground font-mono text-xs font-semibold">{order.id}</p>
-                  <p className="text-foreground font-medium text-sm mt-1">{order.fullName}</p>
-                  <p className="text-foreground/50 text-xs truncate">{order.email}</p>
+                  <p className="text-foreground font-mono text-xs font-semibold">
+                    {order.id}
+                  </p>
+                  <p className="text-foreground font-medium text-sm mt-1">
+                    {order.fullName}
+                  </p>
+                  <p className="text-foreground/50 text-xs truncate">
+                    {order.email}
+                  </p>
                 </div>
                 <button
                   onClick={() => onSelectOrder(order)}
@@ -71,7 +79,7 @@ export function OrdersList({ orders, onSelectOrder, status }: OrdersListProps) {
               <div className="flex items-center gap-2 flex-wrap">
                 <span
                   className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r ${getServiceColor(
-                    order.service
+                    order.service,
                   )} text-white`}
                 >
                   {order.service}
@@ -82,12 +90,17 @@ export function OrdersList({ orders, onSelectOrder, status }: OrdersListProps) {
                 <div>
                   <p className="text-foreground/60">Deadline</p>
                   <p className="text-foreground font-medium">
-                    {new Date(order.deadline).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
+                    {new Date(order.deadline).toLocaleDateString(undefined, {
+                      month: "short",
+                      day: "numeric",
+                    })}
                   </p>
                 </div>
                 <div>
                   <p className="text-foreground/60">Words</p>
-                  <p className="text-foreground font-medium">{(order.wordCount / 1000).toFixed(1)}k</p>
+                  <p className="text-foreground font-medium">
+                    {(order.wordCount / 1000).toFixed(1)}k
+                  </p>
                 </div>
                 <div>
                   <p className="text-foreground/60">Price</p>
@@ -104,13 +117,27 @@ export function OrdersList({ orders, onSelectOrder, status }: OrdersListProps) {
         <table className="w-full">
           <thead>
             <tr className="border-b border-white/10">
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">Order ID</th>
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">Customer</th>
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">Service</th>
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">Deadline</th>
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">Words</th>
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">Price</th>
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">Action</th>
+              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
+                Order ID
+              </th>
+              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
+                Customer
+              </th>
+              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
+                Service
+              </th>
+              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
+                Deadline
+              </th>
+              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
+                Words
+              </th>
+              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
+                Price
+              </th>
+              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
+                Action
+              </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-white/10">
@@ -124,21 +151,26 @@ export function OrdersList({ orders, onSelectOrder, status }: OrdersListProps) {
                 </td>
                 <td className="px-4 lg:px-6 py-4">
                   <div>
-                    <p className="text-foreground font-medium text-sm">{order.fullName}</p>
+                    <p className="text-foreground font-medium text-sm">
+                      {order.fullName}
+                    </p>
                     <p className="text-foreground/50 text-xs">{order.email}</p>
                   </div>
                 </td>
                 <td className="px-4 lg:px-6 py-4">
                   <span
                     className={`inline-block px-2 lg:px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getServiceColor(
-                      order.service
+                      order.service,
                     )} text-white`}
                   >
                     {order.service}
                   </span>
                 </td>
                 <td className="px-4 lg:px-6 py-4 text-foreground/70 text-xs lg:text-sm flex items-center gap-2">
-                  <Calendar size={14} className="text-foreground/50 flex-shrink-0" />
+                  <Calendar
+                    size={14}
+                    className="text-foreground/50 flex-shrink-0"
+                  />
                   {new Date(order.deadline).toLocaleDateString()}
                 </td>
                 <td className="px-4 lg:px-6 py-4 text-foreground font-medium text-xs lg:text-sm">

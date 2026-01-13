@@ -26,7 +26,9 @@ export interface Order {
 }
 
 export default function AdminOrders() {
-  const [activeStatus, setActiveStatus] = useState<"new" | "pending" | "completed">("new");
+  const [activeStatus, setActiveStatus] = useState<
+    "new" | "pending" | "completed"
+  >("new");
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
 
   const sampleOrders: Order[] = [
@@ -42,7 +44,8 @@ export default function AdminOrders() {
       paperType: "Research Paper",
       status: "new",
       submittedDate: "2024-02-01",
-      description: "Need a comprehensive essay on Shakespeare's impact on modern literature. Should include historical context and modern interpretations.",
+      description:
+        "Need a comprehensive essay on Shakespeare's impact on modern literature. Should include historical context and modern interpretations.",
       attachments: ["requirements.pdf"],
       price: 299,
     },
@@ -58,7 +61,8 @@ export default function AdminOrders() {
       paperType: "Thesis",
       status: "new",
       submittedDate: "2024-02-03",
-      description: "Machine Learning application in healthcare systems. Need comprehensive research and original insights.",
+      description:
+        "Machine Learning application in healthcare systems. Need comprehensive research and original insights.",
       attachments: ["outline.docx", "references.xlsx"],
       price: 899,
     },
@@ -74,7 +78,8 @@ export default function AdminOrders() {
       paperType: "Journal Article",
       status: "pending",
       submittedDate: "2024-01-28",
-      description: "Proofread and edit research paper before submission to peer-reviewed journal.",
+      description:
+        "Proofread and edit research paper before submission to peer-reviewed journal.",
       attachments: ["manuscript.pdf"],
       price: 199,
     },
@@ -90,7 +95,8 @@ export default function AdminOrders() {
       paperType: "Assignment",
       status: "pending",
       submittedDate: "2024-02-01",
-      description: "Help with history assignment on World War II. Multiple sources required.",
+      description:
+        "Help with history assignment on World War II. Multiple sources required.",
       attachments: [],
       price: 149,
     },
@@ -128,7 +134,9 @@ export default function AdminOrders() {
     },
   ];
 
-  const filteredOrders = sampleOrders.filter((order) => order.status === activeStatus);
+  const filteredOrders = sampleOrders.filter(
+    (order) => order.status === activeStatus,
+  );
 
   const stats = {
     new: sampleOrders.filter((o) => o.status === "new").length,
@@ -148,7 +156,9 @@ export default function AdminOrders() {
         <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur border-b border-white/10 p-4 sm:p-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
             <div>
-              <h1 className="text-2xl sm:text-3xl font-bold text-foreground">Order Management</h1>
+              <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
+                Order Management
+              </h1>
               <p className="text-foreground/60 text-xs sm:text-sm mt-1">
                 Manage all customer orders and view details
               </p>
@@ -168,8 +178,12 @@ export default function AdminOrders() {
             <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
               <div className="flex items-start sm:items-center justify-between gap-2">
                 <div className="flex-1 min-w-0">
-                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">Total Orders</p>
-                  <h3 className="text-xl sm:text-3xl font-bold text-foreground mt-1 sm:mt-2">{stats.total}</h3>
+                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">
+                    Total Orders
+                  </p>
+                  <h3 className="text-xl sm:text-3xl font-bold text-foreground mt-1 sm:mt-2">
+                    {stats.total}
+                  </h3>
                 </div>
                 <Package className="w-6 sm:w-8 h-6 sm:h-8 text-blue-400 opacity-50 flex-shrink-0" />
               </div>
@@ -177,8 +191,12 @@ export default function AdminOrders() {
             <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
               <div className="flex items-start sm:items-center justify-between gap-2">
                 <div className="flex-1 min-w-0">
-                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">New Orders</p>
-                  <h3 className="text-xl sm:text-3xl font-bold text-orange-400 mt-1 sm:mt-2">{stats.new}</h3>
+                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">
+                    New Orders
+                  </p>
+                  <h3 className="text-xl sm:text-3xl font-bold text-orange-400 mt-1 sm:mt-2">
+                    {stats.new}
+                  </h3>
                 </div>
                 <Package className="w-6 sm:w-8 h-6 sm:h-8 text-orange-400 opacity-50 flex-shrink-0" />
               </div>
@@ -186,8 +204,12 @@ export default function AdminOrders() {
             <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
               <div className="flex items-start sm:items-center justify-between gap-2">
                 <div className="flex-1 min-w-0">
-                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">Pending Orders</p>
-                  <h3 className="text-xl sm:text-3xl font-bold text-yellow-400 mt-1 sm:mt-2">{stats.pending}</h3>
+                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">
+                    Pending Orders
+                  </p>
+                  <h3 className="text-xl sm:text-3xl font-bold text-yellow-400 mt-1 sm:mt-2">
+                    {stats.pending}
+                  </h3>
                 </div>
                 <Package className="w-6 sm:w-8 h-6 sm:h-8 text-yellow-400 opacity-50 flex-shrink-0" />
               </div>
@@ -195,8 +217,12 @@ export default function AdminOrders() {
             <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
               <div className="flex items-start sm:items-center justify-between gap-2">
                 <div className="flex-1 min-w-0">
-                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">Completed</p>
-                  <h3 className="text-xl sm:text-3xl font-bold text-green-400 mt-1 sm:mt-2">{stats.completed}</h3>
+                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">
+                    Completed
+                  </p>
+                  <h3 className="text-xl sm:text-3xl font-bold text-green-400 mt-1 sm:mt-2">
+                    {stats.completed}
+                  </h3>
                 </div>
                 <Package className="w-6 sm:w-8 h-6 sm:h-8 text-green-400 opacity-50 flex-shrink-0" />
               </div>
@@ -206,7 +232,11 @@ export default function AdminOrders() {
           {/* Orders Section */}
           <div className="glass rounded-2xl border border-white/10 overflow-hidden">
             {/* Tabs */}
-            <OrderStatusTabs activeStatus={activeStatus} onStatusChange={setActiveStatus} stats={stats} />
+            <OrderStatusTabs
+              activeStatus={activeStatus}
+              onStatusChange={setActiveStatus}
+              stats={stats}
+            />
 
             {/* Orders List */}
             {selectedOrder ? (

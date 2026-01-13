@@ -21,7 +21,9 @@ interface OrderDetailProps {
 
 export function OrderDetail({ order, onBack }: OrderDetailProps) {
   const getStatusBadge = (status: string) => {
-    const styles: { [key: string]: { bg: string; text: string; icon: string } } = {
+    const styles: {
+      [key: string]: { bg: string; text: string; icon: string };
+    } = {
       new: {
         bg: "bg-orange-500/20",
         text: "text-orange-400",
@@ -59,16 +61,26 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div className="flex-1 min-w-0">
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
-            <h2 className="text-xl sm:text-2xl font-bold text-foreground truncate">{order.fullName}</h2>
-            <span className={`inline-block px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-semibold whitespace-nowrap ${statusStyle.bg} ${statusStyle.text}`}>
+            <h2 className="text-xl sm:text-2xl font-bold text-foreground truncate">
+              {order.fullName}
+            </h2>
+            <span
+              className={`inline-block px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-semibold whitespace-nowrap ${statusStyle.bg} ${statusStyle.text}`}
+            >
               {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
             </span>
           </div>
-          <p className="text-foreground/60 text-xs sm:text-sm truncate">{order.id}</p>
+          <p className="text-foreground/60 text-xs sm:text-sm truncate">
+            {order.id}
+          </p>
         </div>
         <div className="text-left sm:text-right flex-shrink-0">
-          <p className="text-2xl sm:text-3xl font-bold text-cyan-400">${order.price}</p>
-          <p className="text-foreground/60 text-xs sm:text-sm mt-1">Order Value</p>
+          <p className="text-2xl sm:text-3xl font-bold text-cyan-400">
+            ${order.price}
+          </p>
+          <p className="text-foreground/60 text-xs sm:text-sm mt-1">
+            Order Value
+          </p>
         </div>
       </div>
 
@@ -77,20 +89,32 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
         {/* Left Column - Customer Information */}
         <div className="space-y-3 sm:space-y-4">
           <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
-            <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Customer Information</h3>
+            <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
+              Customer Information
+            </h3>
             <div className="space-y-2 sm:space-y-3">
               <div className="flex items-start sm:items-center gap-3">
-                <User size={16} className="text-cyan-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <User
+                  size={16}
+                  className="text-cyan-400 flex-shrink-0 mt-0.5 sm:mt-0"
+                />
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Full Name</p>
-                  <p className="text-foreground font-medium text-sm truncate">{order.fullName}</p>
+                  <p className="text-foreground font-medium text-sm truncate">
+                    {order.fullName}
+                  </p>
                 </div>
               </div>
               <div className="flex items-start sm:items-center gap-3">
-                <Mail size={16} className="text-cyan-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <Mail
+                  size={16}
+                  className="text-cyan-400 flex-shrink-0 mt-0.5 sm:mt-0"
+                />
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Email</p>
-                  <p className="text-foreground font-medium text-sm truncate">{order.email}</p>
+                  <p className="text-foreground font-medium text-sm truncate">
+                    {order.email}
+                  </p>
                 </div>
               </div>
             </div>
@@ -98,10 +122,15 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
 
           {/* Important Dates */}
           <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
-            <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Timeline</h3>
+            <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
+              Timeline
+            </h3>
             <div className="space-y-2 sm:space-y-3">
               <div className="flex items-start sm:items-center gap-3">
-                <Calendar size={16} className="text-yellow-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <Calendar
+                  size={16}
+                  className="text-yellow-400 flex-shrink-0 mt-0.5 sm:mt-0"
+                />
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Submitted Date</p>
                   <p className="text-foreground font-medium text-sm">
@@ -114,7 +143,10 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
                 </div>
               </div>
               <div className="flex items-start sm:items-center gap-3">
-                <Calendar size={16} className="text-orange-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <Calendar
+                  size={16}
+                  className="text-orange-400 flex-shrink-0 mt-0.5 sm:mt-0"
+                />
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Deadline</p>
                   <p className="text-foreground font-medium text-sm">
@@ -134,27 +166,44 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
         <div className="space-y-3 sm:space-y-4">
           {/* Service & Type */}
           <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
-            <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Project Details</h3>
+            <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
+              Project Details
+            </h3>
             <div className="space-y-2 sm:space-y-3">
               <div className="flex items-start sm:items-center gap-3">
-                <FileText size={16} className="text-purple-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <FileText
+                  size={16}
+                  className="text-purple-400 flex-shrink-0 mt-0.5 sm:mt-0"
+                />
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Service</p>
-                  <p className="text-foreground font-medium text-sm">{order.service}</p>
+                  <p className="text-foreground font-medium text-sm">
+                    {order.service}
+                  </p>
                 </div>
               </div>
               <div className="flex items-start sm:items-center gap-3">
-                <Book size={16} className="text-indigo-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <Book
+                  size={16}
+                  className="text-indigo-400 flex-shrink-0 mt-0.5 sm:mt-0"
+                />
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Paper Type</p>
-                  <p className="text-foreground font-medium text-sm">{order.paperType}</p>
+                  <p className="text-foreground font-medium text-sm">
+                    {order.paperType}
+                  </p>
                 </div>
               </div>
               <div className="flex items-start sm:items-center gap-3">
-                <BookOpen size={16} className="text-blue-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <BookOpen
+                  size={16}
+                  className="text-blue-400 flex-shrink-0 mt-0.5 sm:mt-0"
+                />
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Subject</p>
-                  <p className="text-foreground font-medium text-sm">{order.subject}</p>
+                  <p className="text-foreground font-medium text-sm">
+                    {order.subject}
+                  </p>
                 </div>
               </div>
             </div>
@@ -162,20 +211,32 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
 
           {/* Academic Level & Word Count */}
           <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
-            <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Requirements</h3>
+            <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
+              Requirements
+            </h3>
             <div className="space-y-2 sm:space-y-3">
               <div className="flex items-start sm:items-center gap-3">
-                <Zap size={16} className="text-pink-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <Zap
+                  size={16}
+                  className="text-pink-400 flex-shrink-0 mt-0.5 sm:mt-0"
+                />
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Academic Level</p>
-                  <p className="text-foreground font-medium text-sm">{order.academicLevel}</p>
+                  <p className="text-foreground font-medium text-sm">
+                    {order.academicLevel}
+                  </p>
                 </div>
               </div>
               <div className="flex items-start sm:items-center gap-3">
-                <FileText size={16} className="text-green-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <FileText
+                  size={16}
+                  className="text-green-400 flex-shrink-0 mt-0.5 sm:mt-0"
+                />
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Word Count</p>
-                  <p className="text-foreground font-medium text-sm">{(order.wordCount / 1000).toFixed(1)}k</p>
+                  <p className="text-foreground font-medium text-sm">
+                    {(order.wordCount / 1000).toFixed(1)}k
+                  </p>
                 </div>
               </div>
             </div>
@@ -185,14 +246,20 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
 
       {/* Description */}
       <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
-        <h3 className="text-foreground font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Order Description</h3>
-        <p className="text-foreground/80 leading-relaxed text-sm">{order.description}</p>
+        <h3 className="text-foreground font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
+          Order Description
+        </h3>
+        <p className="text-foreground/80 leading-relaxed text-sm">
+          {order.description}
+        </p>
       </div>
 
       {/* Attachments */}
       {order.attachments && order.attachments.length > 0 && (
         <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
-          <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Attachments</h3>
+          <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
+            Attachments
+          </h3>
           <div className="space-y-2">
             {order.attachments.map((attachment, idx) => (
               <div
@@ -201,7 +268,9 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
               >
                 <div className="flex items-center gap-2 min-w-0">
                   <Download size={14} className="text-cyan-400 flex-shrink-0" />
-                  <span className="text-foreground font-medium text-xs sm:text-sm truncate">{attachment}</span>
+                  <span className="text-foreground font-medium text-xs sm:text-sm truncate">
+                    {attachment}
+                  </span>
                 </div>
                 <button className="text-cyan-400 hover:text-cyan-300 transition-colors p-1.5 sm:p-2 hover:bg-white/10 rounded-lg flex-shrink-0">
                   <Download size={14} />

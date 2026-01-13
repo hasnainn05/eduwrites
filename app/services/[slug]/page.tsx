@@ -336,8 +336,7 @@ const servicesData: Record<string, ServiceData> = {
       },
     ],
     ctaText: "Submit Your Assignment Now",
-    ctaSubtext:
-      "Get expert help with your assignment and improve your grades",
+    ctaSubtext: "Get expert help with your assignment and improve your grades",
   },
   proofreading: {
     title: "Proofreading & Editing",
@@ -588,20 +587,30 @@ export default function ServiceDetail() {
               </p>
 
               <p className="text-lg text-foreground/60 leading-relaxed mb-8">
-                Transform your academic journey with our comprehensive {service.title.toLowerCase()} solutions. Our team of expert writers and editors are dedicated to helping you achieve academic excellence through professionally crafted content that meets the highest standards of quality and originality.
+                Transform your academic journey with our comprehensive{" "}
+                {service.title.toLowerCase()} solutions. Our team of expert
+                writers and editors are dedicated to helping you achieve
+                academic excellence through professionally crafted content that
+                meets the highest standards of quality and originality.
               </p>
 
               <div className="flex flex-wrap gap-4">
                 <div className="glass-dark px-6 py-4 rounded-xl">
-                  <div className="text-sm text-cyan-400 font-semibold mb-1">Guarantee</div>
+                  <div className="text-sm text-cyan-400 font-semibold mb-1">
+                    Guarantee
+                  </div>
                   <p className="text-foreground/80">100% Original Content</p>
                 </div>
                 <div className="glass-dark px-6 py-4 rounded-xl">
-                  <div className="text-sm text-cyan-400 font-semibold mb-1">Delivery</div>
+                  <div className="text-sm text-cyan-400 font-semibold mb-1">
+                    Delivery
+                  </div>
                   <p className="text-foreground/80">On-Time Guarantee</p>
                 </div>
                 <div className="glass-dark px-6 py-4 rounded-xl">
-                  <div className="text-sm text-cyan-400 font-semibold mb-1">Support</div>
+                  <div className="text-sm text-cyan-400 font-semibold mb-1">
+                    Support
+                  </div>
                   <p className="text-foreground/80">24/7 Available</p>
                 </div>
               </div>
@@ -614,24 +623,45 @@ export default function ServiceDetail() {
                 <div className="relative glass-dark p-12 rounded-3xl border border-white/20">
                   <div className="space-y-6">
                     <div className="flex items-start gap-4">
-                      <CheckCircle className="text-cyan-400 flex-shrink-0 mt-1" size={24} />
+                      <CheckCircle
+                        className="text-cyan-400 flex-shrink-0 mt-1"
+                        size={24}
+                      />
                       <div>
-                        <h3 className="font-semibold text-foreground mb-2">Expert Writers</h3>
-                        <p className="text-foreground/60 text-sm">Qualified professionals with subject matter expertise</p>
+                        <h3 className="font-semibold text-foreground mb-2">
+                          Expert Writers
+                        </h3>
+                        <p className="text-foreground/60 text-sm">
+                          Qualified professionals with subject matter expertise
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
-                      <CheckCircle className="text-cyan-400 flex-shrink-0 mt-1" size={24} />
+                      <CheckCircle
+                        className="text-cyan-400 flex-shrink-0 mt-1"
+                        size={24}
+                      />
                       <div>
-                        <h3 className="font-semibold text-foreground mb-2">Quality Assurance</h3>
-                        <p className="text-foreground/60 text-sm">Rigorous checks and multiple revision rounds</p>
+                        <h3 className="font-semibold text-foreground mb-2">
+                          Quality Assurance
+                        </h3>
+                        <p className="text-foreground/60 text-sm">
+                          Rigorous checks and multiple revision rounds
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
-                      <CheckCircle className="text-cyan-400 flex-shrink-0 mt-1" size={24} />
+                      <CheckCircle
+                        className="text-cyan-400 flex-shrink-0 mt-1"
+                        size={24}
+                      />
                       <div>
-                        <h3 className="font-semibold text-foreground mb-2">Confidential Service</h3>
-                        <p className="text-foreground/60 text-sm">Your privacy and security are our top priority</p>
+                        <h3 className="font-semibold text-foreground mb-2">
+                          Confidential Service
+                        </h3>
+                        <p className="text-foreground/60 text-sm">
+                          Your privacy and security are our top priority
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -677,13 +707,13 @@ export default function ServiceDetail() {
               {service.aboutContent}
             </p>
             <p className="text-lg text-foreground/80 leading-relaxed">
-              At EduWrites, we pride ourselves on delivering exceptional
-              quality and maintaining the highest standards of academic
-              integrity. Every piece of work goes through rigorous quality
-              assurance checks to ensure it meets your expectations and exceeds
-              academic requirements. Our team is dedicated to your success and
-              committed to providing you with work that truly makes a difference
-              in your academic journey.
+              At EduWrites, we pride ourselves on delivering exceptional quality
+              and maintaining the highest standards of academic integrity. Every
+              piece of work goes through rigorous quality assurance checks to
+              ensure it meets your expectations and exceeds academic
+              requirements. Our team is dedicated to your success and committed
+              to providing you with work that truly makes a difference in your
+              academic journey.
             </p>
           </div>
 

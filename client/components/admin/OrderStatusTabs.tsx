@@ -12,7 +12,11 @@ interface OrderStatusTabsProps {
   };
 }
 
-export function OrderStatusTabs({ activeStatus, onStatusChange, stats }: OrderStatusTabsProps) {
+export function OrderStatusTabs({
+  activeStatus,
+  onStatusChange,
+  stats,
+}: OrderStatusTabsProps) {
   const tabs = [
     {
       id: "new",
@@ -56,7 +60,9 @@ export function OrderStatusTabs({ activeStatus, onStatusChange, stats }: OrderSt
           return (
             <button
               key={tab.id}
-              onClick={() => onStatusChange(tab.id as "new" | "pending" | "completed")}
+              onClick={() =>
+                onStatusChange(tab.id as "new" | "pending" | "completed")
+              }
               className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2.5 sm:py-3 rounded-lg border transition-all text-sm sm:text-base ${
                 isActive
                   ? `${tab.bgColor} ${tab.borderColor} border-opacity-100`
@@ -67,7 +73,9 @@ export function OrderStatusTabs({ activeStatus, onStatusChange, stats }: OrderSt
                 size={16}
                 className={isActive ? tab.color : "text-foreground/50"}
               />
-              <span className={`font-medium text-xs sm:text-sm ${isActive ? tab.color : ""}`}>
+              <span
+                className={`font-medium text-xs sm:text-sm ${isActive ? tab.color : ""}`}
+              >
                 {tab.label}
               </span>
               <span
