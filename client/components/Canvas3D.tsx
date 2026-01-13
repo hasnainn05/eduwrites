@@ -194,7 +194,6 @@ export function Canvas3D() {
       }
       particleGeometry.dispose();
       particleMaterial.dispose();
-      nebulaMaterial.dispose();
       renderer.dispose();
     };
   }, []);
