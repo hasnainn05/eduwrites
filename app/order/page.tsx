@@ -295,7 +295,7 @@ export default function Order() {
           <div className="border-t border-white/10 pt-6">
             <button
               type="submit"
-              className="w-full gradient-primary text-white font-bold py-4 rounded-xl hover:shadow-glow transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+              className="w-full gradient-primary text-white font-bold py-4 rounded-xl hover:shadow-glow transition-all transform hover:scale-105 flex items-center justify-center gap-2 animate-pulse-bounce"
             >
               Submit Order <ArrowRight size={20} />
             </button>
