@@ -45,8 +45,8 @@ export default function Contact() {
       icon: <MessageCircle size={24} />,
       title: "WhatsApp",
       description: "Chat with us on WhatsApp",
-      contact: "+1 (234) 567-890",
-      link: "https://wa.me/12345678890",
+      contact: "+1 (202) 555-0123",
+      link: "https://wa.me/12025550123",
     },
     {
       icon: <MapPin size={24} />,
