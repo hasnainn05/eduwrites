@@ -184,27 +184,27 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
       </div>
 
       {/* Description */}
-      <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-        <h3 className="text-foreground font-semibold mb-3">Order Description</h3>
-        <p className="text-foreground/80 leading-relaxed">{order.description}</p>
+      <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
+        <h3 className="text-foreground font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Order Description</h3>
+        <p className="text-foreground/80 leading-relaxed text-sm">{order.description}</p>
       </div>
 
       {/* Attachments */}
       {order.attachments && order.attachments.length > 0 && (
-        <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-          <h3 className="text-foreground font-semibold mb-4">Attachments</h3>
+        <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
+          <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Attachments</h3>
           <div className="space-y-2">
             {order.attachments.map((attachment, idx) => (
               <div
                 key={idx}
-                className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-colors"
+                className="flex items-center justify-between p-2 sm:p-3 rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-colors gap-2"
               >
-                <div className="flex items-center gap-2">
-                  <Download size={16} className="text-cyan-400" />
-                  <span className="text-foreground font-medium text-sm">{attachment}</span>
+                <div className="flex items-center gap-2 min-w-0">
+                  <Download size={14} className="text-cyan-400 flex-shrink-0" />
+                  <span className="text-foreground font-medium text-xs sm:text-sm truncate">{attachment}</span>
                 </div>
-                <button className="text-cyan-400 hover:text-cyan-300 transition-colors p-2 hover:bg-white/10 rounded-lg">
-                  <Download size={16} />
+                <button className="text-cyan-400 hover:text-cyan-300 transition-colors p-1.5 sm:p-2 hover:bg-white/10 rounded-lg flex-shrink-0">
+                  <Download size={14} />
                 </button>
               </div>
             ))}
@@ -213,12 +213,12 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
       )}
 
       {/* Action Buttons */}
-      <div className="flex gap-3 pt-4 border-t border-white/10">
-        <button className="flex items-center gap-2 flex-1 px-4 py-3 rounded-lg bg-gradient-to-r from-green-600/20 to-emerald-500/20 border border-green-500/30 text-green-400 hover:border-green-500/50 transition-all font-medium">
-          <CheckCircle size={18} />
+      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-4 border-t border-white/10">
+        <button className="flex items-center justify-center gap-2 flex-1 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-gradient-to-r from-green-600/20 to-emerald-500/20 border border-green-500/30 text-green-400 hover:border-green-500/50 transition-all font-medium text-sm sm:text-base">
+          <CheckCircle size={16} />
           Mark as Complete
         </button>
-        <button className="px-4 py-3 rounded-lg border border-white/10 text-foreground/70 hover:text-foreground hover:bg-white/5 transition-all font-medium">
+        <button className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-white/10 text-foreground/70 hover:text-foreground hover:bg-white/5 transition-all font-medium text-sm sm:text-base">
           Send Message
         </button>
       </div>
