@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Edit, LogOut, FileText, Clock, DollarSign, Settings, User, Eye, CheckCircle, ArrowRight, Star } from "lucide-react";
+import { Mail, Phone, MapPin, Edit, LogOut, FileText, Clock, DollarSign, Settings, User, Eye, CheckCircle, ArrowRight, Star, ShieldAlert } from "lucide-react";
 
 export default function Profile() {
+  const [userMode, setUserMode] = useState<"user" | "admin">("user");
   const [activeTab, setActiveTab] = useState<"overview" | "orders" | "settings">("overview");
   const [isEditing, setIsEditing] = useState(false);
 
