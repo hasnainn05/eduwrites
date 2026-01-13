@@ -280,7 +280,7 @@ export default function ServiceDetail() {
     budget: "",
     academicLevel: "undergraduate",
     assignmentDetails: "",
-    attachments: "" as File | null,
+    attachments: null as File | null,
   });
 
   const handleOrderChange = (
