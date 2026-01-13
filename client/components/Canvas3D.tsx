@@ -104,18 +104,6 @@ export function Canvas3D() {
     scene.add(particles);
     particlesRef.current = particles;
 
-    // Add subtle nebula-like glow with additional layer
-    const nebulaMaterial = new THREE.PointsMaterial({
-      size: 1.5,
-      transparent: true,
-      opacity: 0.15,
-      vertexColors: true,
-      sizeAttenuation: true,
-    });
-    const nebula = new THREE.Points(particleGeometry, nebulaMaterial);
-    nebula.position.z = 5;
-    scene.add(nebula);
-    meshesRef.current?.push(nebula);
 
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
