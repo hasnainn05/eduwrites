@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, X, FileText, BarChart3, BookOpen, Pencil, BookMarked } from "lucide-react";
+import { TiltCard } from "@/client/components/TiltCard";
 import { useState } from "react";
 
 interface ServiceData {
