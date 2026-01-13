@@ -16,7 +16,7 @@ export default function LiveChat() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Hi! 👋 Welcome to Ardelis. How can we help you today?',
+      text: 'Hi! 👋 Welcome to Ardelis EduWrites. How can we help you today?',
       sender: 'bot',
       timestamp: new Date(),
     },
