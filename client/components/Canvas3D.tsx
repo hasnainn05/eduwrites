@@ -28,13 +28,14 @@ export function Canvas3D() {
     cameraRef.current = camera;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: true, 
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
       alpha: true,
       precision: 'highp'
     });
     renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
     renderer.setClearColor(0x000000, 0);
+    renderer.domElement.style.pointerEvents = 'none';
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
