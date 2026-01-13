@@ -335,7 +335,7 @@
   }
 
   .service-card-3d:hover {
-    animation: cardFloat 4s ease-in-out infinite;
+    transform: translateY(-12px) rotateX(5deg) rotateY(-8deg);
     box-shadow:
       0 30px 60px rgba(0, 217, 255, 0.3),
       0 20px 40px rgba(168, 85, 247, 0.25),
