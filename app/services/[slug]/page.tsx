@@ -29,11 +29,11 @@ interface ServiceData {
 
 const servicesData: Record<string, ServiceData> = {
   essay: {
-    title: "Essay & Assignment Writing",
+    title: "Essay Writing",
     subtitle: "Professional Academic Writing Services",
     Icon: FileText,
     heroGradient: "from-blue-50 to-indigo-50",
-    aboutTitle: "About Essay & Assignment Writing",
+    aboutTitle: "About Essay Writing",
     aboutContent:
       "Our essay writing service provides professionally written essays for all academic levels. Whether you need help with high school essays, college assignments, or university-level papers, our expert writers deliver original, well-researched content that meets your specific requirements.",
     featuresTitle: "What's Included in Our Service",
@@ -103,11 +103,11 @@ const servicesData: Record<string, ServiceData> = {
     ctaSubtext: "Get started today and receive your professionally written essay",
   },
   research: {
-    title: "Research Paper Writing",
+    title: "Research Paper",
     subtitle: "In-Depth Research and Academic Excellence",
     Icon: BarChart3,
     heroGradient: "from-purple-50 to-pink-50",
-    aboutTitle: "About Research Paper Writing",
+    aboutTitle: "About Research Paper",
     aboutContent:
       "Our research paper writing service specializes in comprehensive academic research papers. We conduct thorough literature reviews, original analysis, and provide properly cited sources. Perfect for students who need high-quality research papers for their academic programs.",
     featuresTitle: "What's Included in Our Service",
@@ -177,11 +177,11 @@ const servicesData: Record<string, ServiceData> = {
     ctaSubtext: "Get a comprehensive research paper written by academic experts",
   },
   thesis: {
-    title: "Thesis & Dissertation Assistance",
+    title: "Thesis Writing",
     subtitle: "Complete Support for Your Academic Journey",
     Icon: BookOpen,
     heroGradient: "from-green-50 to-emerald-50",
-    aboutTitle: "About Thesis & Dissertation Assistance",
+    aboutTitle: "About Thesis Writing",
     aboutContent:
       "Our thesis and dissertation assistance service provides comprehensive support for graduate-level research projects. From research design and proposal writing to final editing and formatting, we help ensure your thesis meets the highest academic standards.",
     featuresTitle: "What's Included in Our Service",
