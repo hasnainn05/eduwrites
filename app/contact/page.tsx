@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare } from "lucide-react";
 import { useState } from "react";
+import { TiltCard } from "@/client/components/TiltCard";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
