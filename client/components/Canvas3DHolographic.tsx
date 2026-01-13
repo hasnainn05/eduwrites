@@ -130,7 +130,8 @@ export function Canvas3DHolographic() {
       const gridSize = 30;
       const spacing = 10;
       const gridColor = new THREE.Color(0x06b6d4);
-      gridColor.setHSL(gridColor.getHSL({})[0], gridColor.getHSL({})[1], 0.6);
+      const hsl = gridColor.getHSL({ h: 0, s: 0, l: 0 });
+      gridColor.setHSL(hsl.h, hsl.s, 0.6);
 
       // Horizontal lines
       for (let z = -gridSize; z <= gridSize; z += spacing) {
