@@ -163,7 +163,7 @@ export default function Profile() {
             <button
               onClick={() => setUserMode("admin")}
               className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
-                userMode === ("admin" as const)
+                (userMode as string) === "admin"
                   ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
                   : "text-foreground/70 hover:text-foreground"
               }`}
