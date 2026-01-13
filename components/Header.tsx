@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, User, MessageCircle } from "lucide-react";
+import { Mail, MessageCircle, User } from "lucide-react";
 import Link from "next/link";
 
 export default function Header() {
@@ -55,13 +55,15 @@ export default function Header() {
                   info@eduwrites.com
                 </a>
               </div>
-              <div className="flex items-center gap-2 text-foreground/80 hover:text-purple-400 transition-colors">
-                <Phone size={16} />
+              <div className="flex items-center gap-2 text-foreground/80 hover:text-green-400 transition-colors">
+                <MessageCircle size={16} />
                 <a
-                  href="tel:+1234567890"
+                  href="https://wa.me/12345678890"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="whitespace-nowrap font-medium"
                 >
-                  +1 (234) 567-890
+                  WhatsApp
                 </a>
               </div>
             </div>
