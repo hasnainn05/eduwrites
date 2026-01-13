@@ -292,41 +292,42 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, idx) => (
-              <Link
-                key={service.id}
-                href={`/services/${service.slug}`}
-                className="group relative overflow-hidden rounded-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 h-full flex flex-col"
-              >
-                {/* Glass Background */}
-                <div className="absolute inset-0 glass"></div>
+              <TiltCard key={service.id} className="h-full">
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="group relative overflow-hidden rounded-2xl transition-all duration-300 h-full flex flex-col"
+                >
+                  {/* Glass Background */}
+                  <div className="absolute inset-0 glass"></div>
 
-                {/* Gradient Overlay */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
-                ></div>
+                  {/* Gradient Overlay */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
+                  ></div>
 
-                {/* Content */}
-                <div className="relative z-10 p-8 flex flex-col h-full">
-                  <div className="mb-4 transform group-hover:scale-110 transition-transform">
-                    <service.Icon size={48} className="text-cyan-400 group-hover:text-white transition-colors" />
+                  {/* Content */}
+                  <div className="relative z-10 p-8 flex flex-col h-full">
+                    <div className="mb-4 transform group-hover:scale-110 transition-transform">
+                      <service.Icon size={48} className="text-cyan-400 group-hover:text-white transition-colors" />
+                    </div>
+
+                    <h3 className="text-xl font-bold text-foreground mb-3">
+                      {service.title}
+                    </h3>
+
+                    <p className="text-foreground/70 mb-6 text-sm leading-relaxed flex-grow">
+                      {service.description}
+                    </p>
+
+                    <div className="flex items-center gap-2 text-cyan-400 font-semibold group-hover:gap-3 transition-all mt-auto">
+                      Learn More <ArrowRight size={18} />
+                    </div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-foreground mb-3">
-                    {service.title}
-                  </h3>
-
-                  <p className="text-foreground/70 mb-6 text-sm leading-relaxed flex-grow">
-                    {service.description}
-                  </p>
-
-                  <div className="flex items-center gap-2 text-cyan-400 font-semibold group-hover:gap-3 transition-all mt-auto">
-                    Learn More <ArrowRight size={18} />
-                  </div>
-                </div>
-
-                {/* Border Gradient */}
-                <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-white/30 transition-colors"></div>
-              </Link>
+                  {/* Border Gradient */}
+                  <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-white/30 transition-colors"></div>
+                </Link>
+              </TiltCard>
             ))}
           </div>
         </div>
