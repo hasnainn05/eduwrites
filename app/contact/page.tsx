@@ -118,26 +118,27 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactMethods.map((method, index) => (
-              <a
-                key={index}
-                href={method.link}
-                className="glass p-8 rounded-2xl hover:bg-white/20 transition-all transform hover:scale-105 hover:-translate-y-2 text-center group"
-              >
-                <div className="flex justify-center mb-4">
-                  <div className="text-cyan-400 group-hover:scale-110 transition-transform">
-                    {method.icon}
+              <TiltCard key={index} className="h-full">
+                <a
+                  href={method.link}
+                  className="glass p-8 rounded-2xl hover:bg-white/20 transition-all text-center group h-full flex flex-col justify-center"
+                >
+                  <div className="flex justify-center mb-4">
+                    <div className="text-cyan-400 group-hover:scale-110 transition-transform">
+                      {method.icon}
+                    </div>
                   </div>
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-2">
-                  {method.title}
-                </h3>
-                <p className="text-sm text-foreground/70 mb-3">
-                  {method.description}
-                </p>
-                <p className="text-base font-semibold text-cyan-400">
-                  {method.contact}
-                </p>
-              </a>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    {method.title}
+                  </h3>
+                  <p className="text-sm text-foreground/70 mb-3">
+                    {method.description}
+                  </p>
+                  <p className="text-base font-semibold text-cyan-400">
+                    {method.contact}
+                  </p>
+                </a>
+              </TiltCard>
             ))}
           </div>
         </div>
