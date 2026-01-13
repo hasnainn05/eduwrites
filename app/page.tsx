@@ -38,7 +38,7 @@ export default function Home() {
       description:
         "Complete assignment solutions tailored to your requirements",
       Icon: CheckCircle,
-      slug: "essay",
+      slug: "assignment",
       color: "from-purple-500 to-pink-500",
     },
     {
@@ -64,7 +64,7 @@ export default function Home() {
       description:
         "Polish your academic work with expert proofreading services",
       Icon: Pencil,
-      slug: "essay",
+      slug: "proofreading",
       color: "from-yellow-500 to-orange-500",
     },
     {
@@ -73,7 +73,7 @@ export default function Home() {
       description:
         "Complete dissertation support from planning to final submission",
       Icon: BookMarked,
-      slug: "thesis",
+      slug: "dissertation",
       color: "from-indigo-500 to-purple-500",
     },
   ];
