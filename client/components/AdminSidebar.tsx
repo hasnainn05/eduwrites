@@ -34,8 +34,13 @@ export function AdminSidebar() {
       icon: Star,
     },
     {
-      label: 'Messages',
-      href: '/admin/messages',
+      label: 'Live Chat',
+      href: '/admin/live-chat',
+      icon: MessageSquare,
+    },
+    {
+      label: 'Quote Requests',
+      href: '/admin/quote-requests',
       icon: MessageSquare,
     },
     {
