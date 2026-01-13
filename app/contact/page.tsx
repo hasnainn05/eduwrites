@@ -99,6 +99,9 @@ export default function Contact() {
 
   return (
     <div className="w-full">
+      {/* 3D Canvas Background */}
+      <Canvas3DWrapper />
+
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="blur-gradient absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-600 to-transparent"></div>
