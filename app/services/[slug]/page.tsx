@@ -595,7 +595,7 @@ export default function ServiceDetail() {
         <div className="absolute inset-0 blur-gradient bg-gradient-to-l from-cyan-600 to-transparent opacity-40 bottom-0 right-0 -z-10"></div>
 
         <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-8 font-poppins">
+          <h2 className="heading-3d text-4xl sm:text-5xl font-bold text-foreground mb-8 font-poppins">
             {service.ctaText}
           </h2>
 
