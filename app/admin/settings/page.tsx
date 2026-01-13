@@ -17,7 +17,7 @@ export default function AdminSettings() {
   const [settings, setSettings] = useState({
     companyName: "EduWrites",
     email: "info@eduwrites.com",
-    phone: "+1 (234) 567-890",
+    phone: "+1 (202) 555-0123",
     address: "123 Academic Street, Education City, EC 12345",
     website: "www.eduwrites.com",
     description:
