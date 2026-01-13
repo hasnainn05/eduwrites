@@ -375,7 +375,7 @@ export default function Signup() {
                 <div className="grid grid-cols-2 gap-4">
                   <button
                     type="button"
-                    className="border border-white/20 bg-white/5 hover:bg-white/10 rounded-lg py-2.5 font-medium text-foreground transition-all flex items-center justify-center gap-2 animate-pulse-bounce"
+                    className="border border-white/20 bg-white/5 hover:bg-white/10 hover:shadow-glow rounded-lg py-2.5 font-medium text-foreground transition-all flex items-center justify-center gap-2 animate-pulse-bounce transform hover:scale-105"
                   >
                     <svg
                       className="w-4 h-4"
