@@ -750,13 +750,13 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="glass rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 animate-float"
-                style={{
-                  animationDelay: `${index * 0.2}s`,
-                }}
-              >
+              <TiltCard key={index} className="h-full">
+                <div
+                  className="glass rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 animate-float h-full"
+                  style={{
+                    animationDelay: `${index * 0.2}s`,
+                  }}
+                >
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full flex items-center justify-center font-bold text-white flex-shrink-0 shadow-glow">
                     {testimonial.avatar}
@@ -785,6 +785,7 @@ export default function Home() {
                   {testimonial.content}
                 </p>
               </div>
+              </TiltCard>
             ))}
           </div>
         </div>
