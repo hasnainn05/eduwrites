@@ -75,52 +75,52 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
       {/* Two Column Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         {/* Left Column - Customer Information */}
-        <div className="space-y-4">
-          <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-            <h3 className="text-foreground font-semibold mb-4">Customer Information</h3>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <User size={18} className="text-cyan-400 flex-shrink-0" />
-                <div>
+        <div className="space-y-3 sm:space-y-4">
+          <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
+            <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Customer Information</h3>
+            <div className="space-y-2 sm:space-y-3">
+              <div className="flex items-start sm:items-center gap-3">
+                <User size={16} className="text-cyan-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Full Name</p>
-                  <p className="text-foreground font-medium">{order.fullName}</p>
+                  <p className="text-foreground font-medium text-sm truncate">{order.fullName}</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Mail size={18} className="text-cyan-400 flex-shrink-0" />
-                <div>
+              <div className="flex items-start sm:items-center gap-3">
+                <Mail size={16} className="text-cyan-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Email</p>
-                  <p className="text-foreground font-medium">{order.email}</p>
+                  <p className="text-foreground font-medium text-sm truncate">{order.email}</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Important Dates */}
-          <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-            <h3 className="text-foreground font-semibold mb-4">Timeline</h3>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <Calendar size={18} className="text-yellow-400 flex-shrink-0" />
-                <div>
+          <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
+            <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Timeline</h3>
+            <div className="space-y-2 sm:space-y-3">
+              <div className="flex items-start sm:items-center gap-3">
+                <Calendar size={16} className="text-yellow-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Submitted Date</p>
-                  <p className="text-foreground font-medium">
+                  <p className="text-foreground font-medium text-sm">
                     {new Date(order.submittedDate).toLocaleDateString("en-US", {
                       year: "numeric",
-                      month: "long",
+                      month: "short",
                       day: "numeric",
                     })}
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Calendar size={18} className="text-orange-400 flex-shrink-0" />
-                <div>
+              <div className="flex items-start sm:items-center gap-3">
+                <Calendar size={16} className="text-orange-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Deadline</p>
-                  <p className="text-foreground font-medium">
+                  <p className="text-foreground font-medium text-sm">
                     {new Date(order.deadline).toLocaleDateString("en-US", {
                       year: "numeric",
-                      month: "long",
+                      month: "short",
                       day: "numeric",
                     })}
                   </p>
@@ -131,51 +131,51 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
         </div>
 
         {/* Right Column - Project Details */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {/* Service & Type */}
-          <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-            <h3 className="text-foreground font-semibold mb-4">Project Details</h3>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <FileText size={18} className="text-purple-400 flex-shrink-0" />
-                <div>
+          <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
+            <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Project Details</h3>
+            <div className="space-y-2 sm:space-y-3">
+              <div className="flex items-start sm:items-center gap-3">
+                <FileText size={16} className="text-purple-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Service</p>
-                  <p className="text-foreground font-medium">{order.service}</p>
+                  <p className="text-foreground font-medium text-sm">{order.service}</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Book size={18} className="text-indigo-400 flex-shrink-0" />
-                <div>
+              <div className="flex items-start sm:items-center gap-3">
+                <Book size={16} className="text-indigo-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Paper Type</p>
-                  <p className="text-foreground font-medium">{order.paperType}</p>
+                  <p className="text-foreground font-medium text-sm">{order.paperType}</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <BookOpen size={18} className="text-blue-400 flex-shrink-0" />
-                <div>
+              <div className="flex items-start sm:items-center gap-3">
+                <BookOpen size={16} className="text-blue-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Subject</p>
-                  <p className="text-foreground font-medium">{order.subject}</p>
+                  <p className="text-foreground font-medium text-sm">{order.subject}</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Academic Level & Word Count */}
-          <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-            <h3 className="text-foreground font-semibold mb-4">Requirements</h3>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <Zap size={18} className="text-pink-400 flex-shrink-0" />
-                <div>
+          <div className="rounded-xl border border-white/10 bg-white/5 p-3 sm:p-4">
+            <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Requirements</h3>
+            <div className="space-y-2 sm:space-y-3">
+              <div className="flex items-start sm:items-center gap-3">
+                <Zap size={16} className="text-pink-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Academic Level</p>
-                  <p className="text-foreground font-medium">{order.academicLevel}</p>
+                  <p className="text-foreground font-medium text-sm">{order.academicLevel}</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <FileText size={18} className="text-green-400 flex-shrink-0" />
-                <div>
+              <div className="flex items-start sm:items-center gap-3">
+                <FileText size={16} className="text-green-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs">Word Count</p>
-                  <p className="text-foreground font-medium">{order.wordCount.toLocaleString()} words</p>
+                  <p className="text-foreground font-medium text-sm">{(order.wordCount / 1000).toFixed(1)}k</p>
                 </div>
               </div>
             </div>
