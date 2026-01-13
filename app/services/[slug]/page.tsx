@@ -11,6 +11,7 @@ import {
   BookOpen,
   Pencil,
   BookMarked,
+  type LucideIcon,
 } from "lucide-react";
 import { TiltCard } from "@/client/components/TiltCard";
 import { useState } from "react";
@@ -18,7 +19,7 @@ import { useState } from "react";
 interface ServiceData {
   title: string;
   subtitle: string;
-  Icon: React.ComponentType<{ size: number; className: string }>;
+  Icon: LucideIcon;
   heroGradient: string;
   aboutTitle: string;
   aboutContent: string;
