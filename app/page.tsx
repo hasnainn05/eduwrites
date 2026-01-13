@@ -802,7 +802,8 @@ export default function Home() {
             {whyChooseUs.map((item, index) => (
               <div
                 key={index}
-                className="glass p-8 rounded-2xl hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group"
+                className="glass p-8 rounded-2xl hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group scroll-animate"
+                style={{ animationDelay: `${(index % 3) * 0.1}s` }}
               >
                 <div className="flex-shrink-0 text-4xl mb-4 transform group-hover:scale-110 transition-transform">
                   {item.icon}
