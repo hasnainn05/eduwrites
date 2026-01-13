@@ -753,7 +753,8 @@ export default function Home() {
               ].map((field, idx) => (
                 <div
                   key={idx}
-                  className="glass p-4 rounded-lg border border-white/15 hover:border-cyan-400/60 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group bg-gradient-to-br from-white/8 to-white/4 text-center"
+                  className="glass p-4 rounded-lg border border-white/15 hover:border-cyan-400/60 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group bg-gradient-to-br from-white/8 to-white/4 text-center scroll-animate"
+                  style={{ animationDelay: `${(idx % 5) * 0.08}s` }}
                 >
                   <span className="text-2xl block mb-2 group-hover:scale-125 transition-transform duration-300">
                     {field.icon}
