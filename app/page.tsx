@@ -598,7 +598,8 @@ export default function Home() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="group glass p-8 rounded-2xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-3 bg-gradient-to-br from-white/8 to-white/4"
+                  className="group glass p-8 rounded-2xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-3 bg-gradient-to-br from-white/8 to-white/4 scroll-animate"
+                  style={{ animationDelay: `${idx * 0.1}s` }}
                 >
                   <div className="text-5xl mb-4 transform group-hover:scale-125 transition-transform duration-300">
                     {item.icon}
