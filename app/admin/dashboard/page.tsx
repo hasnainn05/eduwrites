@@ -119,22 +119,22 @@ export default function AdminDashboard() {
                 return (
                   <div
                     key={idx}
-                    className="group glass p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all hover:bg-white/10 cursor-pointer"
+                    className="group glass p-4 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all hover:bg-white/10 cursor-pointer"
                   >
-                    <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-start justify-between mb-3 sm:mb-4">
                       <div
-                        className={`p-3 rounded-xl bg-gradient-to-br ${stat.color} bg-opacity-20 group-hover:scale-110 transition-transform`}
+                        className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${stat.color} bg-opacity-20 group-hover:scale-110 transition-transform`}
                       >
-                        <Icon className="w-6 h-6 text-white" />
+                        <Icon className="w-5 sm:w-6 h-5 sm:h-6 text-white" />
                       </div>
                     </div>
-                    <p className="text-foreground/70 text-sm font-medium">
+                    <p className="text-foreground/70 text-xs sm:text-sm font-medium">
                       {stat.label}
                     </p>
-                    <h3 className="text-3xl font-bold text-foreground mt-2">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-foreground mt-2">
                       {stat.value}
                     </h3>
-                    <p className="text-xs text-foreground/50 mt-3">
+                    <p className="text-xs text-foreground/50 mt-2 sm:mt-3">
                       {stat.change}
                     </p>
                   </div>
