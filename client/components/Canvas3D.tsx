@@ -52,13 +52,13 @@ export function Canvas3D() {
     const velocities: Array<[number, number, number]> = [];
     const colors = new Float32Array(particleCount * 3);
 
-    // Color palette - extremely dark, almost invisible but present
+    // Color palette - vibrant cosmic colors
     const colorPalette = [
-      { r: 10 / 255, g: 40 / 255, b: 50 / 255 }, // Almost Black Cyan
-      { r: 20 / 255, g: 20 / 255, b: 60 / 255 }, // Almost Black Indigo
-      { r: 30 / 255, g: 15 / 255, b: 50 / 255 }, // Almost Black Purple
-      { r: 8 / 255, g: 30 / 255, b: 40 / 255 }, // Nearly Invisible Cyan
-      { r: 25 / 255, g: 15 / 255, b: 50 / 255 }, // Nearly Invisible Purple
+      { r: 0 / 255, g: 217 / 255, b: 255 / 255 }, // Bright Cyan
+      { r: 100 / 255, g: 150 / 255, b: 255 / 255 }, // Soft Blue
+      { r: 168 / 255, g: 85 / 255, b: 247 / 255 }, // Vibrant Purple
+      { r: 59 / 255, g: 130 / 255, b: 246 / 255 }, // Medium Blue
+      { r: 139 / 255, g: 92 / 255, b: 246 / 255 }, // Medium Purple
     ];
 
     for (let i = 0; i < particleCount; i++) {
@@ -94,7 +94,7 @@ export function Canvas3D() {
     const particleMaterial = new THREE.PointsMaterial({
       size: 0.15,
       transparent: true,
-      opacity: 0.12,
+      opacity: 0.38,
       vertexColors: true,
       sizeAttenuation: true,
     });
@@ -204,7 +204,7 @@ export function Canvas3D() {
       className="absolute inset-0 w-full h-full"
       style={{
         background:
-          "radial-gradient(ellipse at center, rgba(10,40,50,0.008) 0%, rgba(20,20,60,0.004) 30%, transparent 70%)",
+          "radial-gradient(ellipse at center, rgba(10,40,50,0.05) 0%, rgba(20,20,60,0.02) 30%, transparent 70%)",
       }}
     />
   );
