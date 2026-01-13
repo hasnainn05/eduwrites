@@ -733,7 +733,7 @@ export default function Home() {
 
           {/* Fields of Study - All Disciplines */}
           <div className="mt-32">
-            <h3 className="text-3xl font-bold text-foreground mb-8 text-center">
+            <h3 className="heading-3d-light text-3xl font-bold text-foreground mb-8 text-center">
               All Fields of Study
             </h3>
             <p className="text-center text-foreground/70 mb-12 max-w-2xl mx-auto text-base leading-relaxed">
