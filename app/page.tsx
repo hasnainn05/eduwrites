@@ -548,7 +548,7 @@ export default function Home() {
       <section className="relative py-24 sm:py-40 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/3 via-white/5 to-transparent">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
+            <h2 className="heading-3d text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
               Coverage Across All Levels & Disciplines
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto mb-8"></div>
