@@ -102,7 +102,7 @@ export default function Login() {
             <div className="text-center mb-8">
               <Link href="/" className="inline-block">
                 <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
-                  Ardelis
+                  Ardelis EduWrites
                 </h1>
                 <p className="text-foreground/60 text-sm mt-1">Welcome Back</p>
               </Link>
