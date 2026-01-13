@@ -167,6 +167,11 @@ export default function Home() {
         <div className="blur-gradient absolute bottom-0 left-1/2 w-96 h-96 bg-gradient-to-br from-violet-600 to-transparent animation-delay-4000"></div>
       </div>
 
+      {/* 3D Canvas Background */}
+      <div className="fixed inset-0 -z-5 overflow-hidden pointer-events-none h-screen">
+        <Canvas3D />
+      </div>
+
       {/* Hero Section */}
       <section className="relative py-24 sm:py-40 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
