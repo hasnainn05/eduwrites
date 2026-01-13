@@ -29,11 +29,6 @@ export function AdminSidebar() {
       icon: FileText,
     },
     {
-      label: 'Packages',
-      href: '/admin/packages',
-      icon: Package,
-    },
-    {
       label: 'Reviews',
       href: '/admin/reviews',
       icon: Star,
