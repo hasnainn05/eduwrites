@@ -355,7 +355,7 @@ export default function ServiceDetail() {
             <service.Icon size={96} className="text-cyan-400" />
           </div>
 
-          <h1 className="text-5xl sm:text-7xl font-bold text-foreground mb-6 font-poppins">
+          <h1 className="heading-3d text-5xl sm:text-7xl font-bold text-foreground mb-6 font-poppins">
             {service.title}
           </h1>
 
