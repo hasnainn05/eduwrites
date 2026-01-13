@@ -103,11 +103,11 @@ export default function AdminSettings() {
                 />
               </div>
 
-              {/* Phone */}
+              {/* WhatsApp */}
               <div>
                 <label className="block text-sm font-medium text-foreground/80 mb-2 flex items-center gap-2">
-                  <Phone size={16} />
-                  Phone Number
+                  <MessageCircle size={16} />
+                  WhatsApp Number
                 </label>
                 <input
                   type="tel"
