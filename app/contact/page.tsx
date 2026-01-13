@@ -126,31 +126,33 @@ export default function Contact() {
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {contactMethods.map((method, index) => (
-              <TiltCard key={index} className="h-full">
-                <a
-                  href={method.link}
-                  target={method.link.startsWith("http") ? "_blank" : undefined}
-                  rel={method.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="glass p-8 rounded-2xl hover:bg-white/20 transition-all text-center group h-full flex flex-col justify-center"
-                >
-                  <div className="flex justify-center mb-4">
-                    <div className="text-cyan-400 group-hover:scale-110 transition-transform">
-                      {method.icon}
+            {contactMethods.map((method, index) => {
+              const isExternal = method.link.startsWith("http");
+              return (
+                <TiltCard key={index} className="h-full">
+                  <a
+                    href={method.link}
+                    {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
+                    className="glass p-8 rounded-2xl hover:bg-white/20 transition-all text-center group h-full flex flex-col justify-center"
+                  >
+                    <div className="flex justify-center mb-4">
+                      <div className="text-cyan-400 group-hover:scale-110 transition-transform">
+                        {method.icon}
+                      </div>
                     </div>
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">
-                    {method.title}
-                  </h3>
-                  <p className="text-sm text-foreground/70 mb-3">
-                    {method.description}
-                  </p>
-                  <p className="text-base font-semibold text-cyan-400">
-                    {method.contact}
-                  </p>
-                </a>
-              </TiltCard>
-            ))}
+                    <h3 className="text-xl font-bold text-foreground mb-2">
+                      {method.title}
+                    </h3>
+                    <p className="text-sm text-foreground/70 mb-3">
+                      {method.description}
+                    </p>
+                    <p className="text-base font-semibold text-cyan-400">
+                      {method.contact}
+                    </p>
+                  </a>
+                </TiltCard>
+              );
+            })}
           </div>
         </div>
       </section>
