@@ -17,9 +17,12 @@ export function TiltCard({ children, className = '' }: TiltCardProps) {
       scale={1.05}
       speed={400}
       transitionSpeed={400}
-      className={className}
+      className={`${className} pointer-events-auto`}
+      style={{ pointerEvents: 'auto' }}
     >
-      {children}
+      <div style={{ pointerEvents: 'auto' }}>
+        {children}
+      </div>
     </Tilt>
   );
 }
