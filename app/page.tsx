@@ -560,7 +560,7 @@ export default function Home() {
 
           {/* Education Levels */}
           <div className="mb-32">
-            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">
+            <h3 className="heading-3d-light text-3xl font-bold text-foreground mb-12 text-center">
               Education Levels
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
