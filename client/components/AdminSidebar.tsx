@@ -12,6 +12,7 @@ import {
   Star,
   FileText,
   Home,
+  ShoppingBag,
 } from "lucide-react";
 
 export function AdminSidebar() {
