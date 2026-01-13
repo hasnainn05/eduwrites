@@ -186,77 +186,77 @@ export default function AdminDashboard() {
               <div className="space-y-2 sm:space-y-3">
                 <Link
                   href="/admin/orders"
-                  className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-orange-600/20 to-amber-500/20 border border-orange-500/20 hover:border-orange-500/50 transition-all group"
+                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 rounded-lg bg-gradient-to-r from-orange-600/20 to-amber-500/20 border border-orange-500/20 hover:border-orange-500/50 transition-all group gap-3 sm:gap-0"
                 >
                   <div>
-                    <p className="font-semibold text-foreground">
+                    <p className="font-semibold text-foreground text-sm sm:text-base">
                       Manage Orders
                     </p>
                     <p className="text-xs text-foreground/60">
                       View and manage customer orders
                     </p>
                   </div>
-                  <ArrowRight className="text-orange-400 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="text-orange-400 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </Link>
 
                 <Link
                   href="/admin/services"
-                  className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-indigo-600/20 to-cyan-500/20 border border-indigo-500/20 hover:border-indigo-500/50 transition-all group"
+                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 rounded-lg bg-gradient-to-r from-indigo-600/20 to-cyan-500/20 border border-indigo-500/20 hover:border-indigo-500/50 transition-all group gap-3 sm:gap-0"
                 >
                   <div>
-                    <p className="font-semibold text-foreground">
+                    <p className="font-semibold text-foreground text-sm sm:text-base">
                       Manage Services
                     </p>
                     <p className="text-xs text-foreground/60">
                       Add, edit, or delete services
                     </p>
                   </div>
-                  <ArrowRight className="text-indigo-400 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="text-indigo-400 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </Link>
 
                 <Link
                   href="/admin/packages"
-                  className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-purple-600/20 to-pink-500/20 border border-purple-500/20 hover:border-purple-500/50 transition-all group"
+                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 rounded-lg bg-gradient-to-r from-purple-600/20 to-pink-500/20 border border-purple-500/20 hover:border-purple-500/50 transition-all group gap-3 sm:gap-0"
                 >
                   <div>
-                    <p className="font-semibold text-foreground">
+                    <p className="font-semibold text-foreground text-sm sm:text-base">
                       Package Pricing
                     </p>
                     <p className="text-xs text-foreground/60">
                       Update package details & pricing
                     </p>
                   </div>
-                  <ArrowRight className="text-purple-400 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="text-purple-400 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </Link>
 
                 <Link
                   href="/admin/reviews"
-                  className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-yellow-600/20 to-orange-500/20 border border-yellow-500/20 hover:border-yellow-500/50 transition-all group"
+                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 rounded-lg bg-gradient-to-r from-yellow-600/20 to-orange-500/20 border border-yellow-500/20 hover:border-yellow-500/50 transition-all group gap-3 sm:gap-0"
                 >
                   <div>
-                    <p className="font-semibold text-foreground">
+                    <p className="font-semibold text-foreground text-sm sm:text-base">
                       Reviews & Ratings
                     </p>
                     <p className="text-xs text-foreground/60">
                       Manage customer reviews
                     </p>
                   </div>
-                  <ArrowRight className="text-yellow-400 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="text-yellow-400 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </Link>
 
                 <Link
                   href="/admin/messages"
-                  className="flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-green-600/20 to-emerald-500/20 border border-green-500/20 hover:border-green-500/50 transition-all group"
+                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 rounded-lg bg-gradient-to-r from-green-600/20 to-emerald-500/20 border border-green-500/20 hover:border-green-500/50 transition-all group gap-3 sm:gap-0"
                 >
                   <div>
-                    <p className="font-semibold text-foreground">
+                    <p className="font-semibold text-foreground text-sm sm:text-base">
                       Messages & Chat
                     </p>
                     <p className="text-xs text-foreground/60">
                       23 unread messages
                     </p>
                   </div>
-                  <ArrowRight className="text-green-400 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="text-green-400 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                 </Link>
               </div>
             </div>
