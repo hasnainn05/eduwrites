@@ -25,6 +25,11 @@ export function AdminSidebar() {
       icon: LayoutDashboard,
     },
     {
+      label: "Orders",
+      href: "/admin/orders",
+      icon: ShoppingBag,
+    },
+    {
       label: "Services",
       href: "/admin/services",
       icon: FileText,
