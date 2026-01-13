@@ -1,5 +1,6 @@
 "use client";
 
+import { useScrollAnimation } from "@/client/hooks/useScrollAnimation";
 import Link from "next/link";
 import {
   ArrowRight,
