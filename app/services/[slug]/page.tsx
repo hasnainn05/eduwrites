@@ -14,6 +14,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { TiltCard } from "@/client/components/TiltCard";
+import { Canvas3DWrapper } from "@/client/components/Canvas3DWrapper";
 import { useState } from "react";
 
 interface ServiceData {
