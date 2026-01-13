@@ -473,7 +473,7 @@ export default function Home() {
             ].map((project, index) => (
               <div
                 key={index}
-                className="group relative glass p-8 rounded-2xl border border-white/10 hover:border-white/30 overflow-hidden transition-all duration-500 transform hover:-translate-y-2"
+                className={`group relative glass p-8 rounded-2xl border border-white/10 hover:border-white/30 overflow-hidden transition-all duration-500 transform hover:-translate-y-2 scroll-animate scroll-delay-${(index % 3) * 100}`}
               >
                 {/* Gradient Background Effect */}
                 <div
