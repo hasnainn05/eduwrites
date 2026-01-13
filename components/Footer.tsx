@@ -149,7 +149,7 @@ export default function Footer() {
         <div className="border-t border-sidebar-border pt-8 mt-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <p className="text-sidebar-foreground/60 text-sm">
-              &copy; {currentYear} Ardelis Digital. All rights reserved.
+              &copy; {currentYear} Ardelis EduWrites. All rights reserved.
             </p>
             <div className="flex gap-4 mt-4 md:mt-0">
               <a
