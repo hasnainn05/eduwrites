@@ -15,11 +15,11 @@ import {
 
 export default function AdminSettings() {
   const [settings, setSettings] = useState({
-    companyName: "Ardelis EduWrites",
-    email: "info@ardelis.com",
+    companyName: "EduWrites",
+    email: "info@eduwrites.com",
     phone: "+1 (234) 567-890",
     address: "123 Academic Street, Education City, EC 12345",
-    website: "www.ardelis.com",
+    website: "www.eduwrites.com",
     description:
       "Professional academic writing services for students worldwide",
     totalStudents: 10000,

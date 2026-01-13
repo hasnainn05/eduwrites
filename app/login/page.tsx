@@ -47,7 +47,7 @@ export default function Login() {
           {/* Left Side - Service Details */}
           <div className="hidden lg:block">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-8 font-poppins leading-tight">
-              Master Your Academics with Ardelis EduWrites
+              Master Your Academics with EduWrites
             </h2>
             <p className="text-foreground/80 mb-8 leading-relaxed">
               Sign in to access your academic writing orders, track progress,
@@ -100,7 +100,7 @@ export default function Login() {
                 <strong className="text-cyan-400 block mb-2">
                   🌟 Join 10,000+ Students
                 </strong>{" "}
-                who trust Ardelis for academic success
+                who trust EduWrites for academic success
               </p>
               <div className="space-y-2 text-xs text-foreground/60">
                 <p>✓ 100% Plagiarism-free content</p>
@@ -117,7 +117,7 @@ export default function Login() {
             <div className="text-center mb-8">
               <Link href="/" className="inline-block">
                 <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
-                  Ardelis EduWrites
+                  EduWrites
                 </h1>
                 <p className="text-foreground/60 text-sm mt-1">Welcome Back</p>
               </Link>

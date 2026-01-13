@@ -38,7 +38,7 @@ export default function AdminLogin() {
         <div className="text-center mb-12">
           <Link href="/" className="inline-block mb-6 group">
             <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins group-hover:opacity-80 transition-opacity">
-              Ardelis EduWrites
+              EduWrites
             </h1>
           </Link>
           <p className="text-foreground/60 text-sm mb-2">Admin Portal</p>
