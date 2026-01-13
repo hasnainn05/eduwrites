@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Star, Sparkles, Briefcase, TrendingUp, Award, BookOpen, Zap, Users, FileText, Pencil, BarChart3, BookMarked } from "lucide-react";
+import { Canvas3D } from "../client/components/Canvas3D";
+import { TiltCard } from "../client/components/TiltCard";
 
 export default function Home() {
   const services = [
