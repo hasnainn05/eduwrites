@@ -370,9 +370,9 @@ export default function Profile() {
           </div>
         )}
 
-        {activeTab === "orders" && (
-          <div>
-            <div className="glass rounded-xl border border-white/10 overflow-hidden">
+            {activeTab === "orders" && (
+              <div>
+                <div className="glass rounded-xl border border-white/10 overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
