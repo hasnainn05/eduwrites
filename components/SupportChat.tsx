@@ -176,41 +176,39 @@ export default function SupportChat() {
         )}
 
         {/* Message Input */}
-        <form onSubmit={handleSendMessage} className="space-y-2">
-          <textarea
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Type your message here..."
-            className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-none"
-            rows={2}
+        <form onSubmit={handleSendMessage} className="flex items-end gap-2">
+          <input
+            ref={fileInputRef}
+            type="file"
+            onChange={handleFileSelect}
+            className="hidden"
+            accept=".pdf,.doc,.docx,.txt,.xlsx,.png,.jpg,.jpeg"
           />
 
-          <div className="flex items-center gap-2">
-            <input
-              ref={fileInputRef}
-              type="file"
-              onChange={handleFileSelect}
-              className="hidden"
-              accept=".pdf,.doc,.docx,.txt,.xlsx,.png,.jpg,.jpeg"
+          <div className="flex-1 relative">
+            <textarea
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Type your message here..."
+              className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 pr-10 text-sm text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-none"
+              rows={2}
             />
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="flex items-center gap-2 px-3 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-foreground/70 hover:text-foreground transition-all text-xs font-medium"
+              className="absolute right-2 bottom-2 p-1 text-foreground/60 hover:text-foreground transition-colors"
             >
-              <Upload size={14} />
-              <span className="hidden sm:inline">Attach</span>
-            </button>
-
-            <button
-              type="submit"
-              disabled={!input.trim() && !selectedFile}
-              className="ml-auto flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed font-medium text-xs"
-            >
-              <Send size={14} />
-              <span className="hidden sm:inline">Send</span>
+              <Upload size={16} />
             </button>
           </div>
+
+          <button
+            type="submit"
+            disabled={!input.trim() && !selectedFile}
+            className="flex items-center justify-center p-2 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+          >
+            <Send size={16} />
+          </button>
         </form>
 
         <p className="text-xs text-foreground/50 mt-2">
