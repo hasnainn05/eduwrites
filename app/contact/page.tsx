@@ -5,7 +5,6 @@ import { Mail, MessageCircle, MapPin, Clock, MessageSquare, ArrowRight, User, Fi
 import { useState } from "react";
 import { TiltCard } from "@/client/components/TiltCard";
 import { Canvas3DWrapper } from "@/client/components/Canvas3DWrapper";
-import SupportModal from "@/components/SupportModal";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
