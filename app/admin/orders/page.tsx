@@ -177,7 +177,6 @@ export default function AdminOrders() {
       order.id === orderId ? { ...order, status: newStatus } : order,
     );
     setAllOrders(updatedOrders);
-    setSelectedOrder(null);
   };
 
   const filteredOrders = allOrders.filter(
