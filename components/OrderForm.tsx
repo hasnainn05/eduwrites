@@ -318,6 +318,22 @@ export default function OrderForm({
         </h2>
 
         <div className="space-y-6">
+          {/* Subject */}
+          <div>
+            <label className="block text-sm font-medium text-foreground/90 mb-2">
+              Subject/Topic *
+            </label>
+            <input
+              type="text"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+              placeholder="e.g., Shakespeare's Impact on Modern Literature"
+              className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
+            />
+          </div>
+
           <div>
             <label className="block text-sm font-medium text-foreground/90 mb-2">
               Assignment Details & Requirements *
