@@ -37,6 +37,17 @@ export default function AdminOrders() {
     setAllOrders(orders);
   }, []);
 
+  const handleStatusChange = (
+    orderId: string,
+    newStatus: "pending" | "in_progress" | "completed",
+  ) => {
+    const updatedOrders = allOrders.map((order) =>
+      order.id === orderId ? { ...order, status: newStatus } : order,
+    );
+    setAllOrders(updatedOrders);
+    setSelectedOrder(null);
+  };
+
   const filteredOrders = allOrders.filter(
     (order) => order.status === activeStatus,
   );
