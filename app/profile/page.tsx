@@ -324,35 +324,6 @@ export default function Profile() {
                             Change
                           </button>
                         </div>
-                        <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                          <div className="flex items-center gap-3">
-                            <MapPin size={16} className="text-foreground/60" />
-                            <div>
-                              <p className="text-xs text-foreground/60 font-medium">
-                                Location
-                              </p>
-                              <p className="text-sm font-medium text-foreground">
-                                {user.city}, {user.country}
-                              </p>
-                            </div>
-                          </div>
-                          <button className="text-cyan-400 hover:text-cyan-300 text-xs font-semibold">
-                            Update
-                          </button>
-                        </div>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-3">
-                            <Clock size={16} className="text-foreground/60" />
-                            <div>
-                              <p className="text-xs text-foreground/60 font-medium">
-                                Member Since
-                              </p>
-                              <p className="text-sm font-medium text-foreground">
-                                {user.joinDate}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
                       </div>
                     </div>
 
@@ -614,21 +585,6 @@ export default function Profile() {
                     </div>
                   </div>
 
-                  {/* Danger Zone */}
-                  <div className="p-6 border border-red-500/30 rounded-xl bg-gradient-to-br from-red-500/5 to-red-500/[0.02]">
-                    <div className="flex items-center gap-3 mb-6">
-                      <Trash2 size={20} className="text-red-400" />
-                      <h3 className="text-lg font-bold text-foreground">
-                        Danger Zone
-                      </h3>
-                    </div>
-                    <button className="w-full px-4 py-3 border border-red-500/30 rounded-lg text-red-400 hover:bg-red-500/10 font-semibold text-sm transition-all">
-                      Delete Account
-                    </button>
-                    <p className="text-xs text-foreground/60 mt-3">
-                      Once you delete your account, there is no going back. Please be certain.
-                    </p>
-                  </div>
 
                   <div className="pb-4" />
                 </div>
