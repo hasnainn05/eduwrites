@@ -208,9 +208,9 @@ export default function AdminOrders() {
                 Manage all customer orders and view details
               </p>
             </div>
-            <div className="text-right text-xs sm:text-sm">
+            <div className="text-right text-xs sm:text-sm" suppressHydrationWarning>
               <p className="text-foreground/60">
-                {new Date(Date.now()).toLocaleDateString(undefined, { month: "2-digit", day: "2-digit", year: "numeric" })}
+                {new Date().toLocaleDateString()}
               </p>
             </div>
           </div>
