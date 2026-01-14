@@ -49,7 +49,7 @@ export function AdminSidebar() {
       icon: MessageSquare,
     },
     {
-      label: "Quote Requests",
+      label: "Support Messages",
       href: "/admin/quote-requests",
       icon: MessageSquare,
     },
