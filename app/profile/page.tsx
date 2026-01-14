@@ -206,9 +206,9 @@ export default function Profile() {
         />
 
         {/* Main Content */}
-        <div className="fixed left-0 right-0 top-0 bottom-0 ml-64 flex flex-col h-screen">
-          <div className="flex-1 overflow-y-auto pb-24">
-            <div className="w-full h-full p-5 flex flex-col">
+        <div className="fixed left-64 right-0 top-0 bottom-24 flex flex-col overflow-hidden">
+          <div className="flex-1 overflow-y-auto">
+            <div className="w-full px-6 py-4 flex flex-col">
             {activeTab === "overview" && (
               <div className="flex-1 flex flex-col overflow-y-auto">
               <>
