@@ -196,18 +196,18 @@ export default function SupportChat() {
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="absolute right-2 bottom-2 p-1 text-foreground/60 hover:text-foreground transition-colors"
+              className="absolute right-3 bottom-3 text-foreground/60 hover:text-foreground transition-colors"
             >
-              <Upload size={16} />
+              <Upload size={20} />
             </button>
           </div>
 
           <button
             type="submit"
             disabled={!input.trim() && !selectedFile}
-            className="flex items-center justify-center p-2 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+            className="flex items-center justify-center p-2.5 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
           >
-            <Send size={16} />
+            <Send size={20} />
           </button>
         </form>
       </div>
