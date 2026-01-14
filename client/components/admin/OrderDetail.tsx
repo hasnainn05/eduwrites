@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Order } from "@/app/admin/orders/page";
 import {
   ArrowLeft,
@@ -13,10 +14,12 @@ import {
   Download,
   CheckCircle,
 } from "lucide-react";
+import { updateOrderStatus } from "@/lib/orderStorage";
 
 interface OrderDetailProps {
   order: Order;
   onBack: () => void;
+  onStatusChange?: (orderId: string, status: "pending" | "in_progress" | "completed") => void;
 }
 
 export function OrderDetail({ order, onBack }: OrderDetailProps) {
