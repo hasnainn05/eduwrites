@@ -481,6 +481,66 @@ export default function Profile() {
           </div>
         )}
 
+        {activeTab === "chat" && (
+          <div className="glass rounded-2xl border border-white/10 overflow-hidden flex flex-col h-96">
+            {/* Chat Header */}
+            <div className="bg-gradient-to-r from-cyan-600/20 to-purple-600/20 p-4 border-b border-white/10">
+              <h3 className="font-bold text-foreground flex items-center gap-2">
+                <MessageCircle size={18} className="text-cyan-400" />
+                Support Chat
+              </h3>
+              <p className="text-xs text-foreground/60 mt-1">
+                Chat with our support team
+              </p>
+            </div>
+
+            {/* Chat Messages */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+              {chatMessages.map((msg) => (
+                <div
+                  key={msg.id}
+                  className={`flex ${
+                    msg.user === "customer" ? "justify-end" : "justify-start"
+                  }`}
+                >
+                  <div
+                    className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+                      msg.user === "customer"
+                        ? "bg-cyan-600/30 text-cyan-100 border border-cyan-500/30"
+                        : "bg-purple-600/20 text-foreground border border-purple-500/30"
+                    }`}
+                  >
+                    <p className="text-sm">{msg.message}</p>
+                    <p className="text-xs opacity-70 mt-1">{msg.timestamp}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Chat Input */}
+            <div className="border-t border-white/10 p-4 bg-white/5">
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={chatInput}
+                  onChange={(e) => setChatInput(e.target.value)}
+                  onKeyPress={(e) => {
+                    if (e.key === "Enter") handleSendMessage();
+                  }}
+                  placeholder="Type your message..."
+                  className="flex-1 bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400"
+                />
+                <button
+                  onClick={handleSendMessage}
+                  className="px-4 py-2 bg-gradient-to-r from-cyan-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-glow transition-all transform hover:scale-105"
+                >
+                  Send
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
         {activeTab === "settings" && (
           <div className="space-y-4">
             <div className="glass p-6 rounded-2xl border border-white/10">
