@@ -176,7 +176,7 @@ export default function SupportChat() {
         )}
 
         {/* Message Input */}
-        <form onSubmit={handleSendMessage} className="flex items-end gap-2">
+        <form onSubmit={handleSendMessage} className="flex items-end gap-3">
           <input
             ref={fileInputRef}
             type="file"
@@ -190,13 +190,13 @@ export default function SupportChat() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type your message here..."
-              className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 pr-10 text-sm text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-none"
+              className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 pr-12 text-sm text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-none"
               rows={2}
             />
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="absolute right-3 bottom-3 text-foreground/60 hover:text-foreground transition-colors"
+              className="absolute right-3 bottom-2.5 text-foreground/60 hover:text-foreground transition-colors"
             >
               <Upload size={20} />
             </button>
@@ -205,7 +205,7 @@ export default function SupportChat() {
           <button
             type="submit"
             disabled={!input.trim() && !selectedFile}
-            className="flex items-center justify-center p-2.5 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+            className="flex items-center justify-center p-3 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0 h-10"
           >
             <Send size={20} />
           </button>
