@@ -246,10 +246,11 @@ export default function Profile() {
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-8 border-b border-white/10">
+        <div className="flex gap-2 mb-8 border-b border-white/10 overflow-x-auto">
           {[
             { id: "overview", label: "Overview", icon: User },
             { id: "orders", label: "Orders", icon: FileText },
+            { id: "chat", label: "Support Chat", icon: MessageSquare },
             { id: "settings", label: "Settings", icon: Settings },
           ].map((tab) => {
             const Icon = tab.icon;
@@ -258,7 +259,7 @@ export default function Profile() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as typeof activeTab)}
-                className={`flex items-center gap-2 px-4 py-3 font-semibold transition-all text-sm ${
+                className={`flex items-center gap-2 px-4 py-3 font-semibold transition-all text-sm whitespace-nowrap ${
                   isActive
                     ? "text-cyan-400 border-b-2 border-cyan-400"
                     : "text-foreground/70 hover:text-foreground"
