@@ -481,7 +481,7 @@ export default function Profile() {
               )}
 
               {activeTab === "chat" && (
-                <div className="flex-1 flex flex-col h-full">
+                <div className="h-full flex flex-col">
                   <SupportChat />
                 </div>
               )}
