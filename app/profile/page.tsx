@@ -40,6 +40,7 @@ export default function Profile() {
     },
   ]);
   const [chatInput, setChatInput] = useState("");
+  const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
 
   const [user, setUser] = useState({
     fullName: "John Doe",
