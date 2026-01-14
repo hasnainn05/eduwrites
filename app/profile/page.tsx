@@ -208,36 +208,36 @@ export default function Profile() {
         {/* Main Content */}
         <div className="ml-64 flex-1 overflow-y-auto h-screen">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            {/* Mode Toggle */}
-            <div className="flex justify-center mb-8">
-              <div className="inline-flex gap-2 p-1 glass rounded-lg border border-white/20">
-                <button
-                  onClick={() => setUserMode("user")}
-                  className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
-                    userMode === "user"
-                      ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
-                      : "text-foreground/70 hover:text-foreground"
-                  }`}
-                >
-                  <User size={16} className="inline mr-2" />
-                  User
-                </button>
-                <button
-                  onClick={() => setUserMode("admin")}
-                  className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
-                    (userMode as string) === "admin"
-                      ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
-                      : "text-foreground/70 hover:text-foreground"
-                  }`}
-                >
-                  <ShieldAlert size={16} className="inline mr-2" />
-                  Admin
-                </button>
-              </div>
-            </div>
-
             {activeTab === "overview" && (
               <>
+                {/* Mode Toggle */}
+                <div className="flex justify-center mb-8">
+                  <div className="inline-flex gap-2 p-1 glass rounded-lg border border-white/20">
+                    <button
+                      onClick={() => setUserMode("user")}
+                      className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
+                        userMode === "user"
+                          ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
+                          : "text-foreground/70 hover:text-foreground"
+                      }`}
+                    >
+                      <User size={16} className="inline mr-2" />
+                      User
+                    </button>
+                    <button
+                      onClick={() => setUserMode("admin")}
+                      className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
+                        (userMode as string) === "admin"
+                          ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
+                          : "text-foreground/70 hover:text-foreground"
+                      }`}
+                    >
+                      <ShieldAlert size={16} className="inline mr-2" />
+                      Admin
+                    </button>
+                  </div>
+                </div>
+
                 {/* Header */}
                 <div className="mb-8">
                   <h1 className="text-4xl font-bold text-foreground font-poppins">
