@@ -397,3 +397,8 @@
     opacity: 1;
   }
 }
+
+/* Hide global footer on profile page */
+.profile-layout ~ footer {
+  display: none;
+}
