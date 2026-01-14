@@ -676,7 +676,7 @@ export default function Profile() {
                     </ul>
                   </div>
                 </div>
-                <div className="border-t border-sidebar-border mt-8 pt-8 text-center text-sm text-sidebar-foreground/60">
+                <div className="border-t border-sidebar-border mt-2 pt-2 text-center text-xs text-sidebar-foreground/60">
                   <p>&copy; {new Date().getFullYear()} EduWrites. All rights reserved.</p>
                 </div>
               </div>
