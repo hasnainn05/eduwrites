@@ -173,13 +173,13 @@ export default function SupportChat() {
         )}
 
         {/* Message Input */}
-        <form onSubmit={handleSendMessage} className="space-y-3">
+        <form onSubmit={handleSendMessage} className="space-y-4">
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your message here... (Press Ctrl+Enter to send)"
-            className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-none text-sm"
-            rows={3}
+            className="w-full bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-none text-base"
+            rows={4}
           />
 
           <div className="flex items-center gap-2">
