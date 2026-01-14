@@ -417,9 +417,9 @@ export default function Profile() {
                         <td className="p-5 text-foreground/70 hidden sm:table-cell text-sm">
                           {order.date}
                         </td>
-                        <td className="p-4">
+                        <td className="p-5">
                           <span
-                            className={`px-2 py-1 rounded-full text-xs font-semibold inline-block ${
+                            className={`px-3 py-2 rounded-full text-sm font-semibold inline-block ${
                               order.status === "Completed"
                                 ? "bg-green-500/30 text-green-300"
                                 : order.status === "In Progress"
