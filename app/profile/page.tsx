@@ -307,7 +307,7 @@ export default function Profile() {
             {activeTab === "overview" && (
           <div className="space-y-6">
             {/* Account Info */}
-            <div className="glass p-6 rounded-2xl border border-white/10">
+            <div className="glass p-6 rounded-2xl border border-white/10 w-full">
               <h3 className="text-lg font-bold text-foreground mb-4">
                 Account Information
               </h3>
