@@ -145,13 +145,13 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-2">
                 <a
-                  href="https://wa.me/12025550123"
+                  href="https://wa.me/13658291551"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-sidebar-foreground transition-colors"
                 >
                   <MessageCircle size={16} className="flex-shrink-0" />
-                  <span>+1 (202) 555-0123</span>
+                  <span>+1 365 8291551</span>
                 </a>
               </div>
               <div className="flex items-start gap-2">
