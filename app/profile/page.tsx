@@ -252,7 +252,7 @@ export default function Profile() {
                 </div>
 
                 {/* Profile Card */}
-            <div className="glass p-6 rounded-xl border border-white/10 mb-6">
+            <div className="mb-6">
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
             <div className="flex gap-4">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-lg flex items-center justify-center text-white text-xl font-bold flex-shrink-0">
@@ -285,7 +285,7 @@ export default function Profile() {
             return (
               <div
                 key={index}
-                className="glass p-4 rounded-lg border border-white/10 text-center hover:border-white/20 transition-all"
+                className="text-center hover:border-white/20 transition-all"
               >
                 <div
                   className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${stat.color} mb-2`}
@@ -308,7 +308,7 @@ export default function Profile() {
             {activeTab === "overview" && (
           <div className="space-y-4">
             {/* Account Info */}
-            <div className="glass p-5 rounded-xl border border-white/10 w-full">
+            <div className="w-full">
               <h3 className="text-sm font-bold text-foreground mb-3">
                 Account Information
               </h3>
@@ -338,7 +338,7 @@ export default function Profile() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               <Link
                 href="/order"
-                className="glass p-3 rounded-lg border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all group"
+                className="hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all group"
               >
                 <div className="text-xl mb-1">📝</div>
                 <h4 className="font-semibold text-foreground text-xs mb-1">
@@ -351,7 +351,7 @@ export default function Profile() {
 
               <Link
                 href="/#services"
-                className="glass p-3 rounded-lg border border-white/10 hover:border-purple-400/50 hover:bg-purple-400/10 transition-all group"
+                className="hover:border-purple-400/50 hover:bg-purple-400/10 transition-all group"
               >
                 <div className="text-xl mb-1">🎓</div>
                 <h4 className="font-semibold text-foreground text-xs mb-1">
@@ -364,7 +364,7 @@ export default function Profile() {
 
               <button
                 onClick={() => setIsSupportModalOpen(true)}
-                className="glass p-3 rounded-lg border border-white/10 hover:border-pink-400/50 hover:bg-pink-400/10 transition-all group w-full text-left"
+                className="hover:border-pink-400/50 hover:bg-pink-400/10 transition-all group w-full text-left"
               >
                 <div className="text-xl mb-1">💬</div>
                 <h4 className="font-semibold text-foreground text-xs mb-1">
@@ -504,7 +504,7 @@ export default function Profile() {
                   </div>
                 </div>
 
-                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-lg border border-white/10 mt-3">
+                <div className="mt-3">
                   <h3 className="text-sm font-bold text-foreground mb-3">
                     Notifications
                   </h3>
