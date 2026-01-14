@@ -632,9 +632,9 @@ export default function Profile() {
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
-        )}
+                </div>
+              </div>
+            )}
 
             {/* Support Modal */}
             <SupportModal
