@@ -207,8 +207,8 @@ export default function Profile() {
 
         {/* Main Content */}
         <div className="fixed left-0 right-0 top-0 bottom-0 ml-64 flex flex-col h-screen">
-          <div className="flex-1 overflow-hidden pb-24">
-            <div className="w-full h-full p-5 overflow-y-auto flex flex-col">
+          <div className="flex-1 overflow-y-auto pb-24">
+            <div className="w-full h-full p-5 flex flex-col">
             {activeTab === "overview" && (
               <div className="flex-1 flex flex-col overflow-y-auto">
               <>
@@ -241,27 +241,27 @@ export default function Profile() {
                 </div>
 
                 {/* Header */}
-                <div className="mb-8">
-                  <h1 className="text-4xl font-bold text-foreground font-poppins">
+                <div className="mb-6">
+                  <h1 className="text-2xl font-bold text-foreground font-poppins">
                     My Account
                   </h1>
-                  <p className="text-foreground/70 mt-2">
+                  <p className="text-foreground/70 mt-1 text-sm">
                     Welcome back, {user.fullName}
                   </p>
                 </div>
 
                 {/* Profile Card */}
-            <div className="glass p-8 rounded-2xl border border-white/10 mb-8">
-          <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between">
-            <div className="flex gap-6">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center text-white text-3xl font-bold flex-shrink-0">
+            <div className="glass p-6 rounded-xl border border-white/10 mb-6">
+          <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+            <div className="flex gap-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-lg flex items-center justify-center text-white text-xl font-bold flex-shrink-0">
                 {user.avatar}
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-foreground mb-1">
+                <h2 className="text-lg font-bold text-foreground mb-1">
                   {user.fullName}
                 </h2>
-                <p className="text-foreground/70 text-sm mb-3">{user.email}</p>
+                <p className="text-foreground/70 text-xs mb-2">{user.email}</p>
                 <p className="text-foreground/60 text-xs">
                   Member since {user.joinDate}
                 </p>
@@ -269,30 +269,30 @@ export default function Profile() {
             </div>
             <button
               onClick={() => setIsEditing(!isEditing)}
-              className="gradient-primary text-white px-6 py-2 rounded-lg font-semibold hover:shadow-glow transition-all flex items-center gap-2 whitespace-nowrap"
+              className="gradient-primary text-white px-4 py-2 rounded-lg font-semibold text-sm hover:shadow-glow transition-all flex items-center gap-2 whitespace-nowrap"
             >
-              <Edit size={16} />
+              <Edit size={14} />
               Edit
             </button>
           </div>
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
               <div
                 key={index}
-                className="glass p-5 rounded-xl border border-white/10 text-center hover:border-white/20 transition-all"
+                className="glass p-4 rounded-lg border border-white/10 text-center hover:border-white/20 transition-all"
               >
                 <div
-                  className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${stat.color} mb-3`}
+                  className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${stat.color} mb-2`}
                 >
-                  <Icon size={18} className="text-white" />
+                  <Icon size={14} className="text-white" />
                 </div>
                 <p className="text-foreground/70 text-xs mb-1">{stat.label}</p>
-                <p className="text-2xl font-bold text-foreground">
+                <p className="text-lg font-bold text-foreground">
                   {stat.value}
                 </p>
               </div>
@@ -305,28 +305,28 @@ export default function Profile() {
 
             {/* Tab Content */}
             {activeTab === "overview" && (
-          <div className="space-y-6">
+          <div className="space-y-4">
             {/* Account Info */}
-            <div className="glass p-6 rounded-2xl border border-white/10 w-full">
-              <h3 className="text-lg font-bold text-foreground mb-4">
+            <div className="glass p-5 rounded-xl border border-white/10 w-full">
+              <h3 className="text-sm font-bold text-foreground mb-3">
                 Account Information
               </h3>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center pb-3 border-b border-white/10">
-                  <div className="flex items-center gap-2 text-foreground/70 text-sm">
-                    <Mail size={16} />
+              <div className="space-y-2">
+                <div className="flex justify-between items-center pb-2 border-b border-white/10">
+                  <div className="flex items-center gap-2 text-foreground/70 text-xs">
+                    <Mail size={14} />
                     Email
                   </div>
-                  <span className="text-foreground text-sm font-medium">
+                  <span className="text-foreground text-xs font-medium">
                     {user.email}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-2 text-foreground/70 text-sm">
-                    <Clock size={16} />
+                  <div className="flex items-center gap-2 text-foreground/70 text-xs">
+                    <Clock size={14} />
                     Member Since
                   </div>
-                  <span className="text-foreground text-sm font-medium">
+                  <span className="text-foreground text-xs font-medium">
                     {user.joinDate}
                   </span>
                 </div>
@@ -334,43 +334,43 @@ export default function Profile() {
             </div>
 
             {/* Quick Actions */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               <Link
                 href="/order"
-                className="glass p-4 rounded-xl border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all group"
+                className="glass p-3 rounded-lg border border-white/10 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all group"
               >
-                <div className="text-2xl mb-2">📝</div>
-                <h4 className="font-semibold text-foreground text-sm mb-1">
+                <div className="text-xl mb-1">📝</div>
+                <h4 className="font-semibold text-foreground text-xs mb-1">
                   New Order
                 </h4>
                 <span className="text-cyan-400 text-xs flex items-center gap-1">
-                  Order Now <ArrowRight size={12} />
+                  Order Now <ArrowRight size={10} />
                 </span>
               </Link>
 
               <Link
                 href="/#services"
-                className="glass p-4 rounded-xl border border-white/10 hover:border-purple-400/50 hover:bg-purple-400/10 transition-all group"
+                className="glass p-3 rounded-lg border border-white/10 hover:border-purple-400/50 hover:bg-purple-400/10 transition-all group"
               >
-                <div className="text-2xl mb-2">🎓</div>
-                <h4 className="font-semibold text-foreground text-sm mb-1">
+                <div className="text-xl mb-1">🎓</div>
+                <h4 className="font-semibold text-foreground text-xs mb-1">
                   Services
                 </h4>
                 <span className="text-purple-400 text-xs flex items-center gap-1">
-                  View All <ArrowRight size={12} />
+                  View All <ArrowRight size={10} />
                 </span>
               </Link>
 
               <button
                 onClick={() => setIsSupportModalOpen(true)}
-                className="glass p-4 rounded-xl border border-white/10 hover:border-pink-400/50 hover:bg-pink-400/10 transition-all group w-full text-left"
+                className="glass p-3 rounded-lg border border-white/10 hover:border-pink-400/50 hover:bg-pink-400/10 transition-all group w-full text-left"
               >
-                <div className="text-2xl mb-2">💬</div>
-                <h4 className="font-semibold text-foreground text-sm mb-1">
+                <div className="text-xl mb-1">💬</div>
+                <h4 className="font-semibold text-foreground text-xs mb-1">
                   Support
                 </h4>
                 <span className="text-pink-400 text-xs flex items-center gap-1">
-                  Contact <ArrowRight size={12} />
+                  Contact <ArrowRight size={10} />
                 </span>
               </button>
             </div>
@@ -378,27 +378,27 @@ export default function Profile() {
         )}
 
             {activeTab === "orders" && (
-              <div className="glass rounded-2xl border border-white/10 overflow-hidden flex-1 flex flex-col">
-              <div className="overflow-x-auto flex-1 p-6">
-                <table className="w-full text-base">
+              <div className="glass rounded-xl border border-white/10 overflow-hidden flex-1 flex flex-col">
+              <div className="overflow-x-auto flex-1 p-4">
+                <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-white/10 bg-white/5 text-base">
-                      <th className="p-5 text-left text-foreground/70 font-semibold text-base">
+                    <tr className="border-b border-white/10 bg-white/5">
+                      <th className="p-3 text-left text-foreground/70 font-semibold text-xs">
                         Order ID
                       </th>
-                      <th className="p-5 text-left text-foreground/70 font-semibold hidden sm:table-cell text-base">
+                      <th className="p-3 text-left text-foreground/70 font-semibold hidden sm:table-cell text-xs">
                         Service
                       </th>
-                      <th className="p-5 text-left text-foreground/70 font-semibold hidden sm:table-cell text-base">
+                      <th className="p-3 text-left text-foreground/70 font-semibold hidden sm:table-cell text-xs">
                         Date
                       </th>
-                      <th className="p-5 text-left text-foreground/70 font-semibold text-base">
+                      <th className="p-3 text-left text-foreground/70 font-semibold text-xs">
                         Status
                       </th>
-                      <th className="p-5 text-left text-foreground/70 font-semibold text-base">
+                      <th className="p-3 text-left text-foreground/70 font-semibold text-xs">
                         Amount
                       </th>
-                      <th className="p-5 text-left text-foreground/70 font-semibold text-base">
+                      <th className="p-3 text-left text-foreground/70 font-semibold text-xs">
                         Action
                       </th>
                     </tr>
@@ -409,16 +409,16 @@ export default function Profile() {
                         key={index}
                         className="border-b border-white/10 hover:bg-white/5 transition-colors"
                       >
-                        <td className="p-5 text-foreground font-semibold text-base">
+                        <td className="p-3 text-foreground font-semibold text-xs">
                           {order.id}
                         </td>
-                        <td className="p-5 text-foreground hidden sm:table-cell text-base">
+                        <td className="p-3 text-foreground hidden sm:table-cell text-xs">
                           {order.service}
                         </td>
-                        <td className="p-5 text-foreground/70 hidden sm:table-cell text-sm">
+                        <td className="p-3 text-foreground/70 hidden sm:table-cell text-xs">
                           {order.date}
                         </td>
-                        <td className="p-5">
+                        <td className="p-3">
                           <span
                             className={`px-3 py-2 rounded-full text-sm font-semibold inline-block ${
                               order.status === "Completed"
@@ -431,12 +431,12 @@ export default function Profile() {
                             {order.status}
                           </span>
                         </td>
-                        <td className="p-5 text-foreground font-semibold text-base">
+                        <td className="p-3 text-foreground font-semibold text-xs">
                           {order.amount}
                         </td>
-                        <td className="p-5">
-                          <button className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm flex items-center gap-1">
-                            <Eye size={14} />
+                        <td className="p-3">
+                          <button className="text-cyan-400 hover:text-cyan-300 transition-colors text-xs flex items-center gap-1">
+                            <Eye size={12} />
                             <span className="hidden sm:inline">View</span>
                           </button>
                         </td>
@@ -449,73 +449,73 @@ export default function Profile() {
             )}
 
             {activeTab === "chat" && (
-              <div className="glass rounded-2xl border border-white/10 overflow-hidden flex-1 flex flex-col p-6">
+              <div className="glass rounded-xl border border-white/10 overflow-hidden flex-1 flex flex-col">
                 <SupportChat />
               </div>
             )}
 
             {activeTab === "settings" && (
-              <div className="glass rounded-2xl border border-white/10 overflow-hidden flex-1 flex flex-col p-6">
-              <div className="space-y-4 overflow-y-auto">
-              <h3 className="text-lg font-bold text-foreground mb-4">
+              <div className="glass rounded-xl border border-white/10 overflow-hidden flex-1 flex flex-col p-4">
+              <div className="space-y-3 overflow-y-auto flex-1">
+              <h3 className="text-sm font-bold text-foreground mb-3">
                 Privacy & Security
               </h3>
               <div className="space-y-0">
-                <div className="flex justify-between items-center py-4 border-b border-white/10 hover:bg-white/5 px-2 rounded transition-all">
+                <div className="flex justify-between items-center py-3 border-b border-white/10 hover:bg-white/5 px-2 rounded transition-all">
                   <div>
-                    <p className="font-medium text-foreground text-sm">
+                    <p className="font-medium text-foreground text-xs">
                       Change Password
                     </p>
                     <p className="text-xs text-foreground/70">
                       Update your password
                     </p>
                   </div>
-                  <button className="text-cyan-400 text-xs font-semibold">
+                  <button className="text-cyan-400 text-xs font-semibold whitespace-nowrap">
                     Change
                   </button>
                 </div>
-                <div className="flex justify-between items-center py-4 border-b border-white/10 hover:bg-white/5 px-2 rounded transition-all">
+                <div className="flex justify-between items-center py-3 border-b border-white/10 hover:bg-white/5 px-2 rounded transition-all">
                   <div>
-                    <p className="font-medium text-foreground text-sm">
+                    <p className="font-medium text-foreground text-xs">
                       Two-Factor Auth
                     </p>
                     <p className="text-xs text-foreground/70">
                       Add extra security
                     </p>
                   </div>
-                  <button className="text-cyan-400 text-xs font-semibold">
+                  <button className="text-cyan-400 text-xs font-semibold whitespace-nowrap">
                     Enable
                   </button>
                 </div>
-                <div className="flex justify-between items-center py-4 hover:bg-white/5 px-2 rounded transition-all">
+                <div className="flex justify-between items-center py-3 hover:bg-white/5 px-2 rounded transition-all">
                   <div>
-                    <p className="font-medium text-foreground text-sm">
+                    <p className="font-medium text-foreground text-xs">
                       Login History
                     </p>
                     <p className="text-xs text-foreground/70">
                       View recent activity
                     </p>
                   </div>
-                  <button className="text-cyan-400 text-xs font-semibold">
+                  <button className="text-cyan-400 text-xs font-semibold whitespace-nowrap">
                     View
                   </button>
                 </div>
               </div>
             </div>
 
-                <div className="glass p-6 rounded-2xl border border-white/10">
-                  <h3 className="text-lg font-bold text-foreground mb-4">
+                <div className="glass p-4 rounded-lg border border-white/10">
+                  <h3 className="text-sm font-bold text-foreground mb-3">
                     Notifications
                   </h3>
-              <div className="space-y-3">
-                <label className="flex items-center gap-3 py-3 cursor-pointer hover:bg-white/5 px-2 rounded transition-all">
+              <div className="space-y-2">
+                <label className="flex items-center gap-2 py-2 cursor-pointer hover:bg-white/5 px-2 rounded transition-all">
                   <input
                     type="checkbox"
                     defaultChecked
-                    className="w-4 h-4 rounded border-white/20 bg-white/10 accent-cyan-400"
+                    className="w-3 h-3 rounded border-white/20 bg-white/10 accent-cyan-400"
                   />
                   <div>
-                    <p className="font-medium text-foreground text-sm">
+                    <p className="font-medium text-foreground text-xs">
                       Order Updates
                     </p>
                     <p className="text-xs text-foreground/70">
@@ -523,13 +523,13 @@ export default function Profile() {
                     </p>
                   </div>
                 </label>
-                <label className="flex items-center gap-3 py-3 cursor-pointer hover:bg-white/5 px-2 rounded transition-all">
+                <label className="flex items-center gap-2 py-2 cursor-pointer hover:bg-white/5 px-2 rounded transition-all">
                   <input
                     type="checkbox"
-                    className="w-4 h-4 rounded border-white/20 bg-white/10 accent-cyan-400"
+                    className="w-3 h-3 rounded border-white/20 bg-white/10 accent-cyan-400"
                   />
                   <div>
-                    <p className="font-medium text-foreground text-sm">
+                    <p className="font-medium text-foreground text-xs">
                       Marketing
                     </p>
                     <p className="text-xs text-foreground/70">
