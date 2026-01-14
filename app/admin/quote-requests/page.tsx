@@ -119,10 +119,10 @@ export default function AdminQuoteRequests() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl font-bold text-foreground">
-                Quote Requests
+                Support Messages
               </h1>
               <p className="text-foreground/60 text-sm mt-1">
-                {unrepliedCount} pending quote requests
+                {unrepliedCount} pending support messages
               </p>
             </div>
           </div>
