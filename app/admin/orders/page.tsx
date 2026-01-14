@@ -5,7 +5,6 @@ import { AdminSidebar } from "@/client/components/AdminSidebar";
 import { OrderStatusTabs } from "@/client/components/admin/OrderStatusTabs";
 import { OrdersList } from "@/client/components/admin/OrdersList";
 import { getOrders } from "@/lib/orderStorage";
-import { getOrdersByStatus } from "@/lib/orderStorage";
 
 export interface Order {
   id: string;
