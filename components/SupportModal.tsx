@@ -20,7 +20,7 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps) {
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -118,7 +118,8 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps) {
             <div>
               <label className="block text-sm font-medium text-foreground/90 mb-2 flex items-center gap-2">
                 <MessageCircle size={16} />
-                WhatsApp Number <span className="text-foreground/50">(Optional)</span>
+                WhatsApp Number{" "}
+                <span className="text-foreground/50">(Optional)</span>
               </label>
               <input
                 type="tel"

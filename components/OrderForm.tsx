@@ -8,7 +8,10 @@ interface OrderFormProps {
   onSuccess?: () => void;
 }
 
-export default function OrderForm({ preSelectedService, onSuccess }: OrderFormProps) {
+export default function OrderForm({
+  preSelectedService,
+  onSuccess,
+}: OrderFormProps) {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -42,7 +45,9 @@ export default function OrderForm({ preSelectedService, onSuccess }: OrderFormPr
   ];
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) => {
     const { name, value } = e.target;
     if (name === "attachments") {
@@ -91,11 +96,13 @@ export default function OrderForm({ preSelectedService, onSuccess }: OrderFormPr
           Order Submitted Successfully!
         </h2>
         <p className="text-foreground/80 mb-6">
-          Thank you for your order! We've received your request and will contact you shortly to confirm the details.
+          Thank you for your order! We've received your request and will contact
+          you shortly to confirm the details.
         </p>
         <div className="bg-white/10 rounded-lg p-4 text-left">
           <p className="text-sm text-foreground/70 mb-2">
-            <span className="font-semibold">Order ID:</span> {Math.random().toString(36).substr(2, 9).toUpperCase()}
+            <span className="font-semibold">Order ID:</span>{" "}
+            {Math.random().toString(36).substr(2, 9).toUpperCase()}
           </p>
           <p className="text-sm text-foreground/70">
             <span className="font-semibold">Email:</span> {formData.email}
@@ -109,7 +116,9 @@ export default function OrderForm({ preSelectedService, onSuccess }: OrderFormPr
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Personal Information Section */}
       <div>
-        <h2 className="text-2xl font-bold text-foreground mb-6 font-poppins">Personal Information</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-6 font-poppins">
+          Personal Information
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Full Name */}
@@ -171,7 +180,11 @@ export default function OrderForm({ preSelectedService, onSuccess }: OrderFormPr
               className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-cyan-400 transition-colors"
             >
               {academicLevels.map((level) => (
-                <option key={level.value} value={level.value} className="bg-slate-900">
+                <option
+                  key={level.value}
+                  value={level.value}
+                  className="bg-slate-900"
+                >
                   {level.label}
                 </option>
               ))}
@@ -182,7 +195,9 @@ export default function OrderForm({ preSelectedService, onSuccess }: OrderFormPr
 
       {/* Service Details Section */}
       <div className="border-t border-white/10 pt-6">
-        <h2 className="text-2xl font-bold text-foreground mb-6 font-poppins">Service Details</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-6 font-poppins">
+          Service Details
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Service Type */}
@@ -197,7 +212,11 @@ export default function OrderForm({ preSelectedService, onSuccess }: OrderFormPr
               className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-cyan-400 transition-colors"
             >
               {serviceTypes.map((service) => (
-                <option key={service.value} value={service.value} className="bg-slate-900">
+                <option
+                  key={service.value}
+                  value={service.value}
+                  className="bg-slate-900"
+                >
                   {service.label}
                 </option>
               ))}
@@ -255,7 +274,9 @@ export default function OrderForm({ preSelectedService, onSuccess }: OrderFormPr
 
       {/* Assignment Details Section */}
       <div className="border-t border-white/10 pt-6">
-        <h2 className="text-2xl font-bold text-foreground mb-6 font-poppins">Assignment Details</h2>
+        <h2 className="text-2xl font-bold text-foreground mb-6 font-poppins">
+          Assignment Details
+        </h2>
 
         <div className="space-y-6">
           <div>
@@ -297,7 +318,9 @@ export default function OrderForm({ preSelectedService, onSuccess }: OrderFormPr
             </div>
             {fileName && (
               <div className="mt-2 flex items-center gap-2 bg-white/10 p-2 rounded-lg">
-                <span className="text-sm text-foreground flex-1">{fileName}</span>
+                <span className="text-sm text-foreground flex-1">
+                  {fileName}
+                </span>
                 <button
                   type="button"
                   onClick={() => {

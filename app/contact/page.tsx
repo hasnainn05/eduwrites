@@ -1,7 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, MessageCircle, MapPin, Clock, MessageSquare, ArrowRight, User, FileText, Send } from "lucide-react";
+import {
+  Mail,
+  MessageCircle,
+  MapPin,
+  Clock,
+  MessageSquare,
+  ArrowRight,
+  User,
+  FileText,
+  Send,
+} from "lucide-react";
 import { useState } from "react";
 import { TiltCard } from "@/client/components/TiltCard";
 import { Canvas3DWrapper } from "@/client/components/Canvas3DWrapper";
@@ -18,7 +28,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -143,7 +153,10 @@ export default function Contact() {
                 <TiltCard key={index} className="h-full">
                   <a
                     href={method.link}
-                    {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
+                    {...(isExternal && {
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    })}
                     className="glass p-8 rounded-2xl hover:bg-white/20 transition-all text-center group h-full flex flex-col justify-center"
                   >
                     <div className="flex justify-center mb-4">
@@ -235,7 +248,8 @@ export default function Contact() {
                 <div>
                   <label className="block text-sm font-medium text-foreground/90 mb-2 flex items-center gap-2">
                     <MessageCircle size={16} />
-                    WhatsApp Number <span className="text-foreground/50">(Optional)</span>
+                    WhatsApp Number{" "}
+                    <span className="text-foreground/50">(Optional)</span>
                   </label>
                   <input
                     type="tel"
@@ -332,8 +346,8 @@ export default function Contact() {
           </h2>
 
           <p className="text-lg text-foreground/80 mb-12">
-            Don't let academic stress hold you back. Let EduWrites help
-            you achieve your academic goals.
+            Don't let academic stress hold you back. Let EduWrites help you
+            achieve your academic goals.
           </p>
 
           <Link

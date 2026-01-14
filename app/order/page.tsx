@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import OrderForm from "@/components/OrderForm";
 import Link from "next/link";
@@ -17,20 +17,27 @@ export default function Order() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
-            Place Your <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Order</span>
+            Place Your{" "}
+            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+              Order
+            </span>
           </h1>
           <p className="text-lg text-foreground/70">
-            Fill in your details and we'll get started on your academic work right away
+            Fill in your details and we'll get started on your academic work
+            right away
           </p>
         </div>
 
         {/* Form Container */}
         <div className="glass p-8 sm:p-12 rounded-2xl">
-          <OrderForm onSuccess={() => {
-            // Optional: handle post-submission
-          }} />
+          <OrderForm
+            onSuccess={() => {
+              // Optional: handle post-submission
+            }}
+          />
           <p className="text-center text-sm text-foreground/60 mt-4">
-            * Required fields. We'll contact you within 1 hour to confirm your order.
+            * Required fields. We'll contact you within 1 hour to confirm your
+            order.
           </p>
         </div>
       </div>

@@ -1,7 +1,16 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Minus, ExternalLink, Trash2, ThumbsUp, ThumbsDown } from "lucide-react";
+import {
+  MessageCircle,
+  X,
+  Send,
+  Minus,
+  ExternalLink,
+  Trash2,
+  ThumbsUp,
+  ThumbsDown,
+} from "lucide-react";
 import { Mail, MessageSquare } from "lucide-react";
 
 interface Message {
@@ -21,7 +30,12 @@ export default function LiveChat() {
       text: "Hi! 👋 Welcome to EduWrites. How can we help you today?",
       sender: "bot",
       timestamp: new Date(),
-      suggestedReplies: ["Place an Order", "Check Status", "Get Info", "Contact Support"],
+      suggestedReplies: [
+        "Place an Order",
+        "Check Status",
+        "Get Info",
+        "Contact Support",
+      ],
     },
   ]);
   const [inputValue, setInputValue] = useState("");
@@ -37,69 +51,110 @@ export default function LiveChat() {
     scrollToBottom();
   }, [messages]);
 
-  const botResponses: { [key: string]: { response: string; suggestedReplies: string[] } } = {
+  const botResponses: {
+    [key: string]: { response: string; suggestedReplies: string[] };
+  } = {
     "place an order": {
-      response: "Great! You can place an order directly from our website. Our experts handle essay writing, research papers, homework, case studies, and more. What type of service are you interested in?",
-      suggestedReplies: ["Essay Writing", "Research Papers", "Homework Help", "Other Services"],
+      response:
+        "Great! You can place an order directly from our website. Our experts handle essay writing, research papers, homework, case studies, and more. What type of service are you interested in?",
+      suggestedReplies: [
+        "Essay Writing",
+        "Research Papers",
+        "Homework Help",
+        "Other Services",
+      ],
     },
     "essay writing": {
-      response: "Our Essay Writing service covers all academic levels. We provide original, plagiarism-free essays. Would you like to know about pricing or ready to place an order?",
-      suggestedReplies: ["Check Pricing", "Place Order Now", "Ask More Questions"],
+      response:
+        "Our Essay Writing service covers all academic levels. We provide original, plagiarism-free essays. Would you like to know about pricing or ready to place an order?",
+      suggestedReplies: [
+        "Check Pricing",
+        "Place Order Now",
+        "Ask More Questions",
+      ],
     },
     "research papers": {
-      response: "We specialize in well-researched, properly formatted research papers. Our writers have expertise across all subjects. Want to know more details or place an order?",
+      response:
+        "We specialize in well-researched, properly formatted research papers. Our writers have expertise across all subjects. Want to know more details or place an order?",
       suggestedReplies: ["More Details", "Place Order Now", "Talk to Support"],
     },
     "homework help": {
-      response: "We provide comprehensive homework assistance for all subjects and academic levels. Quick turnaround times available. Ready to proceed?",
+      response:
+        "We provide comprehensive homework assistance for all subjects and academic levels. Quick turnaround times available. Ready to proceed?",
       suggestedReplies: ["See Pricing", "Order Now", "Need Help"],
     },
     "check status": {
-      response: "To check your order status, please log into your profile. You'll find all your active orders and their progress there. Need help logging in?",
+      response:
+        "To check your order status, please log into your profile. You'll find all your active orders and their progress there. Need help logging in?",
       suggestedReplies: ["Reset Password", "Contact Support", "View My Orders"],
     },
     "get info": {
-      response: "We offer writing services for essays, research papers, homework, case studies, and more. All work is original, plagiarism-checked, and delivered on time. What else would you like to know?",
-      suggestedReplies: ["Pricing", "Guarantees", "How We Work", "Contact Support"],
+      response:
+        "We offer writing services for essays, research papers, homework, case studies, and more. All work is original, plagiarism-checked, and delivered on time. What else would you like to know?",
+      suggestedReplies: [
+        "Pricing",
+        "Guarantees",
+        "How We Work",
+        "Contact Support",
+      ],
     },
     "contact support": {
-      response: "You can reach our support team via WhatsApp, Email, or through our contact form. What's your preferred method?",
+      response:
+        "You can reach our support team via WhatsApp, Email, or through our contact form. What's your preferred method?",
       suggestedReplies: ["WhatsApp", "Email", "Contact Form"],
     },
-    "whatsapp": {
-      response: "Our WhatsApp number is +1 365 8291551. You can reach us instantly for quick responses!",
+    whatsapp: {
+      response:
+        "Our WhatsApp number is +1 365 8291551. You can reach us instantly for quick responses!",
       suggestedReplies: ["Open WhatsApp", "Use Email Instead", "Back to Menu"],
     },
-    "email": {
-      response: "You can email us at info@eduwrites.com. We'll get back to you within 24 hours.",
+    email: {
+      response:
+        "You can email us at info@eduwrites.com. We'll get back to you within 24 hours.",
       suggestedReplies: ["Contact Form", "WhatsApp Instead", "Back to Menu"],
     },
     "contact form": {
-      response: "Our contact form is available on our Contact Us page. You can submit your inquiry and we'll respond promptly.",
+      response:
+        "Our contact form is available on our Contact Us page. You can submit your inquiry and we'll respond promptly.",
       suggestedReplies: ["Go to Contact Page", "Use WhatsApp", "Use Email"],
     },
-    "pricing": {
-      response: "Our pricing varies based on the service type, urgency, and academic level. Visit our Services page to see detailed pricing for each service.",
+    pricing: {
+      response:
+        "Our pricing varies based on the service type, urgency, and academic level. Visit our Services page to see detailed pricing for each service.",
       suggestedReplies: ["View Services", "Ask About Discounts", "Place Order"],
     },
-    "guarantees": {
-      response: "We guarantee: ✅ Original work, ✅ On-time delivery, ✅ Plagiarism-free content, ✅ Revision support. Your satisfaction is our priority!",
+    guarantees: {
+      response:
+        "We guarantee: ✅ Original work, ✅ On-time delivery, ✅ Plagiarism-free content, ✅ Revision support. Your satisfaction is our priority!",
       suggestedReplies: ["How We Work", "Place Order", "Other Questions"],
     },
     "how we work": {
-      response: "Simple process: 1) You place an order with details, 2) Expert writers claim your project, 3) We deliver before deadline, 4) You review and request revisions if needed.",
+      response:
+        "Simple process: 1) You place an order with details, 2) Expert writers claim your project, 3) We deliver before deadline, 4) You review and request revisions if needed.",
       suggestedReplies: ["Place Order", "Ask Questions", "Contact Support"],
     },
     "other services": {
-      response: "Beyond essays and research papers, we also handle case studies, dissertations, homework, and more. Which service interests you?",
-      suggestedReplies: ["Case Studies", "Dissertations", "Homework", "View All"],
+      response:
+        "Beyond essays and research papers, we also handle case studies, dissertations, homework, and more. Which service interests you?",
+      suggestedReplies: [
+        "Case Studies",
+        "Dissertations",
+        "Homework",
+        "View All",
+      ],
     },
   };
 
   const getDefaultResponse = () => {
     return {
-      response: "Thanks for reaching out! We're available 24/7. Can I help you with anything else?",
-      suggestedReplies: ["Place an Order", "Check Status", "Get Info", "Contact Support"],
+      response:
+        "Thanks for reaching out! We're available 24/7. Can I help you with anything else?",
+      suggestedReplies: [
+        "Place an Order",
+        "Check Status",
+        "Get Info",
+        "Contact Support",
+      ],
     };
   };
 
@@ -147,7 +202,9 @@ export default function LiveChat() {
     setInputValue(reply);
     setTimeout(() => {
       const form = document.querySelector("form");
-      const submitButton = form?.querySelector("button[type='submit']") as HTMLButtonElement;
+      const submitButton = form?.querySelector(
+        "button[type='submit']",
+      ) as HTMLButtonElement;
       if (submitButton) {
         setMessages((prev) => [
           ...prev,
@@ -194,18 +251,27 @@ export default function LiveChat() {
           text: "Hi! 👋 Welcome to EduWrites. How can we help you today?",
           sender: "bot",
           timestamp: new Date(),
-          suggestedReplies: ["Place an Order", "Check Status", "Get Info", "Contact Support"],
+          suggestedReplies: [
+            "Place an Order",
+            "Check Status",
+            "Get Info",
+            "Contact Support",
+          ],
         },
       ]);
     }
   };
 
   const handleWhatsAppContact = () => {
-    window.open("https://wa.me/13658291551?text=Hi%2C%20I%27m%20interested%20in%20EduWrites%20services", "_blank");
+    window.open(
+      "https://wa.me/13658291551?text=Hi%2C%20I%27m%20interested%20in%20EduWrites%20services",
+      "_blank",
+    );
   };
 
   const handleEmailContact = () => {
-    window.location.href = "mailto:info@eduwrites.com?subject=Inquiry%20from%20EduWrites%20Chat";
+    window.location.href =
+      "mailto:info@eduwrites.com?subject=Inquiry%20from%20EduWrites%20Chat";
   };
 
   const lastBotMessage = messages.filter((m) => m.sender === "bot").pop();
@@ -270,7 +336,9 @@ export default function LiveChat() {
                   <div key={message.id}>
                     <div
                       className={`flex ${
-                        message.sender === "user" ? "justify-end" : "justify-start"
+                        message.sender === "user"
+                          ? "justify-end"
+                          : "justify-start"
                       } animate-in fade-in slide-in-from-bottom-3`}
                     >
                       <div
