@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import SupportModal from "@/components/SupportModal";
 import SupportChat from "@/components/SupportChat";
+import { ProfileSidebar } from "@/client/components/ProfileSidebar";
 
 export default function Profile() {
   const [userMode, setUserMode] = useState<"user" | "admin">("user");
