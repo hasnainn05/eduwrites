@@ -381,23 +381,23 @@ export default function Profile() {
               <div className="overflow-x-auto flex-1 flex flex-col">
                 <table className="w-full text-base">
                   <thead>
-                    <tr className="border-b border-white/10 bg-white/5">
-                      <th className="p-4 text-left text-foreground/70 font-semibold">
+                    <tr className="border-b border-white/10 bg-white/5 text-base">
+                      <th className="p-5 text-left text-foreground/70 font-semibold text-base">
                         Order ID
                       </th>
-                      <th className="p-4 text-left text-foreground/70 font-semibold hidden sm:table-cell">
+                      <th className="p-5 text-left text-foreground/70 font-semibold hidden sm:table-cell text-base">
                         Service
                       </th>
-                      <th className="p-4 text-left text-foreground/70 font-semibold hidden sm:table-cell">
+                      <th className="p-5 text-left text-foreground/70 font-semibold hidden sm:table-cell text-base">
                         Date
                       </th>
-                      <th className="p-4 text-left text-foreground/70 font-semibold">
+                      <th className="p-5 text-left text-foreground/70 font-semibold text-base">
                         Status
                       </th>
-                      <th className="p-4 text-left text-foreground/70 font-semibold">
+                      <th className="p-5 text-left text-foreground/70 font-semibold text-base">
                         Amount
                       </th>
-                      <th className="p-4 text-left text-foreground/70 font-semibold">
+                      <th className="p-5 text-left text-foreground/70 font-semibold text-base">
                         Action
                       </th>
                     </tr>
