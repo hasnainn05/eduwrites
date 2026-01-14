@@ -23,7 +23,7 @@ import {
 export default function Profile() {
   const [userMode, setUserMode] = useState<"user" | "admin">("user");
   const [activeTab, setActiveTab] = useState<
-    "overview" | "orders" | "settings"
+    "overview" | "orders" | "chat" | "settings"
   >("overview");
   const [isEditing, setIsEditing] = useState(false);
 
