@@ -275,7 +275,7 @@ export default function AdminOrders() {
           </div>
 
           {/* Orders Section */}
-          <div className="glass rounded-2xl border border-white/10 overflow-hidden">
+          <div className="border-b border-white/10 overflow-hidden">
             {/* Tabs */}
             <OrderStatusTabs
               activeStatus={activeStatus}
@@ -284,19 +284,11 @@ export default function AdminOrders() {
             />
 
             {/* Orders List */}
-            {selectedOrder ? (
-              <OrderDetail
-                order={selectedOrder}
-                onBack={() => setSelectedOrder(null)}
-                onStatusChange={handleStatusChange}
-              />
-            ) : (
-              <OrdersList
-                orders={filteredOrders}
-                onSelectOrder={setSelectedOrder}
-                status={activeStatus}
-              />
-            )}
+            <OrdersList
+              orders={filteredOrders}
+              onStatusChange={handleStatusChange}
+              status={activeStatus}
+            />
           </div>
         </div>
       </div>
