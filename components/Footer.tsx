@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Facebook,
   Twitter,
@@ -11,7 +12,13 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
+  const pathname = usePathname();
   const currentYear = new Date().getFullYear();
+
+  // Hide footer on admin and profile pages
+  if (pathname.startsWith("/admin") || pathname.startsWith("/profile")) {
+    return null;
+  }
 
   const services = [
     { label: "Essay Writing", path: "/services/essay" },
