@@ -843,6 +843,7 @@ export default function ServiceDetail() {
   const service = slug ? servicesData[slug] : null;
 
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
   const [orderForm, setOrderForm] = useState({
     fullName: "",
     email: "",
