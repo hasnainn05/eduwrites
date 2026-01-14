@@ -153,7 +153,7 @@ export default function SupportChat() {
       </div>
 
       {/* Input Area */}
-      <div className="border-t border-white/10 p-4">
+      <div className="border-t border-white/10 p-4 flex-shrink-0">
         {/* File Preview */}
         {selectedFile && (
           <div className="mb-3 flex items-center gap-2 bg-white/5 p-3 rounded border border-white/10">
