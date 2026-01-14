@@ -662,38 +662,6 @@ export default function Profile() {
             </div>
           </div>
 
-          {/* Custom Footer - Fixed at bottom */}
-          <footer className="fixed bottom-0 left-64 right-0 bg-sidebar-background border-t border-sidebar-border text-sidebar-foreground py-4 z-30">
-              <div className="w-full pl-6 pr-0">
-                <div className="grid grid-cols-3 gap-4">
-                  <div>
-                    <h4 className="font-semibold mb-2 text-sidebar-foreground text-xs">Services</h4>
-                    <ul className="space-y-1 text-xs text-sidebar-foreground/70">
-                      <li><Link href="/services/essay" className="hover:text-sidebar-primary transition-colors">Essay Writing</Link></li>
-                      <li><Link href="/services/research" className="hover:text-sidebar-primary transition-colors">Research Paper</Link></li>
-                      <li><Link href="/services/thesis" className="hover:text-sidebar-primary transition-colors">Thesis Writing</Link></li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2 text-sidebar-foreground text-xs">Company</h4>
-                    <ul className="space-y-1 text-xs text-sidebar-foreground/70">
-                      <li><Link href="/about" className="hover:text-sidebar-primary transition-colors">About Us</Link></li>
-                      <li><Link href="/#pricing" className="hover:text-sidebar-primary transition-colors">Pricing</Link></li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2 text-sidebar-foreground text-xs">Legal</h4>
-                    <ul className="space-y-1 text-xs text-sidebar-foreground/70">
-                      <li><Link href="/privacy" className="hover:text-sidebar-primary transition-colors">Privacy Policy</Link></li>
-                      <li><Link href="/terms" className="hover:text-sidebar-primary transition-colors">Terms of Service</Link></li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="border-t border-sidebar-border mt-2 pt-2 text-center text-xs text-sidebar-foreground/60">
-                  <p>&copy; {new Date().getFullYear()} EduWrites. All rights reserved.</p>
-                </div>
-              </div>
-            </footer>
         </div>
       </div>
     </div>
