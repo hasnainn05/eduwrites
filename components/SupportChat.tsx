@@ -109,20 +109,20 @@ export default function SupportChat() {
       </div>
 
       {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-4">
+      <div className="flex-1 overflow-y-auto p-8 space-y-5">
         {messages.map((msg) => (
           <div
             key={msg.id}
             className={`flex ${msg.user === "user" ? "justify-end" : "justify-start"}`}
           >
             <div
-              className={`max-w-xs lg:max-w-md ${
+              className={`max-w-sm lg:max-w-lg ${
                 msg.user === "user"
                   ? "bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-2xl rounded-tr-none"
                   : "bg-white/10 text-foreground rounded-2xl rounded-tl-none border border-white/20"
-              } p-4`}
+              } p-5`}
             >
-              <p className="text-sm">{msg.message}</p>
+              <p className="text-base">{msg.message}</p>
 
               {msg.file && (
                 <div className="mt-3 flex items-center gap-2 bg-white/10 p-2 rounded-lg">
