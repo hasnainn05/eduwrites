@@ -777,6 +777,62 @@ const servicesData: Record<string, ServiceData> = {
     ctaText: "Begin Your Dissertation Journey",
     ctaSubtext:
       "Get expert support from experienced doctoral researchers and writers",
+    stats: {
+      projectsCompleted: 782,
+      customerReviews: 645,
+      averageRating: 4.9,
+      clientSatisfaction: "98%",
+    },
+    reviews: [
+      {
+        author: "Dr. Eleanor White",
+        avatar: "EW",
+        rating: 5,
+        text: "Exceptional dissertation support through entire doctoral journey. Expert guidance from proposal to final defense!",
+        course: "PhD Studies",
+        verified: true,
+      },
+      {
+        author: "Professor Marcus Grant",
+        avatar: "MG",
+        rating: 5,
+        text: "Impressive scholarly approach to dissertation assistance. Helped multiple students achieve successful defenses!",
+        course: "Doctoral Programs",
+        verified: true,
+      },
+      {
+        author: "Jennifer Phillips",
+        avatar: "JP",
+        rating: 5,
+        text: "Outstanding dissertation writing support! Comprehensive assistance with methodology and data analysis was invaluable!",
+        course: "Research Doctorate",
+        verified: true,
+      },
+      {
+        author: "Christopher Long",
+        avatar: "CL",
+        rating: 5,
+        text: "Professional dissertation assistance that truly understood doctoral-level work. Excellent support throughout!",
+        course: "Advanced Doctorate",
+        verified: true,
+      },
+      {
+        author: "Laura Newman",
+        avatar: "LN",
+        rating: 5,
+        text: "Expert dissertation researchers who provided comprehensive support. My defense was successful thanks to their help!",
+        course: "PhD Completion",
+        verified: true,
+      },
+      {
+        author: "Steven Carter",
+        avatar: "SC",
+        rating: 5,
+        text: "Exceptional doctoral support with expert guidance at every stage. Highly recommend for serious researchers!",
+        course: "Scholarly Writing",
+        verified: true,
+      },
+    ],
   },
 };
 
