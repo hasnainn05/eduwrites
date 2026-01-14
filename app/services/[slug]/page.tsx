@@ -1410,7 +1410,7 @@ export default function ServiceDetail() {
               onClick={() => setIsSupportModalOpen(true)}
               className="inline-flex items-center justify-center gap-2 glass border border-cyan-400/50 text-cyan-400 px-8 py-3 rounded-xl font-semibold hover:bg-cyan-400/10 transition-all"
             >
-              Chat with Support
+              Contact Support
             </button>
           </div>
         </div>
