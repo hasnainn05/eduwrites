@@ -440,16 +440,16 @@ export default function Profile() {
                 </table>
               </div>
             </div>
-          </div>
-        )}
+              </div>
+            )}
 
-        {activeTab === "chat" && (
-          <div className="max-h-[600px]">
-            <SupportChat />
-          </div>
-        )}
+            {activeTab === "chat" && (
+              <div className="max-h-[600px]">
+                <SupportChat />
+              </div>
+            )}
 
-        {activeTab === "settings" && (
+            {activeTab === "settings" && (
           <div className="space-y-4">
             <div className="glass p-6 rounded-2xl border border-white/10">
               <h3 className="text-lg font-bold text-foreground mb-4">
