@@ -62,32 +62,32 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
               {/* Collapsible Row */}
               <button
                 onClick={() => toggleExpand(order.id)}
-                className="w-full text-left hover:bg-white/5 transition-colors p-4 sm:p-4"
+                className="w-full text-left hover:bg-white/5 transition-colors p-4 border-b border-white/5 last:border-b-0"
               >
-                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-3 items-center text-xs sm:text-sm">
+                <div className="hidden lg:grid grid-cols-8 gap-4 items-center text-sm px-4">
                   <div className="font-mono font-semibold text-foreground truncate">
                     {order.id}
                   </div>
-                  <div className="text-foreground truncate hidden sm:block">
+                  <div className="text-foreground truncate">
                     {order.fullName}
                   </div>
-                  <div className="text-foreground/70 truncate hidden lg:block text-xs">
+                  <div className="text-foreground/70 truncate text-sm">
                     {order.service}
                   </div>
-                  <div className="text-foreground/70 hidden lg:block">
-                    {(order.wordCount / 1000).toFixed(1)}k
+                  <div className="text-foreground/70">
+                    {order.wordCount.toLocaleString()}
                   </div>
-                  <div className="text-foreground hidden lg:block">
+                  <div className="text-foreground">
                     ${order.price}
                   </div>
-                  <div className="text-foreground/70 hidden lg:block text-xs">
+                  <div className="text-foreground/70 text-sm">
                     {new Date(order.deadline).toLocaleDateString()}
                   </div>
-                  <div className="flex items-center justify-between lg:justify-start">
+                  <div className="flex items-center">
                     <span
-                      className={`px-2 py-1 rounded text-xs font-medium ${
+                      className={`px-3 py-1 rounded-full text-xs font-medium ${
                         order.status === "pending"
-                          ? "bg-orange-500/20 text-orange-400"
+                          ? "bg-green-500/20 text-green-400"
                           : order.status === "in_progress"
                             ? "bg-yellow-500/20 text-yellow-400"
                             : "bg-green-500/20 text-green-400"
@@ -102,8 +102,35 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                   </div>
                   <div className="flex justify-end">
                     <ChevronDown
-                      size={18}
+                      size={20}
                       className={`text-foreground/60 transition-transform ${isExpanded ? "rotate-180" : ""}`}
+                    />
+                  </div>
+                </div>
+
+                {/* Mobile View */}
+                <div className="lg:hidden grid grid-cols-2 sm:grid-cols-3 gap-3 items-center text-xs sm:text-sm">
+                  <div className="font-mono font-semibold text-foreground truncate">
+                    {order.id}
+                  </div>
+                  <div className="text-foreground truncate">
+                    {order.fullName}
+                  </div>
+                  <div className="flex items-center gap-2 justify-end">
+                    <span
+                      className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        order.status === "pending"
+                          ? "bg-green-500/20 text-green-400"
+                          : order.status === "in_progress"
+                            ? "bg-yellow-500/20 text-yellow-400"
+                            : "bg-green-500/20 text-green-400"
+                      }`}
+                    >
+                      {order.status === "pending" ? "Pending" : order.status === "in_progress" ? "In Progress" : "Completed"}
+                    </span>
+                    <ChevronDown
+                      size={18}
+                      className={`text-foreground/60 transition-transform flex-shrink-0 ${isExpanded ? "rotate-180" : ""}`}
                     />
                   </div>
                 </div>
