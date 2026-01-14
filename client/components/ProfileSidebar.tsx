@@ -1,13 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  User,
-  FileText,
-  MessageSquare,
-  Settings,
-  LogOut,
-} from "lucide-react";
+import { User, FileText, MessageSquare, Settings, LogOut } from "lucide-react";
 
 interface ProfileSidebarProps {
   activeTab: "overview" | "orders" | "chat" | "settings";
@@ -61,7 +55,9 @@ export function ProfileSidebar({
             <button
               key={item.id}
               onClick={() =>
-                onTabChange(item.id as "overview" | "orders" | "chat" | "settings")
+                onTabChange(
+                  item.id as "overview" | "orders" | "chat" | "settings",
+                )
               }
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-sm ${
                 isActive

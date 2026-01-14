@@ -20,7 +20,8 @@ export default function SupportChat() {
     {
       id: 1,
       user: "admin",
-      message: "Hello! Welcome to EduWrites support. How can we assist you today?",
+      message:
+        "Hello! Welcome to EduWrites support. How can we assist you today?",
       timestamp: "10:00 AM",
     },
   ]);
@@ -59,11 +60,13 @@ export default function SupportChat() {
         hour: "2-digit",
         minute: "2-digit",
       }),
-      file: selectedFile ? {
-        name: selectedFile.name,
-        size: `${(selectedFile.size / 1024).toFixed(2)} KB`,
-        type: selectedFile.type,
-      } : undefined,
+      file: selectedFile
+        ? {
+            name: selectedFile.name,
+            size: `${(selectedFile.size / 1024).toFixed(2)} KB`,
+            type: selectedFile.type,
+          }
+        : undefined,
     };
 
     setMessages([...messages, newMessage]);

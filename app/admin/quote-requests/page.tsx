@@ -206,10 +206,16 @@ export default function AdminQuoteRequests() {
                     </h2>
                     <div className="space-y-1 mt-2">
                       <p className="text-sm text-foreground/70">
-                        Email: <span className="text-foreground">{currentRequest.senderEmail}</span>
+                        Email:{" "}
+                        <span className="text-foreground">
+                          {currentRequest.senderEmail}
+                        </span>
                       </p>
                       <p className="text-sm text-foreground/70">
-                        WhatsApp: <span className="text-foreground">{currentRequest.whatsapp}</span>
+                        WhatsApp:{" "}
+                        <span className="text-foreground">
+                          {currentRequest.whatsapp}
+                        </span>
                       </p>
                     </div>
                   </div>

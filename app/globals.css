@@ -120,7 +120,9 @@
 
   .shadow-3d {
     @apply shadow-2xl;
-    box-shadow: 0 20px 40px rgba(260, 100, 60, 0.2), 0 0 40px rgba(180, 100, 50, 0.1);
+    box-shadow:
+      0 20px 40px rgba(260, 100, 60, 0.2),
+      0 0 40px rgba(180, 100, 50, 0.1);
   }
 
   .shadow-glow {
@@ -142,7 +144,8 @@
 
 /* Animations */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -151,7 +154,8 @@
 }
 
 @keyframes glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(260, 100, 60, 0.3);
   }
   50% {
@@ -160,7 +164,8 @@
 }
 
 @keyframes blob {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   33% {
@@ -172,7 +177,8 @@
 }
 
 @keyframes cardFloat {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) rotateX(0deg) rotateY(0deg);
   }
   25% {
@@ -187,7 +193,8 @@
 }
 
 @keyframes pulse-bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -196,7 +203,8 @@
 }
 
 @keyframes bounce-animation {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -342,7 +350,7 @@
   .heading-3d {
     perspective: 1000px;
     transform-style: preserve-3d;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .heading-3d:hover {
@@ -355,12 +363,13 @@
   .heading-3d-light {
     perspective: 1000px;
     transform-style: preserve-3d;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .heading-3d-light:hover {
     transform: rotateX(3deg) rotateY(-5deg) rotateZ(1deg) translateZ(15px);
-    filter: drop-shadow(-3px -3px 8px rgba(0, 100, 120, 0.4)) drop-shadow(3px 3px 8px rgba(168, 85, 247, 0.2));
+    filter: drop-shadow(-3px -3px 8px rgba(0, 100, 120, 0.4))
+      drop-shadow(3px 3px 8px rgba(168, 85, 247, 0.2));
   }
 
   /* Service Card 3D Hover Effects - TiltCard handles the tilt */
@@ -378,7 +387,7 @@
   }
 
   .service-card-3d::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(
