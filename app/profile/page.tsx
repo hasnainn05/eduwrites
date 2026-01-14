@@ -113,6 +113,37 @@ export default function Profile() {
     window.location.href = "/";
   };
 
+  const handleSendMessage = () => {
+    if (chatInput.trim()) {
+      const newMessage = {
+        id: chatMessages.length + 1,
+        user: "customer",
+        message: chatInput,
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+      };
+      setChatMessages([...chatMessages, newMessage]);
+      setChatInput("");
+
+      // Simulate support response
+      setTimeout(() => {
+        const supportResponse = {
+          id: chatMessages.length + 2,
+          user: "support",
+          message:
+            "Thank you for your message. Our team will get back to you shortly!",
+          timestamp: new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
+        };
+        setChatMessages((prev) => [...prev, supportResponse]);
+      }, 1000);
+    }
+  };
+
   // If user selected admin mode, redirect to admin dashboard
   if (userMode === "admin") {
     return (
