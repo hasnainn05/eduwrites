@@ -730,6 +730,12 @@ export default function Profile() {
             </div>
           </div>
         )}
+
+        {/* Support Modal */}
+        <SupportModal
+          isOpen={isSupportModalOpen}
+          onClose={() => setIsSupportModalOpen(false)}
+        />
       </div>
     </div>
   );
