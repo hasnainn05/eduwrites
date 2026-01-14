@@ -21,6 +21,8 @@ import {
 } from "lucide-react";
 import { Canvas3D } from "../client/components/Canvas3D";
 import { TiltCard } from "../client/components/TiltCard";
+import { useState } from "react";
+import SupportModal from "@/components/SupportModal";
 
 export default function Home() {
   const services = [
