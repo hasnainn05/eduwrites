@@ -294,11 +294,10 @@ export default function Profile() {
               </div>
             );
           })}
-        </div>
+            </div>
 
-
-        {/* Tab Content */}
-        {activeTab === "overview" && (
+            {/* Tab Content */}
+            {activeTab === "overview" && (
           <div className="space-y-6">
             {/* Account Info */}
             <div className="glass p-6 rounded-2xl border border-white/10">
