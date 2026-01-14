@@ -259,9 +259,6 @@ export default function Profile() {
                           {user.fullName}
                         </h2>
                         <p className="text-foreground/60 text-sm mb-2">{user.email}</p>
-                        <p className="text-foreground/50 text-xs">
-                          Member since {user.joinDate}
-                        </p>
                       </div>
                     </div>
                     <button
@@ -302,28 +299,43 @@ export default function Profile() {
 
                   {/* Two Column Layout */}
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    {/* Account Information */}
+                    {/* Recent Activity */}
                     <div className="lg:col-span-2 p-6 border border-white/10 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02]">
                       <h3 className="text-lg font-bold text-foreground mb-6">
-                        Account Information
+                        Recent Activity
                       </h3>
                       <div className="space-y-4">
-                        <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                          <div className="flex items-center gap-3">
-                            <Mail size={16} className="text-foreground/60" />
-                            <div>
-                              <p className="text-xs text-foreground/60 font-medium">
-                                Email Address
+                        {orders.map((order, index) => (
+                          <div key={index} className="flex items-start gap-4 pb-4 border-b border-white/10 last:border-b-0 last:pb-0">
+                            <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/30 to-cyan-500/30 flex items-center justify-center">
+                              <FileText size={18} className="text-cyan-400" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <p className="text-sm font-semibold text-foreground">
+                                {order.service}
                               </p>
-                              <p className="text-sm font-medium text-foreground">
-                                {user.email}
+                              <p className="text-xs text-foreground/60 mt-1">
+                                {order.date}
                               </p>
+                              <div className="flex items-center gap-2 mt-2">
+                                <span
+                                  className={`px-2 py-1 rounded-full text-xs font-semibold ${
+                                    order.status === "Completed"
+                                      ? "bg-green-500/20 text-green-300"
+                                      : order.status === "In Progress"
+                                        ? "bg-blue-500/20 text-blue-300"
+                                        : "bg-yellow-500/20 text-yellow-300"
+                                  }`}
+                                >
+                                  {order.status}
+                                </span>
+                                <span className="text-xs font-semibold text-foreground">
+                                  {order.amount}
+                                </span>
+                              </div>
                             </div>
                           </div>
-                          <button className="text-cyan-400 hover:text-cyan-300 text-xs font-semibold">
-                            Change
-                          </button>
-                        </div>
+                        ))}
                       </div>
                     </div>
 
