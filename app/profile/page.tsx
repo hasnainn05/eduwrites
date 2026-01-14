@@ -20,6 +20,7 @@ import {
   ShieldAlert,
   MessageSquare,
 } from "lucide-react";
+import SupportModal from "@/components/SupportModal";
 
 export default function Profile() {
   const [userMode, setUserMode] = useState<"user" | "admin">("user");
