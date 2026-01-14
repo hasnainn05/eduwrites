@@ -17,6 +17,7 @@ export default function AdminQuoteRequests() {
       id: 1,
       senderName: "Emma Wilson",
       senderEmail: "emma@example.com",
+      whatsapp: "+1-555-0101",
       subject: "Essay Writing Quote - History Assignment",
       message:
         "I need help writing a 5000-word essay on World War II. Can you provide a quote?",
@@ -28,6 +29,7 @@ export default function AdminQuoteRequests() {
       id: 2,
       senderName: "David Brown",
       senderEmail: "david@example.com",
+      whatsapp: "+1-555-0102",
       subject: "Thesis Writing Inquiry",
       message:
         "Looking for thesis writing assistance. Need pricing for a 80-page MBA thesis on organizational change.",
@@ -39,6 +41,7 @@ export default function AdminQuoteRequests() {
       id: 3,
       senderName: "Lisa Garcia",
       senderEmail: "lisa@example.com",
+      whatsapp: "+1-555-0103",
       subject: "Research Paper - Science Topic",
       message:
         "I need a research paper on climate science. Can you provide information about your services and pricing?",
@@ -50,6 +53,7 @@ export default function AdminQuoteRequests() {
       id: 4,
       senderName: "James Taylor",
       senderEmail: "james@example.com",
+      whatsapp: "+1-555-0104",
       subject: "Academic Assistance - Multiple Papers",
       message:
         "We are looking for ongoing academic writing support. Can we discuss pricing for bulk orders?",
