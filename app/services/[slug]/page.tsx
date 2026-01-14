@@ -1592,6 +1592,12 @@ export default function ServiceDetail() {
           </div>
         </div>
       )}
+
+      {/* Support Modal */}
+      <SupportModal
+        isOpen={isSupportModalOpen}
+        onClose={() => setIsSupportModalOpen(false)}
+      />
     </div>
   );
 }
