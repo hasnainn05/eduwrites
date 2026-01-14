@@ -142,7 +142,7 @@ export default function SupportChat() {
                 </div>
               )}
 
-              <p className="text-xs opacity-70 mt-2">{msg.timestamp}</p>
+              <p className="text-sm opacity-70 mt-2">{msg.timestamp}</p>
             </div>
           </div>
         ))}
