@@ -193,7 +193,7 @@ export default function SupportChat() {
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-foreground/70 hover:text-foreground transition-all text-sm font-medium"
+              className="flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-foreground/70 hover:text-foreground transition-all text-base font-medium"
             >
               <Upload size={16} />
               <span className="hidden sm:inline">Attach File</span>
