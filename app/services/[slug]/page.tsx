@@ -1293,56 +1293,7 @@ export default function ServiceDetail() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                author: "Sarah Mitchell",
-                avatar: "SM",
-                rating: 5,
-                text: "Exceptional service! The essay was well-researched, original, and delivered on time. Highly recommend to any student needing quality academic work.",
-                course: "English Literature",
-                verified: true,
-              },
-              {
-                author: "Ahmed Hassan",
-                avatar: "AH",
-                rating: 5,
-                text: "Outstanding research paper! The writer understood my topic perfectly and provided thorough citations. This exceeded my expectations.",
-                course: "Business Management",
-                verified: true,
-              },
-              {
-                author: "Emma Rodriguez",
-                avatar: "ER",
-                rating: 5,
-                text: "Professional, reliable, and excellent quality. The customer service was incredibly responsive to my questions. Will definitely use again!",
-                course: "Psychology",
-                verified: true,
-              },
-              {
-                author: "James Chen",
-                avatar: "JC",
-                rating: 4,
-                text: "Great work on my thesis proposal. The structure was clear and well-organized. Minor revisions were made quickly without extra cost.",
-                course: "Computer Science",
-                verified: true,
-              },
-              {
-                author: "Lisa Anderson",
-                avatar: "LA",
-                rating: 5,
-                text: "My assignment was complex, but the writer broke it down perfectly. The quality of analysis was truly impressive and helped me learn.",
-                course: "History",
-                verified: true,
-              },
-              {
-                author: "David Kumar",
-                avatar: "DK",
-                rating: 5,
-                text: "Fast turnaround without compromising quality. The writer delivered exactly what I needed. Great value for the price!",
-                course: "Economics",
-                verified: true,
-              },
-            ].map((review, index) => (
+            {service.reviews.map((review, index) => (
               <div
                 key={index}
                 className="glass p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col animate-float"
