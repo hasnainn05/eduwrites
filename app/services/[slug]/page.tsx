@@ -1027,19 +1027,19 @@ export default function ServiceDetail() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="glass p-8 rounded-xl text-center">
-              <div className="text-4xl font-bold text-cyan-400 mb-2">392</div>
+              <div className="text-4xl font-bold text-cyan-400 mb-2">{service.stats.projectsCompleted}</div>
               <p className="text-foreground/70">Projects Completed</p>
             </div>
             <div className="glass p-8 rounded-xl text-center">
-              <div className="text-4xl font-bold text-cyan-400 mb-2">292</div>
+              <div className="text-4xl font-bold text-cyan-400 mb-2">{service.stats.customerReviews}</div>
               <p className="text-foreground/70">Customer Reviews</p>
             </div>
             <div className="glass p-8 rounded-xl text-center">
-              <div className="text-4xl font-bold text-yellow-400 mb-2">4.9</div>
+              <div className="text-4xl font-bold text-yellow-400 mb-2">{service.stats.averageRating}</div>
               <p className="text-foreground/70">Average Rating</p>
             </div>
             <div className="glass p-8 rounded-xl text-center">
-              <div className="text-4xl font-bold text-green-400 mb-2">98%</div>
+              <div className="text-4xl font-bold text-green-400 mb-2">{service.stats.clientSatisfaction}</div>
               <p className="text-foreground/70">Client Satisfaction</p>
             </div>
           </div>
