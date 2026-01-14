@@ -234,8 +234,12 @@ export default function Profile() {
             </div>
           )}
 
-          <div className={`flex-1 ${activeTab === "chat" ? "overflow-hidden" : "overflow-y-auto"}`}>
-            <div className={`w-full ${activeTab === "chat" ? "h-full" : "px-8 py-8"} flex flex-col`}>
+          <div
+            className={`flex-1 ${activeTab === "chat" ? "overflow-hidden" : "overflow-y-auto"}`}
+          >
+            <div
+              className={`w-full ${activeTab === "chat" ? "h-full" : "px-8 py-8"} flex flex-col`}
+            >
               {activeTab === "overview" && (
                 <div className="flex-1 flex flex-col overflow-y-auto">
                   <div className="space-y-8">
