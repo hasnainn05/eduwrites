@@ -30,7 +30,7 @@ export function ProfileSidebar({
   ];
 
   return (
-    <div className="w-64 bg-gradient-to-b from-slate-900/50 to-slate-900/30 border-r border-white/10 flex flex-col min-h-screen sticky top-0">
+    <div className="fixed left-0 top-0 w-64 h-screen bg-gradient-to-b from-slate-900/50 to-slate-900/30 border-r border-white/10 flex flex-col z-40">
       {/* Profile Info */}
       <div className="p-6 border-b border-white/10">
         <div className="text-center">
