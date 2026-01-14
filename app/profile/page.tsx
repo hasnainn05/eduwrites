@@ -376,8 +376,8 @@ export default function Profile() {
         )}
 
             {activeTab === "orders" && (
-              <div>
-                <div className="glass rounded-xl border border-white/10 overflow-hidden">
+              <div className="flex-1 flex flex-col">
+                <div className="glass rounded-xl border border-white/10 overflow-hidden flex-1 flex flex-col">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
