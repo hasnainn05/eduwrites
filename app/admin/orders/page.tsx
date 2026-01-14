@@ -30,119 +30,22 @@ export default function AdminOrders() {
     "pending" | "in_progress" | "completed"
   >("pending");
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
+  const [allOrders, setAllOrders] = useState<Order[]>([]);
 
-  const sampleOrders: Order[] = [
-    {
-      id: "ORD-001",
-      fullName: "Alex Johnson",
-      email: "alex.johnson@example.com",
-      service: "Essay Writing",
-      deadline: "2024-02-15",
-      wordCount: 3000,
-      academicLevel: "Undergraduate",
-      subject: "Literature",
-      paperType: "Research Paper",
-      status: "pending",
-      submittedDate: "2024-02-01",
-      description:
-        "Need a comprehensive essay on Shakespeare's impact on modern literature. Should include historical context and modern interpretations.",
-      attachments: ["requirements.pdf"],
-      price: 299,
-    },
-    {
-      id: "ORD-002",
-      fullName: "Sarah Chen",
-      email: "sarah.chen@example.com",
-      service: "Thesis Writing",
-      deadline: "2024-03-20",
-      wordCount: 10000,
-      academicLevel: "Master's",
-      subject: "Computer Science",
-      paperType: "Thesis",
-      status: "pending",
-      submittedDate: "2024-02-03",
-      description:
-        "Machine Learning application in healthcare systems. Need comprehensive research and original insights.",
-      attachments: ["outline.docx", "references.xlsx"],
-      price: 899,
-    },
-    {
-      id: "ORD-003",
-      fullName: "Michael Rodriguez",
-      email: "m.rodriguez@example.com",
-      service: "Proofreading & Editing",
-      deadline: "2024-02-10",
-      wordCount: 5000,
-      academicLevel: "PhD",
-      subject: "Physics",
-      paperType: "Journal Article",
-      status: "pending",
-      submittedDate: "2024-01-28",
-      description:
-        "Proofread and edit research paper before submission to peer-reviewed journal.",
-      attachments: ["manuscript.pdf"],
-      price: 199,
-    },
-    {
-      id: "ORD-004",
-      fullName: "Emily Thompson",
-      email: "emily.t@example.com",
-      service: "Assignment Help",
-      deadline: "2024-02-08",
-      wordCount: 2500,
-      academicLevel: "High School",
-      subject: "History",
-      paperType: "Assignment",
-      status: "pending",
-      submittedDate: "2024-02-01",
-      description:
-        "Help with history assignment on World War II. Multiple sources required.",
-      attachments: [],
-      price: 149,
-    },
-    {
-      id: "ORD-005",
-      fullName: "David Park",
-      email: "david.park@example.com",
-      service: "Research Paper Writing",
-      deadline: "2024-02-05",
-      wordCount: 7500,
-      academicLevel: "Undergraduate",
-      subject: "Environmental Science",
-      paperType: "Research Paper",
-      status: "completed",
-      submittedDate: "2024-01-20",
-      description: "Completed research paper on climate change impacts.",
-      attachments: ["completed_paper.pdf"],
-      price: 499,
-    },
-    {
-      id: "ORD-006",
-      fullName: "Jessica Lee",
-      email: "jessica.lee@example.com",
-      service: "Dissertation Writing",
-      deadline: "2024-01-25",
-      wordCount: 15000,
-      academicLevel: "PhD",
-      subject: "Psychology",
-      paperType: "Dissertation",
-      status: "completed",
-      submittedDate: "2024-01-10",
-      description: "Completed PhD dissertation on behavioral psychology.",
-      attachments: ["dissertation_final.pdf"],
-      price: 1299,
-    },
-  ];
+  useEffect(() => {
+    const orders = getOrders();
+    setAllOrders(orders);
+  }, []);
 
-  const filteredOrders = sampleOrders.filter(
+  const filteredOrders = allOrders.filter(
     (order) => order.status === activeStatus,
   );
 
   const stats = {
-    pending: sampleOrders.filter((o) => o.status === "pending").length,
-    in_progress: sampleOrders.filter((o) => o.status === "in_progress").length,
-    completed: sampleOrders.filter((o) => o.status === "completed").length,
-    total: sampleOrders.length,
+    pending: allOrders.filter((o) => o.status === "pending").length,
+    in_progress: allOrders.filter((o) => o.status === "in_progress").length,
+    completed: allOrders.filter((o) => o.status === "completed").length,
+    total: allOrders.length,
   };
 
   return (
