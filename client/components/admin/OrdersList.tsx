@@ -6,15 +6,14 @@ import { Eye, Calendar, FileText } from "lucide-react";
 interface OrdersListProps {
   orders: Order[];
   onSelectOrder: (order: Order) => void;
-  status: "new" | "pending" | "completed";
 }
 
-export function OrdersList({ orders, onSelectOrder, status }: OrdersListProps) {
+export function OrdersList({ orders, onSelectOrder }: OrdersListProps) {
   const getStatusColor = (statusType: string) => {
     switch (statusType) {
-      case "new":
-        return "bg-orange-500/20 text-orange-400 border-orange-500/30";
       case "pending":
+        return "bg-orange-500/20 text-orange-400 border-orange-500/30";
+      case "in_progress":
         return "bg-yellow-500/20 text-yellow-400 border-yellow-500/30";
       case "completed":
         return "bg-green-500/20 text-green-400 border-green-500/30";
@@ -40,7 +39,7 @@ export function OrdersList({ orders, onSelectOrder, status }: OrdersListProps) {
       <div className="p-8 sm:p-12 text-center">
         <FileText className="w-10 sm:w-12 h-10 sm:h-12 text-foreground/30 mx-auto mb-4" />
         <p className="text-foreground/60 text-sm sm:text-base">
-          No {status} orders at the moment.
+          No orders at the moment.
         </p>
       </div>
     );
@@ -53,7 +52,8 @@ export function OrdersList({ orders, onSelectOrder, status }: OrdersListProps) {
         {orders.map((order) => (
           <div
             key={order.id}
-            className="glass p-4 rounded-xl border border-white/10 hover:border-white/20 transition-all"
+            className="glass p-4 rounded-xl border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 transition-all cursor-pointer"
+            onClick={() => onSelectOrder(order)}
           >
             <div className="space-y-3">
               <div className="flex items-start justify-between gap-2">
@@ -144,7 +144,7 @@ export function OrdersList({ orders, onSelectOrder, status }: OrdersListProps) {
             {orders.map((order) => (
               <tr
                 key={order.id}
-                className="hover:bg-white/5 transition-colors group text-sm"
+                className="hover:bg-cyan-500/10 transition-colors group text-sm cursor-pointer border-b border-white/5 hover:border-cyan-400/30"
               >
                 <td className="px-4 lg:px-6 py-4 text-foreground font-mono text-xs lg:text-sm font-semibold">
                   {order.id}
