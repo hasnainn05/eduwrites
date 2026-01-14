@@ -176,7 +176,7 @@ export default function SupportChat() {
         )}
 
         {/* Message Input */}
-        <form onSubmit={handleSendMessage} className="flex gap-2">
+        <form onSubmit={handleSendMessage} className="relative">
           <input
             ref={fileInputRef}
             type="file"
@@ -195,15 +195,15 @@ export default function SupportChat() {
               }
             }}
             placeholder="Type your message here..."
-            className="flex-1 bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-none"
+            className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 pr-20 text-sm text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-none"
             rows={2}
           />
 
-          <div className="flex flex-col gap-2 justify-end flex-shrink-0">
+          <div className="absolute right-2 bottom-2 flex items-center gap-1">
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="p-2.5 text-foreground/60 hover:text-foreground transition-colors hover:bg-white/10 rounded-lg"
+              className="p-1.5 text-foreground/60 hover:text-foreground transition-colors"
               title="Attach file"
             >
               <Upload size={18} />
@@ -211,7 +211,7 @@ export default function SupportChat() {
             <button
               type="submit"
               disabled={!input.trim() && !selectedFile}
-              className="p-2.5 text-white bg-gradient-to-r from-purple-500 to-cyan-500 rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="p-1.5 text-white bg-gradient-to-r from-purple-500 to-cyan-500 rounded hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               title="Send message (Enter)"
             >
               <Send size={18} />
