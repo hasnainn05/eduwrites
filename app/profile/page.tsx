@@ -408,13 +408,13 @@ export default function Profile() {
                         key={index}
                         className="border-b border-white/10 hover:bg-white/5 transition-colors"
                       >
-                        <td className="p-4 text-foreground font-semibold">
+                        <td className="p-5 text-foreground font-semibold text-base">
                           {order.id}
                         </td>
-                        <td className="p-4 text-foreground hidden sm:table-cell">
+                        <td className="p-5 text-foreground hidden sm:table-cell text-base">
                           {order.service}
                         </td>
-                        <td className="p-4 text-foreground/70 hidden sm:table-cell text-xs">
+                        <td className="p-5 text-foreground/70 hidden sm:table-cell text-sm">
                           {order.date}
                         </td>
                         <td className="p-4">
