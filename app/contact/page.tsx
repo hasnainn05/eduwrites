@@ -138,107 +138,25 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
+      {/* Contact Form Section - Now using Support Modal */}
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          {submitted ? (
-            <div className="glass p-12 rounded-2xl text-center">
-              <div className="text-6xl mb-6">✓</div>
-              <h2 className="text-3xl font-bold text-foreground mb-4 font-poppins">
-                Message Sent Successfully!
-              </h2>
-              <p className="text-foreground/80 mb-6">
-                Thank you for reaching out. We'll get back to you as soon as
-                possible.
-              </p>
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center gap-2 gradient-primary text-white px-8 py-3 rounded-xl font-semibold hover:shadow-glow transition-all"
-              >
-                Back to Home
-              </Link>
-            </div>
-          ) : (
-            <div className="glass p-8 sm:p-12 rounded-2xl">
-              <h2 className="text-3xl font-bold text-foreground mb-2 font-poppins">
-                Send us a Message
-              </h2>
-              <p className="text-foreground/70 mb-8">
-                Fill out the form below and we'll respond to you within 24
-                hours.
-              </p>
+          <div className="glass p-8 sm:p-12 rounded-2xl">
+            <h2 className="text-3xl font-bold text-foreground mb-2 font-poppins">
+              Send us a Message
+            </h2>
+            <p className="text-foreground/70 mb-8">
+              Fill out the form below and we'll respond to you within 24
+              hours.
+            </p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-foreground/90 mb-2">
-                      Your Name *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      placeholder="John Doe"
-                      className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground/90 mb-2">
-                      Your Email *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="john@example.com"
-                      className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground/90 mb-2">
-                    Subject *
-                  </label>
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    placeholder="How can we help?"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground/90 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    placeholder="Tell us about your inquiry..."
-                    rows={5}
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full gradient-primary text-white py-4 rounded-xl font-bold hover:shadow-glow transition-all transform hover:scale-105 duration-300 flex items-center justify-center gap-2 animate-pulse-bounce"
-                >
-                  Send Message <Send size={20} />
-                </button>
-              </form>
-            </div>
-          )}
+            <button
+              onClick={() => setIsSupportModalOpen(true)}
+              className="w-full gradient-primary text-white py-4 rounded-xl font-bold hover:shadow-glow transition-all transform hover:scale-105 duration-300 flex items-center justify-center gap-2 animate-pulse-bounce"
+            >
+              Open Support Form <ArrowRight size={20} />
+            </button>
+          </div>
         </div>
       </section>
 
