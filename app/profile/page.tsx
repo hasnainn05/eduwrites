@@ -90,25 +90,25 @@ export default function Profile() {
   const stats = [
     {
       label: "Total Orders",
-      value: "3",
+      value: "0",
       icon: FileText,
       color: "from-blue-500 to-cyan-500",
     },
     {
       label: "Completed",
-      value: "1",
+      value: "0",
       icon: CheckCircle,
       color: "from-green-500 to-emerald-500",
     },
     {
       label: "Total Spent",
-      value: "$3,347",
+      value: "$0.00",
       icon: DollarSign,
       color: "from-purple-500 to-pink-500",
     },
     {
       label: "Rating",
-      value: "4.8",
+      value: "0.00",
       icon: Star,
       color: "from-yellow-500 to-orange-500",
     },
