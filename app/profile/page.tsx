@@ -236,7 +236,7 @@ export default function Profile() {
           </div>
 
           <div className="flex-1 overflow-y-auto">
-            <div className="w-full px-6 py-4 flex flex-col">
+            <div className="w-full h-full px-8 py-6 flex flex-col">
 
             {activeTab === "overview" && (
               <div className="flex-1 flex flex-col overflow-y-auto">
