@@ -19,8 +19,11 @@ import {
   Star,
   ShieldAlert,
   MessageSquare,
+  Menu,
+  X,
 } from "lucide-react";
 import SupportModal from "@/components/SupportModal";
+import SupportChat from "@/components/SupportChat";
 
 export default function Profile() {
   const [userMode, setUserMode] = useState<"user" | "admin">("user");
@@ -28,6 +31,7 @@ export default function Profile() {
     "overview" | "orders" | "chat" | "settings"
   >("overview");
   const [isEditing, setIsEditing] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [chatMessages, setChatMessages] = useState<
     { id: number; user: string; message: string; timestamp: string }[]
   >([
