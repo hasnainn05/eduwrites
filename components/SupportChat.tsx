@@ -112,7 +112,7 @@ export default function SupportChat() {
       </div>
 
       {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-4">
+      <div className="flex-1 overflow-y-auto p-4 space-y-2">
         {messages.map((msg) => (
           <div
             key={msg.id}
@@ -153,7 +153,7 @@ export default function SupportChat() {
       </div>
 
       {/* Input Area */}
-      <div className="border-t border-white/10 p-6">
+      <div className="border-t border-white/10 p-4">
         {/* File Preview */}
         {selectedFile && (
           <div className="mb-3 flex items-center gap-2 bg-white/5 p-3 rounded border border-white/10">
@@ -176,13 +176,13 @@ export default function SupportChat() {
         )}
 
         {/* Message Input */}
-        <form onSubmit={handleSendMessage} className="space-y-3">
+        <form onSubmit={handleSendMessage} className="space-y-2">
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your message here..."
             className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-none"
-            rows={4}
+            rows={2}
           />
 
           <div className="flex items-center gap-2">
