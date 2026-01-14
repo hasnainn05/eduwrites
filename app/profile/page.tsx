@@ -453,8 +453,12 @@ export default function Profile() {
             )}
 
             {activeTab === "chat" && (
-              <div className="glass rounded-xl border border-white/10 overflow-hidden flex-1 flex flex-col">
-                <SupportChat />
+              <div className="flex justify-center items-start w-full h-full">
+                <div className="w-full max-w-2xl mx-auto px-4 py-6">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden flex flex-col">
+                    <SupportChat />
+                  </div>
+                </div>
               </div>
             )}
 
