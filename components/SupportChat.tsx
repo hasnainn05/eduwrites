@@ -102,9 +102,9 @@ export default function SupportChat() {
   };
 
   return (
-    <div className="flex flex-col flex-1 w-full h-full bg-gradient-to-b from-slate-900/50 to-slate-800/50 rounded-xl border border-white/10">
+    <div className="flex flex-col w-full h-full bg-gradient-to-b from-slate-900/50 to-slate-800/50 rounded-none border-none">
       {/* Header */}
-      <div className="p-4 border-b border-white/10">
+      <div className="p-4 border-b border-white/10 flex-shrink-0">
         <h2 className="text-sm font-bold text-foreground">Support Chat</h2>
         <p className="text-foreground/60 text-xs mt-1">
           Get help from our support team
@@ -112,7 +112,7 @@ export default function SupportChat() {
       </div>
 
       {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-2">
+      <div className="flex-1 overflow-y-auto p-4 space-y-2 min-h-0">
         {messages.map((msg) => (
           <div
             key={msg.id}
