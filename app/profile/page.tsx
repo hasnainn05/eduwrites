@@ -455,7 +455,7 @@ export default function Profile() {
             )}
 
             {activeTab === "settings" && (
-              <div className="space-y-4">
+              <div className="space-y-4 flex-1 overflow-y-auto">
                 <div className="glass p-6 rounded-2xl border border-white/10">
               <h3 className="text-lg font-bold text-foreground mb-4">
                 Privacy & Security
