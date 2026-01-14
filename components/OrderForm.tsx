@@ -94,7 +94,7 @@ export default function OrderForm({
       deadline: formData.deadline,
       wordCount: parseInt(formData.wordCount) || 0,
       academicLevel: formData.academicLevel,
-      subject: formData.assignmentDetails.split("\n")[0].substring(0, 50) || "General",
+      subject: formData.subject,
       paperType: paperTypeMap[formData.serviceType] || "Assignment",
       status: "pending",
       submittedDate: new Date().toISOString().split("T")[0],
