@@ -336,25 +336,6 @@ export default function Profile() {
                     {user.email}
                   </span>
                 </div>
-                <div className="flex justify-between items-center pb-3 border-b border-white/10">
-                  <div className="flex items-center gap-2 text-foreground/70 text-sm">
-                    <MessageCircle size={16} />
-                    WhatsApp Number
-                  </div>
-                  <span className="text-foreground text-sm font-medium flex items-center gap-1">
-                    <MessageCircle size={14} />
-                    {user.phone}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center pb-3 border-b border-white/10">
-                  <div className="flex items-center gap-2 text-foreground/70 text-sm">
-                    <MapPin size={16} />
-                    Location
-                  </div>
-                  <span className="text-foreground text-sm font-medium">
-                    {user.city}, {user.country}
-                  </span>
-                </div>
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2 text-foreground/70 text-sm">
                     <Clock size={16} />

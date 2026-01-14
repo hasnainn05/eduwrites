@@ -15,8 +15,8 @@ export default function PrivacyPolicy() {
               1. Introduction
             </h2>
             <p className="text-foreground/80 mb-4">
-              EduWrites ("we," "us," "our," or "Company") is committed to protecting your privacy. 
-              This Privacy Policy explains how we collect, use, disclose, and otherwise process your 
+              EduWrites is committed to protecting your privacy.
+              This Privacy Policy explains how we collect, use, disclose, and otherwise process your
               personal information in connection with our website and services.
             </p>
           </section>

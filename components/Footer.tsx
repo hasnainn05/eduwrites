@@ -154,10 +154,6 @@ export default function Footer() {
                   <span>+1 365 8291551</span>
                 </a>
               </div>
-              <div className="flex items-start gap-2">
-                <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span>123 Business Ave, Suite 100</span>
-              </div>
             </div>
           </div>
         </div>
