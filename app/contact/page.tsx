@@ -344,12 +344,6 @@ export default function Contact() {
           </Link>
         </div>
       </section>
-
-      {/* Support Modal */}
-      <SupportModal
-        isOpen={isSupportModalOpen}
-        onClose={() => setIsSupportModalOpen(false)}
-      />
     </div>
   );
 }
