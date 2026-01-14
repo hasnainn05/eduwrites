@@ -99,34 +99,34 @@ export default function SupportChat() {
   };
 
   return (
-    <div className="flex flex-col flex-1 w-full bg-gradient-to-b from-slate-900/50 to-slate-800/50 rounded-2xl border border-white/10">
+    <div className="flex flex-col flex-1 w-full bg-gradient-to-b from-slate-900/50 to-slate-800/50 rounded-xl border border-white/10">
       {/* Header */}
-      <div className="p-8 border-b border-white/10">
-        <h2 className="text-2xl font-bold text-foreground">Support Chat</h2>
-        <p className="text-foreground/60 text-base mt-2">
+      <div className="p-4 border-b border-white/10">
+        <h2 className="text-sm font-bold text-foreground">Support Chat</h2>
+        <p className="text-foreground/60 text-xs mt-1">
           Get help from our support team
         </p>
       </div>
 
       {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-8 space-y-5">
+      <div className="flex-1 overflow-y-auto p-4 space-y-3">
         {messages.map((msg) => (
           <div
             key={msg.id}
             className={`flex ${msg.user === "user" ? "justify-end" : "justify-start"}`}
           >
             <div
-              className={`max-w-sm lg:max-w-lg ${
+              className={`max-w-xs lg:max-w-sm ${
                 msg.user === "user"
-                  ? "bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-2xl rounded-tr-none"
-                  : "bg-white/10 text-foreground rounded-2xl rounded-tl-none border border-white/20"
-              } p-5`}
+                  ? "bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg rounded-tr-none"
+                  : "bg-white/10 text-foreground rounded-lg rounded-tl-none border border-white/20"
+              } p-3`}
             >
-              <p className="text-base">{msg.message}</p>
+              <p className="text-xs">{msg.message}</p>
 
               {msg.file && (
-                <div className="mt-3 flex items-center gap-2 bg-white/10 p-2 rounded-lg">
-                  <File size={16} className="flex-shrink-0" />
+                <div className="mt-2 flex items-center gap-2 bg-white/10 p-2 rounded">
+                  <File size={12} className="flex-shrink-0" />
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-medium truncate">
                       {msg.file.name}
@@ -142,7 +142,7 @@ export default function SupportChat() {
                 </div>
               )}
 
-              <p className="text-sm opacity-70 mt-2">{msg.timestamp}</p>
+              <p className="text-xs opacity-70 mt-1">{msg.timestamp}</p>
             </div>
           </div>
         ))}
@@ -150,16 +150,16 @@ export default function SupportChat() {
       </div>
 
       {/* Input Area */}
-      <div className="border-t border-white/10 p-8">
+      <div className="border-t border-white/10 p-4">
         {/* File Preview */}
         {selectedFile && (
-          <div className="mb-5 flex items-center gap-3 bg-white/5 p-4 rounded-lg border border-white/10">
-            <File size={24} className="text-blue-400 flex-shrink-0" />
+          <div className="mb-3 flex items-center gap-2 bg-white/5 p-3 rounded border border-white/10">
+            <File size={16} className="text-blue-400 flex-shrink-0" />
             <div className="flex-1 min-w-0">
-              <p className="text-base font-medium text-foreground truncate">
+              <p className="text-xs font-medium text-foreground truncate">
                 {fileName}
               </p>
-              <p className="text-sm text-foreground/60">
+              <p className="text-xs text-foreground/60">
                 {(selectedFile.size / 1024).toFixed(2)} KB
               </p>
             </div>
@@ -167,19 +167,19 @@ export default function SupportChat() {
               onClick={removeFile}
               className="p-1 hover:bg-white/10 rounded transition-colors text-foreground/60 hover:text-foreground flex-shrink-0"
             >
-              <X size={16} />
+              <X size={14} />
             </button>
           </div>
         )}
 
         {/* Message Input */}
-        <form onSubmit={handleSendMessage} className="space-y-4">
+        <form onSubmit={handleSendMessage} className="space-y-3">
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Type your message here... (Press Ctrl+Enter to send)"
-            className="w-full bg-white/10 border border-white/20 rounded-lg px-5 py-4 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-none text-base"
-            rows={4}
+            placeholder="Type your message here..."
+            className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-xs text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-none"
+            rows={3}
           />
 
           <div className="flex items-center gap-2">
@@ -193,25 +193,25 @@ export default function SupportChat() {
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-foreground/70 hover:text-foreground transition-all text-base font-medium"
+              className="flex items-center gap-2 px-3 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-foreground/70 hover:text-foreground transition-all text-xs font-medium"
             >
-              <Upload size={16} />
-              <span className="hidden sm:inline">Attach File</span>
+              <Upload size={14} />
+              <span className="hidden sm:inline">Attach</span>
             </button>
 
             <button
               type="submit"
               disabled={!input.trim() && !selectedFile}
-              className="ml-auto flex items-center gap-2 px-7 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed font-medium text-base"
+              className="ml-auto flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed font-medium text-xs"
             >
-              <Send size={20} />
+              <Send size={14} />
               <span className="hidden sm:inline">Send</span>
             </button>
           </div>
         </form>
 
-        <p className="text-sm text-foreground/50 mt-3">
-          You can share documents, images, and other files with our support team
+        <p className="text-xs text-foreground/50 mt-2">
+          You can share documents and images with our support team
         </p>
       </div>
     </div>
