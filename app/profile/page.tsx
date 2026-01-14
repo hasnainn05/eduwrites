@@ -246,8 +246,8 @@ export default function Profile() {
               </p>
             </div>
 
-        {/* Profile Card */}
-        <div className="glass p-8 rounded-2xl border border-white/10 mb-8">
+            {/* Profile Card */}
+            <div className="glass p-8 rounded-2xl border border-white/10 mb-8">
           <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between">
             <div className="flex gap-6">
               <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center text-white text-3xl font-bold flex-shrink-0">
