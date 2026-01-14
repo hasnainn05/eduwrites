@@ -210,7 +210,7 @@ export default function AdminOrders() {
             </div>
             <div className="text-right text-xs sm:text-sm">
               <p className="text-foreground/60">
-                {new Date().toLocaleDateString()}
+                {new Date(Date.now()).toLocaleDateString(undefined, { month: "2-digit", day: "2-digit", year: "numeric" })}
               </p>
             </div>
           </div>
