@@ -206,7 +206,7 @@ export default function Profile() {
         />
 
         {/* Main Content */}
-        <div className="fixed left-64 right-0 top-16 bottom-0 flex flex-col overflow-hidden">
+        <div className="fixed left-80 right-0 top-16 bottom-0 flex flex-col overflow-hidden">
           {/* Mode Toggle - Fixed at Top Outside Scroll */}
           <div className="flex justify-center py-6 pt-8 bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm border-b border-white/10">
             <div className="inline-flex gap-2 p-1 glass rounded-lg border border-white/20">
