@@ -533,12 +533,12 @@ export default function Profile() {
                   </div>
                 </label>
               </div>
-            </div>
-          </div>
-        )}
+                </div>
+              </div>
+            )}
 
-        {/* Edit Profile Modal */}
-        {isEditing && (
+            {/* Edit Profile Modal */}
+            {isEditing && (
           <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
             <div className="glass rounded-2xl p-8 max-w-md w-full border border-white/20">
               <h2 className="text-2xl font-bold text-foreground mb-6 font-poppins">
