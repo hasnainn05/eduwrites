@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { ArrowRight, Upload, X } from "lucide-react";
+import { saveOrder, generateOrderId } from "@/lib/orderStorage";
+import type { Order } from "@/app/admin/orders/page";
 
 interface OrderFormProps {
   preSelectedService?: string;
