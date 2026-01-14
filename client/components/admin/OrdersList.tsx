@@ -108,118 +108,152 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                 {/* Expanded Details Row */}
                 {isExpanded && (
                   <tr className="border-b border-white/10 bg-white/5">
-                    <td colSpan={8} className="px-6 py-6">
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        {/* Left Column - Customer Details */}
-                        <div className="space-y-4">
+                    <td colSpan={8} className="px-6 py-8">
+                      <div className="space-y-6">
+                        {/* Header */}
+                        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                          <h3 className="text-lg font-semibold text-foreground">Order Details</h3>
+                          <span className="text-xs font-medium text-foreground/60">
+                            Order ID: {order.id}
+                          </span>
+                        </div>
+
+                        {/* Customer Information Section */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                           <div>
-                            <p className="text-foreground/60 text-xs font-semibold mb-1">
-                              Full Name:
+                            <p className="text-foreground/60 text-xs font-semibold uppercase tracking-wide mb-2">
+                              Full Name
                             </p>
                             <p className="text-foreground text-sm font-medium">
                               {order.fullName}
                             </p>
                           </div>
                           <div>
-                            <p className="text-foreground/60 text-xs font-semibold mb-1">
-                              Email Address:
+                            <p className="text-foreground/60 text-xs font-semibold uppercase tracking-wide mb-2">
+                              Email Address
                             </p>
-                            <p className="text-foreground text-sm">
+                            <p className="text-foreground text-sm break-all">
                               {order.email}
                             </p>
                           </div>
                           <div>
-                            <p className="text-foreground/60 text-xs font-semibold mb-1">
-                              WhatsApp Number (Optional):
+                            <p className="text-foreground/60 text-xs font-semibold uppercase tracking-wide mb-2">
+                              WhatsApp Number
                             </p>
                             <p className="text-foreground text-sm">
                               +1 (555) 000-0000
                             </p>
                           </div>
                           <div>
-                            <p className="text-foreground/60 text-xs font-semibold mb-1">
-                              Academic Level:
+                            <p className="text-foreground/60 text-xs font-semibold uppercase tracking-wide mb-2">
+                              Academic Level
                             </p>
                             <p className="text-foreground text-sm">
                               {order.academicLevel}
                             </p>
                           </div>
+                        </div>
+
+                        {/* Divider */}
+                        <div className="border-t border-white/10"></div>
+
+                        {/* Service Information Section */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                           <div>
-                            <p className="text-foreground/60 text-xs font-semibold mb-1">
-                              Service Type:
+                            <p className="text-foreground/60 text-xs font-semibold uppercase tracking-wide mb-2">
+                              Service Type
                             </p>
-                            <p className="text-foreground text-sm">
+                            <p className="text-foreground text-sm font-medium">
                               {order.service}
                             </p>
                           </div>
                           <div>
-                            <p className="text-foreground/60 text-xs font-semibold mb-1">
-                              Subject/Topic:
+                            <p className="text-foreground/60 text-xs font-semibold uppercase tracking-wide mb-2">
+                              Subject/Topic
                             </p>
                             <p className="text-foreground text-sm">
                               {order.subject}
                             </p>
                           </div>
+                          <div>
+                            <p className="text-foreground/60 text-xs font-semibold uppercase tracking-wide mb-2">
+                              Word Count
+                            </p>
+                            <p className="text-foreground text-sm font-medium">
+                              {order.wordCount.toLocaleString()} words
+                            </p>
+                          </div>
+                          <div>
+                            <p className="text-foreground/60 text-xs font-semibold uppercase tracking-wide mb-2">
+                              Budget
+                            </p>
+                            <p className="text-foreground text-sm font-medium text-cyan-400">
+                              ${order.price}
+                            </p>
+                          </div>
                         </div>
 
-                        {/* Right Column - Assignment Details & Buttons */}
-                        <div className="space-y-4 flex flex-col">
-                          <div className="flex-1">
-                            <p className="text-foreground/60 text-xs font-semibold mb-2">
-                              Assignment Details:
-                            </p>
-                            <p className="text-foreground/80 text-sm leading-relaxed bg-white/5 p-3 rounded-lg">
+                        {/* Divider */}
+                        <div className="border-t border-white/10"></div>
+
+                        {/* Assignment Details Section */}
+                        <div>
+                          <p className="text-foreground/60 text-xs font-semibold uppercase tracking-wide mb-3">
+                            Assignment Details
+                          </p>
+                          <div className="bg-white/5 border border-white/10 rounded-lg p-4 space-y-3">
+                            <p className="text-foreground/80 text-sm leading-relaxed">
                               {order.description}
                             </p>
                           </div>
-
-                          {/* Attachments */}
-                          {order.attachments && order.attachments.length > 0 && (
-                            <div>
-                              <p className="text-foreground/60 text-xs font-semibold mb-2">
-                                Attached Files:
-                              </p>
-                              <div className="space-y-2">
-                                {order.attachments.map((file, idx) => (
-                                  <div
-                                    key={idx}
-                                    className="flex items-center justify-between p-2 sm:p-3 bg-white/5 rounded-lg border border-white/10"
-                                  >
-                                    <span className="text-foreground text-sm truncate">
-                                      {file}
-                                    </span>
-                                    <a
-                                      href={`data:application/octet-stream;base64,${btoa('Sample file content')}`}
-                                      download={file}
-                                      className="text-cyan-400 hover:text-cyan-300 transition-colors p-1 flex-shrink-0"
-                                      title="Download file"
-                                    >
-                                      <Download size={16} />
-                                    </a>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-
-                          {/* Action Buttons - Only for Pending Orders */}
-                          {status === "pending" && (
-                            <div className="flex gap-3 justify-end pt-4">
-                              <button
-                                onClick={() => handleApprove(order.id)}
-                                className="px-6 py-2 rounded-lg bg-blue-600 text-white font-medium text-sm hover:bg-blue-700 transition-all"
-                              >
-                                Approve Order
-                              </button>
-                              <button
-                                onClick={() => handleReject(order.id)}
-                                className="px-6 py-2 rounded-lg border border-red-500/50 text-red-400 font-medium text-sm hover:bg-red-500/10 transition-all"
-                              >
-                                Reject Order
-                              </button>
-                            </div>
-                          )}
                         </div>
+
+                        {/* Attachments Section */}
+                        {order.attachments && order.attachments.length > 0 && (
+                          <div>
+                            <p className="text-foreground/60 text-xs font-semibold uppercase tracking-wide mb-3">
+                              Attached Files
+                            </p>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                              {order.attachments.map((file, idx) => (
+                                <div
+                                  key={idx}
+                                  className="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/10 hover:border-white/20 transition-all group"
+                                >
+                                  <span className="text-foreground text-sm truncate flex-1">
+                                    {file}
+                                  </span>
+                                  <a
+                                    href={`data:application/octet-stream;base64,${btoa('Sample file content')}`}
+                                    download={file}
+                                    className="text-cyan-400 hover:text-cyan-300 transition-colors p-1.5 flex-shrink-0 group-hover:bg-white/5 rounded"
+                                    title="Download file"
+                                  >
+                                    <Download size={16} />
+                                  </a>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Action Buttons - Only for Pending Orders */}
+                        {status === "pending" && (
+                          <div className="border-t border-white/10 pt-6 flex gap-3 justify-end">
+                            <button
+                              onClick={() => handleApprove(order.id)}
+                              className="px-6 py-2.5 rounded-lg bg-green-600 text-white font-medium text-sm hover:bg-green-700 transition-all shadow-lg hover:shadow-green-600/50"
+                            >
+                              ✓ Approve Order
+                            </button>
+                            <button
+                              onClick={() => handleReject(order.id)}
+                              className="px-6 py-2.5 rounded-lg border border-red-500/50 text-red-400 font-medium text-sm hover:bg-red-500/10 hover:border-red-500/80 transition-all"
+                            >
+                              ✕ Reject Order
+                            </button>
+                          </div>
+                        )}
                       </div>
                     </td>
                   </tr>
