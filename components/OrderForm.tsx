@@ -118,6 +118,7 @@ export default function OrderForm({
         deadline: "",
         budget: "",
         academicLevel: "undergraduate",
+        subject: "",
         assignmentDetails: "",
         attachments: null,
       });
