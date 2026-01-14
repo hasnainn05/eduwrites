@@ -220,7 +220,7 @@ export default function Home() {
               perfection.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
                 href="#services"
                 className="inline-flex items-center justify-center gap-2 gradient-primary text-white px-8 py-4 rounded-xl font-semibold hover:shadow-glow transition-all duration-300 transform hover:scale-105 animate-pulse-bounce"
@@ -228,11 +228,13 @@ export default function Home() {
                 Get Started <ArrowRight size={20} />
               </a>
               <a
-                href="/profile"
-                className="inline-flex items-center justify-center gap-2 glass text-foreground px-8 py-4 rounded-xl font-semibold hover:bg-white/20 hover:shadow-glow transition-all transform hover:scale-105 animate-pulse-bounce"
+                href="https://wa.me/13658291551"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center p-4 rounded-full glass border border-white/20 hover:border-green-400 hover:bg-green-400/10 hover:shadow-glow transition-all transform hover:scale-110 animate-pulse-bounce"
+                title="Chat on WhatsApp"
               >
-                <MessageCircle size={20} />
-                Support
+                <MessageCircle size={24} className="text-green-400" />
               </a>
             </div>
           </div>
