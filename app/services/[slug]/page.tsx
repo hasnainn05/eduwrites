@@ -11,6 +11,7 @@ import {
   BookOpen,
   Pencil,
   BookMarked,
+  MessageCircle,
   type LucideIcon,
 } from "lucide-react";
 import { TiltCard } from "@/client/components/TiltCard";
