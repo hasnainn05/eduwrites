@@ -845,49 +845,6 @@ export default function ServiceDetail() {
 
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
-  const [orderForm, setOrderForm] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    wordCount: "",
-    deadline: "",
-    budget: "",
-    academicLevel: "undergraduate",
-    assignmentDetails: "",
-    attachments: null as File | null,
-  });
-
-  const handleOrderChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
-  ) => {
-    const { name, value } = e.target;
-    if (name === "attachments") {
-      const file = (e.target as HTMLInputElement).files?.[0] || null;
-      setOrderForm((prev) => ({ ...prev, attachments: file }));
-    } else {
-      setOrderForm((prev) => ({ ...prev, [name]: value }));
-    }
-  };
-
-  const handleSubmitOrder = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Order submitted:", orderForm, "Plan:", selectedPlan);
-    alert("Order submitted successfully! We'll contact you shortly.");
-    setSelectedPlan(null);
-    setOrderForm({
-      fullName: "",
-      email: "",
-      phone: "",
-      wordCount: "",
-      deadline: "",
-      budget: "",
-      academicLevel: "undergraduate",
-      assignmentDetails: "",
-      attachments: null,
-    });
-  };
 
   if (!service) {
     return (
