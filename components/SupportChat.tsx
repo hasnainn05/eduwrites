@@ -199,7 +199,7 @@ export default function SupportChat() {
             rows={2}
           />
 
-          <div className="absolute right-2 bottom-2 flex items-center gap-1">
+          <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1">
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
