@@ -36,6 +36,20 @@ interface ServiceData {
   }[];
   ctaText: string;
   ctaSubtext: string;
+  stats: {
+    projectsCompleted: number;
+    customerReviews: number;
+    averageRating: number;
+    clientSatisfaction: string;
+  };
+  reviews: {
+    author: string;
+    avatar: string;
+    rating: number;
+    text: string;
+    course: string;
+    verified: boolean;
+  }[];
 }
 
 const servicesData: Record<string, ServiceData> = {
