@@ -662,7 +662,7 @@ export default function Profile() {
           </div>
 
           {/* Custom Footer - Fixed at bottom */}
-          <footer className="fixed bottom-0 left-0 right-0 ml-64 bg-sidebar-background border-t border-sidebar-border text-sidebar-foreground py-3 z-30">
+          <footer className="fixed bottom-0 left-64 right-0 bg-sidebar-background border-t border-sidebar-border text-sidebar-foreground py-4 z-30">
               <div className="w-full pl-6 pr-0">
                 <div className="grid grid-cols-3 gap-4">
                   <div>
