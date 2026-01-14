@@ -102,7 +102,7 @@ export default function SupportChat() {
   };
 
   return (
-    <div className="flex flex-col w-full h-full bg-gradient-to-b from-slate-900/50 to-slate-800/50 rounded-none border-none">
+    <div className="flex flex-col w-full h-full bg-gradient-to-b from-slate-900/50 to-slate-800/50 rounded-xl border border-white/10">
       {/* Header */}
       <div className="p-4 border-b border-white/10 flex-shrink-0">
         <h2 className="text-sm font-bold text-foreground">Support Chat</h2>
