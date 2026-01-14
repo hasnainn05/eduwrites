@@ -150,16 +150,16 @@ export default function SupportChat() {
       </div>
 
       {/* Input Area */}
-      <div className="border-t border-white/10 p-6">
+      <div className="border-t border-white/10 p-8">
         {/* File Preview */}
         {selectedFile && (
-          <div className="mb-4 flex items-center gap-3 bg-white/5 p-3 rounded-lg border border-white/10">
-            <File size={20} className="text-blue-400 flex-shrink-0" />
+          <div className="mb-5 flex items-center gap-3 bg-white/5 p-4 rounded-lg border border-white/10">
+            <File size={24} className="text-blue-400 flex-shrink-0" />
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-foreground truncate">
+              <p className="text-base font-medium text-foreground truncate">
                 {fileName}
               </p>
-              <p className="text-xs text-foreground/60">
+              <p className="text-sm text-foreground/60">
                 {(selectedFile.size / 1024).toFixed(2)} KB
               </p>
             </div>
