@@ -59,10 +59,11 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
             const isExpanded = expandedOrderId === order.id;
 
             return (
-              <div key={order.id}>
+              <>
                 {/* Main Row */}
                 <tr
-                  className={`border-b border-white/5 hover:bg-white/5 transition-colors ${
+                  key={order.id}
+                  className={`border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer ${
                     isExpanded ? "bg-white/5" : ""
                   }`}
                 >
@@ -186,7 +187,7 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                     </td>
                   </tr>
                 )}
-              </div>
+              </>
             );
           })}
         </tbody>
