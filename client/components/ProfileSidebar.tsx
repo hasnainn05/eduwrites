@@ -19,7 +19,7 @@ export function ProfileSidebar({
   const navItems = [
     { id: "overview", label: "Profile", icon: User },
     { id: "orders", label: "Orders", icon: FileText },
-    { id: "chat", label: "Support Chat", icon: MessageSquare },
+    { id: "chat", label: "Live Chat", icon: MessageSquare },
     { id: "settings", label: "Settings", icon: Settings },
   ];
 
