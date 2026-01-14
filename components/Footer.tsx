@@ -16,13 +16,15 @@ export default function Footer() {
 
   const services = [
     { label: "Essay Writing", path: "/services/essay" },
-    { label: "Thesis & Dissertation", path: "/services/thesis" },
-    { label: "Research Papers", path: "/services/research" },
+    { label: "Assignment Writing", path: "/services/assignment" },
+    { label: "Thesis Writing", path: "/services/thesis" },
+    { label: "Research Paper", path: "/services/research" },
+    { label: "Proofreading & Editing", path: "/services/proofreading" },
+    { label: "Dissertation Writing", path: "/services/dissertation" },
   ];
 
   const company = [
     { label: "About Us", path: "/about" },
-    { label: "Blog", path: "/blog" },
     { label: "Pricing", path: "/#pricing" },
   ];
 
