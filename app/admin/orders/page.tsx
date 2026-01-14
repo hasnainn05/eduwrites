@@ -222,9 +222,9 @@ export default function AdminOrders() {
 
         {/* Content */}
         <div className="p-4 sm:p-6 space-y-6 sm:space-y-8">
-          {/* Stats Overview */}
+          {/* Stats Overview - No Background, Bottom Line */}
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
-            <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
+            <div className="border-b-2 border-blue-400/40 pb-4 sm:pb-6 hover:border-blue-400/60 transition-all">
               <div className="flex items-start sm:items-center justify-between gap-2">
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs sm:text-sm font-medium">
@@ -234,10 +234,9 @@ export default function AdminOrders() {
                     {stats.total}
                   </h3>
                 </div>
-                <Package className="w-6 sm:w-8 h-6 sm:h-8 text-blue-400 opacity-50 flex-shrink-0" />
               </div>
             </div>
-            <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all hover:bg-white/10">
+            <div className="border-b-2 border-orange-400/40 pb-4 sm:pb-6 hover:border-orange-400/60 transition-all">
               <div className="flex items-start sm:items-center justify-between gap-2">
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs sm:text-sm font-medium">
@@ -247,10 +246,9 @@ export default function AdminOrders() {
                     {stats.pending}
                   </h3>
                 </div>
-                <Package className="w-6 sm:w-8 h-6 sm:h-8 text-orange-400 opacity-50 flex-shrink-0" />
               </div>
             </div>
-            <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all hover:bg-white/10">
+            <div className="border-b-2 border-yellow-400/40 pb-4 sm:pb-6 hover:border-yellow-400/60 transition-all">
               <div className="flex items-start sm:items-center justify-between gap-2">
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs sm:text-sm font-medium">
@@ -260,10 +258,9 @@ export default function AdminOrders() {
                     {stats.in_progress}
                   </h3>
                 </div>
-                <Package className="w-6 sm:w-8 h-6 sm:h-8 text-yellow-400 opacity-50 flex-shrink-0" />
               </div>
             </div>
-            <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
+            <div className="border-b-2 border-green-400/40 pb-4 sm:pb-6 hover:border-green-400/60 transition-all">
               <div className="flex items-start sm:items-center justify-between gap-2">
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs sm:text-sm font-medium">
@@ -273,7 +270,6 @@ export default function AdminOrders() {
                     {stats.completed}
                   </h3>
                 </div>
-                <Package className="w-6 sm:w-8 h-6 sm:h-8 text-green-400 opacity-50 flex-shrink-0" />
               </div>
             </div>
           </div>
