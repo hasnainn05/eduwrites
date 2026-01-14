@@ -1,198 +1,235 @@
 "use client";
 
+import { useState } from "react";
 import { Order } from "@/app/admin/orders/page";
-import { Eye, Calendar, FileText } from "lucide-react";
+import { ChevronDown, Download } from "lucide-react";
+import { updateOrderStatus } from "@/lib/orderStorage";
 
 interface OrdersListProps {
   orders: Order[];
-  onSelectOrder: (order: Order) => void;
+  status: "pending" | "in_progress" | "completed";
+  onStatusChange?: (orderId: string, status: "pending" | "in_progress" | "completed") => void;
 }
 
-export function OrdersList({ orders, onSelectOrder }: OrdersListProps) {
-  const getStatusColor = (statusType: string) => {
-    switch (statusType) {
-      case "pending":
-        return "bg-orange-500/20 text-orange-400 border-orange-500/30";
-      case "in_progress":
-        return "bg-yellow-500/20 text-yellow-400 border-yellow-500/30";
-      case "completed":
-        return "bg-green-500/20 text-green-400 border-green-500/30";
-      default:
-        return "bg-white/10 text-foreground/70 border-white/20";
-    }
+export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) {
+  const [expandedOrderId, setExpandedOrderId] = useState<string | null>(null);
+
+  const toggleExpand = (orderId: string) => {
+    setExpandedOrderId(expandedOrderId === orderId ? null : orderId);
   };
 
-  const getServiceColor = (service: string) => {
-    const colors: { [key: string]: string } = {
-      "Essay Writing": "from-blue-500 to-cyan-500",
-      "Research Paper Writing": "from-purple-500 to-pink-500",
-      "Thesis Writing": "from-indigo-500 to-blue-500",
-      "Dissertation Writing": "from-violet-500 to-purple-500",
-      "Assignment Help": "from-green-500 to-emerald-500",
-      "Proofreading & Editing": "from-amber-500 to-orange-500",
-    };
-    return colors[service] || "from-slate-500 to-slate-600";
+  const handleApprove = (orderId: string) => {
+    updateOrderStatus(orderId, "in_progress");
+    onStatusChange?.(orderId, "in_progress");
+    setExpandedOrderId(null);
+  };
+
+  const handleReject = (orderId: string) => {
+    setExpandedOrderId(null);
   };
 
   if (orders.length === 0) {
     return (
       <div className="p-8 sm:p-12 text-center">
-        <FileText className="w-10 sm:w-12 h-10 sm:h-12 text-foreground/30 mx-auto mb-4" />
         <p className="text-foreground/60 text-sm sm:text-base">
-          No orders at the moment.
+          No orders in this status.
         </p>
       </div>
     );
   }
 
   return (
-    <>
-      {/* Mobile: Card View */}
-      <div className="md:hidden space-y-3 p-4">
-        {orders.map((order) => (
-          <div
-            key={order.id}
-            className="glass p-4 rounded-xl border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 transition-all cursor-pointer"
-            onClick={() => onSelectOrder(order)}
-          >
-            <div className="space-y-3">
-              <div className="flex items-start justify-between gap-2">
-                <div className="flex-1 min-w-0">
-                  <p className="text-foreground font-mono text-xs font-semibold">
-                    {order.id}
-                  </p>
-                  <p className="text-foreground font-medium text-sm mt-1">
-                    {order.fullName}
-                  </p>
-                  <p className="text-foreground/50 text-xs truncate">
-                    {order.email}
-                  </p>
-                </div>
-                <button
-                  onClick={() => onSelectOrder(order)}
-                  className="px-2 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 transition-all text-cyan-400 hover:text-cyan-300 text-xs font-medium flex-shrink-0"
-                >
-                  View
-                </button>
-              </div>
+    <div className="p-4 sm:p-6 space-y-2">
+      {orders.map((order) => {
+        const isExpanded = expandedOrderId === order.id;
 
-              <div className="flex items-center gap-2 flex-wrap">
-                <span
-                  className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r ${getServiceColor(
-                    order.service,
-                  )} text-white`}
-                >
-                  {order.service}
-                </span>
-              </div>
-
-              <div className="grid grid-cols-3 gap-2 text-xs">
-                <div>
-                  <p className="text-foreground/60">Deadline</p>
-                  <p className="text-foreground font-medium">
-                    {new Date(order.deadline).toLocaleDateString(undefined, {
-                      month: "short",
-                      day: "numeric",
-                    })}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-foreground/60">Words</p>
-                  <p className="text-foreground font-medium">
-                    {(order.wordCount / 1000).toFixed(1)}k
-                  </p>
-                </div>
-                <div>
-                  <p className="text-foreground/60">Price</p>
-                  <p className="text-cyan-400 font-semibold">${order.price}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Desktop: Table View */}
-      <div className="hidden md:block overflow-x-auto">
-        <table className="w-full">
-          <thead>
-            <tr className="border-b border-white/10">
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
-                Order ID
-              </th>
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
-                Customer
-              </th>
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
-                Service
-              </th>
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
-                Deadline
-              </th>
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
-                Words
-              </th>
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
-                Price
-              </th>
-              <th className="text-left px-4 lg:px-6 py-4 text-foreground/70 font-semibold text-sm">
-                Action
-              </th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-white/10">
-            {orders.map((order) => (
-              <tr
-                key={order.id}
-                className="hover:bg-cyan-500/10 transition-colors group text-sm cursor-pointer border-b border-white/5 hover:border-cyan-400/30"
-              >
-                <td className="px-4 lg:px-6 py-4 text-foreground font-mono text-xs lg:text-sm font-semibold">
+        return (
+          <div key={order.id} className="border-b border-white/10 last:border-b-0">
+            {/* Collapsible Row */}
+            <button
+              onClick={() => toggleExpand(order.id)}
+              className="w-full text-left hover:bg-white/5 transition-colors p-4 sm:p-4"
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 sm:gap-3 items-center text-xs sm:text-sm">
+                <div className="font-mono font-semibold text-foreground truncate">
                   {order.id}
-                </td>
-                <td className="px-4 lg:px-6 py-4">
-                  <div>
-                    <p className="text-foreground font-medium text-sm">
-                      {order.fullName}
-                    </p>
-                    <p className="text-foreground/50 text-xs">{order.email}</p>
-                  </div>
-                </td>
-                <td className="px-4 lg:px-6 py-4">
-                  <span
-                    className={`inline-block px-2 lg:px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getServiceColor(
-                      order.service,
-                    )} text-white`}
-                  >
-                    {order.service}
-                  </span>
-                </td>
-                <td className="px-4 lg:px-6 py-4 text-foreground/70 text-xs lg:text-sm flex items-center gap-2">
-                  <Calendar
-                    size={14}
-                    className="text-foreground/50 flex-shrink-0"
-                  />
-                  {new Date(order.deadline).toLocaleDateString()}
-                </td>
-                <td className="px-4 lg:px-6 py-4 text-foreground font-medium text-xs lg:text-sm">
+                </div>
+                <div className="text-foreground truncate hidden sm:block">
+                  {order.fullName}
+                </div>
+                <div className="text-foreground/70 truncate hidden lg:block text-xs">
+                  {order.service}
+                </div>
+                <div className="text-foreground/70 hidden lg:block">
                   {(order.wordCount / 1000).toFixed(1)}k
-                </td>
-                <td className="px-4 lg:px-6 py-4 text-foreground font-semibold text-xs lg:text-sm">
+                </div>
+                <div className="text-foreground hidden lg:block">
                   ${order.price}
-                </td>
-                <td className="px-4 lg:px-6 py-4">
-                  <button
-                    onClick={() => onSelectOrder(order)}
-                    className="inline-flex items-center gap-1 lg:gap-2 px-2 lg:px-3 py-1.5 lg:py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/10 transition-all text-cyan-400 hover:text-cyan-300 text-xs lg:text-sm font-medium group-hover:border-cyan-500/30 whitespace-nowrap"
+                </div>
+                <div className="text-foreground/70 hidden lg:block text-xs">
+                  {new Date(order.deadline).toLocaleDateString()}
+                </div>
+                <div className="flex items-center justify-between lg:justify-start">
+                  <span
+                    className={`px-2 py-1 rounded text-xs font-medium ${
+                      order.status === "pending"
+                        ? "bg-orange-500/20 text-orange-400"
+                        : order.status === "in_progress"
+                          ? "bg-yellow-500/20 text-yellow-400"
+                          : "bg-green-500/20 text-green-400"
+                    }`}
                   >
-                    <Eye size={14} />
-                    <span className="hidden sm:inline">View</span>
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </>
+                    {order.status === "pending"
+                      ? "Pending"
+                      : order.status === "in_progress"
+                        ? "In Progress"
+                        : "Completed"}
+                  </span>
+                </div>
+                <div className="flex justify-end">
+                  <ChevronDown
+                    size={18}
+                    className={`text-foreground/60 transition-transform ${isExpanded ? "rotate-180" : ""}`}
+                  />
+                </div>
+              </div>
+            </button>
+
+            {/* Expanded Details */}
+            {isExpanded && (
+              <div className="bg-white/5 border-t border-white/10 p-4 sm:p-6 space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {/* Left Column - Contact Info */}
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-foreground/70 text-xs font-medium mb-1">
+                        Full Name
+                      </p>
+                      <p className="text-foreground font-medium">
+                        {order.fullName}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-foreground/70 text-xs font-medium mb-1">
+                        Email
+                      </p>
+                      <p className="text-foreground text-sm truncate">
+                        {order.email}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-foreground/70 text-xs font-medium mb-1">
+                        WhatsApp (if provided)
+                      </p>
+                      <p className="text-foreground text-sm">
+                        {order.service === "Essay Writing" ? "+1 (XXX) XXX-XXXX" : "Not provided"}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right Column - Order Details */}
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-foreground/70 text-xs font-medium mb-1">
+                        Academic Level
+                      </p>
+                      <p className="text-foreground font-medium">
+                        {order.academicLevel}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-foreground/70 text-xs font-medium mb-1">
+                        Service Type
+                      </p>
+                      <p className="text-foreground font-medium">
+                        {order.service}
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4">
+                      <div>
+                        <p className="text-foreground/70 text-xs font-medium mb-1">
+                          Word Count
+                        </p>
+                        <p className="text-foreground font-medium">
+                          {(order.wordCount / 1000).toFixed(1)}k
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-foreground/70 text-xs font-medium mb-1">
+                          Budget
+                        </p>
+                        <p className="text-foreground font-medium">
+                          ${order.price}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-foreground/70 text-xs font-medium mb-1">
+                          Deadline
+                        </p>
+                        <p className="text-foreground text-sm">
+                          {new Date(order.deadline).toLocaleDateString()}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Assignment Details */}
+                <div className="border-t border-white/10 pt-4">
+                  <p className="text-foreground/70 text-xs font-medium mb-2">
+                    Assignment Details
+                  </p>
+                  <p className="text-foreground/80 text-sm leading-relaxed bg-white/5 p-3 rounded-lg">
+                    {order.description}
+                  </p>
+                </div>
+
+                {/* Attachments */}
+                {order.attachments && order.attachments.length > 0 && (
+                  <div className="border-t border-white/10 pt-4">
+                    <p className="text-foreground/70 text-xs font-medium mb-2">
+                      Attached Files
+                    </p>
+                    <div className="space-y-2">
+                      {order.attachments.map((file, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center justify-between p-2 sm:p-3 bg-white/5 rounded-lg border border-white/10"
+                        >
+                          <span className="text-foreground text-sm truncate">
+                            {file}
+                          </span>
+                          <button className="text-cyan-400 hover:text-cyan-300 transition-colors p-1">
+                            <Download size={16} />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Action Buttons - Only for Pending Orders */}
+                {status === "pending" && (
+                  <div className="border-t border-white/10 pt-4 flex flex-col sm:flex-row gap-3">
+                    <button
+                      onClick={() => handleApprove(order.id)}
+                      className="flex-1 px-4 py-2.5 rounded-lg bg-green-500/20 border border-green-500/30 text-green-400 hover:bg-green-500/30 hover:border-green-500/50 transition-all font-medium text-sm"
+                    >
+                      Approve
+                    </button>
+                    <button
+                      onClick={() => handleReject(order.id)}
+                      className="flex-1 px-4 py-2.5 rounded-lg bg-red-500/20 border border-red-500/30 text-red-400 hover:bg-red-500/30 hover:border-red-500/50 transition-all font-medium text-sm"
+                    >
+                      Reject
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
   );
 }
