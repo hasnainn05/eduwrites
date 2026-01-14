@@ -206,9 +206,9 @@ export default function Profile() {
         />
 
         {/* Main Content */}
-        <div className="ml-64 flex flex-col h-screen">
+        <div className="fixed left-0 right-0 top-0 bottom-0 ml-64 flex flex-col h-screen">
           <div className="flex-1 overflow-hidden pb-24">
-            <div className="w-full h-full px-6 py-8 overflow-y-auto flex flex-col">
+            <div className="w-full h-full pl-6 pr-0 py-8 overflow-y-auto flex flex-col">
             {activeTab === "overview" && (
               <>
                 {/* Mode Toggle */}
