@@ -111,86 +111,52 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
 
               {/* Expanded Details */}
               {isExpanded && (
-                <div className="bg-white/5 border-t border-white/10 p-4 sm:p-6 space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Left Column - Contact Info */}
-                    <div className="space-y-4">
-                      <div>
-                        <p className="text-foreground/70 text-xs font-medium mb-1">
-                          Full Name
-                        </p>
-                        <p className="text-foreground font-medium">
-                          {order.fullName}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-foreground/70 text-xs font-medium mb-1">
-                          Email
-                        </p>
-                        <p className="text-foreground text-sm truncate">
-                          {order.email}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-foreground/70 text-xs font-medium mb-1">
-                          WhatsApp (if provided)
-                        </p>
-                        <p className="text-foreground text-sm">
-                          Not provided
-                        </p>
-                      </div>
+                <div className="bg-white/5 border-t border-white/10 p-6 animate-in fade-in slide-in-from-top-2 duration-200">
+                  {/* Customer Info Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                    <div>
+                      <p className="text-foreground/60 text-xs font-semibold mb-2">
+                        Full Name:
+                      </p>
+                      <p className="text-foreground font-medium text-sm">
+                        {order.fullName}
+                      </p>
                     </div>
-
-                    {/* Right Column - Order Details */}
-                    <div className="space-y-4">
-                      <div>
-                        <p className="text-foreground/70 text-xs font-medium mb-1">
-                          Academic Level
-                        </p>
-                        <p className="text-foreground font-medium">
-                          {order.academicLevel}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-foreground/70 text-xs font-medium mb-1">
-                          Service Type
-                        </p>
-                        <p className="text-foreground font-medium">
-                          {order.service}
-                        </p>
-                      </div>
-                      <div className="grid grid-cols-3 gap-4">
-                        <div>
-                          <p className="text-foreground/70 text-xs font-medium mb-1">
-                            Word Count
-                          </p>
-                          <p className="text-foreground font-medium">
-                            {(order.wordCount / 1000).toFixed(1)}k
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-foreground/70 text-xs font-medium mb-1">
-                            Budget
-                          </p>
-                          <p className="text-foreground font-medium">
-                            ${order.price}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-foreground/70 text-xs font-medium mb-1">
-                            Deadline
-                          </p>
-                          <p className="text-foreground text-sm">
-                            {new Date(order.deadline).toLocaleDateString()}
-                          </p>
-                        </div>
-                      </div>
+                    <div>
+                      <p className="text-foreground/60 text-xs font-semibold mb-2">
+                        Email Address:
+                      </p>
+                      <p className="text-foreground text-sm">
+                        {order.email}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-foreground/60 text-xs font-semibold mb-2">
+                        WhatsApp Number (Optional):
+                      </p>
+                      <p className="text-foreground text-sm">
+                        +1 (555) 000-0000
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-foreground/60 text-xs font-semibold mb-2">
+                        Academic Level:
+                      </p>
+                      <p className="text-foreground text-sm">
+                        {order.academicLevel}
+                      </p>
                     </div>
                   </div>
 
                   {/* Assignment Details */}
-                  <div className="border-t border-white/10 pt-4">
-                    <p className="text-foreground/70 text-xs font-medium mb-2">
+                  <div className="mb-6">
+                    <p className="text-foreground/60 text-xs font-semibold mb-2">
+                      Service Type
+                    </p>
+                    <p className="text-foreground text-sm mb-4">
+                      {order.service}
+                    </p>
+                    <p className="text-foreground/60 text-xs font-semibold mb-2">
                       Assignment Details
                     </p>
                     <p className="text-foreground/80 text-sm leading-relaxed bg-white/5 p-3 rounded-lg">
@@ -200,20 +166,20 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
 
                   {/* Attachments */}
                   {order.attachments && order.attachments.length > 0 && (
-                    <div className="border-t border-white/10 pt-4">
-                      <p className="text-foreground/70 text-xs font-medium mb-2">
+                    <div className="mb-6">
+                      <p className="text-foreground/60 text-xs font-semibold mb-3">
                         Attached Files
                       </p>
                       <div className="space-y-2">
                         {order.attachments.map((file, idx) => (
                           <div
                             key={idx}
-                            className="flex items-center justify-between p-2 sm:p-3 bg-white/5 rounded-lg border border-white/10"
+                            className="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/10 text-sm"
                           >
-                            <span className="text-foreground text-sm truncate">
+                            <span className="text-foreground truncate">
                               {file}
                             </span>
-                            <button className="text-cyan-400 hover:text-cyan-300 transition-colors p-1">
+                            <button className="text-cyan-400 hover:text-cyan-300 transition-colors p-1 flex-shrink-0">
                               <Download size={16} />
                             </button>
                           </div>
@@ -224,18 +190,18 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
 
                   {/* Action Buttons - Only for Pending Orders */}
                   {status === "pending" && (
-                    <div className="border-t border-white/10 pt-4 flex flex-col sm:flex-row gap-3">
+                    <div className="flex gap-4 justify-center">
                       <button
                         onClick={() => handleApprove(order.id)}
-                        className="flex-1 px-4 py-2.5 rounded-lg bg-green-500/20 border border-green-500/30 text-green-400 hover:bg-green-500/30 hover:border-green-500/50 transition-all font-medium text-sm"
+                        className="px-8 py-2.5 rounded-lg bg-blue-600 text-white font-medium text-sm hover:bg-blue-700 transition-all"
                       >
-                        Approve
+                        Approve Order
                       </button>
                       <button
                         onClick={() => handleReject(order.id)}
-                        className="flex-1 px-4 py-2.5 rounded-lg bg-red-500/20 border border-red-500/30 text-red-400 hover:bg-red-500/30 hover:border-red-500/50 transition-all font-medium text-sm"
+                        className="px-8 py-2.5 rounded-lg border border-red-500/50 text-red-400 font-medium text-sm hover:bg-red-500/10 transition-all"
                       >
-                        Reject
+                        Reject Order
                       </button>
                     </div>
                   )}
