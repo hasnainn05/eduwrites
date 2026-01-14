@@ -430,11 +430,11 @@ export default function Profile() {
                             {order.status}
                           </span>
                         </td>
-                        <td className="p-4 text-foreground font-semibold text-sm">
+                        <td className="p-5 text-foreground font-semibold text-base">
                           {order.amount}
                         </td>
-                        <td className="p-4">
-                          <button className="text-cyan-400 hover:text-cyan-300 transition-colors text-xs flex items-center gap-1">
+                        <td className="p-5">
+                          <button className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm flex items-center gap-1">
                             <Eye size={14} />
                             <span className="hidden sm:inline">View</span>
                           </button>
