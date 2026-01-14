@@ -24,9 +24,7 @@ export function OrderStatusTabs({
       icon: Package,
       count: stats.pending,
       color: "text-orange-400",
-      bgColor: "bg-orange-500/10",
-      borderColor: "border-orange-500/30",
-      hoverColor: "hover:border-orange-500/50",
+      borderColor: "border-orange-400",
     },
     {
       id: "in_progress",
@@ -34,9 +32,7 @@ export function OrderStatusTabs({
       icon: Clock,
       count: stats.in_progress,
       color: "text-yellow-400",
-      bgColor: "bg-yellow-500/10",
-      borderColor: "border-yellow-500/30",
-      hoverColor: "hover:border-yellow-500/50",
+      borderColor: "border-yellow-400",
     },
     {
       id: "completed",
@@ -44,15 +40,13 @@ export function OrderStatusTabs({
       icon: CheckCircle,
       count: stats.completed,
       color: "text-green-400",
-      bgColor: "bg-green-500/10",
-      borderColor: "border-green-500/30",
-      hoverColor: "hover:border-green-500/50",
+      borderColor: "border-green-400",
     },
   ];
 
   return (
-    <div className="border-b border-white/10 p-3 sm:p-6">
-      <div className="flex flex-col xs:flex-row gap-2 sm:gap-3">
+    <div className="border-b border-white/10">
+      <div className="flex items-center">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeStatus === tab.id;
@@ -65,26 +59,22 @@ export function OrderStatusTabs({
                   tab.id as "pending" | "in_progress" | "completed",
                 )
               }
-              className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2.5 sm:py-3 rounded-lg border transition-all text-sm sm:text-base ${
+              className={`flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-4 sm:py-5 border-b-2 transition-all text-sm sm:text-base font-medium whitespace-nowrap ${
                 isActive
-                  ? `${tab.bgColor} ${tab.borderColor} border-opacity-100`
-                  : `border-white/10 hover:border-white/20 text-foreground/70 hover:text-foreground`
+                  ? `${tab.borderColor} ${tab.color}`
+                  : "border-b-transparent text-foreground/60 hover:text-foreground/80"
               }`}
             >
               <Icon
-                size={16}
+                size={18}
                 className={isActive ? tab.color : "text-foreground/50"}
               />
+              <span>{tab.label}</span>
               <span
-                className={`font-medium text-xs sm:text-sm ${isActive ? tab.color : ""}`}
-              >
-                {tab.label}
-              </span>
-              <span
-                className={`ml-auto px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-xs font-semibold whitespace-nowrap ${
+                className={`ml-1 px-2 py-0.5 rounded text-xs font-semibold ${
                   isActive
-                    ? `${tab.bgColor} ${tab.color}`
-                    : "bg-white/10 text-foreground/70"
+                    ? `${tab.color} bg-white/10`
+                    : "bg-white/5 text-foreground/50"
                 }`}
               >
                 {tab.count}
