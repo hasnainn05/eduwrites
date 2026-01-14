@@ -152,32 +152,35 @@ export default function AdminQuoteRequests() {
                 <button
                   key={req.id}
                   onClick={() => setSelectedRequest(req.id)}
-                  className={`w-full text-left p-4 rounded-lg transition-all ${
+                  className={`w-full text-left p-3 rounded-lg transition-all border ${
                     selectedRequest === req.id
-                      ? "bg-gradient-to-r from-indigo-600/30 to-cyan-500/30 border border-cyan-400/30"
-                      : "hover:bg-white/5 border border-transparent"
+                      ? "bg-gradient-to-r from-indigo-600/30 to-cyan-500/30 border-cyan-400/30"
+                      : "border-white/10 hover:border-cyan-400/50 hover:bg-white/5"
                   }`}
                 >
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="font-semibold text-foreground text-sm">
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <h3 className="font-semibold text-foreground text-sm truncate flex-1">
                       {req.senderName}
                     </h3>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 flex-shrink-0">
                       {req.replied && (
                         <CheckCircle2 size={14} className="text-green-400" />
                       )}
                       {req.unread && !req.replied && (
-                        <span className="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0"></span>
+                        <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
                       )}
                     </div>
                   </div>
                   <p className="text-xs text-foreground/60 truncate">
+                    {req.senderEmail}
+                  </p>
+                  <p className="text-xs text-foreground/60 truncate">
+                    {req.whatsapp}
+                  </p>
+                  <p className="text-xs text-foreground/70 font-medium mt-1 truncate">
                     {req.subject}
                   </p>
-                  <p className="text-xs text-foreground/50 mt-1 truncate">
-                    {req.message}
-                  </p>
-                  <p className="text-xs text-foreground/40 mt-2">
+                  <p className="text-xs text-foreground/40 mt-1">
                     {req.timestamp}
                   </p>
                   {!req.replied && (
