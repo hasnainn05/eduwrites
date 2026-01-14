@@ -17,6 +17,7 @@ import { TiltCard } from "@/client/components/TiltCard";
 import { Canvas3DWrapper } from "@/client/components/Canvas3DWrapper";
 import { useState } from "react";
 import SupportModal from "@/components/SupportModal";
+import OrderForm from "@/components/OrderForm";
 
 interface ServiceData {
   title: string;
