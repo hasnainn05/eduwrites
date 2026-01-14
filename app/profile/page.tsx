@@ -18,6 +18,7 @@ import {
   ArrowRight,
   Star,
   ShieldAlert,
+  MessageSquare,
 } from "lucide-react";
 
 export default function Profile() {
