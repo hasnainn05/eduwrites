@@ -207,7 +207,7 @@ export default function Profile() {
 
         {/* Main Content */}
         <div className="ml-64 flex flex-col h-screen">
-          <div className="flex-1 overflow-y-auto pb-96">
+          <div className="flex-1 overflow-y-auto pb-24">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {activeTab === "overview" && (
               <>
@@ -650,9 +650,9 @@ export default function Profile() {
           </div>
 
           {/* Custom Footer - Fixed at bottom */}
-          <footer className="fixed bottom-0 left-0 right-0 ml-64 bg-sidebar-background border-t border-sidebar-border text-sidebar-foreground pt-8 pb-8 z-30">
+          <footer className="fixed bottom-0 left-0 right-0 ml-64 bg-sidebar-background border-t border-sidebar-border text-sidebar-foreground py-3 z-30">
               <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-3 gap-4">
                   <div>
                     <h4 className="font-semibold mb-4 text-sidebar-foreground">Services</h4>
                     <ul className="space-y-2 text-sm text-sidebar-foreground/70">
