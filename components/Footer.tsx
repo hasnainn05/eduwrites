@@ -7,7 +7,6 @@ import {
   Linkedin,
   Instagram,
   Mail,
-  MapPin,
   MessageCircle,
 } from "lucide-react";
 
