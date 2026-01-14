@@ -189,62 +189,62 @@ export default function Profile() {
   }
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-b from-background via-background/95 to-background/80 py-8">
+    <div className="w-full min-h-screen bg-gradient-to-b from-background via-background/95 to-background/80">
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="blur-gradient absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-600/30 to-transparent animate-blob"></div>
         <div className="blur-gradient absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-500/30 to-transparent animate-blob animation-delay-2000"></div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Mode Toggle */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex gap-2 p-1 glass rounded-lg border border-white/20">
-            <button
-              onClick={() => setUserMode("user")}
-              className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
-                userMode === "user"
-                  ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
-                  : "text-foreground/70 hover:text-foreground"
-              }`}
-            >
-              <User size={16} className="inline mr-2" />
-              User
-            </button>
-            <button
-              onClick={() => setUserMode("admin")}
-              className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
-                (userMode as string) === "admin"
-                  ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
-                  : "text-foreground/70 hover:text-foreground"
-              }`}
-            >
-              <ShieldAlert size={16} className="inline mr-2" />
-              Admin
-            </button>
-          </div>
-        </div>
+      <div className="flex min-h-screen">
+        {/* Sidebar */}
+        <ProfileSidebar
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+          onLogout={handleLogout}
+          userName={user.fullName}
+        />
 
-        {/* Header */}
-        <div className="flex justify-between items-start mb-8">
-          <div>
-            <h1 className="text-4xl font-bold text-foreground font-poppins">
-              My Account
-            </h1>
-            <p className="text-foreground/70 mt-2">
-              Welcome back, {user.fullName}
-            </p>
-          </div>
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-2 text-foreground/70 hover:text-red-400 transition-all px-4 py-2 border border-white/20 rounded-xl hover:border-red-400/50 hover:bg-red-400/10"
-          >
-            <LogOut size={18} />
-            <span className="hidden sm:inline text-sm font-semibold">
-              Logout
-            </span>
-          </button>
-        </div>
+        {/* Main Content */}
+        <div className="flex-1 overflow-y-auto">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            {/* Mode Toggle */}
+            <div className="flex justify-center mb-8">
+              <div className="inline-flex gap-2 p-1 glass rounded-lg border border-white/20">
+                <button
+                  onClick={() => setUserMode("user")}
+                  className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
+                    userMode === "user"
+                      ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
+                      : "text-foreground/70 hover:text-foreground"
+                  }`}
+                >
+                  <User size={16} className="inline mr-2" />
+                  User
+                </button>
+                <button
+                  onClick={() => setUserMode("admin")}
+                  className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
+                    (userMode as string) === "admin"
+                      ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
+                      : "text-foreground/70 hover:text-foreground"
+                  }`}
+                >
+                  <ShieldAlert size={16} className="inline mr-2" />
+                  Admin
+                </button>
+              </div>
+            </div>
+
+            {/* Header */}
+            <div className="mb-8">
+              <h1 className="text-4xl font-bold text-foreground font-poppins">
+                My Account
+              </h1>
+              <p className="text-foreground/70 mt-2">
+                Welcome back, {user.fullName}
+              </p>
+            </div>
 
         {/* Profile Card */}
         <div className="glass p-8 rounded-2xl border border-white/10 mb-8">
@@ -663,11 +663,13 @@ export default function Profile() {
           </div>
         )}
 
-        {/* Support Modal */}
-        <SupportModal
-          isOpen={isSupportModalOpen}
-          onClose={() => setIsSupportModalOpen(false)}
-        />
+            {/* Support Modal */}
+            <SupportModal
+              isOpen={isSupportModalOpen}
+              onClose={() => setIsSupportModalOpen(false)}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
