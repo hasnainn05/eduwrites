@@ -26,6 +26,18 @@ export default function Profile() {
     "overview" | "orders" | "chat" | "settings"
   >("overview");
   const [isEditing, setIsEditing] = useState(false);
+  const [chatMessages, setChatMessages] = useState<
+    { id: number; user: string; message: string; timestamp: string }[]
+  >([
+    {
+      id: 1,
+      user: "support",
+      message:
+        "Hello! Welcome to EduWrites support. How can we assist you today?",
+      timestamp: "10:00 AM",
+    },
+  ]);
+  const [chatInput, setChatInput] = useState("");
 
   const [user, setUser] = useState({
     fullName: "John Doe",
