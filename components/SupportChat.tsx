@@ -189,6 +189,12 @@ export default function SupportChat() {
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSendMessage(e as unknown as React.FormEvent);
+                }
+              }}
               placeholder="Type your message here..."
               className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 pr-12 text-sm text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 resize-none"
               rows={2}
