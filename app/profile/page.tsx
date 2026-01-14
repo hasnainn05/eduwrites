@@ -669,8 +669,8 @@ export default function Profile() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-4 text-sidebar-foreground">Legal</h4>
-                    <ul className="space-y-2 text-sm text-sidebar-foreground/70">
+                    <h4 className="font-semibold mb-2 text-sidebar-foreground text-xs">Legal</h4>
+                    <ul className="space-y-1 text-xs text-sidebar-foreground/70">
                       <li><Link href="/privacy" className="hover:text-sidebar-primary transition-colors">Privacy Policy</Link></li>
                       <li><Link href="/terms" className="hover:text-sidebar-primary transition-colors">Terms of Service</Link></li>
                     </ul>
