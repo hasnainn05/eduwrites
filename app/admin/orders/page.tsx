@@ -27,7 +27,6 @@ export default function AdminOrders() {
   const [activeStatus, setActiveStatus] = useState<
     "pending" | "in_progress" | "completed"
   >("pending");
-  const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
   const [allOrders, setAllOrders] = useState<Order[]>([
     {
       id: "ORD-20250114-A1B2C",
