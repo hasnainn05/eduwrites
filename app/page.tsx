@@ -915,12 +915,6 @@ export default function Home() {
             >
               Order Now <ArrowRight size={20} />
             </Link>
-            <a
-              href="#"
-              className="inline-flex items-center justify-center gap-2 glass text-foreground px-10 py-4 rounded-xl font-semibold hover:bg-white/20 hover:shadow-glow transition-all transform hover:scale-105 animate-pulse-bounce"
-            >
-              Live Chat Support
-            </a>
           </div>
         </div>
       </section>
