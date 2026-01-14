@@ -206,8 +206,9 @@ export default function Profile() {
         />
 
         {/* Main Content */}
-        <div className="ml-64 flex-1 overflow-y-auto h-screen">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="ml-64 flex flex-col min-h-screen">
+          <div className="flex-1 overflow-y-auto">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {activeTab === "overview" && (
               <>
                 {/* Mode Toggle */}
@@ -645,9 +646,11 @@ export default function Profile() {
               isOpen={isSupportModalOpen}
               onClose={() => setIsSupportModalOpen(false)}
             />
+            </div>
+          </div>
 
-            {/* Custom Footer */}
-            <footer className="bg-sidebar-background border-t border-sidebar-border text-sidebar-foreground mt-12 pt-8 pb-8">
+          {/* Custom Footer */}
+          <footer className="bg-sidebar-background border-t border-sidebar-border text-sidebar-foreground pt-8 pb-8">
               <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div>
@@ -678,7 +681,6 @@ export default function Profile() {
                 </div>
               </div>
             </footer>
-          </div>
         </div>
       </div>
     </div>
