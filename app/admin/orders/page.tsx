@@ -18,7 +18,7 @@ export interface Order {
   academicLevel: string;
   subject: string;
   paperType: string;
-  status: "new" | "pending" | "completed";
+  status: "pending" | "in_progress" | "completed";
   submittedDate: string;
   description: string;
   attachments?: string[];
@@ -27,8 +27,8 @@ export interface Order {
 
 export default function AdminOrders() {
   const [activeStatus, setActiveStatus] = useState<
-    "new" | "pending" | "completed"
-  >("new");
+    "pending" | "in_progress" | "completed"
+  >("pending");
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
 
   const sampleOrders: Order[] = [
@@ -42,7 +42,7 @@ export default function AdminOrders() {
       academicLevel: "Undergraduate",
       subject: "Literature",
       paperType: "Research Paper",
-      status: "new",
+      status: "pending",
       submittedDate: "2024-02-01",
       description:
         "Need a comprehensive essay on Shakespeare's impact on modern literature. Should include historical context and modern interpretations.",
@@ -59,7 +59,7 @@ export default function AdminOrders() {
       academicLevel: "Master's",
       subject: "Computer Science",
       paperType: "Thesis",
-      status: "new",
+      status: "pending",
       submittedDate: "2024-02-03",
       description:
         "Machine Learning application in healthcare systems. Need comprehensive research and original insights.",
@@ -139,8 +139,8 @@ export default function AdminOrders() {
   );
 
   const stats = {
-    new: sampleOrders.filter((o) => o.status === "new").length,
     pending: sampleOrders.filter((o) => o.status === "pending").length,
+    in_progress: sampleOrders.filter((o) => o.status === "in_progress").length,
     completed: sampleOrders.filter((o) => o.status === "completed").length,
     total: sampleOrders.length,
   };
@@ -188,27 +188,27 @@ export default function AdminOrders() {
                 <Package className="w-6 sm:w-8 h-6 sm:h-8 text-blue-400 opacity-50 flex-shrink-0" />
               </div>
             </div>
-            <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
-              <div className="flex items-start sm:items-center justify-between gap-2">
-                <div className="flex-1 min-w-0">
-                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">
-                    New Orders
-                  </p>
-                  <h3 className="text-xl sm:text-3xl font-bold text-orange-400 mt-1 sm:mt-2">
-                    {stats.new}
-                  </h3>
-                </div>
-                <Package className="w-6 sm:w-8 h-6 sm:h-8 text-orange-400 opacity-50 flex-shrink-0" />
-              </div>
-            </div>
-            <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all">
+            <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all hover:bg-white/10">
               <div className="flex items-start sm:items-center justify-between gap-2">
                 <div className="flex-1 min-w-0">
                   <p className="text-foreground/70 text-xs sm:text-sm font-medium">
                     Pending Orders
                   </p>
-                  <h3 className="text-xl sm:text-3xl font-bold text-yellow-400 mt-1 sm:mt-2">
+                  <h3 className="text-xl sm:text-3xl font-bold text-orange-400 mt-1 sm:mt-2">
                     {stats.pending}
+                  </h3>
+                </div>
+                <Package className="w-6 sm:w-8 h-6 sm:h-8 text-orange-400 opacity-50 flex-shrink-0" />
+              </div>
+            </div>
+            <div className="glass p-3 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all hover:bg-white/10">
+              <div className="flex items-start sm:items-center justify-between gap-2">
+                <div className="flex-1 min-w-0">
+                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">
+                    In Progress
+                  </p>
+                  <h3 className="text-xl sm:text-3xl font-bold text-yellow-400 mt-1 sm:mt-2">
+                    {stats.in_progress}
                   </h3>
                 </div>
                 <Package className="w-6 sm:w-8 h-6 sm:h-8 text-yellow-400 opacity-50 flex-shrink-0" />
