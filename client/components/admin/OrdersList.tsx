@@ -152,6 +152,14 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                               {order.service}
                             </p>
                           </div>
+                          <div>
+                            <p className="text-foreground/60 text-xs font-semibold mb-1">
+                              Subject/Topic:
+                            </p>
+                            <p className="text-foreground text-sm">
+                              {order.subject}
+                            </p>
+                          </div>
                         </div>
 
                         {/* Right Column - Assignment Details & Buttons */}
@@ -164,6 +172,35 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                               {order.description}
                             </p>
                           </div>
+
+                          {/* Attachments */}
+                          {order.attachments && order.attachments.length > 0 && (
+                            <div>
+                              <p className="text-foreground/60 text-xs font-semibold mb-2">
+                                Attached Files:
+                              </p>
+                              <div className="space-y-2">
+                                {order.attachments.map((file, idx) => (
+                                  <div
+                                    key={idx}
+                                    className="flex items-center justify-between p-2 sm:p-3 bg-white/5 rounded-lg border border-white/10"
+                                  >
+                                    <span className="text-foreground text-sm truncate">
+                                      {file}
+                                    </span>
+                                    <a
+                                      href={`data:application/octet-stream;base64,${btoa('Sample file content')}`}
+                                      download={file}
+                                      className="text-cyan-400 hover:text-cyan-300 transition-colors p-1 flex-shrink-0"
+                                      title="Download file"
+                                    >
+                                      <Download size={16} />
+                                    </a>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
 
                           {/* Action Buttons - Only for Pending Orders */}
                           {status === "pending" && (
