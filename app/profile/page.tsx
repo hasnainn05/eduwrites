@@ -236,17 +236,19 @@ export default function Profile() {
               </div>
             </div>
 
-            {/* Header */}
-            <div className="mb-8">
-              <h1 className="text-4xl font-bold text-foreground font-poppins">
-                My Account
-              </h1>
-              <p className="text-foreground/70 mt-2">
-                Welcome back, {user.fullName}
-              </p>
-            </div>
+            {activeTab === "overview" && (
+              <>
+                {/* Header */}
+                <div className="mb-8">
+                  <h1 className="text-4xl font-bold text-foreground font-poppins">
+                    My Account
+                  </h1>
+                  <p className="text-foreground/70 mt-2">
+                    Welcome back, {user.fullName}
+                  </p>
+                </div>
 
-            {/* Profile Card */}
+                {/* Profile Card */}
             <div className="glass p-8 rounded-2xl border border-white/10 mb-8">
           <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between">
             <div className="flex gap-6">
@@ -271,10 +273,10 @@ export default function Profile() {
               Edit
             </button>
           </div>
-            </div>
+                </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                {/* Stats */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
@@ -293,8 +295,10 @@ export default function Profile() {
                 </p>
               </div>
             );
-          })}
-            </div>
+              })}
+                </div>
+              </>
+            )}
 
             {/* Tab Content */}
             {activeTab === "overview" && (
