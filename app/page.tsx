@@ -25,6 +25,8 @@ import { useState } from "react";
 import SupportModal from "@/components/SupportModal";
 
 export default function Home() {
+  const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
+
   const services = [
     {
       id: "essay",
