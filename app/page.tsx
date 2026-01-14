@@ -231,10 +231,11 @@ export default function Home() {
                 href="https://wa.me/13658291551"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center p-4 rounded-full glass border border-white/20 hover:border-green-400 hover:bg-green-400/10 hover:shadow-glow transition-all transform hover:scale-110 animate-pulse-bounce"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-glow transition-all duration-300 transform hover:scale-105 animate-pulse-bounce"
                 title="Chat on WhatsApp"
               >
-                <MessageCircle size={24} className="text-green-400" />
+                <MessageCircle size={20} />
+                WhatsApp
               </a>
             </div>
           </div>
