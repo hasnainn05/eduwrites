@@ -45,7 +45,7 @@ export default function Header() {
 
           {/* Right: Contact Info and Profile */}
           <div className="flex items-center gap-2 sm:gap-3 md:gap-6 flex-shrink-0">
-            <div className="hidden lg:flex items-center gap-6 text-xs">
+            <div className="hidden lg:flex flex-col gap-1 text-xs">
               <div className="flex items-center gap-2 text-foreground/80 hover:text-cyan-400 transition-colors">
                 <Mail size={14} />
                 <a
