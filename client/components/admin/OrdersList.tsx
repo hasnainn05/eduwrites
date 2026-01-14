@@ -41,11 +41,11 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
   return (
     <div className="p-4 sm:p-6">
       {/* Table Header */}
-      <div className="hidden lg:grid grid-cols-8 gap-2 sm:gap-3 items-center text-xs font-semibold text-foreground/70 pb-3 mb-3 border-b border-white/10">
+      <div className="hidden lg:grid grid-cols-8 gap-4 items-center text-xs font-semibold text-foreground/60 pb-4 mb-4 border-b border-white/10 px-4">
         <div>Order ID</div>
-        <div>Customer</div>
-        <div>Service</div>
-        <div>Words</div>
+        <div>Customer Name</div>
+        <div>Service Type</div>
+        <div>Word Count</div>
         <div>Budget</div>
         <div>Deadline</div>
         <div>Status</div>
