@@ -202,15 +202,15 @@ export default function SupportChat() {
             <button
               type="submit"
               disabled={!input.trim() && !selectedFile}
-              className="ml-auto flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed font-medium text-sm"
+              className="ml-auto flex items-center gap-2 px-7 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed font-medium text-base"
             >
-              <Send size={16} />
+              <Send size={20} />
               <span className="hidden sm:inline">Send</span>
             </button>
           </div>
         </form>
 
-        <p className="text-xs text-foreground/50 mt-2">
+        <p className="text-sm text-foreground/50 mt-3">
           You can share documents, images, and other files with our support team
         </p>
       </div>
