@@ -101,9 +101,9 @@ export default function SupportChat() {
   return (
     <div className="flex flex-col flex-1 bg-gradient-to-b from-slate-900/50 to-slate-800/50 rounded-2xl border border-white/10">
       {/* Header */}
-      <div className="p-6 border-b border-white/10">
-        <h2 className="text-xl font-bold text-foreground">Support Chat</h2>
-        <p className="text-foreground/60 text-sm mt-1">
+      <div className="p-8 border-b border-white/10">
+        <h2 className="text-2xl font-bold text-foreground">Support Chat</h2>
+        <p className="text-foreground/60 text-base mt-2">
           Get help from our support team
         </p>
       </div>
