@@ -210,10 +210,6 @@ export default function SupportChat() {
             <Send size={16} />
           </button>
         </form>
-
-        <p className="text-xs text-foreground/50 mt-2">
-          You can share documents and images with our support team
-        </p>
       </div>
     </div>
   );
