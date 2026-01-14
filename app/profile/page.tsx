@@ -463,9 +463,9 @@ export default function Profile() {
             )}
 
             {activeTab === "settings" && (
-              <div className="flex justify-center items-start w-full h-full">
-                <div className="w-full max-w-2xl mx-auto px-4 py-6">
-                  <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden flex flex-col p-4">
+              <div className="flex justify-center items-start w-full min-h-full">
+                <div className="w-full max-w-3xl mx-auto px-6 py-8">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden flex flex-col shadow-xl p-6">
                     <div className="space-y-3 overflow-y-auto flex-1">
                       <h3 className="text-sm font-bold text-foreground mb-3">
                         Privacy & Security
