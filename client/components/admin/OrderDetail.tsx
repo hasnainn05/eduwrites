@@ -286,10 +286,32 @@ export function OrderDetail({ order, onBack }: OrderDetailProps) {
 
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-4 border-t border-white/10">
-        <button className="flex items-center justify-center gap-2 flex-1 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-gradient-to-r from-green-600/20 to-emerald-500/20 border border-green-500/30 text-green-400 hover:border-green-500/50 transition-all font-medium text-sm sm:text-base">
-          <CheckCircle size={16} />
-          Mark as Complete
-        </button>
+        {order.status !== "completed" && (
+          <button
+            onClick={() => {
+              updateOrderStatus(order.id, "completed");
+              onStatusChange?.(order.id, "completed");
+              onBack();
+            }}
+            className="flex items-center justify-center gap-2 flex-1 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-gradient-to-r from-green-600/20 to-emerald-500/20 border border-green-500/30 text-green-400 hover:border-green-500/50 transition-all font-medium text-sm sm:text-base"
+          >
+            <CheckCircle size={16} />
+            Mark as Complete
+          </button>
+        )}
+        {order.status === "pending" && (
+          <button
+            onClick={() => {
+              updateOrderStatus(order.id, "in_progress");
+              onStatusChange?.(order.id, "in_progress");
+              onBack();
+            }}
+            className="flex items-center justify-center gap-2 flex-1 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-gradient-to-r from-yellow-600/20 to-amber-500/20 border border-yellow-500/30 text-yellow-400 hover:border-yellow-500/50 transition-all font-medium text-sm sm:text-base"
+          >
+            <Clock size={16} />
+            Move to In Progress
+          </button>
+        )}
         <button className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-white/10 text-foreground/70 hover:text-foreground hover:bg-white/5 transition-all font-medium text-sm sm:text-base">
           Send Message
         </button>
