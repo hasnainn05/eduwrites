@@ -787,12 +787,12 @@ export default function Home() {
                 Our expert writers cover virtually every academic discipline. If
                 your field isn't listed, we still support it.
               </p>
-              <a
-                href="#"
+              <button
+                onClick={() => setIsSupportModalOpen(true)}
                 className="inline-flex items-center justify-center gap-2 glass border border-cyan-400/60 text-cyan-400 px-6 py-2 rounded-lg text-sm font-semibold hover:bg-cyan-400/15 transition-all duration-300 transform hover:scale-105"
               >
                 Contact Support
-              </a>
+              </button>
             </div>
           </div>
         </div>
