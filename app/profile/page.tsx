@@ -654,8 +654,8 @@ export default function Profile() {
               <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-3 gap-4">
                   <div>
-                    <h4 className="font-semibold mb-4 text-sidebar-foreground">Services</h4>
-                    <ul className="space-y-2 text-sm text-sidebar-foreground/70">
+                    <h4 className="font-semibold mb-2 text-sidebar-foreground text-xs">Services</h4>
+                    <ul className="space-y-1 text-xs text-sidebar-foreground/70">
                       <li><Link href="/services/essay" className="hover:text-sidebar-primary transition-colors">Essay Writing</Link></li>
                       <li><Link href="/services/research" className="hover:text-sidebar-primary transition-colors">Research Paper</Link></li>
                       <li><Link href="/services/thesis" className="hover:text-sidebar-primary transition-colors">Thesis Writing</Link></li>
