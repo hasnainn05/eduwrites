@@ -1268,14 +1268,6 @@ export default function ServiceDetail() {
             >
               Order Now <ArrowRight size={20} />
             </Link>
-
-            <Link
-              href="/profile"
-              className="inline-flex items-center justify-center gap-2 glass text-foreground px-10 py-4 rounded-xl font-semibold hover:bg-white/20 hover:shadow-glow transition-all transform hover:scale-105 animate-pulse-bounce"
-            >
-              <MessageCircle size={20} />
-              Support
-            </Link>
           </div>
         </div>
       </section>
