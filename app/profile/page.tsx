@@ -205,35 +205,37 @@ export default function Profile() {
         />
 
         <div className="fixed left-80 right-0 top-16 bottom-0 flex flex-col overflow-hidden">
-          <div className="flex justify-center py-6 pt-8 bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm border-b border-white/10">
-            <div className="inline-flex gap-2 p-1 glass rounded-lg border border-white/20">
-              <button
-                onClick={() => setUserMode("user")}
-                className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
-                  userMode === "user"
-                    ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
-                    : "text-foreground/70 hover:text-foreground"
-                }`}
-              >
-                <User size={16} className="inline mr-2" />
-                User
-              </button>
-              <button
-                onClick={() => setUserMode("admin")}
-                className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
-                  (userMode as string) === "admin"
-                    ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
-                    : "text-foreground/70 hover:text-foreground"
-                }`}
-              >
-                <ShieldAlert size={16} className="inline mr-2" />
-                Admin
-              </button>
+          {activeTab !== "chat" && (
+            <div className="flex justify-center py-6 pt-8 bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm border-b border-white/10">
+              <div className="inline-flex gap-2 p-1 glass rounded-lg border border-white/20">
+                <button
+                  onClick={() => setUserMode("user")}
+                  className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
+                    userMode === "user"
+                      ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
+                      : "text-foreground/70 hover:text-foreground"
+                  }`}
+                >
+                  <User size={16} className="inline mr-2" />
+                  User
+                </button>
+                <button
+                  onClick={() => setUserMode("admin")}
+                  className={`px-6 py-2 rounded-lg font-semibold text-sm transition-all ${
+                    (userMode as string) === "admin"
+                      ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg"
+                      : "text-foreground/70 hover:text-foreground"
+                  }`}
+                >
+                  <ShieldAlert size={16} className="inline mr-2" />
+                  Admin
+                </button>
+              </div>
             </div>
-          </div>
+          )}
 
-          <div className="flex-1 overflow-y-auto">
-            <div className="w-full px-8 py-8 flex flex-col">
+          <div className={`flex-1 ${activeTab === "chat" ? "overflow-hidden" : "overflow-y-auto"}`}>
+            <div className={`w-full ${activeTab === "chat" ? "h-full" : "px-8 py-8"} flex flex-col`}>
               {activeTab === "overview" && (
                 <div className="flex-1 flex flex-col overflow-y-auto">
                   <div className="space-y-8">
