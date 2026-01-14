@@ -57,36 +57,16 @@ export default function Header() {
               </div>
               <div className="flex items-center gap-2 text-foreground/80 hover:text-green-400 transition-colors">
                 <a
-                  href="https://wa.me/12025550123"
+                  href="https://wa.me/13658291551"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 whitespace-nowrap font-medium"
                 >
                   <MessageCircle size={14} />
-                  <span>+1 (202) 555-0123</span>
+                  <span>+1 365 8291551</span>
                 </a>
               </div>
             </div>
-
-            {/* Live Chat Button - click to open floating chat */}
-            <button
-              onClick={() => {
-                const chatButton = document.querySelector(
-                  '[title="Open Live Chat"]',
-                ) as HTMLButtonElement;
-                chatButton?.click();
-              }}
-              className="hidden sm:flex px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-lg glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all text-xs sm:text-sm font-medium text-foreground/80 items-center gap-1.5 sm:gap-2 group animate-pulse-bounce transform hover:scale-105"
-              title="Start Chat"
-            >
-              <MessageCircle
-                size={14}
-                className="group-hover:text-cyan-400 transition-colors flex-shrink-0"
-              />
-              <span className="group-hover:text-cyan-400 transition-colors hidden md:inline">
-                Live Chat
-              </span>
-            </button>
 
             {/* Auth Buttons */}
             <div className="hidden sm:flex gap-2 sm:gap-3">
