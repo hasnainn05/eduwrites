@@ -395,9 +395,9 @@ export default function Profile() {
                 </span>
               </Link>
 
-              <Link
-                href="/contact"
-                className="glass p-4 rounded-xl border border-white/10 hover:border-pink-400/50 hover:bg-pink-400/10 transition-all group"
+              <button
+                onClick={() => setIsSupportModalOpen(true)}
+                className="glass p-4 rounded-xl border border-white/10 hover:border-pink-400/50 hover:bg-pink-400/10 transition-all group w-full text-left"
               >
                 <div className="text-2xl mb-2">💬</div>
                 <h4 className="font-semibold text-foreground text-sm mb-1">
@@ -406,7 +406,7 @@ export default function Profile() {
                 <span className="text-pink-400 text-xs flex items-center gap-1">
                   Contact <ArrowRight size={12} />
                 </span>
-              </Link>
+              </button>
             </div>
           </div>
         )}
