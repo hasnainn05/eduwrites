@@ -210,6 +210,7 @@ export default function Profile() {
           <div className="flex-1 overflow-hidden pb-24">
             <div className="w-full h-full pl-6 pr-0 py-8 overflow-y-auto flex flex-col">
             {activeTab === "overview" && (
+              <div className="flex-1 flex flex-col overflow-y-auto">
               <>
                 {/* Mode Toggle */}
                 <div className="flex justify-center mb-8">
@@ -299,6 +300,7 @@ export default function Profile() {
               })}
                 </div>
               </>
+              </div>
             )}
 
             {/* Tab Content */}
@@ -376,7 +378,7 @@ export default function Profile() {
         )}
 
             {activeTab === "orders" && (
-              <div className="flex-1 flex flex-col">
+              <div className="flex-1 flex flex-col w-full">
                 <div className="glass rounded-xl border border-white/10 overflow-hidden flex-1 flex flex-col">
               <div className="overflow-x-auto flex-1 flex flex-col">
                 <table className="w-full text-base">
@@ -449,13 +451,13 @@ export default function Profile() {
             )}
 
             {activeTab === "chat" && (
-              <div className="flex-1 flex flex-col">
+              <div className="flex-1 flex flex-col w-full">
                 <SupportChat />
               </div>
             )}
 
             {activeTab === "settings" && (
-              <div className="space-y-4 flex-1 overflow-y-auto">
+              <div className="space-y-4 flex-1 overflow-y-auto w-full">
                 <div className="glass p-6 rounded-2xl border border-white/10">
               <h3 className="text-lg font-bold text-foreground mb-4">
                 Privacy & Security
