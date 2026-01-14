@@ -157,6 +157,7 @@ export default function AdminOrders() {
               <OrderDetail
                 order={selectedOrder}
                 onBack={() => setSelectedOrder(null)}
+                onStatusChange={handleStatusChange}
               />
             ) : (
               <OrdersList
