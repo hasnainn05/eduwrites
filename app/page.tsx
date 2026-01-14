@@ -922,6 +922,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Support Modal */}
+      <SupportModal
+        isOpen={isSupportModalOpen}
+        onClose={() => setIsSupportModalOpen(false)}
+      />
     </div>
   );
 }
