@@ -379,76 +379,72 @@ export default function Profile() {
         )}
 
             {activeTab === "orders" && (
-              <div className="flex justify-center items-start w-full min-h-full">
-                <div className="w-full max-w-4xl mx-auto px-6 py-8">
-                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden flex flex-col shadow-xl">
-                    <div className="overflow-x-auto flex-1 p-4">
-                      <table className="w-full text-sm">
-                        <thead>
-                          <tr className="border-b border-white/10 bg-white/5">
-                            <th className="p-3 text-left text-foreground/70 font-semibold text-xs">
-                              Order ID
-                            </th>
-                            <th className="p-3 text-left text-foreground/70 font-semibold hidden sm:table-cell text-xs">
-                              Service
-                            </th>
-                            <th className="p-3 text-left text-foreground/70 font-semibold hidden sm:table-cell text-xs">
-                              Date
-                            </th>
-                            <th className="p-3 text-left text-foreground/70 font-semibold text-xs">
-                              Status
-                            </th>
-                            <th className="p-3 text-left text-foreground/70 font-semibold text-xs">
-                              Amount
-                            </th>
-                            <th className="p-3 text-left text-foreground/70 font-semibold text-xs">
-                              Action
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {orders.map((order, index) => (
-                            <tr
-                              key={index}
-                              className="border-b border-white/10 hover:bg-white/5 transition-colors"
+              <div className="flex flex-col w-full h-full">
+                <div className="overflow-x-auto flex-1 p-6">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-white/10 bg-white/5">
+                        <th className="p-3 text-left text-foreground/70 font-semibold text-xs">
+                          Order ID
+                        </th>
+                        <th className="p-3 text-left text-foreground/70 font-semibold hidden sm:table-cell text-xs">
+                          Service
+                        </th>
+                        <th className="p-3 text-left text-foreground/70 font-semibold hidden sm:table-cell text-xs">
+                          Date
+                        </th>
+                        <th className="p-3 text-left text-foreground/70 font-semibold text-xs">
+                          Status
+                        </th>
+                        <th className="p-3 text-left text-foreground/70 font-semibold text-xs">
+                          Amount
+                        </th>
+                        <th className="p-3 text-left text-foreground/70 font-semibold text-xs">
+                          Action
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {orders.map((order, index) => (
+                        <tr
+                          key={index}
+                          className="border-b border-white/10 hover:bg-white/5 transition-colors"
+                        >
+                          <td className="p-3 text-foreground font-semibold text-xs">
+                            {order.id}
+                          </td>
+                          <td className="p-3 text-foreground hidden sm:table-cell text-xs">
+                            {order.service}
+                          </td>
+                          <td className="p-3 text-foreground/70 hidden sm:table-cell text-xs">
+                            {order.date}
+                          </td>
+                          <td className="p-3">
+                            <span
+                              className={`px-3 py-2 rounded-full text-sm font-semibold inline-block ${
+                                order.status === "Completed"
+                                  ? "bg-green-500/30 text-green-300"
+                                  : order.status === "In Progress"
+                                    ? "bg-blue-500/30 text-blue-300"
+                                    : "bg-yellow-500/30 text-yellow-300"
+                              }`}
                             >
-                              <td className="p-3 text-foreground font-semibold text-xs">
-                                {order.id}
-                              </td>
-                              <td className="p-3 text-foreground hidden sm:table-cell text-xs">
-                                {order.service}
-                              </td>
-                              <td className="p-3 text-foreground/70 hidden sm:table-cell text-xs">
-                                {order.date}
-                              </td>
-                              <td className="p-3">
-                                <span
-                                  className={`px-3 py-2 rounded-full text-sm font-semibold inline-block ${
-                                    order.status === "Completed"
-                                      ? "bg-green-500/30 text-green-300"
-                                      : order.status === "In Progress"
-                                        ? "bg-blue-500/30 text-blue-300"
-                                        : "bg-yellow-500/30 text-yellow-300"
-                                  }`}
-                                >
-                                  {order.status}
-                                </span>
-                              </td>
-                              <td className="p-3 text-foreground font-semibold text-xs">
-                                {order.amount}
-                              </td>
-                              <td className="p-3">
-                                <button className="text-cyan-400 hover:text-cyan-300 transition-colors text-xs flex items-center gap-1">
-                                  <Eye size={12} />
-                                  <span className="hidden sm:inline">View</span>
-                                </button>
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                              {order.status}
+                            </span>
+                          </td>
+                          <td className="p-3 text-foreground font-semibold text-xs">
+                            {order.amount}
+                          </td>
+                          <td className="p-3">
+                            <button className="text-cyan-400 hover:text-cyan-300 transition-colors text-xs flex items-center gap-1">
+                              <Eye size={12} />
+                              <span className="hidden sm:inline">View</span>
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             )}
