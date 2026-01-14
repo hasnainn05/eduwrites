@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, MessageCircle, MapPin, Clock, MessageSquare, ArrowRight } from "lucide-react";
+import { Mail, MessageCircle, MapPin, Clock, MessageSquare, ArrowRight, User, FileText, Send } from "lucide-react";
 import { useState } from "react";
 import { TiltCard } from "@/client/components/TiltCard";
 import { Canvas3DWrapper } from "@/client/components/Canvas3DWrapper";
