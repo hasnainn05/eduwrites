@@ -662,8 +662,8 @@ export default function Profile() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-4 text-sidebar-foreground">Company</h4>
-                    <ul className="space-y-2 text-sm text-sidebar-foreground/70">
+                    <h4 className="font-semibold mb-2 text-sidebar-foreground text-xs">Company</h4>
+                    <ul className="space-y-1 text-xs text-sidebar-foreground/70">
                       <li><Link href="/about" className="hover:text-sidebar-primary transition-colors">About Us</Link></li>
                       <li><Link href="/#pricing" className="hover:text-sidebar-primary transition-colors">Pricing</Link></li>
                     </ul>
