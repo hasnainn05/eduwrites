@@ -206,7 +206,7 @@ export default function Profile() {
         />
 
         {/* Main Content */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="ml-64 flex-1 overflow-y-auto h-screen">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {/* Mode Toggle */}
             <div className="flex justify-center mb-8">
