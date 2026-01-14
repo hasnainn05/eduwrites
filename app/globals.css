@@ -399,6 +399,6 @@
 }
 
 /* Hide global footer on profile page */
-.profile-layout ~ footer {
+main:has(.profile-layout) ~ footer {
   display: none;
 }
