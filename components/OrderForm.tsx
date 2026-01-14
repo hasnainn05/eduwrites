@@ -67,7 +67,43 @@ export default function OrderForm({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log("Order submitted:", formData);
+    const serviceTypeMap: { [key: string]: string } = {
+      essay: "Essay Writing",
+      assignment: "Assignment Writing",
+      research: "Research Paper",
+      thesis: "Thesis & Dissertation",
+      proofreading: "Proofreading & Editing",
+      dissertation: "Dissertation Writing",
+    };
+
+    const paperTypeMap: { [key: string]: string } = {
+      essay: "Essay",
+      assignment: "Assignment",
+      research: "Research Paper",
+      thesis: "Thesis",
+      proofreading: "Edited Document",
+      dissertation: "Dissertation",
+    };
+
+    const newOrder: Order = {
+      id: generateOrderId(),
+      fullName: formData.fullName,
+      email: formData.email,
+      service: serviceTypeMap[formData.serviceType] || formData.serviceType,
+      deadline: formData.deadline,
+      wordCount: parseInt(formData.wordCount) || 0,
+      academicLevel: formData.academicLevel,
+      subject: formData.assignmentDetails.split("\n")[0].substring(0, 50) || "General",
+      paperType: paperTypeMap[formData.serviceType] || "Assignment",
+      status: "pending",
+      submittedDate: new Date().toISOString().split("T")[0],
+      description: formData.assignmentDetails,
+      attachments: formData.attachments ? [formData.attachments.name] : [],
+      price: parseInt(formData.budget) || 0,
+    };
+
+    saveOrder(newOrder);
+    console.log("Order submitted:", newOrder);
 
     setIsSubmitted(true);
 
