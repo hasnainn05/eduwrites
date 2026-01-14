@@ -8,7 +8,38 @@ import { Canvas3DWrapper } from "@/client/components/Canvas3DWrapper";
 import SupportModal from "@/components/SupportModal";
 
 export default function Contact() {
-  const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    whatsapp: "",
+    subject: "",
+    message: "",
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Contact form submitted:", formData);
+    setSubmitted(true);
+    setTimeout(() => {
+      setFormData({
+        name: "",
+        email: "",
+        whatsapp: "",
+        subject: "",
+        message: "",
+      });
+      setSubmitted(false);
+    }, 2000);
+  };
 
   const contactMethods = [
     {
