@@ -1440,12 +1440,12 @@ export default function ServiceDetail() {
               Our support team is available 24/7 to help answer any questions
               you may have about our services.
             </p>
-            <a
-              href="#"
+            <button
+              onClick={() => setIsSupportModalOpen(true)}
               className="inline-flex items-center justify-center gap-2 glass border border-cyan-400/50 text-cyan-400 px-8 py-3 rounded-xl font-semibold hover:bg-cyan-400/10 transition-all"
             >
               Chat with Support
-            </a>
+            </button>
           </div>
         </div>
       </section>
