@@ -176,7 +176,7 @@ export default function SupportChat() {
         )}
 
         {/* Message Input */}
-        <form onSubmit={handleSendMessage} className="relative">
+        <form onSubmit={handleSendMessage} className="relative mr-20">
           <input
             ref={fileInputRef}
             type="file"
