@@ -199,16 +199,21 @@ export default function AdminQuoteRequests() {
             <div className="flex-1 flex flex-col overflow-hidden">
               {/* Request Header */}
               <div className="p-6 border-b border-white/10 bg-gradient-to-r from-slate-900/50 to-slate-800/50">
-                <div className="flex items-center justify-between mb-2">
-                  <div>
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
                     <h2 className="text-xl font-bold text-foreground">
                       {currentRequest.senderName}
                     </h2>
-                    <p className="text-sm text-foreground/60">
-                      {currentRequest.senderEmail}
-                    </p>
+                    <div className="space-y-1 mt-2">
+                      <p className="text-sm text-foreground/70">
+                        Email: <span className="text-foreground">{currentRequest.senderEmail}</span>
+                      </p>
+                      <p className="text-sm text-foreground/70">
+                        WhatsApp: <span className="text-foreground">{currentRequest.whatsapp}</span>
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-shrink-0">
                     <button
                       onClick={() => handleMarkReplied(currentRequest.id)}
                       className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
@@ -228,7 +233,7 @@ export default function AdminQuoteRequests() {
                   </div>
                 </div>
                 <p className="text-sm text-foreground/70 font-medium">
-                  {currentRequest.subject}
+                  Subject: {currentRequest.subject}
                 </p>
               </div>
 
