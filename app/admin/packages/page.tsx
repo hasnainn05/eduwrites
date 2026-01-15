@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { AdminSidebar } from "@/client/components/AdminSidebar";
 import { Edit2, Save, X, Plus, Star } from "lucide-react";
 
 export default function AdminPackages() {
@@ -106,26 +105,7 @@ export default function AdminPackages() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Sidebar */}
-      <AdminSidebar />
-
-      {/* Main Content */}
-      <div className="flex-1 ml-64 overflow-y-auto">
-        {/* Header */}
-        <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur border-b border-white/10 p-6">
-          <div>
-            <h1 className="text-3xl font-bold text-foreground">
-              Package Management
-            </h1>
-            <p className="text-foreground/60 text-sm mt-1">
-              Manage service packages and pricing (Basic, Medium, Premium)
-            </p>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="p-6">
+    <div className="p-6">
           {editingId ? (
             // Edit Mode
             <div className="glass rounded-2xl border border-white/10 p-8">
@@ -357,8 +337,6 @@ export default function AdminPackages() {
               ))}
             </div>
           )}
-        </div>
-      </div>
     </div>
   );
 }
