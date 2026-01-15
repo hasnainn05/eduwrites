@@ -82,35 +82,7 @@ export default function AdminDashboard() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Header - Full Width */}
-      <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur border-b border-white/10 p-4 sm:p-6">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
-              Dashboard
-            </h1>
-            <p className="text-foreground/60 text-sm mt-1">
-              Welcome back, Admin
-            </p>
-          </div>
-          <div className="text-right">
-            <p className="text-sm text-foreground/60">
-              {new Date().toLocaleDateString()}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Content Area with Sidebar */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar */}
-        <AdminSidebar />
-
-        {/* Main Content */}
-        <div className="flex-1 overflow-y-auto">
-          {/* Content */}
-          <div className="p-4 sm:p-6 space-y-6 sm:space-y-8">
+    <div className="p-4 sm:p-6 space-y-6 sm:space-y-8">
             {/* Stats Grid */}
             <div>
               <h2 className="text-lg sm:text-xl font-bold text-foreground mb-4 sm:mb-6">
@@ -264,9 +236,6 @@ export default function AdminDashboard() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
