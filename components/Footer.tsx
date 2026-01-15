@@ -46,7 +46,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8 text-center">
           {/* Brand Section */}
           <div className="col-span-1 flex flex-col items-center">
-            <Link href="/" className="flex items-center gap-2 mb-4 justify-center">
+            <Link
+              href="/"
+              className="flex items-center gap-2 mb-4 justify-center"
+            >
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800"
                 alt="EduWrites Logo"
