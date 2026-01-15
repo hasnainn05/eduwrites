@@ -85,15 +85,22 @@ export function Canvas3D() {
         ]);
 
         // Random colors from palette
-        const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+        const color =
+          colorPalette[Math.floor(Math.random() * colorPalette.length)];
         colors[i3] = color.r;
         colors[i3 + 1] = color.g;
         colors[i3 + 2] = color.b;
       }
 
       const particleGeometry = new THREE.BufferGeometry();
-      particleGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-      particleGeometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+      particleGeometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(positions, 3),
+      );
+      particleGeometry.setAttribute(
+        "color",
+        new THREE.BufferAttribute(colors, 3),
+      );
 
       const particleMaterial = new THREE.PointsMaterial({
         size: 0.15,
@@ -196,7 +203,10 @@ export function Canvas3D() {
         if (animationFrameRef.current) {
           cancelAnimationFrame(animationFrameRef.current);
         }
-        if (containerRef.current && renderer.domElement.parentNode === containerRef.current) {
+        if (
+          containerRef.current &&
+          renderer.domElement.parentNode === containerRef.current
+        ) {
           try {
             containerRef.current.removeChild(renderer.domElement);
           } catch (e) {
