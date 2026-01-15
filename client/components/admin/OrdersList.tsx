@@ -202,16 +202,16 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
 
                   {/* Action Buttons - Only for Pending Orders */}
                   {status === "pending" && (
-                    <div className="border-t border-white/10 pt-6 flex gap-3 justify-end">
+                    <div className="border-t border-white/10 pt-4 sm:pt-6 flex flex-col sm:flex-row gap-2 sm:gap-3 justify-end">
                       <button
                         onClick={() => handleApprove(order.id)}
-                        className="px-6 py-2.5 rounded-lg bg-green-600 text-white font-medium text-sm hover:bg-green-700 transition-all shadow-lg hover:shadow-green-600/50"
+                        className="px-4 sm:px-6 py-2.5 rounded-lg bg-green-600 text-white font-medium text-sm hover:bg-green-700 transition-all shadow-lg hover:shadow-green-600/50 active:bg-green-800 min-h-10"
                       >
                         ✓ Approve Order
                       </button>
                       <button
                         onClick={() => handleReject(order.id)}
-                        className="px-6 py-2.5 rounded-lg border border-red-500/50 text-red-400 font-medium text-sm hover:bg-red-500/10 hover:border-red-500/80 transition-all"
+                        className="px-4 sm:px-6 py-2.5 rounded-lg border border-red-500/50 text-red-400 font-medium text-sm hover:bg-red-500/10 hover:border-red-500/80 transition-all active:bg-red-500/20 min-h-10"
                       >
                         ✕ Reject Order
                       </button>
