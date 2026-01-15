@@ -405,8 +405,8 @@ export default function Signup() {
                     type="button"
                     className="border border-white/20 bg-white/5 hover:bg-white/10 hover:shadow-glow rounded-lg py-2.5 font-medium text-foreground transition-all flex items-center justify-center gap-2 animate-pulse-bounce transform hover:scale-105"
                   >
-                    <Github size={18} />
-                    <span className="hidden sm:inline text-sm">GitHub</span>
+                    <Apple size={18} />
+                    <span className="hidden sm:inline text-sm">Apple</span>
                   </button>
                 </div>
 
