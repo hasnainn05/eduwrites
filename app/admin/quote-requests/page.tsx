@@ -107,9 +107,9 @@ export default function AdminQuoteRequests() {
   const unrepliedCount = requests.filter((r) => !r.replied).length;
 
   return (
-    <div className="flex-1 flex overflow-hidden">
+    <div className="flex-1 flex overflow-hidden flex-col lg:flex-row">
           {/* Requests List */}
-          <div className="w-80 border-r border-white/10 flex flex-col overflow-hidden bg-gradient-to-b from-slate-800/50 to-slate-900/50">
+          <div className="w-full lg:w-80 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col overflow-hidden bg-gradient-to-b from-slate-800/50 to-slate-900/50">
             {/* Search */}
             <div className="p-4 border-b border-white/10">
               <div className="relative">
@@ -174,7 +174,7 @@ export default function AdminQuoteRequests() {
 
           {/* Request Details */}
           {currentRequest ? (
-            <div className="flex-1 flex flex-col overflow-hidden">
+            <div className="flex-1 flex flex-col overflow-hidden min-w-0">
               {/* Request Header */}
               <div className="p-6 border-b border-white/10 bg-gradient-to-r from-slate-900/50 to-slate-800/50">
                 <div className="flex items-start justify-between mb-4">
