@@ -36,13 +36,6 @@ export default function AdminDashboard() {
       color: "from-purple-500 to-pink-500",
     },
     {
-      label: "Average Rating",
-      value: "4.9",
-      change: "Out of 5 stars",
-      icon: Star,
-      color: "from-yellow-500 to-orange-500",
-    },
-    {
       label: "Total Reviews",
       value: "892",
       change: "+89 this month",
@@ -55,13 +48,6 @@ export default function AdminDashboard() {
       change: "Pending responses",
       icon: MessageSquare,
       color: "from-indigo-500 to-purple-500",
-    },
-    {
-      label: "Customer Satisfaction",
-      value: "98%",
-      change: "Based on reviews",
-      icon: Activity,
-      color: "from-rose-500 to-pink-500",
     },
   ];
 
