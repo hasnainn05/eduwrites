@@ -148,8 +148,8 @@ export default function TermsOfService() {
               <li>
                 <strong>Service Non-Delivery:</strong> In cases where EduWrites
                 fails to deliver the service by the agreed deadline without
-                valid reason, a full refund may be issued at our discretion or
-                a deadline extension offered.
+                valid reason, a full refund may be issued at our discretion or a
+                deadline extension offered.
               </li>
             </ul>
           </section>

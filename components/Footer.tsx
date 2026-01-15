@@ -47,7 +47,11 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <img src="/ew-logo.webp" alt="EduWrites Logo" className="w-[46px] h-[46px] sm:w-[51px] sm:h-[51px] flex-shrink-0" />
+              <img
+                src="/ew-logo.webp"
+                alt="EduWrites Logo"
+                className="w-[46px] h-[46px] sm:w-[51px] sm:h-[51px] flex-shrink-0"
+              />
               <span className="font-bold text-lg bg-gradient-to-r from-sidebar-primary to-sidebar-accent bg-clip-text text-transparent">
                 EduWrites
               </span>
