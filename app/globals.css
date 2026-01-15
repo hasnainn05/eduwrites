@@ -411,16 +411,3 @@
 main:has(.profile-layout) ~ footer {
   display: none;
 }
-
-/* Hide global header and footer on admin pages */
-.admin-layout {
-  --header-display: none;
-}
-
-main.admin-layout ~ header {
-  display: none;
-}
-
-main.admin-layout ~ footer {
-  display: none;
-}
