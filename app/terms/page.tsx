@@ -176,7 +176,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              6. User Responsibilities and Conduct
+              7. User Responsibilities and Conduct
             </h2>
             <p className="text-foreground/80 mb-4">You agree not to:</p>
             <ul className="list-disc list-inside text-foreground/80 space-y-2">
@@ -192,7 +192,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              7. Academic Integrity
+              8. Academic Integrity
             </h2>
             <p className="text-foreground/80">
               EduWrites provides writing assistance for educational purposes.
@@ -206,7 +206,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              8. Delivery Timeline
+              9. Delivery Timeline
             </h2>
             <p className="text-foreground/80 mb-4">Delivery timelines:</p>
             <ul className="list-disc list-inside text-foreground/80 space-y-2">
@@ -226,7 +226,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              9. Revision Policy
+              10. Revision Policy
             </h2>
             <p className="text-foreground/80 mb-4">
               We offer unlimited revisions:
@@ -245,7 +245,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              10. Limitation of Liability
+              11. Limitation of Liability
             </h2>
             <p className="text-foreground/80">
               To the fullest extent permitted by law, EduWrites shall not be
@@ -259,7 +259,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              11. Disclaimer of Warranties
+              12. Disclaimer of Warranties
             </h2>
             <p className="text-foreground/80">
               Our services are provided on an "as is" basis. EduWrites makes no
@@ -272,7 +272,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              12. Termination
+              13. Termination
             </h2>
             <p className="text-foreground/80">
               EduWrites may terminate or suspend your account and access to
@@ -284,7 +284,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              13. Confidentiality
+              14. Confidentiality
             </h2>
             <p className="text-foreground/80">
               All communications between you and EduWrites regarding your orders
@@ -296,7 +296,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              14. Governing Law
+              15. Governing Law
             </h2>
             <p className="text-foreground/80">
               These Terms of Service and your use of our services are governed
@@ -308,7 +308,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              15. Contact Information
+              16. Contact Information
             </h2>
             <p className="text-foreground/80 mb-4">
               If you have any questions about these Terms of Service, please
@@ -343,7 +343,7 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              16. Entire Agreement
+              17. Entire Agreement
             </h2>
             <p className="text-foreground/80">
               These Terms of Service, along with our Privacy Policy, constitute
