@@ -116,29 +116,15 @@ export default function AdminLogin() {
           </button>
         </form>
 
-        {/* Divider */}
-        <div className="my-8 flex items-center gap-3">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-          <span className="text-xs text-foreground/50">OR</span>
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-        </div>
-
-        {/* GitHub Email Login */}
-        <button
-          type="button"
-          className="w-full py-3 rounded-lg glass border border-white/20 bg-white/5 hover:bg-white/10 hover:border-cyan-400 text-foreground font-medium transition-all flex items-center justify-center gap-2 mb-4"
-        >
-          <Github size={20} />
-          <span>Login with GitHub Email</span>
-        </button>
-
         {/* Back to Site */}
-        <Link
-          href="/"
-          className="block w-full py-3 rounded-lg glass border border-white/20 text-foreground text-center font-medium hover:border-cyan-400 hover:bg-white/10 transition-all"
-        >
-          Back to Website
-        </Link>
+        <div className="mt-8">
+          <Link
+            href="/"
+            className="block w-full py-3 rounded-lg glass border border-white/20 text-foreground text-center font-medium hover:border-cyan-400 hover:bg-white/10 transition-all"
+          >
+            Back to Website
+          </Link>
+        </div>
 
         {/* Footer Info */}
         <p className="text-center text-xs text-foreground/50 mt-8">
