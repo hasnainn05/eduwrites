@@ -220,9 +220,9 @@ export default function Home() {
 
             <p className="text-lg sm:text-xl text-foreground/70 mb-12 max-w-3xl mx-auto leading-relaxed">
               Elevate your grades with plagiarism-free, custom-written papers by Ph.D. experts.
-              <br className="hidden sm:block" />
+              <br />
               From essays to theses, we provide 100% original academic support.
-              <br className="hidden sm:block" />
+              <br />
               Delivered on time, every time.
             </p>
 
