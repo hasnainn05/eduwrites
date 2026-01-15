@@ -21,7 +21,7 @@ export default function Header() {
             href="/"
             className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-2"
           >
-            <img src="/ew-logo.webp" alt="EduWrites Logo" className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 flex-shrink-0" />
+            <img src="/ew-logo.webp" alt="EduWrites Logo" className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex-shrink-0" />
             <div>
               <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
                 EduWrites
