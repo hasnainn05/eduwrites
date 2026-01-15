@@ -179,9 +179,9 @@ export default function AdminOrders() {
     setAllOrders(updatedOrders);
   };
 
-  const filteredOrders = allOrders.filter(
-    (order) => order.status === activeStatus,
-  );
+  const filteredOrders = allOrders
+    .filter((order) => order.status === activeStatus)
+    .sort((a, b) => new Date(b.submittedDate).getTime() - new Date(a.submittedDate).getTime());
 
   const stats = {
     pending: allOrders.filter((o) => o.status === "pending").length,
