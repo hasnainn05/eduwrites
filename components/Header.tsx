@@ -138,7 +138,7 @@ export default function Header() {
                   />
                 </svg>
               </summary>
-              <div className="absolute top-full right-0 mt-2 bg-white/50 backdrop-blur-md border border-white/40 rounded-xl p-3 sm:p-4 space-y-3 min-w-max z-50">
+              <div className="absolute top-full right-0 mt-2 bg-white/90 backdrop-blur-md border border-white/60 rounded-xl p-3 sm:p-4 space-y-3 min-w-max z-50">
                 {/* Navigation Links */}
                 {navItems.map((item) => (
                   <Link
