@@ -21,7 +21,7 @@ export default function Header() {
             href="/"
             className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-2"
           >
-            <img src="/favicon.svg" alt="EduWrites Logo" className="w-9 h-9 sm:w-11 sm:h-11 flex-shrink-0" />
+            <img src="/favicon.png" alt="EduWrites Logo" className="w-9 h-9 sm:w-11 sm:h-11 flex-shrink-0" />
             <div>
               <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
                 EduWrites
