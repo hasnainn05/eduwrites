@@ -153,51 +153,7 @@ export default function AdminDashboard() {
               </div>
             </div>
 
-            {/* Calendars Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-              {/* Primary Calendar */}
-              <div className="glass p-4 sm:p-6 rounded-2xl border border-white/10">
-                <h2 className="text-lg sm:text-xl font-bold text-foreground mb-4 sm:mb-6">
-                  Schedule
-                </h2>
-                <Calendar
-                  mode="single"
-                  selected={selectedDate}
-                  onSelect={setSelectedDate}
-                  className="w-full"
-                />
-                {selectedDate && (
-                  <div className="mt-4 p-3 sm:p-4 rounded-lg bg-white/5 border border-white/10">
-                    <p className="text-xs sm:text-sm text-foreground/70">
-                      Selected Date:
-                    </p>
-                    <p className="text-sm sm:text-base font-semibold text-foreground mt-1">
-                      {selectedDate.toLocaleDateString("en-US", {
-                        weekday: "long",
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </p>
-                  </div>
-                )}
-              </div>
-
-              {/* Secondary Calendar */}
-              <div className="glass p-4 sm:p-6 rounded-2xl border border-white/10">
-                <h2 className="text-lg sm:text-xl font-bold text-foreground mb-4 sm:mb-6">
-                  Event Calendar
-                </h2>
-                <Calendar mode="single" className="w-full" />
-                <div className="mt-4 p-3 sm:p-4 rounded-lg bg-white/5 border border-white/10">
-                  <p className="text-xs sm:text-sm text-foreground/70">
-                    View upcoming events and deadlines
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Recent Activity and Quick Actions */}
+            {/* Quick Actions */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
               {/* Recent Activity */}
               <div className="glass p-4 sm:p-6 rounded-2xl border border-white/10">
