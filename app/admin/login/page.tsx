@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Lock, Eye, EyeOff, ArrowRight, Github } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function AdminLogin() {
