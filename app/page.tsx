@@ -218,10 +218,12 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-foreground/70 mb-12 max-w-2xl mx-auto">
-              Elevate your academic success with professional writing support.
-              Essays, research papers, theses, and more—all crafted to
-              perfection.
+            <p className="text-lg sm:text-xl text-foreground/70 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Elevate your grades with plagiarism-free, custom-written papers by Ph.D. experts.
+              <br className="hidden sm:block" />
+              From essays to theses, we provide 100% original academic support.
+              <br className="hidden sm:block" />
+              Delivered on time, every time.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
