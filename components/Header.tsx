@@ -19,14 +19,17 @@ export default function Header() {
           {/* Left: Logo and Branding */}
           <Link
             href="/"
-            className="flex-shrink-0 hover:opacity-80 transition-opacity"
+            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-2"
           >
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
-              EduWrites
-            </h1>
-            <p className="text-foreground/60 text-xs mt-0.5 sm:mt-1 font-medium hidden sm:block">
-              Academic Excellence
-            </p>
+            <img src="/favicon.svg" alt="EduWrites Logo" className="w-8 h-8 sm:w-10 sm:h-10" />
+            <div>
+              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
+                EduWrites
+              </h1>
+              <p className="text-foreground/60 text-xs mt-0.5 sm:mt-1 font-medium hidden sm:block">
+                Academic Excellence
+              </p>
+            </div>
           </Link>
 
           {/* Center: Navigation Menu */}
