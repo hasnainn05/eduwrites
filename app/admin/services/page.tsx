@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { AdminSidebar } from "@/client/components/AdminSidebar";
 import {
   Plus,
   Edit2,
@@ -344,33 +343,7 @@ export default function AdminServices() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Sidebar */}
-      <AdminSidebar />
-
-      {/* Main Content */}
-      <div className="flex-1 ml-64 overflow-y-auto">
-        {/* Header */}
-        <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur border-b border-white/10 p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl font-bold text-foreground">Services</h1>
-              <p className="text-foreground/60 text-sm mt-1">
-                Manage your academic writing services with pricing tiers
-              </p>
-            </div>
-            <button
-              onClick={handleAddService}
-              className="flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold hover:shadow-lg hover:shadow-indigo-500/50 transition-all transform hover:scale-105"
-            >
-              <Plus size={20} />
-              Add Service
-            </button>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="p-6">
+    <div className="p-6">
           {/* Search Bar */}
           <div className="mb-6">
             <div className="relative">
@@ -531,9 +504,6 @@ export default function AdminServices() {
               <p className="text-foreground/60">No services found</p>
             </div>
           )}
-        </div>
-      </div>
-
       {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 overflow-y-auto">
