@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   description:
     "Professional academic writing services for essays, research papers, theses, and more.",
   metadataBase: new URL("https://eduwrites.com"),
+  icons: {
+    icon: "/favicon.svg",
+  },
   viewport: {
     width: "device-width",
     initialScale: 1,
