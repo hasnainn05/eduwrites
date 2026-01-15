@@ -1,33 +1,28 @@
 <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="boxGradientFill" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#A855F7;stop-opacity:0.2" />
-      <stop offset="50%" style="stop-color:#7C3AED;stop-opacity:0.15" />
-      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:0.2" />
+    <linearGradient id="cyanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06B6D4;stop-opacity:0.25" />
+      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:0.15" />
     </linearGradient>
-    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#A855F7;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#A855F7;stop-opacity:0.6" />
-      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:0.6" />
+    <linearGradient id="cyanBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06B6D4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:0.7" />
     </linearGradient>
   </defs>
   
-  <!-- Modern Gradient Box Background -->
+  <!-- Prominent Cyan Gradient Box -->
   <rect 
     x="8" 
     y="8" 
     width="104" 
     height="104" 
     rx="20" 
-    fill="url(#boxGradientFill)" 
-    stroke="url(#borderGradient)" 
+    fill="url(#cyanGradient)" 
+    stroke="url(#cyanBorder)" 
     stroke-width="2"
   />
   
-  <!-- Inner glow effect -->
+  <!-- Inner subtle glow -->
   <rect 
     x="12" 
     y="12" 
@@ -35,39 +30,22 @@
     height="96" 
     rx="18" 
     fill="none" 
-    stroke="url(#textGradient)" 
+    stroke="#06B6D4" 
     stroke-width="0.5"
-    opacity="0.3"
+    opacity="0.2"
   />
   
-  <!-- Modern Italic Overlapped EW Text -->
-  <g transform="translate(60, 72)">
-    <!-- E character -->
-    <text 
-      x="-13" 
-      y="0" 
-      font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" 
-      font-size="58" 
-      font-weight="900" 
-      font-style="italic"
-      fill="url(#textGradient)" 
-      text-anchor="middle" 
-      dominant-baseline="middle"
-      letter-spacing="-2"
-    >E</text>
-    
-    <!-- W character with overlap -->
-    <text 
-      x="12" 
-      y="0" 
-      font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" 
-      font-size="58" 
-      font-weight="900" 
-      font-style="italic"
-      fill="url(#textGradient)" 
-      text-anchor="middle" 
-      dominant-baseline="middle"
-      letter-spacing="-2"
-    >W</text>
-  </g>
+  <!-- Modern Italic EW Text (No Overlap) -->
+  <text 
+    x="60" 
+    y="72" 
+    font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" 
+    font-size="62" 
+    font-weight="900" 
+    font-style="italic"
+    fill="#06B6D4" 
+    text-anchor="middle" 
+    dominant-baseline="middle"
+    letter-spacing="-1"
+  >EW</text>
 </svg>
