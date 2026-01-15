@@ -136,6 +136,38 @@ export default function AdminDashboard() {
                     </div>
                   );
                 })}
+                {/* Calendar Card - spans 2 columns */}
+                <div className="lg:col-span-2 glass p-4 sm:p-6 rounded-2xl border border-white/10">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-4 sm:mb-6">
+                    Schedule
+                  </h3>
+                  <div className="flex gap-6">
+                    <div className="flex-1">
+                      <Calendar
+                        mode="single"
+                        selected={selectedDate}
+                        onSelect={setSelectedDate}
+                        className="w-full"
+                      />
+                    </div>
+                    {selectedDate && (
+                      <div className="flex items-center justify-center p-4 rounded-lg bg-white/5 border border-white/10 min-w-fit">
+                        <div>
+                          <p className="text-xs sm:text-sm text-foreground/70 mb-2">
+                            Selected Date
+                          </p>
+                          <p className="text-sm sm:text-base font-semibold text-foreground">
+                            {selectedDate.toLocaleDateString("en-US", {
+                              weekday: "short",
+                              month: "short",
+                              day: "numeric",
+                            })}
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
 
