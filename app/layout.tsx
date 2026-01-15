@@ -1,5 +1,8 @@
+"use client";
+
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
+import { usePathname } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LiveChat from "@/components/LiveChat";
@@ -13,41 +16,22 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
-export const metadata: Metadata = {
-  title: "EduWrites - Academic Excellence",
-  description:
-    "Professional academic writing services for essays, research papers, theses, and more.",
-  metadataBase: new URL("https://eduwrites.com"),
-  icons: {
-    icon: "https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800",
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
-  openGraph: {
-    title: "EduWrites - Academic Excellence",
-    description:
-      "Professional academic writing services for essays, research papers, theses, and more.",
-    type: "website",
-  },
-};
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+  const isAdminRoute = pathname.startsWith("/admin");
+
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body className={inter.className}>
         <Canvas3DWrapper />
         <div className="flex flex-col min-h-screen">
-          <Header />
+          {!isAdminRoute && <Header />}
           <main className="flex-grow">{children}</main>
-          <Footer />
+          {!isAdminRoute && <Footer />}
           <LiveChat />
         </div>
       </body>
