@@ -1,15 +1,26 @@
 "use client";
 
+import { useState, useRef } from "react";
 import { Mail, MessageCircle, User } from "lucide-react";
 import Link from "next/link";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const detailsRef = useRef<HTMLDetailsElement>(null);
+
   const navItems = [
     { label: "Home", path: "/" },
     { label: "Services", path: "/#services" },
     { label: "Contact Us", path: "/contact" },
     { label: "About Us", path: "/about" },
   ];
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    if (detailsRef.current) {
+      detailsRef.current.open = false;
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-gradient-to-b from-background/95 to-background/80 backdrop-blur-lg">
@@ -107,7 +118,11 @@ export default function Header() {
 
           {/* Mobile: Menu Button (visible on small screens) */}
           <div className="md:hidden">
-            <details className="group">
+            <details
+              className="group"
+              ref={detailsRef}
+              onToggle={(e) => setMenuOpen(e.currentTarget.open)}
+            >
               <summary className="cursor-pointer text-foreground/80 hover:text-cyan-400 transition-colors list-none flex-shrink-0">
                 <svg
                   className="w-5 h-5 sm:w-6 sm:h-6"
@@ -123,16 +138,60 @@ export default function Header() {
                   />
                 </svg>
               </summary>
-              <div className="absolute top-full right-0 mt-2 glass rounded-xl p-3 sm:p-4 space-y-2 min-w-max">
+              <div className="absolute top-full right-0 mt-2 glass rounded-xl p-3 sm:p-4 space-y-3 min-w-max z-50">
+                {/* Navigation Links */}
                 {navItems.map((item) => (
                   <Link
                     key={item.path}
                     href={item.path}
+                    onClick={closeMenu}
                     className="block text-xs sm:text-sm font-medium text-foreground/80 hover:text-cyan-400 transition-colors py-2"
                   >
                     {item.label}
                   </Link>
                 ))}
+
+                {/* Divider */}
+                <div className="border-t border-white/10 my-2"></div>
+
+                {/* Sign Up Button for Mobile */}
+                <Link
+                  href="/signup"
+                  onClick={closeMenu}
+                  className="block w-full text-center px-3 py-2 border border-white/20 text-foreground/80 rounded-lg hover:border-cyan-400 hover:text-cyan-400 hover:shadow-glow transition-all text-xs sm:text-sm font-medium whitespace-nowrap"
+                >
+                  Sign Up
+                </Link>
+
+                {/* Contact Info for Mobile */}
+                <div className="space-y-2 text-xs">
+                  <a
+                    href="mailto:info@eduwrites.com"
+                    onClick={closeMenu}
+                    className="flex items-center gap-2 text-foreground/80 hover:text-cyan-400 transition-colors py-1"
+                  >
+                    <Mail size={14} />
+                    <span>info@eduwrites.com</span>
+                  </a>
+                  <a
+                    href="https://wa.me/13658291551"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={closeMenu}
+                    className="flex items-center gap-2 text-foreground/80 hover:text-green-400 transition-colors py-1"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="text-green-500 flex-shrink-0"
+                    >
+                      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.197 1.613 6.033L0 24l6.266-1.997C8.203 23.462 10.064 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+                    </svg>
+                    <span>+1 365 8291551</span>
+                  </a>
+                </div>
               </div>
             </details>
           </div>
