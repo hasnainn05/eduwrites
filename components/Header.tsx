@@ -41,7 +41,7 @@ export default function Header() {
               <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
                 EduWrites
               </h1>
-              <p className="text-foreground/60 text-xs mt-0.5 sm:mt-1 font-medium hidden sm:block">
+              <p className="text-foreground/60 text-xs mt-0.5 sm:mt-1 font-medium">
                 Academic Excellence
               </p>
             </div>
