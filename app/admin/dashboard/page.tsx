@@ -137,16 +137,17 @@ export default function AdminDashboard() {
                   );
                 })}
                 {/* Calendar Card */}
-                <div className="glass p-4 sm:p-6 rounded-2xl border border-white/10 overflow-hidden">
-                  <h3 className="text-sm font-bold text-foreground mb-3">
+                <div className="glass p-4 sm:p-6 rounded-2xl border border-white/10">
+                  <h3 className="text-sm font-bold text-foreground mb-4">
                     Schedule
                   </h3>
-                  <Calendar
-                    mode="single"
-                    selected={selectedDate}
-                    onSelect={setSelectedDate}
-                    className="w-full scale-75 origin-top-left -ml-6"
-                  />
+                  <div className="text-xs">
+                    <Calendar
+                      mode="single"
+                      selected={selectedDate}
+                      onSelect={setSelectedDate}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
