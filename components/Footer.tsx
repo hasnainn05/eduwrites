@@ -43,10 +43,10 @@ export default function Footer() {
   return (
     <footer className="bg-sidebar-background border-t border-sidebar-border text-sidebar-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:ml-0">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8 text-center">
           {/* Brand Section */}
-          <div className="col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
+          <div className="col-span-1 flex flex-col items-center">
+            <Link href="/" className="flex items-center gap-2 mb-4 justify-center">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800"
                 alt="EduWrites Logo"
@@ -171,7 +171,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-sidebar-border pt-8 mt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
+          <div className="flex flex-col items-center justify-center gap-4">
             <p className="text-sidebar-foreground/60 text-sm">
               &copy; {currentYear} EduWrites. All rights reserved.
             </p>
