@@ -42,10 +42,10 @@
     opacity="0.3"
   />
   
-  <!-- Modern Italic EW Text -->
+  <!-- Modern Italic EW Text - Perfectly Centered -->
   <text 
     x="60" 
-    y="72" 
+    y="60" 
     font-family="'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" 
     font-size="62" 
     font-weight="900" 
