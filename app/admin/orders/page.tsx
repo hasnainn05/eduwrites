@@ -196,19 +196,19 @@ export default function AdminOrders() {
       <AdminSidebar />
 
       {/* Main Content */}
-      <div className="flex-1 md:ml-64 overflow-y-auto">
+      <div className="flex-1 md:ml-64 overflow-y-auto bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         {/* Header */}
-        <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur border-b border-white/10 p-4 sm:p-6">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+        <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur border-b border-white/10 p-3 sm:p-4 md:p-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3">
             <div>
-              <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                 Order Management
               </h1>
               <p className="text-foreground/60 text-xs sm:text-sm mt-1">
                 Manage all customer orders and view details
               </p>
             </div>
-            <div className="text-right text-xs sm:text-sm" suppressHydrationWarning>
+            <div className="text-right text-xs sm:text-sm whitespace-nowrap" suppressHydrationWarning>
               <p className="text-foreground/60">
                 {new Date().toLocaleDateString()}
               </p>
@@ -217,9 +217,9 @@ export default function AdminOrders() {
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-6 space-y-6 sm:space-y-8">
+        <div className="p-3 sm:p-4 md:p-6 space-y-4 sm:space-y-6 md:space-y-8">
           {/* Stats Overview - No Background, Bottom Line */}
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
             <div className="border-b-2 border-blue-400/40 pb-4 sm:pb-6 hover:border-blue-400/60 transition-all">
               <div className="flex items-start sm:items-center justify-between gap-2">
                 <div className="flex-1 min-w-0">
