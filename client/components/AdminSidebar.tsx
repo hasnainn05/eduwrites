@@ -128,6 +128,11 @@ export function AdminSidebar() {
 
   return (
     <>
+      {/* Desktop Sidebar */}
+      <div className="hidden md:flex h-full w-64 flex-col">
+        <SidebarContent />
+      </div>
+
       {/* Mobile Menu Button */}
       <div className="md:hidden fixed top-20 left-4 z-50">
         <button
@@ -147,12 +152,7 @@ export function AdminSidebar() {
         />
       )}
 
-      {/* Sidebar - Desktop */}
-      <div className="hidden md:flex w-64 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 border-r border-white/10 flex-col">
-        <SidebarContent />
-      </div>
-
-      {/* Sidebar - Mobile */}
+      {/* Mobile Sidebar */}
       <div
         className={`md:hidden fixed left-0 top-0 z-40 w-56 h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 border-r border-white/10 flex flex-col transition-transform duration-300 transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
