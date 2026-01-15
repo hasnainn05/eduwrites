@@ -158,13 +158,13 @@ export default function About() {
       {/* Stats Section */}
       <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="glass p-8 rounded-2xl text-center">
-                <div className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-3 font-poppins">
+              <div key={index} className="glass p-4 sm:p-6 md:p-8 rounded-2xl text-center">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2 sm:mb-3 font-poppins leading-tight">
                   {stat.number}
                 </div>
-                <p className="text-foreground/80 font-medium">{stat.label}</p>
+                <p className="text-xs sm:text-sm md:text-base text-foreground/80 font-medium">{stat.label}</p>
               </div>
             ))}
           </div>
