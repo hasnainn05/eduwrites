@@ -120,7 +120,43 @@ export default function TermsOfService() {
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">
-              5. Intellectual Property Rights
+              5. Refund Policy
+            </h2>
+            <p className="text-foreground/80 mb-4">
+              EduWrites maintains the following refund policy:
+            </p>
+            <ul className="list-disc list-inside text-foreground/80 space-y-2">
+              <li>
+                <strong>Completed Orders:</strong> If your order has been
+                completed and delivered, no refund will be issued. The work
+                becomes your exclusive property upon delivery.
+              </li>
+              <li>
+                <strong>Cancelled Orders:</strong> If your order is cancelled
+                before completion, you are entitled to a full refund of your
+                payment.
+              </li>
+              <li>
+                <strong>Refund Processing Time:</strong> All refunds for
+                cancelled orders will be processed within 3 to 7 working days
+                from the cancellation date.
+              </li>
+              <li>
+                <strong>Refund Method:</strong> Refunds will be issued to the
+                original payment method used during checkout.
+              </li>
+              <li>
+                <strong>Service Non-Delivery:</strong> In cases where EduWrites
+                fails to deliver the service by the agreed deadline without
+                valid reason, a full refund may be issued at our discretion or
+                a deadline extension offered.
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-foreground mb-4">
+              6. Intellectual Property Rights
             </h2>
             <p className="text-foreground/80 mb-4">Upon payment in full:</p>
             <ul className="list-disc list-inside text-foreground/80 space-y-2">
