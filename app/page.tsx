@@ -212,18 +212,16 @@ export default function Home() {
             </div>
 
             <h1 className="heading-3d text-3xl sm:text-5xl font-bold mb-6 leading-tight font-poppins max-w-5xl mx-auto">
-              Achieve Academic Excellence with{" "}
+              Professional Academic Writing{" "}
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                Professional Academic
+                Done Right
               </span>
               <br />
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                Writing Services
-              </span>
+              <span className="text-white">Every Single Time</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-foreground/70 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Elevate your grades with plagiarism-free, custom-written papers by Ph.D. experts. From essays to theses, we provide 100% original academic support delivered on time, every time.
+              Trusted by thousands of students. Custom-written papers by Ph.D. experts. 100% plagiarism-free, original work. Fast turnaround. Affordable pricing. Your academic success is our priority.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
