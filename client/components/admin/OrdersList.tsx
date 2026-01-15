@@ -9,10 +9,17 @@ import React from "react";
 interface OrdersListProps {
   orders: Order[];
   status: "pending" | "in_progress" | "completed";
-  onStatusChange?: (orderId: string, status: "pending" | "in_progress" | "completed") => void;
+  onStatusChange?: (
+    orderId: string,
+    status: "pending" | "in_progress" | "completed",
+  ) => void;
 }
 
-export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) {
+export function OrdersList({
+  orders,
+  status,
+  onStatusChange,
+}: OrdersListProps) {
   const [expandedOrderId, setExpandedOrderId] = useState<string | null>(null);
 
   const toggleExpand = (orderId: string) => {
@@ -81,7 +88,8 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                       {order.fullName}
                     </h3>
                     <p className="text-foreground/60 text-xs sm:text-xs mt-1 line-clamp-2">
-                      {order.service} • {order.wordCount.toLocaleString()} words • ${order.price}
+                      {order.service} • {order.wordCount.toLocaleString()} words
+                      • ${order.price}
                     </p>
                   </div>
                   <button
@@ -105,7 +113,9 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                 <div className="border-t border-white/10 p-3 sm:p-4 md:p-6 bg-white/[0.02] space-y-4 sm:space-y-6">
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-white/10 pb-3 sm:pb-4 gap-2">
-                    <h3 className="text-base sm:text-lg font-semibold text-foreground">Order Details</h3>
+                    <h3 className="text-base sm:text-lg font-semibold text-foreground">
+                      Order Details
+                    </h3>
                     <span className="text-xs font-medium text-foreground/60 truncate">
                       {order.id}
                     </span>
@@ -124,7 +134,9 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                         </p>
                       </div>
                       <div>
-                        <p className="text-foreground/60 text-xs mb-1">Academic Level</p>
+                        <p className="text-foreground/60 text-xs mb-1">
+                          Academic Level
+                        </p>
                         <p className="text-foreground text-sm">
                           {order.academicLevel}
                         </p>
@@ -142,13 +154,17 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                     </p>
                     <div className="space-y-2">
                       <div>
-                        <p className="text-foreground/60 text-xs mb-1">Subject/Topic</p>
+                        <p className="text-foreground/60 text-xs mb-1">
+                          Subject/Topic
+                        </p>
                         <p className="text-foreground text-sm">
                           {order.subject}
                         </p>
                       </div>
                       <div>
-                        <p className="text-foreground/60 text-xs mb-1">Paper Type</p>
+                        <p className="text-foreground/60 text-xs mb-1">
+                          Paper Type
+                        </p>
                         <p className="text-foreground text-sm">
                           {order.paperType}
                         </p>
@@ -187,7 +203,7 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                               {file}
                             </span>
                             <a
-                              href={`data:application/octet-stream;base64,${btoa('Sample file content')}`}
+                              href={`data:application/octet-stream;base64,${btoa("Sample file content")}`}
                               download={file}
                               className="text-cyan-400 hover:text-cyan-300 transition-colors p-1.5 flex-shrink-0 group-hover:bg-white/5 rounded"
                               title="Download file"

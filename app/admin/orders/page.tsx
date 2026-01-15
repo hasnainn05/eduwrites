@@ -108,7 +108,8 @@ export default function AdminOrders() {
       paperType: "Research Paper",
       status: "in_progress",
       submittedDate: "2025-01-10",
-      description: "Research paper on climate change impacts on marine ecosystems. Need data analysis and current research findings.",
+      description:
+        "Research paper on climate change impacts on marine ecosystems. Need data analysis and current research findings.",
       attachments: ["guidelines.pdf"],
       price: 499,
     },
@@ -124,7 +125,8 @@ export default function AdminOrders() {
       paperType: "Dissertation",
       status: "in_progress",
       submittedDate: "2025-01-09",
-      description: "PhD dissertation on behavioral psychology and decision-making. Comprehensive research with original theory.",
+      description:
+        "PhD dissertation on behavioral psychology and decision-making. Comprehensive research with original theory.",
       attachments: ["proposal.docx"],
       price: 1299,
     },
@@ -181,7 +183,11 @@ export default function AdminOrders() {
 
   const filteredOrders = allOrders
     .filter((order) => order.status === activeStatus)
-    .sort((a, b) => new Date(b.submittedDate).getTime() - new Date(a.submittedDate).getTime());
+    .sort(
+      (a, b) =>
+        new Date(b.submittedDate).getTime() -
+        new Date(a.submittedDate).getTime(),
+    );
 
   const stats = {
     pending: allOrders.filter((o) => o.status === "pending").length,
@@ -208,7 +214,10 @@ export default function AdminOrders() {
                 Manage all customer orders and view details
               </p>
             </div>
-            <div className="text-right text-xs sm:text-sm whitespace-nowrap" suppressHydrationWarning>
+            <div
+              className="text-right text-xs sm:text-sm whitespace-nowrap"
+              suppressHydrationWarning
+            >
               <p className="text-foreground/60">
                 {new Date().toLocaleDateString()}
               </p>
