@@ -122,9 +122,9 @@ export default function AdminMessages() {
   const unresolvedCount = conversations.filter((c) => !c.resolved).length;
 
   return (
-    <div className="flex-1 flex overflow-hidden">
+    <div className="flex-1 flex overflow-hidden flex-col lg:flex-row">
           {/* Conversations List */}
-          <div className="w-80 border-r border-white/10 flex flex-col overflow-hidden bg-gradient-to-b from-slate-800/50 to-slate-900/50">
+          <div className="w-full lg:w-80 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col overflow-hidden bg-gradient-to-b from-slate-800/50 to-slate-900/50">
             {/* Search */}
             <div className="p-4 border-b border-white/10">
               <div className="relative">
@@ -181,7 +181,7 @@ export default function AdminMessages() {
 
           {/* Chat Area */}
           {currentConversation ? (
-            <div className="flex-1 flex flex-col overflow-hidden">
+            <div className="flex-1 flex flex-col overflow-hidden min-w-0">
               {/* Conversation Header */}
               <div className="p-6 border-b border-white/10 bg-gradient-to-r from-slate-900/50 to-slate-800/50">
                 <div className="flex items-center justify-between mb-2">
