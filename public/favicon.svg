@@ -1,37 +1,28 @@
 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="ewGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    <linearGradient id="wGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#16a34a;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#0891b2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9333ea;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- E Letter -->
+  <!-- E Letter - Dark Navy Blue -->
   <g>
-    <!-- E vertical bar -->
-    <rect x="25" y="50" width="30" height="100" rx="4" fill="url(#ewGradient)" />
-    <!-- E horizontal bars -->
-    <rect x="55" y="50" width="40" height="18" rx="3" fill="url(#ewGradient)" />
-    <rect x="55" y="130" width="40" height="18" rx="3" fill="url(#ewGradient)" />
-    <rect x="55" y="90" width="35" height="16" rx="3" fill="url(#ewGradient)" opacity="0.8" />
+    <!-- Vertical bar of E -->
+    <rect x="20" y="30" width="35" height="140" rx="6" fill="#1e3a8a" />
+    <!-- Top horizontal bar -->
+    <rect x="55" y="30" width="50" height="32" rx="5" fill="#1e3a8a" />
+    <!-- Middle horizontal bar -->
+    <rect x="55" y="98" width="45" height="28" rx="5" fill="#1e3a8a" />
+    <!-- Bottom horizontal bar -->
+    <rect x="55" y="138" width="50" height="32" rx="5" fill="#1e3a8a" />
   </g>
   
-  <!-- W Letter -->
+  <!-- W Letter - Gradient -->
   <g>
-    <!-- Left diagonal of W -->
-    <path d="M 110 150 L 120 50 L 130 100 L 140 50 L 155 150" stroke="url(#ewGradient)" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-    <!-- Additional styling for W -->
-    <path d="M 115 150 L 125 55 L 135 100 L 145 55 L 160 150" stroke="url(#leafGradient)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
-  </g>
-  
-  <!-- Decorative accent (small star from original) -->
-  <g opacity="0.8">
-    <circle cx="175" cy="45" r="8" fill="url(#leafGradient)" />
-    <path d="M 175 40 L 177 45 L 182 45 L 178 48 L 180 53 L 175 50 L 170 53 L 172 48 L 168 45 L 173 45 Z" fill="url(#leafGradient)" />
+    <!-- W is made of two V shapes -->
+    <!-- Left V shape -->
+    <path d="M 110 170 L 130 30 L 145 90 L 160 30 L 180 170" stroke="url(#wGradient)" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round" />
   </g>
 </svg>
