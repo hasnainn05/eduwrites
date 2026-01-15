@@ -1,6 +1,5 @@
 "use client";
 
-import { AdminSidebar } from "@/client/components/AdminSidebar";
 import {
   BarChart3,
   Users,
