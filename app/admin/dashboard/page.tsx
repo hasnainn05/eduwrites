@@ -1,8 +1,6 @@
 "use client";
 
-import { useState } from "react";
 import { AdminSidebar } from "@/client/components/AdminSidebar";
-import { Calendar } from "@/client/components/ui/calendar";
 import {
   BarChart3,
   Users,
