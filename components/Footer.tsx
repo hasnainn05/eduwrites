@@ -172,10 +172,10 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-sidebar-border pt-8 mt-8">
           <div className="flex flex-col items-center justify-center gap-4">
-            <p className="text-sidebar-foreground/60 text-sm">
+            <p className="text-sidebar-foreground/60 text-sm text-center">
               &copy; {currentYear} EduWrites. All rights reserved.
             </p>
-            <div className="flex gap-4 mt-4 md:mt-0">
+            <div className="flex gap-4 justify-center">
               <a
                 href="#"
                 className="text-sidebar-foreground/60 hover:text-sidebar-foreground text-sm transition-colors"
