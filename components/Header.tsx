@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-gradient-to-b from-background/95 to-background/80 backdrop-blur-lg">
       {/* Main Header */}
-      <div className="px-1 sm:px-1 lg:px-2 py-2 sm:py-2">
+      <div className="px-3 sm:px-4 lg:px-8 py-3 sm:py-4">
         <div className="w-full flex items-center justify-between gap-1 sm:gap-1 md:gap-2">
           {/* Left: Logo and Branding */}
           <Link
