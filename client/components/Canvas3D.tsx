@@ -14,37 +14,38 @@ export function Canvas3D() {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Scene setup
-    const scene = new THREE.Scene();
-    scene.background = null;
-    sceneRef.current = scene;
+      // Scene setup
+      const scene = new THREE.Scene();
+      scene.background = null;
+      sceneRef.current = scene;
 
-    // Camera setup - positioned further back for "far away" effect
-    const camera = new THREE.PerspectiveCamera(
-      60,
-      containerRef.current.clientWidth / containerRef.current.clientHeight,
-      0.1,
-      3000,
-    );
-    camera.position.set(0, 0, 120);
-    camera.lookAt(0, 0, 0);
-    cameraRef.current = camera;
+      const width = containerRef.current.clientWidth;
+      const height = containerRef.current.clientHeight;
 
-    // Renderer setup
-    const renderer = new THREE.WebGLRenderer({
-      antialias: true,
-      alpha: true,
-      precision: "highp",
-      powerPreference: "high-performance",
-    });
-    renderer.setSize(
-      containerRef.current.clientWidth,
-      containerRef.current.clientHeight,
-    );
-    renderer.setClearColor(0x000000, 0);
-    renderer.domElement.style.pointerEvents = "none";
-    containerRef.current.appendChild(renderer.domElement);
-    rendererRef.current = renderer;
+      // Camera setup - positioned further back for "far away" effect
+      const camera = new THREE.PerspectiveCamera(
+        60,
+        width / height || 1,
+        0.1,
+        3000,
+      );
+      camera.position.set(0, 0, 120);
+      camera.lookAt(0, 0, 0);
+      cameraRef.current = camera;
+
+      // Renderer setup with error handling
+      const renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true,
+        precision: "highp",
+        powerPreference: "high-performance",
+        failIfMajorPerformanceCaveat: false,
+      });
+      renderer.setSize(width, height);
+      renderer.setClearColor(0x000000, 0);
+      renderer.domElement.style.pointerEvents = "none";
+      containerRef.current.appendChild(renderer.domElement);
+      rendererRef.current = renderer;
 
     // Create a large particle system for galaxy effect
     const particleCount = 2000;
@@ -109,22 +110,25 @@ export function Canvas3D() {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
     scene.add(ambientLight);
 
-    let mouseX = 0;
-    let mouseY = 0;
-    let targetMouseX = 0;
-    let targetMouseY = 0;
+      let mouseX = 0;
+      let mouseY = 0;
+      let targetMouseX = 0;
+      let targetMouseY = 0;
+      let isRunning = true;
 
-    const onMouseMove = (event: MouseEvent) => {
-      targetMouseX = (event.clientX / window.innerWidth) * 2 - 1;
-      targetMouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-    };
+      const onMouseMove = (event: MouseEvent) => {
+        if (!isRunning) return;
+        targetMouseX = (event.clientX / window.innerWidth) * 2 - 1;
+        targetMouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+      };
 
-    window.addEventListener("mousemove", onMouseMove);
+      window.addEventListener("mousemove", onMouseMove);
 
-    // Animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
-      timeRef.current += 0.001;
+      // Animation loop
+      const animate = () => {
+        if (!isRunning) return;
+        animationFrameRef.current = requestAnimationFrame(animate);
+        timeRef.current += 0.001;
 
       // Smooth mouse tracking
       mouseX += (targetMouseX - mouseX) * 0.05;
@@ -197,6 +201,18 @@ export function Canvas3D() {
       renderer.dispose();
     };
   }, []);
+
+  if (error) {
+    return (
+      <div
+        className="absolute inset-0 w-full h-full"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(10,40,50,0.1) 0%, rgba(20,20,60,0.05) 30%, transparent 70%)",
+        }}
+      />
+    );
+  }
 
   return (
     <div
