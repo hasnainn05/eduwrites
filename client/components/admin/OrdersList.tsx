@@ -67,15 +67,15 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                     isExpanded ? "bg-white/5" : ""
                   }`}
                 >
-                  <td className="px-4 py-4 text-foreground font-mono text-sm">#{order.id.split("-").pop()}</td>
-                  <td className="px-4 py-4 text-foreground text-sm">{order.fullName}</td>
-                  <td className="px-4 py-4 text-foreground/80 text-sm">{order.service}</td>
-                  <td className="px-4 py-4 text-foreground/80 text-sm">{order.wordCount.toLocaleString()}</td>
-                  <td className="px-4 py-4 text-foreground text-sm">${order.price}</td>
-                  <td className="px-4 py-4 text-foreground/80 text-sm">
+                  <td className="px-4 py-5 text-foreground font-mono text-sm">#{order.id.split("-").pop()}</td>
+                  <td className="px-4 py-5 text-foreground text-sm">{order.fullName}</td>
+                  <td className="px-4 py-5 text-foreground/80 text-sm">{order.service}</td>
+                  <td className="px-4 py-5 text-foreground/80 text-sm">{order.wordCount.toLocaleString()}</td>
+                  <td className="px-4 py-5 text-foreground text-sm">${order.price}</td>
+                  <td className="px-4 py-5 text-foreground/80 text-sm">
                     {new Date(order.deadline).toLocaleDateString()}
                   </td>
-                  <td className="px-4 py-4">
+                  <td className="px-4 py-5">
                     <span
                       className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${
                         order.status === "pending"
@@ -92,7 +92,7 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                           : "Completed"}
                     </span>
                   </td>
-                  <td className="px-4 py-4 text-center">
+                  <td className="px-4 py-5 text-center">
                     <button
                       onClick={() => toggleExpand(order.id)}
                       className="text-foreground/60 hover:text-foreground/80 transition-colors inline-flex items-center justify-center"
