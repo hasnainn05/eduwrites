@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { AdminSidebar } from "@/client/components/AdminSidebar";
 import { Send, MessageSquare, Trash2, Search, AlertCircle } from "lucide-react";
 
 export default function AdminLiveChat() {
@@ -123,26 +122,7 @@ export default function AdminLiveChat() {
   const unresolvedCount = conversations.filter((c) => !c.resolved).length;
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Sidebar */}
-      <AdminSidebar />
-
-      {/* Main Content */}
-      <div className="flex-1 ml-64 flex flex-col overflow-hidden">
-        {/* Header */}
-        <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur border-b border-white/10 p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl font-bold text-foreground">Live Chat</h1>
-              <p className="text-foreground/60 text-sm mt-1">
-                {unresolvedCount} active conversations
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="flex-1 flex overflow-hidden">
+    <div className="flex-1 flex overflow-hidden">
           {/* Conversations List */}
           <div className="w-80 border-r border-white/10 flex flex-col overflow-hidden bg-gradient-to-b from-slate-800/50 to-slate-900/50">
             {/* Search */}
@@ -302,8 +282,6 @@ export default function AdminLiveChat() {
               </p>
             </div>
           )}
-        </div>
-      </div>
     </div>
   );
 }
