@@ -148,7 +148,7 @@ export function AdminSidebar() {
       )}
 
       {/* Sidebar - Desktop */}
-      <div className="hidden md:flex w-64 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 border-r border-white/10 flex-col h-screen fixed left-0 top-0">
+      <div className="hidden md:flex w-64 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 border-r border-white/10 flex-col">
         <SidebarContent />
       </div>
 
