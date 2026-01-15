@@ -14,14 +14,14 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-gradient-to-b from-background/95 to-background/80 backdrop-blur-lg">
       {/* Main Header */}
-      <div className="px-3 sm:px-4 lg:px-8 py-3 sm:py-4">
-        <div className="w-full flex items-center justify-between gap-3 sm:gap-4 md:gap-6">
+      <div className="px-1 sm:px-1 lg:px-2 py-2 sm:py-2">
+        <div className="w-full flex items-center justify-between gap-1 sm:gap-1 md:gap-2">
           {/* Left: Logo and Branding */}
           <Link
             href="/"
             className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-2"
           >
-            <img src="/ew-logo.webp" alt="EduWrites Logo" className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex-shrink-0" />
+            <img src="/ew-logo.webp" alt="EduWrites Logo" className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[30rem] lg:h-[30rem] flex-shrink-0" />
             <div>
               <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
                 EduWrites
