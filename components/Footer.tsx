@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <img
-                src="/ew-logo.svg"
+                src="https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800"
                 alt="EduWrites Logo"
                 className="w-[46px] h-[46px] sm:w-[51px] sm:h-[51px] flex-shrink-0"
               />
