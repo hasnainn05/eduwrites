@@ -24,7 +24,7 @@ export function ProfileSidebar({
   ];
 
   return (
-    <div className="fixed left-0 top-0 w-96 h-screen bg-gradient-to-b from-slate-900/50 to-slate-900/30 border-r border-white/10 flex flex-col z-40">
+    <div className="fixed left-0 top-0 w-64 h-screen bg-gradient-to-b from-slate-900/50 to-slate-900/30 border-r border-white/10 flex flex-col z-40">
       {/* Header Spacing */}
       <div className="h-16"></div>
 
