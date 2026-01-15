@@ -9,7 +9,7 @@ import {
   Eye,
   EyeOff,
   ArrowRight,
-  Github,
+  Apple,
   CheckCircle,
 } from "lucide-react";
 
