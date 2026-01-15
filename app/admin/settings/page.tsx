@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { AdminSidebar } from "@/client/components/AdminSidebar";
 import {
   Save,
   Mail,
@@ -41,24 +40,7 @@ export default function AdminSettings() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Sidebar */}
-      <AdminSidebar />
-
-      {/* Main Content */}
-      <div className="flex-1 ml-64 overflow-y-auto">
-        {/* Header */}
-        <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur border-b border-white/10 p-6">
-          <div>
-            <h1 className="text-3xl font-bold text-foreground">Settings</h1>
-            <p className="text-foreground/60 text-sm mt-1">
-              Manage company information and details
-            </p>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="p-6 max-w-4xl">
+    <div className="p-6 max-w-4xl">
           {/* Success Message */}
           {isSaved && (
             <div className="mb-6 p-4 rounded-lg bg-green-500/20 border border-green-500/30 text-green-400 text-sm font-medium">
@@ -248,8 +230,6 @@ export default function AdminSettings() {
               Save Changes
             </button>
           </div>
-        </div>
-      </div>
     </div>
   );
 }
