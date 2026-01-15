@@ -137,23 +137,16 @@ export default function AdminDashboard() {
                   );
                 })}
                 {/* Calendar Card */}
-                <div className="group glass p-4 sm:p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all hover:bg-white/10 cursor-pointer">
-                  <div className="flex items-start justify-between mb-3 sm:mb-4">
-                    <div className="p-2 sm:p-3 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 bg-opacity-20 group-hover:scale-110 transition-transform">
-                      <svg className="w-5 sm:w-6 h-5 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <p className="text-foreground/70 text-xs sm:text-sm font-medium">
+                <div className="glass p-4 sm:p-6 rounded-2xl border border-white/10 overflow-hidden">
+                  <h3 className="text-sm font-bold text-foreground mb-3">
                     Schedule
-                  </p>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-foreground mt-2">
-                    {selectedDate?.toLocaleDateString("en-US", { month: "short", day: "numeric" })}
                   </h3>
-                  <p className="text-xs text-foreground/50 mt-2 sm:mt-3">
-                    {selectedDate?.toLocaleDateString("en-US", { weekday: "long" })}
-                  </p>
+                  <Calendar
+                    mode="single"
+                    selected={selectedDate}
+                    onSelect={setSelectedDate}
+                    className="w-full scale-75 origin-top-left -ml-6"
+                  />
                 </div>
               </div>
             </div>
