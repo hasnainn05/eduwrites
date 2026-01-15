@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { AdminSidebar } from "@/client/components/AdminSidebar";
 import { Plus, Edit2, Trash2, Star, Search } from "lucide-react";
 
 export default function AdminReviews() {
@@ -108,35 +107,7 @@ export default function AdminReviews() {
   ).toFixed(1);
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Sidebar */}
-      <AdminSidebar />
-
-      {/* Main Content */}
-      <div className="flex-1 ml-64 overflow-y-auto">
-        {/* Header */}
-        <div className="sticky top-0 z-40 bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur border-b border-white/10 p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl font-bold text-foreground">
-                Reviews & Ratings
-              </h1>
-              <p className="text-foreground/60 text-sm mt-1">
-                Manage customer reviews and ratings
-              </p>
-            </div>
-            <button
-              onClick={handleAddReview}
-              className="flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold hover:shadow-lg transition-all"
-            >
-              <Plus size={20} />
-              Add Review
-            </button>
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="p-6 space-y-6">
+    <div className="p-6 space-y-6">
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="glass p-6 rounded-2xl border border-white/10">
@@ -236,9 +207,6 @@ export default function AdminReviews() {
               </div>
             ))}
           </div>
-        </div>
-      </div>
-
       {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
