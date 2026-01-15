@@ -46,8 +46,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
           {/* Brand Section */}
           <div className="col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-4">
-              <img src="/favicon.svg" alt="EduWrites Logo" className="w-10 h-10 flex-shrink-0" />
+            <Link href="/" className="flex items-center gap-2 mb-4">
+              <img src="/favicon.svg" alt="EduWrites Logo" className="w-9 h-9 flex-shrink-0" />
               <span className="font-bold text-lg bg-gradient-to-r from-sidebar-primary to-sidebar-accent bg-clip-text text-transparent">
                 EduWrites
               </span>
