@@ -68,7 +68,7 @@ export function AdminSidebar() {
       <div className="p-4 md:p-6 border-b border-white/10">
         <Link href="/admin/dashboard" className="flex items-center gap-2 mb-2">
           <img
-            src="/ew-logo.webp"
+            src="/ew-logo.svg"
             alt="EduWrites Logo"
             className="w-[46px] h-[46px] sm:w-[51px] sm:h-[51px] flex-shrink-0"
           />
