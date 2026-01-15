@@ -28,7 +28,6 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Support message submitted:", formData);
     setSubmitted(true);
     setTimeout(() => {
       setFormData({

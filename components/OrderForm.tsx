@@ -104,8 +104,6 @@ export default function OrderForm({
     };
 
     saveOrder(newOrder);
-    console.log("Order submitted:", newOrder);
-
     setIsSubmitted(true);
 
     setTimeout(() => {

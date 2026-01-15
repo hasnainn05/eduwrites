@@ -23,7 +23,6 @@ export default function Login() {
 
       // Simulate login delay
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log("Login attempt:", { email, password });
 
       // Redirect to profile
       window.location.href = "/profile";
