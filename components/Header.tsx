@@ -19,9 +19,9 @@ export default function Header() {
           {/* Left: Logo and Branding */}
           <Link
             href="/"
-            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-2"
+            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-3"
           >
-            <img src="/favicon.svg" alt="EduWrites Logo" className="w-8 h-8 sm:w-10 sm:h-10" />
+            <img src="/favicon.svg" alt="EduWrites Logo" className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0" />
             <div>
               <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
                 EduWrites
