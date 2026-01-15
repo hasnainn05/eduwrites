@@ -211,16 +211,16 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="heading-3d text-3xl sm:text-5xl font-bold mb-6 leading-tight font-poppins max-w-5xl mx-auto">
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                Professional Academic
-              </span>
+            <h1 className="heading-3d text-3xl sm:text-5xl font-bold mb-6 leading-tight font-poppins max-w-4xl mx-auto">
+              Achieve Academic Excellence
               <br />
-              Writing Services
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+                with Professional Academic Writing Services
+              </span>
             </h1>
 
             <p className="text-lg sm:text-xl text-foreground/70 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Achieve academic excellence. Elevate your grades with plagiarism-free, custom-written papers by Ph.D. experts. From essays to theses, we provide 100% original academic support delivered on time, every time.
+              Elevate your grades with plagiarism-free, custom-written papers by Ph.D. experts. From essays to theses, we provide 100% original academic support delivered on time, every time.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
