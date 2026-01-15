@@ -1,8 +1,6 @@
 "use client";
 
-import { useState } from "react";
 import { AdminSidebar } from "@/client/components/AdminSidebar";
-import { Calendar } from "@/client/components/ui/calendar";
 import {
   BarChart3,
   Users,
@@ -16,10 +14,6 @@ import {
 import Link from "next/link";
 
 export default function AdminDashboard() {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
-    new Date(),
-  );
-
   const stats = [
     {
       label: "Total Services",
@@ -36,6 +30,13 @@ export default function AdminDashboard() {
       color: "from-purple-500 to-pink-500",
     },
     {
+      label: "Average Rating",
+      value: "4.8",
+      change: "+0.3 this month",
+      icon: Star,
+      color: "from-yellow-500 to-orange-500",
+    },
+    {
       label: "Total Reviews",
       value: "892",
       change: "+89 this month",
@@ -48,6 +49,13 @@ export default function AdminDashboard() {
       change: "Pending responses",
       icon: MessageSquare,
       color: "from-indigo-500 to-purple-500",
+    },
+    {
+      label: "Customer Satisfaction",
+      value: "94%",
+      change: "+2% this month",
+      icon: BarChart3,
+      color: "from-cyan-500 to-blue-500",
     },
   ];
 
