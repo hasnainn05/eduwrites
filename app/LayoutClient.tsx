@@ -16,12 +16,12 @@ export default function LayoutClient({
 
   return (
     <>
-      <Canvas3DWrapper />
+      {!isAdminRoute && <Canvas3DWrapper />}
       <div className="flex flex-col min-h-screen">
         {!isAdminRoute && <Header />}
         <main className="flex-grow">{children}</main>
         {!isAdminRoute && <Footer />}
-        <LiveChat />
+        {!isAdminRoute && <LiveChat />}
       </div>
     </>
   );
