@@ -14,10 +14,6 @@ import {
 import Link from "next/link";
 
 export default function AdminDashboard() {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(
-    new Date(),
-  );
-
   const stats = [
     {
       label: "Total Services",
