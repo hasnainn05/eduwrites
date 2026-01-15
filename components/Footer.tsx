@@ -47,6 +47,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
+              <img src="/favicon.svg" alt="EduWrites Logo" className="w-8 h-8" />
               <span className="font-bold bg-gradient-to-r from-sidebar-primary to-sidebar-accent bg-clip-text text-transparent">
                 EduWrites
               </span>
