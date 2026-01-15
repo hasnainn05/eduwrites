@@ -102,11 +102,11 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
 
               {/* Expanded Details */}
               {isExpanded && (
-                <div className="border-t border-white/10 p-5 bg-white/[0.02] space-y-6">
+                <div className="border-t border-white/10 p-3 sm:p-4 md:p-6 bg-white/[0.02] space-y-4 sm:space-y-6">
                   {/* Header */}
-                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                    <h3 className="text-lg font-semibold text-foreground">Order Details</h3>
-                    <span className="text-xs font-medium text-foreground/60">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-white/10 pb-3 sm:pb-4 gap-2">
+                    <h3 className="text-base sm:text-lg font-semibold text-foreground">Order Details</h3>
+                    <span className="text-xs font-medium text-foreground/60 truncate">
                       {order.id}
                     </span>
                   </div>
