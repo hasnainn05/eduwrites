@@ -1,0 +1,16 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="gradientBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Rounded square background -->
+  <rect x="8" y="8" width="84" height="84" rx="16" fill="url(#gradientBg)" />
+  
+  <!-- EW text -->
+  <text x="50" y="62" font-family="system-ui, -apple-system, sans-serif" font-size="52" font-weight="700" fill="white" text-anchor="middle" letter-spacing="-2">EW</text>
+</svg>
