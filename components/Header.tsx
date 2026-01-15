@@ -15,7 +15,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-gradient-to-b from-background/95 to-background/80 backdrop-blur-lg">
       {/* Main Header */}
       <div className="px-3 sm:px-4 lg:px-8 py-3 sm:py-4">
-        <div className="w-full flex items-center justify-between gap-1 sm:gap-1 md:gap-2">
+        <div className="w-full flex items-center justify-between gap-3 sm:gap-4 md:gap-6">
           {/* Left: Logo and Branding */}
           <Link
             href="/"
