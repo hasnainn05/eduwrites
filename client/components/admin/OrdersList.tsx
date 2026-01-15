@@ -40,8 +40,8 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
   }
 
   return (
-    <div className="p-6 sm:p-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+    <div className="p-4 sm:p-6">
+      <div className="grid grid-cols-1 gap-4">
         {orders.map((order) => {
           const isExpanded = expandedOrderId === order.id;
 
@@ -52,17 +52,17 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
             >
               {/* Card Header */}
               <div
-                className="p-5 cursor-pointer hover:bg-white/10 transition-colors"
+                className="p-4 cursor-pointer hover:bg-white/10 transition-colors"
                 onClick={() => toggleExpand(order.id)}
               >
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start justify-between gap-3">
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-foreground font-mono text-sm font-medium">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-foreground font-mono text-xs font-medium">
                         #{order.id.split("-").pop()}
                       </span>
                       <span
-                        className={`inline-block px-2 py-1 rounded text-xs font-medium ${
+                        className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${
                           order.status === "pending"
                             ? "bg-green-500/20 text-green-400"
                             : order.status === "in_progress"
@@ -77,11 +77,11 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                             : "Completed"}
                       </span>
                     </div>
-                    <h3 className="text-foreground font-semibold text-base truncate">
+                    <h3 className="text-foreground font-semibold text-sm truncate">
                       {order.fullName}
                     </h3>
-                    <p className="text-foreground/60 text-sm mt-1">
-                      {order.service}
+                    <p className="text-foreground/60 text-xs mt-1">
+                      {order.service} • {order.wordCount.toLocaleString()} words • ${order.price}
                     </p>
                   </div>
                   <button
@@ -89,32 +89,10 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
                     onClick={() => toggleExpand(order.id)}
                   >
                     <ChevronDown
-                      size={20}
+                      size={18}
                       className={`transition-transform ${isExpanded ? "rotate-180" : ""}`}
                     />
                   </button>
-                </div>
-
-                {/* Quick Info */}
-                <div className="grid grid-cols-3 gap-4 mt-4 pt-4 border-t border-white/10">
-                  <div>
-                    <p className="text-foreground/60 text-xs mb-1">Word Count</p>
-                    <p className="text-foreground text-sm font-medium">
-                      {order.wordCount.toLocaleString()}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-foreground/60 text-xs mb-1">Budget</p>
-                    <p className="text-cyan-400 text-sm font-medium">
-                      ${order.price}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-foreground/60 text-xs mb-1">Deadline</p>
-                    <p className="text-foreground text-sm font-medium">
-                      {new Date(order.deadline).toLocaleDateString()}
-                    </p>
-                  </div>
                 </div>
               </div>
 
