@@ -22,7 +22,7 @@ export default function Header() {
             className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-2"
           >
             <img
-              src="/ew-logo.webp"
+              src="/ew-logo.svg"
               alt="EduWrites Logo"
               className="w-[46px] h-[46px] sm:w-[51px] sm:h-[51px] lg:w-[56px] lg:h-[56px] flex-shrink-0"
             />

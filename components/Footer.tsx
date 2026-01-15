@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <img
-                src="/ew-logo.webp"
+                src="/ew-logo.svg"
                 alt="EduWrites Logo"
                 className="w-[46px] h-[46px] sm:w-[51px] sm:h-[51px] flex-shrink-0"
               />
