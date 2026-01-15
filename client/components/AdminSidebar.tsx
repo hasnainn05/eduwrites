@@ -63,9 +63,9 @@ export function AdminSidebar() {
   const isActive = (href: string) => pathname === href;
 
   const SidebarContent = () => (
-    <>
-      {/* Logo */}
-      <div className="p-4 md:p-6 border-b border-white/10">
+    <div className="h-full flex flex-col">
+      {/* Logo - Fixed */}
+      <div className="flex-shrink-0 p-4 md:p-6 border-b border-white/10">
         <Link href="/admin/dashboard" className="flex items-center gap-2 mb-2">
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800"
@@ -79,8 +79,8 @@ export function AdminSidebar() {
         <p className="text-xs text-foreground/50 ml-11">EduWrites</p>
       </div>
 
-      {/* Navigation Menu */}
-      <nav className="flex-1 overflow-y-auto p-2 md:p-4 space-y-1 md:space-y-2">
+      {/* Navigation Menu - Scrollable */}
+      <nav className="flex-1 overflow-y-auto p-2 md:p-4 space-y-1 md:space-y-2 min-h-0">
         {menuItems.map((item) => {
           const Icon = item.icon;
           const active = isActive(item.href);
@@ -103,8 +103,8 @@ export function AdminSidebar() {
         })}
       </nav>
 
-      {/* Footer */}
-      <div className="p-2 md:p-4 border-t border-white/10 space-y-2 md:space-y-3">
+      {/* Footer - Fixed */}
+      <div className="flex-shrink-0 p-2 md:p-4 border-t border-white/10 space-y-2 md:space-y-3">
         <Link
           href="/"
           onClick={() => setIsOpen(false)}
@@ -123,7 +123,7 @@ export function AdminSidebar() {
           <span className="font-medium">Logout</span>
         </button>
       </div>
-    </>
+    </div>
   );
 
   return (
