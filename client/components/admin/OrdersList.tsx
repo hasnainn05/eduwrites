@@ -45,14 +45,14 @@ export function OrdersList({ orders, status, onStatusChange }: OrdersListProps) 
       <table className="w-full">
         <thead>
           <tr className="border-b border-white/10">
-            <th className="text-left px-4 py-4 text-foreground/70 text-sm font-semibold">Order ID</th>
-            <th className="text-left px-4 py-4 text-foreground/70 text-sm font-semibold">Customer Name</th>
-            <th className="text-left px-4 py-4 text-foreground/70 text-sm font-semibold">Service Type</th>
-            <th className="text-left px-4 py-4 text-foreground/70 text-sm font-semibold">Word Count</th>
-            <th className="text-left px-4 py-4 text-foreground/70 text-sm font-semibold">Budget</th>
-            <th className="text-left px-4 py-4 text-foreground/70 text-sm font-semibold">Deadline</th>
-            <th className="text-left px-4 py-4 text-foreground/70 text-sm font-semibold">Status</th>
-            <th className="text-center px-4 py-4 text-foreground/70 text-sm font-semibold">Action</th>
+            <th className="text-left px-4 py-5 text-foreground/70 text-xs font-semibold uppercase tracking-wide">Order ID</th>
+            <th className="text-left px-4 py-5 text-foreground/70 text-xs font-semibold uppercase tracking-wide">Customer Name</th>
+            <th className="text-left px-4 py-5 text-foreground/70 text-xs font-semibold uppercase tracking-wide">Service Type</th>
+            <th className="text-left px-4 py-5 text-foreground/70 text-xs font-semibold uppercase tracking-wide">Word Count</th>
+            <th className="text-left px-4 py-5 text-foreground/70 text-xs font-semibold uppercase tracking-wide">Budget</th>
+            <th className="text-left px-4 py-5 text-foreground/70 text-xs font-semibold uppercase tracking-wide">Deadline</th>
+            <th className="text-left px-4 py-5 text-foreground/70 text-xs font-semibold uppercase tracking-wide">Status</th>
+            <th className="text-center px-4 py-5 text-foreground/70 text-xs font-semibold uppercase tracking-wide">Action</th>
           </tr>
         </thead>
         <tbody>
