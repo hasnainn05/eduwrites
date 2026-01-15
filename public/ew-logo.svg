@@ -1,31 +1,29 @@
 <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="modernGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#A855F7;stop-opacity:1" />
       <stop offset="50%" style="stop-color:#EC4899;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="boxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#A855F7;stop-opacity:0.2" />
-      <stop offset="50%" style="stop-color:#EC4899;stop-opacity:0.15" />
-      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:0.2" />
+    <linearGradient id="boxGradient2Color" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A855F7;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:0.3" />
     </linearGradient>
-    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="borderGradient2Color" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#A855F7;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#EC4899;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- Modern Gradient Box -->
+  <!-- Two-Color Gradient Box (Purple to Cyan) -->
   <rect 
     x="8" 
     y="8" 
     width="104" 
     height="104" 
     rx="20" 
-    fill="url(#boxGradient)" 
-    stroke="url(#borderGradient)" 
+    fill="url(#boxGradient2Color)" 
+    stroke="url(#borderGradient2Color)" 
     stroke-width="2"
   />
   
@@ -37,9 +35,9 @@
     height="96" 
     rx="18" 
     fill="none" 
-    stroke="url(#modernGradient)" 
+    stroke="url(#borderGradient2Color)" 
     stroke-width="0.5"
-    opacity="0.3"
+    opacity="0.2"
   />
   
   <!-- Modern Italic EW Text - Perfectly Centered -->
@@ -50,7 +48,7 @@
     font-size="62" 
     font-weight="900" 
     font-style="italic"
-    fill="url(#modernGradient)" 
+    fill="url(#textGradient)" 
     text-anchor="middle" 
     dominant-baseline="middle"
     letter-spacing="-1"
