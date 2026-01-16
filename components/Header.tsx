@@ -37,11 +37,11 @@ export default function Header() {
               alt="EduWrites Logo"
               className="w-[36px] h-[36px] sm:w-[46px] sm:h-[46px] md:w-[51px] md:h-[51px] lg:w-[56px] lg:h-[56px] flex-shrink-0"
             />
-            <div className="hidden sm:block">
-              <h1 className="text-lg sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
+            <div>
+              <h1 className="text-base sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
                 EduWrites
               </h1>
-              <p className="text-foreground/60 text-xs mt-0.5 sm:mt-1 font-medium">
+              <p className="text-foreground/60 text-xs mt-0.5 sm:mt-1 font-medium hidden sm:block">
                 Academic Excellence
               </p>
             </div>
