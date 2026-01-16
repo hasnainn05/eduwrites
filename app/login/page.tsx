@@ -127,7 +127,7 @@ export default function Login() {
             <div className="glass p-6 rounded-2xl border border-white/20">
               <p className="text-sm text-foreground/80 mb-4">
                 <strong className="text-cyan-400 block mb-2">
-                  🌟 Join 10,000+ Students
+                  🌟 Join 50,000+ Students
                 </strong>{" "}
                 who trust EduWrites for academic success
               </p>
