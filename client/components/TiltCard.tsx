@@ -11,19 +11,16 @@ interface TiltCardProps {
 export function TiltCard({ children, className = "" }: TiltCardProps) {
   return (
     <Tilt
-      tiltMaxAngleX={15}
-      tiltMaxAngleY={15}
-      perspective={1200}
-      scale={1.08}
-      transitionSpeed={300}
-      trackOnWindow={true}
+      tiltMaxAngleX={20}
+      tiltMaxAngleY={20}
+      perspective={1000}
+      scale={1.1}
+      transitionSpeed={400}
       glareEnable={true}
-      glareMaxOpacity={0.15}
-      glareColor="rgba(255, 255, 255, 0.2)"
-      className={`${className} pointer-events-auto`}
-      style={{ pointerEvents: "auto" }}
+      glareMaxOpacity={0.3}
+      className={`${className}`}
     >
-      <div style={{ pointerEvents: "auto" }}>{children}</div>
+      {children}
     </Tilt>
   );
 }
