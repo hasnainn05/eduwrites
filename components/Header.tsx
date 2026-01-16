@@ -303,6 +303,18 @@ export default function Header() {
                   </div>
                 </details>
 
+                {/* Mobile Footer Navigation Items */}
+                {footerNavItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    href={item.path}
+                    onClick={closeMenu}
+                    className="block text-[9px] font-medium text-white/90 hover:text-cyan-400 transition-colors py-0.5 px-1"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+
                 {/* Divider */}
                 <div className="border-t border-white/20 my-0.5"></div>
 
