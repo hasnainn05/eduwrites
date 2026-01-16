@@ -106,6 +106,13 @@ export default function Header() {
                     {item.label}
                   </Link>
                 ))}
+                <div className="border-t border-white/20 my-0.5"></div>
+                <Link
+                  to="/login"
+                  className="block w-full text-center px-1.5 py-0.5 border border-cyan-400/50 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-foreground/80 rounded-sm hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/20 transition-all text-[9px] font-medium"
+                >
+                  Login
+                </Link>
               </div>
             </details>
           </div>
