@@ -289,6 +289,31 @@ export default function OrderForm({
             </select>
           </div>
 
+          {/* Package Type */}
+          <div>
+            <label className="block text-sm font-medium text-foreground/90 mb-2">
+              Package *
+            </label>
+            <select
+              name="packageType"
+              value={formData.packageType}
+              onChange={handleChange}
+              className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-cyan-400 transition-colors"
+            >
+              {getServicePricing(formData.serviceType)?.packages.map(
+                (pkg) => (
+                  <option
+                    key={pkg.id}
+                    value={pkg.id}
+                    className="bg-slate-900"
+                  >
+                    {pkg.name}
+                  </option>
+                ),
+              )}
+            </select>
+          </div>
+
           {/* Word Count */}
           <div>
             <label className="block text-sm font-medium text-foreground/90 mb-2">
@@ -299,10 +324,19 @@ export default function OrderForm({
               name="wordCount"
               value={formData.wordCount}
               onChange={handleChange}
-              required
+              disabled={formData.packageType !== "custom"}
               placeholder="e.g., 5000"
-              className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
+              className={`w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors ${
+                formData.packageType !== "custom"
+                  ? "opacity-75 cursor-not-allowed"
+                  : ""
+              }`}
             />
+            {formData.packageType !== "custom" && (
+              <p className="text-xs text-foreground/50 mt-1">
+                Auto-set based on package
+              </p>
+            )}
           </div>
 
           {/* Deadline */}
