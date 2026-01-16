@@ -33,6 +33,36 @@ export default function Login() {
     }
   };
 
+  const handleGoogleLogin = async () => {
+    setIsLoading(true);
+    try {
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userEmail", "user@gmail.com");
+      localStorage.setItem("authProvider", "google");
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      window.location.href = "/profile";
+    } catch (err) {
+      setError("Google login failed. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleAppleLogin = async () => {
+    setIsLoading(true);
+    try {
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("userEmail", "user@icloud.com");
+      localStorage.setItem("authProvider", "apple");
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      window.location.href = "/profile";
+    } catch (err) {
+      setError("Apple login failed. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-background to-background/80 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
       {/* Animated Background */}
