@@ -217,7 +217,7 @@ export default function Header() {
                   />
                 </svg>
               </summary>
-              <div className="absolute top-full right-0 mt-1.5 bg-black/95 backdrop-blur-md border border-white/20 rounded-lg p-1.5 space-y-0.5 min-w-max z-50">
+              <div className="absolute top-full right-0 mt-1.5 bg-black/95 backdrop-blur-md border border-white/20 rounded-lg p-1.5 space-y-0.5 min-w-max z-50 max-h-96 overflow-y-auto">
                 {/* Navigation Links */}
                 {navItems.map((item) => (
                   <Link
@@ -229,6 +229,61 @@ export default function Header() {
                     {item.label}
                   </Link>
                 ))}
+
+                {/* Mobile Services Dropdown */}
+                <details className="group">
+                  <summary className="cursor-pointer block text-[9px] font-medium text-white/90 hover:text-cyan-400 transition-colors py-0.5 px-1 list-none">
+                    Services
+                  </summary>
+                  <div className="pl-3 space-y-0.5 mt-0.5">
+                    {services.map((service) => (
+                      <Link
+                        key={service.id}
+                        href={`/services/${service.slug}`}
+                        onClick={closeMenu}
+                        className="block text-[8px] font-medium text-white/80 hover:text-cyan-400 transition-colors py-0.5 px-1"
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
+                  </div>
+                </details>
+
+                {/* Mobile Fields of Study Dropdown */}
+                <details className="group">
+                  <summary className="cursor-pointer block text-[9px] font-medium text-white/90 hover:text-cyan-400 transition-colors py-0.5 px-1 list-none">
+                    Fields of Study
+                  </summary>
+                  <div className="pl-3 space-y-0.5 mt-0.5">
+                    {fieldsOfStudy.map((field, idx) => (
+                      <button
+                        key={idx}
+                        className="block w-full text-left text-[8px] font-medium text-white/80 hover:text-cyan-400 transition-colors py-0.5 px-1"
+                      >
+                        <span className="mr-1">{field.icon}</span>
+                        {field.category}
+                      </button>
+                    ))}
+                  </div>
+                </details>
+
+                {/* Mobile Languages Dropdown */}
+                <details className="group">
+                  <summary className="cursor-pointer block text-[9px] font-medium text-white/90 hover:text-cyan-400 transition-colors py-0.5 px-1 list-none">
+                    Languages
+                  </summary>
+                  <div className="pl-3 space-y-0.5 mt-0.5">
+                    {languages.map((language, idx) => (
+                      <button
+                        key={idx}
+                        className="block w-full text-left text-[8px] font-medium text-white/80 hover:text-cyan-400 transition-colors py-0.5 px-1"
+                      >
+                        <span className="mr-1">{language.flag}</span>
+                        {language.lang}
+                      </button>
+                    ))}
+                  </div>
+                </details>
 
                 {/* Divider */}
                 <div className="border-t border-white/20 my-0.5"></div>
