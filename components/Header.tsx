@@ -245,6 +245,9 @@ export default function Header() {
                   </Link>
                 ))}
 
+                {/* Divider */}
+                <div className="border-t border-white/20 my-0.5"></div>
+
                 {/* Mobile Services Dropdown */}
                 <details className="group">
                   <summary className="cursor-pointer block text-[9px] font-medium text-white/90 hover:text-cyan-400 transition-colors py-0.5 px-1 list-none">
