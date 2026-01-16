@@ -322,19 +322,19 @@ export default function Profile() {
                         return (
                           <div
                             key={index}
-                            className="p-5 border border-white/10 rounded-lg bg-gradient-to-br from-white/5 to-white/[0.02] hover:border-white/20 hover:bg-white/[0.08] transition-all"
+                            className="p-3 md:p-5 border border-white/10 rounded-lg bg-gradient-to-br from-white/5 to-white/[0.02] hover:border-white/20 hover:bg-white/[0.08] transition-all"
                           >
-                            <div className="flex items-start justify-between mb-3">
+                            <div className="flex items-start justify-between mb-2 md:mb-3">
                               <div
-                                className={`inline-flex p-2.5 rounded-lg bg-gradient-to-r ${stat.color}`}
+                                className={`inline-flex p-2 md:p-2.5 rounded-lg bg-gradient-to-r ${stat.color}`}
                               >
-                                <Icon size={16} className="text-white" />
+                                <Icon size={14} className="text-white md:w-4 md:h-4" />
                               </div>
                             </div>
                             <p className="text-foreground/60 text-xs font-medium mb-1">
                               {stat.label}
                             </p>
-                            <p className="text-2xl font-bold text-foreground">
+                            <p className="text-lg md:text-2xl font-bold text-foreground">
                               {stat.value}
                             </p>
                           </div>
