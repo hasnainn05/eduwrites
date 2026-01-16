@@ -395,49 +395,49 @@ export default function Profile() {
                       </div>
 
                       {/* Quick Actions */}
-                      <div className="flex flex-col gap-2 md:gap-3">
+                      <div className="flex flex-col gap-1.5 md:gap-3">
                         <Link
                           href="/order"
-                          className="p-3 md:p-4 border border-white/10 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 hover:border-cyan-400/50 hover:bg-cyan-400/20 transition-all group"
+                          className="p-2 md:p-4 border border-white/10 rounded-lg md:rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 hover:border-cyan-400/50 hover:bg-cyan-400/20 transition-all group"
                         >
-                          <div className="text-xl md:text-2xl mb-1 md:mb-2">
+                          <div className="text-lg md:text-2xl mb-0.5 md:mb-2">
                             📝
                           </div>
-                          <h4 className="font-semibold text-foreground text-xs md:text-sm mb-1">
+                          <h4 className="font-semibold text-foreground text-xs md:text-sm mb-0.5">
                             New Order
                           </h4>
-                          <p className="text-cyan-400 text-xs flex items-center gap-1">
-                            Create <ArrowRight size={10} />
+                          <p className="text-cyan-400 text-xs flex items-center gap-0.5">
+                            Create <ArrowRight size={8} className="md:w-2.5 md:h-2.5" />
                           </p>
                         </Link>
 
                         <Link
                           href="/#services"
-                          className="p-3 md:p-4 border border-white/10 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 hover:border-purple-400/50 hover:bg-purple-400/20 transition-all group"
+                          className="p-2 md:p-4 border border-white/10 rounded-lg md:rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 hover:border-purple-400/50 hover:bg-purple-400/20 transition-all group"
                         >
-                          <div className="text-xl md:text-2xl mb-1 md:mb-2">
+                          <div className="text-lg md:text-2xl mb-0.5 md:mb-2">
                             🎓
                           </div>
-                          <h4 className="font-semibold text-foreground text-xs md:text-sm mb-1">
+                          <h4 className="font-semibold text-foreground text-xs md:text-sm mb-0.5">
                             Services
                           </h4>
-                          <p className="text-purple-400 text-xs flex items-center gap-1">
-                            View <ArrowRight size={10} />
+                          <p className="text-purple-400 text-xs flex items-center gap-0.5">
+                            View <ArrowRight size={8} className="md:w-2.5 md:h-2.5" />
                           </p>
                         </Link>
 
                         <button
                           onClick={() => setIsSupportModalOpen(true)}
-                          className="p-3 md:p-4 border border-white/10 rounded-xl bg-gradient-to-br from-pink-500/10 to-rose-500/10 hover:border-pink-400/50 hover:bg-pink-400/20 transition-all group w-full text-left"
+                          className="p-2 md:p-4 border border-white/10 rounded-lg md:rounded-xl bg-gradient-to-br from-pink-500/10 to-rose-500/10 hover:border-pink-400/50 hover:bg-pink-400/20 transition-all group w-full text-left"
                         >
-                          <div className="text-xl md:text-2xl mb-1 md:mb-2">
+                          <div className="text-lg md:text-2xl mb-0.5 md:mb-2">
                             💬
                           </div>
-                          <h4 className="font-semibold text-foreground text-xs md:text-sm mb-1">
+                          <h4 className="font-semibold text-foreground text-xs md:text-sm mb-0.5">
                             Support
                           </h4>
-                          <p className="text-pink-400 text-xs flex items-center gap-1">
-                            Contact <ArrowRight size={10} />
+                          <p className="text-pink-400 text-xs flex items-center gap-0.5">
+                            Contact <ArrowRight size={8} className="md:w-2.5 md:h-2.5" />
                           </p>
                         </button>
                       </div>
