@@ -1,17 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight, Upload, X } from "lucide-react";
 import { saveOrder, generateOrderId } from "@/lib/orderStorage";
+import { getServicePricing, getPackageDetails } from "@/lib/pricing";
 import type { Order } from "@/app/admin/orders/page";
 
 interface OrderFormProps {
   preSelectedService?: string;
+  preSelectedPackage?: string;
   onSuccess?: () => void;
 }
 
 export default function OrderForm({
   preSelectedService,
+  preSelectedPackage,
   onSuccess,
 }: OrderFormProps) {
   const [formData, setFormData] = useState({
@@ -19,6 +22,7 @@ export default function OrderForm({
     email: "",
     whatsapp: "",
     serviceType: preSelectedService || "essay",
+    packageType: preSelectedPackage || "basic",
     wordCount: "",
     deadline: "",
     budget: "",
@@ -30,6 +34,7 @@ export default function OrderForm({
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [fileName, setFileName] = useState("");
+  const [isBudgetLocked, setIsBudgetLocked] = useState(true);
 
   const serviceTypes = [
     { value: "essay", label: "Essay Writing" },
