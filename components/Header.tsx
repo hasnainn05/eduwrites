@@ -63,9 +63,9 @@ export default function Header() {
 
           {/* Right: Contact Info and Profile */}
           <div className="flex items-center gap-1 sm:gap-2 md:gap-4 flex-shrink-0">
-            <div className="hidden lg:flex flex-col gap-4 text-xs">
-              <div className="flex items-center gap-2 text-foreground/80 hover:text-cyan-400 transition-colors">
-                <Mail size={14} />
+            <div className="hidden lg:flex flex-col gap-2.5 text-[10px]">
+              <div className="flex items-center gap-1.5 text-foreground/80 hover:text-cyan-400 transition-colors">
+                <Mail size={12} />
                 <a
                   href="mailto:info@eduwrites.com"
                   className="whitespace-nowrap font-medium"
@@ -73,16 +73,16 @@ export default function Header() {
                   info@eduwrites.com
                 </a>
               </div>
-              <div className="flex items-center gap-2 text-foreground/80 hover:text-green-400 transition-colors">
+              <div className="flex items-center gap-1.5 text-foreground/80 hover:text-green-400 transition-colors">
                 <a
                   href="https://wa.me/13658291551"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 whitespace-nowrap font-medium"
+                  className="flex items-center gap-1.5 whitespace-nowrap font-medium"
                 >
                   <svg
-                    width="16"
-                    height="16"
+                    width="12"
+                    height="12"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     className="text-green-500"
@@ -99,19 +99,19 @@ export default function Header() {
             </div>
 
             {/* Auth Buttons */}
-            <div className="hidden sm:flex gap-2 sm:gap-3">
+            <div className="hidden sm:flex gap-1.5">
               <Link
                 href="/signup"
-                className="px-2.5 sm:px-4 py-1.5 sm:py-2 border border-white/20 text-foreground/80 rounded-md hover:border-cyan-400 hover:text-cyan-400 hover:shadow-glow transition-all text-xs sm:text-sm font-medium animate-pulse-bounce transform hover:scale-105 whitespace-nowrap"
+                className="px-2 sm:px-3 py-1 sm:py-1.5 border border-white/20 text-foreground/80 rounded-md hover:border-cyan-400 hover:text-cyan-400 hover:shadow-glow transition-all text-[10px] sm:text-xs font-medium animate-pulse-bounce transform hover:scale-105 whitespace-nowrap"
               >
                 Sign Up
               </Link>
               <Link
                 href="/profile"
-                className="p-1.5 sm:p-2.5 rounded-full glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all transform hover:scale-110 flex items-center justify-center animate-pulse-bounce flex-shrink-0"
+                className="p-1 sm:p-1.5 rounded-full glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all transform hover:scale-110 flex items-center justify-center animate-pulse-bounce flex-shrink-0"
                 title="Profile"
               >
-                <User size={16} className="sm:w-5 sm:h-5 text-foreground/80" />
+                <User size={14} className="sm:w-4 sm:h-4 text-foreground/80" />
               </Link>
             </div>
           </div>
