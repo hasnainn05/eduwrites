@@ -196,15 +196,52 @@ export default function Profile() {
         <div className="blur-gradient absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-500/30 to-transparent animate-blob animation-delay-2000"></div>
       </div>
 
-      <div className="flex min-h-screen">
-        <ProfileSidebar
-          activeTab={activeTab}
-          onTabChange={setActiveTab}
-          onLogout={handleLogout}
-          userName={user.fullName}
-        />
+      <div className="flex min-h-screen flex-col md:flex-row">
+        <div className="hidden md:block">
+          <ProfileSidebar
+            activeTab={activeTab}
+            onTabChange={setActiveTab}
+            onLogout={handleLogout}
+            userName={user.fullName}
+          />
+        </div>
 
-        <div className="fixed left-64 right-0 top-16 bottom-0 flex flex-col overflow-hidden">
+        {/* Mobile Navigation */}
+        <div className="md:hidden flex flex-col gap-2 p-4 border-b border-white/10 bg-gradient-to-r from-slate-900/50 to-slate-800/50">
+          <div className="flex items-center justify-between mb-2">
+            <h1 className="text-xl font-bold text-foreground">{user.fullName}</h1>
+            <button
+              onClick={handleLogout}
+              className="px-3 py-1.5 text-sm rounded-lg bg-red-500/20 text-red-400 hover:bg-red-500/30 transition-all"
+            >
+              Logout
+            </button>
+          </div>
+          <div className="flex gap-2 overflow-x-auto pb-2">
+            {[
+              { id: "overview", label: "Overview" },
+              { id: "orders", label: "Orders" },
+              { id: "chat", label: "Chat" },
+              { id: "settings", label: "Settings" },
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id as any)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
+                  activeTab === tab.id
+                    ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white"
+                    : "bg-white/10 text-foreground/80 hover:bg-white/20"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className={`w-full md:fixed md:left-64 md:right-0 md:top-16 md:bottom-0 flex flex-col overflow-hidden ${
+          sidebarOpen ? "block" : "hidden md:flex"
+        }`}>
           {activeTab !== "chat" && (
             <div className="flex justify-center py-6 pt-8 bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm border-b border-white/10">
               <div className="inline-flex gap-2 p-1 glass rounded-lg border border-white/20">
