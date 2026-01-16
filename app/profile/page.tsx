@@ -283,9 +283,9 @@ export default function Profile() {
             >
               {activeTab === "overview" && (
                 <div className="flex-1 flex flex-col overflow-y-auto">
-                  <div className="space-y-8">
+                  <div className="space-y-4 md:space-y-8">
                     {/* Page Header */}
-                    <div>
+                    <div className="hidden md:block">
                       <h1 className="text-3xl font-bold text-foreground font-poppins">
                         Dashboard
                       </h1>
