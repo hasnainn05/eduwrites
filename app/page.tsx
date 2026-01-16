@@ -368,10 +368,7 @@ export default function Home() {
                 key={service.id}
                 className="h-full scroll-animate scroll-delay-100 service-card-3d"
               >
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="group relative overflow-hidden rounded-2xl transition-all duration-300 h-full flex flex-col"
-                >
+                <div className="group relative overflow-hidden rounded-2xl transition-all duration-300 h-full flex flex-col">
                   {/* Glass Background */}
                   <div className="absolute inset-0 glass"></div>
 
@@ -397,14 +394,25 @@ export default function Home() {
                       {service.description}
                     </p>
 
-                    <div className="flex items-center gap-2 text-cyan-400 font-semibold group-hover:gap-3 transition-all mt-auto">
-                      Learn More <ArrowRight size={18} />
+                    <div className="flex items-center justify-between gap-3 mt-auto">
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="flex items-center gap-2 text-cyan-400 font-semibold group-hover:gap-3 transition-all"
+                      >
+                        Learn More <ArrowRight size={18} />
+                      </Link>
+                      <Link
+                        href={`/order?service=${service.id}`}
+                        className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:shadow-glow transition-all transform hover:scale-105 text-sm whitespace-nowrap"
+                      >
+                        Order Now
+                      </Link>
                     </div>
                   </div>
 
                   {/* Border Gradient */}
                   <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-white/30 transition-colors"></div>
-                </Link>
+                </div>
               </TiltCard>
             ))}
           </div>
