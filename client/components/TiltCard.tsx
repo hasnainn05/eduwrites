@@ -10,16 +10,19 @@ interface TiltCardProps {
 
 export function TiltCard({ children, className = "" }: TiltCardProps) {
   return (
-    <Tilt
-      tiltMaxAngleX={20}
-      tiltMaxAngleY={20}
-      scale={1.08}
-      speed={600}
-      glareEnable={true}
-      glareMaxOpacity={0.25}
-      glarePosition="bottom"
-    >
-      <div className={className}>{children}</div>
-    </Tilt>
+    <div style={{ perspective: "1200px" }}>
+      <Tilt
+        tiltMaxAngleX={20}
+        tiltMaxAngleY={20}
+        perspective={1000}
+        scale={1.1}
+        speed={300}
+        glareEnable={true}
+        glareMaxOpacity={0.3}
+        className={className}
+      >
+        {children}
+      </Tilt>
+    </div>
   );
 }
