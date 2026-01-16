@@ -102,7 +102,7 @@ export default function Header() {
             <div className="hidden sm:flex gap-2 sm:gap-3">
               <Link
                 href="/signup"
-                className="px-2.5 sm:px-4 py-1.5 sm:py-2 border border-white/20 text-foreground/80 rounded-lg hover:border-cyan-400 hover:text-cyan-400 hover:shadow-glow transition-all text-xs sm:text-sm font-medium animate-pulse-bounce transform hover:scale-105 whitespace-nowrap"
+                className="px-2.5 sm:px-4 py-1.5 sm:py-2 border border-white/20 text-foreground/80 rounded-md hover:border-cyan-400 hover:text-cyan-400 hover:shadow-glow transition-all text-xs sm:text-sm font-medium animate-pulse-bounce transform hover:scale-105 whitespace-nowrap"
               >
                 Sign Up
               </Link>
@@ -167,7 +167,7 @@ export default function Header() {
                 <Link
                   href="/signup"
                   onClick={closeMenu}
-                  className="block w-full text-center px-2.5 py-1.5 border border-white/30 text-white/90 rounded-lg hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all text-xs font-medium whitespace-nowrap"
+                  className="block w-full text-center px-2.5 py-1.5 border border-white/30 text-white/90 rounded-md hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all text-xs font-medium whitespace-nowrap"
                 >
                   Sign Up
                 </Link>
