@@ -62,7 +62,7 @@ export default function Header() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 whitespace-nowrap font-medium"
                 >
-                  <MessageCircle size={11} />
+                  <MessageCircle size={13} />
                   <span>+1 (202) 555-0123</span>
                 </a>
               </div>
