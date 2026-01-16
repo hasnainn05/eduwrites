@@ -284,7 +284,6 @@ export default function Profile() {
               {activeTab === "overview" && (
                 <div className="flex-1 flex flex-col overflow-y-auto">
                   <div className="space-y-4 md:space-y-8">
-
                     {/* Profile Hero Section */}
                     <div className="flex flex-col sm:flex-row gap-3 md:gap-6 items-start sm:items-center justify-between p-3 md:p-6 border border-white/10 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02]">
                       <div className="flex gap-3 md:gap-6 items-start sm:items-center flex-1">
@@ -523,7 +522,10 @@ export default function Profile() {
                                 </td>
                                 <td className="px-2 md:px-6 py-2 md:py-4">
                                   <button className="text-cyan-400 hover:text-cyan-300 transition-colors text-xs flex items-center gap-1 md:gap-1.5 font-semibold">
-                                    <Eye size={12} className="md:w-3.5 md:h-3.5" />
+                                    <Eye
+                                      size={12}
+                                      className="md:w-3.5 md:h-3.5"
+                                    />
                                     <span className="hidden sm:inline">
                                       View
                                     </span>
