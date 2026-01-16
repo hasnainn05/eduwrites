@@ -114,6 +114,15 @@ export default function Header() {
                 <User size={16} className="sm:w-5 sm:h-5 text-foreground/80" />
               </Link>
             </div>
+
+            {/* Mobile Profile Icon */}
+            <Link
+              href="/profile"
+              className="sm:hidden p-1.5 rounded-full glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all flex items-center justify-center flex-shrink-0"
+              title="Profile"
+            >
+              <User size={18} className="text-foreground/80" />
+            </Link>
           </div>
 
           {/* Mobile: Menu Button (visible on small screens) */}
