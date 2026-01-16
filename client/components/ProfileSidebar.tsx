@@ -26,19 +26,19 @@ export function ProfileSidebar({
   return (
     <div className="fixed left-0 top-0 w-64 h-screen bg-gradient-to-b from-slate-900/50 to-slate-900/30 border-r border-white/10 flex flex-col z-40">
       {/* Header Spacing */}
-      <div className="h-16"></div>
+      <div className="h-16 flex-shrink-0"></div>
 
       {/* Profile Info */}
-      <div className="p-8 border-b border-white/10">
+      <div className="p-6 border-b border-white/10 flex-shrink-0">
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl text-white text-2xl font-bold mb-4 relative shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl text-white text-xl font-bold mb-3 relative shadow-lg">
             {userName.split(" ")[0][0]}
             {userName.split(" ")[1]?.[0] || ""}
-            <div className="absolute bottom-0 right-0 w-6 h-6 bg-cyan-400 rounded-full border-2 border-slate-900 flex items-center justify-center">
-              <User size={14} className="text-slate-900" />
+            <div className="absolute bottom-0 right-0 w-5 h-5 bg-cyan-400 rounded-full border-2 border-slate-900 flex items-center justify-center">
+              <User size={12} className="text-slate-900" />
             </div>
           </div>
-          <h3 className="text-foreground font-semibold text-base mb-1">
+          <h3 className="text-foreground font-semibold text-sm mb-0.5">
             {userName}
           </h3>
           <p className="text-foreground/60 text-xs">User Account</p>
@@ -46,7 +46,7 @@ export function ProfileSidebar({
       </div>
 
       {/* Navigation */}
-      <div className="flex-1 px-3 py-6 space-y-2">
+      <div className="flex-1 px-2 py-4 space-y-1 overflow-y-auto">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;
@@ -59,13 +59,13 @@ export function ProfileSidebar({
                   item.id as "overview" | "orders" | "chat" | "settings",
                 )
               }
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-sm ${
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all font-medium text-xs md:text-sm ${
                 isActive
                   ? "bg-gradient-to-r from-indigo-600/30 to-cyan-500/30 text-cyan-400 border border-cyan-400/30"
                   : "text-foreground/70 hover:text-foreground hover:bg-white/5 border border-transparent"
               }`}
             >
-              <Icon size={18} />
+              <Icon size={16} className="md:w-4.5 md:h-4.5" />
               {item.label}
             </button>
           );
@@ -73,12 +73,12 @@ export function ProfileSidebar({
       </div>
 
       {/* Logout */}
-      <div className="p-3 border-t border-white/10">
+      <div className="p-2 border-t border-white/10 flex-shrink-0">
         <button
           onClick={onLogout}
-          className="w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium text-sm text-red-400 hover:bg-red-500/20 hover:border-red-500/30 border border-transparent"
+          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all font-medium text-xs md:text-sm text-red-400 hover:bg-red-500/20 hover:border-red-500/30 border border-transparent"
         >
-          <LogOut size={18} />
+          <LogOut size={16} className="md:w-4.5 md:h-4.5" />
           Logout
         </button>
       </div>
