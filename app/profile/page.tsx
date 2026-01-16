@@ -352,29 +352,29 @@ export default function Profile() {
                     {/* Two Column Layout */}
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-6">
                       {/* Recent Activity */}
-                      <div className="lg:col-span-2 p-4 md:p-6 border border-white/10 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02]">
-                        <h3 className="text-lg font-bold text-foreground mb-6">
+                      <div className="lg:col-span-2 p-3 md:p-6 border border-white/10 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02]">
+                        <h3 className="text-base md:text-lg font-bold text-foreground mb-3 md:mb-6">
                           Recent Activity
                         </h3>
-                        <div className="space-y-4">
+                        <div className="space-y-2 md:space-y-4">
                           {orders.map((order, index) => (
                             <div
                               key={index}
-                              className="flex items-start gap-4 pb-4 border-b border-white/10 last:border-b-0 last:pb-0"
+                              className="flex items-start gap-2 md:gap-4 pb-2 md:pb-4 border-b border-white/10 last:border-b-0 last:pb-0"
                             >
-                              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/30 to-cyan-500/30 flex items-center justify-center">
-                                <FileText size={18} className="text-cyan-400" />
+                              <div className="flex-shrink-0 w-8 md:w-10 h-8 md:h-10 rounded-lg bg-gradient-to-br from-purple-500/30 to-cyan-500/30 flex items-center justify-center">
+                                <FileText size={14} className="text-cyan-400 md:w-4.5 md:h-4.5" />
                               </div>
                               <div className="flex-1 min-w-0">
-                                <p className="text-sm font-semibold text-foreground">
+                                <p className="text-xs md:text-sm font-semibold text-foreground">
                                   {order.service}
                                 </p>
-                                <p className="text-xs text-foreground/60 mt-1">
+                                <p className="text-xs text-foreground/60 mt-0.5 md:mt-1">
                                   {order.date}
                                 </p>
-                                <div className="flex items-center gap-2 mt-2">
+                                <div className="flex items-center gap-1.5 md:gap-2 mt-1 md:mt-2">
                                   <span
-                                    className={`px-2 py-1 rounded-full text-xs font-semibold ${
+                                    className={`px-1.5 md:px-2 py-0.5 md:py-1 rounded-full text-xs font-semibold ${
                                       order.status === "Completed"
                                         ? "bg-green-500/20 text-green-300"
                                         : order.status === "In Progress"
