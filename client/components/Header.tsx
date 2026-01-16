@@ -68,13 +68,13 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Profile Icon */}
+            {/* Login Button */}
             <Link
               to="/login"
-              className="p-0.5 sm:p-1 rounded-full glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 transition-all transform hover:scale-110 flex items-center justify-center flex-shrink-0"
-              title="Profile"
+              className="px-2 sm:px-2.5 py-0.5 sm:py-1 border border-cyan-400/50 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-foreground/80 rounded-sm hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/20 hover:shadow-glow transition-all text-[9px] sm:text-[10px] font-medium animate-pulse-bounce transform hover:scale-105 whitespace-nowrap flex items-center gap-1.5"
             >
-              <User size={12} className="text-foreground/80" />
+              <span>Login</span>
+              <User size={11} className="text-foreground/80" />
             </Link>
           </div>
 
