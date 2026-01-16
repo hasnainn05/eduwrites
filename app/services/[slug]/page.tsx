@@ -1188,12 +1188,7 @@ export default function ServiceDetail() {
                   </ul>
 
                   <button
-                    onClick={() =>
-                      setSelectedPlan({
-                        name: plan.name,
-                        packageId: plan.name.toLowerCase(),
-                      })
-                    }
+                    onClick={() => setSelectedPlan(plan.name)}
                     className={`w-full py-3 rounded-lg font-bold transition-all transform hover:scale-105 animate-pulse-bounce ${
                       plan.highlighted
                         ? "gradient-primary text-white shadow-glow hover:shadow-glow"
