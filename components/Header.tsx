@@ -62,7 +62,7 @@ export default function Header() {
           </nav>
 
           {/* Right: Contact Info and Profile */}
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-6 flex-shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 md:gap-6 flex-shrink-0">
             <div className="hidden lg:flex flex-col gap-4 text-xs">
               <div className="flex items-center gap-2 text-foreground/80 hover:text-cyan-400 transition-colors">
                 <Mail size={14} />
@@ -114,15 +114,6 @@ export default function Header() {
                 <User size={16} className="sm:w-5 sm:h-5 text-foreground/80" />
               </Link>
             </div>
-
-            {/* Mobile Profile Icon */}
-            <Link
-              href="/profile"
-              className="sm:hidden p-1.5 rounded-full glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all flex items-center justify-center flex-shrink-0"
-              title="Profile"
-            >
-              <User size={18} className="text-foreground/80" />
-            </Link>
           </div>
 
           {/* Mobile: Menu Button (visible on small screens) */}
