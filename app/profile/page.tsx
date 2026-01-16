@@ -453,9 +453,9 @@ export default function Profile() {
 
               {activeTab === "orders" && (
                 <div className="flex-1 flex flex-col overflow-y-auto">
-                  <div className="space-y-6">
+                  <div className="space-y-3 md:space-y-6">
                     {/* Header */}
-                    <div>
+                    <div className="hidden md:block">
                       <h1 className="text-3xl font-bold text-foreground font-poppins">
                         Order History
                       </h1>
@@ -465,27 +465,27 @@ export default function Profile() {
                     </div>
 
                     {/* Table */}
-                    <div className="border border-white/10 rounded-xl overflow-hidden bg-gradient-to-br from-white/5 to-white/[0.02]">
+                    <div className="border border-white/10 rounded-lg md:rounded-xl overflow-hidden bg-gradient-to-br from-white/5 to-white/[0.02]">
                       <div className="overflow-x-auto">
                         <table className="w-full text-xs md:text-sm">
                           <thead>
                             <tr className="border-b border-white/10 bg-white/5">
-                              <th className="px-6 py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider">
+                              <th className="px-2 md:px-6 py-2 md:py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider">
                                 Order ID
                               </th>
-                              <th className="px-6 py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider hidden sm:table-cell">
+                              <th className="px-2 md:px-6 py-2 md:py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider hidden sm:table-cell">
                                 Service
                               </th>
-                              <th className="px-6 py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider hidden sm:table-cell">
+                              <th className="px-2 md:px-6 py-2 md:py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider hidden sm:table-cell">
                                 Date
                               </th>
-                              <th className="px-6 py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider">
+                              <th className="px-2 md:px-6 py-2 md:py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider">
                                 Status
                               </th>
-                              <th className="px-6 py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider">
+                              <th className="px-2 md:px-6 py-2 md:py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider">
                                 Amount
                               </th>
-                              <th className="px-6 py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider">
+                              <th className="px-2 md:px-6 py-2 md:py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider">
                                 Action
                               </th>
                             </tr>
@@ -496,18 +496,18 @@ export default function Profile() {
                                 key={index}
                                 className="border-b border-white/10 hover:bg-white/[0.05] transition-colors"
                               >
-                                <td className="px-6 py-4 text-foreground font-semibold text-xs">
+                                <td className="px-2 md:px-6 py-2 md:py-4 text-foreground font-semibold text-xs">
                                   {order.id}
                                 </td>
-                                <td className="px-6 py-4 text-foreground hidden sm:table-cell text-xs">
+                                <td className="px-2 md:px-6 py-2 md:py-4 text-foreground hidden sm:table-cell text-xs">
                                   {order.service}
                                 </td>
-                                <td className="px-6 py-4 text-foreground/60 hidden sm:table-cell text-xs">
+                                <td className="px-2 md:px-6 py-2 md:py-4 text-foreground/60 hidden sm:table-cell text-xs">
                                   {order.date}
                                 </td>
-                                <td className="px-6 py-4">
+                                <td className="px-2 md:px-6 py-2 md:py-4">
                                   <span
-                                    className={`px-3 py-1.5 rounded-full text-xs font-semibold inline-block ${
+                                    className={`px-2 md:px-3 py-1 md:py-1.5 rounded-full text-xs font-semibold inline-block ${
                                       order.status === "Completed"
                                         ? "bg-green-500/20 text-green-300 border border-green-500/30"
                                         : order.status === "In Progress"
@@ -518,12 +518,12 @@ export default function Profile() {
                                     {order.status}
                                   </span>
                                 </td>
-                                <td className="px-6 py-4 text-foreground font-semibold text-xs">
+                                <td className="px-2 md:px-6 py-2 md:py-4 text-foreground font-semibold text-xs">
                                   {order.amount}
                                 </td>
-                                <td className="px-6 py-4">
-                                  <button className="text-cyan-400 hover:text-cyan-300 transition-colors text-xs flex items-center gap-1.5 font-semibold">
-                                    <Eye size={14} />
+                                <td className="px-2 md:px-6 py-2 md:py-4">
+                                  <button className="text-cyan-400 hover:text-cyan-300 transition-colors text-xs flex items-center gap-1 md:gap-1.5 font-semibold">
+                                    <Eye size={12} className="md:w-3.5 md:h-3.5" />
                                     <span className="hidden sm:inline">
                                       View
                                     </span>
