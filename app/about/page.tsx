@@ -28,7 +28,7 @@ export default function About() {
   ];
 
   const stats = [
-    { number: "10,000+", label: "Happy Students" },
+    { number: "50,000+", label: "Happy Students" },
     { number: "98%", label: "Satisfaction Rate" },
     { number: "50+", label: "Expert Writers" },
     { number: "24/7", label: "Customer Support" },
