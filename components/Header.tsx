@@ -1,16 +1,17 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Mail, MessageCircle, User } from "lucide-react";
+import { Mail, MessageCircle, User, ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { services, fieldsOfStudy, languages } from "@/lib/headerData";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const detailsRef = useRef<HTMLDetailsElement>(null);
 
   const navItems = [
     { label: "Home", path: "/" },
-    { label: "Services", path: "/#services" },
     { label: "Contact Us", path: "/contact" },
     { label: "About Us", path: "/about" },
   ];
