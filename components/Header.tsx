@@ -147,27 +147,27 @@ export default function Header() {
                   />
                 </svg>
               </summary>
-              <div className="absolute top-full right-0 mt-2 bg-black/95 backdrop-blur-md border border-white/20 rounded-xl p-3 space-y-2 min-w-max z-50">
+              <div className="absolute top-full right-0 mt-2 bg-black/95 backdrop-blur-md border border-white/20 rounded-lg p-2 space-y-1 min-w-max z-50">
                 {/* Navigation Links */}
                 {navItems.map((item) => (
                   <Link
                     key={item.path}
                     href={item.path}
                     onClick={closeMenu}
-                    className="block text-xs font-medium text-white/90 hover:text-cyan-400 transition-colors py-1.5"
+                    className="block text-[10px] font-medium text-white/90 hover:text-cyan-400 transition-colors py-1"
                   >
                     {item.label}
                   </Link>
                 ))}
 
                 {/* Divider */}
-                <div className="border-t border-white/20 my-1.5"></div>
+                <div className="border-t border-white/20 my-1"></div>
 
                 {/* Sign Up Button for Mobile */}
                 <Link
                   href="/signup"
                   onClick={closeMenu}
-                  className="block w-full text-center px-2.5 py-1.5 border border-white/30 text-white/90 rounded-md hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all text-xs font-medium whitespace-nowrap"
+                  className="block w-full text-center px-2 py-1 border border-white/30 text-white/90 rounded-md hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all text-[10px] font-medium whitespace-nowrap"
                 >
                   Sign Up
                 </Link>
