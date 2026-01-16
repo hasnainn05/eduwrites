@@ -96,12 +96,12 @@ export default function Header() {
                   />
                 </svg>
               </summary>
-              <div className="absolute top-full right-0 mt-2 glass rounded-lg p-2 space-y-1 min-w-max">
+              <div className="absolute top-full right-0 mt-1.5 glass rounded-lg p-1.5 space-y-0.5 min-w-max">
                 {navItems.map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
-                    className="block text-[10px] font-medium text-foreground/80 hover:text-cyan-400 transition-colors py-1"
+                    className="block text-[9px] font-medium text-foreground/80 hover:text-cyan-400 transition-colors py-0.5 px-1"
                   >
                     {item.label}
                   </Link>
