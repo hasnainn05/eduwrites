@@ -45,9 +45,9 @@ export default function Header() {
 
           {/* Right: Contact Info and Profile */}
           <div className="flex items-center gap-0.5 sm:gap-1.5 md:gap-2 flex-shrink-0">
-            <div className="hidden lg:flex flex-col gap-2 text-[9px]">
+            <div className="hidden lg:flex flex-col gap-2 text-[10px]">
               <div className="flex items-center gap-1.5 text-foreground/80 hover:text-cyan-400 transition-colors">
-                <Mail size={11} />
+                <Mail size={13} />
                 <a
                   href="mailto:info@eduwrites.com"
                   className="whitespace-nowrap font-medium"
