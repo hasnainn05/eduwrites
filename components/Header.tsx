@@ -117,14 +117,14 @@ export default function Header() {
           </div>
 
           {/* Mobile: Menu Button + Profile (visible on small screens) */}
-          <div className="md:hidden flex items-center gap-1">
+          <div className="md:hidden flex items-center gap-0.5">
             {/* Mobile Profile Icon */}
             <Link
               href="/profile"
               className="p-0.5 rounded-full glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all flex items-center justify-center flex-shrink-0"
               title="Profile"
             >
-              <User size={13} className="text-foreground/80" />
+              <User size={11} className="text-foreground/80" />
             </Link>
 
             <details
@@ -134,7 +134,7 @@ export default function Header() {
             >
               <summary className="cursor-pointer text-foreground/80 hover:text-cyan-400 transition-colors list-none flex-shrink-0">
                 <svg
-                  className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+                  className="w-3 h-3 sm:w-3.5 sm:h-3.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
