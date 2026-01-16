@@ -147,27 +147,27 @@ export default function Header() {
                   />
                 </svg>
               </summary>
-              <div className="absolute top-full right-0 mt-2 bg-white/90 backdrop-blur-md border border-white/60 rounded-xl p-3 sm:p-4 space-y-3 min-w-max z-50">
+              <div className="absolute top-full right-0 mt-2 bg-black/95 backdrop-blur-md border border-white/20 rounded-xl p-3 sm:p-4 space-y-3 min-w-max z-50">
                 {/* Navigation Links */}
                 {navItems.map((item) => (
                   <Link
                     key={item.path}
                     href={item.path}
                     onClick={closeMenu}
-                    className="block text-xs sm:text-sm font-medium text-foreground/80 hover:text-cyan-400 transition-colors py-2"
+                    className="block text-xs sm:text-sm font-medium text-white/90 hover:text-cyan-400 transition-colors py-2"
                   >
                     {item.label}
                   </Link>
                 ))}
 
                 {/* Divider */}
-                <div className="border-t border-white/10 my-2"></div>
+                <div className="border-t border-white/20 my-2"></div>
 
                 {/* Sign Up Button for Mobile */}
                 <Link
                   href="/signup"
                   onClick={closeMenu}
-                  className="block w-full text-center px-3 py-2 border border-white/20 text-foreground/80 rounded-lg hover:border-cyan-400 hover:text-cyan-400 hover:shadow-glow transition-all text-xs sm:text-sm font-medium whitespace-nowrap"
+                  className="block w-full text-center px-3 py-2 border border-white/30 text-white/90 rounded-lg hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all text-xs sm:text-sm font-medium whitespace-nowrap"
                 >
                   Sign Up
                 </Link>
@@ -177,7 +177,7 @@ export default function Header() {
                   <a
                     href="mailto:info@eduwrites.com"
                     onClick={closeMenu}
-                    className="flex items-center gap-2 text-foreground/80 hover:text-cyan-400 transition-colors py-1"
+                    className="flex items-center gap-2 text-white/80 hover:text-cyan-400 transition-colors py-1"
                   >
                     <Mail size={14} />
                     <span>info@eduwrites.com</span>
@@ -187,7 +187,7 @@ export default function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={closeMenu}
-                    className="flex items-center gap-2 text-foreground/80 hover:text-green-400 transition-colors py-1"
+                    className="flex items-center gap-2 text-white/80 hover:text-green-400 transition-colors py-1"
                   >
                     <svg
                       width="14"
