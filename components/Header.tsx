@@ -53,7 +53,7 @@ export default function Header() {
               <Link
                 key={item.path}
                 href={item.path}
-                className="text-[10px] lg:text-xs font-medium text-foreground/80 hover:text-cyan-400 transition-colors relative group whitespace-nowrap"
+                className="text-[9px] lg:text-[10px] font-medium text-foreground/80 hover:text-cyan-400 transition-colors relative group whitespace-nowrap"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
@@ -62,8 +62,8 @@ export default function Header() {
           </nav>
 
           {/* Right: Contact Info and Profile */}
-          <div className="flex items-center gap-1 sm:gap-2 md:gap-4 flex-shrink-0">
-            <div className="hidden lg:flex flex-col gap-2.5 text-[10px]">
+          <div className="flex items-center gap-0.5 sm:gap-1.5 md:gap-2 flex-shrink-0">
+            <div className="hidden lg:flex flex-col gap-2 text-[9px]">
               <div className="flex items-center gap-1.5 text-foreground/80 hover:text-cyan-400 transition-colors">
                 <Mail size={12} />
                 <a
@@ -102,16 +102,16 @@ export default function Header() {
             <div className="hidden sm:flex gap-1.5">
               <Link
                 href="/signup"
-                className="px-2 sm:px-3 py-1 sm:py-1.5 border border-white/20 text-foreground/80 rounded-md hover:border-cyan-400 hover:text-cyan-400 hover:shadow-glow transition-all text-[10px] sm:text-xs font-medium animate-pulse-bounce transform hover:scale-105 whitespace-nowrap"
+                className="px-1.5 sm:px-2.5 py-0.5 sm:py-1 border border-white/20 text-foreground/80 rounded-md hover:border-cyan-400 hover:text-cyan-400 hover:shadow-glow transition-all text-[9px] sm:text-[10px] font-medium animate-pulse-bounce transform hover:scale-105 whitespace-nowrap"
               >
                 Sign Up
               </Link>
               <Link
                 href="/profile"
-                className="p-1 sm:p-1.5 rounded-full glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all transform hover:scale-110 flex items-center justify-center animate-pulse-bounce flex-shrink-0"
+                className="p-0.5 sm:p-1 rounded-full glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all transform hover:scale-110 flex items-center justify-center animate-pulse-bounce flex-shrink-0"
                 title="Profile"
               >
-                <User size={14} className="sm:w-4 sm:h-4 text-foreground/80" />
+                <User size={12} className="sm:w-3.5 sm:h-3.5 text-foreground/80" />
               </Link>
             </div>
           </div>
