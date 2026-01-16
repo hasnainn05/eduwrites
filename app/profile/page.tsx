@@ -209,7 +209,9 @@ export default function Profile() {
         {/* Mobile Navigation */}
         <div className="md:hidden flex flex-col gap-2 p-4 border-b border-white/10 bg-gradient-to-r from-slate-900/50 to-slate-800/50">
           <div className="flex items-center justify-between mb-2">
-            <h1 className="text-xl font-bold text-foreground">{user.fullName}</h1>
+            <h1 className="text-xl font-bold text-foreground">
+              {user.fullName}
+            </h1>
             <button
               onClick={handleLogout}
               className="px-3 py-1.5 text-sm rounded-lg bg-red-500/20 text-red-400 hover:bg-red-500/30 transition-all"
@@ -239,9 +241,11 @@ export default function Profile() {
           </div>
         </div>
 
-        <div className={`w-full md:fixed md:left-64 md:right-0 md:top-16 md:bottom-0 flex flex-col overflow-hidden ${
-          sidebarOpen ? "block" : "hidden md:flex"
-        }`}>
+        <div
+          className={`w-full md:fixed md:left-64 md:right-0 md:top-16 md:bottom-0 flex flex-col overflow-hidden ${
+            sidebarOpen ? "block" : "hidden md:flex"
+          }`}
+        >
           {activeTab !== "chat" && (
             <div className="hidden md:flex justify-center py-6 pt-8 bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm border-b border-white/10">
               <div className="inline-flex gap-2 p-1 glass rounded-lg border border-white/20">
@@ -328,7 +332,10 @@ export default function Profile() {
                               <div
                                 className={`inline-flex p-2 md:p-2.5 rounded-lg bg-gradient-to-r ${stat.color}`}
                               >
-                                <Icon size={14} className="text-white md:w-4 md:h-4" />
+                                <Icon
+                                  size={14}
+                                  className="text-white md:w-4 md:h-4"
+                                />
                               </div>
                             </div>
                             <p className="text-foreground/60 text-xs font-medium mb-1">
@@ -393,7 +400,9 @@ export default function Profile() {
                           href="/order"
                           className="p-3 md:p-4 border border-white/10 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 hover:border-cyan-400/50 hover:bg-cyan-400/20 transition-all group"
                         >
-                          <div className="text-xl md:text-2xl mb-1 md:mb-2">📝</div>
+                          <div className="text-xl md:text-2xl mb-1 md:mb-2">
+                            📝
+                          </div>
                           <h4 className="font-semibold text-foreground text-xs md:text-sm mb-1">
                             New Order
                           </h4>
@@ -406,7 +415,9 @@ export default function Profile() {
                           href="/#services"
                           className="p-3 md:p-4 border border-white/10 rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 hover:border-purple-400/50 hover:bg-purple-400/20 transition-all group"
                         >
-                          <div className="text-xl md:text-2xl mb-1 md:mb-2">🎓</div>
+                          <div className="text-xl md:text-2xl mb-1 md:mb-2">
+                            🎓
+                          </div>
                           <h4 className="font-semibold text-foreground text-xs md:text-sm mb-1">
                             Services
                           </h4>
@@ -419,7 +430,9 @@ export default function Profile() {
                           onClick={() => setIsSupportModalOpen(true)}
                           className="p-3 md:p-4 border border-white/10 rounded-xl bg-gradient-to-br from-pink-500/10 to-rose-500/10 hover:border-pink-400/50 hover:bg-pink-400/20 transition-all group w-full text-left"
                         >
-                          <div className="text-xl md:text-2xl mb-1 md:mb-2">💬</div>
+                          <div className="text-xl md:text-2xl mb-1 md:mb-2">
+                            💬
+                          </div>
                           <h4 className="font-semibold text-foreground text-xs md:text-sm mb-1">
                             Support
                           </h4>

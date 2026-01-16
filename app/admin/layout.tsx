@@ -59,9 +59,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
         )}
 
         {/* Scrollable Content Area */}
-        <div className="flex-1 overflow-y-auto md:ml-64 w-full">
-          {children}
-        </div>
+        <div className="flex-1 overflow-y-auto md:ml-64 w-full">{children}</div>
       </div>
     </div>
   );
