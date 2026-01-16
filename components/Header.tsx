@@ -25,35 +25,35 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-gradient-to-b from-background/95 to-background/80 backdrop-blur-lg">
       {/* Main Header */}
-      <div className="px-3 sm:px-4 lg:px-8 py-3 sm:py-4">
-        <div className="w-full flex items-center justify-between gap-3 sm:gap-4 md:gap-6">
+      <div className="px-6 sm:px-8 lg:px-16 py-2.5 sm:py-3">
+        <div className="max-w-7xl mx-auto w-full flex items-center justify-between gap-2 sm:gap-3 md:gap-4">
           {/* Left: Logo and Branding */}
           <Link
             href="/"
-            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-1.5 sm:gap-2"
+            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-1 sm:gap-1.5"
           >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800"
               alt="EduWrites Logo"
-              className="w-[32px] h-[32px] sm:w-[46px] sm:h-[46px] md:w-[51px] md:h-[51px] lg:w-[56px] lg:h-[56px] flex-shrink-0"
+              className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px] md:w-[36px] md:h-[36px] lg:w-[40px] lg:h-[40px] flex-shrink-0"
             />
             <div>
-              <h1 className="text-sm sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins leading-tight">
+              <h1 className="text-xs sm:text-lg md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins leading-tight">
                 EduWrites
               </h1>
-              <p className="text-foreground/60 text-xs mt-0 sm:mt-1 font-medium">
+              <p className="text-foreground/60 text-[10px] sm:text-[11px] md:text-xs mt-0 font-medium">
                 Achieve Academic Excellence
               </p>
             </div>
           </Link>
 
           {/* Center: Navigation Menu */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8 flex-1 justify-center">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-6 flex-1 justify-center">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
-                className="text-xs lg:text-sm font-medium text-foreground/80 hover:text-cyan-400 transition-colors relative group whitespace-nowrap"
+                className="text-[10px] lg:text-xs font-medium text-foreground/80 hover:text-cyan-400 transition-colors relative group whitespace-nowrap"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
@@ -62,7 +62,7 @@ export default function Header() {
           </nav>
 
           {/* Right: Contact Info and Profile */}
-          <div className="flex items-center gap-1.5 sm:gap-3 md:gap-6 flex-shrink-0">
+          <div className="flex items-center gap-1 sm:gap-2 md:gap-4 flex-shrink-0">
             <div className="hidden lg:flex flex-col gap-4 text-xs">
               <div className="flex items-center gap-2 text-foreground/80 hover:text-cyan-400 transition-colors">
                 <Mail size={14} />
