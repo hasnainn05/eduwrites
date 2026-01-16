@@ -1422,7 +1422,7 @@ export default function ServiceDetail() {
           <div className="glass rounded-2xl p-8 sm:p-12 max-w-3xl w-full max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-3xl font-bold text-foreground font-poppins">
-                Complete Your Order: {selectedPlan.name}
+                Complete Your Order: {selectedPlan}
               </h2>
               <button
                 onClick={() => setSelectedPlan(null)}
@@ -1433,8 +1433,9 @@ export default function ServiceDetail() {
             </div>
 
             <OrderForm
-              preSelectedService={slug}
-              preSelectedPackage={selectedPlan.packageId}
+              preSelectedService={service?.title
+                .toLowerCase()
+                .replace(/\s/g, "")}
               onSuccess={() => {
                 setSelectedPlan(null);
               }}
