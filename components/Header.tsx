@@ -10,9 +10,7 @@ export default function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const detailsRef = useRef<HTMLDetailsElement>(null);
 
-  const navItems = [
-    { label: "Home", path: "/" },
-  ];
+  const navItems = [{ label: "Home", path: "/" }];
 
   const footerNavItems = [
     { label: "Contact Us", path: "/contact" },
@@ -68,7 +66,10 @@ export default function Header() {
             <div className="relative group">
               <button className="text-[10px] lg:text-[11px] font-medium text-foreground/80 hover:text-cyan-400 transition-colors relative whitespace-nowrap flex items-center gap-1 py-2">
                 Services
-                <ChevronDown size={12} className="transform group-hover:rotate-180 transition-transform" />
+                <ChevronDown
+                  size={12}
+                  className="transform group-hover:rotate-180 transition-transform"
+                />
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
               </button>
               <div className="absolute left-0 mt-0 w-max bg-black/95 backdrop-blur-md border border-white/20 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 z-50 shadow-glow">
@@ -88,7 +89,10 @@ export default function Header() {
             <div className="relative group">
               <button className="text-[10px] lg:text-[11px] font-medium text-foreground/80 hover:text-cyan-400 transition-colors relative whitespace-nowrap flex items-center gap-1 py-2">
                 Fields of Study
-                <ChevronDown size={12} className="transform group-hover:rotate-180 transition-transform" />
+                <ChevronDown
+                  size={12}
+                  className="transform group-hover:rotate-180 transition-transform"
+                />
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
               </button>
               <div className="absolute left-0 mt-0 w-max bg-black/95 backdrop-blur-md border border-white/20 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 z-50 shadow-glow max-w-xs">
@@ -108,7 +112,10 @@ export default function Header() {
             <div className="relative group">
               <button className="text-[10px] lg:text-[11px] font-medium text-foreground/80 hover:text-cyan-400 transition-colors relative whitespace-nowrap flex items-center gap-1 py-2">
                 Languages
-                <ChevronDown size={12} className="transform group-hover:rotate-180 transition-transform" />
+                <ChevronDown
+                  size={12}
+                  className="transform group-hover:rotate-180 transition-transform"
+                />
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
               </button>
               <div className="absolute left-0 mt-0 w-max bg-black/95 backdrop-blur-md border border-white/20 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 z-50 shadow-glow">
