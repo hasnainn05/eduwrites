@@ -11,16 +11,13 @@ interface TiltCardProps {
 export function TiltCard({ children, className = "" }: TiltCardProps) {
   return (
     <Tilt
-      tiltMaxAngleX={20}
-      tiltMaxAngleY={20}
+      tiltMaxAngleX={15}
+      tiltMaxAngleY={15}
       perspective={1000}
-      scale={1.1}
-      transitionSpeed={400}
-      glareEnable={true}
-      glareMaxOpacity={0.3}
-      className={`${className}`}
+      scale={1.05}
+      speed={400}
     >
-      {children}
+      <div className={className}>{children}</div>
     </Tilt>
   );
 }
