@@ -122,10 +122,18 @@ export default function Header() {
             {/* Mobile Login Button */}
             <Link
               href="/login"
-              className="px-1.5 py-0.5 border border-cyan-400/50 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-foreground/80 rounded-sm hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/20 hover:shadow-glow transition-all text-[8px] font-medium flex items-center gap-0.5 flex-shrink-0"
+              className="px-1.5 py-0.5 border border-cyan-400/50 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-foreground/80 rounded-none hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/20 hover:shadow-glow transition-all text-[8px] font-medium flex items-center gap-0.5 flex-shrink-0"
             >
               <span>Login</span>
               <User size={10} className="text-foreground/80" />
+            </Link>
+            {/* Mobile Profile Icon */}
+            <Link
+              href="/profile"
+              className="p-0.5 rounded-none glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all flex items-center justify-center flex-shrink-0"
+              title="Profile"
+            >
+              <User size={11} className="text-foreground/80" />
             </Link>
 
             <details
