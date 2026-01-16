@@ -296,25 +296,25 @@ export default function Profile() {
                     </div>
 
                     {/* Profile Hero Section */}
-                    <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between p-6 border border-white/10 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02]">
-                      <div className="flex gap-6 items-start sm:items-center flex-1">
-                        <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center text-white text-2xl font-bold flex-shrink-0">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-6 items-start sm:items-center justify-between p-3 md:p-6 border border-white/10 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02]">
+                      <div className="flex gap-3 md:gap-6 items-start sm:items-center flex-1">
+                        <div className="w-14 md:w-20 h-14 md:h-20 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center text-white text-lg md:text-2xl font-bold flex-shrink-0">
                           {user.avatar}
                         </div>
                         <div>
-                          <h2 className="text-xl font-bold text-foreground mb-1">
+                          <h2 className="text-base md:text-xl font-bold text-foreground mb-1">
                             {user.fullName}
                           </h2>
-                          <p className="text-foreground/60 text-sm mb-2">
+                          <p className="text-foreground/60 text-xs md:text-sm mb-2">
                             {user.email}
                           </p>
                         </div>
                       </div>
                       <button
                         onClick={() => setIsEditing(!isEditing)}
-                        className="gradient-primary text-white px-6 py-2 rounded-lg font-semibold text-sm hover:shadow-glow transition-all flex items-center gap-2 whitespace-nowrap"
+                        className="gradient-primary text-white px-4 md:px-6 py-1.5 md:py-2 rounded-lg font-semibold text-xs md:text-sm hover:shadow-glow transition-all flex items-center gap-2 whitespace-nowrap"
                       >
-                        <Edit size={16} />
+                        <Edit size={14} className="md:w-4 md:h-4" />
                         Edit Profile
                       </button>
                     </div>
