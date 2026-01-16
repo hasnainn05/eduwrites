@@ -140,6 +140,7 @@ export default function OrderForm({
         email: "",
         whatsapp: "",
         serviceType: preSelectedService || "essay",
+        packageType: preSelectedPackage || "basic",
         wordCount: "",
         deadline: "",
         budget: "",
@@ -150,6 +151,7 @@ export default function OrderForm({
       });
       setFileName("");
       setIsSubmitted(false);
+      setIsBudgetLocked(true);
       onSuccess?.();
     }, 3000);
   };
