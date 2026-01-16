@@ -302,17 +302,11 @@ export default function OrderForm({
               onChange={handleChange}
               className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-cyan-400 transition-colors"
             >
-              {getServicePricing(formData.serviceType)?.packages.map(
-                (pkg) => (
-                  <option
-                    key={pkg.id}
-                    value={pkg.id}
-                    className="bg-slate-900"
-                  >
-                    {pkg.name}
-                  </option>
-                ),
-              )}
+              {getServicePricing(formData.serviceType)?.packages.map((pkg) => (
+                <option key={pkg.id} value={pkg.id} className="bg-slate-900">
+                  {pkg.name}
+                </option>
+              ))}
             </select>
           </div>
 

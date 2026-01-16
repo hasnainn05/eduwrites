@@ -74,7 +74,9 @@ export const SERVICES_PRICING: ServicePricing[] = [
   },
 ];
 
-export function getServicePricing(serviceId: string): ServicePricing | undefined {
+export function getServicePricing(
+  serviceId: string,
+): ServicePricing | undefined {
   return SERVICES_PRICING.find((service) => service.id === serviceId);
 }
 
