@@ -243,7 +243,7 @@ export default function Profile() {
           sidebarOpen ? "block" : "hidden md:flex"
         }`}>
           {activeTab !== "chat" && (
-            <div className="flex justify-center py-6 pt-8 bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm border-b border-white/10">
+            <div className="hidden md:flex justify-center py-6 pt-8 bg-gradient-to-b from-background/80 to-transparent backdrop-blur-sm border-b border-white/10">
               <div className="inline-flex gap-2 p-1 glass rounded-lg border border-white/20">
                 <button
                   onClick={() => setUserMode("user")}
@@ -275,7 +275,7 @@ export default function Profile() {
             className={`flex-1 ${activeTab === "chat" ? "overflow-hidden" : "overflow-y-auto"}`}
           >
             <div
-              className={`w-full ${activeTab === "chat" ? "h-full" : "px-8 py-8"} flex flex-col`}
+              className={`w-full ${activeTab === "chat" ? "h-full" : "md:px-8 md:py-8 px-4 py-4"} flex flex-col`}
             >
               {activeTab === "overview" && (
                 <div className="flex-1 flex flex-col overflow-y-auto">
