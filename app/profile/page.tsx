@@ -363,7 +363,10 @@ export default function Profile() {
                               className="flex items-start gap-2 md:gap-4 pb-2 md:pb-4 border-b border-white/10 last:border-b-0 last:pb-0"
                             >
                               <div className="flex-shrink-0 w-8 md:w-10 h-8 md:h-10 rounded-lg bg-gradient-to-br from-purple-500/30 to-cyan-500/30 flex items-center justify-center">
-                                <FileText size={14} className="text-cyan-400 md:w-4.5 md:h-4.5" />
+                                <FileText
+                                  size={14}
+                                  className="text-cyan-400 md:w-4.5 md:h-4.5"
+                                />
                               </div>
                               <div className="flex-1 min-w-0">
                                 <p className="text-xs md:text-sm font-semibold text-foreground">
@@ -407,7 +410,11 @@ export default function Profile() {
                             New Order
                           </h4>
                           <p className="text-cyan-400 text-xs flex items-center gap-0.5">
-                            Create <ArrowRight size={8} className="md:w-2.5 md:h-2.5" />
+                            Create{" "}
+                            <ArrowRight
+                              size={8}
+                              className="md:w-2.5 md:h-2.5"
+                            />
                           </p>
                         </Link>
 
@@ -422,7 +429,11 @@ export default function Profile() {
                             Services
                           </h4>
                           <p className="text-purple-400 text-xs flex items-center gap-0.5">
-                            View <ArrowRight size={8} className="md:w-2.5 md:h-2.5" />
+                            View{" "}
+                            <ArrowRight
+                              size={8}
+                              className="md:w-2.5 md:h-2.5"
+                            />
                           </p>
                         </Link>
 
@@ -437,7 +448,11 @@ export default function Profile() {
                             Support
                           </h4>
                           <p className="text-pink-400 text-xs flex items-center gap-0.5">
-                            Contact <ArrowRight size={8} className="md:w-2.5 md:h-2.5" />
+                            Contact{" "}
+                            <ArrowRight
+                              size={8}
+                              className="md:w-2.5 md:h-2.5"
+                            />
                           </p>
                         </button>
                       </div>
