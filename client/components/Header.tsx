@@ -17,7 +17,7 @@ export default function Header() {
           {/* Left: Logo and Branding */}
           <Link
             to="/"
-            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-0.5 sm:gap-1"
+            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-0.25 sm:gap-0.5"
           >
             <div className="min-w-0">
               <h1 className="text-[11px] sm:text-sm md:text-base lg:text-lg font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins leading-tight whitespace-nowrap">
