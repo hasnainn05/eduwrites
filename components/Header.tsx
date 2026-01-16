@@ -30,7 +30,7 @@ export default function Header() {
           {/* Left: Logo and Branding */}
           <Link
             href="/"
-            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-0.5 sm:gap-1"
+            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-1 sm:gap-1.5"
           >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800"
@@ -63,9 +63,9 @@ export default function Header() {
 
           {/* Right: Contact Info and Profile */}
           <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-shrink-0">
-            <div className="hidden lg:flex flex-col gap-2 text-[10px]">
+            <div className="hidden lg:flex flex-col gap-2 text-[11px]">
               <div className="flex items-center gap-1.5 text-foreground/80 hover:text-cyan-400 transition-colors">
-                <Mail size={13} />
+                <Mail size={14} />
                 <a
                   href="mailto:info@eduwrites.com"
                   className="whitespace-nowrap font-medium"
@@ -81,8 +81,8 @@ export default function Header() {
                   className="flex items-center gap-1.5 whitespace-nowrap font-medium"
                 >
                   <svg
-                    width="13"
-                    height="13"
+                    width="14"
+                    height="14"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     className="text-green-500"
