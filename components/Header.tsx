@@ -30,7 +30,7 @@ export default function Header() {
           {/* Left: Logo and Branding */}
           <Link
             href="/"
-            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-0.25 sm:gap-0.5"
+            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-0.5 sm:gap-1"
           >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800"
@@ -62,7 +62,7 @@ export default function Header() {
           </nav>
 
           {/* Right: Contact Info and Profile */}
-          <div className="flex items-center gap-0.5 sm:gap-1.5 md:gap-2 flex-shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-shrink-0">
             <div className="hidden lg:flex flex-col gap-2 text-[10px]">
               <div className="flex items-center gap-1.5 text-foreground/80 hover:text-cyan-400 transition-colors">
                 <Mail size={13} />
@@ -99,13 +99,20 @@ export default function Header() {
             </div>
 
             {/* Auth Buttons */}
-            <div className="hidden sm:flex gap-1.5">
+            <div className="hidden sm:flex gap-1.5 items-center">
               <Link
                 href="/login"
-                className="px-2 sm:px-2.5 py-0.5 sm:py-1 border border-cyan-400/50 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-foreground/80 rounded-sm hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/20 hover:shadow-glow transition-all text-[9px] sm:text-[10px] font-medium animate-pulse-bounce transform hover:scale-105 whitespace-nowrap flex items-center gap-1.5"
+                className="px-2 sm:px-2.5 py-0.5 sm:py-1 border border-cyan-400/50 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-foreground/80 rounded-none hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/20 hover:shadow-glow transition-all text-[9px] sm:text-[10px] font-medium animate-pulse-bounce transform hover:scale-105 whitespace-nowrap flex items-center gap-1.5"
               >
                 <span>Login</span>
                 <User size={11} className="text-foreground/80" />
+              </Link>
+              <Link
+                href="/profile"
+                className="p-0.5 sm:p-1 rounded-none glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all transform hover:scale-110 flex items-center justify-center animate-pulse-bounce flex-shrink-0"
+                title="Profile"
+              >
+                <User size={12} className="text-foreground/80" />
               </Link>
             </div>
           </div>
