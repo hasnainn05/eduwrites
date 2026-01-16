@@ -17,7 +17,7 @@ export default function Header() {
           {/* Left: Logo and Branding */}
           <Link
             to="/"
-            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-0.25 sm:gap-0.5"
+            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-0.5 sm:gap-1"
           >
             <div className="min-w-0">
               <h1 className="text-[11px] sm:text-sm md:text-base lg:text-lg font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins leading-tight whitespace-nowrap">
@@ -44,7 +44,7 @@ export default function Header() {
           </nav>
 
           {/* Right: Contact Info and Profile */}
-          <div className="flex items-center gap-0.5 sm:gap-1.5 md:gap-2 flex-shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-shrink-0">
             <div className="hidden lg:flex flex-col gap-2 text-[10px]">
               <div className="flex items-center gap-1.5 text-foreground/80 hover:text-cyan-400 transition-colors">
                 <Mail size={13} />
@@ -68,14 +68,23 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Login Button */}
-            <Link
-              to="/login"
-              className="px-2 sm:px-2.5 py-0.5 sm:py-1 border border-cyan-400/50 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-foreground/80 rounded-sm hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/20 hover:shadow-glow transition-all text-[9px] sm:text-[10px] font-medium animate-pulse-bounce transform hover:scale-105 whitespace-nowrap flex items-center gap-1.5"
-            >
-              <span>Login</span>
-              <User size={11} className="text-foreground/80" />
-            </Link>
+            {/* Login Button and Profile Icon */}
+            <div className="flex items-center gap-1.5">
+              <Link
+                to="/login"
+                className="px-2 sm:px-2.5 py-0.5 sm:py-1 border border-cyan-400/50 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-foreground/80 rounded-none hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/20 hover:shadow-glow transition-all text-[9px] sm:text-[10px] font-medium animate-pulse-bounce transform hover:scale-105 whitespace-nowrap flex items-center gap-1.5"
+              >
+                <span>Login</span>
+                <User size={11} className="text-foreground/80" />
+              </Link>
+              <Link
+                to="/profile"
+                className="p-0.5 sm:p-1 rounded-none glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all transform hover:scale-110 flex items-center justify-center flex-shrink-0"
+                title="Profile"
+              >
+                <User size={12} className="text-foreground/80" />
+              </Link>
+            </div>
           </div>
 
           {/* Mobile: Menu Button (visible on small screens) */}
