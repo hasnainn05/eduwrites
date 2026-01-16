@@ -52,6 +52,22 @@ export default function OrderForm({
     { value: "phd", label: "PhD Level" },
   ];
 
+  // Update budget and word count when service or package changes
+  useEffect(() => {
+    const service = getServicePricing(formData.serviceType);
+    const pkg = getPackageDetails(formData.serviceType, formData.packageType);
+
+    if (pkg) {
+      setFormData((prev) => ({
+        ...prev,
+        wordCount: pkg.words > 0 ? pkg.words.toString() : "",
+        budget: pkg.price > 0 ? pkg.price.toString() : "",
+      }));
+      // Lock budget unless custom package
+      setIsBudgetLocked(formData.packageType !== "custom");
+    }
+  }, [formData.serviceType, formData.packageType]);
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -62,6 +78,13 @@ export default function OrderForm({
       const file = (e.target as HTMLInputElement).files?.[0] || null;
       setFormData((prev) => ({ ...prev, attachments: file }));
       setFileName(file ? file.name : "");
+    } else if (name === "packageType") {
+      setFormData((prev) => ({
+        ...prev,
+        packageType: value,
+      }));
+      // Update lock state
+      setIsBudgetLocked(value !== "custom");
     } else {
       setFormData((prev) => ({
         ...prev,
