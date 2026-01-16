@@ -284,7 +284,7 @@ export default function Home() {
             <div className="space-y-6">
               <div className="glass p-6 rounded-xl scroll-animate-right scroll-delay-100">
                 <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                  10,000+
+                  50,000+
                 </div>
                 <p className="text-foreground/80 font-medium">
                   Satisfied Students Worldwide
