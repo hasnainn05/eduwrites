@@ -1,15 +1,7 @@
-"use client";
-
-import OrderForm from "@/components/OrderForm";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
+import { OrderClient } from "./OrderClient";
 
 export default function Order() {
-  const searchParams = useSearchParams();
-  const service = searchParams.get("service");
-  const pkg = searchParams.get("package");
-
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       {/* Animated Background */}
@@ -34,19 +26,9 @@ export default function Order() {
         </div>
 
         {/* Form Container */}
-        <div className="glass p-8 sm:p-12 rounded-2xl">
-          <OrderForm
-            preSelectedService={service || undefined}
-            preSelectedPackage={pkg || undefined}
-            onSuccess={() => {
-              // Optional: handle post-submission
-            }}
-          />
-          <p className="text-center text-sm text-foreground/60 mt-4">
-            * Required fields. We'll contact you within 1 hour to confirm your
-            order.
-          </p>
-        </div>
+        <Suspense fallback={<div className="glass p-8 sm:p-12 rounded-2xl text-center">Loading order form...</div>}>
+          <OrderClient />
+        </Suspense>
       </div>
     </div>
   );
