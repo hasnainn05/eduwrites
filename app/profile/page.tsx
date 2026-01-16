@@ -284,16 +284,6 @@ export default function Profile() {
               {activeTab === "overview" && (
                 <div className="flex-1 flex flex-col overflow-y-auto">
                   <div className="space-y-4 md:space-y-8">
-                    {/* Page Header */}
-                    <div className="hidden md:block">
-                      <h1 className="text-3xl font-bold text-foreground font-poppins">
-                        Dashboard
-                      </h1>
-                      <p className="text-foreground/60 mt-2">
-                        Welcome back, {user.fullName}. Here's your account
-                        overview.
-                      </p>
-                    </div>
 
                     {/* Profile Hero Section */}
                     <div className="flex flex-col sm:flex-row gap-3 md:gap-6 items-start sm:items-center justify-between p-3 md:p-6 border border-white/10 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02]">
