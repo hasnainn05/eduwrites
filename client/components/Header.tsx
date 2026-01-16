@@ -23,7 +23,7 @@ export default function Header() {
               EduWrites
             </h1>
             <p className="text-foreground/60 text-xs mt-1 font-medium">
-              Academic Excellence
+              Achieve Academic Excellence
             </p>
           </Link>
 
