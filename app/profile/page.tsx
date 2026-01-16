@@ -196,7 +196,7 @@ export default function Profile() {
         <div className="blur-gradient absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-500/30 to-transparent animate-blob animation-delay-2000"></div>
       </div>
 
-      <div className="flex min-h-screen flex-col md:flex-row">
+      <div className="flex min-h-screen flex-col md:flex-row overflow-hidden">
         <div className="hidden md:block">
           <ProfileSidebar
             activeTab={activeTab}
@@ -242,7 +242,7 @@ export default function Profile() {
         </div>
 
         <div
-          className={`w-full md:fixed md:left-64 md:right-0 md:top-16 md:bottom-0 flex flex-col overflow-hidden ${
+          className={`flex-1 md:ml-64 flex flex-col overflow-hidden ${
             sidebarOpen ? "block" : "hidden md:flex"
           }`}
         >
