@@ -843,10 +843,7 @@ export default function ServiceDetail() {
   const slug = params.slug as string;
   const service = slug ? servicesData[slug] : null;
 
-  const [selectedPlan, setSelectedPlan] = useState<{
-    name: string;
-    packageId: string;
-  } | null>(null);
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
 
   if (!service) {
