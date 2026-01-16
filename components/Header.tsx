@@ -25,30 +25,30 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-gradient-to-b from-background/95 to-background/80 backdrop-blur-lg">
       {/* Main Header */}
-      <div className="px-6 sm:px-8 lg:px-16 py-2.5 sm:py-3">
-        <div className="max-w-7xl mx-auto w-full flex items-center justify-between gap-2 sm:gap-3 md:gap-4">
+      <div className="px-8 sm:px-12 lg:px-20 py-2 sm:py-2.5">
+        <div className="max-w-6xl mx-auto w-full flex items-center justify-between gap-1 sm:gap-2 md:gap-3">
           {/* Left: Logo and Branding */}
           <Link
             href="/"
-            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-1 sm:gap-1.5"
+            className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center gap-0.5 sm:gap-1"
           >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800"
               alt="EduWrites Logo"
-              className="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px] md:w-[36px] md:h-[36px] lg:w-[40px] lg:h-[40px] flex-shrink-0"
+              className="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] md:w-[28px] md:h-[28px] lg:w-[32px] lg:h-[32px] flex-shrink-0"
             />
-            <div>
-              <h1 className="text-xs sm:text-lg md:text-xl lg:text-2xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins leading-tight">
+            <div className="min-w-0">
+              <h1 className="text-[11px] sm:text-sm md:text-base lg:text-lg font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins leading-tight whitespace-nowrap">
                 EduWrites
               </h1>
-              <p className="text-foreground/60 text-[10px] sm:text-[11px] md:text-xs mt-0 font-medium">
-                Achieve Academic Excellence
+              <p className="text-foreground/60 text-[8px] sm:text-[9px] md:text-[10px] mt-0 font-medium whitespace-nowrap">
+                Achieve Excellence
               </p>
             </div>
           </Link>
 
           {/* Center: Navigation Menu */}
-          <nav className="hidden md:flex items-center gap-4 lg:gap-6 flex-1 justify-center">
+          <nav className="hidden md:flex items-center gap-2 lg:gap-4 flex-1 justify-center">
             {navItems.map((item) => (
               <Link
                 key={item.path}
