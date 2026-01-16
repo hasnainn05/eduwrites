@@ -182,7 +182,7 @@ export default function Signup() {
               </p>
               <div className="grid grid-cols-2 gap-4 text-xs text-foreground/70">
                 <div>
-                  <div className="text-2xl font-bold text-cyan-400">10K+</div>
+                  <div className="text-2xl font-bold text-cyan-400">50K+</div>
                   <p>Happy Students</p>
                 </div>
                 <div>
