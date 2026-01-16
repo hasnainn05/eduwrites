@@ -3,8 +3,13 @@
 import OrderForm from "@/components/OrderForm";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 export default function Order() {
+  const searchParams = useSearchParams();
+  const service = searchParams.get("service");
+  const pkg = searchParams.get("package");
+
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       {/* Animated Background */}
@@ -31,6 +36,8 @@ export default function Order() {
         {/* Form Container */}
         <div className="glass p-8 sm:p-12 rounded-2xl">
           <OrderForm
+            preSelectedService={service || undefined}
+            preSelectedPackage={pkg || undefined}
             onSuccess={() => {
               // Optional: handle post-submission
             }}
