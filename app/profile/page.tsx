@@ -449,7 +449,7 @@ export default function Profile() {
                     {/* Table */}
                     <div className="border border-white/10 rounded-xl overflow-hidden bg-gradient-to-br from-white/5 to-white/[0.02]">
                       <div className="overflow-x-auto">
-                        <table className="w-full text-sm">
+                        <table className="w-full text-xs md:text-sm">
                           <thead>
                             <tr className="border-b border-white/10 bg-white/5">
                               <th className="px-6 py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider">
