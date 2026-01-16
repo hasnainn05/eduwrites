@@ -26,7 +26,13 @@ export default function Order() {
         </div>
 
         {/* Form Container */}
-        <Suspense fallback={<div className="glass p-8 sm:p-12 rounded-2xl text-center">Loading order form...</div>}>
+        <Suspense
+          fallback={
+            <div className="glass p-8 sm:p-12 rounded-2xl text-center">
+              Loading order form...
+            </div>
+          }
+        >
           <OrderClient />
         </Suspense>
       </div>
