@@ -130,8 +130,8 @@ const servicesData: Record<string, ServiceData> = {
     ctaSubtext:
       "Get started today and receive your professionally written essay",
     stats: {
-      projectsCompleted: 2850,
-      customerReviews: 2234,
+      projectsCompleted: 5700,
+      customerReviews: 4468,
       averageRating: 4.9,
       clientSatisfaction: "97%",
     },
@@ -261,8 +261,8 @@ const servicesData: Record<string, ServiceData> = {
     ctaSubtext:
       "Get a comprehensive research paper written by academic experts",
     stats: {
-      projectsCompleted: 1650,
-      customerReviews: 1320,
+      projectsCompleted: 3300,
+      customerReviews: 2640,
       averageRating: 4.8,
       clientSatisfaction: "96%",
     },
@@ -392,8 +392,8 @@ const servicesData: Record<string, ServiceData> = {
     ctaSubtext:
       "Get expert assistance with your thesis or dissertation project from start to finish",
     stats: {
-      projectsCompleted: 945,
-      customerReviews: 756,
+      projectsCompleted: 1890,
+      customerReviews: 1512,
       averageRating: 4.9,
       clientSatisfaction: "98%",
     },
@@ -522,8 +522,8 @@ const servicesData: Record<string, ServiceData> = {
     ctaText: "Submit Your Assignment Now",
     ctaSubtext: "Get expert help with your assignment and improve your grades",
     stats: {
-      projectsCompleted: 3420,
-      customerReviews: 2890,
+      projectsCompleted: 6840,
+      customerReviews: 5780,
       averageRating: 4.8,
       clientSatisfaction: "95%",
     },
@@ -649,8 +649,8 @@ const servicesData: Record<string, ServiceData> = {
     ctaSubtext:
       "Get professional proofreading and editing to perfect your work",
     stats: {
-      projectsCompleted: 4120,
-      customerReviews: 3456,
+      projectsCompleted: 8240,
+      customerReviews: 6912,
       averageRating: 4.9,
       clientSatisfaction: "99%",
     },
@@ -776,8 +776,8 @@ const servicesData: Record<string, ServiceData> = {
     ctaSubtext:
       "Get expert support from experienced doctoral researchers and writers",
     stats: {
-      projectsCompleted: 782,
-      customerReviews: 645,
+      projectsCompleted: 1564,
+      customerReviews: 1290,
       averageRating: 4.9,
       clientSatisfaction: "98%",
     },
