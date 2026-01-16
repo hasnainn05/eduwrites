@@ -364,10 +364,18 @@ export default function OrderForm({
               name="budget"
               value={formData.budget}
               onChange={handleChange}
+              disabled={isBudgetLocked}
               required
               placeholder="e.g., 100"
-              className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
+              className={`w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors ${
+                isBudgetLocked ? "opacity-75 cursor-not-allowed" : ""
+              }`}
             />
+            {isBudgetLocked && (
+              <p className="text-xs text-foreground/50 mt-1">
+                Auto-set based on package
+              </p>
+            )}
           </div>
         </div>
       </div>
