@@ -345,7 +345,7 @@ export default function Profile() {
                     {/* Two Column Layout */}
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-6">
                       {/* Recent Activity */}
-                      <div className="lg:col-span-2 p-6 border border-white/10 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02]">
+                      <div className="lg:col-span-2 p-4 md:p-6 border border-white/10 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02]">
                         <h3 className="text-lg font-bold text-foreground mb-6">
                           Recent Activity
                         </h3>
