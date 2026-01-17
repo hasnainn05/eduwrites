@@ -230,26 +230,11 @@ export default function Home() {
                 </span>
               </div>
 
-              {/* Main Headline - 2 Lines */}
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-poppins text-foreground">
+              {/* Main Headline - 2 Lines (both large) */}
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight font-poppins text-foreground">
                 Achieve Academic <span className="text-accent">Excellence</span><br />
-                <span className="text-2xl sm:text-3xl font-semibold">with Professional Academic Writing Services</span>
+                with Professional Academic Writing Services
               </h1>
-
-              {/* Cards 50K+ and 100% below heading */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {/* 50K+ Card */}
-                <div className="bg-white rounded-xl p-4 border border-border hover:shadow-md transition-all">
-                  <div className="text-4xl font-bold text-primary mb-1">50K+</div>
-                  <p className="text-xs text-foreground/70">Satisfied Students</p>
-                </div>
-
-                {/* 100% Card */}
-                <div className="bg-white rounded-xl p-4 border border-border hover:shadow-md transition-all">
-                  <div className="text-4xl font-bold text-accent mb-1">100%</div>
-                  <p className="text-xs text-foreground/70">Original Content</p>
-                </div>
-              </div>
 
               {/* Subheading */}
               <p className="text-sm text-foreground/70 mb-8 leading-relaxed max-w-2xl">
