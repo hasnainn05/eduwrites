@@ -472,11 +472,11 @@ export default function Signup() {
             )}
 
             {step === "verify" && (
-              <div className="card-bg rounded-2xl border-2 border-border p-8 mb-6 shadow-lg">
-                <h2 className="text-2xl font-bold text-foreground mb-2 font-poppins">
+              <div className="bg-white rounded-2xl border-4 border-border p-10 mb-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h2 className="text-3xl font-bold text-foreground mb-2 font-poppins">
                   Verify Your Email
                 </h2>
-                <p className="text-foreground/70 text-sm mb-6">
+                <p className="text-foreground/85 text-base mb-6 font-medium">
                   We've sent a verification code to {formData.email}
                 </p>
 
