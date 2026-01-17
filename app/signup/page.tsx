@@ -174,13 +174,13 @@ export default function Signup() {
               </div>
             </div>
 
-            <div className="glass p-6 rounded-2xl border border-white/20">
-              <p className="text-sm text-foreground/80 mb-4">
-                <strong className="text-cyan-400 block mb-2">
+            <div className="bg-white border-4 border-border p-8 rounded-2xl shadow-md">
+              <p className="text-base text-foreground/90 mb-4 font-medium">
+                <strong className="text-cyan-600 block mb-2 text-lg">
                   📊 By the Numbers
                 </strong>
               </p>
-              <div className="grid grid-cols-2 gap-4 text-xs text-foreground/70">
+              <div className="grid grid-cols-2 gap-4 text-sm text-foreground/80 font-bold">
                 <div>
                   <div className="text-2xl font-bold text-cyan-400">50K+</div>
                   <p>Happy Students</p>
