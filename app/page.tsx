@@ -187,12 +187,6 @@ export default function Home() {
 
   return (
     <div ref={scrollRef} className="w-full">
-      {/* Animated Gradient Background */}
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="blur-gradient absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-600 to-transparent"></div>
-        <div className="blur-gradient absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-500 to-transparent animation-delay-2000"></div>
-        <div className="blur-gradient absolute bottom-0 left-1/2 w-96 h-96 bg-gradient-to-br from-violet-600 to-transparent animation-delay-4000"></div>
-      </div>
 
       {/* Hero Section */}
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
