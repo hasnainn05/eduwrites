@@ -6,10 +6,14 @@ export const metadata: Metadata = {
   description:
     "Sign in to your EduWrites account to manage your orders, track projects, and access your academic writing services.",
   keywords: ["login", "sign in", "account", "academic writing"],
+  alternates: {
+    canonical: "https://eduwrites.com/login",
+  },
   openGraph: {
     title: "Login | EduWrites",
     description: "Access your EduWrites account",
     type: "website",
+    url: "https://eduwrites.com/login",
   },
 };
 
