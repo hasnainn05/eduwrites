@@ -220,9 +220,9 @@ export default function Home() {
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="w-full mx-auto">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
               {/* Left Content - Wider Column */}
-              <div className="lg:col-span-2">
+              <div className="lg:col-span-3">
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/40 rounded-full px-3 py-1.5 mb-4">
                   <Star size={12} className="text-accent fill-accent" />
