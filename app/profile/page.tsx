@@ -468,7 +468,7 @@ export default function Profile() {
                       <div className="overflow-x-auto">
                         <table className="w-full text-xs md:text-sm">
                           <thead>
-                            <tr className="border-b border-white/10 bg-white/5">
+                            <tr className="border-b-2 border-border bg-background/50">
                               <th className="px-2 md:px-6 py-2 md:py-4 text-left text-foreground/60 font-semibold text-xs tracking-wider">
                                 Order ID
                               </th>
