@@ -455,9 +455,9 @@ export default function Profile() {
                   <div className="space-y-3 md:space-y-6">
                     {/* Header */}
                     <div className="hidden md:block">
-                      <h1 className="text-3xl font-bold text-foreground font-poppins">
+                      <h2 className="text-3xl font-bold text-foreground font-poppins">
                         Order History
-                      </h1>
+                      </h2>
                       <p className="text-foreground/60 mt-2">
                         Manage and track all your orders
                       </p>
@@ -552,9 +552,9 @@ export default function Profile() {
                   <div className="space-y-8">
                     {/* Header */}
                     <div>
-                      <h1 className="text-3xl font-bold text-foreground font-poppins">
+                      <h2 className="text-3xl font-bold text-foreground font-poppins">
                         Settings
-                      </h1>
+                      </h2>
                       <p className="text-foreground/60 mt-2">
                         Manage your account preferences and security
                       </p>
