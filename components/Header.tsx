@@ -87,6 +87,15 @@ export default function Header() {
               </div>
             </div>
 
+            {/* Pricing Link */}
+            <a
+              href="/#pricing"
+              className="text-[10px] lg:text-[11px] font-medium text-foreground hover:text-primary transition-colors relative group whitespace-nowrap"
+            >
+              Pricing
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+            </a>
+
             {/* Fields of Study Dropdown */}
             <div className="relative group">
               <button className="text-[10px] lg:text-[11px] font-medium text-foreground hover:text-primary transition-colors relative whitespace-nowrap flex items-center gap-1 py-2">
