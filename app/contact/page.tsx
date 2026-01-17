@@ -224,7 +224,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="John Doe"
-                      className="w-full bg-white border-3 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
+                      className="w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
                     />
                   </div>
                   <div>
@@ -239,7 +239,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="john@example.com"
-                      className="w-full bg-white border-3 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
+                      className="w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
                     />
                   </div>
                 </div>
@@ -256,7 +256,7 @@ export default function Contact() {
                     value={formData.whatsapp}
                     onChange={handleChange}
                     placeholder="+1 (555) 123-4567"
-                    className="w-full bg-white border-3 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
+                    className="w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
                   />
                 </div>
 
@@ -272,7 +272,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="How can we help you?"
-                    className="w-full bg-white border-3 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
+                    className="w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
                   />
                 </div>
 
@@ -288,7 +288,7 @@ export default function Contact() {
                     required
                     placeholder="Please describe your inquiry or issue..."
                     rows={5}
-                    className="w-full bg-white border-3 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors resize-none font-medium"
+                    className="w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors resize-none font-medium"
                   />
                 </div>
 
