@@ -61,8 +61,8 @@ export function ProfileSidebar({
               }
               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all font-medium text-xs md:text-sm ${
                 isActive
-                  ? "bg-gradient-to-r from-indigo-600/30 to-cyan-500/30 text-cyan-400 border border-cyan-400/30"
-                  : "text-foreground/70 hover:text-foreground hover:bg-white/5 border border-transparent"
+                  ? "bg-primary/10 text-primary border border-primary/30"
+                  : "text-foreground/70 hover:text-foreground hover:bg-primary/5 border border-transparent"
               }`}
             >
               <Icon size={16} className="md:w-4.5 md:h-4.5" />
@@ -73,10 +73,10 @@ export function ProfileSidebar({
       </div>
 
       {/* Logout */}
-      <div className="p-2 border-t border-white/10 flex-shrink-0">
+      <div className="p-2 border-t border-border flex-shrink-0">
         <button
           onClick={onLogout}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all font-medium text-xs md:text-sm text-red-400 hover:bg-red-500/20 hover:border-red-500/30 border border-transparent"
+          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all font-medium text-xs md:text-sm text-red-600 hover:bg-red-500/20 hover:border-red-500/30 border border-transparent"
         >
           <LogOut size={16} className="md:w-4.5 md:h-4.5" />
           Logout
