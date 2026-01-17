@@ -525,7 +525,7 @@ export default function Signup() {
             )}
 
             {step === "success" && (
-              <div className="bg-white rounded-2xl border-2 border-border p-8 mb-6 text-center shadow-sm">
+              <div className="card-bg rounded-2xl border-2 border-border p-8 mb-6 text-center shadow-sm">
                 <div className="flex justify-center mb-6">
                   <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
                     <CheckCircle size={32} className="text-white" />
