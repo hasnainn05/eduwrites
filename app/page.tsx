@@ -922,29 +922,34 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 blur-gradient bg-gradient-to-r from-purple-600 to-transparent opacity-40 top-0 left-0"></div>
-        <div className="absolute inset-0 blur-gradient bg-gradient-to-l from-cyan-600 to-transparent opacity-40 bottom-0 right-0"></div>
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto relative z-10">
+          {/* Background gradient */}
+          <div className="absolute -inset-20 bg-gradient-to-r from-primary/10 via-accent/8 to-primary/10 rounded-3xl -z-10"></div>
 
-        <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-8 font-poppins">
-            Ready to Boost Your Academic Success?
-          </h2>
+          <div className="bg-white rounded-3xl border border-border p-12 sm:p-16 text-center">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
+              Ready to Achieve Academic Excellence?
+            </h2>
 
-          <p className="text-lg text-foreground/80 mb-12">
-            Join thousands of students who've improved their grades and academic
-            standing with our expert writing services. Let's make your success a
-            reality.
-          </p>
+            <p className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto">
+              Join 50,000+ students who've improved their grades with EduWrites. Get started with a free consultation today.
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/order"
-              className="inline-flex items-center justify-center gap-2 gradient-primary text-white px-10 py-4 rounded-xl font-bold hover:shadow-glow transition-all duration-300 transform hover:scale-105 animate-pulse-bounce"
-            >
-              Order Now <ArrowRight size={20} />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/order"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-white px-10 py-4 rounded-lg font-bold hover:bg-primary/90 transition-all duration-300"
+              >
+                Start Your Project <ArrowRight size={20} />
+              </Link>
+              <button
+                onClick={() => setIsSupportModalOpen(true)}
+                className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-10 py-4 rounded-lg font-bold hover:bg-primary/5 transition-all duration-300"
+              >
+                Chat Now
+              </button>
+            </div>
           </div>
         </div>
       </section>
