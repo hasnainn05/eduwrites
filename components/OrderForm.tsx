@@ -416,7 +416,7 @@ export default function OrderForm({
 
           {/* File Upload */}
           <div>
-            <label className="block text-sm font-medium text-foreground/90 mb-2">
+            <label className="block text-base font-bold text-foreground/95 mb-2">
               Upload Files (Optional)
             </label>
             <div className="relative">
@@ -426,19 +426,19 @@ export default function OrderForm({
                 onChange={handleChange}
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               />
-              <div className="w-full card-bg border-2 border-dashed border-border rounded-lg px-4 py-6 text-center hover:border-primary transition-colors cursor-pointer">
-                <Upload size={24} className="mx-auto mb-2 text-cyan-400" />
-                <p className="text-sm font-medium text-foreground mb-1">
+              <div className="w-full bg-white border-4 border-dashed border-border rounded-lg px-4 py-8 text-center hover:border-primary hover:bg-primary/5 transition-all cursor-pointer">
+                <Upload size={28} className="mx-auto mb-3 text-accent" />
+                <p className="text-base font-bold text-foreground mb-2">
                   {fileName || "Click to upload or drag and drop"}
                 </p>
-                <p className="text-xs text-foreground/60">
+                <p className="text-sm text-foreground/60 font-medium">
                   PDF, DOC, DOCX, or TXT (Max 10MB)
                 </p>
               </div>
             </div>
             {fileName && (
-              <div className="mt-2 flex items-center gap-2 bg-white/10 p-2 rounded-lg">
-                <span className="text-sm text-foreground flex-1">
+              <div className="mt-3 flex items-center gap-2 bg-white border-3 border-border p-3 rounded-lg">
+                <span className="text-base font-bold text-foreground flex-1">
                   {fileName}
                 </span>
                 <button
@@ -447,9 +447,9 @@ export default function OrderForm({
                     setFormData((prev) => ({ ...prev, attachments: null }));
                     setFileName("");
                   }}
-                  className="p-1 hover:bg-white/20 rounded transition-colors"
+                  className="p-1 hover:bg-primary/10 rounded transition-colors"
                 >
-                  <X size={16} className="text-foreground/70" />
+                  <X size={20} className="text-foreground/70" />
                 </button>
               </div>
             )}
