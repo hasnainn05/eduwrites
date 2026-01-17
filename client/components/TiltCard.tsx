@@ -9,46 +9,24 @@ interface TiltCardProps {
 
 export function TiltCard({ children, className = "" }: TiltCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [rotateX, setRotateX] = useState(0);
-  const [rotateY, setRotateY] = useState(0);
-  const [scale, setScale] = useState(1);
+  const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    // Calculate center
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    // Calculate rotation (max 15 degrees)
-    const rotateXValue = ((y - centerY) / centerY) * 15;
-    const rotateYValue = ((centerX - x) / centerX) * 15;
-
-    setRotateX(rotateXValue);
-    setRotateY(rotateYValue);
-    setScale(1.05);
+  const handleMouseEnter = () => {
+    setIsHovered(true);
   };
 
   const handleMouseLeave = () => {
-    setRotateX(0);
-    setRotateY(0);
-    setScale(1);
+    setIsHovered(false);
   };
 
   return (
     <div
       ref={cardRef}
-      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{
-        perspective: "1200px",
-        transformStyle: "preserve-3d",
-        transition: "transform 0.3s ease-out",
-        transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(${scale}, ${scale}, 1)`,
+        transition: "all 0.3s ease-out",
+        transform: isHovered ? "translateY(-8px) scale(1.02)" : "translateY(0) scale(1)",
       }}
       className={className}
     >
