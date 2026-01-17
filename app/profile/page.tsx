@@ -464,7 +464,7 @@ export default function Profile() {
                     </div>
 
                     {/* Table */}
-                    <div className="border-2 border-border rounded-lg md:rounded-xl overflow-hidden bg-white shadow-sm">
+                    <div className="border-2 border-border rounded-lg md:rounded-xl overflow-hidden card-bg shadow-sm">
                       <div className="overflow-x-auto">
                         <table className="w-full text-xs md:text-sm">
                           <thead>
