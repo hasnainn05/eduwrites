@@ -262,8 +262,8 @@ export default function OrderForm({
       </div>
 
       {/* Service Details Section */}
-      <div className="border-t border-white/10 pt-6">
-        <h2 className="text-2xl font-bold text-foreground mb-6 font-poppins">
+      <div className="border-t-4 border-border pt-8">
+        <h2 className="text-3xl font-bold text-foreground mb-8 font-poppins">
           Service Details
         </h2>
 
