@@ -304,7 +304,7 @@ export default function Login() {
                   type="button"
                   onClick={handleAppleLogin}
                   disabled={isLoading}
-                  className="border-2 border-border bg-white hover:shadow-md rounded-lg py-2.5 font-medium text-foreground transition-all flex items-center justify-center gap-2 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="border-2 border-border card-bg hover:shadow-md rounded-lg py-2.5 font-medium text-foreground transition-all flex items-center justify-center gap-2 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isLoading ? (
                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
