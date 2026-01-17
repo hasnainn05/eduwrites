@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     "EduWrites Terms of Service. Read our terms and conditions for using our academic writing services.",
   keywords: ["terms of service", "terms", "conditions", "legal"],
+  alternates: {
+    canonical: "https://eduwrites.com/terms",
+  },
   robots: {
     index: true,
     follow: true,
