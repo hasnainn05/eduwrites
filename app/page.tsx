@@ -896,6 +896,76 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQs Section */}
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">FREQUENTLY ASKED QUESTIONS</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
+              Common Questions
+            </h2>
+            <p className="text-lg text-foreground/70">
+              Find answers to common questions about our services
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl border border-border overflow-hidden hover:shadow-md transition-all duration-300"
+              >
+                <button
+                  onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors"
+                >
+                  <h3 className="text-lg font-semibold text-foreground pr-4">
+                    {faq.question}
+                  </h3>
+                  <div className="flex-shrink-0">
+                    <div className={`w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center transition-transform duration-300 ${expandedFAQ === index ? 'rotate-180' : ''}`}>
+                      <svg
+                        className="w-4 h-4 text-accent"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+
+                {expandedFAQ === index && (
+                  <div className="px-6 pb-6 border-t border-border">
+                    <p className="text-foreground/80 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-foreground/70 mb-6">
+              Still have questions? Our support team is here to help.
+            </p>
+            <button
+              onClick={() => setIsSupportModalOpen(true)}
+              className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary/5 transition-all duration-300"
+            >
+              Contact Support
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Support Modal */}
       <SupportModal
         isOpen={isSupportModalOpen}
