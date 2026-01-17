@@ -428,7 +428,7 @@ export default function Profile() {
 
                         <button
                           onClick={() => setIsSupportModalOpen(true)}
-                          className="p-2 md:p-4 border border-white/10 rounded-lg md:rounded-xl bg-gradient-to-br from-pink-500/10 to-rose-500/10 hover:border-pink-400/50 hover:bg-pink-400/20 transition-all group w-full text-left"
+                          className="p-2 md:p-4 border-2 border-border rounded-lg md:rounded-xl bg-white hover:shadow-md transition-all group w-full text-left"
                         >
                           <div className="text-lg md:text-2xl mb-0.5 md:mb-2">
                             💬
