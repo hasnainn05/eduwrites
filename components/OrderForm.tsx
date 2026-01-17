@@ -458,10 +458,10 @@ export default function OrderForm({
       </div>
 
       {/* Submit Button */}
-      <div className="border-t-2 border-border pt-6">
+      <div className="border-t-4 border-border pt-8">
         <button
           type="submit"
-          className="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary/90 hover:shadow-md transition-all transform hover:scale-105 duration-300 flex items-center justify-center gap-2"
+          className="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-primary/90 hover:shadow-glow transition-all transform hover:scale-105 duration-300 flex items-center justify-center gap-2 animate-pulse-bounce"
         >
           Submit Order <ArrowRight size={20} />
         </button>
