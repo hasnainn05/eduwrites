@@ -292,13 +292,13 @@ export default function Header() {
                   </summary>
                   <div className="pl-3 space-y-0.5 mt-0.5">
                     {languages.map((language, idx) => (
-                      <button
+                      <div
                         key={idx}
-                        className="block w-full text-left text-[8px] font-medium text-white/80 hover:text-cyan-400 transition-colors py-0.5 px-1"
+                        className="block w-full text-left text-[8px] font-medium text-white/80 py-0.5 px-1"
                       >
                         <span className="mr-1">{language.flag}</span>
                         {language.lang}
-                      </button>
+                      </div>
                     ))}
                   </div>
                 </details>
