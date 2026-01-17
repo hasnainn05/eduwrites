@@ -195,37 +195,37 @@ export default function Home() {
             {/* Left Content */}
             <div>
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/40 rounded-full px-4 py-2 mb-8">
-                <Star size={16} className="text-accent fill-accent" />
-                <span className="text-sm font-semibold text-foreground">
+              <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/40 rounded-full px-3 py-1.5 mb-4">
+                <Star size={12} className="text-accent fill-accent" />
+                <span className="text-xs font-semibold text-foreground">
                   Trusted by 50,000+ Students
                 </span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-poppins text-foreground">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-12 leading-tight font-poppins text-foreground">
                 Achieve Academic <span className="text-accent">Excellence</span><br />
                 with Academic Experts
               </h1>
 
               {/* Subheading */}
-              <p className="text-lg text-foreground/70 mb-8 leading-relaxed max-w-2xl">
+              <p className="text-sm text-foreground/70 mb-8 leading-relaxed max-w-2xl">
                 Professional, plagiarism-free academic writing from Ph.D. experts. Essays, theses, dissertations delivered on time, every time.
               </p>
 
               {/* Trust Indicators */}
-              <div className="grid grid-cols-3 gap-4 mb-12">
+              <div className="grid grid-cols-3 gap-3 mb-12">
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-2">98%</div>
-                  <p className="text-sm text-foreground/70">Customer Satisfaction</p>
+                  <div className="text-2xl font-bold text-primary mb-1">98%</div>
+                  <p className="text-xs text-foreground/70">Customer Satisfaction</p>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-2">50K+</div>
-                  <p className="text-sm text-foreground/70">Papers Delivered</p>
+                  <div className="text-2xl font-bold text-primary mb-1">50K+</div>
+                  <p className="text-xs text-foreground/70">Papers Delivered</p>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                  <p className="text-sm text-foreground/70">Expert Support</p>
+                  <div className="text-2xl font-bold text-primary mb-1">24/7</div>
+                  <p className="text-xs text-foreground/70">Expert Support</p>
                 </div>
               </div>
 
@@ -250,8 +250,8 @@ export default function Home() {
             </div>
 
             {/* Right Stats Cards */}
-            <div className="relative flex justify-end">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+            <div className="relative flex justify-end lg:pr-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full lg:w-10/12">
                 {/* Stat Card 1 */}
                 <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
                   <div className="text-5xl font-bold text-primary mb-2">50K+</div>
