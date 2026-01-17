@@ -292,25 +292,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Stats Cards */}
+            {/* Right Rating Card */}
             <div className="relative flex justify-end lg:pr-12">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full lg:w-10/12">
-                {/* Stat Card 1 */}
+              <div className="w-full lg:w-10/12">
                 <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
-                  <div className="text-5xl font-bold text-primary mb-2">50K+</div>
-                  <p className="text-foreground/80 font-medium">Satisfied Students</p>
-                  <p className="text-sm text-foreground/60 mt-3">Students worldwide trust us for their academic needs</p>
-                </div>
-
-                {/* Stat Card 2 */}
-                <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
-                  <div className="text-5xl font-bold text-accent mb-2">100%</div>
-                  <p className="text-foreground/80 font-medium">Original Content</p>
-                  <p className="text-sm text-foreground/60 mt-3">Plagiarism-free work guaranteed</p>
-                </div>
-
-                {/* Stat Card 3 */}
-                <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all sm:col-span-2">
                   <div className="flex items-center gap-4">
                     <div>
                       <div className="flex gap-1 mb-2">
