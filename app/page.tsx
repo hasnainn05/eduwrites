@@ -438,10 +438,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
-              <a
+              <Link
                 key={service.id}
-                href="/#pricing"
-                className="group relative bg-white rounded-2xl p-8 border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer"
+                href={`/services/${service.slug}`}
+                className="group relative bg-white rounded-2xl p-8 border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-300 overflow-hidden"
               >
                 {/* Icon Background Circle */}
                 <div className="absolute -right-20 -top-20 w-40 h-40 bg-accent/8 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
@@ -464,14 +464,14 @@ export default function Home() {
                   </p>
 
                   <div className="flex items-center text-primary font-semibold group-hover:gap-3 transition-all">
-                    View Pricing{" "}
+                    Learn More{" "}
                     <ArrowRight
                       size={18}
                       className="ml-2 group-hover:translate-x-1 transition-transform"
                     />
                   </div>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
