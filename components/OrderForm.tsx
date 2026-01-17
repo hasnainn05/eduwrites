@@ -184,7 +184,7 @@ export default function OrderForm({
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Personal Information Section */}
       <div>
-        <h2 className="text-2xl font-bold text-foreground mb-6 font-poppins">
+        <h2 className="text-3xl font-bold text-foreground mb-8 font-poppins">
           Personal Information
         </h2>
 
