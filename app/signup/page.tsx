@@ -310,12 +310,12 @@ export default function Signup() {
 
                   {/* Confirm Password */}
                   <div>
-                    <label className="block text-sm font-medium text-foreground/90 mb-2">
+                    <label className="block text-base font-bold text-foreground/95 mb-2">
                       Confirm Password
                     </label>
                     <div className="relative">
                       <Lock
-                        size={18}
+                        size={20}
                         className="absolute left-3 top-1/2 transform -translate-y-1/2 text-foreground/50"
                       />
                       <input
@@ -325,7 +325,7 @@ export default function Signup() {
                         onChange={handleFormChange}
                         placeholder="••••••••"
                         required
-                        className="w-full card-bg border-2 border-border rounded-lg pl-10 pr-10 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                        className="w-full bg-white border-3 border-border rounded-lg pl-10 pr-10 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-all font-medium"
                       />
                       <button
                         type="button"
