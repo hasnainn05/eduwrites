@@ -41,49 +41,49 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-sidebar-background border-t border-sidebar-border text-sidebar-foreground">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:ml-0">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8 text-center">
+    <footer className="bg-white border-t border-border text-foreground">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:ml-0">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
           {/* Brand Section */}
-          <div className="col-span-1 flex flex-col items-center">
+          <div className="col-span-1 flex flex-col items-start">
             <Link
               href="/"
-              className="flex items-center gap-2 mb-4 justify-center"
+              className="flex items-center gap-2 mb-4"
             >
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800"
                 alt="EduWrites Logo"
                 className="w-[46px] h-[46px] sm:w-[51px] sm:h-[51px] flex-shrink-0"
               />
-              <span className="font-bold text-lg bg-gradient-to-r from-sidebar-primary to-sidebar-accent bg-clip-text text-transparent">
+              <span className="font-bold text-lg text-primary">
                 EduWrites
               </span>
             </Link>
-            <p className="text-sidebar-foreground/60 text-sm">
-              Your trusted partner for professional academic writing services.
+            <p className="text-foreground/70 text-sm mb-4">
+              Professional academic writing services trusted by 50,000+ students.
             </p>
-            <div className="flex gap-4 mt-4">
+            <div className="flex gap-4">
               <a
                 href="#"
-                className="text-sidebar-foreground/60 hover:text-sidebar-primary transition-colors"
+                className="text-foreground/60 hover:text-primary transition-colors"
               >
                 <Facebook size={20} />
               </a>
               <a
                 href="#"
-                className="text-sidebar-foreground/60 hover:text-sidebar-primary transition-colors"
+                className="text-foreground/60 hover:text-primary transition-colors"
               >
                 <Twitter size={20} />
               </a>
               <a
                 href="#"
-                className="text-sidebar-foreground/60 hover:text-sidebar-primary transition-colors"
+                className="text-foreground/60 hover:text-primary transition-colors"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="#"
-                className="text-sidebar-foreground/60 hover:text-sidebar-primary transition-colors"
+                className="text-foreground/60 hover:text-primary transition-colors"
               >
                 <Instagram size={20} />
               </a>
