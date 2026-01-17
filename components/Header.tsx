@@ -265,14 +265,14 @@ export default function Header() {
                   </summary>
                   <div className="pl-3 space-y-0.5 mt-0.5">
                     {services.map((service) => (
-                      <Link
+                      <a
                         key={service.id}
-                        href={`/services/${service.slug}`}
+                        href="/#pricing"
                         onClick={closeMenu}
                         className="block text-[8px] font-medium text-foreground hover:text-primary transition-colors py-0.5 px-1"
                       >
                         {service.title}
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 </details>
