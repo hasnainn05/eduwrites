@@ -137,7 +137,7 @@ export function AdminSidebar() {
       <div className="md:hidden fixed top-20 left-4 z-50">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="p-2 rounded-lg bg-gradient-to-r from-indigo-600/30 to-cyan-500/30 border border-cyan-400/30 text-cyan-400 hover:text-cyan-300 transition-all"
+          className="p-2 rounded-lg bg-primary/10 border border-primary/30 text-primary hover:bg-primary/20 transition-all"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -154,7 +154,7 @@ export function AdminSidebar() {
 
       {/* Mobile Sidebar */}
       <div
-        className={`md:hidden fixed left-0 top-0 z-40 w-56 h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 border-r border-white/10 flex flex-col transition-transform duration-300 transform ${
+        className={`md:hidden fixed left-0 top-0 z-40 w-56 h-screen bg-white border-r border-border flex flex-col transition-transform duration-300 transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
