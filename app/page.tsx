@@ -236,14 +236,14 @@ export default function Home() {
                 </div>
 
                 {/* Main Headline - 2 Lines (equal size) */}
-                <h1 className="font-bold mb-8 leading-tight font-poppins text-foreground space-y-2">
+                <div className="font-bold mb-8 leading-tight font-poppins text-foreground">
                   <div className="text-5xl sm:text-6xl lg:text-7xl">
                     Achieve Academic <span className="text-accent">Excellence</span>
                   </div>
                   <div className="text-5xl sm:text-6xl lg:text-7xl">
                     with Professional Academic Writing Services
                   </div>
-                </h1>
+                </div>
 
                 {/* Cards Grid - 50K+ and 100% */}
                 <div className="grid grid-cols-2 gap-6 mb-6">
