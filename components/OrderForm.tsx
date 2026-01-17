@@ -191,7 +191,7 @@ export default function OrderForm({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Full Name */}
           <div>
-            <label className="block text-sm font-medium text-foreground/90 mb-2">
+            <label className="block text-base font-bold text-foreground/95 mb-2">
               Full Name *
             </label>
             <input
@@ -201,13 +201,13 @@ export default function OrderForm({
               onChange={handleChange}
               required
               placeholder="John Doe"
-              className="w-full card-bg border-2 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors"
+              className="w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
             />
           </div>
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-medium text-foreground/90 mb-2">
+            <label className="block text-base font-bold text-foreground/95 mb-2">
               Email Address *
             </label>
             <input
@@ -217,13 +217,13 @@ export default function OrderForm({
               onChange={handleChange}
               required
               placeholder="john@example.com"
-              className="w-full card-bg border-2 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors"
+              className="w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
             />
           </div>
 
           {/* WhatsApp Number */}
           <div>
-            <label className="block text-sm font-medium text-foreground/90 mb-2">
+            <label className="block text-base font-bold text-foreground/95 mb-2">
               WhatsApp Number (Optional)
             </label>
             <input
@@ -232,20 +232,20 @@ export default function OrderForm({
               value={formData.whatsapp}
               onChange={handleChange}
               placeholder="+1 (555) 000-0000"
-              className="w-full card-bg border-2 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors"
+              className="w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
             />
           </div>
 
           {/* Academic Level */}
           <div>
-            <label className="block text-sm font-medium text-foreground/90 mb-2">
+            <label className="block text-base font-bold text-foreground/95 mb-2">
               Academic Level *
             </label>
             <select
               name="academicLevel"
               value={formData.academicLevel}
               onChange={handleChange}
-              className="w-full card-bg border-2 border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors"
+              className="w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
             >
               {academicLevels.map((level) => (
                 <option
