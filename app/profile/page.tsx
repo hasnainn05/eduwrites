@@ -569,7 +569,7 @@ export default function Profile() {
                         </h3>
                       </div>
                       <div className="space-y-4">
-                        <div className="flex items-center justify-between p-4 border border-white/10 rounded-lg hover:bg-white/[0.05] transition-all">
+                        <div className="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-background/30 transition-all">
                           <div>
                             <p className="font-semibold text-foreground text-sm">
                               Change Password
@@ -582,7 +582,7 @@ export default function Profile() {
                             Change
                           </button>
                         </div>
-                        <div className="flex items-center justify-between p-4 border border-white/10 rounded-lg hover:bg-white/[0.05] transition-all">
+                        <div className="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-background/30 transition-all">
                           <div>
                             <p className="font-semibold text-foreground text-sm">
                               Two-Factor Authentication
@@ -595,7 +595,7 @@ export default function Profile() {
                             Enable
                           </button>
                         </div>
-                        <div className="flex items-center justify-between p-4 border border-white/10 rounded-lg hover:bg-white/[0.05] transition-all">
+                        <div className="flex items-center justify-between p-4 border border-border rounded-lg hover:bg-background/30 transition-all">
                           <div>
                             <p className="font-semibold text-foreground text-sm">
                               Login History
