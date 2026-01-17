@@ -41,11 +41,11 @@ export default function Header() {
               className="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] md:w-[28px] md:h-[28px] lg:w-[32px] lg:h-[32px] flex-shrink-0"
             />
             <div className="min-w-0">
-              <h1 className="text-[11px] sm:text-sm md:text-base lg:text-lg font-bold text-primary font-poppins leading-tight whitespace-nowrap">
-                EduWrites
+              <h1 className="text-[11px] sm:text-sm md:text-base lg:text-lg font-bold font-poppins leading-tight whitespace-nowrap">
+                <span className="text-primary">Edu</span><span className="text-accent">Writes</span>
               </h1>
               <p className="text-foreground/60 text-[8px] sm:text-[9px] md:text-[10px] mt-0 font-medium whitespace-nowrap">
-                Achieve Excellence
+                We Write, You Shine
               </p>
             </div>
           </Link>
