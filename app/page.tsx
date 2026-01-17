@@ -241,7 +241,7 @@ export default function Home() {
                   phoneNumber="13658291551"
                   message="Hi, I'm interested in EduWrites services"
                   className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/5 transition-all duration-300"
-                  showIcon={true}
+                  showIcon={false}
                   iconSize={20}
                 >
                   Message Us
