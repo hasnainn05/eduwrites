@@ -220,50 +220,86 @@ export default function Home() {
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Left Content - Empty or for future use */}
+            {/* Left Content */}
             <div>
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/40 rounded-full px-3 py-1.5 mb-4">
+                <Star size={12} className="text-accent fill-accent" />
+                <span className="text-xs font-semibold text-foreground">
+                  Trusted by 50,000+ Students
+                </span>
+              </div>
+
+              {/* Main Headline - 2 Lines (both large) */}
+              <div className="font-bold mb-8 leading-tight font-poppins text-foreground">
+                <div className="text-5xl sm:text-6xl lg:text-7xl">
+                  Achieve Academic <span className="text-accent">Excellence</span>
+                </div>
+                <div className="text-5xl sm:text-6xl lg:text-7xl">
+                  with Professional Academic Writing Services
+                </div>
+              </div>
+
+              {/* Subheading */}
+              <p className="text-sm text-foreground/70 mb-8 leading-relaxed max-w-2xl">
+                Professional, plagiarism-free academic writing from Ph.D. experts. Essays, theses, dissertations delivered on time, every time.
+              </p>
+
+              {/* Trust Indicators */}
+              <div className="grid grid-cols-3 gap-3 mb-12">
+                <div>
+                  <div className="text-2xl font-bold text-primary mb-1">98%</div>
+                  <p className="text-xs text-foreground/70">Customer Satisfaction</p>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-primary mb-1">24/7</div>
+                  <p className="text-xs text-foreground/70">Expert Support</p>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-primary mb-1">50+</div>
+                  <p className="text-xs text-foreground/70">Expert Writers</p>
+                </div>
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#services"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Started Now <ArrowRight size={20} />
+                </a>
+                <WhatsAppButton
+                  phoneNumber="13658291551"
+                  message="Hi, I'm interested in EduWrites services"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/5 transition-all duration-300"
+                  showIcon={false}
+                  iconSize={20}
+                >
+                  Message Us
+                </WhatsAppButton>
+              </div>
             </div>
 
-            {/* Right Column - Heading and Cards */}
+            {/* Right Stats Cards Column */}
             <div className="relative flex justify-end lg:pr-12">
-              <div className="w-full lg:w-10/12">
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/40 rounded-full px-3 py-1.5 mb-4">
-                  <Star size={12} className="text-accent fill-accent" />
-                  <span className="text-xs font-semibold text-foreground">
-                    Trusted by 50,000+ Students
-                  </span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full lg:w-10/12">
+                {/* 50K+ Card */}
+                <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
+                  <div className="text-5xl font-bold text-primary mb-2">50K+</div>
+                  <p className="text-foreground/80 font-medium">Satisfied Students</p>
+                  <p className="text-sm text-foreground/60 mt-3">Students worldwide trust us for their academic needs</p>
                 </div>
 
-                {/* Main Headline - 2 Lines (equal size) */}
-                <div className="font-bold mb-8 leading-tight font-poppins text-foreground">
-                  <div className="text-5xl sm:text-6xl lg:text-7xl">
-                    Achieve Academic <span className="text-accent">Excellence</span>
-                  </div>
-                  <div className="text-5xl sm:text-6xl lg:text-7xl">
-                    with Professional Academic Writing Services
-                  </div>
-                </div>
-
-                {/* Cards Grid - 50K+ and 100% */}
-                <div className="grid grid-cols-2 gap-6 mb-6">
-                  {/* 50K+ Card */}
-                  <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
-                    <div className="text-5xl font-bold text-primary mb-2">50K+</div>
-                    <p className="text-foreground/80 font-medium">Satisfied Students</p>
-                    <p className="text-sm text-foreground/60 mt-3">Students worldwide trust us for their academic needs</p>
-                  </div>
-
-                  {/* 100% Card */}
-                  <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
-                    <div className="text-5xl font-bold text-accent mb-2">100%</div>
-                    <p className="text-foreground/80 font-medium">Original Content</p>
-                    <p className="text-sm text-foreground/60 mt-3">Plagiarism-free work guaranteed</p>
-                  </div>
+                {/* 100% Card */}
+                <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
+                  <div className="text-5xl font-bold text-accent mb-2">100%</div>
+                  <p className="text-foreground/80 font-medium">Original Content</p>
+                  <p className="text-sm text-foreground/60 mt-3">Plagiarism-free work guaranteed</p>
                 </div>
 
                 {/* Rating Card - Below both */}
-                <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all mb-8">
+                <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all sm:col-span-2">
                   <div className="flex items-center gap-4">
                     <div>
                       <div className="flex gap-1 mb-2">
@@ -275,46 +311,6 @@ export default function Home() {
                       <p className="text-sm text-foreground/60 mt-2">From 2,500+ verified reviews</p>
                     </div>
                   </div>
-                </div>
-
-                {/* Subheading */}
-                <p className="text-sm text-foreground/70 mb-8 leading-relaxed max-w-2xl">
-                  Professional, plagiarism-free academic writing from Ph.D. experts. Essays, theses, dissertations delivered on time, every time.
-                </p>
-
-                {/* Trust Indicators */}
-                <div className="grid grid-cols-3 gap-3 mb-12">
-                  <div>
-                    <div className="text-2xl font-bold text-primary mb-1">98%</div>
-                    <p className="text-xs text-foreground/70">Customer Satisfaction</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-primary mb-1">24/7</div>
-                    <p className="text-xs text-foreground/70">Expert Support</p>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-primary mb-1">50+</div>
-                    <p className="text-xs text-foreground/70">Expert Writers</p>
-                  </div>
-                </div>
-
-                {/* CTAs */}
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="#services"
-                    className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
-                  >
-                    Get Started Now <ArrowRight size={20} />
-                  </a>
-                  <WhatsAppButton
-                    phoneNumber="13658291551"
-                    message="Hi, I'm interested in EduWrites services"
-                    className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/5 transition-all duration-300"
-                    showIcon={false}
-                    iconSize={20}
-                  >
-                    Message Us
-                  </WhatsAppButton>
                 </div>
               </div>
             </div>
