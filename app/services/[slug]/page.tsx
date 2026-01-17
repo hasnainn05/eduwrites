@@ -191,9 +191,9 @@ const servicesData: Record<string, ServiceData> = {
     subtitle: "In-Depth Research and Academic Excellence",
     Icon: BarChart3,
     heroGradient: "from-purple-50 to-pink-50",
-    aboutTitle: "About Research Paper",
+    aboutTitle: "Professional Research Paper Writing Service",
     aboutContent:
-      "Our research paper writing service specializes in comprehensive academic research projects that require rigorous investigation and scholarly analysis. We have experienced researchers with expertise across all major academic disciplines including sciences, humanities, social sciences, business, and technology. Our process involves conducting extensive literature reviews using peer-reviewed sources, developing original arguments, and presenting well-structured analyses. Each research paper is meticulously documented with proper citations and references, whether you require APA, MLA, Chicago, or any other format. We excel at identifying credible sources, synthesizing complex information, and producing papers that demonstrate advanced critical thinking and original contribution to your field of study.",
+      "Our professional research paper writing service specializes in comprehensive academic research projects that require rigorous investigation and scholarly analysis. We provide expert research paper help with experienced research writers who have expertise across all major academic disciplines including sciences, humanities, social sciences, business, and technology. Our research paper writing process involves conducting extensive literature reviews using peer-reviewed sources, developing original research arguments, and presenting well-structured research analyses. Each research paper is meticulously documented with proper citations and references, whether you require APA, MLA, Chicago, or any other format. We excel at identifying credible research sources, synthesizing complex research information, and producing research papers that demonstrate advanced critical thinking and original contribution to your field of study. Get professional research paper help online with affordable research paper writing services.",
     featuresTitle: "What's Included in Our Service",
     features: [
       "Comprehensive literature review",
