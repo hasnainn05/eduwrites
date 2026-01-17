@@ -849,9 +849,9 @@ export default function ServiceDetail() {
     return (
       <div className="w-full min-h-screen flex items-center justify-center">
         <div className="text-center glass p-12 rounded-2xl max-w-md mx-4">
-          <h1 className="text-4xl font-bold text-foreground mb-4 font-poppins">
+          <h2 className="text-4xl font-bold text-foreground mb-4 font-poppins">
             Service Not Found
-          </h1>
+          </h2>
           <p className="text-foreground/70 mb-8">
             The service you're looking for doesn't exist.
           </p>
