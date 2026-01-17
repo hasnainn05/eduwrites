@@ -525,17 +525,17 @@ export default function Signup() {
             )}
 
             {step === "success" && (
-              <div className="card-bg rounded-2xl border-2 border-border p-8 mb-6 text-center shadow-lg">
+              <div className="bg-white rounded-2xl border-4 border-border p-10 mb-6 text-center shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
-                    <CheckCircle size={32} className="text-white" />
+                  <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                    <CheckCircle size={40} className="text-white" />
                   </div>
                 </div>
 
-                <h2 className="text-2xl font-bold text-foreground mb-2 font-poppins">
+                <h2 className="text-3xl font-bold text-foreground mb-3 font-poppins">
                   Welcome to EduWrites!
                 </h2>
-                <p className="text-foreground/70 text-sm mb-8">
+                <p className="text-foreground/85 text-base mb-8 font-medium">
                   Your account has been successfully created. You can now place
                   orders and access all our services.
                 </p>
