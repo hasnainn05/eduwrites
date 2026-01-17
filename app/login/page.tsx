@@ -75,10 +75,10 @@ export default function Login() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Side - Service Details */}
           <div className="hidden lg:block">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-8 font-poppins leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-8 font-poppins leading-tight">
               Master Your Academics with EduWrites
             </h2>
-            <p className="text-foreground/80 mb-8 leading-relaxed">
+            <p className="text-foreground/90 mb-8 leading-relaxed text-lg font-medium">
               Sign in to access your academic writing orders, track progress,
               and connect with expert writers ready to help you succeed.
             </p>
