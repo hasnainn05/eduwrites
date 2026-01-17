@@ -121,10 +121,10 @@ export default function Signup() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Side - Benefits */}
           <div className="hidden lg:block">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-8 font-poppins leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-8 font-poppins leading-tight">
               Join the Academic Success Community
             </h2>
-            <p className="text-foreground/80 mb-8 leading-relaxed">
+            <p className="text-foreground/90 mb-8 leading-relaxed text-lg font-medium">
               Get access to professional academic writing services that help you
               achieve your educational goals.
             </p>
