@@ -1300,12 +1300,12 @@ export default function ServiceDetail() {
       <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">FAQ</p>
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-foreground/70">
-              Get answers to common questions about our academic writing
-              services
+              Get answers to common questions about our academic writing services
             </p>
           </div>
 
@@ -1365,7 +1365,7 @@ export default function ServiceDetail() {
             ].map((faq, index) => (
               <div
                 key={index}
-                className="glass border border-white/10 rounded-xl overflow-hidden hover:border-white/20 transition-all"
+                className="bg-white border border-border rounded-xl overflow-hidden hover:shadow-md hover:border-accent/30 transition-all"
               >
                 <button
                   onClick={() => {
@@ -1374,16 +1374,16 @@ export default function ServiceDetail() {
                       element.classList.toggle("hidden");
                     }
                   }}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-all"
+                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-primary/5 transition-all"
                 >
                   <h3 className="font-semibold text-foreground text-base">
                     {faq.question}
                   </h3>
-                  <span className="text-cyan-400 text-lg flex-shrink-0">+</span>
+                  <span className="text-primary text-2xl flex-shrink-0">+</span>
                 </button>
                 <div
                   id={`faq-${index}`}
-                  className="hidden px-6 pb-4 border-t border-white/10"
+                  className="hidden px-6 pb-4 border-t border-border bg-primary/2"
                 >
                   <p className="text-foreground/80 text-sm leading-relaxed">
                     {faq.answer}
@@ -1394,17 +1394,16 @@ export default function ServiceDetail() {
           </div>
 
           {/* FAQ CTA */}
-          <div className="mt-12 p-8 glass rounded-2xl border border-white/10 text-center">
+          <div className="mt-12 p-8 bg-white rounded-2xl border border-border text-center">
             <h3 className="text-xl font-bold text-foreground mb-3">
               Still Have Questions?
             </h3>
             <p className="text-foreground/70 mb-6">
-              Our support team is available 24/7 to help answer any questions
-              you may have about our services.
+              Our support team is available 24/7 to help answer any questions you may have about our services.
             </p>
             <button
               onClick={() => setIsSupportModalOpen(true)}
-              className="inline-flex items-center justify-center gap-2 glass border border-cyan-400/50 text-cyan-400 px-8 py-3 rounded-xl font-semibold hover:bg-cyan-400/10 transition-all"
+              className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary/5 transition-all"
             >
               Contact Support
             </button>
