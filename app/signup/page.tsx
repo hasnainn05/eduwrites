@@ -350,9 +350,9 @@ export default function Signup() {
                       name="agreeToTerms"
                       checked={formData.agreeToTerms}
                       onChange={handleFormChange}
-                      className="w-4 h-4 rounded border-white/20 bg-white/10 accent-cyan-400 mt-0.5"
+                      className="w-5 h-5 rounded border-border border-2 bg-white accent-cyan-400 mt-0.5"
                     />
-                    <span className="text-foreground/70 text-sm">
+                    <span className="text-foreground/85 text-base font-bold">
                       I agree to the{" "}
                       <Link
                         href="/terms"
