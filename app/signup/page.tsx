@@ -216,11 +216,11 @@ export default function Signup() {
             </div>
 
             {step === "form" && (
-              <div className="card-bg rounded-2xl border-2 border-border p-8 mb-6 shadow-lg">
-                <h1 className="text-2xl font-bold text-foreground mb-2 font-poppins">
+              <div className="bg-white rounded-2xl border-4 border-border p-10 mb-6 shadow-lg hover:shadow-xl transition-shadow">
+                <h1 className="text-3xl font-bold text-foreground mb-2 font-poppins">
                   Create Your Academic Writing Account
                 </h1>
-                <p className="text-foreground/70 text-sm mb-6">
+                <p className="text-foreground/85 text-base mb-6 font-medium">
                   Start your academic success journey today
                 </p>
 
