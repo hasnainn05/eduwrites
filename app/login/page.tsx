@@ -153,7 +153,7 @@ export default function Login() {
             </div>
 
             {/* Main Card */}
-            <div className="bg-white rounded-2xl border-2 border-border p-8 mb-6 shadow-sm">
+            <div className="card-bg rounded-2xl border-2 border-border p-8 mb-6 shadow-sm">
               <h1 className="text-2xl font-bold text-foreground mb-6 font-poppins">
                 Sign In for Professional Academic Writing Services
               </h1>
