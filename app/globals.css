@@ -145,6 +145,11 @@
     @apply translate-y-[-8px] transition-all duration-300;
   }
 
+  /* Card Background Utility */
+  .card-bg {
+    background-color: hsl(var(--card));
+  }
+
   .blur-gradient {
     position: absolute;
     border-radius: 50%;
