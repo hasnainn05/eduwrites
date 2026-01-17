@@ -870,61 +870,52 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute top-10 left-5 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-40 right-5 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-10 left-1/2 w-72 h-72 bg-violet-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold font-poppins mb-6">
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">TESTIMONIALS</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
               What Our Students Say
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Real feedback from students who've transformed their academic
-              journey
+              Real feedback from students who've improved their grades
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
-              <TiltCard key={index} className="h-full scroll-animate">
-                <div
-                  className="glass rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 animate-float h-full"
-                  style={{
-                    animationDelay: `${index * 0.2}s`,
-                  }}
-                >
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full flex items-center justify-center font-bold text-white flex-shrink-0 shadow-glow">
-                      {testimonial.avatar}
-                    </div>
-                    <div className="flex-grow">
-                      <h4 className="font-bold text-foreground">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-xs text-foreground/60 mt-1">
-                        {testimonial.role}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        size={18}
-                        className="fill-yellow-400 text-yellow-400"
-                      />
-                    ))}
-                  </div>
-
-                  <p className="text-foreground/80 leading-relaxed">
-                    {testimonial.content}
-                  </p>
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-8 border border-border hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star
+                      key={i}
+                      size={20}
+                      className="fill-accent text-accent"
+                    />
+                  ))}
                 </div>
-              </TiltCard>
+
+                <p className="text-foreground/80 leading-relaxed mb-6">
+                  "{testimonial.content}"
+                </p>
+
+                <div className="flex items-center gap-4 pt-6 border-t border-border">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center font-bold text-white flex-shrink-0">
+                    {testimonial.avatar}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground text-sm">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-xs text-foreground/60">
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
