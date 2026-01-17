@@ -390,7 +390,7 @@ export default function Profile() {
                       <div className="flex flex-col gap-1.5 md:gap-3">
                         <Link
                           href="/order"
-                          className="p-2 md:p-4 border border-white/10 rounded-lg md:rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 hover:border-cyan-400/50 hover:bg-cyan-400/20 transition-all group"
+                          className="p-2 md:p-4 border-2 border-border rounded-lg md:rounded-xl bg-white hover:shadow-md transition-all group"
                         >
                           <div className="text-lg md:text-2xl mb-0.5 md:mb-2">
                             📝
