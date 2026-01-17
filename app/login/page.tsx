@@ -124,14 +124,14 @@ export default function Login() {
               </div>
             </div>
 
-            <div className="glass p-6 rounded-2xl border border-white/20">
-              <p className="text-sm text-foreground/80 mb-4">
-                <strong className="text-cyan-400 block mb-2">
+            <div className="bg-white border-4 border-border p-8 rounded-2xl shadow-md">
+              <p className="text-base text-foreground/90 mb-4 font-medium">
+                <strong className="text-cyan-600 block mb-2 text-lg">
                   🌟 Join 50,000+ Students
                 </strong>{" "}
                 who trust EduWrites for academic success
               </p>
-              <div className="space-y-2 text-xs text-foreground/60">
+              <div className="space-y-2 text-sm text-foreground/80 font-bold">
                 <p>✓ 100% Plagiarism-free content</p>
                 <p>✓ On-time delivery guaranteed</p>
                 <p>✓ 24/7 customer support</p>
