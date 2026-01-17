@@ -737,7 +737,7 @@ export default function Home() {
                   className="group glass p-6 rounded-2xl border border-white/15 hover:border-cyan-400/60 transition-all duration-300 text-center transform hover:scale-110 hover:-translate-y-2 bg-gradient-to-br from-white/8 to-white/4 hover:from-cyan-500/10 hover:to-cyan-500/5 scroll-animate"
                   style={{ animationDelay: `${idx * 0.05}s` }}
                 >
-                  <p className="text-5xl mb-3 transform group-hover:scale-130 transition-transform duration-300">
+                  <p className="text-5xl mb-3 transform group-hover:scale-125 transition-transform duration-300">
                     {lang.flag}
                   </p>
                   <p className="font-semibold text-foreground text-sm group-hover:text-cyan-300 transition-colors duration-300">
