@@ -337,13 +337,15 @@ export default function Header() {
                 {/* Divider */}
                 <div className="border-t border-border my-0.5"></div>
 
-                {/* Sign Up Button for Mobile */}
+                {/* Profile Icon for Mobile */}
                 <Link
-                  href="/signup"
+                  href="/profile"
                   onClick={closeMenu}
-                  className="block w-full text-center px-1.5 py-0.5 border-2 border-primary bg-primary text-white rounded-md hover:bg-primary/90 transition-all text-[9px] font-semibold whitespace-nowrap"
+                  className="block w-full text-center px-1.5 py-0.5 border-2 border-primary text-primary rounded-md hover:bg-primary/5 transition-all text-[9px] font-medium flex items-center justify-center gap-1"
+                  title="User Profile"
                 >
-                  Sign Up
+                  <User size={14} />
+                  <span>Profile</span>
                 </Link>
               </div>
             </details>
