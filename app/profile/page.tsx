@@ -464,7 +464,7 @@ export default function Profile() {
                     </div>
 
                     {/* Table */}
-                    <div className="border border-white/10 rounded-lg md:rounded-xl overflow-hidden bg-gradient-to-br from-white/5 to-white/[0.02]">
+                    <div className="border-2 border-border rounded-lg md:rounded-xl overflow-hidden bg-white shadow-sm">
                       <div className="overflow-x-auto">
                         <table className="w-full text-xs md:text-sm">
                           <thead>
