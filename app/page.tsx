@@ -746,7 +746,7 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/50 to-white/30">
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-accent font-semibold mb-3 uppercase tracking-wider">WHY CHOOSE US</p>
