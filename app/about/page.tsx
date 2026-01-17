@@ -93,11 +93,11 @@ export default function About() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Mission */}
           <TiltCard className="h-full">
-            <div className="glass p-12 rounded-2xl h-full flex flex-col justify-center">
-              <h2 className="text-3xl font-bold text-foreground mb-6 font-poppins">
+            <div className="bg-white rounded-2xl border-4 border-border p-12 h-full flex flex-col justify-center shadow-lg hover:shadow-2xl transition-shadow">
+              <h2 className="text-4xl font-bold text-foreground mb-6 font-poppins">
                 Our Mission
               </h2>
-              <p className="text-foreground/80 leading-relaxed text-lg">
+              <p className="text-foreground/90 leading-relaxed text-xl font-medium">
                 To provide accessible, ethical, and high-quality academic
                 writing support that helps students achieve their educational
                 goals. We empower learners by offering professional assistance
@@ -110,11 +110,11 @@ export default function About() {
 
           {/* Vision */}
           <TiltCard className="h-full">
-            <div className="glass p-12 rounded-2xl h-full flex flex-col justify-center">
-              <h2 className="text-3xl font-bold text-foreground mb-6 font-poppins">
+            <div className="bg-white rounded-2xl border-4 border-border p-12 h-full flex flex-col justify-center shadow-lg hover:shadow-2xl transition-shadow">
+              <h2 className="text-4xl font-bold text-foreground mb-6 font-poppins">
                 Our Vision
               </h2>
-              <p className="text-foreground/80 leading-relaxed text-lg">
+              <p className="text-foreground/90 leading-relaxed text-xl font-medium">
                 To be the most trusted and reliable academic writing service
                 globally, recognized for delivering exceptional quality,
                 maintaining ethical standards, and genuinely supporting student
@@ -142,13 +142,13 @@ export default function About() {
             {values.map((value, index) => (
               <div
                 key={index}
-                className="glass p-8 rounded-2xl hover:bg-white/20 transition-all transform hover:scale-105 hover:-translate-y-2"
+                className="bg-white rounded-2xl border-4 border-border p-8 hover:shadow-lg transition-all transform hover:scale-105 hover:-translate-y-2 shadow-md"
               >
-                <div className="text-cyan-400 mb-6">{value.icon}</div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">
+                <div className="text-cyan-400 mb-6 text-5xl">{value.icon}</div>
+                <h3 className="text-3xl font-bold text-foreground mb-4">
                   {value.title}
                 </h3>
-                <p className="text-foreground/80">{value.description}</p>
+                <p className="text-foreground/85 text-lg leading-relaxed font-medium">{value.description}</p>
               </div>
             ))}
           </div>
@@ -162,12 +162,12 @@ export default function About() {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="glass p-4 sm:p-6 md:p-8 rounded-2xl text-center"
+                className="bg-white rounded-2xl border-4 border-border p-6 sm:p-8 md:p-10 text-center shadow-md hover:shadow-lg transition-shadow"
               >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2 sm:mb-3 font-poppins leading-tight">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-3 sm:mb-4 font-poppins leading-tight">
                   {stat.number}
                 </div>
-                <p className="text-xs sm:text-sm md:text-base text-foreground/80 font-medium">
+                <p className="text-sm sm:text-base md:text-lg text-foreground/90 font-bold">
                   {stat.label}
                 </p>
               </div>
@@ -198,10 +198,10 @@ export default function About() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="glass p-6 rounded-xl flex gap-4 items-start hover:bg-white/20 transition-all"
+                className="bg-white rounded-xl border-3 border-border p-6 flex gap-4 items-start hover:shadow-md transition-all shadow-sm"
               >
-                <CheckCircle className="text-cyan-400 flex-shrink-0 mt-1 w-6 h-6" />
-                <p className="text-foreground/90 font-medium">{item}</p>
+                <CheckCircle className="text-cyan-400 flex-shrink-0 mt-1 w-8 h-8" />
+                <p className="text-foreground/90 font-bold text-lg">{item}</p>
               </div>
             ))}
           </div>
@@ -223,17 +223,17 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, index) => (
               <TiltCard key={index} className="h-full">
-                <div className="glass p-6 rounded-2xl text-center hover:bg-white/20 transition-all h-full flex flex-col justify-center">
+                <div className="bg-white rounded-2xl border-4 border-border p-8 text-center hover:shadow-lg transition-all h-full flex flex-col justify-center shadow-md">
                   <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
                     {member.name.charAt(0)}
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">
+                  <h3 className="text-xl font-bold text-foreground mb-3">
                     {member.name}
                   </h3>
-                  <p className="text-sm text-cyan-400 font-semibold mb-3">
+                  <p className="text-base text-cyan-400 font-bold mb-4">
                     {member.role}
                   </p>
-                  <p className="text-sm text-foreground/80">{member.bio}</p>
+                  <p className="text-base text-foreground/85 leading-relaxed font-medium">{member.bio}</p>
                 </div>
               </TiltCard>
             ))}
