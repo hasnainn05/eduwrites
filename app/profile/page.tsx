@@ -561,7 +561,7 @@ export default function Profile() {
                     </div>
 
                     {/* Security Section */}
-                    <div className="p-6 border border-white/10 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02]">
+                    <div className="p-6 border-2 border-border rounded-xl bg-white shadow-sm">
                       <div className="flex items-center gap-3 mb-6">
                         <Shield size={20} className="text-cyan-400" />
                         <h3 className="text-lg font-bold text-foreground">
