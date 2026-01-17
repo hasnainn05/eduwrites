@@ -597,7 +597,7 @@ export default function Home() {
 
           {/* Education Levels */}
           <div className="mb-32">
-            <h3 className="heading-3d-light text-3xl font-bold text-foreground mb-12 text-center">
+            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">
               Education Levels
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -606,39 +606,33 @@ export default function Home() {
                   level: "High School",
                   description: "Essays, reports, projects",
                   icon: "🎒",
-                  color: "from-blue-500 to-cyan-500",
                 },
                 {
                   level: "Undergraduate",
                   description: "Essays, assignments, projects",
                   icon: "🎓",
-                  color: "from-purple-500 to-pink-500",
                 },
                 {
                   level: "Master's Degree",
                   description: "Thesis, research papers, projects",
                   icon: "📚",
-                  color: "from-green-500 to-emerald-500",
                 },
                 {
                   level: "PhD & Doctorate",
                   description: "Dissertations, research papers",
                   icon: "🏆",
-                  color: "from-orange-500 to-red-500",
                 },
                 {
                   level: "Professional",
                   description: "Certifications, reports, publications",
                   icon: "💼",
-                  color: "from-indigo-500 to-purple-500",
                 },
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="group glass p-8 rounded-2xl border border-white/15 hover:border-white/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-3 bg-gradient-to-br from-white/8 to-white/4 scroll-animate"
-                  style={{ animationDelay: `${idx * 0.1}s` }}
+                  className="bg-white rounded-2xl p-8 border border-border hover:shadow-lg hover:border-accent/30 transition-all duration-300"
                 >
-                  <div className="text-5xl mb-4 transform group-hover:scale-125 transition-transform duration-300">
+                  <div className="text-5xl mb-4">
                     {item.icon}
                   </div>
                   <h4 className="font-bold text-foreground text-lg mb-3">
