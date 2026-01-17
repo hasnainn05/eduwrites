@@ -117,6 +117,33 @@ export default function Home() {
     },
   ];
 
+  const faqs = [
+    {
+      question: "Is your work plagiarism-free?",
+      answer: "Yes, absolutely. We guarantee 100% original content. Every paper is written from scratch by our expert writers and checked with advanced plagiarism detection software before delivery.",
+    },
+    {
+      question: "How long does it take to complete an order?",
+      answer: "We offer flexible deadlines ranging from 24 hours to several weeks, depending on your needs. Rush orders are available for urgent submissions.",
+    },
+    {
+      question: "Can I request revisions?",
+      answer: "Yes! We offer unlimited revisions until you're completely satisfied with the work. Your satisfaction is our priority.",
+    },
+    {
+      question: "How do you maintain confidentiality?",
+      answer: "Your privacy is paramount. We keep all personal information and order details strictly confidential. Your work will never be shared with anyone.",
+    },
+    {
+      question: "What payment methods do you accept?",
+      answer: "We accept all major credit cards, debit cards, and secure payment platforms. All transactions are encrypted for your security.",
+    },
+    {
+      question: "Can you write in different academic styles?",
+      answer: "Absolutely! Our writers are experienced in APA, MLA, Chicago, Harvard, and other citation styles. Just specify your requirements.",
+    },
+  ];
+
   const testimonials = [
     {
       name: "Alex Chen",
