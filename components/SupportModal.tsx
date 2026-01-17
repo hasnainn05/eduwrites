@@ -47,23 +47,23 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps) {
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-md z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl p-8 sm:p-12 max-w-2xl w-full max-h-[90vh] overflow-y-auto border-4 border-border shadow-2xl">
-        <div className="flex justify-between items-center mb-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center">
-              <MessageCircle size={20} className="text-white" />
+        <div className="flex justify-between items-center mb-8">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl flex items-center justify-center">
+              <MessageCircle size={24} className="text-white" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-foreground font-poppins">
-                Contact Support
+              <h2 className="text-3xl font-bold text-foreground font-poppins">
+                Get Support
               </h2>
-              <p className="text-sm text-foreground/70">
-                Get help from our support team
+              <p className="text-base text-foreground/70 font-medium">
+                Our team is here to help you 24/7
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-white/20 rounded-full transition-all"
+            className="p-2 hover:bg-primary/10 rounded-full transition-all"
           >
             <X size={24} className="text-foreground" />
           </button>
