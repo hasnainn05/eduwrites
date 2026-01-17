@@ -156,19 +156,19 @@ export default function Header() {
                   info@eduwrites.com
                 </a>
               </div>
-              <div className="flex items-center gap-1.5 text-foreground/80 hover:text-accent transition-colors">
+              <div className="flex items-center gap-1.5 hover:text-[#25D366] transition-colors">
                 <a
                   href="https://wa.me/13658291551"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 whitespace-nowrap font-medium"
+                  className="flex items-center gap-1.5 whitespace-nowrap font-medium text-foreground/80 hover:text-[#25D366]"
                 >
                   <svg
-                    width="14"
-                    height="14"
+                    width="16"
+                    height="16"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    className="text-accent"
+                    className="text-[#25D366]"
                   >
                     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.197 1.613 6.033L0 24l6.266-1.997C8.203 23.462 10.064 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.96c-1.878 0-3.721-.471-5.385-1.372l-.386-.207-4.002 1.276 1.3-3.975-.248-.395C2.604 16.064 2.04 14.059 2.04 12c0-5.517 4.486-10 10-10s10 4.483 10 10-4.486 10-10 10z" />
                     <path
