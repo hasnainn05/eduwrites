@@ -231,9 +231,13 @@ export default function Home() {
               </div>
 
               {/* Main Headline - 2 Lines (both large) */}
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight font-poppins text-foreground">
-                Achieve Academic <span className="text-accent">Excellence</span><br />
-                with Professional Academic Writing Services
+              <h1 className="font-bold mb-8 leading-tight font-poppins text-foreground">
+                <div className="text-5xl sm:text-6xl lg:text-7xl">
+                  Achieve Academic <span className="text-accent">Excellence</span>
+                </div>
+                <div className="text-5xl sm:text-6xl lg:text-7xl">
+                  with Professional Academic Writing Services
+                </div>
               </h1>
 
               {/* Subheading */}
