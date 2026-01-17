@@ -1,3 +1,5 @@
+import { WhatsAppLink } from "@/components/WhatsAppIcon";
+
 export default function TermsOfService() {
   return (
     <div className="min-h-screen bg-background">
