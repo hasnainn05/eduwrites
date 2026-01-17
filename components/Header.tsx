@@ -26,7 +26,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-white">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-card">
       {/* Main Header */}
       <div className="px-8 sm:px-12 lg:px-20 py-3 sm:py-3.5">
         <div className="max-w-6xl mx-auto w-full flex items-center justify-between gap-1 sm:gap-2 md:gap-3">
