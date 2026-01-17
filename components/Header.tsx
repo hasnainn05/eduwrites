@@ -249,6 +249,15 @@ export default function Header() {
                 {/* Divider */}
                 <div className="border-t border-border my-0.5"></div>
 
+                {/* Mobile Pricing Link */}
+                <a
+                  href="/#pricing"
+                  onClick={closeMenu}
+                  className="block text-[9px] font-medium text-foreground hover:text-primary transition-colors py-0.5 px-1"
+                >
+                  Pricing
+                </a>
+
                 {/* Mobile Services Dropdown */}
                 <details className="group">
                   <summary className="cursor-pointer block text-[9px] font-medium text-foreground hover:text-primary transition-colors py-0.5 px-1 list-none">
