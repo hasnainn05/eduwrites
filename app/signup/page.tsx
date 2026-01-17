@@ -482,7 +482,7 @@ export default function Signup() {
 
                 <form onSubmit={handleVerify} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-foreground/90 mb-2">
+                    <label className="block text-base font-bold text-foreground/95 mb-2">
                       Verification Code
                     </label>
                     <input
@@ -492,7 +492,7 @@ export default function Signup() {
                       placeholder="000000"
                       maxLength={6}
                       required
-                      className="w-full card-bg border-2 border-border rounded-lg px-4 py-3 text-center text-2xl tracking-widest text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-mono"
+                      className="w-full bg-white border-3 border-border rounded-lg px-4 py-3 text-center text-2xl tracking-widest text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-all font-mono font-bold"
                     />
                   </div>
 
