@@ -1,3 +1,5 @@
+import { WhatsAppLink } from "@/components/WhatsAppIcon";
+
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-background">
