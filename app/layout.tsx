@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Poppins } from "next/font/google";
 import LayoutClient from "./LayoutClient";
 import SchemaScript from "@/components/SchemaScript";
-import { organizationSchema, websiteSchema } from "@/lib/schema";
+import { organizationSchema, websiteSchema, aggregateOfferSchema } from "@/lib/schema";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -77,6 +77,7 @@ export default function RootLayout({
         {/* JSON-LD Schema Markup for SEO */}
         <SchemaScript schema={organizationSchema} />
         <SchemaScript schema={websiteSchema} />
+        <SchemaScript schema={aggregateOfferSchema()} />
       </head>
       <body className={inter.className}>
         <LayoutClient>{children}</LayoutClient>
