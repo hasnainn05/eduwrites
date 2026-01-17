@@ -11,18 +11,46 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "EduWrites - Achieve Academic Excellence",
+  title: "EduWrites - Professional Academic Writing Services | Essays, Thesis, Dissertation",
   description:
-    "Professional academic writing services for essays, research papers, theses, and more.",
+    "Professional academic writing services for essays, research papers, theses, dissertations, and assignments. Get 100% original, plagiarism-free content from PhD experts. Fast delivery, affordable pricing, and unlimited revisions guaranteed.",
+  keywords: [
+    "essay writing service",
+    "research paper writing",
+    "thesis writing",
+    "dissertation writing",
+    "assignment writing",
+    "academic writing help",
+    "professional writers",
+    "plagiarism-free",
+    "original content",
+    "academic excellence",
+  ],
   metadataBase: new URL("https://eduwrites.com"),
   icons: {
     icon: "https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800",
   },
   openGraph: {
-    title: "EduWrites - Achieve Academic Excellence",
+    title: "EduWrites - Professional Academic Writing Services",
     description:
-      "Professional academic writing services for essays, research papers, theses, and more.",
+      "Expert academic writing services including essays, research papers, theses, and dissertations. 50,000+ satisfied students worldwide.",
     type: "website",
+    url: "https://eduwrites.com",
+    siteName: "EduWrites",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "EduWrites - Academic Writing Services",
+    description:
+      "Professional academic writing help for students. Essays, theses, dissertations, research papers.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
   },
 };
 
