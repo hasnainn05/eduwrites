@@ -163,12 +163,12 @@ export default function Signup() {
                 </p>
               </div>
 
-              <div className="glass p-5 rounded-xl hover:bg-white/20 transition-all">
-                <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
-                  <CheckCircle size={20} className="text-cyan-400" /> Affordable
+              <div className="bg-white border-3 border-border p-6 rounded-xl hover:shadow-md transition-all shadow-sm">
+                <h3 className="font-bold text-foreground mb-2 flex items-center gap-2 text-lg">
+                  <CheckCircle size={24} className="text-cyan-400" /> Affordable
                   Pricing
                 </h3>
-                <p className="text-sm text-foreground/70">
+                <p className="text-base text-foreground/85 font-medium">
                   Competitive rates with flexible payment options for students
                 </p>
               </div>
