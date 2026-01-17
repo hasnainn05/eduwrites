@@ -206,9 +206,7 @@ export default function Home() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-poppins text-foreground">
                 Achieve
                 <br />
-                Academic <span className="text-accent">Excellence</span>
-                <br />
-                with EduWrites Experts
+                Academic <span className="text-accent">Excellence</span> with EduWrites Experts
               </h1>
 
               {/* Subheading */}
