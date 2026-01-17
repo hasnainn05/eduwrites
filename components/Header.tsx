@@ -147,7 +147,7 @@ export default function Header() {
           {/* Right: Contact Info and Profile */}
           <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-shrink-0">
             <div className="hidden lg:flex flex-col gap-2 text-[11px]">
-              <div className="flex items-center gap-1.5 text-foreground/80 hover:text-cyan-400 transition-colors">
+              <div className="flex items-center gap-1.5 text-foreground/80 hover:text-primary transition-colors">
                 <Mail size={14} />
                 <a
                   href="mailto:info@eduwrites.com"
@@ -156,7 +156,7 @@ export default function Header() {
                   info@eduwrites.com
                 </a>
               </div>
-              <div className="flex items-center gap-1.5 text-foreground/80 hover:text-green-400 transition-colors">
+              <div className="flex items-center gap-1.5 text-foreground/80 hover:text-accent transition-colors">
                 <a
                   href="https://wa.me/13658291551"
                   target="_blank"
@@ -168,7 +168,7 @@ export default function Header() {
                     height="14"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    className="text-green-500"
+                    className="text-accent"
                   >
                     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.556 4.197 1.613 6.033L0 24l6.266-1.997C8.203 23.462 10.064 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.96c-1.878 0-3.721-.471-5.385-1.372l-.386-.207-4.002 1.276 1.3-3.975-.248-.395C2.604 16.064 2.04 14.059 2.04 12c0-5.517 4.486-10 10-10s10 4.483 10 10-4.486 10-10 10z" />
                     <path
@@ -185,17 +185,16 @@ export default function Header() {
             <div className="hidden sm:flex gap-1.5 items-center">
               <Link
                 href="/login"
-                className="px-2 sm:px-2.5 py-0.5 sm:py-1 border border-cyan-400/50 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-foreground/80 rounded-none hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/20 hover:shadow-glow transition-all text-[9px] sm:text-[10px] font-medium animate-pulse-bounce transform hover:scale-105 whitespace-nowrap flex items-center gap-1.5"
+                className="px-2 sm:px-2.5 py-0.5 sm:py-1 border-2 border-primary text-primary rounded-lg hover:bg-primary/5 transition-all text-[9px] sm:text-[10px] font-medium hover:scale-105 whitespace-nowrap flex items-center gap-1.5"
               >
                 <span>Login</span>
-                <User size={11} className="text-foreground/80" />
+                <User size={11} />
               </Link>
               <Link
-                href="/profile"
-                className="p-0.5 sm:p-1 rounded-none glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all transform hover:scale-110 flex items-center justify-center animate-pulse-bounce flex-shrink-0"
-                title="Profile"
+                href="/signup"
+                className="px-2 sm:px-2.5 py-0.5 sm:py-1 bg-primary text-white rounded-lg hover:bg-primary/90 transition-all text-[9px] sm:text-[10px] font-semibold hover:scale-105 whitespace-nowrap"
               >
-                <User size={12} className="text-foreground/80" />
+                Sign Up
               </Link>
             </div>
           </div>
