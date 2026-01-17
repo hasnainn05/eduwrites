@@ -834,14 +834,15 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/50 to-white/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="heading-3d text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
-              Why Choose EduWrites?
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">WHY CHOOSE US</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
+              Why EduWrites?
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              We combine expertise, reliability, and dedication to your success
+              We combine expertise, reliability, and dedication to your academic success
             </p>
           </div>
 
@@ -849,10 +850,10 @@ export default function Home() {
             {whyChooseUs.map((item, index) => (
               <div
                 key={index}
-                className="glass p-8 rounded-2xl hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group scroll-animate"
+                className="bg-white rounded-2xl p-8 border border-border hover:shadow-lg hover:border-accent/30 transition-all duration-300"
                 style={{ animationDelay: `${(index % 3) * 0.1}s` }}
               >
-                <div className="flex-shrink-0 text-4xl mb-4 transform group-hover:scale-110 transition-transform">
+                <div className="flex-shrink-0 text-5xl mb-4">
                   {item.icon}
                 </div>
 
