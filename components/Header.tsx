@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Mail, MessageCircle, User, ChevronDown } from "lucide-react";
+import { Mail, User, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { services, fieldsOfStudy, languages } from "@/lib/headerData";
+import { WhatsAppIcon, WhatsAppLink, WhatsAppButton } from "./WhatsAppIcon";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
