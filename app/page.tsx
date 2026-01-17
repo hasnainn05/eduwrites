@@ -195,49 +195,99 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-24 sm:py-40 px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 backdrop-blur-md border border-white/10 rounded-full px-6 py-2 mb-8">
-              <Sparkles size={16} className="text-cyan-400" />
-              <span className="text-sm font-medium bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Excellence in Academic Writing
-              </span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div>
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/40 rounded-full px-4 py-2 mb-8">
+                <Star size={16} className="text-accent fill-accent" />
+                <span className="text-sm font-semibold text-foreground">
+                  Trusted by 50,000+ Students
+                </span>
+              </div>
+
+              {/* Main Headline */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-poppins text-foreground">
+                Achieve Academic
+                <span className="text-primary ml-3">Excellence</span>
+              </h1>
+
+              {/* Subheading */}
+              <p className="text-lg text-foreground/70 mb-8 leading-relaxed max-w-2xl">
+                Professional, plagiarism-free academic writing from Ph.D. experts. Essays, theses, dissertations delivered on time, every time.
+              </p>
+
+              {/* Trust Indicators */}
+              <div className="grid grid-cols-3 gap-4 mb-12">
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-2">98%</div>
+                  <p className="text-sm text-foreground/70">Customer Satisfaction</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-2">50K+</div>
+                  <p className="text-sm text-foreground/70">Papers Delivered</p>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-2">24/7</div>
+                  <p className="text-sm text-foreground/70">Expert Support</p>
+                </div>
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#services"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Started Now <ArrowRight size={20} />
+                </a>
+                <a
+                  href="https://wa.me/13658291551"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/5 transition-all duration-300"
+                  title="Chat on WhatsApp"
+                >
+                  <MessageCircle size={20} />
+                  Message Us
+                </a>
+              </div>
             </div>
 
-            <h1 className="heading-3d text-3xl sm:text-5xl font-bold mb-6 leading-tight font-poppins max-w-4xl mx-auto">
-              Achieve Academic Excellence
-              <br />
-              with Professional
-              <br />
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                Academic Writing Services
-              </span>
-            </h1>
+            {/* Right Stats Cards */}
+            <div className="relative">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {/* Stat Card 1 */}
+                <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
+                  <div className="text-5xl font-bold text-primary mb-2">50K+</div>
+                  <p className="text-foreground/80 font-medium">Satisfied Students</p>
+                  <p className="text-sm text-foreground/60 mt-3">Students worldwide trust us for their academic needs</p>
+                </div>
 
-            <p className="text-lg sm:text-xl text-foreground/70 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Elevate your grades with plagiarism-free, custom-written papers by
-              Ph.D. experts. From essays to theses, we provide 100% original
-              academic support delivered on time, every time.
-            </p>
+                {/* Stat Card 2 */}
+                <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
+                  <div className="text-5xl font-bold text-accent mb-2">100%</div>
+                  <p className="text-foreground/80 font-medium">Original Content</p>
+                  <p className="text-sm text-foreground/60 mt-3">Plagiarism-free work guaranteed</p>
+                </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center gap-2 gradient-primary text-white px-8 py-4 rounded-xl font-semibold hover:shadow-glow transition-all duration-300 transform hover:scale-105 animate-pulse-bounce"
-              >
-                Get Started <ArrowRight size={20} />
-              </a>
-              <a
-                href="https://wa.me/13658291551"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-glow transition-all duration-300 transform hover:scale-105 animate-pulse-bounce"
-                title="Chat on WhatsApp"
-              >
-                <MessageCircle size={20} />
-                WhatsApp
-              </a>
+                {/* Stat Card 3 */}
+                <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all sm:col-span-2">
+                  <div className="flex items-center gap-4">
+                    <div>
+                      <div className="flex gap-1 mb-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                      <p className="text-foreground/80 font-medium">4.9/5 Average Rating</p>
+                      <p className="text-sm text-foreground/60 mt-2">From 2,500+ verified reviews</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
