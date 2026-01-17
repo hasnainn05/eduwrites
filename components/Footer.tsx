@@ -8,8 +8,8 @@ import {
   Linkedin,
   Instagram,
   Mail,
-  MessageCircle,
 } from "lucide-react";
+import { WhatsAppLink } from "./WhatsAppIcon";
 
 export default function Footer() {
   const pathname = usePathname();
