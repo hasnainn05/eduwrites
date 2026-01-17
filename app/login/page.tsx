@@ -84,11 +84,11 @@ export default function Login() {
             </p>
 
             <div className="space-y-4 mb-8">
-              <div className="glass p-5 rounded-xl hover:bg-white/20 transition-all">
-                <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
-                  <span className="text-xl">📝</span> Essay Writing
+              <div className="bg-white border-3 border-border p-6 rounded-xl hover:shadow-md transition-all shadow-sm">
+                <h3 className="font-bold text-foreground mb-2 flex items-center gap-2 text-lg">
+                  <span className="text-2xl">📝</span> Essay Writing
                 </h3>
-                <p className="text-sm text-foreground/70">
+                <p className="text-base text-foreground/85 font-medium">
                   Professional essays for all academic levels, perfectly crafted
                   and researched
                 </p>
