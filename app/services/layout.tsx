@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { ReactNode } from "react";
+import SchemaScript from "@/components/SchemaScript";
+import { serviceSchema, breadcrumbSchema } from "@/lib/schema";
 
 const serviceMetadata: Record<
   string,
