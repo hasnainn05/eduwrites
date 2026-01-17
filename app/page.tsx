@@ -583,16 +583,15 @@ export default function Home() {
       </section>
 
       {/* Education Levels & Fields of Study Section */}
-      <section className="relative py-24 sm:py-40 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/3 via-white/5 to-transparent">
+      <section className="relative py-24 sm:py-40 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/50 to-white/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
-            <h2 className="heading-3d text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">EXPERTISE</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
               Coverage Across All Levels & Disciplines
             </h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto mb-8"></div>
             <p className="text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-              From high school essays to PhD dissertations, we support every
-              academic level and discipline
+              From high school essays to PhD dissertations, we support every academic level and discipline
             </p>
           </div>
 
