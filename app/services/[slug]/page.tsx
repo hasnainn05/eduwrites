@@ -322,7 +322,8 @@ const servicesData: Record<string, ServiceData> = {
     subtitle: "Complete Support for Your Academic Journey",
     Icon: BookOpen,
     heroGradient: "from-green-50 to-emerald-50",
-    aboutTitle: "Professional Thesis Writing Service for Masters & PhD Students",
+    aboutTitle:
+      "Professional Thesis Writing Service for Masters & PhD Students",
     aboutContent:
       "Our professional thesis writing service provides comprehensive, end-to-end thesis support for graduate-level research projects at Master's and PhD levels. We understand that thesis writing represents a culmination of your academic journey and requires exceptional quality, originality, and depth. Our team of experienced thesis writers and researchers work closely with you throughout every stage of the thesis writing process, from initial research design and literature review through data analysis, thesis writing, comprehensive editing, and defense preparation. We provide detailed thesis feedback, chapter-by-chapter thesis guidance, and ensure your thesis meets all institutional requirements while maintaining the highest standards of academic integrity. Whether you need professional help developing your research methodology, analyzing complex data, writing specific thesis chapters, preparing your thesis defense, or getting comprehensive thesis editing, our thesis help experts are committed to your success with affordable thesis writing services.",
     featuresTitle: "What's Included in Our Service",

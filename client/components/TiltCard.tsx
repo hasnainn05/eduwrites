@@ -26,7 +26,9 @@ export function TiltCard({ children, className = "" }: TiltCardProps) {
       onMouseLeave={handleMouseLeave}
       style={{
         transition: "all 0.3s ease-out",
-        transform: isHovered ? "translateY(-8px) scale(1.02)" : "translateY(0) scale(1)",
+        transform: isHovered
+          ? "translateY(-8px) scale(1.02)"
+          : "translateY(0) scale(1)",
       }}
       className={className}
     >

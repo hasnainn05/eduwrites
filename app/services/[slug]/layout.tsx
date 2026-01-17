@@ -55,9 +55,7 @@ export default function ServiceLayout({
 
   return (
     <>
-      <ServiceSchemaInjector params={params}>
-        {children}
-      </ServiceSchemaInjector>
+      <ServiceSchemaInjector params={params}>{children}</ServiceSchemaInjector>
     </>
   );
 }

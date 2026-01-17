@@ -2,7 +2,11 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Poppins } from "next/font/google";
 import LayoutClient from "./LayoutClient";
 import SchemaScript from "@/components/SchemaScript";
-import { organizationSchema, websiteSchema, aggregateOfferSchema } from "@/lib/schema";
+import {
+  organizationSchema,
+  websiteSchema,
+  aggregateOfferSchema,
+} from "@/lib/schema";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -13,7 +17,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "EduWrites - Professional Academic Writing Services | Essays, Thesis, Dissertation",
+  title:
+    "EduWrites - Professional Academic Writing Services | Essays, Thesis, Dissertation",
   description:
     "Professional academic writing services for essays, research papers, theses, dissertations, and assignments. Get 100% original, plagiarism-free content from PhD experts. Fast delivery, affordable pricing, and unlimited revisions guaranteed.",
   keywords: [
