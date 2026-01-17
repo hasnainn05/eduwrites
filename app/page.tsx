@@ -220,7 +220,7 @@ export default function Home() {
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="w-full mx-auto">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               {/* Left Content */}
               <div>
                 {/* Badge */}
@@ -231,16 +231,13 @@ export default function Home() {
                   </span>
                 </div>
 
-                {/* Main Headline - 3 Lines */}
+                {/* Main Headline - 2 Lines */}
                 <h1 className="font-bold mb-8 leading-snug font-poppins text-foreground">
                   <div className="text-5xl sm:text-6xl lg:text-7xl">
-                    Achieve Academic
+                    Achieve Academic <span className="text-accent">Excellence</span>
                   </div>
                   <div className="text-5xl sm:text-6xl lg:text-7xl">
-                    <span className="text-accent">Excellence</span> with Professional
-                  </div>
-                  <div className="text-5xl sm:text-6xl lg:text-7xl">
-                    Writing Services
+                    with Professional Writing Services
                   </div>
                 </h1>
 
@@ -285,8 +282,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Right Trust Cards */}
-              <div className="flex flex-col gap-6">
+              {/* Right Trust Cards - Positioned Lower */}
+              <div className="flex flex-col gap-6 lg:mt-32">
                 {/* Top Row - 2 Small Cards */}
                 <div className="grid grid-cols-2 gap-4">
                   {/* 50K+ Card - Small */}
