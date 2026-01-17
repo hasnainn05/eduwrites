@@ -393,65 +393,51 @@ export default function Home() {
       {/* Services Section */}
       <section
         id="services"
-        className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8"
+        className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/50 to-white/30"
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="heading-3d text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
-              Our Academic Services
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">OUR SERVICES</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
+              Comprehensive Academic Support
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Comprehensive academic writing solutions tailored to your unique
-              needs
+              Professional writing services for every academic level and discipline
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, idx) => (
-              <TiltCard
+            {services.map((service) => (
+              <Link
                 key={service.id}
-                className="h-full scroll-animate scroll-delay-100 service-card-3d"
+                href={`/services/${service.slug}`}
+                className="group relative bg-white rounded-2xl p-8 border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-300 overflow-hidden"
               >
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="group relative overflow-hidden rounded-2xl transition-all duration-300 h-full flex flex-col block"
-                >
-                  {/* Glass Background */}
-                  <div className="absolute inset-0 glass"></div>
+                {/* Icon Background Circle */}
+                <div className="absolute -right-20 -top-20 w-40 h-40 bg-accent/8 rounded-full group-hover:scale-125 transition-transform duration-300"></div>
 
-                  {/* Gradient Overlay */}
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
-                  ></div>
-
-                  {/* Content */}
-                  <div className="relative z-10 p-8 flex flex-col h-full">
-                    <div className="mb-4 transform group-hover:scale-110 transition-transform">
-                      <service.Icon
-                        size={48}
-                        className="text-cyan-400 group-hover:text-white transition-colors"
-                      />
-                    </div>
-
-                    <h3 className="text-xl font-bold text-foreground mb-3">
-                      {service.title}
-                    </h3>
-
-                    <p className="text-foreground/70 mb-6 text-sm leading-relaxed flex-grow">
-                      {service.description}
-                    </p>
-
-                    <div className="mt-auto">
-                      <span className="inline-flex items-center gap-2 text-cyan-400 font-semibold group-hover:gap-3 transition-all">
-                        Learn More <ArrowRight size={18} />
-                      </span>
-                    </div>
+                {/* Content */}
+                <div className="relative z-10">
+                  <div className="mb-6 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-accent/15 transition-all">
+                    <service.Icon
+                      size={32}
+                      className="text-primary group-hover:text-accent transition-colors"
+                    />
                   </div>
 
-                  {/* Border Gradient */}
-                  <div className="absolute inset-0 rounded-2xl border border-white/10 group-hover:border-white/30 transition-colors"></div>
-                </Link>
-              </TiltCard>
+                  <h3 className="text-xl font-bold text-foreground mb-3">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-foreground/70 mb-6 text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  <div className="flex items-center text-primary font-semibold group-hover:gap-3 transition-all">
+                    Learn More <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
