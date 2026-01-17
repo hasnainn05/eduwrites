@@ -13,22 +13,21 @@ export function Canvas3DWrapper() {
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none h-screen">
-      {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-background"></div>
+      {/* Light Background Base */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background"></div>
 
-      {/* Gradient Blobs */}
-      <div className="blur-gradient absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-600/30 to-transparent rounded-full"></div>
-      <div className="blur-gradient absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-500/30 to-transparent rounded-full animation-delay-2000"></div>
-      <div className="blur-gradient absolute bottom-0 left-1/2 w-96 h-96 bg-gradient-to-br from-violet-600/30 to-transparent rounded-full animation-delay-4000"></div>
+      {/* Subtle Gradient Accents - Soft Navy & Gold hints */}
+      <div className="blur-gradient absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary/8 to-transparent rounded-full"></div>
+      <div className="blur-gradient absolute top-1/3 right-0 w-96 h-96 bg-gradient-to-bl from-accent/8 to-transparent rounded-full animation-delay-2000"></div>
+      <div className="blur-gradient absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tl from-primary/5 to-transparent rounded-full animation-delay-4000"></div>
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage:
-              "linear-gradient(0deg, transparent 24%, rgba(255,255,255,.05) 25%, rgba(255,255,255,.05) 26%, transparent 27%, transparent 74%, rgba(255,255,255,.05) 75%, rgba(255,255,255,.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255,255,255,.05) 25%, rgba(255,255,255,.05) 26%, transparent 27%, transparent 74%, rgba(255,255,255,.05) 75%, rgba(255,255,255,.05) 76%, transparent 77%, transparent)",
-            backgroundSize: "50px 50px",
+            backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(31,41,55,.04) 25%, rgba(31,41,55,.04) 26%, transparent 27%, transparent 74%, rgba(31,41,55,.04) 75%, rgba(31,41,55,.04) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(31,41,55,.04) 25%, rgba(31,41,55,.04) 26%, transparent 27%, transparent 74%, rgba(31,41,55,.04) 75%, rgba(31,41,55,.04) 76%, transparent 77%, transparent)',
+            backgroundSize: '60px 60px'
           }}
         ></div>
       </div>
