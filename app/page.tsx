@@ -283,7 +283,7 @@ export default function Home() {
               </div>
 
               {/* Right Trust Cards - Positioned Lower */}
-              <div className="flex flex-col gap-6 lg:mt-32">
+              <div className="flex flex-col gap-6 lg:mt-32 lg:col-span-1">
                 {/* Top Row - 2 Small Cards */}
                 <div className="grid grid-cols-2 gap-4">
                   {/* 50K+ Card - Small */}
