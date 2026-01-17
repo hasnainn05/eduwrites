@@ -215,17 +215,17 @@ export default function Login() {
                 </div>
 
                 {/* Remember & Forgot */}
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center justify-between text-base font-bold">
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input
                       type="checkbox"
-                      className="w-4 h-4 rounded border-white/20 bg-white/10 accent-cyan-400"
+                      className="w-5 h-5 rounded border-border border-2 bg-white accent-cyan-400"
                     />
-                    <span className="text-foreground/70">Remember me</span>
+                    <span className="text-foreground/85">Remember me</span>
                   </label>
                   <Link
                     href="#"
-                    className="text-cyan-400 hover:text-cyan-300 transition-colors"
+                    className="text-cyan-600 hover:text-cyan-700 font-bold transition-colors"
                   >
                     Forgot password?
                   </Link>
