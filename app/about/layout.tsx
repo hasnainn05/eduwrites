@@ -12,10 +12,14 @@ export const metadata: Metadata = {
     "mission",
     "vision",
   ],
+  alternates: {
+    canonical: "https://eduwrites.com/about",
+  },
   openGraph: {
     title: "About Us | EduWrites",
     description: "Professional academic writing services with expert writers",
     type: "website",
+    url: "https://eduwrites.com/about",
   },
 };
 
