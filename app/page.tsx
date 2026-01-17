@@ -295,13 +295,16 @@ export default function Home() {
             <div>
               <p className="text-accent font-semibold mb-3 uppercase tracking-wider">ABOUT US</p>
               <h2 className="text-4xl font-bold text-foreground mb-6 font-poppins">
-                Why Students Choose EduWrites
+                Professional Academic Writing Support for Every Challenge
               </h2>
               <p className="text-foreground/80 leading-relaxed mb-4">
-                With over a decade of experience, we've helped 50,000+ students succeed. Our team of PhD-qualified writers understands academic challenges and delivers excellence.
+                Student success starts with quality academic work. At EduWrites, we understand the pressures of academic life—tight deadlines, complex assignments, and the need for excellence. Whether you're struggling with essay writing, research papers, or comprehensive dissertations, our expert team is here to help you succeed.
+              </p>
+              <p className="text-foreground/80 leading-relaxed mb-4">
+                With over a decade of experience in academic writing, we've helped thousands of students worldwide achieve their educational goals. Our writers hold advanced degrees in their respective fields and are committed to delivering original, high-quality work that meets the highest academic standards.
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                We provide plagiarism-free, original work that meets the highest academic standards. Your success is our mission.
+                From undergraduate essays to PhD dissertations, we provide customized academic writing solutions that are plagiarism-free, properly cited, and delivered on time—every time. Your academic success is our mission.
               </p>
             </div>
 
