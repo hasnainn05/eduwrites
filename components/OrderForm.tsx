@@ -270,14 +270,14 @@ export default function OrderForm({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Service Type */}
           <div>
-            <label className="block text-sm font-medium text-foreground/90 mb-2">
+            <label className="block text-base font-bold text-foreground/95 mb-2">
               Service Type *
             </label>
             <select
               name="serviceType"
               value={formData.serviceType}
               onChange={handleChange}
-              className="w-full card-bg border-2 border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors"
+              className="w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
             >
               {serviceTypes.map((service) => (
                 <option
@@ -293,14 +293,14 @@ export default function OrderForm({
 
           {/* Package Type */}
           <div>
-            <label className="block text-sm font-medium text-foreground/90 mb-2">
+            <label className="block text-base font-bold text-foreground/95 mb-2">
               Package *
             </label>
             <select
               name="packageType"
               value={formData.packageType}
               onChange={handleChange}
-              className="w-full card-bg border-2 border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors"
+              className="w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
             >
               {getServicePricing(formData.serviceType)?.packages.map((pkg) => (
                 <option key={pkg.id} value={pkg.id} className="bg-slate-900">
@@ -312,7 +312,7 @@ export default function OrderForm({
 
           {/* Word Count */}
           <div>
-            <label className="block text-sm font-medium text-foreground/90 mb-2">
+            <label className="block text-base font-bold text-foreground/95 mb-2">
               Word Count *
             </label>
             <input
@@ -322,14 +322,14 @@ export default function OrderForm({
               onChange={handleChange}
               disabled={formData.packageType !== "custom"}
               placeholder="e.g., 5000"
-              className={`w-full card-bg border-2 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors ${
+              className={`w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium ${
                 formData.packageType !== "custom"
                   ? "opacity-75 cursor-not-allowed"
                   : ""
               }`}
             />
             {formData.packageType !== "custom" && (
-              <p className="text-xs text-foreground/50 mt-1">
+              <p className="text-xs text-foreground/50 mt-1 font-medium">
                 Auto-set based on package
               </p>
             )}
@@ -337,7 +337,7 @@ export default function OrderForm({
 
           {/* Deadline */}
           <div>
-            <label className="block text-sm font-medium text-foreground/90 mb-2">
+            <label className="block text-base font-bold text-foreground/95 mb-2">
               Deadline *
             </label>
             <input
@@ -346,13 +346,13 @@ export default function OrderForm({
               value={formData.deadline}
               onChange={handleChange}
               required
-              className="w-full card-bg border-2 border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors"
+              className="w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
             />
           </div>
 
           {/* Budget */}
           <div>
-            <label className="block text-sm font-medium text-foreground/90 mb-2">
+            <label className="block text-base font-bold text-foreground/95 mb-2">
               Budget ($) *
             </label>
             <input
@@ -363,12 +363,12 @@ export default function OrderForm({
               disabled={isBudgetLocked}
               required
               placeholder="e.g., 100"
-              className={`w-full card-bg border-2 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors ${
+              className={`w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium ${
                 isBudgetLocked ? "opacity-75 cursor-not-allowed" : ""
               }`}
             />
             {isBudgetLocked && (
-              <p className="text-xs text-foreground/50 mt-1">
+              <p className="text-xs text-foreground/50 mt-1 font-medium">
                 Auto-set based on package
               </p>
             )}
