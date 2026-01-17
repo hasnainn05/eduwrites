@@ -329,7 +329,7 @@ export default function Home() {
       {/* Services Section */}
       <section
         id="services"
-        className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/50 to-white/30"
+        className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
