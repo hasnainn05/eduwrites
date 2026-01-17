@@ -287,100 +287,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SEO Content Section */}
-      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-background/50">
-        <div className="max-w-7xl mx-auto">
+      {/* About Section */}
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <h2 className="heading-3d-light text-3xl sm:text-4xl font-bold text-foreground mb-6 font-poppins scroll-animate">
-                Professional Academic Writing Support for Every Challenge
+              <p className="text-accent font-semibold mb-3 uppercase tracking-wider">ABOUT US</p>
+              <h2 className="text-4xl font-bold text-foreground mb-6 font-poppins">
+                Why Students Choose EduWrites
               </h2>
-              <p className="text-foreground/80 leading-relaxed mb-4 scroll-animate scroll-delay-100">
-                Student success starts with quality academic work. At EduWrites,
-                we understand the pressures of academic life—tight deadlines,
-                complex assignments, and the need for excellence. Whether you're
-                struggling with essay writing, research papers, or comprehensive
-                dissertations, our expert team is here to help you succeed.
+              <p className="text-foreground/80 leading-relaxed mb-4">
+                With over a decade of experience, we've helped 50,000+ students succeed. Our team of PhD-qualified writers understands academic challenges and delivers excellence.
               </p>
-              <p className="text-foreground/80 leading-relaxed mb-4 scroll-animate scroll-delay-200">
-                With over a decade of experience in academic writing, we've
-                helped thousands of students worldwide achieve their educational
-                goals. Our writers hold advanced degrees in their respective
-                fields and are committed to delivering original, high-quality
-                work that meets the highest academic standards.
-              </p>
-              <p className="text-foreground/80 leading-relaxed scroll-animate scroll-delay-300">
-                From undergraduate essays to PhD dissertations, we provide
-                customized academic writing solutions that are plagiarism-free,
-                properly cited, and delivered on time—every time. Your academic
-                success is our mission.
+              <p className="text-foreground/80 leading-relaxed">
+                We provide plagiarism-free, original work that meets the highest academic standards. Your success is our mission.
               </p>
             </div>
 
             {/* Right Stats */}
             <div className="space-y-6">
-              <div className="glass p-6 rounded-xl scroll-animate-right scroll-delay-100">
-                <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                  50,000+
-                </div>
-                <p className="text-foreground/80 font-medium">
-                  Satisfied Students Worldwide
-                </p>
-                <p className="text-foreground/60 text-sm mt-2">
-                  Students trust EduWrites for their most important academic
-                  assignments
-                </p>
+              <div className="bg-white rounded-xl p-8 border border-border">
+                <div className="text-4xl font-bold text-primary mb-2">50,000+</div>
+                <p className="text-foreground/80 font-medium">Students Worldwide</p>
               </div>
 
-              <div className="glass p-6 rounded-xl scroll-animate-right scroll-delay-200">
-                <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                  98%
-                </div>
-                <p className="text-foreground/80 font-medium">
-                  Customer Satisfaction Rate
-                </p>
-                <p className="text-foreground/60 text-sm mt-2">
-                  Our commitment to quality and service excellence is reflected
-                  in our ratings
-                </p>
+              <div className="bg-white rounded-xl p-8 border border-border">
+                <div className="text-4xl font-bold text-accent mb-2">98%</div>
+                <p className="text-foreground/80 font-medium">Satisfaction Rate</p>
               </div>
 
-              <div className="glass p-6 rounded-xl scroll-animate-right scroll-delay-300">
-                <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                  50+
-                </div>
-                <p className="text-foreground/80 font-medium">
-                  Expert Academic Writers
-                </p>
-                <p className="text-foreground/60 text-sm mt-2">
-                  PhDs and Masters degree holders specializing in various
-                  academic fields
-                </p>
+              <div className="bg-white rounded-xl p-8 border border-border">
+                <div className="text-4xl font-bold text-primary mb-2">50+</div>
+                <p className="text-foreground/80 font-medium">Expert Writers (PhDs)</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Services Intro Section */}
-      <section className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="heading-3d-light text-3xl sm:text-4xl font-bold text-foreground mb-6 font-poppins">
-            Transform Your Academic Performance
-          </h2>
-          <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
-            We understand that every student faces unique challenges. Our
-            comprehensive suite of academic writing services is designed to
-            address all your needs—whether it's crafting the perfect essay,
-            conducting in-depth research, or completing your dissertation. With
-            our expert writers and commitment to excellence, you're not just
-            getting a paper; you're getting a partner in your academic success.
-          </p>
-          <p className="text-base text-foreground/70">
-            Choose the service that fits your needs and watch your academic
-            performance soar.
-          </p>
         </div>
       </section>
 
