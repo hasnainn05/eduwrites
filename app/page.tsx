@@ -477,6 +477,297 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section
+        id="pricing"
+        className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/50 to-white/30"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">
+              PRICING
+            </p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
+              Transparent, Affordable Pricing
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+              Choose the perfect plan for your academic needs across our services
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {/* Essay Writing Pricing */}
+            <div>
+              <div className="mb-12">
+                <h3 className="text-3xl font-bold text-foreground mb-2 text-center font-poppins">
+                  Essay Writing
+                </h3>
+                <p className="text-center text-foreground/70">
+                  Professional essays for all academic levels
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                  {
+                    name: "Basic",
+                    price: "$100",
+                    features: [
+                      "2000 words",
+                      "Basic research",
+                      "Standard formatting",
+                      "1 revision",
+                      "5-7 days delivery",
+                    ],
+                  },
+                  {
+                    name: "Standard",
+                    price: "$250",
+                    features: [
+                      "5000 words",
+                      "In-depth research",
+                      "Premium formatting",
+                      "2 revisions",
+                      "3-5 days delivery",
+                    ],
+                    highlighted: true,
+                  },
+                  {
+                    name: "Premium",
+                    price: "$450",
+                    features: [
+                      "10000 words",
+                      "Expert research",
+                      "Complete editing",
+                      "Unlimited revisions",
+                      "2-3 days delivery",
+                    ],
+                  },
+                  {
+                    name: "Custom",
+                    price: "Custom",
+                    features: [
+                      "Any word count",
+                      "Specialized topics",
+                      "Rush delivery",
+                      "Priority support",
+                      "Flexible timeline",
+                    ],
+                    isCustom: true,
+                  },
+                ].map((plan) => (
+                  <div
+                    key={plan.name}
+                    className={`relative rounded-2xl transition-all duration-300 overflow-hidden border ${
+                      plan.highlighted
+                        ? "bg-primary text-white border-primary scale-105 shadow-xl"
+                        : "bg-white border-border hover:shadow-lg hover:border-accent/30"
+                    }`}
+                  >
+                    <div className="relative z-10 p-8 h-full flex flex-col">
+                      {plan.highlighted && (
+                        <div className="mb-4">
+                          <span className="bg-accent text-primary px-4 py-2 rounded-full text-sm font-bold inline-block">
+                            ⭐ Most Popular
+                          </span>
+                        </div>
+                      )}
+
+                      <h4
+                        className={`text-2xl font-bold mb-2 ${plan.highlighted ? "text-white" : "text-foreground"}`}
+                      >
+                        {plan.name}
+                      </h4>
+
+                      <div className="mb-8">
+                        <span
+                          className={`text-5xl font-bold ${plan.highlighted ? "text-accent" : "text-primary"}`}
+                        >
+                          {plan.price}
+                        </span>
+                      </div>
+
+                      <ul className="space-y-3 mb-8 flex-grow">
+                        {plan.features.map((feature, index) => (
+                          <li key={index} className="flex items-start gap-3">
+                            <CheckCircle
+                              className={`flex-shrink-0 mt-0.5 w-4 h-4 ${
+                                plan.highlighted ? "text-accent" : "text-primary"
+                              }`}
+                              size={16}
+                            />
+                            <span
+                              className={
+                                plan.highlighted
+                                  ? "text-white/90 text-sm"
+                                  : "text-foreground/80 text-sm"
+                              }
+                            >
+                              {feature}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <Link
+                        href="/services/essay"
+                        className={`w-full py-3 rounded-lg font-bold transition-all text-center ${
+                          plan.highlighted
+                            ? "bg-accent text-primary hover:bg-accent/90"
+                            : "bg-primary text-white hover:bg-primary/90"
+                        }`}
+                      >
+                        View Details
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Assignment Writing Pricing */}
+            <div>
+              <div className="mb-12">
+                <h3 className="text-3xl font-bold text-foreground mb-2 text-center font-poppins">
+                  Assignment Writing
+                </h3>
+                <p className="text-center text-foreground/70">
+                  Complete assignment solutions for all types
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                  {
+                    name: "Basic",
+                    price: "$100",
+                    features: [
+                      "2000 words",
+                      "Standard complexity",
+                      "Single revision",
+                      "5-7 days delivery",
+                      "Email support",
+                    ],
+                  },
+                  {
+                    name: "Standard",
+                    price: "$250",
+                    features: [
+                      "5000 words",
+                      "Medium complexity",
+                      "2 revisions",
+                      "3-5 days delivery",
+                      "Priority support",
+                    ],
+                    highlighted: true,
+                  },
+                  {
+                    name: "Premium",
+                    price: "$450",
+                    features: [
+                      "10000 words",
+                      "Complex assignments",
+                      "Unlimited revisions",
+                      "2-3 days delivery",
+                      "24/7 dedicated support",
+                    ],
+                  },
+                  {
+                    name: "Custom",
+                    price: "Custom",
+                    features: [
+                      "Any assignment type",
+                      "Custom requirements",
+                      "Rush delivery available",
+                      "Personal writer assignment",
+                      "Flexible payment options",
+                    ],
+                    isCustom: true,
+                  },
+                ].map((plan) => (
+                  <div
+                    key={plan.name}
+                    className={`relative rounded-2xl transition-all duration-300 overflow-hidden border ${
+                      plan.highlighted
+                        ? "bg-primary text-white border-primary scale-105 shadow-xl"
+                        : "bg-white border-border hover:shadow-lg hover:border-accent/30"
+                    }`}
+                  >
+                    <div className="relative z-10 p-8 h-full flex flex-col">
+                      {plan.highlighted && (
+                        <div className="mb-4">
+                          <span className="bg-accent text-primary px-4 py-2 rounded-full text-sm font-bold inline-block">
+                            ⭐ Most Popular
+                          </span>
+                        </div>
+                      )}
+
+                      <h4
+                        className={`text-2xl font-bold mb-2 ${plan.highlighted ? "text-white" : "text-foreground"}`}
+                      >
+                        {plan.name}
+                      </h4>
+
+                      <div className="mb-8">
+                        <span
+                          className={`text-5xl font-bold ${plan.highlighted ? "text-accent" : "text-primary"}`}
+                        >
+                          {plan.price}
+                        </span>
+                      </div>
+
+                      <ul className="space-y-3 mb-8 flex-grow">
+                        {plan.features.map((feature, index) => (
+                          <li key={index} className="flex items-start gap-3">
+                            <CheckCircle
+                              className={`flex-shrink-0 mt-0.5 w-4 h-4 ${
+                                plan.highlighted ? "text-accent" : "text-primary"
+                              }`}
+                              size={16}
+                            />
+                            <span
+                              className={
+                                plan.highlighted
+                                  ? "text-white/90 text-sm"
+                                  : "text-foreground/80 text-sm"
+                              }
+                            >
+                              {feature}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <Link
+                        href="/services/assignment"
+                        className={`w-full py-3 rounded-lg font-bold transition-all text-center ${
+                          plan.highlighted
+                            ? "bg-accent text-primary hover:bg-accent/90"
+                            : "bg-primary text-white hover:bg-primary/90"
+                        }`}
+                      >
+                        View Details
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Quick CTA */}
+            <div className="text-center mt-16">
+              <p className="text-lg text-foreground/80 mb-8">
+                Want to see pricing for other services?
+              </p>
+              <Link
+                href="#services"
+                className="inline-flex items-center justify-center gap-2 gradient-primary text-white px-10 py-4 rounded-xl font-bold hover:shadow-glow transition-all transform hover:scale-105"
+              >
+                Explore All Services <ArrowRight size={20} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Section */}
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
