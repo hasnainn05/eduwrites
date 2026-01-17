@@ -409,7 +409,7 @@ export default function Profile() {
 
                         <Link
                           href="/#services"
-                          className="p-2 md:p-4 border border-white/10 rounded-lg md:rounded-xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 hover:border-purple-400/50 hover:bg-purple-400/20 transition-all group"
+                          className="p-2 md:p-4 border-2 border-border rounded-lg md:rounded-xl bg-white hover:shadow-md transition-all group"
                         >
                           <div className="text-lg md:text-2xl mb-0.5 md:mb-2">
                             🎓
