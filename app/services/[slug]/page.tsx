@@ -60,9 +60,9 @@ const servicesData: Record<string, ServiceData> = {
     subtitle: "Professional Academic Writing Services",
     Icon: FileText,
     heroGradient: "from-blue-50 to-indigo-50",
-    aboutTitle: "About Essay Writing",
+    aboutTitle: "About Our Professional Essay Writing Service",
     aboutContent:
-      "Our essay writing service provides professionally written essays for all academic levels, from high school to graduate programs. We understand the pressure students face when juggling multiple assignments, and our expert team is here to help. Our writers have advanced degrees across various disciplines and specialize in crafting compelling, original essays that showcase your academic potential. Whether you're working on argumentative essays, analytical papers, narrative compositions, or research-based essays, we have the expertise to deliver work that exceeds expectations and demonstrates deep understanding of your subject matter.",
+      "Our professional essay writing service provides high-quality, plagiarism-free essays for all academic levels, from high school to graduate programs. We understand the pressure students face when juggling multiple assignments, and our expert essay writing team is here to help you succeed. Our professional essay writers have advanced degrees across various disciplines and specialize in crafting compelling, original essays that showcase your academic potential. Whether you need help with argumentative essays, analytical papers, narrative compositions, or research-based essays, our professional writers have the expertise to deliver work that exceeds expectations and demonstrates deep understanding of your subject matter. With fast essay writing turnaround times and affordable essay writing rates, we make professional academic support accessible to all students seeking essay help online.",
     featuresTitle: "What's Included in Our Service",
     features: [
       "Original, plagiarism-free content",
