@@ -73,6 +73,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+      <head>
+        {/* JSON-LD Schema Markup for SEO */}
+        <SchemaScript schema={organizationSchema} />
+        <SchemaScript schema={websiteSchema} />
+      </head>
       <body className={inter.className}>
         <LayoutClient>{children}</LayoutClient>
       </body>
