@@ -9,7 +9,7 @@ export function OrderClient() {
   const pkg = searchParams.get("package");
 
   return (
-    <div className="glass p-8 sm:p-12 rounded-2xl">
+    <div className="bg-white rounded-2xl border-2 border-border p-8 sm:p-12 shadow-sm">
       <OrderForm
         preSelectedService={service || undefined}
         preSelectedPackage={pkg || undefined}
