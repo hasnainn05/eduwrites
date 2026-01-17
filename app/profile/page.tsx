@@ -315,7 +315,7 @@ export default function Profile() {
                         return (
                           <div
                             key={index}
-                            className="p-3 md:p-5 border border-white/10 rounded-lg bg-gradient-to-br from-white/5 to-white/[0.02] hover:border-white/20 hover:bg-white/[0.08] transition-all"
+                            className="p-3 md:p-5 border-2 border-border rounded-lg bg-white hover:shadow-md transition-all"
                           >
                             <div className="flex items-start justify-between mb-2 md:mb-3">
                               <div
