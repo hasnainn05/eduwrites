@@ -74,6 +74,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
+        {/* Preload critical resources for Core Web Vitals optimization */}
+        <link
+          rel="preload"
+          as="image"
+          href="https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800"
+          type="image/webp"
+        />
+
         {/* JSON-LD Schema Markup for SEO */}
         <SchemaScript schema={organizationSchema} />
         <SchemaScript schema={websiteSchema} />
