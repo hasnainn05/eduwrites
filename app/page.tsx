@@ -219,68 +219,70 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Left Content */}
-          <div>
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/40 rounded-full px-3 py-1.5 mb-4">
-              <Star size={12} className="text-accent fill-accent" />
-              <span className="text-xs font-semibold text-foreground">
-                Trusted by 50,000+ Students
-              </span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Left Content */}
+            <div>
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/40 rounded-full px-3 py-1.5 mb-4">
+                <Star size={12} className="text-accent fill-accent" />
+                <span className="text-xs font-semibold text-foreground">
+                  Trusted by 50,000+ Students
+                </span>
+              </div>
+
+              {/* Main Headline - 2 Lines (both large) */}
+              <h1 className="font-bold mb-8 leading-snug font-poppins text-foreground">
+                <div className="text-5xl sm:text-6xl lg:text-7xl">
+                  Achieve Academic <span className="text-accent">Excellence</span>
+                </div>
+                <div className="text-5xl sm:text-6xl lg:text-7xl">
+                  with Professional Writing Services
+                </div>
+              </h1>
+
+              {/* Subheading */}
+              <p className="text-sm text-foreground/70 mb-8 leading-relaxed max-w-2xl">
+                Professional, plagiarism-free academic writing from Ph.D. experts. Essays, theses, dissertations delivered on time, every time.
+              </p>
+
+              {/* Trust Indicators - Compact Row */}
+              <div className="flex gap-2 mb-12">
+                <div>
+                  <div className="text-2xl font-bold text-primary mb-1">98%</div>
+                  <p className="text-xs text-foreground/70 whitespace-nowrap">Customer Satisfaction</p>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-primary mb-1">24/7</div>
+                  <p className="text-xs text-foreground/70 whitespace-nowrap">Expert Support</p>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-primary mb-1">50+</div>
+                  <p className="text-xs text-foreground/70 whitespace-nowrap">Expert Writers</p>
+                </div>
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#services"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Started Now <ArrowRight size={20} />
+                </a>
+                <WhatsAppButton
+                  phoneNumber="13658291551"
+                  message="Hi, I'm interested in EduWrites services"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/5 transition-all duration-300"
+                  showIcon={false}
+                  iconSize={20}
+                >
+                  Message Us
+                </WhatsAppButton>
+              </div>
             </div>
 
-            {/* Main Headline - 2 Lines (both large) */}
-            <h1 className="font-bold mb-8 leading-snug font-poppins text-foreground max-w-4xl">
-              <div className="text-5xl sm:text-6xl lg:text-7xl">
-                Achieve Academic <span className="text-accent">Excellence</span>
-              </div>
-              <div className="text-5xl sm:text-6xl lg:text-7xl">
-                with Professional Writing Services
-              </div>
-            </h1>
-
-            {/* Subheading */}
-            <p className="text-sm text-foreground/70 mb-8 leading-relaxed max-w-2xl">
-              Professional, plagiarism-free academic writing from Ph.D. experts. Essays, theses, dissertations delivered on time, every time.
-            </p>
-
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-3 gap-0.5 mb-12">
-              <div>
-                <div className="text-2xl font-bold text-primary mb-1">98%</div>
-                <p className="text-xs text-foreground/70">Customer Satisfaction</p>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-primary mb-1">24/7</div>
-                <p className="text-xs text-foreground/70">Expert Support</p>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-primary mb-1">50+</div>
-                <p className="text-xs text-foreground/70">Expert Writers</p>
-              </div>
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
-              >
-                Get Started Now <ArrowRight size={20} />
-              </a>
-              <WhatsAppButton
-                phoneNumber="13658291551"
-                message="Hi, I'm interested in EduWrites services"
-                className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/5 transition-all duration-300"
-                showIcon={false}
-                iconSize={20}
-              >
-                Message Us
-              </WhatsAppButton>
-            </div>
-
-            {/* Stats Cards Below Buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-3xl">
+            {/* Right Trust Cards */}
+            <div className="flex flex-col gap-6">
               {/* 50K+ Card */}
               <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
                 <div className="text-5xl font-bold text-primary mb-2">50K+</div>
@@ -296,7 +298,7 @@ export default function Home() {
               </div>
 
               {/* Rating Card */}
-              <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all sm:col-span-2 lg:col-span-1">
+              <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
                 <div className="flex items-center gap-4">
                   <div>
                     <div className="flex gap-1 mb-2">
