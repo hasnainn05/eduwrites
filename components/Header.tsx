@@ -274,13 +274,13 @@ export default function Header() {
                   </summary>
                   <div className="pl-3 space-y-0.5 mt-0.5">
                     {fieldsOfStudy.map((field, idx) => (
-                      <button
+                      <div
                         key={idx}
-                        className="block w-full text-left text-[8px] font-medium text-white/80 hover:text-cyan-400 transition-colors py-0.5 px-1"
+                        className="block w-full text-left text-[8px] font-medium text-white/80 py-0.5 px-1"
                       >
                         <span className="mr-1">{field.icon}</span>
                         {field.category}
-                      </button>
+                      </div>
                     ))}
                   </div>
                 </details>
