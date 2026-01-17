@@ -710,9 +710,9 @@ const servicesData: Record<string, ServiceData> = {
     subtitle: "Complete Doctoral Support",
     Icon: BookMarked,
     heroGradient: "from-indigo-50 to-purple-50",
-    aboutTitle: "About Dissertation Writing",
+    aboutTitle: "Professional Dissertation Writing Service for PhD Students",
     aboutContent:
-      "Our dissertation writing service provides expert support for doctoral candidates pursuing PhD and professional doctorates. We understand the complexity and challenges involved in dissertation research and writing. Our team of experienced academic researchers and writers works with you at every stage: from research proposal development and literature review through data collection analysis, writing, editing, and final submission. We provide comprehensive support that maintains academic integrity while ensuring your dissertation meets the highest scholarly standards. Our expertise spans multiple disciplines and we have successfully supported hundreds of doctoral candidates in completing their dissertations and advancing their academic careers.",
+      "Our professional dissertation writing service provides expert dissertation support for doctoral candidates pursuing PhD and professional doctorates. We understand the complexity and challenges involved in dissertation research and dissertation writing. Our team of experienced dissertation writers and academic researchers works with you at every stage of the dissertation process: from research proposal development and literature review through data collection analysis, dissertation writing, comprehensive dissertation editing, and final submission. We provide comprehensive dissertation help that maintains academic integrity while ensuring your dissertation meets the highest scholarly standards. Our dissertation writing expertise spans multiple disciplines and we have successfully supported hundreds of doctoral candidates in completing their dissertations with professional dissertation assistance and advancing their academic careers. Get professional dissertation writing help online with affordable dissertation services.",
     featuresTitle: "What's Included in Our Service",
     features: [
       "Research proposal development",
