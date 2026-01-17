@@ -204,10 +204,8 @@ export default function Home() {
 
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-poppins text-foreground">
-                Achieve
-                <br />
-                Academic <span className="text-accent">Excellence</span>
-                <br />
+                Achieve<br />
+                Academic <span className="text-accent">Excellence</span><br />
                 with Academic Experts
               </h1>
 
@@ -253,8 +251,8 @@ export default function Home() {
             </div>
 
             {/* Right Stats Cards */}
-            <div className="relative">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="relative flex justify-end">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
                 {/* Stat Card 1 */}
                 <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
                   <div className="text-5xl font-bold text-primary mb-2">50K+</div>
