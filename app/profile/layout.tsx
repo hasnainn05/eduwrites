@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     "Manage your EduWrites profile, view your orders, and track your academic writing projects.",
   keywords: ["profile", "account", "my account", "orders", "dashboard"],
+  alternates: {
+    canonical: "https://eduwrites.com/profile",
+  },
   robots: {
     index: false,
   },
