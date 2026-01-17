@@ -285,7 +285,7 @@ export default function Profile() {
                 <div className="flex-1 flex flex-col overflow-y-auto">
                   <div className="space-y-4 md:space-y-8">
                     {/* Profile Hero Section */}
-                    <div className="flex flex-col sm:flex-row gap-3 md:gap-6 items-start sm:items-center justify-between p-3 md:p-6 border-2 border-border rounded-xl bg-white shadow-sm">
+                    <div className="flex flex-col sm:flex-row gap-3 md:gap-6 items-start sm:items-center justify-between p-3 md:p-6 border-2 border-border rounded-xl card-bg shadow-sm">
                       <div className="flex gap-3 md:gap-6 items-start sm:items-center flex-1">
                         <div className="w-14 md:w-20 h-14 md:h-20 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center text-white text-lg md:text-2xl font-bold flex-shrink-0">
                           {user.avatar}
