@@ -179,16 +179,10 @@
 @keyframes cardFloat {
   0%,
   100% {
-    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
-  }
-  25% {
-    transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-12px) rotateX(-1deg) rotateY(3deg);
-  }
-  75% {
-    transform: translateY(-6px) rotateX(-2deg) rotateY(-1deg);
+    transform: translateY(-12px);
   }
 }
 
@@ -346,37 +340,32 @@
     animation-delay: 0.5s;
   }
 
-  /* 3D Text Hover Effects */
+  /* Text Hover Effects - 2D Version */
   .heading-3d {
-    perspective: 1000px;
-    transform-style: preserve-3d;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .heading-3d:hover {
-    transform: rotateX(5deg) rotateY(-8deg) rotateZ(2deg) translateZ(20px);
+    transform: scale(1.02) translateY(-4px);
     text-shadow:
       -5px -5px 15px rgba(0, 100, 120, 0.5),
       5px 5px 15px rgba(168, 85, 247, 0.3);
   }
 
   .heading-3d-light {
-    perspective: 1000px;
-    transform-style: preserve-3d;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .heading-3d-light:hover {
-    transform: rotateX(3deg) rotateY(-5deg) rotateZ(1deg) translateZ(15px);
+    transform: scale(1.02) translateY(-4px);
     filter: drop-shadow(-3px -3px 8px rgba(0, 100, 120, 0.4))
       drop-shadow(3px 3px 8px rgba(168, 85, 247, 0.2));
   }
 
-  /* Service Card 3D Hover Effects - TiltCard handles the tilt */
+  /* Service Card Hover Effects - 2D Version */
   .service-card-3d {
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
-    perspective: 1000px;
   }
 
   .service-card-3d:hover {
