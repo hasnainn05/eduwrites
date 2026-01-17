@@ -758,7 +758,7 @@ export default function Home() {
 
           {/* Fields of Study - All Disciplines */}
           <div className="mt-32">
-            <h3 className="heading-3d-light text-3xl font-bold text-foreground mb-8 text-center">
+            <h3 className="text-3xl font-bold text-foreground mb-8 text-center">
               All Fields of Study
             </h3>
             <p className="text-center text-foreground/70 mb-12 max-w-2xl mx-auto text-base leading-relaxed">
@@ -778,13 +778,12 @@ export default function Home() {
               ].map((field, idx) => (
                 <div
                   key={idx}
-                  className="glass p-4 rounded-lg border border-white/15 hover:border-cyan-400/60 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 group bg-gradient-to-br from-white/8 to-white/4 text-center scroll-animate"
-                  style={{ animationDelay: `${(idx % 5) * 0.08}s` }}
+                  className="bg-white rounded-lg p-4 border border-border hover:shadow-md hover:border-accent/30 transition-all duration-300 text-center"
                 >
-                  <span className="text-2xl block mb-2 group-hover:scale-125 transition-transform duration-300">
+                  <span className="text-2xl block mb-2">
                     {field.icon}
                   </span>
-                  <h4 className="text-xs font-semibold text-foreground group-hover:text-cyan-300 transition-colors duration-300 leading-tight">
+                  <h4 className="text-xs font-semibold text-foreground leading-tight">
                     {field.category}
                   </h4>
                 </div>
@@ -792,17 +791,16 @@ export default function Home() {
             </div>
 
             {/* Additional Info */}
-            <div className="mt-12 p-8 glass rounded-xl border border-white/15 text-center bg-gradient-to-br from-white/8 to-white/4">
+            <div className="mt-12 p-8 bg-white rounded-xl border border-border text-center">
               <h3 className="text-lg font-bold text-foreground mb-3">
                 Can't Find Your Field?
               </h3>
               <p className="text-foreground/80 mb-6 max-w-2xl mx-auto text-sm leading-relaxed">
-                Our expert writers cover virtually every academic discipline. If
-                your field isn't listed, we still support it.
+                Our expert writers cover virtually every academic discipline. If your field isn't listed, we still support it.
               </p>
               <button
                 onClick={() => setIsSupportModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2 glass border border-cyan-400/60 text-cyan-400 px-6 py-2 rounded-lg text-sm font-semibold hover:bg-cyan-400/15 transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-6 py-2 rounded-lg text-sm font-semibold hover:bg-primary/5 transition-all duration-300"
               >
                 Contact Support
               </button>
