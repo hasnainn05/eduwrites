@@ -148,7 +148,9 @@ export default function About() {
                 <h3 className="text-3xl font-bold text-foreground mb-4">
                   {value.title}
                 </h3>
-                <p className="text-foreground/85 text-lg leading-relaxed font-medium">{value.description}</p>
+                <p className="text-foreground/85 text-lg leading-relaxed font-medium">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
@@ -233,7 +235,9 @@ export default function About() {
                   <p className="text-base text-cyan-400 font-bold mb-4">
                     {member.role}
                   </p>
-                  <p className="text-base text-foreground/85 leading-relaxed font-medium">{member.bio}</p>
+                  <p className="text-base text-foreground/85 leading-relaxed font-medium">
+                    {member.bio}
+                  </p>
                 </div>
               </TiltCard>
             ))}

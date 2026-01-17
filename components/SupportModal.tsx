@@ -76,7 +76,8 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps) {
               Message Sent Successfully!
             </h3>
             <p className="text-foreground/80 text-lg font-medium">
-              Thank you for reaching out. Our support team will get back to you within 24 hours.
+              Thank you for reaching out. Our support team will get back to you
+              within 24 hours.
             </p>
           </div>
         ) : (
@@ -118,7 +119,9 @@ export default function SupportModal({ isOpen, onClose }: SupportModalProps) {
               <label className="block text-base font-bold text-foreground/95 mb-2 flex items-center gap-2">
                 <MessageCircle size={18} />
                 WhatsApp Number{" "}
-                <span className="text-foreground/60 font-medium">(Optional)</span>
+                <span className="text-foreground/60 font-medium">
+                  (Optional)
+                </span>
               </label>
               <input
                 type="tel"

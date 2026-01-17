@@ -248,7 +248,9 @@ export default function Contact() {
                   <label className="block text-base font-bold text-foreground/95 mb-2 flex items-center gap-2">
                     <MessageCircle size={18} />
                     WhatsApp Number{" "}
-                    <span className="text-foreground/60 font-medium">(Optional)</span>
+                    <span className="text-foreground/60 font-medium">
+                      (Optional)
+                    </span>
                   </label>
                   <input
                     type="tel"

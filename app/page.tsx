@@ -491,7 +491,8 @@ export default function Home() {
               Transparent, Affordable Pricing
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Choose the perfect plan for your academic needs across our services
+              Choose the perfect plan for your academic needs across our
+              services
             </p>
           </div>
 
@@ -591,7 +592,9 @@ export default function Home() {
                           <li key={index} className="flex items-start gap-3">
                             <CheckCircle
                               className={`flex-shrink-0 mt-0.5 w-4 h-4 ${
-                                plan.highlighted ? "text-accent" : "text-primary"
+                                plan.highlighted
+                                  ? "text-accent"
+                                  : "text-primary"
                               }`}
                               size={16}
                             />
@@ -719,7 +722,9 @@ export default function Home() {
                           <li key={index} className="flex items-start gap-3">
                             <CheckCircle
                               className={`flex-shrink-0 mt-0.5 w-4 h-4 ${
-                                plan.highlighted ? "text-accent" : "text-primary"
+                                plan.highlighted
+                                  ? "text-accent"
+                                  : "text-primary"
                               }`}
                               size={16}
                             />
