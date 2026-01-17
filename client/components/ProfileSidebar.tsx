@@ -24,18 +24,18 @@ export function ProfileSidebar({
   ];
 
   return (
-    <div className="fixed left-0 top-0 w-64 h-screen bg-gradient-to-b from-slate-900/50 to-slate-900/30 border-r border-white/10 flex flex-col z-40">
+    <div className="fixed left-0 top-0 w-64 h-screen bg-white border-r border-border flex flex-col z-40">
       {/* Header Spacing */}
       <div className="h-16 flex-shrink-0"></div>
 
       {/* Profile Info */}
-      <div className="p-6 border-b border-white/10 flex-shrink-0">
+      <div className="p-6 border-b border-border flex-shrink-0">
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-2xl text-white text-xl font-bold mb-3 relative shadow-lg">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl text-white text-xl font-bold mb-3 relative shadow-lg">
             {userName.split(" ")[0][0]}
             {userName.split(" ")[1]?.[0] || ""}
-            <div className="absolute bottom-0 right-0 w-5 h-5 bg-cyan-400 rounded-full border-2 border-slate-900 flex items-center justify-center">
-              <User size={12} className="text-slate-900" />
+            <div className="absolute bottom-0 right-0 w-5 h-5 bg-accent rounded-full border-2 border-white flex items-center justify-center">
+              <User size={12} className="text-primary" />
             </div>
           </div>
           <h3 className="text-foreground font-semibold text-sm mb-0.5">
