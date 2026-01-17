@@ -24,7 +24,8 @@ const serviceMetadata: Record<string, { title: string; description: string }> =
         "Expert research paper writing service with in-depth analysis and original content. Get well-researched, properly cited papers delivered on time.",
     },
     proofreading: {
-      title: "Proofreading & Editing Service | Professional Quality | EduWrites",
+      title:
+        "Proofreading & Editing Service | Professional Quality | EduWrites",
       description:
         "Professional proofreading and editing service to perfect your academic writing. Expert editors ensure grammar, style, and formatting excellence.",
     },

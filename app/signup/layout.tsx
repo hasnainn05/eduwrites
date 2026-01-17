@@ -5,10 +5,16 @@ export const metadata: Metadata = {
   title: "Sign Up | EduWrites - Start Your Academic Writing Journey",
   description:
     "Create your EduWrites account and get started with professional academic writing services. Join 50,000+ satisfied students worldwide.",
-  keywords: ["sign up", "register", "create account", "academic writing services"],
+  keywords: [
+    "sign up",
+    "register",
+    "create account",
+    "academic writing services",
+  ],
   openGraph: {
     title: "Sign Up | EduWrites",
-    description: "Create your account and start with professional academic writing services",
+    description:
+      "Create your account and start with professional academic writing services",
     type: "website",
   },
 };
