@@ -240,16 +240,15 @@ export default function Home() {
                 >
                   Get Started Now <ArrowRight size={20} />
                 </a>
-                <a
-                  href="https://wa.me/13658291551"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <WhatsAppButton
+                  phoneNumber="13658291551"
+                  message="Hi, I'm interested in EduWrites services"
                   className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/5 transition-all duration-300"
-                  title="Chat on WhatsApp"
+                  showIcon={true}
+                  iconSize={20}
                 >
-                  <MessageCircle size={20} />
                   Message Us
-                </a>
+                </WhatsAppButton>
               </div>
             </div>
 
