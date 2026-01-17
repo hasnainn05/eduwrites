@@ -158,15 +158,7 @@ export default function Footer() {
                 <span>info@eduwrites.com</span>
               </div>
               <div className="flex items-start gap-2">
-                <a
-                  href="https://wa.me/13658291551"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-primary transition-colors"
-                >
-                  <MessageCircle size={16} className="flex-shrink-0 text-accent" />
-                  <span>+1 365 8291551</span>
-                </a>
+                <WhatsAppLink phoneNumber="13658291551" className="flex items-center gap-2 hover:text-[#25D366] transition-colors" iconSize={16} />
               </div>
             </div>
           </div>
