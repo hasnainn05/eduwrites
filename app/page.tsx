@@ -729,7 +729,7 @@ export default function Home() {
 
           {/* Language Support */}
           <div>
-            <h3 className="heading-3d-light text-3xl font-bold text-foreground mb-12 text-center">
+            <h3 className="text-3xl font-bold text-foreground mb-12 text-center">
               Multi-Language Support
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
@@ -743,13 +743,12 @@ export default function Home() {
               ].map((lang, idx) => (
                 <div
                   key={idx}
-                  className="group glass p-6 rounded-2xl border border-white/15 hover:border-cyan-400/60 transition-all duration-300 text-center transform hover:scale-110 hover:-translate-y-2 bg-gradient-to-br from-white/8 to-white/4 hover:from-cyan-500/10 hover:to-cyan-500/5 scroll-animate"
-                  style={{ animationDelay: `${idx * 0.05}s` }}
+                  className="bg-white rounded-2xl p-6 border border-border hover:shadow-lg hover:border-accent/30 transition-all duration-300 text-center"
                 >
-                  <p className="text-5xl mb-3 transform group-hover:scale-125 transition-transform duration-300">
+                  <p className="text-5xl mb-3">
                     {lang.flag}
                   </p>
-                  <p className="font-semibold text-foreground text-sm group-hover:text-cyan-300 transition-colors duration-300">
+                  <p className="font-semibold text-foreground text-sm">
                     {lang.lang}
                   </p>
                 </div>
