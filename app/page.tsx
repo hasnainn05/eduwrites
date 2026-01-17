@@ -25,6 +25,7 @@ import { WhatsAppButton } from "@/components/WhatsAppIcon";
 
 export default function Home() {
   const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
+  const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
 
   const services = [
     {
