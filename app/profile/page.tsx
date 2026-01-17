@@ -390,7 +390,7 @@ export default function Profile() {
                       <div className="flex flex-col gap-1.5 md:gap-3">
                         <Link
                           href="/order"
-                          className="p-2 md:p-4 border-2 border-border rounded-lg md:rounded-xl bg-white hover:shadow-md transition-all group"
+                          className="p-2 md:p-4 border-2 border-border rounded-lg md:rounded-xl card-bg hover:shadow-md transition-all group"
                         >
                           <div className="text-lg md:text-2xl mb-0.5 md:mb-2">
                             📝
@@ -409,7 +409,7 @@ export default function Profile() {
 
                         <Link
                           href="/#services"
-                          className="p-2 md:p-4 border-2 border-border rounded-lg md:rounded-xl bg-white hover:shadow-md transition-all group"
+                          className="p-2 md:p-4 border-2 border-border rounded-lg md:rounded-xl card-bg hover:shadow-md transition-all group"
                         >
                           <div className="text-lg md:text-2xl mb-0.5 md:mb-2">
                             🎓
@@ -428,7 +428,7 @@ export default function Profile() {
 
                         <button
                           onClick={() => setIsSupportModalOpen(true)}
-                          className="p-2 md:p-4 border-2 border-border rounded-lg md:rounded-xl bg-white hover:shadow-md transition-all group w-full text-left"
+                          className="p-2 md:p-4 border-2 border-border rounded-lg md:rounded-xl card-bg hover:shadow-md transition-all group w-full text-left"
                         >
                           <div className="text-lg md:text-2xl mb-0.5 md:mb-2">
                             💬
