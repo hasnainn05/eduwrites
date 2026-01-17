@@ -220,9 +220,9 @@ export default function Home() {
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="w-full mx-auto">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              {/* Left Content */}
-              <div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+              {/* Left Content - Wider Column */}
+              <div className="lg:col-span-2">
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/40 rounded-full px-3 py-1.5 mb-4">
                   <Star size={12} className="text-accent fill-accent" />
@@ -232,11 +232,11 @@ export default function Home() {
                 </div>
 
                 {/* Main Headline - 2 Lines */}
-                <h1 className="font-bold mb-8 leading-snug font-poppins text-foreground">
-                  <div className="text-5xl sm:text-6xl lg:text-7xl">
+                <h1 className="font-bold mb-8 leading-tight font-poppins text-foreground">
+                  <div className="text-4xl sm:text-5xl lg:text-6xl">
                     Achieve Academic <span className="text-accent">Excellence</span>
                   </div>
-                  <div className="text-5xl sm:text-6xl lg:text-7xl">
+                  <div className="text-4xl sm:text-5xl lg:text-6xl">
                     with Professional Writing Services
                   </div>
                 </h1>
