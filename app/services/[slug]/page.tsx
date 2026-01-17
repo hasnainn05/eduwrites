@@ -453,9 +453,9 @@ const servicesData: Record<string, ServiceData> = {
     subtitle: "Complete Assignment Solutions",
     Icon: CheckCircle,
     heroGradient: "from-purple-50 to-pink-50",
-    aboutTitle: "About Assignment Writing",
+    aboutTitle: "Professional Assignment Writing Help Online",
     aboutContent:
-      "Our assignment writing service provides comprehensive solutions for all types of academic assignments. Whether you need help with essays, reports, projects, case studies, or problem sets, our experienced writers deliver high-quality work that meets your assignment specifications and academic standards. We handle assignments across all disciplines and academic levels, ensuring that each piece of work is original, well-researched, and tailored to your specific requirements. Our team works closely with you to understand the assignment guidelines and deliver work that demonstrates your understanding of the subject matter.",
+      "Our comprehensive assignment writing service provides complete assignment solutions for all types of academic assignments. Whether you need assignment help with essays, reports, projects, case studies, or problem sets, our experienced assignment writers deliver high-quality work that meets your assignment specifications and academic standards. We handle assignments across all disciplines and academic levels, ensuring that each assignment is original, plagiarism-free, well-researched, and tailored to your specific assignment requirements. Our assignment help experts work closely with you to understand the assignment guidelines and deliver assignment solutions that demonstrate your understanding of the subject matter. Get affordable assignment writing help online today with guaranteed on-time delivery.",
     featuresTitle: "What's Included in Our Service",
     features: [
       "Complete assignment solutions",
