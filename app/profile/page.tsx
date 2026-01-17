@@ -493,7 +493,7 @@ export default function Profile() {
                             {orders.map((order, index) => (
                               <tr
                                 key={index}
-                                className="border-b border-white/10 hover:bg-white/[0.05] transition-colors"
+                                className="border-b border-border hover:bg-background/30 transition-colors"
                               >
                                 <td className="px-2 md:px-6 py-2 md:py-4 text-foreground font-semibold text-xs">
                                   {order.id}
