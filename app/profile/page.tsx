@@ -620,11 +620,11 @@ export default function Profile() {
                         </h3>
                       </div>
                       <div className="space-y-3">
-                        <label className="flex items-center gap-3 p-4 border border-white/10 rounded-lg hover:bg-white/[0.05] cursor-pointer transition-all">
+                        <label className="flex items-center gap-3 p-4 border border-border rounded-lg hover:bg-background/30 cursor-pointer transition-all">
                           <input
                             type="checkbox"
                             defaultChecked
-                            className="w-4 h-4 rounded border-white/20 bg-white/10 accent-cyan-400"
+                            className="w-4 h-4 rounded border-border bg-white accent-primary"
                           />
                           <div className="flex-1">
                             <p className="font-semibold text-foreground text-sm">
@@ -635,10 +635,10 @@ export default function Profile() {
                             </p>
                           </div>
                         </label>
-                        <label className="flex items-center gap-3 p-4 border border-white/10 rounded-lg hover:bg-white/[0.05] cursor-pointer transition-all">
+                        <label className="flex items-center gap-3 p-4 border border-border rounded-lg hover:bg-background/30 cursor-pointer transition-all">
                           <input
                             type="checkbox"
-                            className="w-4 h-4 rounded border-white/20 bg-white/10 accent-cyan-400"
+                            className="w-4 h-4 rounded border-border bg-white accent-primary"
                           />
                           <div className="flex-1">
                             <p className="font-semibold text-foreground text-sm">
@@ -649,11 +649,11 @@ export default function Profile() {
                             </p>
                           </div>
                         </label>
-                        <label className="flex items-center gap-3 p-4 border border-white/10 rounded-lg hover:bg-white/[0.05] cursor-pointer transition-all">
+                        <label className="flex items-center gap-3 p-4 border border-border rounded-lg hover:bg-background/30 cursor-pointer transition-all">
                           <input
                             type="checkbox"
                             defaultChecked
-                            className="w-4 h-4 rounded border-white/20 bg-white/10 accent-cyan-400"
+                            className="w-4 h-4 rounded border-border bg-white accent-primary"
                           />
                           <div className="flex-1">
                             <p className="font-semibold text-foreground text-sm">
