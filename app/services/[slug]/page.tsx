@@ -1129,10 +1129,11 @@ export default function ServiceDetail() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
+      <section id="pricing" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/50 to-white/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="heading-3d text-4xl sm:text-5xl font-bold text-foreground mb-6 font-poppins">
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">PRICING</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
               Simple, Transparent Pricing
             </h2>
             <p className="text-lg text-foreground/70">
@@ -1140,35 +1141,32 @@ export default function ServiceDetail() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {service.pricing.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative rounded-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-4 overflow-hidden group service-card-3d ${
-                  plan.highlighted ? "lg:col-span-1 lg:row-span-2" : ""
+                className={`relative rounded-2xl transition-all duration-300 overflow-hidden border ${
+                  plan.highlighted
+                    ? "bg-primary text-white border-primary scale-105 shadow-xl"
+                    : "bg-white border-border hover:shadow-lg hover:border-accent/30"
                 }`}
               >
-                {/* Glass Background */}
-                <div
-                  className={`absolute inset-0 ${plan.highlighted ? "glass-dark" : "glass"}`}
-                ></div>
-
                 {/* Content */}
                 <div className="relative z-10 p-8 h-full flex flex-col">
                   {plan.highlighted && (
-                    <div className="absolute top-4 right-4">
-                      <span className="gradient-primary text-white px-4 py-2 rounded-full text-sm font-bold shadow-glow">
+                    <div className="mb-4">
+                      <span className="bg-accent text-primary px-4 py-2 rounded-full text-sm font-bold inline-block">
                         ⭐ Most Popular
                       </span>
                     </div>
                   )}
 
-                  <h3 className="text-2xl font-bold text-foreground mb-4 pt-4">
+                  <h3 className={`text-2xl font-bold mb-2 ${plan.highlighted ? "text-white" : "text-foreground"}`}>
                     {plan.name}
                   </h3>
 
                   <div className="mb-8">
-                    <span className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                    <span className={`text-5xl font-bold ${plan.highlighted ? "text-accent" : "text-primary"}`}>
                       {plan.price}
                     </span>
                   </div>
@@ -1177,10 +1175,12 @@ export default function ServiceDetail() {
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <CheckCircle
-                          className="text-cyan-400 flex-shrink-0 mt-0.5 w-4 h-4"
+                          className={`flex-shrink-0 mt-0.5 w-4 h-4 ${
+                            plan.highlighted ? "text-accent" : "text-primary"
+                          }`}
                           size={16}
                         />
-                        <span className="text-foreground/80 text-sm">
+                        <span className={plan.highlighted ? "text-white/90 text-sm" : "text-foreground/80 text-sm"}>
                           {feature}
                         </span>
                       </li>
@@ -1194,24 +1194,15 @@ export default function ServiceDetail() {
                         packageId: plan.name.toLowerCase(),
                       })
                     }
-                    className={`w-full py-3 rounded-lg font-bold transition-all transform hover:scale-105 animate-pulse-bounce ${
+                    className={`w-full py-3 rounded-lg font-bold transition-all ${
                       plan.highlighted
-                        ? "gradient-primary text-white shadow-glow hover:shadow-glow"
-                        : "border-2 border-white/20 text-foreground hover:border-white/40 hover:bg-white/10 hover:shadow-glow"
+                        ? "bg-accent text-primary hover:bg-accent/90"
+                        : "bg-primary text-white hover:bg-primary/90"
                     }`}
                   >
                     {plan.cta}
                   </button>
                 </div>
-
-                {/* Border Gradient */}
-                <div
-                  className={`absolute inset-0 rounded-2xl pointer-events-none ${
-                    plan.highlighted
-                      ? "border border-white/30 group-hover:border-white/50"
-                      : "border border-white/10 group-hover:border-white/30"
-                  } transition-colors`}
-                ></div>
               </div>
             ))}
           </div>
