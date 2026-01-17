@@ -153,8 +153,8 @@ export default function Login() {
             </div>
 
             {/* Main Card */}
-            <div className="card-bg rounded-2xl border-2 border-border p-8 mb-6 shadow-lg">
-              <h1 className="text-2xl font-bold text-foreground mb-6 font-poppins">
+            <div className="bg-white rounded-2xl border-4 border-border p-10 mb-6 shadow-lg hover:shadow-xl transition-shadow">
+              <h1 className="text-3xl font-bold text-foreground mb-6 font-poppins">
                 Sign In for Professional Academic Writing Services
               </h1>
 
