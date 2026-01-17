@@ -201,7 +201,7 @@ export default function OrderForm({
               onChange={handleChange}
               required
               placeholder="John Doe"
-              className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
+              className="w-full bg-white border-2 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors"
             />
           </div>
 
@@ -217,7 +217,7 @@ export default function OrderForm({
               onChange={handleChange}
               required
               placeholder="john@example.com"
-              className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
+              className="w-full bg-white border-2 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors"
             />
           </div>
 
@@ -232,7 +232,7 @@ export default function OrderForm({
               value={formData.whatsapp}
               onChange={handleChange}
               placeholder="+1 (555) 000-0000"
-              className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
+              className="w-full bg-white border-2 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors"
             />
           </div>
 
@@ -245,7 +245,7 @@ export default function OrderForm({
               name="academicLevel"
               value={formData.academicLevel}
               onChange={handleChange}
-              className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-cyan-400 transition-colors"
+              className="w-full bg-white border-2 border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors"
             >
               {academicLevels.map((level) => (
                 <option
@@ -277,7 +277,7 @@ export default function OrderForm({
               name="serviceType"
               value={formData.serviceType}
               onChange={handleChange}
-              className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-cyan-400 transition-colors"
+              className="w-full bg-white border-2 border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors"
             >
               {serviceTypes.map((service) => (
                 <option
@@ -300,7 +300,7 @@ export default function OrderForm({
               name="packageType"
               value={formData.packageType}
               onChange={handleChange}
-              className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-cyan-400 transition-colors"
+              className="w-full bg-white border-2 border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors"
             >
               {getServicePricing(formData.serviceType)?.packages.map((pkg) => (
                 <option key={pkg.id} value={pkg.id} className="bg-slate-900">
@@ -322,7 +322,7 @@ export default function OrderForm({
               onChange={handleChange}
               disabled={formData.packageType !== "custom"}
               placeholder="e.g., 5000"
-              className={`w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors ${
+              className={`w-full bg-white border-2 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors ${
                 formData.packageType !== "custom"
                   ? "opacity-75 cursor-not-allowed"
                   : ""
@@ -346,7 +346,7 @@ export default function OrderForm({
               value={formData.deadline}
               onChange={handleChange}
               required
-              className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-cyan-400 transition-colors"
+              className="w-full bg-white border-2 border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary transition-colors"
             />
           </div>
 
@@ -363,7 +363,7 @@ export default function OrderForm({
               disabled={isBudgetLocked}
               required
               placeholder="e.g., 100"
-              className={`w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors ${
+              className={`w-full bg-white border-2 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors ${
                 isBudgetLocked ? "opacity-75 cursor-not-allowed" : ""
               }`}
             />
@@ -395,7 +395,7 @@ export default function OrderForm({
               onChange={handleChange}
               required
               placeholder="e.g., Shakespeare's Impact on Modern Literature"
-              className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
+              className="w-full bg-white border-2 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors"
             />
           </div>
 
@@ -410,7 +410,7 @@ export default function OrderForm({
               required
               placeholder="Describe your assignment, requirements, guidelines, and any specific instructions..."
               rows={6}
-              className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+              className="w-full bg-white border-2 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors resize-none"
             />
           </div>
 
@@ -426,7 +426,7 @@ export default function OrderForm({
                 onChange={handleChange}
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               />
-              <div className="w-full bg-white/10 border-2 border-dashed border-white/20 rounded-lg px-4 py-6 text-center hover:border-cyan-400 transition-colors cursor-pointer">
+              <div className="w-full bg-white border-2 border-dashed border-border rounded-lg px-4 py-6 text-center hover:border-primary transition-colors cursor-pointer">
                 <Upload size={24} className="mx-auto mb-2 text-cyan-400" />
                 <p className="text-sm font-medium text-foreground mb-1">
                   {fileName || "Click to upload or drag and drop"}
