@@ -6,10 +6,14 @@ export const metadata: Metadata = {
   description:
     "Place your academic writing order at EduWrites. Simple ordering process with transparent pricing and guaranteed quality.",
   keywords: ["order", "place order", "academic writing", "pricing", "services"],
+  alternates: {
+    canonical: "https://eduwrites.com/order",
+  },
   openGraph: {
     title: "Place Your Order | EduWrites",
     description: "Order professional academic writing services",
     type: "website",
+    url: "https://eduwrites.com/order",
   },
 };
 
