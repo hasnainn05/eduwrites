@@ -206,9 +206,9 @@ export default function Signup() {
             {/* Logo */}
             <div className="text-center mb-8">
               <Link href="/" className="inline-block">
-                <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
                   EduWrites
-                </h1>
+                </h2>
                 <p className="text-foreground/60 text-sm mt-1">
                   Join Our Community
                 </p>
@@ -217,9 +217,9 @@ export default function Signup() {
 
             {step === "form" && (
               <div className="glass p-8 rounded-2xl mb-6">
-                <h2 className="text-2xl font-bold text-foreground mb-2 font-poppins">
-                  Create Your Account
-                </h2>
+                <h1 className="text-2xl font-bold text-foreground mb-2 font-poppins">
+                  Create Your Academic Writing Account
+                </h1>
                 <p className="text-foreground/70 text-sm mb-6">
                   Start your academic success journey today
                 </p>
