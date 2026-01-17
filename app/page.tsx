@@ -219,7 +219,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Content */}
             <div>
               {/* Badge */}
@@ -230,11 +230,26 @@ export default function Home() {
                 </span>
               </div>
 
-              {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-12 leading-tight font-poppins text-foreground">
+              {/* Main Headline - 2 Lines */}
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-poppins text-foreground">
                 Achieve Academic <span className="text-accent">Excellence</span><br />
-                with Academic Experts
+                <span className="text-2xl sm:text-3xl font-semibold">with Professional Academic Writing Services</span>
               </h1>
+
+              {/* Cards 50K+ and 100% below heading */}
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {/* 50K+ Card */}
+                <div className="bg-white rounded-xl p-4 border border-border hover:shadow-md transition-all">
+                  <div className="text-4xl font-bold text-primary mb-1">50K+</div>
+                  <p className="text-xs text-foreground/70">Satisfied Students</p>
+                </div>
+
+                {/* 100% Card */}
+                <div className="bg-white rounded-xl p-4 border border-border hover:shadow-md transition-all">
+                  <div className="text-4xl font-bold text-accent mb-1">100%</div>
+                  <p className="text-xs text-foreground/70">Original Content</p>
+                </div>
+              </div>
 
               {/* Subheading */}
               <p className="text-sm text-foreground/70 mb-8 leading-relaxed max-w-2xl">
@@ -248,12 +263,12 @@ export default function Home() {
                   <p className="text-xs text-foreground/70">Customer Satisfaction</p>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-primary mb-1">50K+</div>
-                  <p className="text-xs text-foreground/70">Papers Delivered</p>
-                </div>
-                <div>
                   <div className="text-2xl font-bold text-primary mb-1">24/7</div>
                   <p className="text-xs text-foreground/70">Expert Support</p>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-primary mb-1">50+</div>
+                  <p className="text-xs text-foreground/70">Expert Writers</p>
                 </div>
               </div>
 
