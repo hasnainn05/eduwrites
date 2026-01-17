@@ -190,7 +190,7 @@ export default function Profile() {
   }
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-b from-background via-background/95 to-background/80">
+    <div className="w-full min-h-screen bg-background">
       <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="blur-gradient absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-600/30 to-transparent animate-blob"></div>
         <div className="blur-gradient absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-cyan-500/30 to-transparent animate-blob animation-delay-2000"></div>
