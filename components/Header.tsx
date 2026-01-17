@@ -204,18 +204,10 @@ export default function Header() {
             {/* Mobile Login Button */}
             <Link
               href="/login"
-              className="px-1.5 py-0.5 border border-cyan-400/50 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-foreground/80 rounded-none hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/20 hover:shadow-glow transition-all text-[8px] font-medium flex items-center gap-0.5 flex-shrink-0"
+              className="px-1.5 py-0.5 border-2 border-primary text-primary rounded-md hover:bg-primary/5 transition-all text-[8px] font-medium flex items-center gap-0.5 flex-shrink-0"
             >
               <span>Login</span>
-              <User size={10} className="text-foreground/80" />
-            </Link>
-            {/* Mobile Profile Icon */}
-            <Link
-              href="/profile"
-              className="p-0.5 rounded-none glass border border-white/20 hover:border-cyan-400 hover:bg-white/20 hover:shadow-glow transition-all flex items-center justify-center flex-shrink-0"
-              title="Profile"
-            >
-              <User size={11} className="text-foreground/80" />
+              <User size={10} />
             </Link>
 
             <details
@@ -223,7 +215,7 @@ export default function Header() {
               ref={detailsRef}
               onToggle={(e) => setMenuOpen(e.currentTarget.open)}
             >
-              <summary className="cursor-pointer text-foreground/80 hover:text-cyan-400 transition-colors list-none flex-shrink-0">
+              <summary className="cursor-pointer text-foreground hover:text-primary transition-colors list-none flex-shrink-0">
                 <svg
                   className="w-3 h-3 sm:w-3.5 sm:h-3.5"
                   fill="none"
@@ -238,25 +230,25 @@ export default function Header() {
                   />
                 </svg>
               </summary>
-              <div className="absolute top-full right-0 mt-1.5 bg-black/95 backdrop-blur-md border border-white/20 rounded-lg p-1.5 space-y-0.5 min-w-max z-50 max-h-96 overflow-y-auto">
+              <div className="absolute top-full right-0 mt-1.5 bg-white border border-border rounded-lg p-1.5 space-y-0.5 min-w-max z-50 max-h-96 overflow-y-auto shadow-lg">
                 {/* Navigation Links */}
                 {navItems.map((item) => (
                   <Link
                     key={item.path}
                     href={item.path}
                     onClick={closeMenu}
-                    className="block text-[9px] font-medium text-white/90 hover:text-cyan-400 transition-colors py-0.5 px-1"
+                    className="block text-[9px] font-medium text-foreground hover:text-primary transition-colors py-0.5 px-1"
                   >
                     {item.label}
                   </Link>
                 ))}
 
                 {/* Divider */}
-                <div className="border-t border-white/20 my-0.5"></div>
+                <div className="border-t border-border my-0.5"></div>
 
                 {/* Mobile Services Dropdown */}
                 <details className="group">
-                  <summary className="cursor-pointer block text-[9px] font-medium text-white/90 hover:text-cyan-400 transition-colors py-0.5 px-1 list-none">
+                  <summary className="cursor-pointer block text-[9px] font-medium text-foreground hover:text-primary transition-colors py-0.5 px-1 list-none">
                     Services
                   </summary>
                   <div className="pl-3 space-y-0.5 mt-0.5">
@@ -265,7 +257,7 @@ export default function Header() {
                         key={service.id}
                         href={`/services/${service.slug}`}
                         onClick={closeMenu}
-                        className="block text-[8px] font-medium text-white/80 hover:text-cyan-400 transition-colors py-0.5 px-1"
+                        className="block text-[8px] font-medium text-foreground hover:text-primary transition-colors py-0.5 px-1"
                       >
                         {service.title}
                       </Link>
@@ -275,14 +267,14 @@ export default function Header() {
 
                 {/* Mobile Fields of Study Dropdown */}
                 <details className="group">
-                  <summary className="cursor-pointer block text-[9px] font-medium text-white/90 hover:text-cyan-400 transition-colors py-0.5 px-1 list-none">
+                  <summary className="cursor-pointer block text-[9px] font-medium text-foreground hover:text-primary transition-colors py-0.5 px-1 list-none">
                     Fields of Study
                   </summary>
                   <div className="pl-3 space-y-0.5 mt-0.5">
                     {fieldsOfStudy.map((field, idx) => (
                       <div
                         key={idx}
-                        className="block w-full text-left text-[8px] font-medium text-white/80 py-0.5 px-1"
+                        className="block w-full text-left text-[8px] font-medium text-foreground py-0.5 px-1"
                       >
                         <span className="mr-1">{field.icon}</span>
                         {field.category}
@@ -293,14 +285,14 @@ export default function Header() {
 
                 {/* Mobile Languages Dropdown */}
                 <details className="group">
-                  <summary className="cursor-pointer block text-[9px] font-medium text-white/90 hover:text-cyan-400 transition-colors py-0.5 px-1 list-none">
+                  <summary className="cursor-pointer block text-[9px] font-medium text-foreground hover:text-primary transition-colors py-0.5 px-1 list-none">
                     Languages
                   </summary>
                   <div className="pl-3 space-y-0.5 mt-0.5">
                     {languages.map((language, idx) => (
                       <div
                         key={idx}
-                        className="block w-full text-left text-[8px] font-medium text-white/80 py-0.5 px-1"
+                        className="block w-full text-left text-[8px] font-medium text-foreground py-0.5 px-1"
                       >
                         <span className="mr-1">{language.flag}</span>
                         {language.lang}
@@ -315,20 +307,20 @@ export default function Header() {
                     key={item.path}
                     href={item.path}
                     onClick={closeMenu}
-                    className="block text-[9px] font-medium text-white/90 hover:text-cyan-400 transition-colors py-0.5 px-1"
+                    className="block text-[9px] font-medium text-foreground hover:text-primary transition-colors py-0.5 px-1"
                   >
                     {item.label}
                   </Link>
                 ))}
 
                 {/* Divider */}
-                <div className="border-t border-white/20 my-0.5"></div>
+                <div className="border-t border-border my-0.5"></div>
 
                 {/* Sign Up Button for Mobile */}
                 <Link
                   href="/signup"
                   onClick={closeMenu}
-                  className="block w-full text-center px-1.5 py-0.5 border border-white/30 text-white/90 rounded-md hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/10 transition-all text-[9px] font-medium whitespace-nowrap"
+                  className="block w-full text-center px-1.5 py-0.5 border-2 border-primary bg-primary text-white rounded-md hover:bg-primary/90 transition-all text-[9px] font-semibold whitespace-nowrap"
                 >
                   Sign Up
                 </Link>
