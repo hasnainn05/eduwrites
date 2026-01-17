@@ -11,8 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title:
-    "EduWrites - Professional Academic Writing Services | Essays, Thesis, Dissertation",
+  title: "EduWrites - Professional Academic Writing Services | Essays, Thesis, Dissertation",
   description:
     "Professional academic writing services for essays, research papers, theses, dissertations, and assignments. Get 100% original, plagiarism-free content from PhD experts. Fast delivery, affordable pricing, and unlimited revisions guaranteed.",
   keywords: [
@@ -28,6 +27,9 @@ export const metadata: Metadata = {
     "academic excellence",
   ],
   metadataBase: new URL("https://eduwrites.com"),
+  alternates: {
+    canonical: "https://eduwrites.com",
+  },
   icons: {
     icon: "https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800",
   },
