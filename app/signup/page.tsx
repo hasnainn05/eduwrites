@@ -472,7 +472,7 @@ export default function Signup() {
             )}
 
             {step === "verify" && (
-              <div className="card-bg rounded-2xl border-2 border-border p-8 mb-6 shadow-sm">
+              <div className="card-bg rounded-2xl border-2 border-border p-8 mb-6 shadow-lg">
                 <h2 className="text-2xl font-bold text-foreground mb-2 font-poppins">
                   Verify Your Email
                 </h2>
