@@ -233,10 +233,10 @@ export default function Home() {
 
                 {/* Main Headline - 2 Lines */}
                 <h1 className="font-bold mb-8 leading-tight font-poppins text-foreground">
-                  <div className="text-4xl sm:text-5xl lg:text-6xl">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl">
                     Achieve Academic <span className="text-accent">Excellence</span>
                   </div>
-                  <div className="text-4xl sm:text-5xl lg:text-6xl">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl">
                     with Professional Writing Services
                   </div>
                 </h1>
