@@ -248,7 +248,7 @@ export default function Signup() {
                         onChange={handleFormChange}
                         placeholder="John Doe"
                         required
-                        className="w-full bg-white border-3 border-border rounded-lg pl-10 pr-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-all font-medium"
+                        className="w-full bg-white border-4 border-border rounded-lg pl-10 pr-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-all font-medium"
                       />
                     </div>
                   </div>
@@ -270,7 +270,7 @@ export default function Signup() {
                         onChange={handleFormChange}
                         placeholder="you@example.com"
                         required
-                        className="w-full bg-white border-3 border-border rounded-lg pl-10 pr-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-all font-medium"
+                        className="w-full bg-white border-4 border-border rounded-lg pl-10 pr-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-all font-medium"
                       />
                     </div>
                   </div>
@@ -292,7 +292,7 @@ export default function Signup() {
                         onChange={handleFormChange}
                         placeholder="••••••••"
                         required
-                        className="w-full bg-white border-3 border-border rounded-lg pl-10 pr-10 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-all font-medium"
+                        className="w-full bg-white border-4 border-border rounded-lg pl-10 pr-10 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-all font-medium"
                       />
                       <button
                         type="button"
@@ -325,7 +325,7 @@ export default function Signup() {
                         onChange={handleFormChange}
                         placeholder="••••••••"
                         required
-                        className="w-full bg-white border-3 border-border rounded-lg pl-10 pr-10 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-all font-medium"
+                        className="w-full bg-white border-4 border-border rounded-lg pl-10 pr-10 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-all font-medium"
                       />
                       <button
                         type="button"
@@ -492,7 +492,7 @@ export default function Signup() {
                       placeholder="000000"
                       maxLength={6}
                       required
-                      className="w-full bg-white border-3 border-border rounded-lg px-4 py-3 text-center text-2xl tracking-widest text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-all font-mono font-bold"
+                      className="w-full bg-white border-4 border-border rounded-lg px-4 py-3 text-center text-2xl tracking-widest text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-all font-mono font-bold"
                     />
                   </div>
 
