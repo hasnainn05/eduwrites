@@ -17,11 +17,11 @@ import {
   Pencil,
   BarChart3,
   BookMarked,
-  MessageCircle,
 } from "lucide-react";
 import { TiltCard } from "../client/components/TiltCard";
 import { useState } from "react";
 import SupportModal from "@/components/SupportModal";
+import { WhatsAppButton } from "@/components/WhatsAppIcon";
 
 export default function Home() {
   const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
