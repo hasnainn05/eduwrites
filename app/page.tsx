@@ -218,96 +218,104 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Left Content */}
-            <div>
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/40 rounded-full px-3 py-1.5 mb-4">
-                <Star size={12} className="text-accent fill-accent" />
-                <span className="text-xs font-semibold text-foreground">
-                  Trusted by 50,000+ Students
-                </span>
-              </div>
-
-              {/* Main Headline - 2 Lines (both large) */}
-              <h1 className="font-bold mb-8 leading-snug font-poppins text-foreground">
-                <div className="text-5xl sm:text-6xl lg:text-7xl">
-                  Achieve Academic <span className="text-accent">Excellence</span>
+        <div className="w-full mx-auto">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              {/* Left Content */}
+              <div>
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 bg-accent/15 border border-accent/40 rounded-full px-3 py-1.5 mb-4">
+                  <Star size={12} className="text-accent fill-accent" />
+                  <span className="text-xs font-semibold text-foreground">
+                    Trusted by 50,000+ Students
+                  </span>
                 </div>
-                <div className="text-5xl sm:text-6xl lg:text-7xl">
-                  with Professional Writing Services
-                </div>
-              </h1>
 
-              {/* Subheading */}
-              <p className="text-sm text-foreground/70 mb-8 leading-relaxed max-w-2xl">
-                Professional, plagiarism-free academic writing from Ph.D. experts. Essays, theses, dissertations delivered on time, every time.
-              </p>
+                {/* Main Headline - 3 Lines */}
+                <h1 className="font-bold mb-8 leading-snug font-poppins text-foreground">
+                  <div className="text-5xl sm:text-6xl lg:text-7xl">
+                    Achieve Academic
+                  </div>
+                  <div className="text-5xl sm:text-6xl lg:text-7xl">
+                    <span className="text-accent">Excellence</span> with Professional
+                  </div>
+                  <div className="text-5xl sm:text-6xl lg:text-7xl">
+                    Writing Services
+                  </div>
+                </h1>
 
-              {/* Trust Indicators - Compact Row */}
-              <div className="flex gap-2 mb-12">
-                <div>
-                  <div className="text-2xl font-bold text-primary mb-1">98%</div>
-                  <p className="text-xs text-foreground/70 whitespace-nowrap">Customer Satisfaction</p>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary mb-1">24/7</div>
-                  <p className="text-xs text-foreground/70 whitespace-nowrap">Expert Support</p>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary mb-1">50+</div>
-                  <p className="text-xs text-foreground/70 whitespace-nowrap">Expert Writers</p>
-                </div>
-              </div>
+                {/* Subheading */}
+                <p className="text-sm text-foreground/70 mb-8 leading-relaxed max-w-2xl">
+                  Professional, plagiarism-free academic writing from Ph.D. experts. Essays, theses, dissertations delivered on time, every time.
+                </p>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="#services"
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Started Now <ArrowRight size={20} />
-                </a>
-                <WhatsAppButton
-                  phoneNumber="13658291551"
-                  message="Hi, I'm interested in EduWrites services"
-                  className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/5 transition-all duration-300"
-                  showIcon={false}
-                  iconSize={20}
-                >
-                  Message Us
-                </WhatsAppButton>
-              </div>
-            </div>
-
-            {/* Right Trust Cards */}
-            <div className="flex flex-col gap-6">
-              {/* 50K+ Card */}
-              <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
-                <div className="text-5xl font-bold text-primary mb-2">50K+</div>
-                <p className="text-foreground/80 font-medium">Satisfied Students</p>
-                <p className="text-sm text-foreground/60 mt-3">Students worldwide trust us for their academic needs</p>
-              </div>
-
-              {/* 100% Card */}
-              <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
-                <div className="text-5xl font-bold text-accent mb-2">100%</div>
-                <p className="text-foreground/80 font-medium">Original Content</p>
-                <p className="text-sm text-foreground/60 mt-3">Plagiarism-free work guaranteed</p>
-              </div>
-
-              {/* Rating Card */}
-              <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
-                <div className="flex items-center gap-4">
+                {/* Trust Indicators - Compact Row */}
+                <div className="flex gap-2 mb-12">
                   <div>
-                    <div className="flex gap-1 mb-2">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
-                      ))}
+                    <div className="text-2xl font-bold text-primary mb-1">98%</div>
+                    <p className="text-xs text-foreground/70 whitespace-nowrap">Customer Satisfaction</p>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-primary mb-1">24/7</div>
+                    <p className="text-xs text-foreground/70 whitespace-nowrap">Expert Support</p>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-primary mb-1">50+</div>
+                    <p className="text-xs text-foreground/70 whitespace-nowrap">Expert Writers</p>
+                  </div>
+                </div>
+
+                {/* CTAs */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="#services"
+                    className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 transform hover:scale-105"
+                  >
+                    Get Started Now <ArrowRight size={20} />
+                  </a>
+                  <WhatsAppButton
+                    phoneNumber="13658291551"
+                    message="Hi, I'm interested in EduWrites services"
+                    className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg font-semibold hover:bg-primary/5 transition-all duration-300"
+                    showIcon={false}
+                    iconSize={20}
+                  >
+                    Message Us
+                  </WhatsAppButton>
+                </div>
+              </div>
+
+              {/* Right Trust Cards */}
+              <div className="flex flex-col gap-6">
+                {/* Top Row - 2 Small Cards */}
+                <div className="grid grid-cols-2 gap-4">
+                  {/* 50K+ Card - Small */}
+                  <div className="bg-white rounded-2xl p-5 shadow-md border border-border hover:shadow-lg transition-all">
+                    <div className="text-4xl font-bold text-primary mb-2">50K+</div>
+                    <p className="text-sm text-foreground/80 font-medium">Satisfied Students</p>
+                    <p className="text-xs text-foreground/60 mt-2">Students trust us</p>
+                  </div>
+
+                  {/* 100% Card - Small */}
+                  <div className="bg-white rounded-2xl p-5 shadow-md border border-border hover:shadow-lg transition-all">
+                    <div className="text-4xl font-bold text-accent mb-2">100%</div>
+                    <p className="text-sm text-foreground/80 font-medium">Original Content</p>
+                    <p className="text-xs text-foreground/60 mt-2">Plagiarism-free</p>
+                  </div>
+                </div>
+
+                {/* Rating Card - Full Width */}
+                <div className="bg-white rounded-2xl p-8 shadow-md border border-border hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-4">
+                    <div>
+                      <div className="flex gap-1 mb-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
+                        ))}
+                      </div>
+                      <p className="text-foreground/80 font-medium">4.9/5 Average Rating</p>
+                      <p className="text-sm text-foreground/60 mt-2">From 2,500+ verified reviews</p>
                     </div>
-                    <p className="text-foreground/80 font-medium">4.9/5 Average Rating</p>
-                    <p className="text-sm text-foreground/60 mt-2">From 2,500+ verified reviews</p>
                   </div>
                 </div>
               </div>
