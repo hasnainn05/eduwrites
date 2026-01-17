@@ -185,14 +185,12 @@ export default function PrivacyPolicy() {
               </p>
               <p className="text-foreground/80">
                 <strong>WhatsApp:</strong>{" "}
-                <a
-                  href="https://wa.me/13658291551"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-cyan-400 hover:text-cyan-300"
-                >
-                  +1 365 8291551
-                </a>
+                <WhatsAppLink
+                  phoneNumber="13658291551"
+                  className="text-[#25D366] hover:text-[#20BA5B] transition-colors"
+                  displayText="+1 365 8291551"
+                  iconSize={14}
+                />
               </p>
               <p className="text-foreground/80">
                 <strong>Contact Page:</strong>{" "}
