@@ -293,7 +293,6 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <p className="text-accent font-semibold mb-3 uppercase tracking-wider">ABOUT US</p>
               <h2 className="text-4xl font-bold text-foreground mb-6 font-poppins">
                 Professional Academic Writing Support for Every Challenge
               </h2>
