@@ -42,7 +42,8 @@ export default function Header() {
             />
             <div className="min-w-0">
               <h1 className="text-[11px] sm:text-sm md:text-base lg:text-lg font-bold font-poppins leading-tight whitespace-nowrap">
-                <span className="text-primary">Edu</span><span className="text-accent">Writes</span>
+                <span className="text-primary">Edu</span>
+                <span className="text-accent">Writes</span>
               </h1>
               <p className="text-foreground/60 text-[8px] sm:text-[9px] md:text-[10px] mt-0 font-medium whitespace-nowrap">
                 We Write, You Shine
@@ -158,7 +159,10 @@ export default function Header() {
                 </a>
               </div>
               <div className="flex items-center gap-1.5 text-foreground/80 hover:text-[#25D366] transition-colors">
-                <WhatsAppLink phoneNumber="13658291551" className="flex items-center gap-1.5 whitespace-nowrap font-medium" />
+                <WhatsAppLink
+                  phoneNumber="13658291551"
+                  className="flex items-center gap-1.5 whitespace-nowrap font-medium"
+                />
               </div>
             </div>
 

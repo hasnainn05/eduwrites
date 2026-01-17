@@ -1129,10 +1129,15 @@ export default function ServiceDetail() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/50 to-white/30">
+      <section
+        id="pricing"
+        className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white/50 to-white/30"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">PRICING</p>
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">
+              PRICING
+            </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
               Simple, Transparent Pricing
             </h2>
@@ -1161,12 +1166,16 @@ export default function ServiceDetail() {
                     </div>
                   )}
 
-                  <h3 className={`text-2xl font-bold mb-2 ${plan.highlighted ? "text-white" : "text-foreground"}`}>
+                  <h3
+                    className={`text-2xl font-bold mb-2 ${plan.highlighted ? "text-white" : "text-foreground"}`}
+                  >
                     {plan.name}
                   </h3>
 
                   <div className="mb-8">
-                    <span className={`text-5xl font-bold ${plan.highlighted ? "text-accent" : "text-primary"}`}>
+                    <span
+                      className={`text-5xl font-bold ${plan.highlighted ? "text-accent" : "text-primary"}`}
+                    >
                       {plan.price}
                     </span>
                   </div>
@@ -1180,7 +1189,13 @@ export default function ServiceDetail() {
                           }`}
                           size={16}
                         />
-                        <span className={plan.highlighted ? "text-white/90 text-sm" : "text-foreground/80 text-sm"}>
+                        <span
+                          className={
+                            plan.highlighted
+                              ? "text-white/90 text-sm"
+                              : "text-foreground/80 text-sm"
+                          }
+                        >
                           {feature}
                         </span>
                       </li>
@@ -1300,12 +1315,15 @@ export default function ServiceDetail() {
       <section className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">FAQ</p>
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">
+              FAQ
+            </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-foreground/70">
-              Get answers to common questions about our academic writing services
+              Get answers to common questions about our academic writing
+              services
             </p>
           </div>
 
@@ -1399,7 +1417,8 @@ export default function ServiceDetail() {
               Still Have Questions?
             </h3>
             <p className="text-foreground/70 mb-6">
-              Our support team is available 24/7 to help answer any questions you may have about our services.
+              Our support team is available 24/7 to help answer any questions
+              you may have about our services.
             </p>
             <button
               onClick={() => setIsSupportModalOpen(true)}

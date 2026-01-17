@@ -120,27 +120,33 @@ export default function Home() {
   const faqs = [
     {
       question: "Is your work plagiarism-free?",
-      answer: "Yes, absolutely. We guarantee 100% original content. Every paper is written from scratch by our expert writers and checked with advanced plagiarism detection software before delivery.",
+      answer:
+        "Yes, absolutely. We guarantee 100% original content. Every paper is written from scratch by our expert writers and checked with advanced plagiarism detection software before delivery.",
     },
     {
       question: "How long does it take to complete an order?",
-      answer: "We offer flexible deadlines ranging from 24 hours to several weeks, depending on your needs. Rush orders are available for urgent submissions.",
+      answer:
+        "We offer flexible deadlines ranging from 24 hours to several weeks, depending on your needs. Rush orders are available for urgent submissions.",
     },
     {
       question: "Can I request revisions?",
-      answer: "Yes! We offer unlimited revisions until you're completely satisfied with the work. Your satisfaction is our priority.",
+      answer:
+        "Yes! We offer unlimited revisions until you're completely satisfied with the work. Your satisfaction is our priority.",
     },
     {
       question: "How do you maintain confidentiality?",
-      answer: "Your privacy is paramount. We keep all personal information and order details strictly confidential. Your work will never be shared with anyone.",
+      answer:
+        "Your privacy is paramount. We keep all personal information and order details strictly confidential. Your work will never be shared with anyone.",
     },
     {
       question: "What payment methods do you accept?",
-      answer: "We accept all major credit cards, debit cards, and secure payment platforms. All transactions are encrypted for your security.",
+      answer:
+        "We accept all major credit cards, debit cards, and secure payment platforms. All transactions are encrypted for your security.",
     },
     {
       question: "Can you write in different academic styles?",
-      answer: "Absolutely! Our writers are experienced in APA, MLA, Chicago, Harvard, and other citation styles. Just specify your requirements.",
+      answer:
+        "Absolutely! Our writers are experienced in APA, MLA, Chicago, Harvard, and other citation styles. Just specify your requirements.",
     },
   ];
 
@@ -215,7 +221,6 @@ export default function Home() {
 
   return (
     <div ref={scrollRef} className="w-full">
-
       {/* Hero Section */}
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="w-full mx-auto">
@@ -233,27 +238,43 @@ export default function Home() {
 
                 {/* Main Headline - 2 Lines */}
                 <h1 className="font-bold mb-8 leading-tight font-poppins text-foreground text-2xl sm:text-3xl lg:text-4xl">
-                  Achieve Academic <span className="text-accent">Excellence</span> with Professional Writing Services
+                  Achieve Academic{" "}
+                  <span className="text-accent">Excellence</span> with
+                  Professional Writing Services
                 </h1>
 
                 {/* Subheading */}
                 <p className="text-sm text-foreground/70 mb-8 leading-relaxed max-w-2xl">
-                  Professional, plagiarism-free academic writing from Ph.D. experts. Essays, theses, dissertations delivered on time, every time.
+                  Professional, plagiarism-free academic writing from Ph.D.
+                  experts. Essays, theses, dissertations delivered on time,
+                  every time.
                 </p>
 
                 {/* Trust Indicators - Compact Row */}
                 <div className="flex gap-2 mb-12">
                   <div>
-                    <div className="text-2xl font-bold text-primary mb-1">98%</div>
-                    <p className="text-xs text-foreground/70 whitespace-nowrap">Customer Satisfaction</p>
+                    <div className="text-2xl font-bold text-primary mb-1">
+                      98%
+                    </div>
+                    <p className="text-xs text-foreground/70 whitespace-nowrap">
+                      Customer Satisfaction
+                    </p>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-primary mb-1">24/7</div>
-                    <p className="text-xs text-foreground/70 whitespace-nowrap">Expert Support</p>
+                    <div className="text-2xl font-bold text-primary mb-1">
+                      24/7
+                    </div>
+                    <p className="text-xs text-foreground/70 whitespace-nowrap">
+                      Expert Support
+                    </p>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-primary mb-1">50+</div>
-                    <p className="text-xs text-foreground/70 whitespace-nowrap">Expert Writers</p>
+                    <div className="text-2xl font-bold text-primary mb-1">
+                      50+
+                    </div>
+                    <p className="text-xs text-foreground/70 whitespace-nowrap">
+                      Expert Writers
+                    </p>
                   </div>
                 </div>
 
@@ -283,16 +304,28 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-4">
                   {/* 50K+ Card - Small */}
                   <div className="bg-white rounded-2xl p-5 shadow-md border border-border hover:shadow-lg transition-all">
-                    <div className="text-4xl font-bold text-primary mb-2">50K+</div>
-                    <p className="text-sm text-foreground/80 font-medium">Satisfied Students</p>
-                    <p className="text-xs text-foreground/60 mt-2">Students trust us</p>
+                    <div className="text-4xl font-bold text-primary mb-2">
+                      50K+
+                    </div>
+                    <p className="text-sm text-foreground/80 font-medium">
+                      Satisfied Students
+                    </p>
+                    <p className="text-xs text-foreground/60 mt-2">
+                      Students trust us
+                    </p>
                   </div>
 
                   {/* 100% Card - Small */}
                   <div className="bg-white rounded-2xl p-5 shadow-md border border-border hover:shadow-lg transition-all">
-                    <div className="text-4xl font-bold text-accent mb-2">100%</div>
-                    <p className="text-sm text-foreground/80 font-medium">Original Content</p>
-                    <p className="text-xs text-foreground/60 mt-2">Plagiarism-free</p>
+                    <div className="text-4xl font-bold text-accent mb-2">
+                      100%
+                    </div>
+                    <p className="text-sm text-foreground/80 font-medium">
+                      Original Content
+                    </p>
+                    <p className="text-xs text-foreground/60 mt-2">
+                      Plagiarism-free
+                    </p>
                   </div>
                 </div>
 
@@ -302,11 +335,19 @@ export default function Home() {
                     <div>
                       <div className="flex gap-1 mb-2">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
+                          <Star
+                            key={i}
+                            size={20}
+                            className="fill-yellow-400 text-yellow-400"
+                          />
                         ))}
                       </div>
-                      <p className="text-foreground/80 font-medium">4.9/5 Average Rating</p>
-                      <p className="text-sm text-foreground/60 mt-2">From 2,500+ verified reviews</p>
+                      <p className="text-foreground/80 font-medium">
+                        4.9/5 Average Rating
+                      </p>
+                      <p className="text-sm text-foreground/60 mt-2">
+                        From 2,500+ verified reviews
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -326,31 +367,50 @@ export default function Home() {
                 Professional Academic Writing Support for Every Challenge
               </h2>
               <p className="text-foreground/80 leading-relaxed mb-4">
-                Student success starts with quality academic work. At EduWrites, we understand the pressures of academic life—tight deadlines, complex assignments, and the need for excellence. Whether you're struggling with essay writing, research papers, or comprehensive dissertations, our expert team is here to help you succeed.
+                Student success starts with quality academic work. At EduWrites,
+                we understand the pressures of academic life—tight deadlines,
+                complex assignments, and the need for excellence. Whether you're
+                struggling with essay writing, research papers, or comprehensive
+                dissertations, our expert team is here to help you succeed.
               </p>
               <p className="text-foreground/80 leading-relaxed mb-4">
-                With over a decade of experience in academic writing, we've helped thousands of students worldwide achieve their educational goals. Our writers hold advanced degrees in their respective fields and are committed to delivering original, high-quality work that meets the highest academic standards.
+                With over a decade of experience in academic writing, we've
+                helped thousands of students worldwide achieve their educational
+                goals. Our writers hold advanced degrees in their respective
+                fields and are committed to delivering original, high-quality
+                work that meets the highest academic standards.
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                From undergraduate essays to PhD dissertations, we provide customized academic writing solutions that are plagiarism-free, properly cited, and delivered on time—every time. Your academic success is our mission.
+                From undergraduate essays to PhD dissertations, we provide
+                customized academic writing solutions that are plagiarism-free,
+                properly cited, and delivered on time—every time. Your academic
+                success is our mission.
               </p>
             </div>
 
             {/* Right Stats */}
             <div className="space-y-6">
               <div className="bg-white rounded-xl p-8 border border-border">
-                <div className="text-4xl font-bold text-primary mb-2">50,000+</div>
-                <p className="text-foreground/80 font-medium">Students Worldwide</p>
+                <div className="text-4xl font-bold text-primary mb-2">
+                  50,000+
+                </div>
+                <p className="text-foreground/80 font-medium">
+                  Students Worldwide
+                </p>
               </div>
 
               <div className="bg-white rounded-xl p-8 border border-border">
                 <div className="text-4xl font-bold text-accent mb-2">98%</div>
-                <p className="text-foreground/80 font-medium">Satisfaction Rate</p>
+                <p className="text-foreground/80 font-medium">
+                  Satisfaction Rate
+                </p>
               </div>
 
               <div className="bg-white rounded-xl p-8 border border-border">
                 <div className="text-4xl font-bold text-primary mb-2">50+</div>
-                <p className="text-foreground/80 font-medium">Expert Writers (PhDs)</p>
+                <p className="text-foreground/80 font-medium">
+                  Expert Writers (PhDs)
+                </p>
               </div>
             </div>
           </div>
@@ -364,12 +424,15 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">OUR SERVICES</p>
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">
+              OUR SERVICES
+            </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
               Comprehensive Academic Support
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Professional writing services for every academic level and discipline
+              Professional writing services for every academic level and
+              discipline
             </p>
           </div>
 
@@ -401,7 +464,11 @@ export default function Home() {
                   </p>
 
                   <div className="flex items-center text-primary font-semibold group-hover:gap-3 transition-all">
-                    Learn More <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                    Learn More{" "}
+                    <ArrowRight
+                      size={18}
+                      className="ml-2 group-hover:translate-x-1 transition-transform"
+                    />
                   </div>
                 </div>
               </Link>
@@ -414,7 +481,9 @@ export default function Home() {
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">SUCCESS STORIES</p>
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">
+              SUCCESS STORIES
+            </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
               Our Impact
             </h2>
@@ -553,12 +622,15 @@ export default function Home() {
       <section className="relative py-24 sm:py-40 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">EXPERTISE</p>
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">
+              EXPERTISE
+            </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
               Coverage Across All Levels & Disciplines
             </h2>
             <p className="text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-              From high school essays to PhD dissertations, we support every academic level and discipline
+              From high school essays to PhD dissertations, we support every
+              academic level and discipline
             </p>
           </div>
 
@@ -599,9 +671,7 @@ export default function Home() {
                   key={idx}
                   className="bg-white rounded-2xl p-8 border border-border hover:shadow-lg hover:border-accent/30 transition-all duration-300"
                 >
-                  <div className="text-5xl mb-4">
-                    {item.icon}
-                  </div>
+                  <div className="text-5xl mb-4">{item.icon}</div>
                   <h4 className="font-bold text-foreground text-lg mb-3">
                     {item.level}
                   </h4>
@@ -712,9 +782,7 @@ export default function Home() {
                   key={idx}
                   className="bg-white rounded-2xl p-6 border border-border hover:shadow-lg hover:border-accent/30 transition-all duration-300 text-center"
                 >
-                  <p className="text-5xl mb-3">
-                    {lang.flag}
-                  </p>
+                  <p className="text-5xl mb-3">{lang.flag}</p>
                   <p className="font-semibold text-foreground text-sm">
                     {lang.lang}
                   </p>
@@ -747,9 +815,7 @@ export default function Home() {
                   key={idx}
                   className="bg-white rounded-lg p-4 border border-border hover:shadow-md hover:border-accent/30 transition-all duration-300 text-center"
                 >
-                  <span className="text-2xl block mb-2">
-                    {field.icon}
-                  </span>
+                  <span className="text-2xl block mb-2">{field.icon}</span>
                   <h4 className="text-xs font-semibold text-foreground leading-tight">
                     {field.category}
                   </h4>
@@ -763,7 +829,8 @@ export default function Home() {
                 Can't Find Your Field?
               </h3>
               <p className="text-foreground/80 mb-6 max-w-2xl mx-auto text-sm leading-relaxed">
-                Our expert writers cover virtually every academic discipline. If your field isn't listed, we still support it.
+                Our expert writers cover virtually every academic discipline. If
+                your field isn't listed, we still support it.
               </p>
               <button
                 onClick={() => setIsSupportModalOpen(true)}
@@ -780,12 +847,15 @@ export default function Home() {
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">WHY CHOOSE US</p>
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">
+              WHY CHOOSE US
+            </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
               Why EduWrites?
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              We combine expertise, reliability, and dedication to your academic success
+              We combine expertise, reliability, and dedication to your academic
+              success
             </p>
           </div>
 
@@ -796,9 +866,7 @@ export default function Home() {
                 className="bg-white rounded-2xl p-8 border border-border hover:shadow-lg hover:border-accent/30 transition-all duration-300"
                 style={{ animationDelay: `${(index % 3) * 0.1}s` }}
               >
-                <div className="flex-shrink-0 text-5xl mb-4">
-                  {item.icon}
-                </div>
+                <div className="flex-shrink-0 text-5xl mb-4">{item.icon}</div>
 
                 <h3 className="font-bold text-foreground mb-3 text-lg">
                   {item.title}
@@ -817,7 +885,9 @@ export default function Home() {
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">TESTIMONIALS</p>
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">
+              TESTIMONIALS
+            </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
               What Our Students Say
             </h2>
@@ -877,7 +947,8 @@ export default function Home() {
             </h2>
 
             <p className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto">
-              Join 50,000+ students who've improved their grades with EduWrites. Get started with a free consultation today.
+              Join 50,000+ students who've improved their grades with EduWrites.
+              Get started with a free consultation today.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -902,7 +973,9 @@ export default function Home() {
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">FREQUENTLY ASKED QUESTIONS</p>
+            <p className="text-accent font-semibold mb-3 uppercase tracking-wider">
+              FREQUENTLY ASKED QUESTIONS
+            </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 font-poppins">
               Common Questions
             </h2>
@@ -918,14 +991,18 @@ export default function Home() {
                 className="bg-white rounded-xl border border-border overflow-hidden hover:shadow-md transition-all duration-300"
               >
                 <button
-                  onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
+                  onClick={() =>
+                    setExpandedFAQ(expandedFAQ === index ? null : index)
+                  }
                   className="w-full flex items-center justify-between p-6 text-left hover:bg-primary/5 transition-colors"
                 >
                   <h3 className="text-lg font-semibold text-foreground pr-4">
                     {faq.question}
                   </h3>
                   <div className="flex-shrink-0">
-                    <div className={`w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center transition-transform duration-300 ${expandedFAQ === index ? 'rotate-180' : ''}`}>
+                    <div
+                      className={`w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center transition-transform duration-300 ${expandedFAQ === index ? "rotate-180" : ""}`}
+                    >
                       <svg
                         className="w-4 h-4 text-accent"
                         fill="none"

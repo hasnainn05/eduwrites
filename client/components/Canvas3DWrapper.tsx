@@ -26,8 +26,9 @@ export function Canvas3DWrapper() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: 'linear-gradient(0deg, transparent 24%, rgba(31,41,55,.04) 25%, rgba(31,41,55,.04) 26%, transparent 27%, transparent 74%, rgba(31,41,55,.04) 75%, rgba(31,41,55,.04) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(31,41,55,.04) 25%, rgba(31,41,55,.04) 26%, transparent 27%, transparent 74%, rgba(31,41,55,.04) 75%, rgba(31,41,55,.04) 76%, transparent 77%, transparent)',
-            backgroundSize: '60px 60px'
+            backgroundImage:
+              "linear-gradient(0deg, transparent 24%, rgba(31,41,55,.04) 25%, rgba(31,41,55,.04) 26%, transparent 27%, transparent 74%, rgba(31,41,55,.04) 75%, rgba(31,41,55,.04) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(31,41,55,.04) 25%, rgba(31,41,55,.04) 26%, transparent 27%, transparent 74%, rgba(31,41,55,.04) 75%, rgba(31,41,55,.04) 76%, transparent 77%, transparent)",
+            backgroundSize: "60px 60px",
           }}
         ></div>
       </div>

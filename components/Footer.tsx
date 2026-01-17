@@ -2,13 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  Facebook,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Mail,
-} from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, Mail } from "lucide-react";
 import { WhatsAppLink } from "./WhatsAppIcon";
 
 export default function Footer() {
@@ -46,21 +40,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
           {/* Brand Section */}
           <div className="col-span-1 flex flex-col items-start">
-            <Link
-              href="/"
-              className="flex items-center gap-2 mb-4"
-            >
+            <Link href="/" className="flex items-center gap-2 mb-4">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F360dd9d64b604bb58688c9e51710ce3e%2F118b262353ba4908905314ab922751d3?format=webp&width=800"
                 alt="EduWrites Logo"
                 className="w-[46px] h-[46px] sm:w-[51px] sm:h-[51px] flex-shrink-0"
               />
-              <span className="font-bold text-lg text-primary">
-                EduWrites
-              </span>
+              <span className="font-bold text-lg text-primary">EduWrites</span>
             </Link>
             <p className="text-foreground/70 text-sm mb-4">
-              Professional academic writing services trusted by 50,000+ students.
+              Professional academic writing services trusted by 50,000+
+              students.
             </p>
             <div className="flex gap-4">
               <a
@@ -92,9 +82,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4 text-foreground">
-              Services
-            </h4>
+            <h4 className="font-semibold mb-4 text-foreground">Services</h4>
             <ul className="space-y-2">
               {services.map((item) => (
                 <li key={item.path}>
@@ -111,9 +99,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4 text-foreground">
-              Company
-            </h4>
+            <h4 className="font-semibold mb-4 text-foreground">Company</h4>
             <ul className="space-y-2">
               {company.map((item) => (
                 <li key={item.path}>
@@ -130,9 +116,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold mb-4 text-foreground">
-              Legal
-            </h4>
+            <h4 className="font-semibold mb-4 text-foreground">Legal</h4>
             <ul className="space-y-2">
               {legal.map((item) => (
                 <li key={item.path}>
@@ -149,16 +133,18 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4 text-foreground">
-              Contact
-            </h4>
+            <h4 className="font-semibold mb-4 text-foreground">Contact</h4>
             <div className="space-y-3 text-foreground/70 text-sm">
               <div className="flex items-start gap-2">
                 <Mail size={16} className="mt-1 flex-shrink-0 text-primary" />
                 <span>info@eduwrites.com</span>
               </div>
               <div className="flex items-start gap-2">
-                <WhatsAppLink phoneNumber="13658291551" className="flex items-center gap-2 hover:text-[#25D366] transition-colors" iconSize={16} />
+                <WhatsAppLink
+                  phoneNumber="13658291551"
+                  className="flex items-center gap-2 hover:text-[#25D366] transition-colors"
+                  iconSize={16}
+                />
               </div>
             </div>
           </div>
