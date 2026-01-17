@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-4 text-sidebar-foreground">
+            <h4 className="font-semibold mb-4 text-foreground">
               Services
             </h4>
             <ul className="space-y-2">
@@ -100,7 +100,7 @@ export default function Footer() {
                 <li key={item.path}>
                   <Link
                     href={item.path}
-                    className="text-sidebar-foreground/60 hover:text-sidebar-foreground transition-colors"
+                    className="text-foreground/70 hover:text-primary transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -111,7 +111,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4 text-sidebar-foreground">
+            <h4 className="font-semibold mb-4 text-foreground">
               Company
             </h4>
             <ul className="space-y-2">
@@ -119,7 +119,7 @@ export default function Footer() {
                 <li key={item.path}>
                   <Link
                     href={item.path}
-                    className="text-sidebar-foreground/60 hover:text-sidebar-foreground transition-colors"
+                    className="text-foreground/70 hover:text-primary transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -130,7 +130,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="font-semibold mb-4 text-sidebar-foreground">
+            <h4 className="font-semibold mb-4 text-foreground">
               Legal
             </h4>
             <ul className="space-y-2">
@@ -138,7 +138,7 @@ export default function Footer() {
                 <li key={item.path}>
                   <Link
                     href={item.path}
-                    className="text-sidebar-foreground/60 hover:text-sidebar-foreground transition-colors"
+                    className="text-foreground/70 hover:text-primary transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -149,12 +149,12 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4 text-sidebar-foreground">
+            <h4 className="font-semibold mb-4 text-foreground">
               Contact
             </h4>
-            <div className="space-y-3 text-sidebar-foreground/60 text-sm">
+            <div className="space-y-3 text-foreground/70 text-sm">
               <div className="flex items-start gap-2">
-                <Mail size={16} className="mt-1 flex-shrink-0" />
+                <Mail size={16} className="mt-1 flex-shrink-0 text-primary" />
                 <span>info@eduwrites.com</span>
               </div>
               <div className="flex items-start gap-2">
@@ -162,9 +162,9 @@ export default function Footer() {
                   href="https://wa.me/13658291551"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-sidebar-foreground transition-colors"
+                  className="flex items-center gap-2 hover:text-primary transition-colors"
                 >
-                  <MessageCircle size={16} className="flex-shrink-0" />
+                  <MessageCircle size={16} className="flex-shrink-0 text-accent" />
                   <span>+1 365 8291551</span>
                 </a>
               </div>
@@ -173,27 +173,27 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-sidebar-border pt-8 mt-8">
+        <div className="border-t border-border pt-8 mt-8">
           <div className="flex flex-col items-center justify-center gap-4">
-            <p className="text-sidebar-foreground/60 text-sm text-center">
+            <p className="text-foreground/70 text-sm text-center">
               &copy; {currentYear} EduWrites. All rights reserved.
             </p>
             <div className="flex gap-4 justify-center">
               <a
                 href="#"
-                className="text-sidebar-foreground/60 hover:text-sidebar-foreground text-sm transition-colors"
+                className="text-foreground/70 hover:text-primary text-sm transition-colors"
               >
                 Status
               </a>
               <a
                 href="#"
-                className="text-sidebar-foreground/60 hover:text-sidebar-foreground text-sm transition-colors"
+                className="text-foreground/70 hover:text-primary text-sm transition-colors"
               >
                 Support
               </a>
               <a
                 href="#"
-                className="text-sidebar-foreground/60 hover:text-sidebar-foreground text-sm transition-colors"
+                className="text-foreground/70 hover:text-primary text-sm transition-colors"
               >
                 Feedback
               </a>
