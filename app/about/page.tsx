@@ -72,14 +72,14 @@ export default function About() {
       <section className="relative py-24 sm:py-40 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
-            <h1 className="text-5xl sm:text-7xl font-bold text-foreground mb-6 font-poppins leading-tight">
+            <h1 className="text-6xl sm:text-8xl font-bold text-foreground mb-6 font-poppins leading-tight">
               About{" "}
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
                 EduWrites
               </span>
             </h1>
 
-            <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-8">
+            <p className="text-2xl text-foreground/90 max-w-2xl mx-auto mb-8 leading-relaxed font-medium">
               Empowering students worldwide with expert academic writing
               services since 2015. We believe every student deserves access to
               high-quality academic support.
