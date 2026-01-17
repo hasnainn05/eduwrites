@@ -145,18 +145,18 @@ export default function Login() {
             {/* Logo */}
             <div className="text-center mb-8">
               <Link href="/" className="inline-block">
-                <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
+                <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent font-poppins">
                   EduWrites
-                </h1>
+                </h2>
                 <p className="text-foreground/60 text-sm mt-1">Welcome Back</p>
               </Link>
             </div>
 
             {/* Main Card */}
             <div className="glass p-8 rounded-2xl mb-6">
-              <h2 className="text-2xl font-bold text-foreground mb-6 font-poppins">
-                Sign In to Your Account
-              </h2>
+              <h1 className="text-2xl font-bold text-foreground mb-6 font-poppins">
+                Sign In for Professional Academic Writing Services
+              </h1>
 
               {error && (
                 <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-3 mb-6">
