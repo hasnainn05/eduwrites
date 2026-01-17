@@ -583,9 +583,9 @@ const servicesData: Record<string, ServiceData> = {
     subtitle: "Professional Document Refinement",
     Icon: Pencil,
     heroGradient: "from-yellow-50 to-orange-50",
-    aboutTitle: "About Proofreading & Editing",
+    aboutTitle: "Professional Proofreading and Editing Services",
     aboutContent:
-      "Our professional proofreading and editing services help polish your academic work to perfection. We provide comprehensive editing that includes grammar correction, punctuation refinement, style improvement, and clarity enhancement. Our experienced editors review your work for consistency, flow, and academic tone while preserving your unique voice and original ideas. Whether you need light proofreading or intensive editing, our services ensure your document meets the highest professional standards. We work with essays, research papers, theses, dissertations, and any other academic documents to ensure they are polished and ready for submission.",
+      "Our professional proofreading and editing services help polish your academic work to perfection. We provide comprehensive editing services that include grammar correction, punctuation refinement, style improvement, clarity enhancement, and proofreading. Our experienced proofreading editors review your work for consistency, flow, and academic tone while preserving your unique voice and original ideas. Whether you need professional proofreading services, professional editing services, or comprehensive proofreading and editing, our proofreading experts ensure your document meets the highest professional standards. We provide proofreading help and editing support for essays, research papers, theses, dissertations, and any other academic documents to ensure they are polished and ready for submission. Get affordable proofreading and editing services online with quick turnaround times.",
     featuresTitle: "What's Included in Our Service",
     features: [
       "Comprehensive grammar and spelling check",
