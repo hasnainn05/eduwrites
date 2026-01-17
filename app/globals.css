@@ -130,6 +130,15 @@
     box-shadow: 0 0 30px rgba(260, 100, 60, 0.15);
   }
 
+  /* Professional Card Styling for Light Theme */
+  .card-premium {
+    @apply bg-white rounded-2xl border border-border shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .card-elevated {
+    @apply bg-white rounded-2xl border border-border shadow-md hover:shadow-lg transition-all duration-300;
+  }
+
   .group-hover-lift:hover {
     @apply translate-y-[-8px] transition-all duration-300;
   }
