@@ -708,7 +708,7 @@ export default function Profile() {
                           onChange={(e) =>
                             setEditData({ ...editData, email: e.target.value })
                           }
-                          className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-cyan-400"
+                          className="w-full bg-white border-2 border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-primary"
                         />
                       </div>
 
@@ -722,7 +722,7 @@ export default function Profile() {
                           onChange={(e) =>
                             setEditData({ ...editData, phone: e.target.value })
                           }
-                          className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-cyan-400"
+                          className="w-full bg-white border-2 border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-primary"
                         />
                       </div>
 
@@ -737,7 +737,7 @@ export default function Profile() {
                             onChange={(e) =>
                               setEditData({ ...editData, city: e.target.value })
                             }
-                            className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-cyan-400"
+                            className="w-full bg-white border-2 border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-primary"
                           />
                         </div>
                         <div>
@@ -753,7 +753,7 @@ export default function Profile() {
                                 country: e.target.value,
                               })
                             }
-                            className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-cyan-400"
+                            className="w-full bg-white border-2 border-border rounded-lg px-3 py-2 text-sm text-foreground focus:outline-none focus:border-primary"
                           />
                         </div>
                       </div>
