@@ -128,13 +128,13 @@ export default function Contact() {
       <section className="relative py-24 sm:py-40 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
-            <h1 className="text-5xl sm:text-7xl font-bold text-foreground mb-6 font-poppins leading-tight">
+            <h1 className="text-6xl sm:text-8xl font-bold text-foreground mb-6 font-poppins leading-tight">
               Get in Touch with{" "}
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
                 EduWrites
               </span>
             </h1>
-            <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-8">
+            <p className="text-2xl text-foreground/90 max-w-2xl mx-auto mb-8 leading-relaxed font-medium">
               Have questions about our services? Want to discuss your academic
               needs? We're here to help. Get in touch with our team today.
             </p>
@@ -156,20 +156,20 @@ export default function Contact() {
                       target: "_blank",
                       rel: "noopener noreferrer",
                     })}
-                    className="glass p-8 rounded-2xl hover:bg-white/20 transition-all text-center group h-full flex flex-col justify-center"
+                    className="bg-white border-4 border-border p-8 rounded-2xl hover:shadow-lg transition-all text-center group h-full flex flex-col justify-center shadow-md"
                   >
-                    <div className="flex justify-center mb-4">
-                      <div className="text-cyan-400 group-hover:scale-110 transition-transform">
+                    <div className="flex justify-center mb-6">
+                      <div className="text-cyan-400 group-hover:scale-110 transition-transform text-5xl">
                         {method.icon}
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">
+                    <h3 className="text-2xl font-bold text-foreground mb-3">
                       {method.title}
                     </h3>
-                    <p className="text-sm text-foreground/70 mb-3">
+                    <p className="text-base text-foreground/80 mb-4 font-medium">
                       {method.description}
                     </p>
-                    <p className="text-base font-semibold text-cyan-400">
+                    <p className="text-lg font-bold text-cyan-400">
                       {method.contact}
                     </p>
                   </a>
@@ -201,11 +201,11 @@ export default function Contact() {
               </Link>
             </div>
           ) : (
-            <div className="glass p-8 sm:p-12 rounded-2xl">
-              <h2 className="text-3xl font-bold text-foreground mb-2 font-poppins">
+            <div className="bg-white border-4 border-border p-10 sm:p-14 rounded-2xl shadow-lg">
+              <h2 className="text-4xl font-bold text-foreground mb-3 font-poppins">
                 Send us a Message
               </h2>
-              <p className="text-foreground/70 mb-8">
+              <p className="text-foreground/85 mb-8 text-lg font-medium">
                 Fill out the form below and we'll respond to you within 24
                 hours.
               </p>
@@ -213,8 +213,8 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-foreground/90 mb-2 flex items-center gap-2">
-                      <User size={16} />
+                    <label className="block text-base font-bold text-foreground/95 mb-2 flex items-center gap-2">
+                      <User size={18} />
                       Your Name *
                     </label>
                     <input
@@ -224,12 +224,12 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="John Doe"
-                      className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
+                      className="w-full bg-white border-3 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground/90 mb-2 flex items-center gap-2">
-                      <Mail size={16} />
+                    <label className="block text-base font-bold text-foreground/95 mb-2 flex items-center gap-2">
+                      <Mail size={18} />
                       Your Email *
                     </label>
                     <input
@@ -239,16 +239,16 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="john@example.com"
-                      className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
+                      className="w-full bg-white border-3 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground/90 mb-2 flex items-center gap-2">
-                    <MessageCircle size={16} />
+                  <label className="block text-base font-bold text-foreground/95 mb-2 flex items-center gap-2">
+                    <MessageCircle size={18} />
                     WhatsApp Number{" "}
-                    <span className="text-foreground/50">(Optional)</span>
+                    <span className="text-foreground/60 font-medium">(Optional)</span>
                   </label>
                   <input
                     type="tel"
@@ -256,13 +256,13 @@ export default function Contact() {
                     value={formData.whatsapp}
                     onChange={handleChange}
                     placeholder="+1 (555) 123-4567"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
+                    className="w-full bg-white border-3 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground/90 mb-2 flex items-center gap-2">
-                    <FileText size={16} />
+                  <label className="block text-base font-bold text-foreground/95 mb-2 flex items-center gap-2">
+                    <FileText size={18} />
                     Subject *
                   </label>
                   <input
@@ -272,13 +272,13 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="How can we help you?"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors"
+                    className="w-full bg-white border-3 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors font-medium"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground/90 mb-2 flex items-center gap-2">
-                    <MessageCircle size={16} />
+                  <label className="block text-base font-bold text-foreground/95 mb-2 flex items-center gap-2">
+                    <MessageCircle size={18} />
                     Message *
                   </label>
                   <textarea
@@ -288,7 +288,7 @@ export default function Contact() {
                     required
                     placeholder="Please describe your inquiry or issue..."
                     rows={5}
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+                    className="w-full bg-white border-3 border-border rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary focus:border-4 transition-colors resize-none font-medium"
                   />
                 </div>
 
@@ -315,16 +315,16 @@ export default function Contact() {
             {faqItems.map((item, index) => (
               <details
                 key={index}
-                className="glass rounded-xl p-6 hover:bg-white/20 transition-all group cursor-pointer"
+                className="bg-white rounded-xl border-3 border-border p-6 hover:shadow-md transition-all group cursor-pointer shadow-sm"
               >
-                <summary className="flex gap-4 items-start text-lg font-semibold text-foreground hover:text-cyan-400 transition-colors">
+                <summary className="flex gap-4 items-start text-xl font-bold text-foreground hover:text-cyan-400 transition-colors">
                   <MessageSquare
-                    size={20}
+                    size={24}
                     className="flex-shrink-0 mt-1 text-cyan-400"
                   />
                   <span>{item.question}</span>
                 </summary>
-                <p className="text-foreground/80 mt-4 ml-6 leading-relaxed">
+                <p className="text-foreground/85 mt-4 ml-6 leading-relaxed text-lg font-medium">
                   {item.answer}
                 </p>
               </details>
