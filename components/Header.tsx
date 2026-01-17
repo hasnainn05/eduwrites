@@ -55,29 +55,29 @@ export default function Header() {
               <Link
                 key={item.path}
                 href={item.path}
-                className="text-[10px] lg:text-[11px] font-medium text-foreground/80 hover:text-cyan-400 transition-colors relative group whitespace-nowrap"
+                className="text-[10px] lg:text-[11px] font-medium text-foreground hover:text-primary transition-colors relative group whitespace-nowrap"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
 
             {/* Services Dropdown */}
             <div className="relative group">
-              <button className="text-[10px] lg:text-[11px] font-medium text-foreground/80 hover:text-cyan-400 transition-colors relative whitespace-nowrap flex items-center gap-1 py-2">
+              <button className="text-[10px] lg:text-[11px] font-medium text-foreground hover:text-primary transition-colors relative whitespace-nowrap flex items-center gap-1 py-2">
                 Services
                 <ChevronDown
                   size={12}
                   className="transform group-hover:rotate-180 transition-transform"
                 />
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
               </button>
-              <div className="absolute left-0 mt-0 w-max bg-black/95 backdrop-blur-md border border-white/20 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 z-50 shadow-glow">
+              <div className="absolute left-0 mt-0 w-max bg-white border border-border rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 z-50 shadow-lg">
                 {services.map((service) => (
                   <Link
                     key={service.id}
                     href={`/services/${service.slug}`}
-                    className="block px-4 py-2 text-[9px] lg:text-[10px] text-foreground/80 hover:text-cyan-400 hover:bg-white/10 transition-colors whitespace-nowrap"
+                    className="block px-4 py-2 text-[9px] lg:text-[10px] text-foreground hover:text-primary hover:bg-primary/5 transition-colors whitespace-nowrap"
                   >
                     {service.title}
                   </Link>
@@ -87,19 +87,19 @@ export default function Header() {
 
             {/* Fields of Study Dropdown */}
             <div className="relative group">
-              <button className="text-[10px] lg:text-[11px] font-medium text-foreground/80 hover:text-cyan-400 transition-colors relative whitespace-nowrap flex items-center gap-1 py-2">
+              <button className="text-[10px] lg:text-[11px] font-medium text-foreground hover:text-primary transition-colors relative whitespace-nowrap flex items-center gap-1 py-2">
                 Fields of Study
                 <ChevronDown
                   size={12}
                   className="transform group-hover:rotate-180 transition-transform"
                 />
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
               </button>
-              <div className="absolute left-0 mt-0 w-max bg-black/95 backdrop-blur-md border border-white/20 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 z-50 shadow-glow max-w-xs">
+              <div className="absolute left-0 mt-0 w-max bg-white border border-border rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 z-50 shadow-lg max-w-xs">
                 {fieldsOfStudy.map((field, idx) => (
                   <div
                     key={idx}
-                    className="block w-full text-left px-4 py-2 text-[9px] lg:text-[10px] text-foreground/80 whitespace-nowrap"
+                    className="block w-full text-left px-4 py-2 text-[9px] lg:text-[10px] text-foreground whitespace-nowrap hover:text-primary hover:bg-primary/5"
                   >
                     <span className="mr-2">{field.icon}</span>
                     {field.category}
@@ -110,19 +110,19 @@ export default function Header() {
 
             {/* Languages Dropdown */}
             <div className="relative group">
-              <button className="text-[10px] lg:text-[11px] font-medium text-foreground/80 hover:text-cyan-400 transition-colors relative whitespace-nowrap flex items-center gap-1 py-2">
+              <button className="text-[10px] lg:text-[11px] font-medium text-foreground hover:text-primary transition-colors relative whitespace-nowrap flex items-center gap-1 py-2">
                 Languages
                 <ChevronDown
                   size={12}
                   className="transform group-hover:rotate-180 transition-transform"
                 />
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
               </button>
-              <div className="absolute left-0 mt-0 w-max bg-black/95 backdrop-blur-md border border-white/20 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 z-50 shadow-glow">
+              <div className="absolute left-0 mt-0 w-max bg-white border border-border rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 z-50 shadow-lg">
                 {languages.map((language, idx) => (
                   <div
                     key={idx}
-                    className="block w-full text-left px-4 py-2 text-[9px] lg:text-[10px] text-foreground/80 whitespace-nowrap"
+                    className="block w-full text-left px-4 py-2 text-[9px] lg:text-[10px] text-foreground whitespace-nowrap hover:text-primary hover:bg-primary/5"
                   >
                     <span className="mr-2">{language.flag}</span>
                     {language.lang}
@@ -136,10 +136,10 @@ export default function Header() {
               <Link
                 key={item.path}
                 href={item.path}
-                className="text-[10px] lg:text-[11px] font-medium text-foreground/80 hover:text-cyan-400 transition-colors relative group whitespace-nowrap"
+                className="text-[10px] lg:text-[11px] font-medium text-foreground hover:text-primary transition-colors relative group whitespace-nowrap"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
           </nav>
