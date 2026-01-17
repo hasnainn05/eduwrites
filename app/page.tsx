@@ -521,31 +521,21 @@ export default function Home() {
             ].map((project, index) => (
               <div
                 key={index}
-                className="group relative glass p-8 rounded-2xl border border-white/10 hover:border-white/30 overflow-hidden transition-all duration-500 transform hover:-translate-y-2 scroll-animate"
-                style={{ animationDelay: `${(index % 3) * 0.1}s` }}
+                className="group relative bg-white rounded-2xl p-8 border border-border hover:shadow-lg hover:border-accent/30 overflow-hidden transition-all duration-500"
               >
-                {/* Gradient Background Effect */}
-                <div
-                  className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 rounded-full blur-3xl transition-all duration-500`}
-                ></div>
-
                 <div className="relative z-10">
                   {/* Header with Icon */}
                   <div className="flex items-start justify-between mb-6">
-                    <div
-                      className={`p-3 rounded-xl bg-gradient-to-br ${project.color} bg-opacity-20 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <project.Icon size={28} className="text-white" />
+                    <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-accent/15 transition-all">
+                      <project.Icon size={28} className="text-primary" />
                     </div>
-                    <div
-                      className={`px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${project.color} bg-opacity-20 border border-white/20`}
-                    >
+                    <div className="px-3 py-1 rounded-full text-xs font-bold bg-accent/20 text-accent border border-accent/30">
                       {project.metric}
                     </div>
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-sm text-foreground/70 mb-4 font-medium">
@@ -557,7 +547,7 @@ export default function Home() {
                   </p>
 
                   {/* Footer */}
-                  <div className="border-t border-white/10 pt-4 flex items-center justify-between">
+                  <div className="border-t border-border pt-4 flex items-center justify-between">
                     <div>
                       <p className="text-xs text-foreground/60 mb-1">
                         Client Organization
@@ -568,7 +558,7 @@ export default function Home() {
                     </div>
                     <ArrowRight
                       size={18}
-                      className="text-cyan-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300"
+                      className="text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300"
                     />
                   </div>
                 </div>
