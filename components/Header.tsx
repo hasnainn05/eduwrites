@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import { Mail, User, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { services, fieldsOfStudy, languages } from "@/lib/headerData";
+import { blogCategories } from "@/lib/blogData";
 import { WhatsAppIcon, WhatsAppLink, WhatsAppButton } from "./WhatsAppIcon";
 
 export default function Header() {
@@ -138,6 +139,33 @@ export default function Header() {
                     <span className="mr-2">{language.flag}</span>
                     {language.lang}
                   </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Blog Dropdown */}
+            <div className="relative group">
+              <Link
+                href="/blog"
+                className="text-[10px] lg:text-[11px] font-medium text-foreground hover:text-primary transition-colors relative whitespace-nowrap flex items-center gap-1 py-2"
+              >
+                Blog
+                <ChevronDown
+                  size={12}
+                  className="transform group-hover:rotate-180 transition-transform"
+                />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+              </Link>
+              <div className="absolute left-0 mt-0 bg-white border border-border rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 z-50 shadow-lg max-h-96 overflow-y-auto w-max">
+                {blogCategories.map((blog) => (
+                  <Link
+                    key={blog.id}
+                    href={`/blog/${blog.slug}`}
+                    className="block px-4 py-2 text-[9px] lg:text-[10px] text-foreground hover:text-primary hover:bg-primary/5 transition-colors whitespace-nowrap"
+                  >
+                    <span className="mr-2">{blog.flag}</span>
+                    {blog.title}
+                  </Link>
                 ))}
               </div>
             </div>
@@ -309,6 +337,26 @@ export default function Header() {
                         <span className="mr-1">{language.flag}</span>
                         {language.lang}
                       </div>
+                    ))}
+                  </div>
+                </details>
+
+                {/* Mobile Blog Dropdown */}
+                <details className="group">
+                  <summary className="cursor-pointer block text-[9px] font-medium text-foreground hover:text-primary transition-colors py-0.5 px-1 list-none">
+                    Blog
+                  </summary>
+                  <div className="pl-3 space-y-0.5 mt-0.5">
+                    {blogCategories.map((blog) => (
+                      <Link
+                        key={blog.id}
+                        href={`/blog/${blog.slug}`}
+                        onClick={closeMenu}
+                        className="block text-[8px] font-medium text-foreground hover:text-primary transition-colors py-0.5 px-1"
+                      >
+                        <span className="mr-1">{blog.flag}</span>
+                        {blog.title}
+                      </Link>
                     ))}
                   </div>
                 </details>
