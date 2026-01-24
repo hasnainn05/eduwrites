@@ -5,7 +5,12 @@ export const metadata: Metadata = {
   title: "Blog | EduWrites - Thesis & Dissertation Writing Services",
   description:
     "Explore our comprehensive blog covering thesis and dissertation writing services for universities worldwide.",
-  keywords: ["blog", "thesis writing", "dissertation writing", "academic writing"],
+  keywords: [
+    "blog",
+    "thesis writing",
+    "dissertation writing",
+    "academic writing",
+  ],
   alternates: {
     canonical: "https://eduwrites.com/blog",
   },

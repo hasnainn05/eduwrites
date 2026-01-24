@@ -96,13 +96,22 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="flex items-center gap-4">
               <span className="font-semibold text-foreground">Share:</span>
               <div className="flex gap-3">
-                <button className="p-2 rounded-lg bg-blue-500/10 text-blue-600 hover:bg-blue-500/20 transition-all" title="Share on Facebook">
+                <button
+                  className="p-2 rounded-lg bg-blue-500/10 text-blue-600 hover:bg-blue-500/20 transition-all"
+                  title="Share on Facebook"
+                >
                   <Share2 size={18} />
                 </button>
-                <button className="p-2 rounded-lg bg-cyan-500/10 text-cyan-600 hover:bg-cyan-500/20 transition-all" title="Share on Twitter">
+                <button
+                  className="p-2 rounded-lg bg-cyan-500/10 text-cyan-600 hover:bg-cyan-500/20 transition-all"
+                  title="Share on Twitter"
+                >
                   <Share2 size={18} />
                 </button>
-                <button className="p-2 rounded-lg bg-green-500/10 text-green-600 hover:bg-green-500/20 transition-all" title="Share on LinkedIn">
+                <button
+                  className="p-2 rounded-lg bg-green-500/10 text-green-600 hover:bg-green-500/20 transition-all"
+                  title="Share on LinkedIn"
+                >
                   <Share2 size={18} />
                 </button>
               </div>
@@ -116,7 +125,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             Ready to Get Professional Writing Support?
           </h2>
           <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
-            Our expert writers specialize in {blog.type.toLowerCase()} writing for {blog.country} universities. Get started with a free consultation.
+            Our expert writers specialize in {blog.type.toLowerCase()} writing
+            for {blog.country} universities. Get started with a free
+            consultation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

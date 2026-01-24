@@ -19,14 +19,15 @@ export default function BlogPage() {
             Blog & Resources
           </h1>
           <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
-            Comprehensive guides and resources for thesis and dissertation writing services across universities worldwide
+            Comprehensive guides and resources for thesis and dissertation
+            writing services across universities worldwide
           </p>
         </div>
 
         {/* Blog Posts organized by Country */}
         {countries.map((country) => {
           const countryBlogs = blogCategories.filter(
-            (blog) => blog.country === country.name
+            (blog) => blog.country === country.name,
           );
 
           return (
@@ -65,7 +66,9 @@ export default function BlogPage() {
                       </h3>
 
                       <p className="text-sm text-foreground/70 mb-4 line-clamp-2">
-                        Professional {blog.type.toLowerCase()} writing services tailored for {blog.country} universities and academic standards.
+                        Professional {blog.type.toLowerCase()} writing services
+                        tailored for {blog.country} universities and academic
+                        standards.
                       </p>
 
                       <div className="flex items-center text-primary font-semibold text-sm group-hover:gap-2 gap-1 transition-all">
@@ -89,7 +92,8 @@ export default function BlogPage() {
             Need Professional Writing Assistance?
           </h2>
           <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
-            Our expert writers are ready to help you with your thesis or dissertation. Contact us today for a free consultation.
+            Our expert writers are ready to help you with your thesis or
+            dissertation. Contact us today for a free consultation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

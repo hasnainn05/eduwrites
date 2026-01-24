@@ -143,7 +143,8 @@ export const countries = [
 export const blogContent = {
   "thesis-uk": {
     title: "Thesis Writing Services for UK",
-    description: "Professional thesis writing assistance tailored for UK universities",
+    description:
+      "Professional thesis writing assistance tailored for UK universities",
     country: "UK",
     type: "Thesis",
     content: `
@@ -180,7 +181,8 @@ export const blogContent = {
   },
   "dissertation-uk": {
     title: "Dissertation Writing for UK",
-    description: "Comprehensive dissertation writing support for UK postgraduate students",
+    description:
+      "Comprehensive dissertation writing support for UK postgraduate students",
     country: "UK",
     type: "Dissertation",
     content: `
@@ -206,7 +208,8 @@ export const blogContent = {
   },
   "thesis-usa": {
     title: "Thesis Writing Services for USA",
-    description: "Expert thesis writing for US universities and college standards",
+    description:
+      "Expert thesis writing for US universities and college standards",
     country: "USA",
     type: "Thesis",
     content: `
@@ -233,7 +236,8 @@ export const blogContent = {
   },
   "dissertation-usa": {
     title: "Dissertation Writing for USA",
-    description: "Complete dissertation writing support for US graduate programs",
+    description:
+      "Complete dissertation writing support for US graduate programs",
     country: "USA",
     type: "Dissertation",
     content: `
@@ -270,7 +274,8 @@ export const blogContent = {
   },
   "dissertation-canada": {
     title: "Dissertation Writing for Canada",
-    description: "Dissertation writing services tailored for Canadian graduate programs",
+    description:
+      "Dissertation writing services tailored for Canadian graduate programs",
     country: "Canada",
     type: "Dissertation",
     content: `
@@ -288,7 +293,8 @@ export const blogContent = {
   },
   "thesis-australia": {
     title: "Thesis Writing Services for Australia",
-    description: "Professional thesis writing aligned with Australian university standards",
+    description:
+      "Professional thesis writing aligned with Australian university standards",
     country: "Australia",
     type: "Thesis",
     content: `
@@ -306,7 +312,8 @@ export const blogContent = {
   },
   "dissertation-australia": {
     title: "Dissertation Writing for Australia",
-    description: "Comprehensive dissertation support for Australian postgraduate students",
+    description:
+      "Comprehensive dissertation support for Australian postgraduate students",
     country: "Australia",
     type: "Dissertation",
     content: `
@@ -342,7 +349,8 @@ export const blogContent = {
   },
   "dissertation-germany": {
     title: "Dissertation Writing for Germany",
-    description: "Dissertation services for German graduate programs and universities",
+    description:
+      "Dissertation services for German graduate programs and universities",
     country: "Germany",
     type: "Dissertation",
     content: `
@@ -378,7 +386,8 @@ export const blogContent = {
   },
   "dissertation-netherlands": {
     title: "Dissertation Writing for Netherlands",
-    description: "Comprehensive dissertation support for Dutch graduate programs",
+    description:
+      "Comprehensive dissertation support for Dutch graduate programs",
     country: "Netherlands",
     type: "Dissertation",
     content: `
