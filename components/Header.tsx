@@ -341,6 +341,26 @@ export default function Header() {
                   </div>
                 </details>
 
+                {/* Mobile Blog Dropdown */}
+                <details className="group">
+                  <summary className="cursor-pointer block text-[9px] font-medium text-foreground hover:text-primary transition-colors py-0.5 px-1 list-none">
+                    Blog
+                  </summary>
+                  <div className="pl-3 space-y-0.5 mt-0.5">
+                    {blogCategories.map((blog) => (
+                      <Link
+                        key={blog.id}
+                        href={`/blog/${blog.slug}`}
+                        onClick={closeMenu}
+                        className="block text-[8px] font-medium text-foreground hover:text-primary transition-colors py-0.5 px-1"
+                      >
+                        <span className="mr-1">{blog.flag}</span>
+                        {blog.title}
+                      </Link>
+                    ))}
+                  </div>
+                </details>
+
                 {/* Mobile Footer Navigation Items */}
                 {footerNavItems.map((item) => (
                   <Link
